@@ -1,7 +1,7 @@
 import { customElement, property, state } from 'lit/decorators.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 
 interface UnitConfig {
   max: number;
@@ -20,12 +20,12 @@ const availableUnits: UnitConfig[] = [
 
 /**
  * @summary Outputs a localized time phrase relative to the current date and time.
- * @documentation https://shoelace.style/components/relative-time
+ * @documentation https://awc.a-dev.cloud/components/relative-time
  * @status stable
  * @since 2.0
  */
-@customElement('sl-relative-time')
-export default class SlRelativeTime extends ShoelaceElement {
+@customElement('awc-relative-time')
+export default class AWCRelativeTime extends AWCElement {
   private readonly localize = new LocalizeController(this);
   private updateTimeout: number;
 
@@ -123,6 +123,6 @@ function getTimeUntilNextUnit(unit: 'second' | 'minute' | 'hour' | 'day') {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-relative-time': SlRelativeTime;
+    'awc-relative-time': AWCRelativeTime;
   }
 }

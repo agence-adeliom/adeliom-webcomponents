@@ -6,13 +6,13 @@ layout: component
 ---
 
 ```html:preview
-<sl-divider></sl-divider>
+<awc-divider></awc-divider>
 ```
 
 ```jsx:react
-import { SlDivider } from '@shoelace-style/shoelace/dist/react';
+import { AWCDivider } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlDivider />;
+const App = () => <AWCDivider />;
 ```
 
 ## Examples
@@ -22,15 +22,15 @@ const App = () => <SlDivider />;
 Use the `--width` custom property to change the width of the divider.
 
 ```html:preview
-<sl-divider style="--width: 4px;"></sl-divider>
+<awc-divider style="--width: 4px;"></awc-divider>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlDivider } from '@shoelace-style/shoelace/dist/react';
+import { AWCDivider } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlDivider style={{ '--width': '4px' }} />;
+const App = () => <AWCDivider style={{ '--width': '4px' }} />;
 ```
 
 {% endraw %}
@@ -40,15 +40,15 @@ const App = () => <SlDivider style={{ '--width': '4px' }} />;
 Use the `--color` custom property to change the color of the divider.
 
 ```html:preview
-<sl-divider style="--color: tomato;"></sl-divider>
+<awc-divider style="--color: tomato;"></awc-divider>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlDivider } from '@shoelace-style/shoelace/dist/react';
+import { AWCDivider } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlDivider style={{ '--color': 'tomato' }} />;
+const App = () => <AWCDivider style={{ '--color': 'tomato' }} />;
 ```
 
 {% endraw %}
@@ -60,7 +60,7 @@ Use the `--spacing` custom property to change the amount of space between the di
 ```html:preview
 <div style="text-align: center;">
   Above
-  <sl-divider style="--spacing: 2rem;"></sl-divider>
+  <awc-divider style="--spacing: 2rem;"></awc-divider>
   Below
 </div>
 ```
@@ -68,12 +68,12 @@ Use the `--spacing` custom property to change the amount of space between the di
 {% raw %}
 
 ```jsx:react
-import { SlDivider } from '@shoelace-style/shoelace/dist/react';
+import { AWCDivider } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
     Above
-    <SlDivider style={{ '--spacing': '2rem' }} />
+    <AWCDivider style={{ '--spacing': '2rem' }} />
     Below
   </>
 );
@@ -88,9 +88,9 @@ Add the `vertical` attribute to draw the divider in a vertical orientation. The 
 ```html:preview
 <div style="display: flex; align-items: center; height: 2rem;">
   First
-  <sl-divider vertical></sl-divider>
+  <awc-divider vertical></awc-divider>
   Middle
-  <sl-divider vertical></sl-divider>
+  <awc-divider vertical></awc-divider>
   Last
 </div>
 ```
@@ -98,7 +98,7 @@ Add the `vertical` attribute to draw the divider in a vertical orientation. The 
 {% raw %}
 
 ```jsx:react
-import { SlDivider } from '@shoelace-style/shoelace/dist/react';
+import { AWCDivider } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <div
@@ -109,9 +109,9 @@ const App = () => (
     }}
   >
     First
-    <SlDivider vertical />
+    <AWCDivider vertical />
     Middle
-    <SlDivider vertical />
+    <AWCDivider vertical />
     Last
   </div>
 );
@@ -124,32 +124,32 @@ const App = () => (
 Use dividers in [menus](/components/menu) to visually group menu items.
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item value="1">Option 1</sl-menu-item>
-  <sl-menu-item value="2">Option 2</sl-menu-item>
-  <sl-menu-item value="3">Option 3</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-item value="4">Option 4</sl-menu-item>
-  <sl-menu-item value="5">Option 5</sl-menu-item>
-  <sl-menu-item value="6">Option 6</sl-menu-item>
-</sl-menu>
+<awc-menu style="max-width: 200px;">
+  <awc-menu-item value="1">Option 1</awc-menu-item>
+  <awc-menu-item value="2">Option 2</awc-menu-item>
+  <awc-menu-item value="3">Option 3</awc-menu-item>
+  <awc-divider></awc-divider>
+  <awc-menu-item value="4">Option 4</awc-menu-item>
+  <awc-menu-item value="5">Option 5</awc-menu-item>
+  <awc-menu-item value="6">Option 6</awc-menu-item>
+</awc-menu>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlDivider, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCDivider, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem value="1">Option 1</SlMenuItem>
-    <SlMenuItem value="2">Option 2</SlMenuItem>
-    <SlMenuItem value="3">Option 3</SlMenuItem>
-    <sl-divider />
-    <SlMenuItem value="4">Option 4</SlMenuItem>
-    <SlMenuItem value="5">Option 5</SlMenuItem>
-    <SlMenuItem value="6">Option 6</SlMenuItem>
-  </SlMenu>
+  <AWCMenu style={{ maxWidth: '200px' }}>
+    <AWCMenuItem value="1">Option 1</AWCMenuItem>
+    <AWCMenuItem value="2">Option 2</AWCMenuItem>
+    <AWCMenuItem value="3">Option 3</AWCMenuItem>
+    <awc-divider />
+    <AWCMenuItem value="4">Option 4</AWCMenuItem>
+    <AWCMenuItem value="5">Option 5</AWCMenuItem>
+    <AWCMenuItem value="6">Option 6</AWCMenuItem>
+  </AWCMenu>
 );
 ```
 

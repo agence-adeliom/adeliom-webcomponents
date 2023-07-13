@@ -10,56 +10,56 @@ Dropdowns consist of a trigger and a panel. By default, activating the trigger w
 Dropdowns are designed to work well with [menus](/components/menu) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](/components/color-picker) and [select](/components/select)). The API gives you complete control over showing, hiding, and positioning the panel.
 
 ```html:preview
-<sl-dropdown>
-  <sl-button slot="trigger" caret>Dropdown</sl-button>
-  <sl-menu>
-    <sl-menu-item>Dropdown Item 1</sl-menu-item>
-    <sl-menu-item>Dropdown Item 2</sl-menu-item>
-    <sl-menu-item>Dropdown Item 3</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item type="checkbox" checked>Checkbox</sl-menu-item>
-    <sl-menu-item disabled>Disabled</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item>
+<awc-dropdown>
+  <awc-button slot="trigger" caret>Dropdown</awc-button>
+  <awc-menu>
+    <awc-menu-item>Dropdown Item 1</awc-menu-item>
+    <awc-menu-item>Dropdown Item 2</awc-menu-item>
+    <awc-menu-item>Dropdown Item 3</awc-menu-item>
+    <awc-divider></awc-divider>
+    <awc-menu-item type="checkbox" checked>Checkbox</awc-menu-item>
+    <awc-menu-item disabled>Disabled</awc-menu-item>
+    <awc-divider></awc-divider>
+    <awc-menu-item>
       Prefix
-      <sl-icon slot="prefix" name="gift"></sl-icon>
-    </sl-menu-item>
-    <sl-menu-item>
+      <awc-icon slot="prefix" name="gift"></awc-icon>
+    </awc-menu-item>
+    <awc-menu-item>
       Suffix Icon
-      <sl-icon slot="suffix" name="heart"></sl-icon>
-    </sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+      <awc-icon slot="suffix" name="heart"></awc-icon>
+    </awc-menu-item>
+  </awc-menu>
+</awc-dropdown>
 ```
 
 ```jsx:react
-import { SlButton, SlDivider, SlDropdown, SlIcon, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlDropdown>
-    <SlButton slot="trigger" caret>
+  <AWCDropdown>
+    <AWCButton slot="trigger" caret>
       Dropdown
-    </SlButton>
-    <SlMenu>
-      <SlMenuItem>Dropdown Item 1</SlMenuItem>
-      <SlMenuItem>Dropdown Item 2</SlMenuItem>
-      <SlMenuItem>Dropdown Item 3</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem type="checkbox" checked>
+    </AWCButton>
+    <AWCMenu>
+      <AWCMenuItem>Dropdown Item 1</AWCMenuItem>
+      <AWCMenuItem>Dropdown Item 2</AWCMenuItem>
+      <AWCMenuItem>Dropdown Item 3</AWCMenuItem>
+      <AWCDivider />
+      <AWCMenuItem type="checkbox" checked>
         Checkbox
-      </SlMenuItem>
-      <SlMenuItem disabled>Disabled</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem>
+      </AWCMenuItem>
+      <AWCMenuItem disabled>Disabled</AWCMenuItem>
+      <AWCDivider />
+      <AWCMenuItem>
         Prefix
-        <SlIcon slot="prefix" name="gift" />
-      </SlMenuItem>
-      <SlMenuItem>
+        <AWCIcon slot="prefix" name="gift" />
+      </AWCMenuItem>
+      <AWCMenuItem>
         Suffix Icon
-        <SlIcon slot="suffix" name="heart" />
-      </SlMenuItem>
-    </SlMenu>
-  </SlDropdown>
+        <AWCIcon slot="suffix" name="heart" />
+      </AWCMenuItem>
+    </AWCMenu>
+  </AWCDropdown>
 );
 ```
 
@@ -67,25 +67,25 @@ const App = () => (
 
 ### Getting the Selected Item
 
-When dropdowns are used with [menus](/components/menu), you can listen for the [`sl-select`](/components/menu#events) event to determine which menu item was selected. The menu item element will be exposed in `event.detail.item`. You can set `value` props to make it easier to identify commands.
+When dropdowns are used with [menus](/components/menu), you can listen for the [`awc-select`](/components/menu#events) event to determine which menu item was selected. The menu item element will be exposed in `event.detail.item`. You can set `value` props to make it easier to identify commands.
 
 ```html:preview
 <div class="dropdown-selection">
-  <sl-dropdown>
-    <sl-button slot="trigger" caret>Edit</sl-button>
-    <sl-menu>
-      <sl-menu-item value="cut">Cut</sl-menu-item>
-      <sl-menu-item value="copy">Copy</sl-menu-item>
-      <sl-menu-item value="paste">Paste</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
+  <awc-dropdown>
+    <awc-button slot="trigger" caret>Edit</awc-button>
+    <awc-menu>
+      <awc-menu-item value="cut">Cut</awc-menu-item>
+      <awc-menu-item value="copy">Copy</awc-menu-item>
+      <awc-menu-item value="paste">Paste</awc-menu-item>
+    </awc-menu>
+  </awc-dropdown>
 </div>
 
 <script>
   const container = document.querySelector('.dropdown-selection');
-  const dropdown = container.querySelector('sl-dropdown');
+  const dropdown = container.querySelector('awc-dropdown');
 
-  dropdown.addEventListener('sl-select', event => {
+  dropdown.addEventListener('awc-select', event => {
     const selectedItem = event.detail.item;
     console.log(selectedItem.value);
   });
@@ -93,7 +93,7 @@ When dropdowns are used with [menus](/components/menu), you can listen for the [
 ```
 
 ```jsx:react
-import { SlButton, SlDropdown, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   function handleSelect(event) {
@@ -102,16 +102,16 @@ const App = () => {
   }
 
   return (
-    <SlDropdown>
-      <SlButton slot="trigger" caret>
+    <AWCDropdown>
+      <AWCButton slot="trigger" caret>
         Edit
-      </SlButton>
-      <SlMenu onSlSelect={handleSelect}>
-        <SlMenuItem value="cut">Cut</SlMenuItem>
-        <SlMenuItem value="copy">Copy</SlMenuItem>
-        <SlMenuItem value="paste">Paste</SlMenuItem>
-      </SlMenu>
-    </SlDropdown>
+      </AWCButton>
+      <AWCMenu onAwcSelect={handleSelect}>
+        <AWCMenuItem value="cut">Cut</AWCMenuItem>
+        <AWCMenuItem value="copy">Copy</AWCMenuItem>
+        <AWCMenuItem value="paste">Paste</AWCMenuItem>
+      </AWCMenu>
+    </AWCDropdown>
   );
 };
 ```
@@ -120,21 +120,21 @@ Alternatively, you can listen for the `click` event on individual menu items. No
 
 ```html:preview
 <div class="dropdown-selection-alt">
-  <sl-dropdown>
-    <sl-button slot="trigger" caret>Edit</sl-button>
-    <sl-menu>
-      <sl-menu-item value="cut">Cut</sl-menu-item>
-      <sl-menu-item value="copy">Copy</sl-menu-item>
-      <sl-menu-item value="paste">Paste</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
+  <awc-dropdown>
+    <awc-button slot="trigger" caret>Edit</awc-button>
+    <awc-menu>
+      <awc-menu-item value="cut">Cut</awc-menu-item>
+      <awc-menu-item value="copy">Copy</awc-menu-item>
+      <awc-menu-item value="paste">Paste</awc-menu-item>
+    </awc-menu>
+  </awc-dropdown>
 </div>
 
 <script>
   const container = document.querySelector('.dropdown-selection-alt');
-  const cut = container.querySelector('sl-menu-item[value="cut"]');
-  const copy = container.querySelector('sl-menu-item[value="copy"]');
-  const paste = container.querySelector('sl-menu-item[value="paste"]');
+  const cut = container.querySelector('awc-menu-item[value="cut"]');
+  const copy = container.querySelector('awc-menu-item[value="copy"]');
+  const paste = container.querySelector('awc-menu-item[value="paste"]');
 
   cut.addEventListener('click', () => console.log('cut'));
   copy.addEventListener('click', () => console.log('copy'));
@@ -143,7 +143,7 @@ Alternatively, you can listen for the `click` event on individual menu items. No
 ```
 
 ```jsx:react
-import { SlButton, SlDropdown, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   function handleCut() {
@@ -159,16 +159,16 @@ const App = () => {
   }
 
   return (
-    <SlDropdown>
-      <SlButton slot="trigger" caret>
+    <AWCDropdown>
+      <AWCButton slot="trigger" caret>
         Edit
-      </SlButton>
-      <SlMenu>
-        <SlMenuItem onClick={handleCut}>Cut</SlMenuItem>
-        <SlMenuItem onClick={handleCopy}>Copy</SlMenuItem>
-        <SlMenuItem onClick={handlePaste}>Paste</SlMenuItem>
-      </SlMenu>
-    </SlDropdown>
+      </AWCButton>
+      <AWCMenu>
+        <AWCMenuItem onClick={handleCut}>Cut</AWCMenuItem>
+        <AWCMenuItem onClick={handleCopy}>Copy</AWCMenuItem>
+        <AWCMenuItem onClick={handlePaste}>Paste</AWCMenuItem>
+      </AWCMenu>
+    </AWCDropdown>
   );
 };
 ```
@@ -178,36 +178,36 @@ const App = () => {
 The preferred placement of the dropdown can be set with the `placement` attribute. Note that the actual position may vary to ensure the panel remains in the viewport.
 
 ```html:preview
-<sl-dropdown placement="top-start">
-  <sl-button slot="trigger" caret>Edit</sl-button>
-  <sl-menu>
-    <sl-menu-item>Cut</sl-menu-item>
-    <sl-menu-item>Copy</sl-menu-item>
-    <sl-menu-item>Paste</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item>Find</sl-menu-item>
-    <sl-menu-item>Replace</sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+<awc-dropdown placement="top-start">
+  <awc-button slot="trigger" caret>Edit</awc-button>
+  <awc-menu>
+    <awc-menu-item>Cut</awc-menu-item>
+    <awc-menu-item>Copy</awc-menu-item>
+    <awc-menu-item>Paste</awc-menu-item>
+    <awc-divider></awc-divider>
+    <awc-menu-item>Find</awc-menu-item>
+    <awc-menu-item>Replace</awc-menu-item>
+  </awc-menu>
+</awc-dropdown>
 ```
 
 ```jsx:react
-import { SlButton, SlDivider, SlDropdown, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlDropdown placement="top-start">
-    <SlButton slot="trigger" caret>
+  <AWCDropdown placement="top-start">
+    <AWCButton slot="trigger" caret>
       Edit
-    </SlButton>
-    <SlMenu>
-      <SlMenuItem>Cut</SlMenuItem>
-      <SlMenuItem>Copy</SlMenuItem>
-      <SlMenuItem>Paste</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem>Find</SlMenuItem>
-      <SlMenuItem>Replace</SlMenuItem>
-    </SlMenu>
-  </SlDropdown>
+    </AWCButton>
+    <AWCMenu>
+      <AWCMenuItem>Cut</AWCMenuItem>
+      <AWCMenuItem>Copy</AWCMenuItem>
+      <AWCMenuItem>Paste</AWCMenuItem>
+      <AWCDivider />
+      <AWCMenuItem>Find</AWCMenuItem>
+      <AWCMenuItem>Replace</AWCMenuItem>
+    </AWCMenu>
+  </AWCDropdown>
 );
 ```
 
@@ -216,36 +216,36 @@ const App = () => (
 The distance from the panel to the trigger can be customized using the `distance` attribute. This value is specified in pixels.
 
 ```html:preview
-<sl-dropdown distance="30">
-  <sl-button slot="trigger" caret>Edit</sl-button>
-  <sl-menu>
-    <sl-menu-item>Cut</sl-menu-item>
-    <sl-menu-item>Copy</sl-menu-item>
-    <sl-menu-item>Paste</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item>Find</sl-menu-item>
-    <sl-menu-item>Replace</sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+<awc-dropdown distance="30">
+  <awc-button slot="trigger" caret>Edit</awc-button>
+  <awc-menu>
+    <awc-menu-item>Cut</awc-menu-item>
+    <awc-menu-item>Copy</awc-menu-item>
+    <awc-menu-item>Paste</awc-menu-item>
+    <awc-divider></awc-divider>
+    <awc-menu-item>Find</awc-menu-item>
+    <awc-menu-item>Replace</awc-menu-item>
+  </awc-menu>
+</awc-dropdown>
 ```
 
 ```jsx:react
-import { SlButton, SlDivider, SlDropdown, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlDropdown distance={30}>
-    <SlButton slot="trigger" caret>
+  <AWCDropdown distance={30}>
+    <AWCButton slot="trigger" caret>
       Edit
-    </SlButton>
-    <SlMenu>
-      <SlMenuItem>Cut</SlMenuItem>
-      <SlMenuItem>Copy</SlMenuItem>
-      <SlMenuItem>Paste</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem>Find</SlMenuItem>
-      <SlMenuItem>Replace</SlMenuItem>
-    </SlMenu>
-  </SlDropdown>
+    </AWCButton>
+    <AWCMenu>
+      <AWCMenuItem>Cut</AWCMenuItem>
+      <AWCMenuItem>Copy</AWCMenuItem>
+      <AWCMenuItem>Paste</AWCMenuItem>
+      <AWCDivider />
+      <AWCMenuItem>Find</AWCMenuItem>
+      <AWCMenuItem>Replace</AWCMenuItem>
+    </AWCMenu>
+  </AWCDropdown>
 );
 ```
 
@@ -254,36 +254,36 @@ const App = () => (
 The offset of the panel along the trigger can be customized using the `skidding` attribute. This value is specified in pixels.
 
 ```html:preview
-<sl-dropdown skidding="30">
-  <sl-button slot="trigger" caret>Edit</sl-button>
-  <sl-menu>
-    <sl-menu-item>Cut</sl-menu-item>
-    <sl-menu-item>Copy</sl-menu-item>
-    <sl-menu-item>Paste</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item>Find</sl-menu-item>
-    <sl-menu-item>Replace</sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+<awc-dropdown skidding="30">
+  <awc-button slot="trigger" caret>Edit</awc-button>
+  <awc-menu>
+    <awc-menu-item>Cut</awc-menu-item>
+    <awc-menu-item>Copy</awc-menu-item>
+    <awc-menu-item>Paste</awc-menu-item>
+    <awc-divider></awc-divider>
+    <awc-menu-item>Find</awc-menu-item>
+    <awc-menu-item>Replace</awc-menu-item>
+  </awc-menu>
+</awc-dropdown>
 ```
 
 ```jsx:react
-import { SlButton, SlDivider, SlDropdown, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlDropdown skidding={30}>
-    <SlButton slot="trigger" caret>
+  <AWCDropdown skidding={30}>
+    <AWCButton slot="trigger" caret>
       Edit
-    </SlButton>
-    <SlMenu>
-      <SlMenuItem>Cut</SlMenuItem>
-      <SlMenuItem>Copy</SlMenuItem>
-      <SlMenuItem>Paste</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem>Find</SlMenuItem>
-      <SlMenuItem>Replace</SlMenuItem>
-    </SlMenu>
-  </SlDropdown>
+    </AWCButton>
+    <AWCMenu>
+      <AWCMenuItem>Cut</AWCMenuItem>
+      <AWCMenuItem>Copy</AWCMenuItem>
+      <AWCMenuItem>Paste</AWCMenuItem>
+      <AWCDivider />
+      <AWCMenuItem>Find</AWCMenuItem>
+      <AWCMenuItem>Replace</AWCMenuItem>
+    </AWCMenu>
+  </AWCDropdown>
 );
 ```
 
@@ -293,42 +293,42 @@ Dropdown panels will be clipped if they're inside a container that has `overflow
 
 ```html:preview
 <div class="dropdown-hoist">
-  <sl-dropdown>
-    <sl-button slot="trigger" caret>No Hoist</sl-button>
-    <sl-menu>
-      <sl-menu-item>Item 1</sl-menu-item>
-      <sl-menu-item>Item 2</sl-menu-item>
-      <sl-menu-item>Item 3</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
+  <awc-dropdown>
+    <awc-button slot="trigger" caret>No Hoist</awc-button>
+    <awc-menu>
+      <awc-menu-item>Item 1</awc-menu-item>
+      <awc-menu-item>Item 2</awc-menu-item>
+      <awc-menu-item>Item 3</awc-menu-item>
+    </awc-menu>
+  </awc-dropdown>
 
-  <sl-dropdown hoist>
-    <sl-button slot="trigger" caret>Hoist</sl-button>
-    <sl-menu>
-      <sl-menu-item>Item 1</sl-menu-item>
-      <sl-menu-item>Item 2</sl-menu-item>
-      <sl-menu-item>Item 3</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
+  <awc-dropdown hoist>
+    <awc-button slot="trigger" caret>Hoist</awc-button>
+    <awc-menu>
+      <awc-menu-item>Item 1</awc-menu-item>
+      <awc-menu-item>Item 2</awc-menu-item>
+      <awc-menu-item>Item 3</awc-menu-item>
+    </awc-menu>
+  </awc-dropdown>
 </div>
 
 <style>
   .dropdown-hoist {
     position: relative;
-    border: solid 2px var(--sl-panel-border-color);
-    padding: var(--sl-spacing-medium);
+    border: solid 2px var(--awc-panel-border-color);
+    padding: var(--awc-spacing-medium);
     overflow: hidden;
   }
 </style>
 ```
 
 ```jsx:react
-import { SlButton, SlDivider, SlDropdown, SlIcon, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .dropdown-hoist {
-    border: solid 2px var(--sl-panel-border-color);
-    padding: var(--sl-spacing-medium);
+    border: solid 2px var(--awc-panel-border-color);
+    padding: var(--awc-spacing-medium);
     overflow: hidden;
   }
 `;
@@ -336,27 +336,27 @@ const css = `
 const App = () => (
   <>
     <div className="dropdown-hoist">
-      <SlDropdown>
-        <SlButton slot="trigger" caret>
+      <AWCDropdown>
+        <AWCButton slot="trigger" caret>
           No Hoist
-        </SlButton>
-        <SlMenu>
-          <SlMenuItem>Item 1</SlMenuItem>
-          <SlMenuItem>Item 2</SlMenuItem>
-          <SlMenuItem>Item 3</SlMenuItem>
-        </SlMenu>
-      </SlDropdown>
+        </AWCButton>
+        <AWCMenu>
+          <AWCMenuItem>Item 1</AWCMenuItem>
+          <AWCMenuItem>Item 2</AWCMenuItem>
+          <AWCMenuItem>Item 3</AWCMenuItem>
+        </AWCMenu>
+      </AWCDropdown>
 
-      <SlDropdown hoist>
-        <SlButton slot="trigger" caret>
+      <AWCDropdown hoist>
+        <AWCButton slot="trigger" caret>
           Hoist
-        </SlButton>
-        <SlMenu>
-          <SlMenuItem>Item 1</SlMenuItem>
-          <SlMenuItem>Item 2</SlMenuItem>
-          <SlMenuItem>Item 3</SlMenuItem>
-        </SlMenu>
-      </SlDropdown>
+        </AWCButton>
+        <AWCMenu>
+          <AWCMenuItem>Item 1</AWCMenuItem>
+          <AWCMenuItem>Item 2</AWCMenuItem>
+          <AWCMenuItem>Item 3</AWCMenuItem>
+        </AWCMenu>
+      </AWCDropdown>
     </div>
 
     <style>{css}</style>

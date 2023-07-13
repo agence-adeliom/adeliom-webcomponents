@@ -1,15 +1,15 @@
 import { customElement, property } from 'lit/decorators.js';
 import { LocalizeController } from '../../utilities/localize.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 
 /**
  * @summary Formats a number as a human readable bytes value.
- * @documentation https://shoelace.style/components/format-bytes
+ * @documentation https://awc.a-dev.cloud/components/format-bytes
  * @status stable
  * @since 2.0
  */
-@customElement('sl-format-bytes')
-export default class SlFormatBytes extends ShoelaceElement {
+@customElement('awc-format-bytes')
+export default class AWCFormatBytes extends AWCElement {
   private readonly localize = new LocalizeController(this);
 
   /** The number to format in bytes. */
@@ -43,6 +43,6 @@ export default class SlFormatBytes extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-format-bytes': SlFormatBytes;
+    'awc-format-bytes': AWCFormatBytes;
   }
 }

@@ -1,12 +1,12 @@
 ---
 meta:
   title: Vue
-  description: Tips for using Shoelace in your Vue 3 app.
+  description: Tips for using Adeliom WebComponents in your Vue 3 app.
 ---
 
 # Vue
 
-Vue [plays nice](https://custom-elements-everywhere.com/#vue) with custom elements, so you can use Shoelace in your Vue apps with ease.
+Vue [plays nice](https://custom-elements-everywhere.com/#vue) with custom elements, so you can use Adeliom WebComponents in your Vue apps with ease.
 
 :::tip
 These instructions are for Vue 3 and above. If you're using Vue 2, please see the [Vue 2 instructions](/frameworks/vue-2).
@@ -14,28 +14,28 @@ These instructions are for Vue 3 and above. If you're using Vue 2, please see th
 
 ## Installation
 
-To add Shoelace to your Vue app, install the package from npm.
+To add Adeliom WebComponents to your Vue app, install the package from npm.
 
 ```bash
-npm install @shoelace-style/shoelace
+npm install @agence-adeliom/awc
 ```
 
 Next, [include a theme](/getting-started/themes) and set the [base path](/getting-started/installation#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
-import '@shoelace-style/shoelace/dist/themes/light.css';
-import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path';
+import '@agence-adeliom/awc/dist/themes/light.css';
+import { setBasePath } from '@agence-adeliom/awc/dist/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@%VERSION%/%CDNDIR%/');
+setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/');
 ```
 
 :::tip
-If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@shoelace-style/shoelace/dist/assets` into a public folder in your app. Then you can point the base path to that folder instead.
+If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@agence-adeliom/awc/dist/assets` into a public folder in your app. Then you can point the base path to that folder instead.
 :::
 
 ## Configuration
 
-You'll need to tell Vue to ignore Shoelace components. This is pretty easy because they all start with `sl-`.
+You'll need to tell Vue to ignore Adeliom WebComponents components. This is pretty easy because they all start with `awc-`.
 
 ```js
 import { fileURLToPath, URL } from 'url';
@@ -49,7 +49,7 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: tag => tag.startsWith('sl-')
+          isCustomElement: tag => tag.startsWith('awc-')
         }
       }
     })
@@ -62,7 +62,7 @@ export default defineConfig({
 });
 ```
 
-Now you can start using Shoelace components in your app!
+Now you can start using Adeliom WebComponents components in your app!
 
 ## Usage
 
@@ -73,16 +73,16 @@ Now you can start using Shoelace components in your app!
   <div class="container">
     <h1>QR code generator</h1>
 
-    <sl-input maxlength="255" clearable label="Value" v-model="qrCode"></sl-input>
+    <awc-input maxlength="255" clearable label="Value" v-model="qrCode"></awc-input>
 
-    <sl-qr-code :value="qrCode"></sl-qr-code>
+    <awc-qr-code :value="qrCode"></awc-qr-code>
   </div>
 </template>
 
 <script setup>
   import { ref } from 'vue';
-  import '@shoelace-style/shoelace/dist/components/qr-code/qr-code.js';
-  import '@shoelace-style/shoelace/dist/components/input/input.js';
+  import '@agence-adeliom/awc/dist/components/qr-code/qr-code.js';
+  import '@agence-adeliom/awc/dist/components/input/input.js';
 
   const qrCode = ref();
 </script>
@@ -93,8 +93,8 @@ Now you can start using Shoelace components in your app!
     margin: 0 auto;
   }
 
-  sl-input {
-    margin: var(--sl-spacing-large) 0;
+  awc-input {
+    margin: var(--awc-spacing-large) 0;
   }
 </style>
 ```
@@ -104,24 +104,24 @@ Now you can start using Shoelace components in your app!
 When binding complex data such as objects and arrays, use the `.prop` modifier to make Vue bind them as a property instead of an attribute.
 
 ```html
-<sl-color-picker :swatches.prop="mySwatches" />
+<awc-color-picker :swatches.prop="mySwatches" />
 ```
 
 :::tip
-Are you using Shoelace with Vue? [Help us improve this page!](https://github.com/shoelace-style/shoelace/blob/next/docs/frameworks/vue.md)
+Are you using Adeliom WebComponents with Vue? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/next/docs/frameworks/vue.md)
 :::
 
 ### Slots
 
-To use Shoelace components with slots, follow the Vue documentation on using [slots with custom elements](https://vuejs.org/guide/extras/web-components.html#building-custom-elements-with-vue).
+To use Adeliom WebComponents components with slots, follow the Vue documentation on using [slots with custom elements](https://vuejs.org/guide/extras/web-components.html#building-custom-elements-with-vue).
 
 Here is an example:
 
 ```html
-<sl-drawer label="Drawer" placement="start" class="drawer-placement-start" :open="drawerIsOpen">
+<awc-drawer label="Drawer" placement="start" class="drawer-placement-start" :open="drawerIsOpen">
   This drawer slides in from the start.
   <div slot="footer">
-    <sl-button variant="primary" @click=" drawerIsOpen = false">Close</sl-button>
+    <awc-button variant="primary" @click=" drawerIsOpen = false">Close</awc-button>
   </div>
-</sl-drawer>
+</awc-drawer>
 ```

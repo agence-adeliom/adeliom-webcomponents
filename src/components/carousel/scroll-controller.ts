@@ -11,7 +11,7 @@ interface ScrollHost extends ReactiveElement {
  * A controller for handling scrolling and mouse dragging.
  */
 export class ScrollController<T extends ScrollHost> implements ReactiveController {
-  private host: T;
+  private readonly host: T;
   private pointers = new Set();
 
   dragging = false;

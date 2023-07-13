@@ -7,43 +7,43 @@ import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { live } from 'lit/directives/live.js';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './checkbox.styles.js';
+import type { AWCFormControl } from '../../internal/awc-element.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
 
 /**
  * @summary Checkboxes allow the user to toggle an option on or off.
- * @documentation https://shoelace.style/components/checkbox
+ * @documentation https://awc.a-dev.cloud/components/checkbox
  * @status stable
  * @since 2.0
  *
- * @dependency sl-icon
+ * @dependency awc-icon
  *
  * @slot - The checkbox's label.
  *
- * @event sl-blur - Emitted when the checkbox loses focus.
- * @event sl-change - Emitted when the checked state changes.
- * @event sl-focus - Emitted when the checkbox gains focus.
- * @event sl-input - Emitted when the checkbox receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event awc-blur - Emitted when the checkbox loses focus.
+ * @event awc-change - Emitted when the checked state changes.
+ * @event awc-focus - Emitted when the checkbox gains focus.
+ * @event awc-input - Emitted when the checkbox receives input.
+ * @event awc-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The square container that wraps the checkbox's checked state.
  * @csspart control--checked - Matches the control part when the checkbox is checked.
  * @csspart control--indeterminate - Matches the control part when the checkbox is indeterminate.
- * @csspart checked-icon - The checked icon, an `<sl-icon>` element.
- * @csspart indeterminate-icon - The indeterminate icon, an `<sl-icon>` element.
+ * @csspart checked-icon - The checked icon, an `<awc-icon>` element.
+ * @csspart indeterminate-icon - The indeterminate icon, an `<awc-icon>` element.
  * @csspart label - The container that wraps the checkbox's label.
  */
-@customElement('sl-checkbox')
-export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormControl {
+@customElement('awc-checkbox')
+export default class AWCCheckbox extends AWCElement implements AWCFormControl {
   static styles: CSSResultGroup = styles;
 
   private readonly formControlController = new FormControlController(this, {
-    value: (control: SlCheckbox) => (control.checked ? control.value || 'on' : undefined),
-    defaultValue: (control: SlCheckbox) => control.defaultChecked,
-    setValue: (control: SlCheckbox, checked: boolean) => (control.checked = checked)
+    value: (control: AWCCheckbox) => (control.checked ? control.value || 'on' : undefined),
+    defaultValue: (control: AWCCheckbox) => control.defaultChecked,
+    setValue: (control: AWCCheckbox, checked: boolean) => (control.checked = checked)
   });
 
   @query('input[type="checkbox"]') input: HTMLInputElement;
@@ -103,16 +103,16 @@ export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormC
   private handleClick() {
     this.checked = !this.checked;
     this.indeterminate = false;
-    this.emit('sl-change');
+    this.emit('awc-change');
   }
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('awc-blur');
   }
 
   private handleInput() {
-    this.emit('sl-input');
+    this.emit('awc-input');
   }
 
   private handleInvalid(event: Event) {
@@ -122,7 +122,7 @@ export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormC
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('awc-focus');
   }
 
   @watch('disabled', { waitUntilFirstUpdate: true })
@@ -221,17 +221,17 @@ export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormC
         >
           ${this.checked
             ? html`
-                <sl-icon part="checked-icon" class="checkbox__checked-icon" library="system" name="check"></sl-icon>
+                <awc-icon part="checked-icon" class="checkbox__checked-icon" library="system" name="check"></awc-icon>
               `
             : ''}
           ${!this.checked && this.indeterminate
             ? html`
-                <sl-icon
+                <awc-icon
                   part="indeterminate-icon"
                   class="checkbox__indeterminate-icon"
                   library="system"
                   name="indeterminate"
-                ></sl-icon>
+                ></awc-icon>
               `
             : ''}
         </span>
@@ -246,6 +246,6 @@ export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormC
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-checkbox': SlCheckbox;
+    'awc-checkbox': AWCCheckbox;
   }
 }

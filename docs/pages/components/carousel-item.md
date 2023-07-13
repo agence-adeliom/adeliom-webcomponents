@@ -6,76 +6,76 @@ layout: component
 ---
 
 ```html:preview
-<sl-carousel pagination>
-  <sl-carousel-item>
+<awc-carousel pagination>
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees - Photo by Adam Kool on Unsplash"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest - Photo by Thomas Kelly on Unsplash"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field - Photo by Leonard Cotte on Unsplash"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background - Photo by Sapan Patel on Unsplash"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in - Photo by V2osk on Unsplash"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 ```
 
 ```jsx:react
-import { SlCarousel, SlCarouselItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlCarousel pagination>
-    <SlCarouselItem>
+  <AWCCarousel pagination>
+    <AWCCarouselItem>
       <img
         alt="The sun shines on the mountains and trees - Photo by Adam Kool on Unsplash"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A waterfall in the middle of a forest - Photo by Thomas Kelly on Unsplash"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="The sun is setting over a lavender field - Photo by Leonard Cotte on Unsplash"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A field of grass with the sun setting in the background - Photo by Sapan Patel on Unsplash"
         src="/assets/examples/carousel/field.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A scenic view of a mountain with clouds rolling in - Photo by V2osk on Unsplash"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </SlCarouselItem>
-  </SlCarousel>
+    </AWCCarouselItem>
+  </AWCCarousel>
 );
 ```
 

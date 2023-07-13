@@ -6,28 +6,28 @@ layout: component
 ---
 
 ```html:preview
-<sl-breadcrumb>
-  <sl-breadcrumb-item>
-    <sl-icon slot="prefix" name="house"></sl-icon>
+<awc-breadcrumb>
+  <awc-breadcrumb-item>
+    <awc-icon slot="prefix" name="house"></awc-icon>
     Home
-  </sl-breadcrumb-item>
-  <sl-breadcrumb-item>Clothing</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Shirts</sl-breadcrumb-item>
-</sl-breadcrumb>
+  </awc-breadcrumb-item>
+  <awc-breadcrumb-item>Clothing</awc-breadcrumb-item>
+  <awc-breadcrumb-item>Shirts</awc-breadcrumb-item>
+</awc-breadcrumb>
 ```
 
 ```jsx:react
-import { SlBreadcrumb, SlBreadcrumbItem, SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCBreadcrumb, AWCBreadcrumbItem, AWCIcon } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlBreadcrumb>
-    <SlBreadcrumbItem>
-      <SlIcon slot="prefix" name="house"></SlIcon>
+  <AWCBreadcrumb>
+    <AWCBreadcrumbItem>
+      <AWCIcon slot="prefix" name="house"></AWCIcon>
       Home
-    </SlBreadcrumbItem>
-    <SlBreadcrumbItem>Clothing</SlBreadcrumbItem>
-    <SlBreadcrumbItem>Shirts</SlBreadcrumbItem>
-  </SlBreadcrumb>
+    </AWCBreadcrumbItem>
+    <AWCBreadcrumbItem>Clothing</AWCBreadcrumbItem>
+    <AWCBreadcrumbItem>Shirts</AWCBreadcrumbItem>
+  </AWCBreadcrumb>
 );
 ```
 

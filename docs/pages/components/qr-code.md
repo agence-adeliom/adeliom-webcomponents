@@ -9,20 +9,20 @@ QR codes are useful for providing small pieces of information to users who can q
 
 ```html:preview
 <div class="qr-overview">
-  <sl-qr-code value="https://shoelace.style/" label="Scan this code to visit Shoelace on the web!"></sl-qr-code>
+  <awc-qr-code value="https://awc.a-dev.cloud/" label="Scan this code to visit Adeliom WebComponents on the web!"></awc-qr-code>
   <br />
 
-  <sl-input maxlength="255" clearable label="Value"></sl-input>
+  <awc-input maxlength="255" clearable label="Value"></awc-input>
 </div>
 
 <script>
   const container = document.querySelector('.qr-overview');
-  const qrCode = container.querySelector('sl-qr-code');
-  const input = container.querySelector('sl-input');
+  const qrCode = container.querySelector('awc-qr-code');
+  const input = container.querySelector('awc-input');
 
-  customElements.whenDefined('sl-qr-code').then(() => {
+  customElements.whenDefined('awc-qr-code').then(() => {
     input.value = qrCode.value;
-    input.addEventListener('sl-input', () => (qrCode.value = input.value));
+    input.addEventListener('awc-input', () => (qrCode.value = input.value));
   });
 </script>
 
@@ -31,7 +31,7 @@ QR codes are useful for providing small pieces of information to users who can q
     max-width: 256px;
   }
 
-  .qr-overview sl-input {
+  .qr-overview awc-input {
     margin-top: 1rem;
   }
 </style>
@@ -39,28 +39,28 @@ QR codes are useful for providing small pieces of information to users who can q
 
 ```jsx:react
 import { useState } from 'react';
-import { SlQrCode, SlInput } from '@shoelace-style/shoelace/dist/react';
+import { AWCQrCode, AWCInput } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .qr-overview {
     max-width: 256px;
   }
 
-  .qr-overview sl-input {
+  .qr-overview awc-input {
     margin-top: 1rem;
   }
 `;
 
 const App = () => {
-  const [value, setValue] = useState('https://shoelace.style/');
+  const [value, setValue] = useState('https://awc.a-dev.cloud/');
 
   return (
     <>
       <div className="qr-overview">
-        <SlQrCode value={value} label="Scan this code to visit Shoelace on the web!" />
+        <AWCQrCode value={value} label="Scan this code to visit Adeliom WebComponents on the web!" />
         <br />
 
-        <SlInput maxlength="255" clearable onInput={event => setValue(event.target.value)} />
+        <AWCInput maxlength="255" clearable onInput={event => setValue(event.target.value)} />
       </div>
 
       <style>{css}</style>
@@ -76,13 +76,13 @@ const App = () => {
 Use the `fill` and `background` attributes to modify the QR code's colors. You should always ensure good contrast for optimal compatibility with QR code scanners.
 
 ```html:preview
-<sl-qr-code value="https://shoelace.style/" fill="deeppink" background="white"></sl-qr-code>
+<awc-qr-code value="https://awc.a-dev.cloud/" fill="deeppink" background="white"></awc-qr-code>
 ```
 
 ```jsx:react
-import { SlQrCode } from '@shoelace-style/shoelace/dist/react';
+import { AWCQrCode } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlQrCode value="https://shoelace.style/" fill="deeppink" background="white" />;
+const App = () => <AWCQrCode value="https://awc.a-dev.cloud/" fill="deeppink" background="white" />;
 ```
 
 ### Size
@@ -90,13 +90,13 @@ const App = () => <SlQrCode value="https://shoelace.style/" fill="deeppink" back
 Use the `size` attribute to change the size of the QR code.
 
 ```html:preview
-<sl-qr-code value="https://shoelace.style/" size="64"></sl-qr-code>
+<awc-qr-code value="https://awc.a-dev.cloud/" size="64"></awc-qr-code>
 ```
 
 ```jsx:react
-import { SlQrCode } from '@shoelace-style/shoelace/dist/react';
+import { AWCQrCode } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlQrCode value="https://shoelace.style/" size="64" />;
+const App = () => <AWCQrCode value="https://awc.a-dev.cloud/" size="64" />;
 ```
 
 ### Radius
@@ -104,13 +104,13 @@ const App = () => <SlQrCode value="https://shoelace.style/" size="64" />;
 Create a rounded effect with the `radius` attribute.
 
 ```html:preview
-<sl-qr-code value="https://shoelace.style/" radius="0.5"></sl-qr-code>
+<awc-qr-code value="https://awc.a-dev.cloud/" radius="0.5"></awc-qr-code>
 ```
 
 ```jsx:react
-import { SlQrCode } from '@shoelace-style/shoelace/dist/react';
+import { AWCQrCode } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlQrCode value="https://shoelace.style/" radius="0.5" />;
+const App = () => <AWCQrCode value="https://awc.a-dev.cloud/" radius="0.5" />;
 ```
 
 ### Error Correction
@@ -119,10 +119,10 @@ QR codes can be rendered with various levels of [error correction](https://www.q
 
 ```html:preview
 <div class="qr-error-correction">
-  <sl-qr-code value="https://shoelace.style/" error-correction="L"></sl-qr-code>
-  <sl-qr-code value="https://shoelace.style/" error-correction="M"></sl-qr-code>
-  <sl-qr-code value="https://shoelace.style/" error-correction="Q"></sl-qr-code>
-  <sl-qr-code value="https://shoelace.style/" error-correction="H"></sl-qr-code>
+  <awc-qr-code value="https://awc.a-dev.cloud/" error-correction="L"></awc-qr-code>
+  <awc-qr-code value="https://awc.a-dev.cloud/" error-correction="M"></awc-qr-code>
+  <awc-qr-code value="https://awc.a-dev.cloud/" error-correction="Q"></awc-qr-code>
+  <awc-qr-code value="https://awc.a-dev.cloud/" error-correction="H"></awc-qr-code>
 </div>
 
 <style>
@@ -135,7 +135,7 @@ QR codes can be rendered with various levels of [error correction](https://www.q
 ```
 
 ```jsx:react
-import { SlQrCode } from '@shoelace-style/shoelace/dist/react';
+import { AWCQrCode } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .qr-error-correction {
@@ -149,10 +149,10 @@ const App = () => {
   return (
     <>
       <div className="qr-error-correction">
-        <SlQrCode value="https://shoelace.style/" error-correction="L" />
-        <SlQrCode value="https://shoelace.style/" error-correction="M" />
-        <SlQrCode value="https://shoelace.style/" error-correction="Q" />
-        <SlQrCode value="https://shoelace.style/" error-correction="H" />
+        <AWCQrCode value="https://awc.a-dev.cloud/" error-correction="L" />
+        <AWCQrCode value="https://awc.a-dev.cloud/" error-correction="M" />
+        <AWCQrCode value="https://awc.a-dev.cloud/" error-correction="Q" />
+        <AWCQrCode value="https://awc.a-dev.cloud/" error-correction="H" />
       </div>
 
       <style>{css}</style>

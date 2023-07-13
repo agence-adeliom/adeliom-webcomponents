@@ -6,42 +6,42 @@ layout: component
 ---
 
 ```html:preview
-<sl-tab-group>
-  <sl-tab slot="nav" panel="general">General</sl-tab>
-  <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-  <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-  <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
+<awc-tab-group>
+  <awc-tab slot="nav" panel="general">General</awc-tab>
+  <awc-tab slot="nav" panel="custom">Custom</awc-tab>
+  <awc-tab slot="nav" panel="advanced">Advanced</awc-tab>
+  <awc-tab slot="nav" panel="disabled" disabled>Disabled</awc-tab>
 
-  <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-  <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-  <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-  <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-</sl-tab-group>
+  <awc-tab-panel name="general">This is the general tab panel.</awc-tab-panel>
+  <awc-tab-panel name="custom">This is the custom tab panel.</awc-tab-panel>
+  <awc-tab-panel name="advanced">This is the advanced tab panel.</awc-tab-panel>
+  <awc-tab-panel name="disabled">This is a disabled tab panel.</awc-tab-panel>
+</awc-tab-group>
 ```
 
 ```jsx:react
-import { SlTab, SlTabGroup, SlTabPanel } from '@shoelace-style/shoelace/dist/react';
+import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTabGroup>
-    <SlTab slot="nav" panel="general">
+  <AWCTabGroup>
+    <AWCTab slot="nav" panel="general">
       General
-    </SlTab>
-    <SlTab slot="nav" panel="custom">
+    </AWCTab>
+    <AWCTab slot="nav" panel="custom">
       Custom
-    </SlTab>
-    <SlTab slot="nav" panel="advanced">
+    </AWCTab>
+    <AWCTab slot="nav" panel="advanced">
       Advanced
-    </SlTab>
-    <SlTab slot="nav" panel="disabled" disabled>
+    </AWCTab>
+    <AWCTab slot="nav" panel="disabled" disabled>
       Disabled
-    </SlTab>
+    </AWCTab>
 
-    <SlTabPanel name="general">This is the general tab panel.</SlTabPanel>
-    <SlTabPanel name="custom">This is the custom tab panel.</SlTabPanel>
-    <SlTabPanel name="advanced">This is the advanced tab panel.</SlTabPanel>
-    <SlTabPanel name="disabled">This is a disabled tab panel.</SlTabPanel>
-  </SlTabGroup>
+    <AWCTabPanel name="general">This is the general tab panel.</AWCTabPanel>
+    <AWCTabPanel name="custom">This is the custom tab panel.</AWCTabPanel>
+    <AWCTabPanel name="advanced">This is the advanced tab panel.</AWCTabPanel>
+    <AWCTabPanel name="disabled">This is a disabled tab panel.</AWCTabPanel>
+  </AWCTabGroup>
 );
 ```
 

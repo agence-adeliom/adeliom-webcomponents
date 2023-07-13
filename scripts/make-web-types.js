@@ -29,7 +29,7 @@ const jsonataExprString = `{
         modules.declarations.{
           "name": tagName,
           "description": description,
-          "doc-url": $join(["https://shoelace.style/components/", $substringAfter(tagName, 'sl-')]),
+          "doc-url": $join(["https://awc.a-dev.cloud/components/", $substringAfter(tagName, 'awc-')]),
           "js": {
             "properties": [
               members.{

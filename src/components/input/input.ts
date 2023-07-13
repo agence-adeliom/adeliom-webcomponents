@@ -9,18 +9,18 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { live } from 'lit/directives/live.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './input.styles.js';
+import type { AWCFormControl } from '../../internal/awc-element.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
 
 /**
  * @summary Inputs collect data from the user.
- * @documentation https://shoelace.style/components/input
+ * @documentation https://awc.a-dev.cloud/components/input
  * @status stable
  * @since 2.0
  *
- * @dependency sl-icon
+ * @dependency awc-icon
  *
  * @slot label - The input's label. Alternatively, you can use the `label` attribute.
  * @slot prefix - Used to prepend a presentational icon or similar element to the input.
@@ -30,12 +30,12 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @slot hide-password-icon - An icon to use in lieu of the default hide password icon.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-change - Emitted when an alteration to the control's value is committed by the user.
- * @event sl-clear - Emitted when the clear button is activated.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event awc-blur - Emitted when the control loses focus.
+ * @event awc-change - Emitted when an alteration to the control's value is committed by the user.
+ * @event awc-clear - Emitted when the clear button is activated.
+ * @event awc-focus - Emitted when the control gains focus.
+ * @event awc-input - Emitted when the control receives input.
+ * @event awc-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.
@@ -48,12 +48,12 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @csspart password-toggle-button - The password toggle button.
  * @csspart suffix - The container that wraps the suffix.
  */
-@customElement('sl-input')
-export default class SlInput extends ShoelaceElement implements ShoelaceFormControl {
+@customElement('awc-input')
+export default class AWCInput extends AWCElement implements AWCFormControl {
   static styles: CSSResultGroup = styles;
 
   private readonly formControlController = new FormControlController(this, {
-    assumeInteractionOn: ['sl-blur', 'sl-input']
+    assumeInteractionOn: ['awc-blur', 'awc-input']
   });
   private readonly hasSlotController = new HasSlotController(this, 'help-text', 'label');
   private readonly localize = new LocalizeController(this);
@@ -240,19 +240,19 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('awc-blur');
   }
 
   private handleChange() {
     this.value = this.input.value;
-    this.emit('sl-change');
+    this.emit('awc-change');
   }
 
   private handleClearClick(event: MouseEvent) {
     this.value = '';
-    this.emit('sl-clear');
-    this.emit('sl-input');
-    this.emit('sl-change');
+    this.emit('awc-clear');
+    this.emit('awc-input');
+    this.emit('awc-change');
     this.input.focus();
 
     event.stopPropagation();
@@ -260,13 +260,13 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('awc-focus');
   }
 
   private handleInput() {
     this.value = this.input.value;
     this.formControlController.updateValidity();
-    this.emit('sl-input');
+    this.emit('awc-input');
   }
 
   private handleInvalid(event: Event) {
@@ -285,7 +285,7 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
         // When using an Input Method Editor (IME), pressing enter will cause the form to submit unexpectedly. One way
         // to check for this is to look at event.isComposing, which will be true when the IME is open.
         //
-        // See https://github.com/shoelace-style/shoelace/pull/988
+        // See https://github.com/awc-style/awc/pull/988
         //
         if (!event.defaultPrevented && !event.isComposing) {
           this.formControlController.submit();
@@ -498,7 +498,7 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
                       tabindex="-1"
                     >
                       <slot name="clear-icon">
-                        <sl-icon name="x-circle-fill" library="system"></sl-icon>
+                        <awc-icon name="x-circle-fill" library="system"></awc-icon>
                       </slot>
                     </button>
                   `
@@ -518,12 +518,12 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
                       ${this.passwordVisible
                         ? html`
                             <slot name="show-password-icon">
-                              <sl-icon name="eye-slash" library="system"></sl-icon>
+                              <awc-icon name="eye-slash" library="system"></awc-icon>
                             </slot>
                           `
                         : html`
                             <slot name="hide-password-icon">
-                              <sl-icon name="eye" library="system"></sl-icon>
+                              <awc-icon name="eye" library="system"></awc-icon>
                             </slot>
                           `}
                     </button>
@@ -552,6 +552,6 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-input': SlInput;
+    'awc-input': AWCInput;
   }
 }

@@ -8,22 +8,22 @@ layout: component
 Radio buttons are designed to be used with [radio groups](/components/radio-group). When a radio button has focus, the arrow keys can be used to change the selected option just like standard radio controls.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2">Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button value="1">Option 1</awc-radio-button>
+  <awc-radio-button value="2">Option 2</awc-radio-button>
+  <awc-radio-button value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlRadioButton, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton value="1">Option 1</SlRadioButton>
-    <SlRadioButton value="2">Option 2</SlRadioButton>
-    <SlRadioButton value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton value="2">Option 2</AWCRadioButton>
+    <AWCRadioButton value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 );
 ```
 
@@ -34,22 +34,22 @@ const App = () => (
 To set the initial value and checked state, use the `value` attribute on the containing radio group.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2">Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button value="1">Option 1</awc-radio-button>
+  <awc-radio-button value="2">Option 2</awc-radio-button>
+  <awc-radio-button value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlRadioButton, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton value="1">Option 1</SlRadioButton>
-    <SlRadioButton value="2">Option 2</SlRadioButton>
-    <SlRadioButton value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton value="2">Option 2</AWCRadioButton>
+    <AWCRadioButton value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 );
 ```
 
@@ -58,24 +58,24 @@ const App = () => (
 Use the `disabled` attribute to disable a radio button.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2" disabled>Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button value="1">Option 1</awc-radio-button>
+  <awc-radio-button value="2" disabled>Option 2</awc-radio-button>
+  <awc-radio-button value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlRadioButton, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton value="1">Option 1</SlRadioButton>
-    <SlRadioButton value="2" disabled>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton value="2" disabled>
       Option 2
-    </SlRadioButton>
-    <SlRadioButton value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+    </AWCRadioButton>
+    <AWCRadioButton value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 );
 ```
 
@@ -84,54 +84,54 @@ const App = () => (
 Use the `size` attribute to change a radio button's size.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button size="small" value="1">Option 1</sl-radio-button>
-  <sl-radio-button size="small" value="2">Option 2</sl-radio-button>
-  <sl-radio-button size="small" value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button size="small" value="1">Option 1</awc-radio-button>
+  <awc-radio-button size="small" value="2">Option 2</awc-radio-button>
+  <awc-radio-button size="small" value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 
 <br />
 
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button size="medium" value="1">Option 1</sl-radio-button>
-  <sl-radio-button size="medium" value="2">Option 2</sl-radio-button>
-  <sl-radio-button size="medium" value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button size="medium" value="1">Option 1</awc-radio-button>
+  <awc-radio-button size="medium" value="2">Option 2</awc-radio-button>
+  <awc-radio-button size="medium" value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 
 <br />
 
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button size="large" value="1">Option 1</sl-radio-button>
-  <sl-radio-button size="large" value="2">Option 2</sl-radio-button>
-  <sl-radio-button size="large" value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button size="large" value="1">Option 1</awc-radio-button>
+  <awc-radio-button size="large" value="2">Option 2</awc-radio-button>
+  <awc-radio-button size="large" value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlRadioButton, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton size="small" value="1">Option 1</SlRadioButton>
-    <SlRadioButton size="small" value="2">Option 2</SlRadioButton>
-    <SlRadioButton size="small" value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton size="small" value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton size="small" value="2">Option 2</AWCRadioButton>
+    <AWCRadioButton size="small" value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 
   <br />
 
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton size="medium" value="1">Option 1</SlRadioButton>
-    <SlRadioButton size="medium" value="2">Option 2</SlRadioButton>
-    <SlRadioButton size="medium" value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton size="medium" value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton size="medium" value="2">Option 2</AWCRadioButton>
+    <AWCRadioButton size="medium" value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 
   <br />
 
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton size="large" value="1">Option 1</SlRadioButton>
-    <SlRadioButton size="large" value="2">Option 2</SlRadioButton>
-    <SlRadioButton size="large" value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton size="large" value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton size="large" value="2">Option 2</AWCRadioButton>
+    <AWCRadioButton size="large" value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 );
 ```
 
@@ -140,54 +140,54 @@ const App = () => (
 Use the `pill` attribute to give radio buttons rounded edges.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button pill size="small" value="1">Option 1</sl-radio-button>
-  <sl-radio-button pill size="small" value="2">Option 2</sl-radio-button>
-  <sl-radio-button pill size="small" value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button pill size="small" value="1">Option 1</awc-radio-button>
+  <awc-radio-button pill size="small" value="2">Option 2</awc-radio-button>
+  <awc-radio-button pill size="small" value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 
 <br />
 
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button pill size="medium" value="1">Option 1</sl-radio-button>
-  <sl-radio-button pill size="medium" value="2">Option 2</sl-radio-button>
-  <sl-radio-button pill size="medium" value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button pill size="medium" value="1">Option 1</awc-radio-button>
+  <awc-radio-button pill size="medium" value="2">Option 2</awc-radio-button>
+  <awc-radio-button pill size="medium" value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 
 <br />
 
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button pill size="large" value="1">Option 1</sl-radio-button>
-  <sl-radio-button pill size="large" value="2">Option 2</sl-radio-button>
-  <sl-radio-button pill size="large" value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button pill size="large" value="1">Option 1</awc-radio-button>
+  <awc-radio-button pill size="large" value="2">Option 2</awc-radio-button>
+  <awc-radio-button pill size="large" value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlRadioButton, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton pill size="small" value="1">Option 1</SlRadioButton>
-    <SlRadioButton pill size="small" value="2">Option 2</SlRadioButton>
-    <SlRadioButton pill size="small" value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton pill size="small" value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton pill size="small" value="2">Option 2</AWCRadioButton>
+    <AWCRadioButton pill size="small" value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 
   <br />
 
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton pill size="medium" value="1">Option 1</SlRadioButton>
-    <SlRadioButton pill size="medium" value="2">Option 2</SlRadioButton>
-    <SlRadioButton pill size="medium" value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton pill size="medium" value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton pill size="medium" value="2">Option 2</AWCRadioButton>
+    <AWCRadioButton pill size="medium" value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 
   <br />
 
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton pill size="large" value="1">Option 1</SlRadioButton>
-    <SlRadioButton pill size="large" value="2">Option 2</SlRadioButton>
-    <SlRadioButton pill size="large" value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton pill size="large" value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton pill size="large" value="2">Option 2</AWCRadioButton>
+    <AWCRadioButton pill size="large" value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 );
 ```
 
@@ -196,46 +196,46 @@ const App = () => (
 Use the `prefix` and `suffix` slots to add icons.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">
-    <sl-icon slot="prefix" name="archive"></sl-icon>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio-button value="1">
+    <awc-icon slot="prefix" name="archive"></awc-icon>
     Option 1
-  </sl-radio-button>
+  </awc-radio-button>
 
-  <sl-radio-button value="2">
-    <sl-icon slot="suffix" name="bag"></sl-icon>
+  <awc-radio-button value="2">
+    <awc-icon slot="suffix" name="bag"></awc-icon>
     Option 2
-  </sl-radio-button>
+  </awc-radio-button>
 
-  <sl-radio-button value="3">
-    <sl-icon slot="prefix" name="gift"></sl-icon>
-    <sl-icon slot="suffix" name="cart"></sl-icon>
+  <awc-radio-button value="3">
+    <awc-icon slot="prefix" name="gift"></awc-icon>
+    <awc-icon slot="suffix" name="cart"></awc-icon>
     Option 3
-  </sl-radio-button>
-</sl-radio-group>
+  </awc-radio-button>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlIcon, SlRadioButton, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCIcon, AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton value="1">
-      <SlIcon slot="prefix" name="archive" />
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton value="1">
+      <AWCIcon slot="prefix" name="archive" />
       Option 1
-    </SlRadioButton>
+    </AWCRadioButton>
 
-    <SlRadioButton value="2">
-      <SlIcon slot="suffix" name="bag" />
+    <AWCRadioButton value="2">
+      <AWCIcon slot="suffix" name="bag" />
       Option 2
-    </SlRadioButton>
+    </AWCRadioButton>
 
-    <SlRadioButton value="3">
-      <SlIcon slot="prefix" name="gift" />
-      <SlIcon slot="suffix" name="cart" />
+    <AWCRadioButton value="3">
+      <AWCIcon slot="prefix" name="gift" />
+      <AWCIcon slot="suffix" name="cart" />
       Option 3
-    </SlRadioButton>
-  </SlRadioGroup>
+    </AWCRadioButton>
+  </AWCRadioGroup>
 );
 ```
 
@@ -244,53 +244,53 @@ const App = () => (
 You can omit button labels and use icons instead. Make sure to set a `label` attribute on each icon so screen readers will announce each option correctly.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="neutral">
-  <sl-radio-button value="angry">
-    <sl-icon name="emoji-angry" label="Angry"></sl-icon>
-  </sl-radio-button>
+<awc-radio-group label="Select an option" name="a" value="neutral">
+  <awc-radio-button value="angry">
+    <awc-icon name="emoji-angry" label="Angry"></awc-icon>
+  </awc-radio-button>
 
-  <sl-radio-button value="sad">
-    <sl-icon name="emoji-frown" label="Sad"></sl-icon>
-  </sl-radio-button>
+  <awc-radio-button value="sad">
+    <awc-icon name="emoji-frown" label="Sad"></awc-icon>
+  </awc-radio-button>
 
-  <sl-radio-button value="neutral">
-    <sl-icon name="emoji-neutral" label="Neutral"></sl-icon>
-  </sl-radio-button>
+  <awc-radio-button value="neutral">
+    <awc-icon name="emoji-neutral" label="Neutral"></awc-icon>
+  </awc-radio-button>
 
-  <sl-radio-button value="happy">
-    <sl-icon name="emoji-smile" label="Happy"></sl-icon>
-  </sl-radio-button>
+  <awc-radio-button value="happy">
+    <awc-icon name="emoji-smile" label="Happy"></awc-icon>
+  </awc-radio-button>
 
-  <sl-radio-button value="laughing">
-    <sl-icon name="emoji-laughing" label="Laughing"></sl-icon>
-  </sl-radio-button>
-</sl-radio-group>
+  <awc-radio-button value="laughing">
+    <awc-icon name="emoji-laughing" label="Laughing"></awc-icon>
+  </awc-radio-button>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlIcon, SlRadioButton, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCIcon, AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="neutral">
-    <SlRadioButton value="angry">
-      <SlIcon name="emoji-angry" label="Angry" />
-    </SlRadioButton>
+  <AWCRadioGroup label="Select an option" name="a" value="neutral">
+    <AWCRadioButton value="angry">
+      <AWCIcon name="emoji-angry" label="Angry" />
+    </AWCRadioButton>
 
-    <SlRadioButton value="sad">
-      <SlIcon name="emoji-frown" label="Sad" />
-    </SlRadioButton>
+    <AWCRadioButton value="sad">
+      <AWCIcon name="emoji-frown" label="Sad" />
+    </AWCRadioButton>
 
-    <SlRadioButton value="neutral">
-      <SlIcon name="emoji-neutral" label="Neutral" />
-    </SlRadioButton>
+    <AWCRadioButton value="neutral">
+      <AWCIcon name="emoji-neutral" label="Neutral" />
+    </AWCRadioButton>
 
-    <SlRadioButton value="happy">
-      <SlIcon name="emoji-smile" label="Happy" />
-    </SlRadioButton>
+    <AWCRadioButton value="happy">
+      <AWCIcon name="emoji-smile" label="Happy" />
+    </AWCRadioButton>
 
-    <SlRadioButton value="laughing">
-      <SlIcon name="emoji-laughing" label="Laughing" />
-    </SlRadioButton>
-  </SlRadioGroup>
+    <AWCRadioButton value="laughing">
+      <AWCIcon name="emoji-laughing" label="Laughing" />
+    </AWCRadioButton>
+  </AWCRadioGroup>
 );
 ```

@@ -3,31 +3,31 @@ import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, state } from 'lit/decorators.js';
 import { html } from 'lit';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './radio.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Radios allow the user to select a single option from a group.
- * @documentation https://shoelace.style/components/radio
+ * @documentation https://awc.a-dev.cloud/components/radio
  * @status stable
  * @since 2.0
  *
- * @dependency sl-icon
+ * @dependency awc-icon
  *
  * @slot - The radio's label.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-focus - Emitted when the control gains focus.
+ * @event awc-blur - Emitted when the control loses focus.
+ * @event awc-focus - Emitted when the control gains focus.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The circular container that wraps the radio's checked state.
  * @csspart control--checked - The radio control when the radio is checked.
- * @csspart checked-icon - The checked icon, an `<sl-icon>` element.
+ * @csspart checked-icon - The checked icon, an `<awc-icon>` element.
  * @csspart label - The container that wraps the radio's label.
  */
-@customElement('sl-radio')
-export default class SlRadio extends ShoelaceElement {
+@customElement('awc-radio')
+export default class AWCRadio extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   @state() checked = false;
@@ -59,7 +59,7 @@ export default class SlRadio extends ShoelaceElement {
 
   private handleBlur = () => {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('awc-blur');
   };
 
   private handleClick = () => {
@@ -70,7 +70,7 @@ export default class SlRadio extends ShoelaceElement {
 
   private handleFocus = () => {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('awc-focus');
   };
 
   private setInitialAttributes() {
@@ -106,7 +106,9 @@ export default class SlRadio extends ShoelaceElement {
       >
         <span part="${`control${this.checked ? ' control--checked' : ''}`}" class="radio__control">
           ${this.checked
-            ? html` <sl-icon part="checked-icon" class="radio__checked-icon" library="system" name="radio"></sl-icon> `
+            ? html`
+                <awc-icon part="checked-icon" class="radio__checked-icon" library="system" name="radio"></awc-icon>
+              `
             : ''}
         </span>
 
@@ -118,6 +120,6 @@ export default class SlRadio extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-radio': SlRadio;
+    'awc-radio': AWCRadio;
   }
 }

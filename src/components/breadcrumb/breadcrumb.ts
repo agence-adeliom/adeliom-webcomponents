@@ -2,26 +2,26 @@ import '../icon/icon.js';
 import { customElement, property, query } from 'lit/decorators.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './breadcrumb.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type SlBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';
+import type AWCBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';
 
 /**
  * @summary Breadcrumbs provide a group of links so users can easily navigate a website's hierarchy.
- * @documentation https://shoelace.style/components/breadcrumb
+ * @documentation https://awc.a-dev.cloud/components/breadcrumb
  * @status stable
  * @since 2.0
  *
  * @slot - One or more breadcrumb items to display.
- * @slot separator - The separator to use between breadcrumb items. Works best with `<sl-icon>`.
+ * @slot separator - The separator to use between breadcrumb items. Works best with `<awc-icon>`.
  *
- * @dependency sl-icon
+ * @dependency awc-icon
  *
  * @csspart base - The component's base wrapper.
  */
-@customElement('sl-breadcrumb')
-export default class SlBreadcrumb extends ShoelaceElement {
+@customElement('awc-breadcrumb')
+export default class AWCBreadcrumb extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private readonly localize = new LocalizeController(this);
@@ -51,8 +51,8 @@ export default class SlBreadcrumb extends ShoelaceElement {
 
   private handleSlotChange() {
     const items = [...this.defaultSlot.assignedElements({ flatten: true })].filter(
-      item => item.tagName.toLowerCase() === 'sl-breadcrumb-item'
-    ) as SlBreadcrumbItem[];
+      item => item.tagName.toLowerCase() === 'awc-breadcrumb-item'
+    ) as AWCBreadcrumbItem[];
 
     items.forEach((item, index) => {
       // Append separators to each item if they don't already have one
@@ -91,7 +91,7 @@ export default class SlBreadcrumb extends ShoelaceElement {
       </nav>
 
       <slot name="separator" hidden aria-hidden="true">
-        <sl-icon name=${this.localize.dir() === 'rtl' ? 'chevron-left' : 'chevron-right'} library="system"></sl-icon>
+        <awc-icon name=${this.localize.dir() === 'rtl' ? 'chevron-left' : 'chevron-right'} library="system"></awc-icon>
       </slot>
     `;
   }
@@ -99,6 +99,6 @@ export default class SlBreadcrumb extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-breadcrumb': SlBreadcrumb;
+    'awc-breadcrumb': AWCBreadcrumb;
   }
 }

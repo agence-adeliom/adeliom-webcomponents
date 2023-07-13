@@ -6,22 +6,22 @@ layout: component
 ---
 
 ```html:preview
-<sl-button-group label="Alignment">
-  <sl-button>Left</sl-button>
-  <sl-button>Center</sl-button>
-  <sl-button>Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button>Left</awc-button>
+  <awc-button>Center</awc-button>
+  <awc-button>Right</awc-button>
+</awc-button-group>
 ```
 
 ```jsx:react
-import { SlButton, SlButtonGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlButtonGroup label="Alignment">
-    <SlButton>Left</SlButton>
-    <SlButton>Center</SlButton>
-    <SlButton>Right</SlButton>
-  </SlButtonGroup>
+  <AWCButtonGroup label="Alignment">
+    <AWCButton>Left</AWCButton>
+    <AWCButton>Center</AWCButton>
+    <AWCButton>Right</AWCButton>
+  </AWCButtonGroup>
 );
 ```
 
@@ -32,57 +32,57 @@ const App = () => (
 All button sizes are supported, but avoid mixing sizes within the same button group.
 
 ```html:preview
-<sl-button-group label="Alignment">
-  <sl-button size="small">Left</sl-button>
-  <sl-button size="small">Center</sl-button>
-  <sl-button size="small">Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button size="small">Left</awc-button>
+  <awc-button size="small">Center</awc-button>
+  <awc-button size="small">Right</awc-button>
+</awc-button-group>
 
 <br /><br />
 
-<sl-button-group label="Alignment">
-  <sl-button size="medium">Left</sl-button>
-  <sl-button size="medium">Center</sl-button>
-  <sl-button size="medium">Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button size="medium">Left</awc-button>
+  <awc-button size="medium">Center</awc-button>
+  <awc-button size="medium">Right</awc-button>
+</awc-button-group>
 
 <br /><br />
 
-<sl-button-group label="Alignment">
-  <sl-button size="large">Left</sl-button>
-  <sl-button size="large">Center</sl-button>
-  <sl-button size="large">Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button size="large">Left</awc-button>
+  <awc-button size="large">Center</awc-button>
+  <awc-button size="large">Right</awc-button>
+</awc-button-group>
 ```
 
 ```jsx:react
-import { SlButton, SlButtonGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButtonGroup label="Alignment">
-      <SlButton size="small">Left</SlButton>
-      <SlButton size="small">Center</SlButton>
-      <SlButton size="small">Right</SlButton>
-    </SlButtonGroup>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton size="small">Left</AWCButton>
+      <AWCButton size="small">Center</AWCButton>
+      <AWCButton size="small">Right</AWCButton>
+    </AWCButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton size="medium">Left</SlButton>
-      <SlButton size="medium">Center</SlButton>
-      <SlButton size="medium">Right</SlButton>
-    </SlButtonGroup>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton size="medium">Left</AWCButton>
+      <AWCButton size="medium">Center</AWCButton>
+      <AWCButton size="medium">Right</AWCButton>
+    </AWCButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton size="large">Left</SlButton>
-      <SlButton size="large">Center</SlButton>
-      <SlButton size="large">Right</SlButton>
-    </SlButtonGroup>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton size="large">Left</AWCButton>
+      <AWCButton size="large">Center</AWCButton>
+      <AWCButton size="large">Right</AWCButton>
+    </AWCButtonGroup>
   </>
 );
 ```
@@ -92,91 +92,91 @@ const App = () => (
 Theme buttons are supported through the button's `variant` attribute.
 
 ```html:preview
-<sl-button-group label="Alignment">
-  <sl-button variant="primary">Left</sl-button>
-  <sl-button variant="primary">Center</sl-button>
-  <sl-button variant="primary">Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button variant="primary">Left</awc-button>
+  <awc-button variant="primary">Center</awc-button>
+  <awc-button variant="primary">Right</awc-button>
+</awc-button-group>
 
 <br /><br />
 
-<sl-button-group label="Alignment">
-  <sl-button variant="success">Left</sl-button>
-  <sl-button variant="success">Center</sl-button>
-  <sl-button variant="success">Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button variant="success">Left</awc-button>
+  <awc-button variant="success">Center</awc-button>
+  <awc-button variant="success">Right</awc-button>
+</awc-button-group>
 
 <br /><br />
 
-<sl-button-group label="Alignment">
-  <sl-button variant="neutral">Left</sl-button>
-  <sl-button variant="neutral">Center</sl-button>
-  <sl-button variant="neutral">Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button variant="neutral">Left</awc-button>
+  <awc-button variant="neutral">Center</awc-button>
+  <awc-button variant="neutral">Right</awc-button>
+</awc-button-group>
 
 <br /><br />
 
-<sl-button-group label="Alignment">
-  <sl-button variant="warning">Left</sl-button>
-  <sl-button variant="warning">Center</sl-button>
-  <sl-button variant="warning">Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button variant="warning">Left</awc-button>
+  <awc-button variant="warning">Center</awc-button>
+  <awc-button variant="warning">Right</awc-button>
+</awc-button-group>
 
 <br /><br />
 
-<sl-button-group label="Alignment">
-  <sl-button variant="danger">Left</sl-button>
-  <sl-button variant="danger">Center</sl-button>
-  <sl-button variant="danger">Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button variant="danger">Left</awc-button>
+  <awc-button variant="danger">Center</awc-button>
+  <awc-button variant="danger">Right</awc-button>
+</awc-button-group>
 ```
 
 ```jsx:react
-import { SlButton, SlButtonGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="primary">Left</SlButton>
-      <SlButton variant="primary">Center</SlButton>
-      <SlButton variant="primary">Right</SlButton>
-    </SlButtonGroup>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton variant="primary">Left</AWCButton>
+      <AWCButton variant="primary">Center</AWCButton>
+      <AWCButton variant="primary">Right</AWCButton>
+    </AWCButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="success">Left</SlButton>
-      <SlButton variant="success">Center</SlButton>
-      <SlButton variant="success">Right</SlButton>
-    </SlButtonGroup>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton variant="success">Left</AWCButton>
+      <AWCButton variant="success">Center</AWCButton>
+      <AWCButton variant="success">Right</AWCButton>
+    </AWCButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="neutral">Left</SlButton>
-      <SlButton variant="neutral">Center</SlButton>
-      <SlButton variant="neutral">Right</SlButton>
-    </SlButtonGroup>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton variant="neutral">Left</AWCButton>
+      <AWCButton variant="neutral">Center</AWCButton>
+      <AWCButton variant="neutral">Right</AWCButton>
+    </AWCButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="warning">Left</SlButton>
-      <SlButton variant="warning">Center</SlButton>
-      <SlButton variant="warning">Right</SlButton>
-    </SlButtonGroup>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton variant="warning">Left</AWCButton>
+      <AWCButton variant="warning">Center</AWCButton>
+      <AWCButton variant="warning">Right</AWCButton>
+    </AWCButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="danger">Left</SlButton>
-      <SlButton variant="danger">Center</SlButton>
-      <SlButton variant="danger">Right</SlButton>
-    </SlButtonGroup>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton variant="danger">Left</AWCButton>
+      <AWCButton variant="danger">Center</AWCButton>
+      <AWCButton variant="danger">Right</AWCButton>
+    </AWCButtonGroup>
   </>
 );
 ```
@@ -186,116 +186,116 @@ const App = () => (
 Pill buttons are supported through the button's `pill` attribute.
 
 ```html:preview
-<sl-button-group label="Alignment">
-  <sl-button size="small" pill>Left</sl-button>
-  <sl-button size="small" pill>Center</sl-button>
-  <sl-button size="small" pill>Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button size="small" pill>Left</awc-button>
+  <awc-button size="small" pill>Center</awc-button>
+  <awc-button size="small" pill>Right</awc-button>
+</awc-button-group>
 
 <br /><br />
 
-<sl-button-group label="Alignment">
-  <sl-button size="medium" pill>Left</sl-button>
-  <sl-button size="medium" pill>Center</sl-button>
-  <sl-button size="medium" pill>Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button size="medium" pill>Left</awc-button>
+  <awc-button size="medium" pill>Center</awc-button>
+  <awc-button size="medium" pill>Right</awc-button>
+</awc-button-group>
 
 <br /><br />
 
-<sl-button-group label="Alignment">
-  <sl-button size="large" pill>Left</sl-button>
-  <sl-button size="large" pill>Center</sl-button>
-  <sl-button size="large" pill>Right</sl-button>
-</sl-button-group>
+<awc-button-group label="Alignment">
+  <awc-button size="large" pill>Left</awc-button>
+  <awc-button size="large" pill>Center</awc-button>
+  <awc-button size="large" pill>Right</awc-button>
+</awc-button-group>
 ```
 
 ```jsx:react
-import { SlButton, SlButtonGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButtonGroup label="Alignment">
-      <SlButton size="small" pill>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton size="small" pill>
         Left
-      </SlButton>
-      <SlButton size="small" pill>
+      </AWCButton>
+      <AWCButton size="small" pill>
         Center
-      </SlButton>
-      <SlButton size="small" pill>
+      </AWCButton>
+      <AWCButton size="small" pill>
         Right
-      </SlButton>
-    </SlButtonGroup>
+      </AWCButton>
+    </AWCButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton size="medium" pill>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton size="medium" pill>
         Left
-      </SlButton>
-      <SlButton size="medium" pill>
+      </AWCButton>
+      <AWCButton size="medium" pill>
         Center
-      </SlButton>
-      <SlButton size="medium" pill>
+      </AWCButton>
+      <AWCButton size="medium" pill>
         Right
-      </SlButton>
-    </SlButtonGroup>
+      </AWCButton>
+    </AWCButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton size="large" pill>
+    <AWCButtonGroup label="Alignment">
+      <AWCButton size="large" pill>
         Left
-      </SlButton>
-      <SlButton size="large" pill>
+      </AWCButton>
+      <AWCButton size="large" pill>
         Center
-      </SlButton>
-      <SlButton size="large" pill>
+      </AWCButton>
+      <AWCButton size="large" pill>
         Right
-      </SlButton>
-    </SlButtonGroup>
+      </AWCButton>
+    </AWCButtonGroup>
   </>
 );
 ```
 
 ### Dropdowns in Button Groups
 
-Dropdowns can be placed inside button groups as long as the trigger is an `<sl-button>` element.
+Dropdowns can be placed inside button groups as long as the trigger is an `<awc-button>` element.
 
 ```html:preview
-<sl-button-group label="Example Button Group">
-  <sl-button>Button</sl-button>
-  <sl-button>Button</sl-button>
-  <sl-dropdown>
-    <sl-button slot="trigger" caret>Dropdown</sl-button>
-    <sl-menu>
-      <sl-menu-item>Item 1</sl-menu-item>
-      <sl-menu-item>Item 2</sl-menu-item>
-      <sl-menu-item>Item 3</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
-</sl-button-group>
+<awc-button-group label="Example Button Group">
+  <awc-button>Button</awc-button>
+  <awc-button>Button</awc-button>
+  <awc-dropdown>
+    <awc-button slot="trigger" caret>Dropdown</awc-button>
+    <awc-menu>
+      <awc-menu-item>Item 1</awc-menu-item>
+      <awc-menu-item>Item 2</awc-menu-item>
+      <awc-menu-item>Item 3</awc-menu-item>
+    </awc-menu>
+  </awc-dropdown>
+</awc-button-group>
 ```
 
 ```jsx:react
-import { SlButton, SlButtonGroup, SlDropdown, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCButtonGroup, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlButtonGroup label="Example Button Group">
-    <SlButton>Button</SlButton>
-    <SlButton>Button</SlButton>
-    <SlDropdown>
-      <SlButton slot="trigger" caret>
+  <AWCButtonGroup label="Example Button Group">
+    <AWCButton>Button</AWCButton>
+    <AWCButton>Button</AWCButton>
+    <AWCDropdown>
+      <AWCButton slot="trigger" caret>
         Dropdown
-      </SlButton>
-      <SlMenu>
-        <SlMenuItem>Item 1</SlMenuItem>
-        <SlMenuItem>Item 2</SlMenuItem>
-        <SlMenuItem>Item 3</SlMenuItem>
-      </SlMenu>
-    </SlDropdown>
-  </SlButtonGroup>
+      </AWCButton>
+      <AWCMenu>
+        <AWCMenuItem>Item 1</AWCMenuItem>
+        <AWCMenuItem>Item 2</AWCMenuItem>
+        <AWCMenuItem>Item 3</AWCMenuItem>
+      </AWCMenu>
+    </AWCDropdown>
+  </AWCButtonGroup>
 );
 ```
 
@@ -304,36 +304,36 @@ const App = () => (
 Create a split button using a button and a dropdown. Use a [visually hidden](/components/visually-hidden) label to ensure the dropdown is accessible to users with assistive devices.
 
 ```html:preview
-<sl-button-group label="Example Button Group">
-  <sl-button variant="primary">Save</sl-button>
-  <sl-dropdown placement="bottom-end">
-    <sl-button slot="trigger" variant="primary" caret>
-      <sl-visually-hidden>More options</sl-visually-hidden>
-    </sl-button>
-    <sl-menu>
-      <sl-menu-item>Save</sl-menu-item>
-      <sl-menu-item>Save as&hellip;</sl-menu-item>
-      <sl-menu-item>Save all</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
-</sl-button-group>
+<awc-button-group label="Example Button Group">
+  <awc-button variant="primary">Save</awc-button>
+  <awc-dropdown placement="bottom-end">
+    <awc-button slot="trigger" variant="primary" caret>
+      <awc-visually-hidden>More options</awc-visually-hidden>
+    </awc-button>
+    <awc-menu>
+      <awc-menu-item>Save</awc-menu-item>
+      <awc-menu-item>Save as&hellip;</awc-menu-item>
+      <awc-menu-item>Save all</awc-menu-item>
+    </awc-menu>
+  </awc-dropdown>
+</awc-button-group>
 ```
 
 ```jsx:react
-import { SlButton, SlButtonGroup, SlDropdown, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCButtonGroup, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlButtonGroup label="Example Button Group">
-    <SlButton variant="primary">Save</SlButton>
-    <SlDropdown placement="bottom-end">
-      <SlButton slot="trigger" variant="primary" caret></SlButton>
-      <SlMenu>
-        <SlMenuItem>Save</SlMenuItem>
-        <SlMenuItem>Save as&hellip;</SlMenuItem>
-        <SlMenuItem>Save all</SlMenuItem>
-      </SlMenu>
-    </SlDropdown>
-  </SlButtonGroup>
+  <AWCButtonGroup label="Example Button Group">
+    <AWCButton variant="primary">Save</AWCButton>
+    <AWCDropdown placement="bottom-end">
+      <AWCButton slot="trigger" variant="primary" caret></AWCButton>
+      <AWCMenu>
+        <AWCMenuItem>Save</AWCMenuItem>
+        <AWCMenuItem>Save as&hellip;</AWCMenuItem>
+        <AWCMenuItem>Save all</AWCMenuItem>
+      </AWCMenu>
+    </AWCDropdown>
+  </AWCButtonGroup>
 );
 ```
 
@@ -342,39 +342,39 @@ const App = () => (
 Buttons can be wrapped in tooltips to provide more detail when the user interacts with them.
 
 ```html:preview
-<sl-button-group label="Alignment">
-  <sl-tooltip content="I'm on the left">
-    <sl-button>Left</sl-button>
-  </sl-tooltip>
+<awc-button-group label="Alignment">
+  <awc-tooltip content="I'm on the left">
+    <awc-button>Left</awc-button>
+  </awc-tooltip>
 
-  <sl-tooltip content="I'm in the middle">
-    <sl-button>Center</sl-button>
-  </sl-tooltip>
+  <awc-tooltip content="I'm in the middle">
+    <awc-button>Center</awc-button>
+  </awc-tooltip>
 
-  <sl-tooltip content="I'm on the right">
-    <sl-button>Right</sl-button>
-  </sl-tooltip>
-</sl-button-group>
+  <awc-tooltip content="I'm on the right">
+    <awc-button>Right</awc-button>
+  </awc-tooltip>
+</awc-button-group>
 ```
 
 ```jsx:react
-import { SlButton, SlButtonGroup, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCButtonGroup, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButtonGroup label="Alignment">
-      <SlTooltip content="I'm on the left">
-        <SlButton>Left</SlButton>
-      </SlTooltip>
+    <AWCButtonGroup label="Alignment">
+      <AWCTooltip content="I'm on the left">
+        <AWCButton>Left</AWCButton>
+      </AWCTooltip>
 
-      <SlTooltip content="I'm in the middle">
-        <SlButton>Center</SlButton>
-      </SlTooltip>
+      <AWCTooltip content="I'm in the middle">
+        <AWCButton>Center</AWCButton>
+      </AWCTooltip>
 
-      <SlTooltip content="I'm on the right">
-        <SlButton>Right</SlButton>
-      </SlTooltip>
-    </SlButtonGroup>
+      <AWCTooltip content="I'm on the right">
+        <AWCButton>Right</AWCButton>
+      </AWCTooltip>
+    </AWCButtonGroup>
   </>
 );
 ```
@@ -385,107 +385,107 @@ Create interactive toolbars with button groups.
 
 ```html:preview
 <div class="button-group-toolbar">
-  <sl-button-group label="History">
-    <sl-tooltip content="Undo">
-      <sl-button><sl-icon name="arrow-counterclockwise" label="Undo"></sl-icon></sl-button>
-    </sl-tooltip>
-    <sl-tooltip content="Redo">
-      <sl-button><sl-icon name="arrow-clockwise" label="Redo"></sl-icon></sl-button>
-    </sl-tooltip>
-  </sl-button-group>
+  <awc-button-group label="History">
+    <awc-tooltip content="Undo">
+      <awc-button><awc-icon name="arrow-counterclockwise" label="Undo"></awc-icon></awc-button>
+    </awc-tooltip>
+    <awc-tooltip content="Redo">
+      <awc-button><awc-icon name="arrow-clockwise" label="Redo"></awc-icon></awc-button>
+    </awc-tooltip>
+  </awc-button-group>
 
-  <sl-button-group label="Formatting">
-    <sl-tooltip content="Bold">
-      <sl-button><sl-icon name="type-bold" label="Bold"></sl-icon></sl-button>
-    </sl-tooltip>
-    <sl-tooltip content="Italic">
-      <sl-button><sl-icon name="type-italic" label="Italic"></sl-icon></sl-button>
-    </sl-tooltip>
-    <sl-tooltip content="Underline">
-      <sl-button><sl-icon name="type-underline" label="Underline"></sl-icon></sl-button>
-    </sl-tooltip>
-  </sl-button-group>
+  <awc-button-group label="Formatting">
+    <awc-tooltip content="Bold">
+      <awc-button><awc-icon name="type-bold" label="Bold"></awc-icon></awc-button>
+    </awc-tooltip>
+    <awc-tooltip content="Italic">
+      <awc-button><awc-icon name="type-italic" label="Italic"></awc-icon></awc-button>
+    </awc-tooltip>
+    <awc-tooltip content="Underline">
+      <awc-button><awc-icon name="type-underline" label="Underline"></awc-icon></awc-button>
+    </awc-tooltip>
+  </awc-button-group>
 
-  <sl-button-group label="Alignment">
-    <sl-tooltip content="Align Left">
-      <sl-button><sl-icon name="justify-left" label="Align Left"></sl-icon></sl-button>
-    </sl-tooltip>
-    <sl-tooltip content="Align Center">
-      <sl-button><sl-icon name="justify" label="Align Center"></sl-icon></sl-button>
-    </sl-tooltip>
-    <sl-tooltip content="Align Right">
-      <sl-button><sl-icon name="justify-right" label="Align Right"></sl-icon></sl-button>
-    </sl-tooltip>
-  </sl-button-group>
+  <awc-button-group label="Alignment">
+    <awc-tooltip content="Align Left">
+      <awc-button><awc-icon name="justify-left" label="Align Left"></awc-icon></awc-button>
+    </awc-tooltip>
+    <awc-tooltip content="Align Center">
+      <awc-button><awc-icon name="justify" label="Align Center"></awc-icon></awc-button>
+    </awc-tooltip>
+    <awc-tooltip content="Align Right">
+      <awc-button><awc-icon name="justify-right" label="Align Right"></awc-icon></awc-button>
+    </awc-tooltip>
+  </awc-button-group>
 </div>
 
 <style>
-  .button-group-toolbar sl-button-group:not(:last-of-type) {
-    margin-right: var(--sl-spacing-x-small);
+  .button-group-toolbar awc-button-group:not(:last-of-type) {
+    margin-right: var(--awc-spacing-x-small);
   }
 </style>
 ```
 
 ```jsx:react
-import { SlButton, SlButtonGroup, SlIcon, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCButtonGroup, AWCIcon, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const css = `
-  .button-group-toolbar sl-button-group:not(:last-of-type) {
-    margin-right: var(--sl-spacing-x-small);
+  .button-group-toolbar awc-button-group:not(:last-of-type) {
+    margin-right: var(--awc-spacing-x-small);
   }
 `;
 
 const App = () => (
   <>
     <div className="button-group-toolbar">
-      <SlButtonGroup label="History">
-        <SlTooltip content="Undo">
-          <SlButton>
-            <SlIcon name="arrow-counterclockwise"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Redo">
-          <SlButton>
-            <SlIcon name="arrow-clockwise"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-      </SlButtonGroup>
+      <AWCButtonGroup label="History">
+        <AWCTooltip content="Undo">
+          <AWCButton>
+            <AWCIcon name="arrow-counterclockwise"></AWCIcon>
+          </AWCButton>
+        </AWCTooltip>
+        <AWCTooltip content="Redo">
+          <AWCButton>
+            <AWCIcon name="arrow-clockwise"></AWCIcon>
+          </AWCButton>
+        </AWCTooltip>
+      </AWCButtonGroup>
 
-      <SlButtonGroup label="Formatting">
-        <SlTooltip content="Bold">
-          <SlButton>
-            <SlIcon name="type-bold"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Italic">
-          <SlButton>
-            <SlIcon name="type-italic"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Underline">
-          <SlButton>
-            <SlIcon name="type-underline"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-      </SlButtonGroup>
+      <AWCButtonGroup label="Formatting">
+        <AWCTooltip content="Bold">
+          <AWCButton>
+            <AWCIcon name="type-bold"></AWCIcon>
+          </AWCButton>
+        </AWCTooltip>
+        <AWCTooltip content="Italic">
+          <AWCButton>
+            <AWCIcon name="type-italic"></AWCIcon>
+          </AWCButton>
+        </AWCTooltip>
+        <AWCTooltip content="Underline">
+          <AWCButton>
+            <AWCIcon name="type-underline"></AWCIcon>
+          </AWCButton>
+        </AWCTooltip>
+      </AWCButtonGroup>
 
-      <SlButtonGroup label="Alignment">
-        <SlTooltip content="Align Left">
-          <SlButton>
-            <SlIcon name="justify-left"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Align Center">
-          <SlButton>
-            <SlIcon name="justify"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Align Right">
-          <SlButton>
-            <SlIcon name="justify-right"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-      </SlButtonGroup>
+      <AWCButtonGroup label="Alignment">
+        <AWCTooltip content="Align Left">
+          <AWCButton>
+            <AWCIcon name="justify-left"></AWCIcon>
+          </AWCButton>
+        </AWCTooltip>
+        <AWCTooltip content="Align Center">
+          <AWCButton>
+            <AWCIcon name="justify"></AWCIcon>
+          </AWCButton>
+        </AWCTooltip>
+        <AWCTooltip content="Align Right">
+          <AWCButton>
+            <AWCIcon name="justify-right"></AWCIcon>
+          </AWCButton>
+        </AWCTooltip>
+      </AWCButtonGroup>
     </div>
 
     <style>{css}</style>

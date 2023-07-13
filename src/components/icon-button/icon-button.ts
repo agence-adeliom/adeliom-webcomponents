@@ -3,25 +3,25 @@ import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { html, literal } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './icon-button.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Icons buttons are simple, icon-only buttons that can be used for actions and in toolbars.
- * @documentation https://shoelace.style/components/icon-button
+ * @documentation https://awc.a-dev.cloud/components/icon-button
  * @status stable
  * @since 2.0
  *
- * @dependency sl-icon
+ * @dependency awc-icon
  *
- * @event sl-blur - Emitted when the icon button loses focus.
- * @event sl-focus - Emitted when the icon button gains focus.
+ * @event awc-blur - Emitted when the icon button loses focus.
+ * @event awc-focus - Emitted when the icon button gains focus.
  *
  * @csspart base - The component's base wrapper.
  */
-@customElement('sl-icon-button')
-export default class SlIconButton extends ShoelaceElement {
+@customElement('awc-icon-button')
+export default class AWCIconButton extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   @query('.icon-button') button: HTMLButtonElement | HTMLLinkElement;
@@ -60,12 +60,12 @@ export default class SlIconButton extends ShoelaceElement {
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('awc-blur');
   }
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('awc-focus');
   }
 
   private handleClick(event: MouseEvent) {
@@ -117,13 +117,13 @@ export default class SlIconButton extends ShoelaceElement {
         @focus=${this.handleFocus}
         @click=${this.handleClick}
       >
-        <sl-icon
+        <awc-icon
           class="icon-button__icon"
           name=${ifDefined(this.name)}
           library=${ifDefined(this.library)}
           src=${ifDefined(this.src)}
           aria-hidden="true"
-        ></sl-icon>
+        ></awc-icon>
       </${tag}>
     `;
   }
@@ -131,6 +131,6 @@ export default class SlIconButton extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-icon-button': SlIconButton;
+    'awc-icon-button': AWCIconButton;
   }
 }

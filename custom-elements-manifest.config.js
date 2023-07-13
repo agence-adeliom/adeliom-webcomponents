@@ -26,12 +26,12 @@ function replace(string, terms) {
 }
 
 export default {
-  globs: ['src/components/**/*.ts'],
-  exclude: ['**/*.styles.ts', '**/*.test.ts'],
+  globs: ['src/components/**/*.ts', 'src/layouts/**/*.ts'],
+  exclude: ['**/*.styles.ts', '**/*.test.ts', '**/*.utils.ts'],
   plugins: [
     // Append package data
     {
-      name: 'shoelace-package-data',
+      name: 'awc-package-data',
       packageLinkPhase({ customElementsManifest }) {
         customElementsManifest.package = { name, description, version, author, homepage, license };
       }
@@ -39,7 +39,7 @@ export default {
 
     // Parse custom jsDoc tags
     {
-      name: 'shoelace-custom-tags',
+      name: 'awc-custom-tags',
       analyzePhase({ ts, node, moduleDoc }) {
         switch (node.kind) {
           case ts.SyntaxKind.ClassDeclaration: {
@@ -106,7 +106,7 @@ export default {
       }
     },
     {
-      name: 'shoelace-react-event-names',
+      name: 'awc-react-event-names',
       analyzePhase({ ts, node, moduleDoc }) {
         switch (node.kind) {
           case ts.SyntaxKind.ClassDeclaration: {
@@ -115,6 +115,7 @@ export default {
 
             if (classDoc?.events) {
               classDoc.events.forEach(event => {
+                console.log(className)
                 event.reactName = `on${pascalCase(event.name)}`;
               });
             }
@@ -123,7 +124,7 @@ export default {
       }
     },
     {
-      name: 'shoelace-translate-module-paths',
+      name: 'awc-translate-module-paths',
       packageLinkPhase({ customElementsManifest }) {
         customElementsManifest?.modules?.forEach(mod => {
           //

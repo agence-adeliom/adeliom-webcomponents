@@ -1,19 +1,19 @@
 import { customElement } from 'lit/decorators.js';
 import { html } from 'lit';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './visually-hidden.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary The visually hidden utility makes content accessible to assistive devices without displaying it on the screen.
- * @documentation https://shoelace.style/components/visually-hidden
+ * @documentation https://awc.a-dev.cloud/components/visually-hidden
  * @status stable
  * @since 2.0
  *
  * @slot - The content to be visually hidden.
  */
-@customElement('sl-visually-hidden')
-export default class SlVisuallyHidden extends ShoelaceElement {
+@customElement('awc-visually-hidden')
+export default class AWCVisuallyHidden extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   render() {
@@ -23,6 +23,6 @@ export default class SlVisuallyHidden extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-visually-hidden': SlVisuallyHidden;
+    'awc-visually-hidden': AWCVisuallyHidden;
   }
 }

@@ -1,7 +1,7 @@
 let count = 1;
 
 function escapeHtml(str) {
-  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  return String(str)?.replace(/&/g, '&amp;')?.replace(/</g, '&lt;')?.replace(/>/g, '&gt;')?.replace(/"/g, '&quot;');
 }
 
 /**
@@ -68,7 +68,7 @@ module.exports = function (doc, options) {
         <div class="code-preview__preview">
           ${code.textContent}
           <div class="code-preview__resizer">
-            <sl-icon name="grip-vertical"></sl-icon>
+            <awc-icon name="grip-vertical"></awc-icon>
           </div>
         </div>
 

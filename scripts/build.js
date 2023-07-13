@@ -23,6 +23,40 @@ let buildResults;
 
 const bundleDirectories = [cdndir, outdir];
 
+async function buildTailwind(watch = false) {
+  return new Promise(async (resolve, reject) => {
+    const args = ['tailwindcss', '-i', 'docs/assets/styles/tailwind/tailwind.css', '-o', 'docs/assets/styles/tailwind/build.css'];
+    const output = [];
+
+    if (watch) {
+      args.push('--watch');
+    }
+
+    const child = spawn('npx', args, {
+      stdio: 'pipe',
+      cwd: '.',
+      shell: true // for Windows
+    });
+
+    child.stdout.on('data', data => {
+      output.push(data.toString());
+    });
+
+    if (watch) {
+      // The process doesn't terminate in watch mode so, before resolving, we listen for a known signal in stdout that
+      // tells us when the first build completes.
+      child.stdout.on('data', data => {
+        //console.log(data)
+        //resolve({ child, output });
+      });
+    } else {
+      child.on('close', () => {
+        resolve({ child, output });
+      });
+    }
+  });
+}
+
 //
 // Runs 11ty and builds the docs. The returned promise resolves after the initial publish has completed. The child
 // process and an array of strings containing any output are included in the resolved promise.
@@ -79,9 +113,9 @@ async function buildTheSource() {
       // NOTE: Entry points must be mapped in package.json > exports, otherwise users won't be able to import them!
       //
       // The whole shebang
-      './src/shoelace.ts',
+      './src/awc.ts',
       // The auto-loader
-      './src/shoelace-autoloader.ts',
+      './src/awc-autoloader.ts',
       // Components
       ...(await globby('./src/components/**/!(*.(style|test)).ts')),
       // Translations
@@ -223,6 +257,10 @@ if (serve) {
   // Spin up Eleventy and Wait for the search index to appear before proceeding. The search index is generated during
   // eleventy.after, so it appears after the docs are fully published. This is kinda hacky, but here we are.
   // Kick off the Eleventy dev server with --watch and --incremental
+  /*await nextTask('Building Tailwind', async () => {
+    result = await buildTailwind(true);
+  });*/
+
   await nextTask('Building docs', async () => {
     result = await buildTheDocs(true);
   });
@@ -233,7 +271,7 @@ if (serve) {
     startPath: '/',
     port,
     logLevel: 'silent',
-    logPrefix: '[shoelace]',
+    logPrefix: '[AWC]',
     logFileChanges: true,
     notify: false,
     single: false,
@@ -304,6 +342,10 @@ if (serve) {
 // Build for production
 if (!serve) {
   let result;
+
+  await nextTask('Building Tailwind', async () => {
+    result = await buildTailwind();
+  });
 
   await nextTask('Building the docs', async () => {
     result = await buildTheDocs();

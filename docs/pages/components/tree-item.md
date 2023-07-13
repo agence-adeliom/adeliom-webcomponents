@@ -6,33 +6,33 @@ layout: component
 ---
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item>
+<awc-tree>
+  <awc-tree-item>
     Item 1
-    <sl-tree-item>Item A</sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+    <awc-tree-item>Item A</awc-tree-item>
+    <awc-tree-item>Item B</awc-tree-item>
+    <awc-tree-item>Item C</awc-tree-item>
+  </awc-tree-item>
+  <awc-tree-item>Item 2</awc-tree-item>
+  <awc-tree-item>Item 3</awc-tree-item>
+</awc-tree>
 ```
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTree>
-    <SlTreeItem>
+  <AWCTree>
+    <AWCTreeItem>
       Item 1
-      <SlTreeItem>Item A</SlTreeItem>
-      <SlTreeItem>Item B</SlTreeItem>
-      <SlTreeItem>Item C</SlTreeItem>
-    </SlTreeItem>
-    <SlTreeItem>Item 2</SlTreeItem>
-    <SlTreeItem>Item 3</SlTreeItem>
-  </SlTree>
+      <AWCTreeItem>Item A</AWCTreeItem>
+      <AWCTreeItem>Item B</AWCTreeItem>
+      <AWCTreeItem>Item C</AWCTreeItem>
+    </AWCTreeItem>
+    <AWCTreeItem>Item 2</AWCTreeItem>
+    <AWCTreeItem>Item 3</AWCTreeItem>
+  </AWCTree>
 );
 ```
 
@@ -43,43 +43,43 @@ const App = () => (
 A tree item can contain other tree items. This allows the node to be expanded or collapsed by the user.
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item>
+<awc-tree>
+  <awc-tree-item>
     Item 1
-    <sl-tree-item>
+    <awc-tree-item>
       Item A
-      <sl-tree-item>Item Z</sl-tree-item>
-      <sl-tree-item>Item Y</sl-tree-item>
-      <sl-tree-item>Item X</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+      <awc-tree-item>Item Z</awc-tree-item>
+      <awc-tree-item>Item Y</awc-tree-item>
+      <awc-tree-item>Item X</awc-tree-item>
+    </awc-tree-item>
+    <awc-tree-item>Item B</awc-tree-item>
+    <awc-tree-item>Item C</awc-tree-item>
+  </awc-tree-item>
+  <awc-tree-item>Item 2</awc-tree-item>
+  <awc-tree-item>Item 3</awc-tree-item>
+</awc-tree>
 ```
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTree>
-    <SlTreeItem>
+  <AWCTree>
+    <AWCTreeItem>
       Item 1
-      <SlTreeItem>
+      <AWCTreeItem>
         Item A
-        <SlTreeItem>Item Z</SlTreeItem>
-        <SlTreeItem>Item Y</SlTreeItem>
-        <SlTreeItem>Item X</SlTreeItem>
-      </SlTreeItem>
-      <SlTreeItem>Item B</SlTreeItem>
-      <SlTreeItem>Item C</SlTreeItem>
-    </SlTreeItem>
-    <SlTreeItem>Item 2</SlTreeItem>
-    <SlTreeItem>Item 3</SlTreeItem>
-  </SlTree>
+        <AWCTreeItem>Item Z</AWCTreeItem>
+        <AWCTreeItem>Item Y</AWCTreeItem>
+        <AWCTreeItem>Item X</AWCTreeItem>
+      </AWCTreeItem>
+      <AWCTreeItem>Item B</AWCTreeItem>
+      <AWCTreeItem>Item C</AWCTreeItem>
+    </AWCTreeItem>
+    <AWCTreeItem>Item 2</AWCTreeItem>
+    <AWCTreeItem>Item 3</AWCTreeItem>
+  </AWCTree>
 );
 ```
 
@@ -88,33 +88,33 @@ const App = () => (
 Use the `selected` attribute to select a tree item initially.
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item selected>
+<awc-tree>
+  <awc-tree-item selected>
     Item 1
-    <sl-tree-item>Item A</sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+    <awc-tree-item>Item A</awc-tree-item>
+    <awc-tree-item>Item B</awc-tree-item>
+    <awc-tree-item>Item C</awc-tree-item>
+  </awc-tree-item>
+  <awc-tree-item>Item 2</awc-tree-item>
+  <awc-tree-item>Item 3</awc-tree-item>
+</awc-tree>
 ```
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTree>
-    <SlTreeItem selected>
+  <AWCTree>
+    <AWCTreeItem selected>
       Item 1
-      <SlTreeItem>Item A</SlTreeItem>
-      <SlTreeItem>Item B</SlTreeItem>
-      <SlTreeItem>Item C</SlTreeItem>
-    </SlTreeItem>
-    <SlTreeItem>Item 2</SlTreeItem>
-    <SlTreeItem>Item 3</SlTreeItem>
-  </SlTree>
+      <AWCTreeItem>Item A</AWCTreeItem>
+      <AWCTreeItem>Item B</AWCTreeItem>
+      <AWCTreeItem>Item C</AWCTreeItem>
+    </AWCTreeItem>
+    <AWCTreeItem>Item 2</AWCTreeItem>
+    <AWCTreeItem>Item 3</AWCTreeItem>
+  </AWCTree>
 );
 ```
 
@@ -123,42 +123,42 @@ const App = () => (
 Use the `expanded` attribute to expand a tree item initially.
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item expanded>
+<awc-tree>
+  <awc-tree-item expanded>
     Item 1
-    <sl-tree-item expanded>
+    <awc-tree-item expanded>
       Item A
-      <sl-tree-item>Item Z</sl-tree-item>
-      <sl-tree-item>Item Y</sl-tree-item>
-      <sl-tree-item>Item X</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+      <awc-tree-item>Item Z</awc-tree-item>
+      <awc-tree-item>Item Y</awc-tree-item>
+      <awc-tree-item>Item X</awc-tree-item>
+    </awc-tree-item>
+    <awc-tree-item>Item B</awc-tree-item>
+    <awc-tree-item>Item C</awc-tree-item>
+  </awc-tree-item>
+  <awc-tree-item>Item 2</awc-tree-item>
+  <awc-tree-item>Item 3</awc-tree-item>
+</awc-tree>
 ```
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTree>
-    <SlTreeItem expanded>
+  <AWCTree>
+    <AWCTreeItem expanded>
       Item 1
-      <SlTreeItem expanded>
+      <AWCTreeItem expanded>
         Item A
-        <SlTreeItem>Item Z</SlTreeItem>
-        <SlTreeItem>Item Y</SlTreeItem>
-        <SlTreeItem>Item X</SlTreeItem>
-      </SlTreeItem>
-      <SlTreeItem>Item B</SlTreeItem>
-      <SlTreeItem>Item C</SlTreeItem>
-    </SlTreeItem>
-    <SlTreeItem>Item 2</SlTreeItem>
-    <SlTreeItem>Item 3</SlTreeItem>
-  </SlTree>
+        <AWCTreeItem>Item Z</AWCTreeItem>
+        <AWCTreeItem>Item Y</AWCTreeItem>
+        <AWCTreeItem>Item X</AWCTreeItem>
+      </AWCTreeItem>
+      <AWCTreeItem>Item B</AWCTreeItem>
+      <AWCTreeItem>Item C</AWCTreeItem>
+    </AWCTreeItem>
+    <AWCTreeItem>Item 2</AWCTreeItem>
+    <AWCTreeItem>Item 3</AWCTreeItem>
+  </AWCTree>
 );
 ```

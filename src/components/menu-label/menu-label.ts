@@ -1,12 +1,12 @@
 import { customElement } from 'lit/decorators.js';
 import { html } from 'lit';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './menu-label.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Menu labels are used to describe a group of menu items.
- * @documentation https://shoelace.style/components/menu-label
+ * @documentation https://awc.a-dev.cloud/components/menu-label
  * @status stable
  * @since 2.0
  *
@@ -14,8 +14,8 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-@customElement('sl-menu-label')
-export default class SlMenuLabel extends ShoelaceElement {
+@customElement('awc-menu-label')
+export default class AWCMenuLabel extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   render() {
@@ -25,6 +25,6 @@ export default class SlMenuLabel extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-menu-label': SlMenuLabel;
+    'awc-menu-label': AWCMenuLabel;
   }
 }

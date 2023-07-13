@@ -6,67 +6,67 @@ layout: component
 ---
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item>
+<awc-tree>
+  <awc-tree-item>
     Deciduous
-    <sl-tree-item>Birch</sl-tree-item>
-    <sl-tree-item>
+    <awc-tree-item>Birch</awc-tree-item>
+    <awc-tree-item>
       Maple
-      <sl-tree-item>Field maple</sl-tree-item>
-      <sl-tree-item>Red maple</sl-tree-item>
-      <sl-tree-item>Sugar maple</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Oak</sl-tree-item>
-  </sl-tree-item>
+      <awc-tree-item>Field maple</awc-tree-item>
+      <awc-tree-item>Red maple</awc-tree-item>
+      <awc-tree-item>Sugar maple</awc-tree-item>
+    </awc-tree-item>
+    <awc-tree-item>Oak</awc-tree-item>
+  </awc-tree-item>
 
-  <sl-tree-item>
+  <awc-tree-item>
     Coniferous
-    <sl-tree-item>Cedar</sl-tree-item>
-    <sl-tree-item>Pine</sl-tree-item>
-    <sl-tree-item>Spruce</sl-tree-item>
-  </sl-tree-item>
+    <awc-tree-item>Cedar</awc-tree-item>
+    <awc-tree-item>Pine</awc-tree-item>
+    <awc-tree-item>Spruce</awc-tree-item>
+  </awc-tree-item>
 
-  <sl-tree-item>
+  <awc-tree-item>
     Non-trees
-    <sl-tree-item>Bamboo</sl-tree-item>
-    <sl-tree-item>Cactus</sl-tree-item>
-    <sl-tree-item>Fern</sl-tree-item>
-  </sl-tree-item>
-</sl-tree>
+    <awc-tree-item>Bamboo</awc-tree-item>
+    <awc-tree-item>Cactus</awc-tree-item>
+    <awc-tree-item>Fern</awc-tree-item>
+  </awc-tree-item>
+</awc-tree>
 ```
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTree>
-    <SlTreeItem>
+  <AWCTree>
+    <AWCTreeItem>
       Deciduous
-      <SlTreeItem>Birch</SlTreeItem>
-      <SlTreeItem>
+      <AWCTreeItem>Birch</AWCTreeItem>
+      <AWCTreeItem>
         Maple
-        <SlTreeItem>Field maple</SlTreeItem>
-        <SlTreeItem>Red maple</SlTreeItem>
-        <SlTreeItem>Sugar maple</SlTreeItem>
-      </SlTreeItem>
-      <SlTreeItem>Oak</SlTreeItem>
-    </SlTreeItem>
+        <AWCTreeItem>Field maple</AWCTreeItem>
+        <AWCTreeItem>Red maple</AWCTreeItem>
+        <AWCTreeItem>Sugar maple</AWCTreeItem>
+      </AWCTreeItem>
+      <AWCTreeItem>Oak</AWCTreeItem>
+    </AWCTreeItem>
 
-    <SlTreeItem>
+    <AWCTreeItem>
       Coniferous
-      <SlTreeItem>Cedar</SlTreeItem>
-      <SlTreeItem>Pine</SlTreeItem>
-      <SlTreeItem>Spruce</SlTreeItem>
-    </SlTreeItem>
+      <AWCTreeItem>Cedar</AWCTreeItem>
+      <AWCTreeItem>Pine</AWCTreeItem>
+      <AWCTreeItem>Spruce</AWCTreeItem>
+    </AWCTreeItem>
 
-    <SlTreeItem>
+    <AWCTreeItem>
       Non-trees
-      <SlTreeItem>Bamboo</SlTreeItem>
-      <SlTreeItem>Cactus</SlTreeItem>
-      <SlTreeItem>Fern</SlTreeItem>
-    </SlTreeItem>
-  </SlTree>
+      <AWCTreeItem>Bamboo</AWCTreeItem>
+      <AWCTreeItem>Cactus</AWCTreeItem>
+      <AWCTreeItem>Fern</AWCTreeItem>
+    </AWCTreeItem>
+  </AWCTree>
 );
 ```
 
@@ -81,36 +81,36 @@ The `selection` attribute lets you change the selection behavior of the tree.
 - Use `leaf` to only allow leaf nodes to be selected.
 
 ```html:preview
-<sl-select id="selection-mode" value="single" label="Selection">
-  <sl-option value="single">Single</sl-option>
-  <sl-option value="multiple">Multiple</sl-option>
-  <sl-option value="leaf">Leaf</sl-option>
-</sl-select>
+<awc-select id="selection-mode" value="single" label="Selection">
+  <awc-option value="single">Single</awc-option>
+  <awc-option value="multiple">Multiple</awc-option>
+  <awc-option value="leaf">Leaf</awc-option>
+</awc-select>
 
 <br />
 
-<sl-tree class="tree-selectable">
-  <sl-tree-item>
+<awc-tree class="tree-selectable">
+  <awc-tree-item>
     Item 1
-    <sl-tree-item>
+    <awc-tree-item>
       Item A
-      <sl-tree-item>Item Z</sl-tree-item>
-      <sl-tree-item>Item Y</sl-tree-item>
-      <sl-tree-item>Item X</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+      <awc-tree-item>Item Z</awc-tree-item>
+      <awc-tree-item>Item Y</awc-tree-item>
+      <awc-tree-item>Item X</awc-tree-item>
+    </awc-tree-item>
+    <awc-tree-item>Item B</awc-tree-item>
+    <awc-tree-item>Item C</awc-tree-item>
+  </awc-tree-item>
+  <awc-tree-item>Item 2</awc-tree-item>
+  <awc-tree-item>Item 3</awc-tree-item>
+</awc-tree>
 
 <script>
   const selectionMode = document.querySelector('#selection-mode');
   const tree = document.querySelector('.tree-selectable');
 
-  selectionMode.addEventListener('sl-change', () => {
-    tree.querySelectorAll('sl-tree-item').forEach(item => (item.selected = false));
+  selectionMode.addEventListener('awc-change', () => {
+    tree.querySelectorAll('awc-tree-item').forEach(item => (item.selected = false));
     tree.selection = selectionMode.value;
   });
 </script>
@@ -118,36 +118,36 @@ The `selection` attribute lets you change the selection behavior of the tree.
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [selection, setSelection] = useState('single');
 
   return (
     <>
-      <SlSelect label="Selection" value={selection} onSlChange={event => setSelection(event.target.value)}>
-        <SlMenuItem value="single">single</SlMenuItem>
-        <SlMenuItem value="multiple">multiple</SlMenuItem>
-        <SlMenuItem value="leaf">leaf</SlMenuItem>
-      </SlSelect>
+      <AWCSelect label="Selection" value={selection} onAwcChange={event => setSelection(event.target.value)}>
+        <AWCMenuItem value="single">single</AWCMenuItem>
+        <AWCMenuItem value="multiple">multiple</AWCMenuItem>
+        <AWCMenuItem value="leaf">leaf</AWCMenuItem>
+      </AWCSelect>
 
       <br />
 
-      <SlTree selection={selection}>
-        <SlTreeItem>
+      <AWCTree selection={selection}>
+        <AWCTreeItem>
           Item 1
-          <SlTreeItem>
+          <AWCTreeItem>
             Item A
-            <SlTreeItem>Item Z</SlTreeItem>
-            <SlTreeItem>Item Y</SlTreeItem>
-            <SlTreeItem>Item X</SlTreeItem>
-          </SlTreeItem>
-          <SlTreeItem>Item B</SlTreeItem>
-          <SlTreeItem>Item C</SlTreeItem>
-        </SlTreeItem>
-        <SlTreeItem>Item 2</SlTreeItem>
-        <SlTreeItem>Item 3</SlTreeItem>
-      </SlTree>
+            <AWCTreeItem>Item Z</AWCTreeItem>
+            <AWCTreeItem>Item Y</AWCTreeItem>
+            <AWCTreeItem>Item X</AWCTreeItem>
+          </AWCTreeItem>
+          <AWCTreeItem>Item B</AWCTreeItem>
+          <AWCTreeItem>Item C</AWCTreeItem>
+        </AWCTreeItem>
+        <AWCTreeItem>Item 2</AWCTreeItem>
+        <AWCTreeItem>Item 3</AWCTreeItem>
+      </AWCTree>
     </>
   );
 };
@@ -158,33 +158,33 @@ const App = () => {
 Indent guides can be drawn by setting `--indent-guide-width`. You can also change the color, offset, and style, using `--indent-guide-color`, `--indent-guide-style`, and `--indent-guide-offset`, respectively.
 
 ```html:preview
-<sl-tree class="tree-with-lines">
-  <sl-tree-item expanded>
+<awc-tree class="tree-with-lines">
+  <awc-tree-item expanded>
     Deciduous
-    <sl-tree-item>Birch</sl-tree-item>
-    <sl-tree-item expanded>
+    <awc-tree-item>Birch</awc-tree-item>
+    <awc-tree-item expanded>
       Maple
-      <sl-tree-item>Field maple</sl-tree-item>
-      <sl-tree-item>Red maple</sl-tree-item>
-      <sl-tree-item>Sugar maple</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Oak</sl-tree-item>
-  </sl-tree-item>
+      <awc-tree-item>Field maple</awc-tree-item>
+      <awc-tree-item>Red maple</awc-tree-item>
+      <awc-tree-item>Sugar maple</awc-tree-item>
+    </awc-tree-item>
+    <awc-tree-item>Oak</awc-tree-item>
+  </awc-tree-item>
 
-  <sl-tree-item>
+  <awc-tree-item>
     Coniferous
-    <sl-tree-item>Cedar</sl-tree-item>
-    <sl-tree-item>Pine</sl-tree-item>
-    <sl-tree-item>Spruce</sl-tree-item>
-  </sl-tree-item>
+    <awc-tree-item>Cedar</awc-tree-item>
+    <awc-tree-item>Pine</awc-tree-item>
+    <awc-tree-item>Spruce</awc-tree-item>
+  </awc-tree-item>
 
-  <sl-tree-item>
+  <awc-tree-item>
     Non-trees
-    <sl-tree-item>Bamboo</sl-tree-item>
-    <sl-tree-item>Cactus</sl-tree-item>
-    <sl-tree-item>Fern</sl-tree-item>
-  </sl-tree-item>
-</sl-tree>
+    <awc-tree-item>Bamboo</awc-tree-item>
+    <awc-tree-item>Cactus</awc-tree-item>
+    <awc-tree-item>Fern</awc-tree-item>
+  </awc-tree-item>
+</awc-tree>
 
 <style>
   .tree-with-lines {
@@ -197,36 +197,36 @@ Indent guides can be drawn by setting `--indent-guide-width`. You can also chang
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTree class="tree-with-lines" style={{ '--indent-guide-width': '1px' }}>
-    <SlTreeItem expanded>
+  <AWCTree class="tree-with-lines" style={{ '--indent-guide-width': '1px' }}>
+    <AWCTreeItem expanded>
       Deciduous
-      <SlTreeItem>Birch</SlTreeItem>
-      <SlTreeItem expanded>
+      <AWCTreeItem>Birch</AWCTreeItem>
+      <AWCTreeItem expanded>
         Maple
-        <SlTreeItem>Field maple</SlTreeItem>
-        <SlTreeItem>Red maple</SlTreeItem>
-        <SlTreeItem>Sugar maple</SlTreeItem>
-      </SlTreeItem>
-      <SlTreeItem>Oak</SlTreeItem>
-    </SlTreeItem>
+        <AWCTreeItem>Field maple</AWCTreeItem>
+        <AWCTreeItem>Red maple</AWCTreeItem>
+        <AWCTreeItem>Sugar maple</AWCTreeItem>
+      </AWCTreeItem>
+      <AWCTreeItem>Oak</AWCTreeItem>
+    </AWCTreeItem>
 
-    <SlTreeItem>
+    <AWCTreeItem>
       Coniferous
-      <SlTreeItem>Cedar</SlTreeItem>
-      <SlTreeItem>Pine</SlTreeItem>
-      <SlTreeItem>Spruce</SlTreeItem>
-    </SlTreeItem>
+      <AWCTreeItem>Cedar</AWCTreeItem>
+      <AWCTreeItem>Pine</AWCTreeItem>
+      <AWCTreeItem>Spruce</AWCTreeItem>
+    </AWCTreeItem>
 
-    <SlTreeItem>
+    <AWCTreeItem>
       Non-trees
-      <SlTreeItem>Bamboo</SlTreeItem>
-      <SlTreeItem>Cactus</SlTreeItem>
-      <SlTreeItem>Fern</SlTreeItem>
-    </SlTreeItem>
-  </SlTree>
+      <AWCTreeItem>Bamboo</AWCTreeItem>
+      <AWCTreeItem>Cactus</AWCTreeItem>
+      <AWCTreeItem>Fern</AWCTreeItem>
+    </AWCTreeItem>
+  </AWCTree>
 );
 ```
 
@@ -234,25 +234,25 @@ const App = () => (
 
 ### Lazy Loading
 
-Use the `lazy` attribute on a tree item to indicate that the content is not yet present and will be loaded later. When the user tries to expand the node, the `loading` state is set to `true` and the `sl-lazy-load` event will be emitted to allow you to load data asynchronously. The item will remain in a loading state until its content is changed.
+Use the `lazy` attribute on a tree item to indicate that the content is not yet present and will be loaded later. When the user tries to expand the node, the `loading` state is set to `true` and the `awc-lazy-load` event will be emitted to allow you to load data asynchronously. The item will remain in a loading state until its content is changed.
 
 If you want to disable this behavior after the first load, simply remove the `lazy` attribute and, on the next expand, the existing content will be shown instead.
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item lazy>Available Trees</sl-tree-item>
-</sl-tree>
+<awc-tree>
+  <awc-tree-item lazy>Available Trees</awc-tree-item>
+</awc-tree>
 
 <script type="module">
-  const lazyItem = document.querySelector('sl-tree-item[lazy]');
+  const lazyItem = document.querySelector('awc-tree-item[lazy]');
 
-  lazyItem.addEventListener('sl-lazy-load', () => {
+  lazyItem.addEventListener('awc-lazy-load', () => {
     // Simulate asynchronous loading
     setTimeout(() => {
       const subItems = ['Birch', 'Cedar', 'Maple', 'Pine'];
 
       for (const item of subItems) {
-        const treeItem = document.createElement('sl-tree-item');
+        const treeItem = document.createElement('awc-tree-item');
         treeItem.innerText = item;
         lazyItem.append(treeItem);
       }
@@ -265,7 +265,7 @@ If you want to disable this behavior after the first load, simply remove the `la
 ```
 
 ```jsx:react
-import { SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [childItems, setChildItems] = useState([]);
@@ -282,14 +282,14 @@ const App = () => {
   };
 
   return (
-    <SlTree>
-      <SlTreeItem lazy={lazy} onSlLazyLoad={handleLazyLoad}>
+    <AWCTree>
+      <AWCTreeItem lazy={lazy} onAwcLazyLoad={handleLazyLoad}>
         Available Trees
         {childItems.map(item => (
-          <SlTreeItem>{item}</SlTreeItem>
+          <AWCTreeItem>{item}</AWCTreeItem>
         ))}
-      </SlTreeItem>
-    </SlTree>
+      </AWCTreeItem>
+    </AWCTree>
   );
 };
 ```
@@ -299,39 +299,39 @@ const App = () => {
 Use the `expand-icon` and `collapse-icon` slots to change the expand and collapse icons, respectively. To disable the animation, override the `rotate` property on the `expand-button` part as shown below.
 
 ```html:preview
-<sl-tree class="custom-icons">
-  <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
-  <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+<awc-tree class="custom-icons">
+  <awc-icon name="plus-square" slot="expand-icon"></awc-icon>
+  <awc-icon name="dash-square" slot="collapse-icon"></awc-icon>
 
-  <sl-tree-item>
+  <awc-tree-item>
     Deciduous
-    <sl-tree-item>Birch</sl-tree-item>
-    <sl-tree-item>
+    <awc-tree-item>Birch</awc-tree-item>
+    <awc-tree-item>
       Maple
-      <sl-tree-item>Field maple</sl-tree-item>
-      <sl-tree-item>Red maple</sl-tree-item>
-      <sl-tree-item>Sugar maple</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Oak</sl-tree-item>
-  </sl-tree-item>
+      <awc-tree-item>Field maple</awc-tree-item>
+      <awc-tree-item>Red maple</awc-tree-item>
+      <awc-tree-item>Sugar maple</awc-tree-item>
+    </awc-tree-item>
+    <awc-tree-item>Oak</awc-tree-item>
+  </awc-tree-item>
 
-  <sl-tree-item>
+  <awc-tree-item>
     Coniferous
-    <sl-tree-item>Cedar</sl-tree-item>
-    <sl-tree-item>Pine</sl-tree-item>
-    <sl-tree-item>Spruce</sl-tree-item>
-  </sl-tree-item>
+    <awc-tree-item>Cedar</awc-tree-item>
+    <awc-tree-item>Pine</awc-tree-item>
+    <awc-tree-item>Spruce</awc-tree-item>
+  </awc-tree-item>
 
-  <sl-tree-item>
+  <awc-tree-item>
     Non-trees
-    <sl-tree-item>Bamboo</sl-tree-item>
-    <sl-tree-item>Cactus</sl-tree-item>
-    <sl-tree-item>Fern</sl-tree-item>
-  </sl-tree-item>
-</sl-tree>
+    <awc-tree-item>Bamboo</awc-tree-item>
+    <awc-tree-item>Cactus</awc-tree-item>
+    <awc-tree-item>Fern</awc-tree-item>
+  </awc-tree-item>
+</awc-tree>
 
 <style>
-  .custom-icons sl-tree-item::part(expand-button) {
+  .custom-icons awc-tree-item::part(expand-button) {
     /* Disable the expand/collapse animation */
     rotate: none;
   }
@@ -340,39 +340,39 @@ Use the `expand-icon` and `collapse-icon` slots to change the expand and collaps
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTree>
-    <SlIcon name="plus-square" slot="expand-icon"></SlIcon>
-    <SlIcon name="dash-square" slot="collapse-icon"></SlIcon>
+  <AWCTree>
+    <AWCIcon name="plus-square" slot="expand-icon"></AWCIcon>
+    <AWCIcon name="dash-square" slot="collapse-icon"></AWCIcon>
 
-    <SlTreeItem>
+    <AWCTreeItem>
       Deciduous
-      <SlTreeItem>Birch</SlTreeItem>
-      <SlTreeItem>
+      <AWCTreeItem>Birch</AWCTreeItem>
+      <AWCTreeItem>
         Maple
-        <SlTreeItem>Field maple</SlTreeItem>
-        <SlTreeItem>Red maple</SlTreeItem>
-        <SlTreeItem>Sugar maple</SlTreeItem>
-      </SlTreeItem>
-      <SlTreeItem>Oak</SlTreeItem>
-    </SlTreeItem>
+        <AWCTreeItem>Field maple</AWCTreeItem>
+        <AWCTreeItem>Red maple</AWCTreeItem>
+        <AWCTreeItem>Sugar maple</AWCTreeItem>
+      </AWCTreeItem>
+      <AWCTreeItem>Oak</AWCTreeItem>
+    </AWCTreeItem>
 
-    <SlTreeItem>
+    <AWCTreeItem>
       Coniferous
-      <SlTreeItem>Cedar</SlTreeItem>
-      <SlTreeItem>Pine</SlTreeItem>
-      <SlTreeItem>Spruce</SlTreeItem>
-    </SlTreeItem>
+      <AWCTreeItem>Cedar</AWCTreeItem>
+      <AWCTreeItem>Pine</AWCTreeItem>
+      <AWCTreeItem>Spruce</AWCTreeItem>
+    </AWCTreeItem>
 
-    <SlTreeItem>
+    <AWCTreeItem>
       Non-trees
-      <SlTreeItem>Bamboo</SlTreeItem>
-      <SlTreeItem>Cactus</SlTreeItem>
-      <SlTreeItem>Fern</SlTreeItem>
-    </SlTreeItem>
-  </SlTree>
+      <AWCTreeItem>Bamboo</AWCTreeItem>
+      <AWCTreeItem>Cactus</AWCTreeItem>
+      <AWCTreeItem>Fern</AWCTreeItem>
+    </AWCTreeItem>
+  </AWCTree>
 );
 ```
 
@@ -381,89 +381,89 @@ const App = () => (
 Decorative icons can be used before labels to provide hints for each node.
 
 ```html:preview
-<sl-tree class="tree-with-icons">
-  <sl-tree-item expanded>
-    <sl-icon name="folder"></sl-icon>
+<awc-tree class="tree-with-icons">
+  <awc-tree-item expanded>
+    <awc-icon name="folder"></awc-icon>
     Documents
 
-    <sl-tree-item>
-      <sl-icon name="folder"> </sl-icon>
+    <awc-tree-item>
+      <awc-icon name="folder"> </awc-icon>
       Photos
-      <sl-tree-item>
-        <sl-icon name="image"></sl-icon>
+      <awc-tree-item>
+        <awc-icon name="image"></awc-icon>
         birds.jpg
-      </sl-tree-item>
-      <sl-tree-item>
-        <sl-icon name="image"></sl-icon>
+      </awc-tree-item>
+      <awc-tree-item>
+        <awc-icon name="image"></awc-icon>
         kitten.jpg
-      </sl-tree-item>
-      <sl-tree-item>
-        <sl-icon name="image"></sl-icon>
+      </awc-tree-item>
+      <awc-tree-item>
+        <awc-icon name="image"></awc-icon>
         puppy.jpg
-      </sl-tree-item>
-    </sl-tree-item>
+      </awc-tree-item>
+    </awc-tree-item>
 
-    <sl-tree-item>
-      <sl-icon name="folder"></sl-icon>
+    <awc-tree-item>
+      <awc-icon name="folder"></awc-icon>
       Writing
-      <sl-tree-item>
-        <sl-icon name="file"></sl-icon>
+      <awc-tree-item>
+        <awc-icon name="file"></awc-icon>
         draft.txt
-      </sl-tree-item>
-      <sl-tree-item>
-        <sl-icon name="file-pdf"></sl-icon>
+      </awc-tree-item>
+      <awc-tree-item>
+        <awc-icon name="file-pdf"></awc-icon>
         final.pdf
-      </sl-tree-item>
-      <sl-tree-item>
-        <sl-icon name="file-bar-graph"></sl-icon>
+      </awc-tree-item>
+      <awc-tree-item>
+        <awc-icon name="file-bar-graph"></awc-icon>
         sales.xls
-      </sl-tree-item>
-    </sl-tree-item>
-  </sl-tree-item>
-</sl-tree>
+      </awc-tree-item>
+    </awc-tree-item>
+  </awc-tree-item>
+</awc-tree>
 ```
 
 ```jsx:react
-import { SlIcon, SlTree, SlTreeItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCIcon, AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   return (
-    <SlTree class="tree-with-icons">
-      <SlTreeItem expanded>
-        <SlIcon name="folder" />
+    <AWCTree class="tree-with-icons">
+      <AWCTreeItem expanded>
+        <AWCIcon name="folder" />
         Root
-        <SlTreeItem>
-          <SlIcon name="folder" />
-          Folder 1<SlTreeItem>
-            <SlIcon name="files" />
+        <AWCTreeItem>
+          <AWCIcon name="folder" />
+          Folder 1<AWCTreeItem>
+            <AWCIcon name="files" />
             File 1 - 1
-          </SlTreeItem>
-          <SlTreeItem disabled>
-            <SlIcon name="files" />
+          </AWCTreeItem>
+          <AWCTreeItem disabled>
+            <AWCIcon name="files" />
             File 1 - 2
-          </SlTreeItem>
-          <SlTreeItem>
-            <SlIcon name="files" />
+          </AWCTreeItem>
+          <AWCTreeItem>
+            <AWCIcon name="files" />
             File 1 - 3
-          </SlTreeItem>
-        </SlTreeItem>
-        <SlTreeItem>
-          <SlIcon name="files" />
-          Folder 2<SlTreeItem>
-            <SlIcon name="files" />
+          </AWCTreeItem>
+        </AWCTreeItem>
+        <AWCTreeItem>
+          <AWCIcon name="files" />
+          Folder 2<AWCTreeItem>
+            <AWCIcon name="files" />
             File 2 - 1
-          </SlTreeItem>
-          <SlTreeItem>
-            <SlIcon name="files" />
+          </AWCTreeItem>
+          <AWCTreeItem>
+            <AWCIcon name="files" />
             File 2 - 2
-          </SlTreeItem>
-        </SlTreeItem>
-        <SlTreeItem>
-          <SlIcon name="files" />
+          </AWCTreeItem>
+        </AWCTreeItem>
+        <AWCTreeItem>
+          <AWCIcon name="files" />
           File 1
-        </SlTreeItem>
-      </SlTreeItem>
-    </SlTree>
+        </AWCTreeItem>
+      </AWCTreeItem>
+    </AWCTree>
   );
 };
 ```

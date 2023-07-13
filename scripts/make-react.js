@@ -20,8 +20,8 @@ const metadata = JSON.parse(fs.readFileSync(path.join(outdir, 'custom-elements.j
 const components = getAllComponents(metadata);
 const index = [];
 
-components.map(component => {
-  const tagWithoutPrefix = component.tagName.replace(/^sl-/, '');
+components.map(async component => {
+  const tagWithoutPrefix = component.tagName.replace(/^awc-/, '');
   const componentDir = path.join(reactDir, tagWithoutPrefix);
   const componentFile = path.join(componentDir, 'index.ts');
   const importPath = component.path;
@@ -29,7 +29,7 @@ components.map(component => {
 
   fs.mkdirSync(componentDir, { recursive: true });
 
-  const source = prettier.format(
+  const source = await prettier.format(
     `
       import * as React from 'react';
       import { createComponent } from '@lit-labs/react';

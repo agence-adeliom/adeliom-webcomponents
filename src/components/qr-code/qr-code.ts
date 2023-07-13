@@ -2,21 +2,21 @@ import { customElement, property, query } from 'lit/decorators.js';
 import { html } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 import { watch } from '../../internal/watch.js';
+import AWCElement from '../../internal/awc-element.js';
 import QrCreator from 'qr-creator';
-import ShoelaceElement from '../../internal/shoelace-element.js';
 import styles from './qr-code.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Generates a [QR code](https://www.qrcode.com/) and renders it using the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
- * @documentation https://shoelace.style/components/qr-code
+ * @documentation https://awc.a-dev.cloud/components/qr-code
  * @status stable
  * @since 2.0
  *
  * @csspart base - The component's base wrapper.
  */
-@customElement('sl-qr-code')
-export default class SlQrCode extends ShoelaceElement {
+@customElement('awc-qr-code')
+export default class AWCQrCode extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   @query('canvas') canvas: HTMLElement;
@@ -84,6 +84,6 @@ export default class SlQrCode extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-qr-code': SlQrCode;
+    'awc-qr-code': AWCQrCode;
   }
 }

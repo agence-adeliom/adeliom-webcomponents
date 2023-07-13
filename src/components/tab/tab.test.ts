@@ -1,22 +1,22 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
-import type SlIconButton from '../icon-button/icon-button';
-import type SlTab from './tab';
-import type SlTabGroup from '../tab-group/tab-group';
+import type AWCIconButton from '../icon-button/icon-button';
+import type AWCTab from './tab';
+import type AWCTabGroup from '../tab-group/tab-group';
 
-describe('<sl-tab>', () => {
+describe('<awc-tab>', () => {
   it('passes accessibility test', async () => {
-    const el = await fixture<SlTab>(html`
-      <sl-tab-group>
-        <sl-tab slot="nav">Test</sl-tab>
-      </sl-tab-group>
+    const el = await fixture<AWCTab>(html`
+      <awc-tab-group>
+        <awc-tab slot="nav">Test</awc-tab>
+      </awc-tab-group>
     `);
     await expect(el).to.be.accessible();
   });
 
   it('should render default tab', async () => {
-    const el = await fixture<SlTab>(html` <sl-tab>Test</sl-tab> `);
+    const el = await fixture<AWCTab>(html` <awc-tab>Test</awc-tab> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -31,7 +31,7 @@ describe('<sl-tab>', () => {
   });
 
   it('should disable tab by attribute', async () => {
-    const el = await fixture<SlTab>(html` <sl-tab disabled>Test</sl-tab> `);
+    const el = await fixture<AWCTab>(html` <awc-tab disabled>Test</awc-tab> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -42,7 +42,7 @@ describe('<sl-tab>', () => {
   });
 
   it('should set active tab by attribute', async () => {
-    const el = await fixture<SlTab>(html` <sl-tab active>Test</sl-tab> `);
+    const el = await fixture<AWCTab>(html` <awc-tab active>Test</awc-tab> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -53,7 +53,7 @@ describe('<sl-tab>', () => {
   });
 
   it('should set closable by attribute', async () => {
-    const el = await fixture<SlTab>(html` <sl-tab closable>Test</sl-tab> `);
+    const el = await fixture<AWCTab>(html` <awc-tab closable>Test</awc-tab> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
     const closeButton = el.shadowRoot!.querySelector('[part~="close-button"]');
@@ -65,7 +65,7 @@ describe('<sl-tab>', () => {
 
   describe('focus', () => {
     it('should focus inner div', async () => {
-      const el = await fixture<SlTab>(html` <sl-tab>Test</sl-tab> `);
+      const el = await fixture<AWCTab>(html` <awc-tab>Test</awc-tab> `);
 
       const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -78,7 +78,7 @@ describe('<sl-tab>', () => {
 
   describe('blur', () => {
     it('should blur inner div', async () => {
-      const el = await fixture<SlTab>(html` <sl-tab>Test</sl-tab> `);
+      const el = await fixture<AWCTab>(html` <awc-tab>Test</awc-tab> `);
 
       el.focus();
       await el.updateComplete;
@@ -92,24 +92,24 @@ describe('<sl-tab>', () => {
 
   describe('closable', () => {
     it('should emit close event when the close button is clicked', async () => {
-      const tabGroup = await fixture<SlTabGroup>(html`
-        <sl-tab-group>
-          <sl-tab slot="nav" panel="general" closable>General</sl-tab>
-          <sl-tab slot="nav" panel="custom" closable>Custom</sl-tab>
-          <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-          <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-        </sl-tab-group>
+      const tabGroup = await fixture<AWCTabGroup>(html`
+        <awc-tab-group>
+          <awc-tab slot="nav" panel="general" closable>General</awc-tab>
+          <awc-tab slot="nav" panel="custom" closable>Custom</awc-tab>
+          <awc-tab-panel name="general">This is the general tab panel.</awc-tab-panel>
+          <awc-tab-panel name="custom">This is the custom tab panel.</awc-tab-panel>
+        </awc-tab-group>
       `);
       const closeButton = tabGroup
-        .querySelectorAll('sl-tab')[0]!
-        .shadowRoot!.querySelector<SlIconButton>('[part~="close-button"]')!;
+        .querySelectorAll('awc-tab')[0]!
+        .shadowRoot!.querySelector<AWCIconButton>('[part~="close-button"]')!;
 
       const handleClose = sinon.spy();
       const handleTabShow = sinon.spy();
 
-      tabGroup.addEventListener('sl-close', handleClose, { once: true });
-      // The sl-tab-show event shouldn't be emitted when clicking the close button
-      tabGroup.addEventListener('sl-tab-show', handleTabShow);
+      tabGroup.addEventListener('awc-close', handleClose, { once: true });
+      // The awc-tab-show event shouldn't be emitted when clicking the close button
+      tabGroup.addEventListener('awc-tab-show', handleTabShow);
 
       closeButton.click();
       await closeButton?.updateComplete;

@@ -1,30 +1,30 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/awc.js';
 import { aTimeout, expect, fixture, html, triggerBlurFor, triggerFocusFor } from '@open-wc/testing';
 import { clickOnElement } from '../../internal/test.js';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type SlTree from './tree.js';
-import type SlTreeItem from '../tree-item/tree-item.js';
+import type AWCTree from './tree.js';
+import type AWCTreeItem from '../tree-item/tree-item.js';
 
-describe('<sl-tree>', () => {
-  let el: SlTree;
+describe('<awc-tree>', () => {
+  let el: AWCTree;
 
   beforeEach(async () => {
     el = await fixture(html`
-      <sl-tree>
-        <sl-tree-item>Node 1</sl-tree-item>
-        <sl-tree-item>Node 2</sl-tree-item>
-        <sl-tree-item id="expandable">
+      <awc-tree>
+        <awc-tree-item>Node 1</awc-tree-item>
+        <awc-tree-item>Node 2</awc-tree-item>
+        <awc-tree-item id="expandable">
           Parent Node
-          <sl-tree-item>Child Node 1</sl-tree-item>
-          <sl-tree-item>
+          <awc-tree-item>Child Node 1</awc-tree-item>
+          <awc-tree-item>
             Child Node 2
-            <sl-tree-item>Child Node 2 - 1</sl-tree-item>
-            <sl-tree-item>Child Node 2 - 2</sl-tree-item>
-          </sl-tree-item>
-        </sl-tree-item>
-        <sl-tree-item>Node 3</sl-tree-item>
-      </sl-tree>
+            <awc-tree-item>Child Node 2 - 1</awc-tree-item>
+            <awc-tree-item>Child Node 2 - 2</awc-tree-item>
+          </awc-tree-item>
+        </awc-tree-item>
+        <awc-tree-item>Node 3</awc-tree-item>
+      </awc-tree>
     `);
   });
 
@@ -40,8 +40,8 @@ describe('<sl-tree>', () => {
 
   it('should not focus collapsed nodes', async () => {
     // Arrange
-    const parentNode = el.children[2] as SlTreeItem;
-    const childNode = parentNode.children[1] as SlTreeItem;
+    const parentNode = el.children[2] as AWCTreeItem;
+    const childNode = parentNode.children[1] as AWCTreeItem;
     childNode.expanded = true;
     parentNode.expanded = false;
 
@@ -59,13 +59,13 @@ describe('<sl-tree>', () => {
   describe('when a custom expanded/collapsed icon is provided', () => {
     beforeEach(async () => {
       el = await fixture(html`
-        <sl-tree>
+        <awc-tree>
           <div slot="expand-icon"></div>
           <div slot="collapse-icon"></div>
 
-          <sl-tree-item>Node 1</sl-tree-item>
-          <sl-tree-item>Node 2</sl-tree-item>
-        </sl-tree>
+          <awc-tree-item>Node 1</awc-tree-item>
+          <awc-tree-item>Node 2</awc-tree-item>
+        </awc-tree>
       `);
     });
 
@@ -74,7 +74,7 @@ describe('<sl-tree>', () => {
       await el.updateComplete;
 
       // Act
-      const treeItems = [...el.querySelectorAll('sl-tree-item')];
+      const treeItems = [...el.querySelectorAll('awc-tree-item')];
 
       // Assert
       treeItems.forEach(treeItem => {
@@ -137,7 +137,7 @@ describe('<sl-tree>', () => {
       describe('and node is collapsed', () => {
         it('should expand the tree item', async () => {
           // Arrange
-          const parentNode = el.children[2] as SlTreeItem;
+          const parentNode = el.children[2] as AWCTreeItem;
           parentNode.focus();
           await el.updateComplete;
 
@@ -154,7 +154,7 @@ describe('<sl-tree>', () => {
       describe('and node is expanded', () => {
         it('should move the focus to the next tree item', async () => {
           // Arrange
-          const parentNode = el.children[2] as SlTreeItem;
+          const parentNode = el.children[2] as AWCTreeItem;
           parentNode.expanded = true;
           parentNode.focus();
 
@@ -207,7 +207,7 @@ describe('<sl-tree>', () => {
       describe('and node is expanded', () => {
         it('should collapse the tree item', async () => {
           // Arrange
-          const parentNode = el.children[2] as SlTreeItem;
+          const parentNode = el.children[2] as AWCTreeItem;
           parentNode.expanded = true;
           parentNode.focus();
 
@@ -227,7 +227,7 @@ describe('<sl-tree>', () => {
     describe('when Home is pressed', () => {
       it('should move the focus to the first tree item in the tree', async () => {
         // Arrange
-        const parentNode = el.children[3] as SlTreeItem;
+        const parentNode = el.children[3] as AWCTreeItem;
         parentNode.focus();
         await el.updateComplete;
 
@@ -244,7 +244,7 @@ describe('<sl-tree>', () => {
     describe('when End is pressed', () => {
       it('should move the focus to the last tree item in the tree', async () => {
         // Arrange
-        const parentNode = el.children[0] as SlTreeItem;
+        const parentNode = el.children[0] as AWCTreeItem;
         parentNode.focus();
         await el.updateComplete;
 
@@ -263,7 +263,7 @@ describe('<sl-tree>', () => {
         it('should select only one tree item', async () => {
           // Arrange
           el.selection = 'single';
-          const node = el.children[1] as SlTreeItem;
+          const node = el.children[1] as AWCTreeItem;
           node.focus();
           await el.updateComplete;
 
@@ -283,7 +283,7 @@ describe('<sl-tree>', () => {
         it('should select only one tree item', async () => {
           // Arrange
           el.selection = 'leaf';
-          const node = el.children[0] as SlTreeItem;
+          const node = el.children[0] as AWCTreeItem;
           node.focus();
           await el.updateComplete;
 
@@ -299,7 +299,7 @@ describe('<sl-tree>', () => {
         it('should expand/collapse a parent node', async () => {
           // Arrange
           el.selection = 'leaf';
-          const parentNode = el.children[2] as SlTreeItem;
+          const parentNode = el.children[2] as AWCTreeItem;
           parentNode.focus();
           await el.updateComplete;
 
@@ -317,7 +317,7 @@ describe('<sl-tree>', () => {
         it('should toggle the selection on the tree item', async () => {
           // Arrange
           el.selection = 'multiple';
-          const node = el.children[1] as SlTreeItem;
+          const node = el.children[1] as AWCTreeItem;
           node.focus();
           await el.updateComplete;
 
@@ -337,7 +337,7 @@ describe('<sl-tree>', () => {
         it('should select only one tree item', async () => {
           // Arrange
           el.selection = 'single';
-          const node = el.children[1] as SlTreeItem;
+          const node = el.children[1] as AWCTreeItem;
           node.focus();
           await el.updateComplete;
 
@@ -355,7 +355,7 @@ describe('<sl-tree>', () => {
         it('should select only one tree item', async () => {
           // Arrange
           el.selection = 'leaf';
-          const node = el.children[0] as SlTreeItem;
+          const node = el.children[0] as AWCTreeItem;
           node.focus();
           await el.updateComplete;
 
@@ -371,7 +371,7 @@ describe('<sl-tree>', () => {
         it('should expand/collapse a parent node', async () => {
           // Arrange
           el.selection = 'leaf';
-          const parentNode = el.children[2] as SlTreeItem;
+          const parentNode = el.children[2] as AWCTreeItem;
           parentNode.focus();
           await el.updateComplete;
 
@@ -389,7 +389,7 @@ describe('<sl-tree>', () => {
         it('should toggle the selection on the tree item', async () => {
           // Arrange
           el.selection = 'multiple';
-          const node = el.children[0] as SlTreeItem;
+          const node = el.children[0] as AWCTreeItem;
           node.focus();
           await el.updateComplete;
 
@@ -409,7 +409,7 @@ describe('<sl-tree>', () => {
     describe('when the tree is about to receive the focus', () => {
       it('should set the focus to the last focused item', async () => {
         // Arrange
-        const node = el.children[1] as SlTreeItem;
+        const node = el.children[1] as AWCTreeItem;
         node.focus();
         await el.updateComplete;
 
@@ -429,7 +429,7 @@ describe('<sl-tree>', () => {
         el.selection = 'single';
         await el.updateComplete;
 
-        const node = el.children[2] as SlTreeItem;
+        const node = el.children[2] as AWCTreeItem;
         await node.updateComplete;
 
         const expandButton: HTMLElement = node.shadowRoot!.querySelector('.tree-item__expand-button')!;
@@ -449,8 +449,8 @@ describe('<sl-tree>', () => {
         it('should select only one tree item', async () => {
           // Arrange
           el.selection = 'single';
-          const node0 = el.children[0] as SlTreeItem;
-          const node1 = el.children[1] as SlTreeItem;
+          const node0 = el.children[0] as AWCTreeItem;
+          const node1 = el.children[1] as AWCTreeItem;
 
           await el.updateComplete;
 
@@ -470,8 +470,8 @@ describe('<sl-tree>', () => {
         it('should select only one tree item', async () => {
           // Arrange
           el.selection = 'leaf';
-          const node0 = el.children[0] as SlTreeItem;
-          const node1 = el.children[1] as SlTreeItem;
+          const node0 = el.children[0] as AWCTreeItem;
+          const node1 = el.children[1] as AWCTreeItem;
 
           await el.updateComplete;
 
@@ -489,7 +489,7 @@ describe('<sl-tree>', () => {
         it('should expand/collapse a parent node', async () => {
           // Arrange
           el.selection = 'leaf';
-          const parentNode = el.children[2] as SlTreeItem;
+          const parentNode = el.children[2] as AWCTreeItem;
 
           await el.updateComplete;
 
@@ -507,8 +507,8 @@ describe('<sl-tree>', () => {
         it('should toggle the selection on the tree item', async () => {
           // Arrange
           el.selection = 'multiple';
-          const node0 = el.children[0] as SlTreeItem;
-          const node1 = el.children[1] as SlTreeItem;
+          const node0 = el.children[0] as AWCTreeItem;
+          const node1 = el.children[1] as AWCTreeItem;
 
           await el.updateComplete;
 
@@ -528,7 +528,7 @@ describe('<sl-tree>', () => {
           el.selection = 'multiple';
           await el.updateComplete;
 
-          const parentNode = el.children[2] as SlTreeItem;
+          const parentNode = el.children[2] as AWCTreeItem;
 
           // Act
           await clickOnElement(parentNode);
@@ -547,8 +547,8 @@ describe('<sl-tree>', () => {
           el.selection = 'multiple';
           await el.updateComplete;
 
-          const parentNode = el.children[2] as SlTreeItem;
-          const childNode = parentNode.children[0] as SlTreeItem;
+          const parentNode = el.children[2] as AWCTreeItem;
+          const childNode = parentNode.children[0] as AWCTreeItem;
 
           // Act
           parentNode.expanded = true;
@@ -566,15 +566,15 @@ describe('<sl-tree>', () => {
 
     describe('when selection is "single"', () => {
       describe('and user clicks on same item twice', () => {
-        it('should emit `sl-selection-change` event once', async () => {
+        it('should emit `awc-selection-change` event once', async () => {
           // Arrange
           el.selection = 'single';
           await el.updateComplete;
 
           const selectedChangeSpy = sinon.spy();
-          el.addEventListener('sl-selection-change', selectedChangeSpy);
+          el.addEventListener('awc-selection-change', selectedChangeSpy);
 
-          const node = el.children[0] as SlTreeItem;
+          const node = el.children[0] as AWCTreeItem;
 
           // Act
           await clickOnElement(node);
@@ -592,15 +592,15 @@ describe('<sl-tree>', () => {
 
   describe('when selection is "leaf"', () => {
     describe('and user clicks on same leaf item twice', () => {
-      it('should emit `sl-selection-change` event once', async () => {
+      it('should emit `awc-selection-change` event once', async () => {
         // Arrange
         el.selection = 'leaf';
         await el.updateComplete;
 
         const selectedChangeSpy = sinon.spy();
-        el.addEventListener('sl-selection-change', selectedChangeSpy);
+        el.addEventListener('awc-selection-change', selectedChangeSpy);
 
-        const node = el.children[0] as SlTreeItem;
+        const node = el.children[0] as AWCTreeItem;
 
         // Act
         await clickOnElement(node);
@@ -615,15 +615,15 @@ describe('<sl-tree>', () => {
     });
 
     describe('and user clicks on expandable item', () => {
-      it('should not emit `sl-selection-change` event', async () => {
+      it('should not emit `awc-selection-change` event', async () => {
         // Arrange
         el.selection = 'leaf';
         await el.updateComplete;
 
         const selectedChangeSpy = sinon.spy();
-        el.addEventListener('sl-selection-change', selectedChangeSpy);
+        el.addEventListener('awc-selection-change', selectedChangeSpy);
 
-        const node = el.querySelector<SlTreeItem>('#expandable')!;
+        const node = el.querySelector<AWCTreeItem>('#expandable')!;
 
         // Act
         await clickOnElement(node);
@@ -637,15 +637,15 @@ describe('<sl-tree>', () => {
 
   describe('when selection is "multiple"', () => {
     describe('and user clicks on same item twice', () => {
-      it('should emit `sl-selection-change` event twice', async () => {
+      it('should emit `awc-selection-change` event twice', async () => {
         // Arrange
         el.selection = 'multiple';
         await el.updateComplete;
 
         const selectedChangeSpy = sinon.spy();
-        el.addEventListener('sl-selection-change', selectedChangeSpy);
+        el.addEventListener('awc-selection-change', selectedChangeSpy);
 
-        const node = el.children[0] as SlTreeItem;
+        const node = el.children[0] as AWCTreeItem;
 
         // Act
         await clickOnElement(node);
@@ -666,20 +666,20 @@ describe('<sl-tree>', () => {
       describe('and a parent node is selected', () => {
         it('should select all the nested children', async () => {
           // Arrange
-          const tree = await fixture<SlTree>(html`
-            <sl-tree selection="multiple">
-              <sl-tree-item selected>
+          const tree = await fixture<AWCTree>(html`
+            <awc-tree selection="multiple">
+              <awc-tree-item selected>
                 Parent Node
-                <sl-tree-item selected>Child Node 1</sl-tree-item>
-                <sl-tree-item>
+                <awc-tree-item selected>Child Node 1</awc-tree-item>
+                <awc-tree-item>
                   Child Node 2
-                  <sl-tree-item>Child Node 2 - 1</sl-tree-item>
-                  <sl-tree-item>Child Node 2 - 2</sl-tree-item>
-                </sl-tree-item>
-              </sl-tree-item>
-            </sl-tree>
+                  <awc-tree-item>Child Node 2 - 1</awc-tree-item>
+                  <awc-tree-item>Child Node 2 - 2</awc-tree-item>
+                </awc-tree-item>
+              </awc-tree-item>
+            </awc-tree>
           `);
-          const treeItems = Array.from<SlTreeItem>(tree.querySelectorAll('sl-tree-item'));
+          const treeItems = Array.from<AWCTreeItem>(tree.querySelectorAll('awc-tree-item'));
 
           // Act
           await tree.updateComplete;
@@ -695,20 +695,20 @@ describe('<sl-tree>', () => {
         describe('and all the children are selected', () => {
           it('should select the parent node', async () => {
             // Arrange
-            const tree = await fixture<SlTree>(html`
-              <sl-tree selection="multiple">
-                <sl-tree-item>
+            const tree = await fixture<AWCTree>(html`
+              <awc-tree selection="multiple">
+                <awc-tree-item>
                   Parent Node
-                  <sl-tree-item selected>Child Node 1</sl-tree-item>
-                  <sl-tree-item selected>
+                  <awc-tree-item selected>Child Node 1</awc-tree-item>
+                  <awc-tree-item selected>
                     Child Node 2
-                    <sl-tree-item>Child Node 2 - 1</sl-tree-item>
-                    <sl-tree-item>Child Node 2 - 2</sl-tree-item>
-                  </sl-tree-item>
-                </sl-tree-item>
-              </sl-tree>
+                    <awc-tree-item>Child Node 2 - 1</awc-tree-item>
+                    <awc-tree-item>Child Node 2 - 2</awc-tree-item>
+                  </awc-tree-item>
+                </awc-tree-item>
+              </awc-tree>
             `);
-            const treeItems = Array.from<SlTreeItem>(tree.querySelectorAll('sl-tree-item'));
+            const treeItems = Array.from<AWCTreeItem>(tree.querySelectorAll('awc-tree-item'));
 
             // Act
             await tree.updateComplete;
@@ -724,20 +724,20 @@ describe('<sl-tree>', () => {
         describe('and some of the children are selected', () => {
           it('should set the parent node to indeterminate state', async () => {
             // Arrange
-            const tree = await fixture<SlTree>(html`
-              <sl-tree selection="multiple">
-                <sl-tree-item>
+            const tree = await fixture<AWCTree>(html`
+              <awc-tree selection="multiple">
+                <awc-tree-item>
                   Parent Node
-                  <sl-tree-item selected>Child Node 1</sl-tree-item>
-                  <sl-tree-item>
+                  <awc-tree-item selected>Child Node 1</awc-tree-item>
+                  <awc-tree-item>
                     Child Node 2
-                    <sl-tree-item>Child Node 2 - 1</sl-tree-item>
-                    <sl-tree-item>Child Node 2 - 2</sl-tree-item>
-                  </sl-tree-item>
-                </sl-tree-item>
-              </sl-tree>
+                    <awc-tree-item>Child Node 2 - 1</awc-tree-item>
+                    <awc-tree-item>Child Node 2 - 2</awc-tree-item>
+                  </awc-tree-item>
+                </awc-tree-item>
+              </awc-tree>
             `);
-            const treeItems = Array.from<SlTreeItem>(tree.querySelectorAll('sl-tree-item'));
+            const treeItems = Array.from<AWCTreeItem>(tree.querySelectorAll('awc-tree-item'));
 
             // Act
             await tree.updateComplete;

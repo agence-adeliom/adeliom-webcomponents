@@ -6,7 +6,7 @@ PrismLoader.silent = true;
 
 /** Highlights a code string. */
 function highlight(code, language) {
-  const alias = language.replace(/^diff-/, '');
+  const alias = language?.replace(/^diff-/, '');
   const isDiff = /^diff-/i.test(language);
 
   // Auto-load the target language
@@ -48,7 +48,7 @@ module.exports = function (doc) {
         // The language will always come first, so we need to drop the "language-" prefix and everything after the first
         // color to get the highlighter language.
         //
-        const language = className.replace(/^language-/, '').split(':')[0];
+        const language = className?.replace(/^language-/, '').split(':')[0];
 
         try {
           code.innerHTML = highlight(code.textContent ?? '', language);

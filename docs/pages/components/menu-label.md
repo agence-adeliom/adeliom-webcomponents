@@ -6,36 +6,36 @@ layout: component
 ---
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-label>Fruits</sl-menu-label>
-  <sl-menu-item value="apple">Apple</sl-menu-item>
-  <sl-menu-item value="banana">Banana</sl-menu-item>
-  <sl-menu-item value="orange">Orange</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-label>Vegetables</sl-menu-label>
-  <sl-menu-item value="broccoli">Broccoli</sl-menu-item>
-  <sl-menu-item value="carrot">Carrot</sl-menu-item>
-  <sl-menu-item value="zucchini">Zucchini</sl-menu-item>
-</sl-menu>
+<awc-menu style="max-width: 200px;">
+  <awc-menu-label>Fruits</awc-menu-label>
+  <awc-menu-item value="apple">Apple</awc-menu-item>
+  <awc-menu-item value="banana">Banana</awc-menu-item>
+  <awc-menu-item value="orange">Orange</awc-menu-item>
+  <awc-divider></awc-divider>
+  <awc-menu-label>Vegetables</awc-menu-label>
+  <awc-menu-item value="broccoli">Broccoli</awc-menu-item>
+  <awc-menu-item value="carrot">Carrot</awc-menu-item>
+  <awc-menu-item value="zucchini">Zucchini</awc-menu-item>
+</awc-menu>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlDivider, SlMenu, SlMenuLabel, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCDivider, AWCMenu, AWCMenuLabel, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuLabel>Fruits</SlMenuLabel>
-    <SlMenuItem value="apple">Apple</SlMenuItem>
-    <SlMenuItem value="banana">Banana</SlMenuItem>
-    <SlMenuItem value="orange">Orange</SlMenuItem>
-    <SlDivider />
-    <SlMenuLabel>Vegetables</SlMenuLabel>
-    <SlMenuItem value="broccoli">Broccoli</SlMenuItem>
-    <SlMenuItem value="carrot">Carrot</SlMenuItem>
-    <SlMenuItem value="zucchini">Zucchini</SlMenuItem>
-  </SlMenu>
+  <AWCMenu style={{ maxWidth: '200px' }}>
+    <AWCMenuLabel>Fruits</AWCMenuLabel>
+    <AWCMenuItem value="apple">Apple</AWCMenuItem>
+    <AWCMenuItem value="banana">Banana</AWCMenuItem>
+    <AWCMenuItem value="orange">Orange</AWCMenuItem>
+    <AWCDivider />
+    <AWCMenuLabel>Vegetables</AWCMenuLabel>
+    <AWCMenuItem value="broccoli">Broccoli</AWCMenuItem>
+    <AWCMenuItem value="carrot">Carrot</AWCMenuItem>
+    <AWCMenuItem value="zucchini">Zucchini</AWCMenuItem>
+  </AWCMenu>
 );
 ```
 

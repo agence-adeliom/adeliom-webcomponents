@@ -3,7 +3,7 @@ import { getIconLibrary, type IconLibrary, unwatchIcon, watchIcon } from './libr
 import { html } from 'lit';
 import { isTemplateResult } from 'lit/directive-helpers.js';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './icon.styles.js';
 
 import type { CSSResultGroup, HTMLTemplateResult } from 'lit';
@@ -17,18 +17,18 @@ const iconCache = new Map<string, Promise<SVGResult>>();
 
 /**
  * @summary Icons are symbols that can be used to represent various options within an application.
- * @documentation https://shoelace.style/components/icon
+ * @documentation https://awc.a-dev.cloud/components/icon
  * @status stable
  * @since 2.0
  *
- * @event sl-load - Emitted when the icon has loaded. When using `spriteSheet: true` this will not emit.
- * @event sl-error - Emitted when the icon fails to load due to an error. When using `spriteSheet: true` this will not emit.
+ * @event awc-load - Emitted when the icon has loaded. When using `spriteSheet: true` this will not emit.
+ * @event awc-error - Emitted when the icon fails to load due to an error. When using `spriteSheet: true` this will not emit.
  *
  * @csspart svg - The internal SVG element.
  * @csspart use - The <use> element generated when using `spriteSheet: true`
  */
-@customElement('sl-icon')
-export default class SlIcon extends ShoelaceElement {
+@customElement('awc-icon')
+export default class AWCIcon extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private initialRender = false;
@@ -169,12 +169,12 @@ export default class SlIcon extends ShoelaceElement {
       case RETRYABLE_ERROR:
       case CACHEABLE_ERROR:
         this.svg = null;
-        this.emit('sl-error');
+        this.emit('awc-error');
         break;
       default:
         this.svg = svg.cloneNode(true) as SVGElement;
         library?.mutator?.(this.svg);
-        this.emit('sl-load');
+        this.emit('awc-load');
     }
   }
 
@@ -185,6 +185,6 @@ export default class SlIcon extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-icon': SlIcon;
+    'awc-icon': AWCIcon;
   }
 }

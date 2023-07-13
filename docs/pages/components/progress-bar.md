@@ -6,13 +6,13 @@ layout: component
 ---
 
 ```html:preview
-<sl-progress-bar value="50"></sl-progress-bar>
+<awc-progress-bar value="50"></awc-progress-bar>
 ```
 
 ```jsx:react
-import { SlProgressBar } from '@shoelace-style/shoelace/dist/react';
+import { AWCProgressBar } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlProgressBar value={50} />;
+const App = () => <AWCProgressBar value={50} />;
 ```
 
 ## Examples
@@ -22,13 +22,13 @@ const App = () => <SlProgressBar value={50} />;
 Use the `label` attribute to label the progress bar and tell assistive devices how to announce it.
 
 ```html:preview
-<sl-progress-bar value="50" label="Upload progress"></sl-progress-bar>
+<awc-progress-bar value="50" label="Upload progress"></awc-progress-bar>
 ```
 
 ```jsx:react
-import { SlProgressBar } from '@shoelace-style/shoelace/dist/react';
+import { AWCProgressBar } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlProgressBar value="50" label="Upload progress" />;
+const App = () => <AWCProgressBar value="50" label="Upload progress" />;
 ```
 
 ### Custom Height
@@ -36,15 +36,15 @@ const App = () => <SlProgressBar value="50" label="Upload progress" />;
 Use the `--height` custom property to set the progress bar's height.
 
 ```html:preview
-<sl-progress-bar value="50" style="--height: 6px;"></sl-progress-bar>
+<awc-progress-bar value="50" style="--height: 6px;"></awc-progress-bar>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlProgressBar } from '@shoelace-style/shoelace/dist/react';
+import { AWCProgressBar } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlProgressBar value={50} style={{ '--height': '6px' }} />;
+const App = () => <AWCProgressBar value={50} style={{ '--height': '6px' }} />;
 ```
 
 {% endraw %}
@@ -54,12 +54,12 @@ const App = () => <SlProgressBar value={50} style={{ '--height': '6px' }} />;
 Use the default slot to show a value.
 
 ```html:preview
-<sl-progress-bar value="50" class="progress-bar-values">50%</sl-progress-bar>
+<awc-progress-bar value="50" class="progress-bar-values">50%</awc-progress-bar>
 
 <br />
 
-<sl-button circle><sl-icon name="dash" label="Decrease"></sl-icon></sl-button>
-<sl-button circle><sl-icon name="plus" label="Increase"></sl-icon></sl-button>
+<awc-button circle><awc-icon name="dash" label="Decrease"></awc-icon></awc-button>
+<awc-button circle><awc-icon name="plus" label="Increase"></awc-icon></awc-button>
 
 <script>
   const progressBar = document.querySelector('.progress-bar-values');
@@ -82,7 +82,7 @@ Use the default slot to show a value.
 
 ```jsx:react
 import { useState } from 'react';
-import { SlButton, SlIcon, SlProgressBar } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCIcon, AWCProgressBar } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [value, setValue] = useState(50);
@@ -96,17 +96,17 @@ const App = () => {
 
   return (
     <>
-      <SlProgressBar value={value}>{value}%</SlProgressBar>
+      <AWCProgressBar value={value}>{value}%</AWCProgressBar>
 
       <br />
 
-      <SlButton circle onClick={() => adjustValue(-10)}>
-        <SlIcon name="dash" label="Decrease" />
-      </SlButton>
+      <AWCButton circle onClick={() => adjustValue(-10)}>
+        <AWCIcon name="dash" label="Decrease" />
+      </AWCButton>
 
-      <SlButton circle onClick={() => adjustValue(10)}>
-        <SlIcon name="plus" label="Increase" />
-      </SlButton>
+      <AWCButton circle onClick={() => adjustValue(10)}>
+        <AWCIcon name="plus" label="Increase" />
+      </AWCButton>
     </>
   );
 };
@@ -117,11 +117,11 @@ const App = () => {
 The `indeterminate` attribute can be used to inform the user that the operation is pending, but its status cannot currently be determined. In this state, `value` is ignored and the label, if present, will not be shown.
 
 ```html:preview
-<sl-progress-bar indeterminate></sl-progress-bar>
+<awc-progress-bar indeterminate></awc-progress-bar>
 ```
 
 ```jsx:react
-import { SlProgressBar } from '@shoelace-style/shoelace/dist/react';
+import { AWCProgressBar } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlProgressBar indeterminate />;
+const App = () => <AWCProgressBar indeterminate />;
 ```

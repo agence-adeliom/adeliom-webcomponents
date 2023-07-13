@@ -8,14 +8,14 @@ layout: component
 Localization is handled by the browser's [`Intl.RelativeTimeFormat` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat). No language packs are required.
 
 ```html:preview
-<!-- Shoelace 2 release date 🎉 -->
-<sl-relative-time date="2020-07-15T09:17:00-04:00"></sl-relative-time>
+<!-- Adeliom WebComponents 2 release date 🎉 -->
+<awc-relative-time date="2020-07-15T09:17:00-04:00"></awc-relative-time>
 ```
 
 ```jsx:react
-import { SlRelativeTime } from '@shoelace-style/shoelace/dist/react';
+import { AWCRelativeTime } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlRelativeTime date="2020-07-15T09:17:00-04:00" />;
+const App = () => <AWCRelativeTime date="2020-07-15T09:17:00-04:00" />;
 ```
 
 The `date` attribute determines when the date/time is calculated from. It must be a string that [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse) can interpret or a [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object set via JavaScript.
@@ -32,23 +32,23 @@ Use the `sync` attribute to update the displayed value automatically as time pas
 
 ```html:preview
 <div class="relative-time-sync">
-  <sl-relative-time sync></sl-relative-time>
+  <awc-relative-time sync></awc-relative-time>
 </div>
 
 <script>
   const container = document.querySelector('.relative-time-sync');
-  const relativeTime = container.querySelector('sl-relative-time');
+  const relativeTime = container.querySelector('awc-relative-time');
 
   relativeTime.date = new Date(new Date().getTime() - 60000);
 </script>
 ```
 
 ```jsx:react
-import { SlRelativeTime } from '@shoelace-style/shoelace/dist/react';
+import { AWCRelativeTime } from '@agence-adeliom/awc/dist/react';
 
 const date = new Date(new Date().getTime() - 60000);
 
-const App = () => <SlRelativeTime date={date} sync />;
+const App = () => <AWCRelativeTime date={date} sync />;
 ```
 
 ### Formatting Styles
@@ -56,21 +56,21 @@ const App = () => <SlRelativeTime date={date} sync />;
 You can change how the time is displayed using the `format` attribute. Note that some locales may display the same values for `narrow` and `short` formats.
 
 ```html:preview
-<sl-relative-time date="2020-07-15T09:17:00-04:00" format="narrow"></sl-relative-time><br />
-<sl-relative-time date="2020-07-15T09:17:00-04:00" format="short"></sl-relative-time><br />
-<sl-relative-time date="2020-07-15T09:17:00-04:00" format="long"></sl-relative-time>
+<awc-relative-time date="2020-07-15T09:17:00-04:00" format="narrow"></awc-relative-time><br />
+<awc-relative-time date="2020-07-15T09:17:00-04:00" format="short"></awc-relative-time><br />
+<awc-relative-time date="2020-07-15T09:17:00-04:00" format="long"></awc-relative-time>
 ```
 
 ```jsx:react
-import { SlRelativeTime } from '@shoelace-style/shoelace/dist/react';
+import { AWCRelativeTime } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlRelativeTime date="2020-07-15T09:17:00-04:00" format="narrow" />
+    <AWCRelativeTime date="2020-07-15T09:17:00-04:00" format="narrow" />
     <br />
-    <SlRelativeTime date="2020-07-15T09:17:00-04:00" format="short" />
+    <AWCRelativeTime date="2020-07-15T09:17:00-04:00" format="short" />
     <br />
-    <SlRelativeTime date="2020-07-15T09:17:00-04:00" format="long" />
+    <AWCRelativeTime date="2020-07-15T09:17:00-04:00" format="long" />
   </>
 );
 ```
@@ -80,27 +80,27 @@ const App = () => (
 Use the `lang` attribute to set the desired locale.
 
 ```html:preview
-English: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="en-US"></sl-relative-time><br />
-Chinese: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="zh-CN"></sl-relative-time><br />
-German: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="de"></sl-relative-time><br />
-Greek: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="el"></sl-relative-time><br />
-Russian: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="ru"></sl-relative-time>
+English: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="en-US"></awc-relative-time><br />
+Chinese: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="zh-CN"></awc-relative-time><br />
+German: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="de"></awc-relative-time><br />
+Greek: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="el"></awc-relative-time><br />
+Russian: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="ru"></awc-relative-time>
 ```
 
 ```jsx:react
-import { SlRelativeTime } from '@shoelace-style/shoelace/dist/react';
+import { AWCRelativeTime } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    English: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="en-US" />
+    English: <AWCRelativeTime date="2020-07-15T09:17:00-04:00" lang="en-US" />
     <br />
-    Chinese: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="zh-CN" />
+    Chinese: <AWCRelativeTime date="2020-07-15T09:17:00-04:00" lang="zh-CN" />
     <br />
-    German: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="de" />
+    German: <AWCRelativeTime date="2020-07-15T09:17:00-04:00" lang="de" />
     <br />
-    Greek: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="el" />
+    Greek: <AWCRelativeTime date="2020-07-15T09:17:00-04:00" lang="el" />
     <br />
-    Russian: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="ru" />
+    Russian: <AWCRelativeTime date="2020-07-15T09:17:00-04:00" lang="ru" />
   </>
 );
 ```

@@ -2,13 +2,13 @@ import { classMap } from 'lit/directives/class-map.js';
 import { customElement } from 'lit/decorators.js';
 import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './card.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Cards can be used to group related subjects in a container.
- * @documentation https://shoelace.style/components/card
+ * @documentation https://awc.a-dev.cloud/components/card
  * @status stable
  * @since 2.0
  *
@@ -28,8 +28,8 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --border-width - The width of the card's borders.
  * @cssproperty --padding - The padding to use for the card's sections.
  */
-@customElement('sl-card')
-export default class SlCard extends ShoelaceElement {
+@customElement('awc-card')
+export default class AWCCard extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private readonly hasSlotController = new HasSlotController(this, 'footer', 'header', 'image');
@@ -56,6 +56,6 @@ export default class SlCard extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-card': SlCard;
+    'awc-card': AWCCard;
   }
 }

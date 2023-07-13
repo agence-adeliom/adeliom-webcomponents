@@ -9,37 +9,37 @@ export default css`
   }
 
   :host([size='small']) {
-    --height: var(--sl-toggle-size-small);
-    --thumb-size: calc(var(--sl-toggle-size-small) + 4px);
+    --height: var(--awc-toggle-size-small);
+    --thumb-size: calc(var(--awc-toggle-size-small) + 4px);
     --width: calc(var(--height) * 2);
 
-    font-size: var(--sl-input-font-size-small);
+    font-size: var(--awc-input-font-size-small);
   }
 
   :host([size='medium']) {
-    --height: var(--sl-toggle-size-medium);
-    --thumb-size: calc(var(--sl-toggle-size-medium) + 4px);
+    --height: var(--awc-toggle-size-medium);
+    --thumb-size: calc(var(--awc-toggle-size-medium) + 4px);
     --width: calc(var(--height) * 2);
 
-    font-size: var(--sl-input-font-size-medium);
+    font-size: var(--awc-input-font-size-medium);
   }
 
   :host([size='large']) {
-    --height: var(--sl-toggle-size-large);
-    --thumb-size: calc(var(--sl-toggle-size-large) + 4px);
+    --height: var(--awc-toggle-size-large);
+    --thumb-size: calc(var(--awc-toggle-size-large) + 4px);
     --width: calc(var(--height) * 2);
 
-    font-size: var(--sl-input-font-size-large);
+    font-size: var(--awc-input-font-size-large);
   }
 
   .switch {
     position: relative;
     display: inline-flex;
     align-items: center;
-    font-family: var(--sl-input-font-family);
+    font-family: var(--awc-input-font-family);
     font-size: inherit;
-    font-weight: var(--sl-input-font-weight);
-    color: var(--sl-input-label-color);
+    font-weight: var(--awc-input-font-weight);
+    color: var(--awc-input-label-color);
     vertical-align: middle;
     cursor: pointer;
   }
@@ -52,21 +52,26 @@ export default css`
     justify-content: center;
     width: var(--width);
     height: var(--height);
-    background-color: var(--sl-color-neutral-400);
-    border: solid var(--sl-input-border-width) var(--sl-color-neutral-400);
+    background-color: var(--awc-color-neutral-400);
+    border: solid var(--awc-input-border-width) var(--awc-color-neutral-400);
     border-radius: var(--height);
-    transition: var(--sl-transition-fast) border-color, var(--sl-transition-fast) background-color;
+    transition:
+      var(--awc-transition-fast) border-color,
+      var(--awc-transition-fast) background-color;
   }
 
   .switch__control .switch__thumb {
     width: var(--thumb-size);
     height: var(--thumb-size);
-    background-color: var(--sl-color-neutral-0);
+    background-color: var(--awc-color-neutral-0);
     border-radius: 50%;
-    border: solid var(--sl-input-border-width) var(--sl-color-neutral-400);
+    border: solid var(--awc-input-border-width) var(--awc-color-neutral-400);
     translate: calc((var(--width) - var(--height)) / -2);
-    transition: var(--sl-transition-fast) translate ease, var(--sl-transition-fast) background-color,
-      var(--sl-transition-fast) border-color, var(--sl-transition-fast) box-shadow;
+    transition:
+      var(--awc-transition-fast) translate ease,
+      var(--awc-transition-fast) background-color,
+      var(--awc-transition-fast) border-color,
+      var(--awc-transition-fast) box-shadow;
   }
 
   .switch__input {
@@ -79,62 +84,62 @@ export default css`
 
   /* Hover */
   .switch:not(.switch--checked):not(.switch--disabled) .switch__control:hover {
-    background-color: var(--sl-color-neutral-400);
-    border-color: var(--sl-color-neutral-400);
+    background-color: var(--awc-color-neutral-400);
+    border-color: var(--awc-color-neutral-400);
   }
 
   .switch:not(.switch--checked):not(.switch--disabled) .switch__control:hover .switch__thumb {
-    background-color: var(--sl-color-neutral-0);
-    border-color: var(--sl-color-neutral-400);
+    background-color: var(--awc-color-neutral-0);
+    border-color: var(--awc-color-neutral-400);
   }
 
   /* Focus */
   .switch:not(.switch--checked):not(.switch--disabled) .switch__input:focus-visible ~ .switch__control {
-    background-color: var(--sl-color-neutral-400);
-    border-color: var(--sl-color-neutral-400);
+    background-color: var(--awc-color-neutral-400);
+    border-color: var(--awc-color-neutral-400);
   }
 
   .switch:not(.switch--checked):not(.switch--disabled) .switch__input:focus-visible ~ .switch__control .switch__thumb {
-    background-color: var(--sl-color-neutral-0);
-    border-color: var(--sl-color-primary-600);
-    outline: var(--sl-focus-ring);
-    outline-offset: var(--sl-focus-ring-offset);
+    background-color: var(--awc-color-neutral-0);
+    border-color: var(--awc-color-primary-600);
+    outline: var(--awc-focus-ring);
+    outline-offset: var(--awc-focus-ring-offset);
   }
 
   /* Checked */
   .switch--checked .switch__control {
-    background-color: var(--sl-color-primary-600);
-    border-color: var(--sl-color-primary-600);
+    background-color: var(--awc-color-primary-600);
+    border-color: var(--awc-color-primary-600);
   }
 
   .switch--checked .switch__control .switch__thumb {
-    background-color: var(--sl-color-neutral-0);
-    border-color: var(--sl-color-primary-600);
+    background-color: var(--awc-color-neutral-0);
+    border-color: var(--awc-color-primary-600);
     translate: calc((var(--width) - var(--height)) / 2);
   }
 
   /* Checked + hover */
   .switch.switch--checked:not(.switch--disabled) .switch__control:hover {
-    background-color: var(--sl-color-primary-600);
-    border-color: var(--sl-color-primary-600);
+    background-color: var(--awc-color-primary-600);
+    border-color: var(--awc-color-primary-600);
   }
 
   .switch.switch--checked:not(.switch--disabled) .switch__control:hover .switch__thumb {
-    background-color: var(--sl-color-neutral-0);
-    border-color: var(--sl-color-primary-600);
+    background-color: var(--awc-color-neutral-0);
+    border-color: var(--awc-color-primary-600);
   }
 
   /* Checked + focus */
   .switch.switch--checked:not(.switch--disabled) .switch__input:focus-visible ~ .switch__control {
-    background-color: var(--sl-color-primary-600);
-    border-color: var(--sl-color-primary-600);
+    background-color: var(--awc-color-primary-600);
+    border-color: var(--awc-color-primary-600);
   }
 
   .switch.switch--checked:not(.switch--disabled) .switch__input:focus-visible ~ .switch__control .switch__thumb {
-    background-color: var(--sl-color-neutral-0);
-    border-color: var(--sl-color-primary-600);
-    outline: var(--sl-focus-ring);
-    outline-offset: var(--sl-focus-ring-offset);
+    background-color: var(--awc-color-neutral-0);
+    border-color: var(--awc-color-primary-600);
+    outline: var(--awc-focus-ring);
+    outline-offset: var(--awc-focus-ring-offset);
   }
 
   /* Disabled */
@@ -151,8 +156,8 @@ export default css`
   }
 
   :host([required]) .switch__label::after {
-    content: var(--sl-input-required-content);
-    margin-inline-start: var(--sl-input-required-content-offset);
+    content: var(--awc-input-required-content);
+    margin-inline-start: var(--awc-input-required-content-offset);
   }
 
   @media (forced-colors: active) {

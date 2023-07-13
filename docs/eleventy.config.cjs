@@ -4,8 +4,8 @@ const path = require('path');
 const lunr = require('lunr');
 const { capitalCase } = require('change-case');
 const { JSDOM } = require('jsdom');
-const { customElementsManifest, getAllComponents } = require('./_utilities/cem.cjs');
-const shoelaceFlavoredMarkdown = require('./_utilities/markdown.cjs');
+const { customElementsManifest, getAllComponents, getAllLayouts } = require('./_utilities/cem.cjs');
+const awcFlavoredMarkdown = require('./_utilities/markdown.cjs');
 const activeLinks = require('./_utilities/active-links.cjs');
 const anchorHeadings = require('./_utilities/anchor-headings.cjs');
 const codePreviews = require('./_utilities/code-previews.cjs');
@@ -22,21 +22,23 @@ const assetsDir = 'assets';
 const cdndir = 'cdn';
 const npmdir = 'dist';
 const allComponents = getAllComponents();
+const allLayouts = getAllLayouts();
 let hasBuiltSearchIndex = false;
 
 module.exports = function (eleventyConfig) {
   //
   // Global data
   //
-  eleventyConfig.addGlobalData('baseUrl', 'https://shoelace.style/'); // the production URL
+  eleventyConfig.addGlobalData('baseUrl', 'https://awc.a-dev.cloud/'); // the production URL
   eleventyConfig.addGlobalData('layout', 'default'); // make 'default' the default layout
   eleventyConfig.addGlobalData('toc', true); // enable the table of contents
   eleventyConfig.addGlobalData('meta', {
-    title: 'Shoelace',
+    title: 'Adeliom WebComponents',
     description: 'A forward-thinking library of web components.',
     image: 'images/og-image.png',
     version: customElementsManifest.package.version,
     components: allComponents,
+    layouts: allLayouts,
     cdndir,
     npmdir
   });
@@ -74,36 +76,47 @@ module.exports = function (eleventyConfig) {
     if (!component) {
       throw new Error(
         `Unable to find a component called "${tagName}". Make sure the file name is the same as the component's tag ` +
-          `name (minus the sl- prefix).`
+        `name (minus the awc- prefix).`
       );
     }
     return component;
   });
 
+  eleventyConfig.addNunjucksGlobal('getLayout', tagName => {
+    const layout = allLayouts.find(c => c.tagName === tagName);
+    if (!layout) {
+      throw new Error(
+        `Unable to find a layout called "${tagName}". Make sure the file name is the same as the layout's tag ` +
+        `name (minus the awc- prefix).`
+      );
+    }
+    return layout;
+  });
+
   //
   // Custom markdown syntaxes
   //
-  eleventyConfig.setLibrary('md', shoelaceFlavoredMarkdown);
+  eleventyConfig.setLibrary('md', awcFlavoredMarkdown);
 
   //
   // Filters
   //
   eleventyConfig.addFilter('markdown', content => {
-    return shoelaceFlavoredMarkdown.render(content);
+    return awcFlavoredMarkdown.render(content);
   });
 
   eleventyConfig.addFilter('markdownInline', content => {
-    return shoelaceFlavoredMarkdown.renderInline(content);
+    return awcFlavoredMarkdown.renderInline(content);
   });
 
   eleventyConfig.addFilter('classNameToComponentName', className => {
-    let name = capitalCase(className.replace(/^Sl/, ''));
+    let name = capitalCase(className?.replace(/^AWC/, ''));
     if (name === 'Qr Code') name = 'QR Code'; // manual override
     return name;
   });
 
-  eleventyConfig.addFilter('removeSlPrefix', tagName => {
-    return tagName.replace(/^sl-/, '');
+  eleventyConfig.addFilter('removeAWCPrefix', tagName => {
+    return tagName?.replace(/^awc-/, '');
   });
 
   //
@@ -171,7 +184,7 @@ module.exports = function (eleventyConfig) {
       this.field('c'); // content
 
       results.forEach((result, index) => {
-        const url = path.join('/', path.relative(eleventyConfig.dir.output, result.outputPath)).replace(/\\/g, '/');
+        const url = path.join('/', path.relative(eleventyConfig.dir.output, result.outputPath))?.replace(/\\/g, '/');
         const doc = new JSDOM(result.content, {
           // We must set a default URL so links are parsed with a hostname. Let's use a bogus TLD so we can easily
           // identify which ones are internal and which ones are external.
@@ -184,12 +197,12 @@ module.exports = function (eleventyConfig) {
         const headings = [...content.querySelectorAll('h1, h2, h3, h4')]
           .map(heading => heading.textContent)
           .join(' ')
-          .replace(/\s+/g, ' ')
+          ?.replace(/\s+/g, ' ')
           .trim();
 
         // Remove code blocks and whitespace from content
         [...content.querySelectorAll('code[class|=language]')].forEach(code => code.remove());
-        const textContent = content.textContent.replace(/\s+/g, ' ').trim();
+        const textContent = content.textContent?.replace(/\s+/g, ' ').trim();
 
         // Update the index and map
         this.add({ id: index, t: title, h: headings, c: textContent });

@@ -30,7 +30,7 @@ module.exports = function (doc, options) {
     }
 
     // Convert dots to underscores
-    id = id.replace(/\./g, '_');
+    id = id?.replace(/\./g, '_');
 
     // Turn it into a slug
     id = createSlug(id);

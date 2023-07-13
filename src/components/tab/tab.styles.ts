@@ -11,20 +11,22 @@ export default css`
   .tab {
     display: inline-flex;
     align-items: center;
-    font-family: var(--sl-font-sans);
-    font-size: var(--sl-font-size-small);
-    font-weight: var(--sl-font-weight-semibold);
-    border-radius: var(--sl-border-radius-medium);
-    color: var(--sl-color-neutral-600);
-    padding: var(--sl-spacing-medium) var(--sl-spacing-large);
+    font-family: var(--awc-font-sans);
+    font-size: var(--awc-font-size-small);
+    font-weight: var(--awc-font-weight-semibold);
+    border-radius: var(--awc-border-radius-medium);
+    color: var(--awc-color-neutral-600);
+    padding: var(--awc-spacing-medium) var(--awc-spacing-large);
     white-space: nowrap;
     user-select: none;
     cursor: pointer;
-    transition: var(--transition-speed) box-shadow, var(--transition-speed) color;
+    transition:
+      var(--transition-speed) box-shadow,
+      var(--transition-speed) color;
   }
 
   .tab:hover:not(.tab--disabled) {
-    color: var(--sl-color-primary-600);
+    color: var(--awc-color-primary-600);
   }
 
   .tab:focus {
@@ -32,20 +34,20 @@ export default css`
   }
 
   .tab:focus-visible:not(.tab--disabled) {
-    color: var(--sl-color-primary-600);
+    color: var(--awc-color-primary-600);
   }
 
   .tab:focus-visible {
-    outline: var(--sl-focus-ring);
-    outline-offset: calc(-1 * var(--sl-focus-ring-width) - var(--sl-focus-ring-offset));
+    outline: var(--awc-focus-ring);
+    outline-offset: calc(-1 * var(--awc-focus-ring-width) - var(--awc-focus-ring-offset));
   }
 
   .tab.tab--active:not(.tab--disabled) {
-    color: var(--sl-color-primary-600);
+    color: var(--awc-color-primary-600);
   }
 
   .tab.tab--closable {
-    padding-inline-end: var(--sl-spacing-small);
+    padding-inline-end: var(--awc-spacing-small);
   }
 
   .tab.tab--disabled {
@@ -54,12 +56,12 @@ export default css`
   }
 
   .tab__close-button {
-    font-size: var(--sl-font-size-small);
-    margin-inline-start: var(--sl-spacing-small);
+    font-size: var(--awc-font-size-small);
+    margin-inline-start: var(--awc-spacing-small);
   }
 
   .tab__close-button::part(base) {
-    padding: var(--sl-spacing-3x-small);
+    padding: var(--awc-spacing-3x-small);
   }
 
   @media (forced-colors: active) {

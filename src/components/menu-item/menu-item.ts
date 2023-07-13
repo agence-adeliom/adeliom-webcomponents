@@ -4,17 +4,17 @@ import { customElement, property, query } from 'lit/decorators.js';
 import { getTextContent } from '../../internal/slot.js';
 import { html } from 'lit';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './menu-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Menu items provide options for the user to pick from in a menu.
- * @documentation https://shoelace.style/components/menu-item
+ * @documentation https://awc.a-dev.cloud/components/menu-item
  * @status stable
  * @since 2.0
  *
- * @dependency sl-icon
+ * @dependency awc-icon
  *
  * @slot - The menu item's label.
  * @slot prefix - Used to prepend an icon or similar element to the menu item.
@@ -27,8 +27,8 @@ import type { CSSResultGroup } from 'lit';
  * @csspart suffix - The suffix container.
  * @csspart submenu-icon - The submenu icon, visible only when the menu item has a submenu (not yet implemented).
  */
-@customElement('sl-menu-item')
-export default class SlMenuItem extends ShoelaceElement {
+@customElement('awc-menu-item')
+export default class AWCMenuItem extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private cachedTextLabel: string;
@@ -127,7 +127,7 @@ export default class SlMenuItem extends ShoelaceElement {
         })}
       >
         <span part="checked-icon" class="menu-item__check">
-          <sl-icon name="check" library="system" aria-hidden="true"></sl-icon>
+          <awc-icon name="check" library="system" aria-hidden="true"></awc-icon>
         </span>
 
         <slot name="prefix" part="prefix" class="menu-item__prefix"></slot>
@@ -137,7 +137,7 @@ export default class SlMenuItem extends ShoelaceElement {
         <slot name="suffix" part="suffix" class="menu-item__suffix"></slot>
 
         <span part="submenu-icon" class="menu-item__chevron">
-          <sl-icon name="chevron-right" library="system" aria-hidden="true"></sl-icon>
+          <awc-icon name="chevron-right" library="system" aria-hidden="true"></awc-icon>
         </span>
       </div>
     `;
@@ -146,6 +146,6 @@ export default class SlMenuItem extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-menu-item': SlMenuItem;
+    'awc-menu-item': AWCMenuItem;
   }
 }

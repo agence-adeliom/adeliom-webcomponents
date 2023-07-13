@@ -12,13 +12,13 @@ Skeletons try not to be opinionated, as there are endless possibilities for desi
 ```html:preview
 <div class="skeleton-overview">
   <header>
-    <sl-skeleton></sl-skeleton>
-    <sl-skeleton></sl-skeleton>
+    <awc-skeleton></awc-skeleton>
+    <awc-skeleton></awc-skeleton>
   </header>
 
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
+  <awc-skeleton></awc-skeleton>
+  <awc-skeleton></awc-skeleton>
+  <awc-skeleton></awc-skeleton>
 </div>
 
 <style>
@@ -28,16 +28,16 @@ Skeletons try not to be opinionated, as there are endless possibilities for desi
     margin-bottom: 1rem;
   }
 
-  .skeleton-overview header sl-skeleton:last-child {
+  .skeleton-overview header awc-skeleton:last-child {
     flex: 0 0 auto;
     width: 30%;
   }
 
-  .skeleton-overview sl-skeleton {
+  .skeleton-overview awc-skeleton {
     margin-bottom: 1rem;
   }
 
-  .skeleton-overview sl-skeleton:nth-child(1) {
+  .skeleton-overview awc-skeleton:nth-child(1) {
     float: left;
     width: 3rem;
     height: 3rem;
@@ -45,18 +45,18 @@ Skeletons try not to be opinionated, as there are endless possibilities for desi
     vertical-align: middle;
   }
 
-  .skeleton-overview sl-skeleton:nth-child(3) {
+  .skeleton-overview awc-skeleton:nth-child(3) {
     width: 95%;
   }
 
-  .skeleton-overview sl-skeleton:nth-child(4) {
+  .skeleton-overview awc-skeleton:nth-child(4) {
     width: 80%;
   }
 </style>
 ```
 
 ```jsx:react
-import { SlSkeleton } from '@shoelace-style/shoelace/dist/react';
+import { AWCSkeleton } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .skeleton-overview header {
@@ -65,16 +65,16 @@ const css = `
     margin-bottom: 1rem;
   }
 
-  .skeleton-overview header sl-skeleton:last-child {
+  .skeleton-overview header awc-skeleton:last-child {
     flex: 0 0 auto;
     width: 30%;
   }
 
-  .skeleton-overview sl-skeleton {
+  .skeleton-overview awc-skeleton {
     margin-bottom: 1rem;
   }
 
-  .skeleton-overview sl-skeleton:nth-child(1) {
+  .skeleton-overview awc-skeleton:nth-child(1) {
     float: left;
     width: 3rem;
     height: 3rem;
@@ -82,11 +82,11 @@ const css = `
     vertical-align: middle;
   }
 
-  .skeleton-overview sl-skeleton:nth-child(3) {
+  .skeleton-overview awc-skeleton:nth-child(3) {
     width: 95%;
   }
 
-  .skeleton-overview sl-skeleton:nth-child(4) {
+  .skeleton-overview awc-skeleton:nth-child(4) {
     width: 80%;
   }
 `;
@@ -95,13 +95,13 @@ const App = () => (
   <>
     <div className="skeleton-overview">
       <header>
-        <SlSkeleton />
-        <SlSkeleton />
+        <AWCSkeleton />
+        <AWCSkeleton />
       </header>
 
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
+      <AWCSkeleton />
+      <AWCSkeleton />
+      <AWCSkeleton />
     </div>
 
     <style>{css}</style>
@@ -117,36 +117,36 @@ There are two built-in effects, `sheen` and `pulse`. Effects are intentionally s
 
 ```html:preview
 <div class="skeleton-effects">
-  <sl-skeleton effect="none"></sl-skeleton>
+  <awc-skeleton effect="none"></awc-skeleton>
   None
 
-  <sl-skeleton effect="sheen"></sl-skeleton>
+  <awc-skeleton effect="sheen"></awc-skeleton>
   Sheen
 
-  <sl-skeleton effect="pulse"></sl-skeleton>
+  <awc-skeleton effect="pulse"></awc-skeleton>
   Pulse
 </div>
 
 <style>
   .skeleton-effects {
-    font-size: var(--sl-font-size-small);
+    font-size: var(--awc-font-size-small);
   }
 
-  .skeleton-effects sl-skeleton:not(:first-child) {
+  .skeleton-effects awc-skeleton:not(:first-child) {
     margin-top: 1rem;
   }
 </style>
 ```
 
 ```jsx:react
-import { SlSkeleton } from '@shoelace-style/shoelace/dist/react';
+import { AWCSkeleton } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .skeleton-effects {
-    font-size: var(--sl-font-size-small);
+    font-size: var(--awc-font-size-small);
   }
 
-  .skeleton-effects sl-skeleton:not(:first-child) {
+  .skeleton-effects awc-skeleton:not(:first-child) {
     margin-top: 1rem;
   }
 `;
@@ -154,11 +154,11 @@ const css = `
 const App = () => (
   <>
     <div className="skeleton-effects">
-      <SlSkeleton effect="none" />
+      <AWCSkeleton effect="none" />
       None
-      <SlSkeleton effect="sheen" />
+      <AWCSkeleton effect="sheen" />
       Sheen
-      <SlSkeleton effect="pulse" />
+      <AWCSkeleton effect="pulse" />
       Pulse
     </div>
 
@@ -173,49 +173,49 @@ Use multiple skeletons and some clever styles to simulate paragraphs.
 
 ```html:preview
 <div class="skeleton-paragraphs">
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
+  <awc-skeleton></awc-skeleton>
+  <awc-skeleton></awc-skeleton>
+  <awc-skeleton></awc-skeleton>
+  <awc-skeleton></awc-skeleton>
+  <awc-skeleton></awc-skeleton>
 </div>
 
 <style>
-  .skeleton-paragraphs sl-skeleton {
+  .skeleton-paragraphs awc-skeleton {
     margin-bottom: 1rem;
   }
 
-  .skeleton-paragraphs sl-skeleton:nth-child(2) {
+  .skeleton-paragraphs awc-skeleton:nth-child(2) {
     width: 95%;
   }
 
-  .skeleton-paragraphs sl-skeleton:nth-child(4) {
+  .skeleton-paragraphs awc-skeleton:nth-child(4) {
     width: 90%;
   }
 
-  .skeleton-paragraphs sl-skeleton:last-child {
+  .skeleton-paragraphs awc-skeleton:last-child {
     width: 50%;
   }
 </style>
 ```
 
 ```jsx:react
-import { SlSkeleton } from '@shoelace-style/shoelace/dist/react';
+import { AWCSkeleton } from '@agence-adeliom/awc/dist/react';
 
 const css = `
-  .skeleton-paragraphs sl-skeleton {
+  .skeleton-paragraphs awc-skeleton {
     margin-bottom: 1rem;
   }
 
-  .skeleton-paragraphs sl-skeleton:nth-child(2) {
+  .skeleton-paragraphs awc-skeleton:nth-child(2) {
     width: 95%;
   }
 
-  .skeleton-paragraphs sl-skeleton:nth-child(4) {
+  .skeleton-paragraphs awc-skeleton:nth-child(4) {
     width: 90%;
   }
 
-  .skeleton-paragraphs sl-skeleton:last-child {
+  .skeleton-paragraphs awc-skeleton:last-child {
     width: 50%;
   }
 `;
@@ -223,11 +223,11 @@ const css = `
 const App = () => (
   <>
     <div className="skeleton-paragraphs">
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
+      <AWCSkeleton />
+      <AWCSkeleton />
+      <AWCSkeleton />
+      <AWCSkeleton />
+      <AWCSkeleton />
     </div>
 
     <style>{css}</style>
@@ -241,55 +241,55 @@ Set a matching width and height to make a circle, square, or rounded avatar skel
 
 ```html:preview
 <div class="skeleton-avatars">
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
+  <awc-skeleton></awc-skeleton>
+  <awc-skeleton></awc-skeleton>
+  <awc-skeleton></awc-skeleton>
 </div>
 
 <style>
-  .skeleton-avatars sl-skeleton {
+  .skeleton-avatars awc-skeleton {
     display: inline-block;
     width: 3rem;
     height: 3rem;
     margin-right: 0.5rem;
   }
 
-  .skeleton-avatars sl-skeleton:nth-child(1) {
+  .skeleton-avatars awc-skeleton:nth-child(1) {
     --border-radius: 0;
   }
 
-  .skeleton-avatars sl-skeleton:nth-child(2) {
-    --border-radius: var(--sl-border-radius-medium);
+  .skeleton-avatars awc-skeleton:nth-child(2) {
+    --border-radius: var(--awc-border-radius-medium);
   }
 </style>
 ```
 
 ```jsx:react
-import { SlSkeleton } from '@shoelace-style/shoelace/dist/react';
+import { AWCSkeleton } from '@agence-adeliom/awc/dist/react';
 
 const css = `
-  .skeleton-avatars sl-skeleton {
+  .skeleton-avatars awc-skeleton {
     display: inline-block;
     width: 3rem;
     height: 3rem;
     margin-right: .5rem;
   }
 
-  .skeleton-avatars sl-skeleton:nth-child(1) {
+  .skeleton-avatars awc-skeleton:nth-child(1) {
     --border-radius: 0;
   }
 
-  .skeleton-avatars sl-skeleton:nth-child(2) {
-    --border-radius: var(--sl-border-radius-medium);
+  .skeleton-avatars awc-skeleton:nth-child(2) {
+    --border-radius: var(--awc-border-radius-medium);
   }
 `;
 
 const App = () => (
   <>
     <div className="skeleton-avatars">
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
+      <AWCSkeleton />
+      <AWCSkeleton />
+      <AWCSkeleton />
     </div>
 
     <style>{css}</style>
@@ -303,26 +303,26 @@ Use the `--border-radius` custom property to make circles, squares, and rectangl
 
 ```html:preview
 <div class="skeleton-shapes">
-  <sl-skeleton class="square"></sl-skeleton>
-  <sl-skeleton class="circle"></sl-skeleton>
-  <sl-skeleton class="triangle"></sl-skeleton>
-  <sl-skeleton class="cross"></sl-skeleton>
-  <sl-skeleton class="comment"></sl-skeleton>
+  <awc-skeleton class="square"></awc-skeleton>
+  <awc-skeleton class="circle"></awc-skeleton>
+  <awc-skeleton class="triangle"></awc-skeleton>
+  <awc-skeleton class="cross"></awc-skeleton>
+  <awc-skeleton class="comment"></awc-skeleton>
 </div>
 
 <style>
-  .skeleton-shapes sl-skeleton {
+  .skeleton-shapes awc-skeleton {
     display: inline-flex;
     width: 50px;
     height: 50px;
   }
 
   .skeleton-shapes .square::part(indicator) {
-    --border-radius: var(--sl-border-radius-medium);
+    --border-radius: var(--awc-border-radius-medium);
   }
 
   .skeleton-shapes .circle::part(indicator) {
-    --border-radius: var(--sl-border-radius-circle);
+    --border-radius: var(--awc-border-radius-circle);
   }
 
   .skeleton-shapes .triangle::part(indicator) {
@@ -353,28 +353,28 @@ Use the `--border-radius` custom property to make circles, squares, and rectangl
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
   }
 
-  .skeleton-shapes sl-skeleton:not(:last-child) {
+  .skeleton-shapes awc-skeleton:not(:last-child) {
     margin-right: 0.5rem;
   }
 </style>
 ```
 
 ```jsx:react
-import { SlSkeleton } from '@shoelace-style/shoelace/dist/react';
+import { AWCSkeleton } from '@agence-adeliom/awc/dist/react';
 
 const css = `
-  .skeleton-shapes sl-skeleton {
+  .skeleton-shapes awc-skeleton {
     display: inline-flex;
     width: 50px;
     height: 50px;
   }
 
   .skeleton-shapes .square::part(indicator) {
-    --border-radius: var(--sl-border-radius-medium);
+    --border-radius: var(--awc-border-radius-medium);
   }
 
   .skeleton-shapes .circle::part(indicator) {
-    --border-radius: var(--sl-border-radius-circle);
+    --border-radius: var(--awc-border-radius-circle);
   }
 
   .skeleton-shapes .triangle::part(indicator) {
@@ -392,7 +392,7 @@ const css = `
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
   }
 
-  .skeleton-shapes sl-skeleton:not(:last-child) {
+  .skeleton-shapes awc-skeleton:not(:last-child) {
     margin-right: .5rem;
   }
 `;
@@ -400,11 +400,11 @@ const css = `
 const App = () => (
   <>
     <div className="skeleton-shapes">
-      <SlSkeleton className="square" />
-      <SlSkeleton className="circle" />
-      <SlSkeleton className="triangle" />
-      <SlSkeleton className="cross" />
-      <SlSkeleton className="comment" />
+      <AWCSkeleton className="square" />
+      <AWCSkeleton className="circle" />
+      <AWCSkeleton className="triangle" />
+      <AWCSkeleton className="cross" />
+      <AWCSkeleton className="comment" />
     </div>
 
     <style>{css}</style>
@@ -417,32 +417,32 @@ const App = () => (
 Set the `--color` and `--sheen-color` custom properties to adjust the skeleton's color.
 
 ```html:preview
-<sl-skeleton effect="sheen" style="--color: tomato; --sheen-color: #ffb094;"></sl-skeleton>
+<awc-skeleton effect="sheen" style="--color: tomato; --sheen-color: #ffb094;"></awc-skeleton>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlSkeleton } from '@shoelace-style/shoelace/dist/react';
+import { AWCSkeleton } from '@agence-adeliom/awc/dist/react';
 
 const css = `
-  .skeleton-avatars sl-skeleton {
+  .skeleton-avatars awc-skeleton {
     display: inline-block;
     width: 3rem;
     height: 3rem;
     margin-right: .5rem;
   }
 
-  .skeleton-avatars sl-skeleton:nth-child(1) {
+  .skeleton-avatars awc-skeleton:nth-child(1) {
     --border-radius: 0;
   }
 
-  .skeleton-avatars sl-skeleton:nth-child(2) {
-    --border-radius: var(--sl-border-radius-medium);
+  .skeleton-avatars awc-skeleton:nth-child(2) {
+    --border-radius: var(--awc-border-radius-medium);
   }
 `;
 
-const App = () => <SlSkeleton effect="sheen" style={{ '--color': 'tomato', '--sheen-color': '#ffb094' }} />;
+const App = () => <AWCSkeleton effect="sheen" style={{ '--color': 'tomato', '--sheen-color': '#ffb094' }} />;
 ```
 
 {% endraw %}

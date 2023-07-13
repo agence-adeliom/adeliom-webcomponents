@@ -6,34 +6,34 @@ layout: component
 ---
 
 ```html:preview
-<sl-split-panel>
+<awc-split-panel>
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     End
   </div>
-</sl-split-panel>
+</awc-split-panel>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlSplitPanel } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSplitPanel>
+  <AWCSplitPanel>
     <div
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -45,7 +45,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -53,7 +53,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </AWCSplitPanel>
 );
 ```
 
@@ -66,20 +66,20 @@ const App = () => (
 To set the initial position, use the `position` attribute. If no position is provided, it will default to 50% of the available space.
 
 ```html:preview
-<sl-split-panel position="75">
+<awc-split-panel position="75">
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     End
   </div>
-</sl-split-panel>
+</awc-split-panel>
 ```
 
 ### Initial Position in Pixels
@@ -87,34 +87,34 @@ To set the initial position, use the `position` attribute. If no position is pro
 To set the initial position in pixels instead of a percentage, use the `position-in-pixels` attribute.
 
 ```html:preview
-<sl-split-panel position-in-pixels="150">
+<awc-split-panel position-in-pixels="150">
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     End
   </div>
-</sl-split-panel>
+</awc-split-panel>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlSplitPanel } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSplitPanel position="200">
+  <AWCSplitPanel position="200">
     <div
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -126,7 +126,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -134,7 +134,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </AWCSplitPanel>
 );
 ```
 
@@ -145,34 +145,34 @@ const App = () => (
 Add the `vertical` attribute to render the split panel in a vertical orientation where the start and end panels are stacked. You also need to set a height when using the vertical orientation.
 
 ```html:preview
-<sl-split-panel vertical style="height: 400px;">
+<awc-split-panel vertical style="height: 400px;">
   <div
     slot="start"
-    style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     End
   </div>
-</sl-split-panel>
+</awc-split-panel>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlSplitPanel } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSplitPanel vertical style={{ height: '400px' }}>
+  <AWCSplitPanel vertical style={{ height: '400px' }}>
     <div
       slot="start"
       style={{
         height: '100%',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -184,7 +184,7 @@ const App = () => (
       slot="end"
       style={{
         height: '100%',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -192,7 +192,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </AWCSplitPanel>
 );
 ```
 
@@ -204,20 +204,20 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
 
 ```html:preview
 <div class="split-panel-snapping">
-  <sl-split-panel snap="100px 50%">
+  <awc-split-panel snap="100px 50%">
     <div
       slot="start"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+      style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
     >
       Start
     </div>
     <div
       slot="end"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+      style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
     >
       End
     </div>
-  </sl-split-panel>
+  </awc-split-panel>
 
   <div class="split-panel-snapping-dots"></div>
 </div>
@@ -235,7 +235,7 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--sl-color-neutral-400);
+    background: var(--awc-color-neutral-400);
     transform: translateX(-3px);
   }
 
@@ -252,7 +252,7 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
 {% raw %}
 
 ```jsx:react
-import { SlSplitPanel } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .split-panel-snapping {
@@ -267,7 +267,7 @@ const css = `
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--sl-color-neutral-400);
+    background: var(--awc-color-neutral-400);
     transform: translateX(-3px);
   }
 
@@ -283,12 +283,12 @@ const css = `
 const App = () => (
   <>
     <div className="split-panel-snapping">
-      <SlSplitPanel snap="100px 50%">
+      <AWCSplitPanel snap="100px 50%">
         <div
           slot="start"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--awc-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -300,7 +300,7 @@ const App = () => (
           slot="end"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--awc-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -308,7 +308,7 @@ const App = () => (
         >
           End
         </div>
-      </SlSplitPanel>
+      </AWCSplitPanel>
 
       <div className="split-panel-snapping-dots" />
     </div>
@@ -325,34 +325,34 @@ const App = () => (
 Add the `disabled` attribute to prevent the divider from being repositioned.
 
 ```html:preview
-<sl-split-panel disabled>
+<awc-split-panel disabled>
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     End
   </div>
-</sl-split-panel>
+</awc-split-panel>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlSplitPanel } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSplitPanel disabled>
+  <AWCSplitPanel disabled>
     <div
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -364,7 +364,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -372,7 +372,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </AWCSplitPanel>
 );
 ```
 
@@ -386,34 +386,34 @@ Try resizing the example below with each option and notice how the panels respon
 
 ```html:preview
 <div class="split-panel-primary">
-  <sl-split-panel>
+  <awc-split-panel>
     <div
       slot="start"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+      style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
     >
       Start
     </div>
     <div
       slot="end"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+      style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
     >
       End
     </div>
-  </sl-split-panel>
+  </awc-split-panel>
 
-  <sl-select label="Primary Panel" value="" style="max-width: 200px; margin-top: 1rem;">
-    <sl-option value="">None</sl-option>
-    <sl-option value="start">Start</sl-option>
-    <sl-option value="end">End</sl-option>
-  </sl-select>
+  <awc-select label="Primary Panel" value="" style="max-width: 200px; margin-top: 1rem;">
+    <awc-option value="">None</awc-option>
+    <awc-option value="start">Start</awc-option>
+    <awc-option value="end">End</awc-option>
+  </awc-select>
 </div>
 
 <script>
   const container = document.querySelector('.split-panel-primary');
-  const splitPanel = container.querySelector('sl-split-panel');
-  const select = container.querySelector('sl-select');
+  const splitPanel = container.querySelector('awc-split-panel');
+  const select = container.querySelector('awc-select');
 
-  select.addEventListener('sl-change', () => (splitPanel.primary = select.value));
+  select.addEventListener('awc-change', () => (splitPanel.primary = select.value));
 </script>
 ```
 
@@ -421,19 +421,19 @@ Try resizing the example below with each option and notice how the panels respon
 
 ```jsx:react
 import { useState } from 'react';
-import { SlSplitPanel, SlSelect, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel, AWCSelect, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [primary, setPrimary] = useState('');
 
   return (
     <>
-      <SlSplitPanel primary={primary}>
+      <AWCSplitPanel primary={primary}>
         <div
           slot="start"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--awc-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -445,7 +445,7 @@ const App = () => {
           slot="end"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--awc-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -453,18 +453,18 @@ const App = () => {
         >
           End
         </div>
-      </SlSplitPanel>
+      </AWCSplitPanel>
 
-      <SlSelect
+      <AWCSelect
         label="Primary Panel"
         value={primary}
         style={{ maxWidth: '200px', marginTop: '1rem' }}
-        onSlChange={event => setPrimary(event.target.value)}
+        onAwcChange={event => setPrimary(event.target.value)}
       >
-        <SlMenuItem value="">None</SlMenuItem>
-        <SlMenuItem value="start">Start</SlMenuItem>
-        <SlMenuItem value="end">End</SlMenuItem>
-      </SlSelect>
+        <AWCMenuItem value="">None</AWCMenuItem>
+        <AWCMenuItem value="start">Start</AWCMenuItem>
+        <AWCMenuItem value="end">End</AWCMenuItem>
+      </AWCSelect>
     </>
   );
 };
@@ -479,34 +479,34 @@ To set a minimum or maximum size of the primary panel, use the `--min` and `--ma
 This examples demonstrates how you can ensure both panels are at least 150px using `--min`, `--max`, and the `calc()` function.
 
 ```html:preview
-<sl-split-panel style="--min: 150px; --max: calc(100% - 150px);">
+<awc-split-panel style="--min: 150px; --max: calc(100% - 150px);">
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     End
   </div>
-</sl-split-panel>
+</awc-split-panel>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlSplitPanel } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSplitPanel style={{ '--min': '150px', '--max': 'calc(100% - 150px)' }}>
+  <AWCSplitPanel style={{ '--min': '150px', '--max': 'calc(100% - 150px)' }}>
     <div
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -518,7 +518,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -526,7 +526,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </AWCSplitPanel>
 );
 ```
 
@@ -537,44 +537,44 @@ const App = () => (
 Create complex layouts that can be repositioned independently by nesting split panels.
 
 ```html:preview
-<sl-split-panel>
+<awc-split-panel>
   <div
     slot="start"
-    style="height: 400px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 400px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     Start
   </div>
   <div slot="end">
-    <sl-split-panel vertical style="height: 400px;">
+    <awc-split-panel vertical style="height: 400px;">
       <div
         slot="start"
-        style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
       >
         Top
       </div>
       <div
         slot="end"
-        style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
       >
         Bottom
       </div>
-    </sl-split-panel>
+    </awc-split-panel>
   </div>
-</sl-split-panel>
+</awc-split-panel>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlSplitPanel } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSplitPanel>
+  <AWCSplitPanel>
     <div
       slot="start"
       style={{
         height: '400px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -583,12 +583,12 @@ const App = () => (
       Start
     </div>
     <div slot="end">
-      <SlSplitPanel vertical style={{ height: '400px' }}>
+      <AWCSplitPanel vertical style={{ height: '400px' }}>
         <div
           slot="start"
           style={{
             height: '100%',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--awc-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -600,7 +600,7 @@ const App = () => (
           slot="end"
           style={{
             height: '100%',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--awc-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -608,9 +608,9 @@ const App = () => (
         >
           End
         </div>
-      </SlSplitPanel>
+      </AWCSplitPanel>
     </div>
-  </SlSplitPanel>
+  </AWCSplitPanel>
 );
 ```
 
@@ -621,36 +621,36 @@ const App = () => (
 You can target the `divider` part to apply CSS properties to the divider. To add a custom handle, slot an icon into the `divider` slot. When customizing the divider, make sure to think about focus styles for keyboard users.
 
 ```html:preview
-<sl-split-panel style="--divider-width: 20px;">
-  <sl-icon slot="divider" name="grip-vertical"></sl-icon>
+<awc-split-panel style="--divider-width: 20px;">
+  <awc-icon slot="divider" name="grip-vertical"></awc-icon>
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+    style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
   >
     End
   </div>
-</sl-split-panel>
+</awc-split-panel>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlSplitPanel, SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel, AWCIcon } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSplitPanel style={{ '--divider-width': '20px' }}>
-    <SlIcon slot="divider" name="grip-vertical" />
+  <AWCSplitPanel style={{ '--divider-width': '20px' }}>
+    <AWCIcon slot="divider" name="grip-vertical" />
     <div
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -662,7 +662,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--awc-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -670,7 +670,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </AWCSplitPanel>
 );
 ```
 
@@ -680,47 +680,47 @@ Here's a more elaborate example that changes the divider's color and width and a
 
 ```html:preview
 <div class="split-panel-divider">
-  <sl-split-panel>
-    <sl-icon slot="divider" name="grip-vertical"></sl-icon>
+  <awc-split-panel>
+    <awc-icon slot="divider" name="grip-vertical"></awc-icon>
     <div
       slot="start"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+      style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
     >
       Start
     </div>
     <div
       slot="end"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+      style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
     >
       End
     </div>
-  </sl-split-panel>
+  </awc-split-panel>
 </div>
 
 <style>
-  .split-panel-divider sl-split-panel {
+  .split-panel-divider awc-split-panel {
     --divider-width: 2px;
   }
 
-  .split-panel-divider sl-split-panel::part(divider) {
-    background-color: var(--sl-color-pink-600);
+  .split-panel-divider awc-split-panel::part(divider) {
+    background-color: var(--awc-color-pink-600);
   }
 
-  .split-panel-divider sl-icon {
+  .split-panel-divider awc-icon {
     position: absolute;
-    border-radius: var(--sl-border-radius-small);
-    background: var(--sl-color-pink-600);
-    color: var(--sl-color-neutral-0);
+    border-radius: var(--awc-border-radius-small);
+    background: var(--awc-color-pink-600);
+    color: var(--awc-color-neutral-0);
     padding: 0.5rem 0.125rem;
   }
 
-  .split-panel-divider sl-split-panel::part(divider):focus-visible {
-    background-color: var(--sl-color-primary-600);
+  .split-panel-divider awc-split-panel::part(divider):focus-visible {
+    background-color: var(--awc-color-primary-600);
   }
 
-  .split-panel-divider sl-split-panel:focus-within sl-icon {
-    background-color: var(--sl-color-primary-600);
-    color: var(--sl-color-neutral-0);
+  .split-panel-divider awc-split-panel:focus-within awc-icon {
+    background-color: var(--awc-color-primary-600);
+    color: var(--awc-color-neutral-0);
   }
 </style>
 ```
@@ -728,45 +728,45 @@ Here's a more elaborate example that changes the divider's color and width and a
 {% raw %}
 
 ```jsx:react
-import { SlSplitPanel, SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCSplitPanel, AWCIcon } from '@agence-adeliom/awc/dist/react';
 
 const css = `
-  .split-panel-divider sl-split-panel {
+  .split-panel-divider awc-split-panel {
     --divider-width: 2px;
   }
 
-  .split-panel-divider sl-split-panel::part(divider) {
-    background-color: var(--sl-color-pink-600);
+  .split-panel-divider awc-split-panel::part(divider) {
+    background-color: var(--awc-color-pink-600);
   }
 
-  .split-panel-divider sl-icon {
+  .split-panel-divider awc-icon {
     position: absolute;
-    border-radius: var(--sl-border-radius-small);
-    background: var(--sl-color-pink-600);
-    color: var(--sl-color-neutral-0);
+    border-radius: var(--awc-border-radius-small);
+    background: var(--awc-color-pink-600);
+    color: var(--awc-color-neutral-0);
     padding: .5rem .125rem;
   }
 
-  .split-panel-divider sl-split-panel::part(divider):focus-visible {
-    background-color: var(--sl-color-primary-600);
+  .split-panel-divider awc-split-panel::part(divider):focus-visible {
+    background-color: var(--awc-color-primary-600);
   }
 
-  .split-panel-divider sl-split-panel:focus-within sl-icon {
-    background-color: var(--sl-color-primary-600);
-    color: var(--sl-color-neutral-0);
+  .split-panel-divider awc-split-panel:focus-within awc-icon {
+    background-color: var(--awc-color-primary-600);
+    color: var(--awc-color-neutral-0);
   }
 `;
 
 const App = () => (
   <>
     <div className="split-panel-divider">
-      <SlSplitPanel>
-        <SlIcon slot="divider" name="grip-vertical" />
+      <AWCSplitPanel>
+        <AWCIcon slot="divider" name="grip-vertical" />
         <div
           slot="start"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--awc-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -778,7 +778,7 @@ const App = () => (
           slot="end"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--awc-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -786,7 +786,7 @@ const App = () => (
         >
           End
         </div>
-      </SlSplitPanel>
+      </AWCSplitPanel>
     </div>
 
     <style>{css}</style>

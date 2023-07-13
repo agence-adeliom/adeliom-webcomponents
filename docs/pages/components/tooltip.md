@@ -10,18 +10,18 @@ A tooltip's target is its _first child element_, so you should only wrap one ele
 Tooltips use `display: contents` so they won't interfere with how elements are positioned in a flex or grid layout.
 
 ```html:preview
-<sl-tooltip content="This is a tooltip">
-  <sl-button>Hover Me</sl-button>
-</sl-tooltip>
+<awc-tooltip content="This is a tooltip">
+  <awc-button>Hover Me</awc-button>
+</awc-tooltip>
 ```
 
 ```jsx:react
-import { SlButton, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTooltip content="This is a tooltip">
-    <SlButton>Hover Me</SlButton>
-  </SlTooltip>
+  <AWCTooltip content="This is a tooltip">
+    <AWCButton>Hover Me</AWCButton>
+  </AWCTooltip>
 );
 ```
 
@@ -34,61 +34,61 @@ Use the `placement` attribute to set the preferred placement of the tooltip.
 ```html:preview
 <div class="tooltip-placement-example">
   <div class="tooltip-placement-example-row">
-    <sl-tooltip content="top-start" placement="top-start">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="top-start" placement="top-start">
+      <awc-button></awc-button>
+    </awc-tooltip>
 
-    <sl-tooltip content="top" placement="top">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="top" placement="top">
+      <awc-button></awc-button>
+    </awc-tooltip>
 
-    <sl-tooltip content="top-end" placement="top-end">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="top-end" placement="top-end">
+      <awc-button></awc-button>
+    </awc-tooltip>
   </div>
 
   <div class="tooltip-placement-example-row">
-    <sl-tooltip content="left-start" placement="left-start">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="left-start" placement="left-start">
+      <awc-button></awc-button>
+    </awc-tooltip>
 
-    <sl-tooltip content="right-start" placement="right-start">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="right-start" placement="right-start">
+      <awc-button></awc-button>
+    </awc-tooltip>
   </div>
 
   <div class="tooltip-placement-example-row">
-    <sl-tooltip content="left" placement="left">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="left" placement="left">
+      <awc-button></awc-button>
+    </awc-tooltip>
 
-    <sl-tooltip content="right" placement="right">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="right" placement="right">
+      <awc-button></awc-button>
+    </awc-tooltip>
   </div>
 
   <div class="tooltip-placement-example-row">
-    <sl-tooltip content="left-end" placement="left-end">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="left-end" placement="left-end">
+      <awc-button></awc-button>
+    </awc-tooltip>
 
-    <sl-tooltip content="right-end" placement="right-end">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="right-end" placement="right-end">
+      <awc-button></awc-button>
+    </awc-tooltip>
   </div>
 
   <div class="tooltip-placement-example-row">
-    <sl-tooltip content="bottom-start" placement="bottom-start">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="bottom-start" placement="bottom-start">
+      <awc-button></awc-button>
+    </awc-tooltip>
 
-    <sl-tooltip content="bottom" placement="bottom">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="bottom" placement="bottom">
+      <awc-button></awc-button>
+    </awc-tooltip>
 
-    <sl-tooltip content="bottom-end" placement="bottom-end">
-      <sl-button></sl-button>
-    </sl-tooltip>
+    <awc-tooltip content="bottom-end" placement="bottom-end">
+      <awc-button></awc-button>
+    </awc-tooltip>
   </div>
 </div>
 
@@ -104,28 +104,28 @@ Use the `placement` attribute to set the preferred placement of the tooltip.
     clear: both;
   }
 
-  .tooltip-placement-example sl-button {
+  .tooltip-placement-example awc-button {
     float: left;
     width: 2.5rem;
     margin-right: 0.25rem;
     margin-bottom: 0.25rem;
   }
 
-  .tooltip-placement-example-row:nth-child(1) sl-tooltip:first-child sl-button,
-  .tooltip-placement-example-row:nth-child(5) sl-tooltip:first-child sl-button {
+  .tooltip-placement-example-row:nth-child(1) awc-tooltip:first-child awc-button,
+  .tooltip-placement-example-row:nth-child(5) awc-tooltip:first-child awc-button {
     margin-left: calc(40px + 0.25rem);
   }
 
-  .tooltip-placement-example-row:nth-child(2) sl-tooltip:nth-child(2) sl-button,
-  .tooltip-placement-example-row:nth-child(3) sl-tooltip:nth-child(2) sl-button,
-  .tooltip-placement-example-row:nth-child(4) sl-tooltip:nth-child(2) sl-button {
+  .tooltip-placement-example-row:nth-child(2) awc-tooltip:nth-child(2) awc-button,
+  .tooltip-placement-example-row:nth-child(3) awc-tooltip:nth-child(2) awc-button,
+  .tooltip-placement-example-row:nth-child(4) awc-tooltip:nth-child(2) awc-button {
     margin-left: calc((40px * 3) + (0.25rem * 3));
   }
 </style>
 ```
 
 ```jsx:react
-import { SlButton, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .tooltip-placement-example {
@@ -138,21 +138,21 @@ const css = `
     clear: both;
   }
 
-  .tooltip-placement-example sl-button {
+  .tooltip-placement-example awc-button {
     float: left;
     width: 2.5rem;
     margin-right: 0.25rem;
     margin-bottom: 0.25rem;
   }
 
-  .tooltip-placement-example-row:nth-child(1) sl-tooltip:first-child sl-button,
-  .tooltip-placement-example-row:nth-child(5) sl-tooltip:first-child sl-button {
+  .tooltip-placement-example-row:nth-child(1) awc-tooltip:first-child awc-button,
+  .tooltip-placement-example-row:nth-child(5) awc-tooltip:first-child awc-button {
     margin-left: calc(40px + 0.25rem);
   }
 
-  .tooltip-placement-example-row:nth-child(2) sl-tooltip:nth-child(2) sl-button,
-  .tooltip-placement-example-row:nth-child(3) sl-tooltip:nth-child(2) sl-button,
-  .tooltip-placement-example-row:nth-child(4) sl-tooltip:nth-child(2) sl-button {
+  .tooltip-placement-example-row:nth-child(2) awc-tooltip:nth-child(2) awc-button,
+  .tooltip-placement-example-row:nth-child(3) awc-tooltip:nth-child(2) awc-button,
+  .tooltip-placement-example-row:nth-child(4) awc-tooltip:nth-child(2) awc-button {
     margin-left: calc((40px * 3) + (0.25rem * 3));
   }
 `;
@@ -161,61 +161,61 @@ const App = () => (
   <>
     <div className="tooltip-placement-example">
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="top-start" placement="top-start">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="top-start" placement="top-start">
+          <AWCButton />
+        </AWCTooltip>
 
-        <SlTooltip content="top" placement="top">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="top" placement="top">
+          <AWCButton />
+        </AWCTooltip>
 
-        <SlTooltip content="top-end" placement="top-end">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="top-end" placement="top-end">
+          <AWCButton />
+        </AWCTooltip>
       </div>
 
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="left-start" placement="left-start">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="left-start" placement="left-start">
+          <AWCButton />
+        </AWCTooltip>
 
-        <SlTooltip content="right-start" placement="right-start">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="right-start" placement="right-start">
+          <AWCButton />
+        </AWCTooltip>
       </div>
 
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="left" placement="left">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="left" placement="left">
+          <AWCButton />
+        </AWCTooltip>
 
-        <SlTooltip content="right" placement="right">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="right" placement="right">
+          <AWCButton />
+        </AWCTooltip>
       </div>
 
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="left-end" placement="left-end">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="left-end" placement="left-end">
+          <AWCButton />
+        </AWCTooltip>
 
-        <SlTooltip content="right-end" placement="right-end">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="right-end" placement="right-end">
+          <AWCButton />
+        </AWCTooltip>
       </div>
 
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="bottom-start" placement="bottom-start">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="bottom-start" placement="bottom-start">
+          <AWCButton />
+        </AWCTooltip>
 
-        <SlTooltip content="bottom" placement="bottom">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="bottom" placement="bottom">
+          <AWCButton />
+        </AWCTooltip>
 
-        <SlTooltip content="bottom-end" placement="bottom-end">
-          <SlButton />
-        </SlTooltip>
+        <AWCTooltip content="bottom-end" placement="bottom-end">
+          <AWCButton />
+        </AWCTooltip>
       </div>
     </div>
 
@@ -229,18 +229,18 @@ const App = () => (
 Set the `trigger` attribute to `click` to toggle the tooltip on click instead of hover.
 
 ```html:preview
-<sl-tooltip content="Click again to dismiss" trigger="click">
-  <sl-button>Click to Toggle</sl-button>
-</sl-tooltip>
+<awc-tooltip content="Click again to dismiss" trigger="click">
+  <awc-button>Click to Toggle</awc-button>
+</awc-tooltip>
 ```
 
 ```jsx:react
-import { SlButton, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTooltip content="Click again to dismiss" trigger="click">
-    <SlButton>Click to Toggle</SlButton>
-  </SlTooltip>
+  <AWCTooltip content="Click again to dismiss" trigger="click">
+    <AWCButton>Click to Toggle</AWCButton>
+  </AWCTooltip>
 );
 ```
 
@@ -249,11 +249,11 @@ const App = () => (
 Tooltips can be controller programmatically by setting the `trigger` attribute to `manual`. Use the `open` attribute to control when the tooltip is shown.
 
 ```html:preview
-<sl-button style="margin-right: 4rem;">Toggle Manually</sl-button>
+<awc-button style="margin-right: 4rem;">Toggle Manually</awc-button>
 
-<sl-tooltip content="This is an avatar" trigger="manual" class="manual-tooltip">
-  <sl-avatar label="User"></sl-avatar>
-</sl-tooltip>
+<awc-tooltip content="This is an avatar" trigger="manual" class="manual-tooltip">
+  <awc-avatar label="User"></awc-avatar>
+</awc-tooltip>
 
 <script>
   const tooltip = document.querySelector('.manual-tooltip');
@@ -267,20 +267,20 @@ Tooltips can be controller programmatically by setting the `trigger` attribute t
 
 ```jsx:react
 import { useState } from 'react';
-import { SlAvatar, SlButton, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCAvatar, AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <SlButton style={{ marginRight: '4rem' }} onClick={() => setOpen(!open)}>
+      <AWCButton style={{ marginRight: '4rem' }} onClick={() => setOpen(!open)}>
         Toggle Manually
-      </SlButton>
+      </AWCButton>
 
-      <SlTooltip open={open} content="This is an avatar" trigger="manual">
-        <SlAvatar />
-      </SlTooltip>
+      <AWCTooltip open={open} content="This is an avatar" trigger="manual">
+        <AWCAvatar />
+      </AWCTooltip>
     </>
   );
 };
@@ -290,39 +290,39 @@ const App = () => {
 
 ### Removing Arrows
 
-You can control the size of tooltip arrows by overriding the `--sl-tooltip-arrow-size` design token. To remove them, set the value to `0` as shown below.
+You can control the size of tooltip arrows by overriding the `--awc-tooltip-arrow-size` design token. To remove them, set the value to `0` as shown below.
 
 ```html:preview
-<sl-tooltip content="This is a tooltip" style="--sl-tooltip-arrow-size: 0;">
-  <sl-button>No Arrow</sl-button>
-</sl-tooltip>
+<awc-tooltip content="This is a tooltip" style="--awc-tooltip-arrow-size: 0;">
+  <awc-button>No Arrow</awc-button>
+</awc-tooltip>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlButton, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <div style={{ '--sl-tooltip-arrow-size': '0' }}>
-    <SlTooltip content="This is a tooltip">
-      <SlButton>Above</SlButton>
-    </SlTooltip>
+  <div style={{ '--awc-tooltip-arrow-size': '0' }}>
+    <AWCTooltip content="This is a tooltip">
+      <AWCButton>Above</AWCButton>
+    </AWCTooltip>
 
-    <SlTooltip content="This is a tooltip" placement="bottom">
-      <SlButton>Below</SlButton>
-    </SlTooltip>
+    <AWCTooltip content="This is a tooltip" placement="bottom">
+      <AWCButton>Below</AWCButton>
+    </AWCTooltip>
   </div>
 );
 ```
 
 {% endraw %}
 
-To override it globally, set it in a root block in your stylesheet after the Shoelace stylesheet is loaded.
+To override it globally, set it in a root block in your stylesheet after the Adeliom WebComponents stylesheet is loaded.
 
 ```css
 :root {
-  --sl-tooltip-arrow-size: 0;
+  --awc-tooltip-arrow-size: 0;
 }
 ```
 
@@ -331,24 +331,24 @@ To override it globally, set it in a root block in your stylesheet after the Sho
 Use the `content` slot to create tooltips with HTML content. Tooltips are designed only for text and presentational elements. Avoid placing interactive content, such as buttons, links, and form controls, in a tooltip.
 
 ```html:preview
-<sl-tooltip>
+<awc-tooltip>
   <div slot="content">I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!</div>
 
-  <sl-button>Hover me</sl-button>
-</sl-tooltip>
+  <awc-button>Hover me</awc-button>
+</awc-tooltip>
 ```
 
 ```jsx:react
-import { SlButton, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTooltip>
+  <AWCTooltip>
     <div slot="content">
       I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!
     </div>
 
-    <SlButton>Hover Me</SlButton>
-  </SlTooltip>
+    <AWCButton>Hover Me</AWCButton>
+  </AWCTooltip>
 );
 ```
 
@@ -357,20 +357,20 @@ const App = () => (
 Use the `--max-width` custom property to change the width the tooltip can grow to before wrapping occurs.
 
 ```html:preview
-<sl-tooltip style="--max-width: 80px;" content="This tooltip will wrap after only 80 pixels.">
-  <sl-button>Hover me</sl-button>
-</sl-tooltip>
+<awc-tooltip style="--max-width: 80px;" content="This tooltip will wrap after only 80 pixels.">
+  <awc-button>Hover me</awc-button>
+</awc-tooltip>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlButton, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlTooltip style={{ '--max-width': '80px' }} content="This tooltip will wrap after only 80 pixels.">
-    <SlButton>Hover Me</SlButton>
-  </SlTooltip>
+  <AWCTooltip style={{ '--max-width': '80px' }} content="This tooltip will wrap after only 80 pixels.">
+    <AWCButton>Hover Me</AWCButton>
+  </AWCTooltip>
 );
 ```
 
@@ -382,33 +382,33 @@ Tooltips will be clipped if they're inside a container that has `overflow: auto|
 
 ```html:preview
 <div class="tooltip-hoist">
-  <sl-tooltip content="This is a tooltip">
-    <sl-button>No Hoist</sl-button>
-  </sl-tooltip>
+  <awc-tooltip content="This is a tooltip">
+    <awc-button>No Hoist</awc-button>
+  </awc-tooltip>
 
-  <sl-tooltip content="This is a tooltip" hoist>
-    <sl-button>Hoist</sl-button>
-  </sl-tooltip>
+  <awc-tooltip content="This is a tooltip" hoist>
+    <awc-button>Hoist</awc-button>
+  </awc-tooltip>
 </div>
 
 <style>
   .tooltip-hoist {
     position: relative;
-    border: solid 2px var(--sl-panel-border-color);
+    border: solid 2px var(--awc-panel-border-color);
     overflow: hidden;
-    padding: var(--sl-spacing-medium);
+    padding: var(--awc-spacing-medium);
   }
 </style>
 ```
 
 ```jsx:react
-import { SlButton, SlTooltip } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .tooltip-hoist {
-    border: solid 2px var(--sl-panel-border-color);
+    border: solid 2px var(--awc-panel-border-color);
     overflow: hidden;
-    padding: var(--sl-spacing-medium);
+    padding: var(--awc-spacing-medium);
     position: relative;
   }
 `;
@@ -416,13 +416,13 @@ const css = `
 const App = () => (
   <>
     <div class="tooltip-hoist">
-      <SlTooltip content="This is a tooltip">
-        <SlButton>No Hoist</SlButton>
-      </SlTooltip>
+      <AWCTooltip content="This is a tooltip">
+        <AWCButton>No Hoist</AWCButton>
+      </AWCTooltip>
 
-      <SlTooltip content="This is a tooltip" hoist>
-        <SlButton>Hoist</SlButton>
-      </SlTooltip>
+      <AWCTooltip content="This is a tooltip" hoist>
+        <AWCButton>Hoist</AWCButton>
+      </AWCTooltip>
     </div>
 
     <style>{css}</style>

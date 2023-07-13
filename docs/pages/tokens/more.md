@@ -11,153 +11,153 @@ All of the design tokens described herein are considered relatively stable. Howe
 Most design tokens are consistent across the light and dark theme. Those that vary will show both values.
 
 :::tip
-Currently, the source of design tokens is considered to be [`light.css`](https://github.com/shoelace-style/shoelace/blob/next/src/themes/light.css). The dark theme, [dark.css](https://github.com/shoelace-style/shoelace/blob/next/src/themes/dark.css), mirrors all of the same tokens with dark mode-specific values where appropriate. Work is planned to move all design tokens to a single file, perhaps JSON or YAML, in the near future.
+Currently, the source of design tokens is considered to be [`light.css`](https://github.com/agence-adeliom/awc/blob/next/src/themes/light.css). The dark theme, [dark.css](https://github.com/agence-adeliom/awc/blob/next/src/themes/dark.css), mirrors all of the same tokens with dark mode-specific values where appropriate. Work is planned to move all design tokens to a single file, perhaps JSON or YAML, in the near future.
 :::
 
 ## Focus Rings
 
-Focus ring tokens control the appearance of focus rings. Note that form inputs use `--sl-input-focus-ring-*` tokens instead.
+Focus ring tokens control the appearance of focus rings. Note that form inputs use `--awc-input-focus-ring-*` tokens instead.
 
-| Token                    | Value                                                                                 |
-| ------------------------ | ------------------------------------------------------------------------------------- |
-| `--sl-focus-ring-color`  | var(--sl-color-primary-600) (light theme)<br>var(--sl-color-primary-700) (dark theme) |
-| `--sl-focus-ring-style`  | solid                                                                                 |
-| `--sl-focus-ring-width`  | 3px                                                                                   |
-| `--sl-focus-ring`        | var(--sl-focus-ring-style) var(--sl-focus-ring-width) var(--sl-focus-ring-color)      |
-| `--sl-focus-ring-offset` | 1px                                                                                   |
+| Token                     | Value                                                                                   |
+| ------------------------- | --------------------------------------------------------------------------------------- |
+| `--awc-focus-ring-color`  | var(--awc-color-primary-600) (light theme)<br>var(--awc-color-primary-700) (dark theme) |
+| `--awc-focus-ring-style`  | solid                                                                                   |
+| `--awc-focus-ring-width`  | 3px                                                                                     |
+| `--awc-focus-ring`        | var(--awc-focus-ring-style) var(--awc-focus-ring-width) var(--awc-focus-ring-color)     |
+| `--awc-focus-ring-offset` | 1px                                                                                     |
 
 ## Buttons
 
-Button tokens control the appearance of buttons. In addition, buttons also currently use some form input tokens such as `--sl-input-height-*` and `--sl-input-border-*`. More button tokens may be added in the future to make it easier to style them more independently.
+Button tokens control the appearance of buttons. In addition, buttons also currently use some form input tokens such as `--awc-input-height-*` and `--awc-input-border-*`. More button tokens may be added in the future to make it easier to style them more independently.
 
-| Token                          | Value                       |
-| ------------------------------ | --------------------------- |
-| `--sl-button-font-size-small`  | var(--sl-font-size-x-small) |
-| `--sl-button-font-size-medium` | var(--sl-font-size-small)   |
-| `--sl-button-font-size-large`  | var(--sl-font-size-medium)  |
+| Token                           | Value                        |
+| ------------------------------- | ---------------------------- |
+| `--awc-button-font-size-small`  | var(--awc-font-size-x-small) |
+| `--awc-button-font-size-medium` | var(--awc-font-size-small)   |
+| `--awc-button-font-size-large`  | var(--awc-font-size-medium)  |
 
 ## Form Inputs
 
 Form input tokens control the appearance of form controls such as [input](/components/input), [select](/components/select), [textarea](/components/textarea), etc.
 
-| Token                                   | Value                            |
-| --------------------------------------- | -------------------------------- |
-| `--sl-input-height-small`               | 1.875rem; (30px @ 16px base)     |
-| `--sl-input-height-medium`              | 2.5rem; (40px @ 16px base)       |
-| `--sl-input-height-large`               | 3.125rem; (50px @ 16px base)     |
-| `--sl-input-background-color`           | var(--sl-color-neutral-0)        |
-| `--sl-input-background-color-hover`     | var(--sl-input-background-color) |
-| `--sl-input-background-color-focus`     | var(--sl-input-background-color) |
-| `--sl-input-background-color-disabled`  | var(--sl-color-neutral-100)      |
-| `--sl-input-border-color`               | var(--sl-color-neutral-300)      |
-| `--sl-input-border-color-hover`         | var(--sl-color-neutral-400)      |
-| `--sl-input-border-color-focus`         | var(--sl-color-primary-500)      |
-| `--sl-input-border-color-disabled`      | var(--sl-color-neutral-300)      |
-| `--sl-input-border-width`               | 1px                              |
-| `--sl-input-required-content`           | "\*"                             |
-| `--sl-input-required-content-offset`    | -2px                             |
-| `--sl-input-required-content-color`     | var(--sl-input-label-color)      |
-| `--sl-input-border-radius-small`        | var(--sl-border-radius-medium)   |
-| `--sl-input-border-radius-medium`       | var(--sl-border-radius-medium)   |
-| `--sl-input-border-radius-large`        | var(--sl-border-radius-medium)   |
-| `--sl-input-font-family`                | var(--sl-font-sans)              |
-| `--sl-input-font-weight`                | var(--sl-font-weight-normal)     |
-| `--sl-input-font-size-small`            | var(--sl-font-size-small)        |
-| `--sl-input-font-size-medium`           | var(--sl-font-size-medium)       |
-| `--sl-input-font-size-large`            | var(--sl-font-size-large)        |
-| `--sl-input-letter-spacing`             | var(--sl-letter-spacing-normal)  |
-| `--sl-input-color`                      | var(--sl-color-neutral-700)      |
-| `--sl-input-color-hover`                | var(--sl-color-neutral-700)      |
-| `--sl-input-color-focus`                | var(--sl-color-neutral-700)      |
-| `--sl-input-color-disabled`             | var(--sl-color-neutral-900)      |
-| `--sl-input-icon-color`                 | var(--sl-color-neutral-500)      |
-| `--sl-input-icon-color-hover`           | var(--sl-color-neutral-600)      |
-| `--sl-input-icon-color-focus`           | var(--sl-color-neutral-600)      |
-| `--sl-input-placeholder-color`          | var(--sl-color-neutral-500)      |
-| `--sl-input-placeholder-color-disabled` | var(--sl-color-neutral-600)      |
-| `--sl-input-spacing-small`              | var(--sl-spacing-small)          |
-| `--sl-input-spacing-medium`             | var(--sl-spacing-medium)         |
-| `--sl-input-spacing-large`              | var(--sl-spacing-large)          |
-| `--sl-input-focus-ring-color`           | hsl(198.6 88.7% 48.4% / 40%)     |
-| `--sl-input-focus-ring-offset`          | 0                                |
+| Token                                    | Value                             |
+| ---------------------------------------- | --------------------------------- |
+| `--awc-input-height-small`               | 1.875rem; (30px @ 16px base)      |
+| `--awc-input-height-medium`              | 2.5rem; (40px @ 16px base)        |
+| `--awc-input-height-large`               | 3.125rem; (50px @ 16px base)      |
+| `--awc-input-background-color`           | var(--awc-color-neutral-0)        |
+| `--awc-input-background-color-hover`     | var(--awc-input-background-color) |
+| `--awc-input-background-color-focus`     | var(--awc-input-background-color) |
+| `--awc-input-background-color-disabled`  | var(--awc-color-neutral-100)      |
+| `--awc-input-border-color`               | var(--awc-color-neutral-300)      |
+| `--awc-input-border-color-hover`         | var(--awc-color-neutral-400)      |
+| `--awc-input-border-color-focus`         | var(--awc-color-primary-500)      |
+| `--awc-input-border-color-disabled`      | var(--awc-color-neutral-300)      |
+| `--awc-input-border-width`               | 1px                               |
+| `--awc-input-required-content`           | "\*"                              |
+| `--awc-input-required-content-offset`    | -2px                              |
+| `--awc-input-required-content-color`     | var(--awc-input-label-color)      |
+| `--awc-input-border-radius-small`        | var(--awc-border-radius-medium)   |
+| `--awc-input-border-radius-medium`       | var(--awc-border-radius-medium)   |
+| `--awc-input-border-radius-large`        | var(--awc-border-radius-medium)   |
+| `--awc-input-font-family`                | var(--awc-font-sans)              |
+| `--awc-input-font-weight`                | var(--awc-font-weight-normal)     |
+| `--awc-input-font-size-small`            | var(--awc-font-size-small)        |
+| `--awc-input-font-size-medium`           | var(--awc-font-size-medium)       |
+| `--awc-input-font-size-large`            | var(--awc-font-size-large)        |
+| `--awc-input-letter-spacing`             | var(--awc-letter-spacing-normal)  |
+| `--awc-input-color`                      | var(--awc-color-neutral-700)      |
+| `--awc-input-color-hover`                | var(--awc-color-neutral-700)      |
+| `--awc-input-color-focus`                | var(--awc-color-neutral-700)      |
+| `--awc-input-color-disabled`             | var(--awc-color-neutral-900)      |
+| `--awc-input-icon-color`                 | var(--awc-color-neutral-500)      |
+| `--awc-input-icon-color-hover`           | var(--awc-color-neutral-600)      |
+| `--awc-input-icon-color-focus`           | var(--awc-color-neutral-600)      |
+| `--awc-input-placeholder-color`          | var(--awc-color-neutral-500)      |
+| `--awc-input-placeholder-color-disabled` | var(--awc-color-neutral-600)      |
+| `--awc-input-spacing-small`              | var(--awc-spacing-small)          |
+| `--awc-input-spacing-medium`             | var(--awc-spacing-medium)         |
+| `--awc-input-spacing-large`              | var(--awc-spacing-large)          |
+| `--awc-input-focus-ring-color`           | hsl(198.6 88.7% 48.4% / 40%)      |
+| `--awc-input-focus-ring-offset`          | 0                                 |
 
 ## Filled Form Inputs
 
 Filled form input tokens control the appearance of form controls using the `filled` variant.
 
-| Token                                         | Value                       |
-| --------------------------------------------- | --------------------------- |
-| `--sl-input-filled-background-color`          | var(--sl-color-neutral-100) |
-| `--sl-input-filled-background-color-hover`    | var(--sl-color-neutral-100) |
-| `--sl-input-filled-background-color-focus`    | var(--sl-color-neutral-100) |
-| `--sl-input-filled-background-color-disabled` | var(--sl-color-neutral-100) |
-| `--sl-input-filled-color`                     | var(--sl-color-neutral-800) |
-| `--sl-input-filled-color-hover`               | var(--sl-color-neutral-800) |
-| `--sl-input-filled-color-focus`               | var(--sl-color-neutral-700) |
-| `--sl-input-filled-color-disabled`            | var(--sl-color-neutral-800) |
+| Token                                          | Value                        |
+| ---------------------------------------------- | ---------------------------- |
+| `--awc-input-filled-background-color`          | var(--awc-color-neutral-100) |
+| `--awc-input-filled-background-color-hover`    | var(--awc-color-neutral-100) |
+| `--awc-input-filled-background-color-focus`    | var(--awc-color-neutral-100) |
+| `--awc-input-filled-background-color-disabled` | var(--awc-color-neutral-100) |
+| `--awc-input-filled-color`                     | var(--awc-color-neutral-800) |
+| `--awc-input-filled-color-hover`               | var(--awc-color-neutral-800) |
+| `--awc-input-filled-color-focus`               | var(--awc-color-neutral-700) |
+| `--awc-input-filled-color-disabled`            | var(--awc-color-neutral-800) |
 
 ## Form Labels
 
 Form label tokens control the appearance of labels in form controls.
 
-| Token                               | Value                      |
-| ----------------------------------- | -------------------------- |
-| `--sl-input-label-font-size-small`  | var(--sl-font-size-small)  |
-| `--sl-input-label-font-size-medium` | var(--sl-font-size-medium) |
-| `--sl-input-label-font-size-large`  | var(--sl-font-size-large)  |
-| `--sl-input-label-color`            | inherit                    |
+| Token                                | Value                       |
+| ------------------------------------ | --------------------------- |
+| `--awc-input-label-font-size-small`  | var(--awc-font-size-small)  |
+| `--awc-input-label-font-size-medium` | var(--awc-font-size-medium) |
+| `--awc-input-label-font-size-large`  | var(--awc-font-size-large)  |
+| `--awc-input-label-color`            | inherit                     |
 
 ## Help Text
 
 Help text tokens control the appearance of help text in form controls.
 
-| Token                                   | Value                       |
-| --------------------------------------- | --------------------------- |
-| `--sl-input-help-text-font-size-small`  | var(--sl-font-size-x-small) |
-| `--sl-input-help-text-font-size-medium` | var(--sl-font-size-small)   |
-| `--sl-input-help-text-font-size-large`  | var(--sl-font-size-medium)  |
-| `--sl-input-help-text-color`            | var(--sl-color-neutral-500) |
+| Token                                    | Value                        |
+| ---------------------------------------- | ---------------------------- |
+| `--awc-input-help-text-font-size-small`  | var(--awc-font-size-x-small) |
+| `--awc-input-help-text-font-size-medium` | var(--awc-font-size-small)   |
+| `--awc-input-help-text-font-size-large`  | var(--awc-font-size-medium)  |
+| `--awc-input-help-text-color`            | var(--awc-color-neutral-500) |
 
 ## Toggles
 
 Toggle tokens control the appearance of toggles such as [checkbox](/components/checkbox), [radio](/components/radio), [switch](/components/switch), etc.
 
-| Token                     | Value                       |
-| ------------------------- | --------------------------- |
-| `--sl-toggle-size-small`  | 0.875rem (14px @ 16px base) |
-| `--sl-toggle-size-medium` | 1.125rem (18px @ 16px base) |
-| `--sl-toggle-size-large`  | 1.375rem (22px @ 16px base) |
+| Token                      | Value                       |
+| -------------------------- | --------------------------- |
+| `--awc-toggle-size-small`  | 0.875rem (14px @ 16px base) |
+| `--awc-toggle-size-medium` | 1.125rem (18px @ 16px base) |
+| `--awc-toggle-size-large`  | 1.375rem (22px @ 16px base) |
 
 ## Overlays
 
 Overlay tokens control the appearance of overlays as used in [dialog](/components/dialog), [drawer](/components/drawer), etc.
 
-| Token                           | Value                     |
-| ------------------------------- | ------------------------- |
-| `--sl-overlay-background-color` | hsl(240 3.8% 46.1% / 33%) |
+| Token                            | Value                     |
+| -------------------------------- | ------------------------- |
+| `--awc-overlay-background-color` | hsl(240 3.8% 46.1% / 33%) |
 
 ## Panels
 
 Panel tokens control the appearance of panels such as those used in [dialog](/components/dialog), [drawer](/components/drawer), [menu](/components/menu), etc.
 
-| Token                         | Value                       |
-| ----------------------------- | --------------------------- |
-| `--sl-panel-background-color` | var(--sl-color-neutral-0)   |
-| `--sl-panel-border-color`     | var(--sl-color-neutral-200) |
-| `--sl-panel-border-width`     | 1px                         |
+| Token                          | Value                        |
+| ------------------------------ | ---------------------------- |
+| `--awc-panel-background-color` | var(--awc-color-neutral-0)   |
+| `--awc-panel-border-color`     | var(--awc-color-neutral-200) |
+| `--awc-panel-border-width`     | 1px                          |
 
 ## Tooltips
 
 Tooltip tokens control the appearance of tooltips. This includes the [tooltip](/components/tooltip) component as well as other implementations, such [range tooltips](/components/range).
 
-| Token                           | Value                                                |
-| ------------------------------- | ---------------------------------------------------- |
-| `--sl-tooltip-border-radius`    | var(--sl-border-radius-medium)                       |
-| `--sl-tooltip-background-color` | var(--sl-color-neutral-800)                          |
-| `--sl-tooltip-color`            | var(--sl-color-neutral-0)                            |
-| `--sl-tooltip-font-family`      | var(--sl-font-sans)                                  |
-| `--sl-tooltip-font-weight`      | var(--sl-font-weight-normal)                         |
-| `--sl-tooltip-font-size`        | var(--sl-font-size-small)                            |
-| `--sl-tooltip-line-height`      | var(--sl-line-height-dense)                          |
-| `--sl-tooltip-padding`          | var(--sl-spacing-2x-small) var(--sl-spacing-x-small) |
-| `--sl-tooltip-arrow-size`       | 6px                                                  |
+| Token                            | Value                                                  |
+| -------------------------------- | ------------------------------------------------------ |
+| `--awc-tooltip-border-radius`    | var(--awc-border-radius-medium)                        |
+| `--awc-tooltip-background-color` | var(--awc-color-neutral-800)                           |
+| `--awc-tooltip-color`            | var(--awc-color-neutral-0)                             |
+| `--awc-tooltip-font-family`      | var(--awc-font-sans)                                   |
+| `--awc-tooltip-font-weight`      | var(--awc-font-weight-normal)                          |
+| `--awc-tooltip-font-size`        | var(--awc-font-size-small)                             |
+| `--awc-tooltip-line-height`      | var(--awc-line-height-dense)                           |
+| `--awc-tooltip-padding`          | var(--awc-spacing-2x-small) var(--awc-spacing-x-small) |
+| `--awc-tooltip-arrow-size`       | 6px                                                    |

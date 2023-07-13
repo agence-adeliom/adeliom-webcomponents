@@ -3,13 +3,13 @@ import { customElement, property } from 'lit/decorators.js';
 import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './breadcrumb-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Breadcrumb Items are used inside [breadcrumbs](/components/breadcrumb) to represent different links.
- * @documentation https://shoelace.style/components/breadcrumb-item
+ * @documentation https://awc.a-dev.cloud/components/breadcrumb-item
  * @status stable
  * @since 2.0
  *
@@ -17,7 +17,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot prefix - An optional prefix, usually an icon or icon button.
  * @slot suffix - An optional suffix, usually an icon or icon button.
  * @slot separator - The separator to use for the breadcrumb item. This will only change the separator for this item. If
- * you want to change it for all items in the group, set the separator on `<sl-breadcrumb>` instead.
+ * you want to change it for all items in the group, set the separator on `<awc-breadcrumb>` instead.
  *
  * @csspart base - The component's base wrapper.
  * @csspart label - The breadcrumb item's label.
@@ -25,8 +25,8 @@ import type { CSSResultGroup } from 'lit';
  * @csspart suffix - The container that wraps the suffix.
  * @csspart separator - The container that wraps the separator.
  */
-@customElement('sl-breadcrumb-item')
-export default class SlBreadcrumbItem extends ShoelaceElement {
+@customElement('awc-breadcrumb-item')
+export default class AWCBreadcrumbItem extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private readonly hasSlotController = new HasSlotController(this, 'prefix', 'suffix');
@@ -85,6 +85,6 @@ export default class SlBreadcrumbItem extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-breadcrumb-item': SlBreadcrumbItem;
+    'awc-breadcrumb-item': AWCBreadcrumbItem;
   }
 }

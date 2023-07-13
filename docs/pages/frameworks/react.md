@@ -1,33 +1,33 @@
 ---
 meta:
   title: React
-  description: Tips for using Shoelace in your React app.
+  description: Tips for using Adeliom WebComponents in your React app.
 ---
 
 # React
 
-Shoelace offers a React version of every component to provide an idiomatic experience for React users. You can easily toggle between HTML and React examples throughout the documentation.
+Adeliom WebComponents offers a React version of every component to provide an idiomatic experience for React users. You can easily toggle between HTML and React examples throughout the documentation.
 
 ## Installation
 
-To add Shoelace to your React app, install the package from npm.
+To add Adeliom WebComponents to your React app, install the package from npm.
 
 ```bash
-npm install @shoelace-style/shoelace
+npm install @agence-adeliom/awc
 ```
 
 Next, [include a theme](/getting-started/themes) and set the [base path](/getting-started/installation#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
 // App.jsx
-import '@shoelace-style/shoelace/%NPMDIR%/themes/light.css';
-import { setBasePath } from '@shoelace-style/shoelace/%NPMDIR%/utilities/base-path';
+import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@%VERSION%/%CDNDIR%/');
+setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/');
 ```
 
 :::tip
-If you'd rather not use the CDN for assets, you can create a [build task](https://webpack.js.org/plugins/copy-webpack-plugin/) that copies `node_modules/@shoelace-style/shoelace/%NPMDIR%/assets` into your app's `public` directory. Then you can point the base path to that folder instead.
+If you'd rather not use the CDN for assets, you can create a [build task](https://webpack.js.org/plugins/copy-webpack-plugin/) that copies `node_modules/@agence-adeliom/awc/%NPMDIR%/assets` into your app's `public` directory. Then you can point the base path to that folder instead.
 :::
 
 Now you can start using components!
@@ -36,12 +36,12 @@ Now you can start using components!
 
 ### Importing Components
 
-Every Shoelace component is available to import as a React component. Note that we're importing the `<SlButton>` _React component_ instead of the `<sl-button>` _custom element_ in the example below.
+Every Adeliom WebComponents component is available to import as a React component. Note that we're importing the `<AWCButton>` _React component_ instead of the `<awc-button>` _custom element_ in the example below.
 
 ```jsx
-import { SlButton } from '@shoelace-style/shoelace/%NPMDIR%/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
-const MyComponent = () => <SlButton variant="primary">Click me</SlButton>;
+const MyComponent = () => <AWCButton variant="primary">Click me</AWCButton>;
 
 export default MyComponent;
 ```
@@ -50,18 +50,18 @@ You can find a copy + paste import for each component in the "importing" section
 
 ### Event Handling
 
-Many Shoelace components emit [custom events](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent). For example, the [input component](/components/input) emits the `sl-input` event when it receives input. In React, you can listen for the event using `onSlInput`.
+Many Adeliom WebComponents components emit [custom events](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent). For example, the [input component](/components/input) emits the `awc-input` event when it receives input. In React, you can listen for the event using `onSlInput`.
 
 Here's how you can bind the input's value to a state variable.
 
 ```jsx
 import { useState } from 'react';
-import { SlInput } from '@shoelace-style/shoelace/%NPMDIR%/react';
+import { AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 function MyComponent() {
   const [value, setValue] = useState('');
 
-  return <SlInput value={value} onSlInput={event => setValue(event.target.value)} />;
+  return <AWCInput value={value} onAwcInput={event => setValue(event.target.value)} />;
 }
 
 export default MyComponent;
@@ -71,13 +71,13 @@ If you're using TypeScript, it's important to note that `event.target` will be a
 
 ```tsx
 import { useState } from 'react';
-import { SlInput } from '@shoelace-style/shoelace/%NPMDIR%/react';
-import type SlInputElement from '@shoelace-style/shoelace/%NPMDIR%/components/input/input';
+import { AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
+import type SlInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');
 
-  return <SlInput value={value} onSlInput={event => setValue((event.target as SlInputElement).value)} />;
+  return <AWCInput value={value} onAwcInput={event => setValue((event.target as SlInputElement).value)} />;
 }
 
 export default MyComponent;
@@ -87,7 +87,7 @@ export default MyComponent;
 
 Testing with web components can be challenging if your test environment runs in a Node environment (i.e. it doesn't run in a real browser). Fortunately, [Jest](https://jestjs.io/) has made a number of strides to support web components and provide additional browser APIs. However, it's still not a complete replication of a browser environment.
 
-Here are some tips that will help smooth things over if you're having trouble with Jest + Shoelace.
+Here are some tips that will help smooth things over if you're having trouble with Jest + Adeliom WebComponents.
 
 :::tip
 If you're looking for a fast, modern testing alternative, consider [Web Test Runner](https://modern-web.dev/docs/test-runner/overview/).
@@ -129,18 +129,18 @@ For more details, refer to Jest's [manual mocking](https://jestjs.io/docs/manual
 
 ### Transform ES Modules
 
-ES Modules are a [well-supported browser standard](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/). This is how Shoelace is distributed, but most React apps expect CommonJS. As a result, you'll probably run into the following error.
+ES Modules are a [well-supported browser standard](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/). This is how Adeliom WebComponents is distributed, but most React apps expect CommonJS. As a result, you'll probably run into the following error.
 
 ```
 Error: Unable to import outside of a module
 ```
 
-To fix this, add the following to your `package.json` which tells the transpiler to process Shoelace modules.
+To fix this, add the following to your `package.json` which tells the transpiler to process Adeliom WebComponents modules.
 
 ```js
 {
   "jest": {
-    "transformIgnorePatterns": ["node_modules/?!(@shoelace)"]
+    "transformIgnorePatterns": ["node_modules/?!(@awc)"]
   }
 }
 ```
@@ -150,5 +150,5 @@ These instructions are for apps created via Create React App. If you're using Je
 For more details, refer to Jest's [`transformIgnorePatterns` customization](https://jestjs.io/docs/tutorial-react-native#transformignorepatterns-customization) documentation.
 
 :::tip
-Are you using Shoelace with React? [Help us improve this page!](https://github.com/shoelace-style/shoelace/blob/next/docs/frameworks/react.md)
+Are you using Adeliom WebComponents with React? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/next/docs/frameworks/react.md)
 :::

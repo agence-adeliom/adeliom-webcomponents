@@ -7,16 +7,16 @@ layout: component
 
 ```html:preview
 <div class="format-bytes-overview">
-  The file is <sl-format-bytes value="1000"></sl-format-bytes> in size. <br /><br />
-  <sl-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></sl-input>
+  The file is <awc-format-bytes value="1000"></awc-format-bytes> in size. <br /><br />
+  <awc-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></awc-input>
 </div>
 
 <script>
   const container = document.querySelector('.format-bytes-overview');
-  const formatter = container.querySelector('sl-format-bytes');
-  const input = container.querySelector('sl-input');
+  const formatter = container.querySelector('awc-format-bytes');
+  const input = container.querySelector('awc-input');
 
-  input.addEventListener('sl-input', () => (formatter.value = input.value || 0));
+  input.addEventListener('awc-input', () => (formatter.value = input.value || 0));
 </script>
 ```
 
@@ -24,22 +24,22 @@ layout: component
 
 ```jsx:react
 import { useState } from 'react';
-import { SlButton, SlFormatBytes, SlInput } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCFormatBytes, AWCInput } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [value, setValue] = useState(1000);
 
   return (
     <>
-      The file is <SlFormatBytes value={value} /> in size.
+      The file is <AWCFormatBytes value={value} /> in size.
       <br />
       <br />
-      <SlInput
+      <AWCInput
         type="number"
         value={value}
         label="Number to Format"
         style={{ maxWidth: '180px' }}
-        onSlInput={event => setValue(event.target.value)}
+        onAwcInput={event => setValue(event.target.value)}
       />
     </>
   );
@@ -55,24 +55,24 @@ const App = () => {
 Set the `value` attribute to a number to get the value in bytes.
 
 ```html:preview
-<sl-format-bytes value="12"></sl-format-bytes><br />
-<sl-format-bytes value="1200"></sl-format-bytes><br />
-<sl-format-bytes value="1200000"></sl-format-bytes><br />
-<sl-format-bytes value="1200000000"></sl-format-bytes>
+<awc-format-bytes value="12"></awc-format-bytes><br />
+<awc-format-bytes value="1200"></awc-format-bytes><br />
+<awc-format-bytes value="1200000"></awc-format-bytes><br />
+<awc-format-bytes value="1200000000"></awc-format-bytes>
 ```
 
 ```jsx:react
-import { SlFormatBytes } from '@shoelace-style/shoelace/dist/react';
+import { AWCFormatBytes } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlFormatBytes value="12" />
+    <AWCFormatBytes value="12" />
     <br />
-    <SlFormatBytes value="1200" />
+    <AWCFormatBytes value="1200" />
     <br />
-    <SlFormatBytes value="1200000" />
+    <AWCFormatBytes value="1200000" />
     <br />
-    <SlFormatBytes value="1200000000" />
+    <AWCFormatBytes value="1200000000" />
   </>
 );
 ```
@@ -82,24 +82,24 @@ const App = () => (
 To get the value in bits, set the `unit` attribute to `bit`.
 
 ```html:preview
-<sl-format-bytes value="12" unit="bit"></sl-format-bytes><br />
-<sl-format-bytes value="1200" unit="bit"></sl-format-bytes><br />
-<sl-format-bytes value="1200000" unit="bit"></sl-format-bytes><br />
-<sl-format-bytes value="1200000000" unit="bit"></sl-format-bytes>
+<awc-format-bytes value="12" unit="bit"></awc-format-bytes><br />
+<awc-format-bytes value="1200" unit="bit"></awc-format-bytes><br />
+<awc-format-bytes value="1200000" unit="bit"></awc-format-bytes><br />
+<awc-format-bytes value="1200000000" unit="bit"></awc-format-bytes>
 ```
 
 ```jsx:react
-import { SlFormatBytes } from '@shoelace-style/shoelace/dist/react';
+import { AWCFormatBytes } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlFormatBytes value="12" unit="bit" />
+    <AWCFormatBytes value="12" unit="bit" />
     <br />
-    <SlFormatBytes value="1200" unit="bit" />
+    <AWCFormatBytes value="1200" unit="bit" />
     <br />
-    <SlFormatBytes value="1200000" unit="bit" />
+    <AWCFormatBytes value="1200000" unit="bit" />
     <br />
-    <SlFormatBytes value="1200000000" unit="bit" />
+    <AWCFormatBytes value="1200000000" unit="bit" />
   </>
 );
 ```
@@ -109,24 +109,24 @@ const App = () => (
 Use the `lang` attribute to set the number formatting locale.
 
 ```html:preview
-<sl-format-bytes value="12" lang="de"></sl-format-bytes><br />
-<sl-format-bytes value="1200" lang="de"></sl-format-bytes><br />
-<sl-format-bytes value="1200000" lang="de"></sl-format-bytes><br />
-<sl-format-bytes value="1200000000" lang="de"></sl-format-bytes>
+<awc-format-bytes value="12" lang="de"></awc-format-bytes><br />
+<awc-format-bytes value="1200" lang="de"></awc-format-bytes><br />
+<awc-format-bytes value="1200000" lang="de"></awc-format-bytes><br />
+<awc-format-bytes value="1200000000" lang="de"></awc-format-bytes>
 ```
 
 ```jsx:react
-import { SlFormatBytes } from '@shoelace-style/shoelace/dist/react';
+import { AWCFormatBytes } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlFormatBytes value="12" lang="de" />
+    <AWCFormatBytes value="12" lang="de" />
     <br />
-    <SlFormatBytes value="1200" lang="de" />
+    <AWCFormatBytes value="1200" lang="de" />
     <br />
-    <SlFormatBytes value="1200000" lang="de" />
+    <AWCFormatBytes value="1200000" lang="de" />
     <br />
-    <SlFormatBytes value="1200000000" lang="de" />
+    <AWCFormatBytes value="1200000000" lang="de" />
   </>
 );
 ```

@@ -1,12 +1,12 @@
 import { customElement, property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './divider.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Dividers are used to visually separate or group elements.
- * @documentation https://shoelace.style/components/divider
+ * @documentation https://awc.a-dev.cloud/components/divider
  * @status stable
  * @since 2.0
  *
@@ -14,8 +14,8 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --width - The width of the divider.
  * @cssproperty --spacing - The spacing of the divider.
  */
-@customElement('sl-divider')
-export default class SlDivider extends ShoelaceElement {
+@customElement('awc-divider')
+export default class AWCDivider extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   /** Draws the divider in a vertical orientation. */
@@ -34,6 +34,6 @@ export default class SlDivider extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-divider': SlDivider;
+    'awc-divider': AWCDivider;
   }
 }

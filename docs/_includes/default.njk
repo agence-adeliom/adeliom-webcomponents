@@ -2,7 +2,7 @@
 <html
   lang="en"
   data-layout="{{ layout }}"
-  data-shoelace-version="{{ meta.version }}"
+  data-awc-version="{{ meta.version }}"
 >
   <head>
     {# Metadata #}
@@ -18,14 +18,10 @@
     <link rel="stylesheet" href="{{ assetUrl('styles/docs.css') }}" />
     <link rel="stylesheet" href="{{ assetUrl('styles/code-previews.css') }}" />
     <link rel="stylesheet" href="{{ assetUrl('styles/search.css') }}" />
+    <link rel="stylesheet" href="{{ assetUrl('styles/tailwind/build.css') }}" />
 
     {# Favicons #}
     <link rel="icon" href="{{ assetUrl('images/logo.svg') }}" type="image/x-icon" />
-
-    {# Twitter Cards #}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="shoelace_style" />
-    <meta name="twitter:image" content="{{ assetUrl(meta.image, true) }}" />
 
     {# OpenGraph #}
     <meta property="og:url" content="{{ rootUrl(page.url, true) }}" />
@@ -33,17 +29,17 @@
     <meta property="og:description" content="{{ meta.description }}" />
     <meta property="og:image" content="{{ assetUrl(meta.image, true) }}" />
 
-    {# Shoelace #}
+    {# Adeliom WebComponents #}
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/awc-autoloader.js"></script>
 
     {# Set the initial theme and menu states here to prevent flashing #}
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
-        document.documentElement.classList.toggle('sl-theme-dark', theme === 'dark' || (theme === 'auto' && prefersDark));
+        document.documentElement.classList.toggle('awc-theme-dark', theme === 'dark' || (theme === 'auto' && prefersDark));
       })();
     </script>
 
@@ -71,34 +67,29 @@
     {# Icon toolbar #}
     <div id="icon-toolbar">
       {# GitHub #}
-      <a href="https://github.com/shoelace-style/shoelace" title="View Shoelace on GitHub">
-        <sl-icon name="github"></sl-icon>
-      </a>
-
-      {# Twitter #}
-      <a href="https://twitter.com/shoelace_style" title="Follow Shoelace on Twitter">
-        <sl-icon name="twitter"></sl-icon>
+      <a href="https://github.com/agence-adeliom/awc" title="View Adeliom WebComponents on GitHub">
+        <awc-icon name="github"></awc-icon>
       </a>
 
       {# Theme selector #}
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <awc-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <awc-button slot="trigger" size="small" variant="text" caret title="Press \ to toggle">
+          <awc-icon class="only-light" name="sun-fill"></awc-icon>
+          <awc-icon class="only-dark" name="moon-fill"></awc-icon>
+        </awc-button>
+        <awc-menu>
+          <awc-menu-item type="checkbox" value="light">Light</awc-menu-item>
+          <awc-menu-item type="checkbox" value="dark">Dark</awc-menu-item>
+          <awc-divider></awc-divider>
+          <awc-menu-item type="checkbox" value="auto">System</awc-menu-item>
+        </awc-menu>
+      </awc-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll>
       <header>
         <a href="/">
-          <img src="{{ assetUrl('images/wordmark.svg') }}" alt="Shoelace" />
+          <img src="{{ assetUrl('images/wordmark.svg') }}" alt="Adeliom WebComponents" />
         </a>
         <div class="sidebar-version">
           {{ meta.version }}
@@ -106,19 +97,16 @@
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button size="small" class="repo-button repo-button--github" href="https://github.com/shoelace-style/shoelace" target="_blank">
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button size="small" class="repo-button repo-button--star" href="https://github.com/shoelace-style/shoelace/stargazers" target="_blank">
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button size="small" class="repo-button repo-button--twitter" href="https://twitter.com/shoelace_style" target="_blank">
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+        <awc-button size="small" class="repo-button repo-button--github" href="https://github.com/agence-adeliom/awc" target="_blank">
+          <awc-icon slot="prefix" name="github"></awc-icon> Code
+        </awc-button>
+        <awc-button size="small" class="repo-button repo-button--star" href="https://github.com/agence-adeliom/awc/stargazers" target="_blank">
+          <awc-icon slot="prefix" name="star-fill"></awc-icon> Star
+        </awc-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <awc-icon name="search"></awc-icon>
         <span>Search</span>
       </button>
 

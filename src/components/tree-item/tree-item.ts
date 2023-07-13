@@ -10,26 +10,26 @@ import { live } from 'lit/directives/live.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { watch } from '../../internal/watch.js';
 import { when } from 'lit/directives/when.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './tree-item.styles.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
 
 /**
  * @summary A tree item serves as a hierarchical node that lives inside a [tree](/components/tree).
- * @documentation https://shoelace.style/components/tree-item
+ * @documentation https://awc.a-dev.cloud/components/tree-item
  * @status stable
  * @since 2.0
  *
- * @dependency sl-checkbox
- * @dependency sl-icon
- * @dependency sl-spinner
+ * @dependency awc-checkbox
+ * @dependency awc-icon
+ * @dependency awc-spinner
  *
- * @event sl-expand - Emitted when the tree item expands.
- * @event sl-after-expand - Emitted after the tree item expands and all animations are complete.
- * @event sl-collapse - Emitted when the tree item collapses.
- * @event sl-after-collapse - Emitted after the tree item collapses and all animations are complete.
- * @event sl-lazy-change - Emitted when the tree item's lazy state changes.
- * @event sl-lazy-load - Emitted when a lazy item is selected. Use this event to asynchronously load data and append
+ * @event awc-expand - Emitted when the tree item expands.
+ * @event awc-after-expand - Emitted after the tree item expands and all animations are complete.
+ * @event awc-collapse - Emitted when the tree item collapses.
+ * @event awc-after-collapse - Emitted after the tree item collapses and all animations are complete.
+ * @event awc-lazy-change - Emitted when the tree item's lazy state changes.
+ * @event awc-lazy-load - Emitted when a lazy item is selected. Use this event to asynchronously load data and append
  *  items to the tree before expanding. After appending new items, remove the `lazy` attribute to remove the loading
  *  state and update the tree.
  *
@@ -56,8 +56,8 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
  * @csspart checkbox__indeterminate-icon - The checkbox's exported `indeterminate-icon` part.
  * @csspart checkbox__label - The checkbox's exported `label` part.
  */
-@customElement('sl-tree-item')
-export default class SlTreeItem extends ShoelaceElement {
+@customElement('awc-tree-item')
+export default class AWCTreeItem extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   static isTreeItem(node: Node) {
@@ -109,7 +109,7 @@ export default class SlTreeItem extends ShoelaceElement {
   }
 
   private async animateCollapse() {
-    this.emit('sl-collapse');
+    this.emit('awc-collapse');
 
     await stopAnimations(this.childrenContainer);
 
@@ -121,13 +121,13 @@ export default class SlTreeItem extends ShoelaceElement {
     );
     this.childrenContainer.hidden = true;
 
-    this.emit('sl-after-collapse');
+    this.emit('awc-after-collapse');
   }
 
   // Checks whether the item is nested into an item
   private isNestedItem(): boolean {
     const parent = this.parentElement;
-    return !!parent && SlTreeItem.isTreeItem(parent);
+    return !!parent && AWCTreeItem.isTreeItem(parent);
   }
 
   private handleChildrenSlotChange() {
@@ -135,14 +135,14 @@ export default class SlTreeItem extends ShoelaceElement {
     this.isLeaf = !this.lazy && this.getChildrenItems().length === 0;
   }
 
-  protected willUpdate(changedProperties: PropertyValueMap<SlTreeItem> | Map<PropertyKey, unknown>) {
+  protected willUpdate(changedProperties: PropertyValueMap<AWCTreeItem> | Map<PropertyKey, unknown>) {
     if (changedProperties.has('selected') && !changedProperties.has('indeterminate')) {
       this.indeterminate = false;
     }
   }
 
   private async animateExpand() {
-    this.emit('sl-expand');
+    this.emit('awc-expand');
 
     await stopAnimations(this.childrenContainer);
     this.childrenContainer.hidden = false;
@@ -155,7 +155,7 @@ export default class SlTreeItem extends ShoelaceElement {
     );
     this.childrenContainer.style.height = 'auto';
 
-    this.emit('sl-after-expand');
+    this.emit('awc-after-expand');
   }
 
   @watch('loading', { waitUntilFirstUpdate: true })
@@ -192,7 +192,7 @@ export default class SlTreeItem extends ShoelaceElement {
       if (this.lazy) {
         this.loading = true;
 
-        this.emit('sl-lazy-load');
+        this.emit('awc-lazy-load');
       } else {
         this.animateExpand();
       }
@@ -203,15 +203,15 @@ export default class SlTreeItem extends ShoelaceElement {
 
   @watch('lazy', { waitUntilFirstUpdate: true })
   handleLazyChange() {
-    this.emit('sl-lazy-change');
+    this.emit('awc-lazy-change');
   }
 
   /** Gets all the nested tree items in this node. */
-  getChildrenItems({ includeDisabled = true }: { includeDisabled?: boolean } = {}): SlTreeItem[] {
+  getChildrenItems({ includeDisabled = true }: { includeDisabled?: boolean } = {}): AWCTreeItem[] {
     return this.childrenSlot
       ? ([...this.childrenSlot.assignedElements({ flatten: true })].filter(
-          (item: SlTreeItem) => SlTreeItem.isTreeItem(item) && (includeDisabled || !item.disabled)
-        ) as SlTreeItem[])
+          (item: AWCTreeItem) => AWCTreeItem.isTreeItem(item) && (includeDisabled || !item.disabled)
+        ) as AWCTreeItem[])
       : [];
   }
 
@@ -252,22 +252,21 @@ export default class SlTreeItem extends ShoelaceElement {
             })}
             aria-hidden="true"
           >
-            ${when(this.loading, () => html` <sl-spinner></sl-spinner> `)}
+            ${when(this.loading, () => html` <awc-spinner></awc-spinner> `)}
             <slot class="tree-item__expand-icon-slot" name="expand-icon">
-              <sl-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></sl-icon>
+              <awc-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></awc-icon>
             </slot>
             <slot class="tree-item__expand-icon-slot" name="collapse-icon">
-              <sl-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></sl-icon>
+              <awc-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></awc-icon>
             </slot>
           </div>
 
           ${when(
             this.selectable,
-            () =>
-              html`
-                <sl-checkbox
-                  part="checkbox"
-                  exportparts="
+            () => html`
+              <awc-checkbox
+                part="checkbox"
+                exportparts="
                     base:checkbox__base,
                     control:checkbox__control,
                     control--checked:checkbox__control--checked,
@@ -276,13 +275,13 @@ export default class SlTreeItem extends ShoelaceElement {
                     indeterminate-icon:checkbox__indeterminate-icon,
                     label:checkbox__label
                   "
-                  class="tree-item__checkbox"
-                  ?disabled="${this.disabled}"
-                  ?checked="${live(this.selected)}"
-                  ?indeterminate="${this.indeterminate}"
-                  tabindex="-1"
-                ></sl-checkbox>
-              `
+                class="tree-item__checkbox"
+                ?disabled="${this.disabled}"
+                ?checked="${live(this.selected)}"
+                ?indeterminate="${this.indeterminate}"
+                tabindex="-1"
+              ></awc-checkbox>
+            `
           )}
 
           <slot class="tree-item__label" part="label"></slot>
@@ -318,6 +317,6 @@ setDefaultAnimation('tree-item.collapse', {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-tree-item': SlTreeItem;
+    'awc-tree-item': AWCTreeItem;
   }
 }

@@ -3,17 +3,17 @@ import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query } from 'lit/decorators.js';
 import { html } from 'lit';
 import { offsetParent } from 'composed-offset-position';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './popup.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Popup is a utility that lets you declaratively anchor "popup" containers to another element.
- * @documentation https://shoelace.style/components/popup
+ * @documentation https://awc.a-dev.cloud/components/popup
  * @status stable
  * @since 2.0
  *
- * @event sl-reposition - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive
+ * @event awc-reposition - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive
  *  operations in your listener or consider debouncing it.
  *
  * @slot - The popup's content.
@@ -27,7 +27,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @cssproperty [--arrow-size=6px] - The size of the arrow. Note that an arrow won't be shown unless the `arrow`
  *  attribute is used.
- * @cssproperty [--arrow-color=var(--sl-color-neutral-0)] - The color of the arrow.
+ * @cssproperty [--arrow-color=var(--awc-color-neutral-0)] - The color of the arrow.
  * @cssproperty [--auto-size-available-width] - A read-only custom property that determines the amount of width the
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.
@@ -35,8 +35,8 @@ import type { CSSResultGroup } from 'lit';
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.
  */
-@customElement('sl-popup')
-export default class SlPopup extends ShoelaceElement {
+@customElement('awc-popup')
+export default class AWCPopup extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private anchorEl: Element | null;
@@ -369,7 +369,7 @@ export default class SlPopup extends ShoelaceElement {
     //
     // Use custom positioning logic if the strategy is absolute. Otherwise, fall back to the default logic.
     //
-    // More info: https://github.com/shoelace-style/shoelace/issues/1135
+    // More info: https://github.com/awc-style/awc/issues/1135
     //
     const getOffsetParent =
       this.strategy === 'absolute'
@@ -441,7 +441,7 @@ export default class SlPopup extends ShoelaceElement {
       }
     });
 
-    this.emit('sl-reposition');
+    this.emit('awc-reposition');
   }
 
   render() {
@@ -466,6 +466,6 @@ export default class SlPopup extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-popup': SlPopup;
+    'awc-popup': AWCPopup;
   }
 }

@@ -1,33 +1,36 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import { LocalizeController } from '@shoelace-style/localize';
 import sinon from 'sinon';
-import type SlRelativeTime from './relative-time.js';
+import type AWCRelativeTime from './relative-time.js';
 
-interface SlRelativeTimeTestCase {
+interface AWCRelativeTimeTestCase {
   date: Date;
   expectedOutput: string;
 }
 
-const extractTimeElement = (relativeTime: SlRelativeTime): HTMLTimeElement | null => {
+const extractTimeElement = (relativeTime: AWCRelativeTime): HTMLTimeElement | null => {
   return relativeTime.shadowRoot?.querySelector('time') || null;
 };
 
-const expectFormattedRelativeTimeToBe = async (relativeTime: SlRelativeTime, expectedOutput: string): Promise<void> => {
+const expectFormattedRelativeTimeToBe = async (
+  relativeTime: AWCRelativeTime,
+  expectedOutput: string
+): Promise<void> => {
   await relativeTime.updateComplete;
   const textContent = extractTimeElement(relativeTime)?.textContent;
   expect(textContent).to.equal(expectedOutput);
 };
 
-const createRelativeTimeWithDate = async (relativeDate: Date): Promise<SlRelativeTime> => {
-  const relativeTime: SlRelativeTime = await fixture<SlRelativeTime>(
-    html` <sl-relative-time lang="en-US"></sl-relative-time> `
-  );
+const createRelativeTimeWithDate = async (relativeDate: Date): Promise<AWCRelativeTime> => {
+  const relativeTime: AWCRelativeTime = await fixture<AWCRelativeTime>(html`
+    <awc-relative-time lang="en-US"></awc-relative-time>
+  `);
   relativeTime.date = relativeDate;
   return relativeTime;
 };
 
-const expectTitleToMatchLocalizedTimeString = (relativeTime: SlRelativeTime) => {
+const expectTitleToMatchLocalizedTimeString = (relativeTime: AWCRelativeTime) => {
   const localize = new LocalizeController(relativeTime);
   const titleTime = localize.date(yesterday, {
     month: 'long',
@@ -50,7 +53,7 @@ const nonLeapYearInSeconds = dayInSeconds * 356;
 
 const currentTime = new Date('2022-10-30T15:22:10.100Z');
 const yesterday = new Date(currentTime.getTime() - dayInSeconds);
-const testCases: SlRelativeTimeTestCase[] = [
+const testCases: AWCRelativeTimeTestCase[] = [
   {
     date: new Date(currentTime.getTime() - minuteInSeconds),
     expectedOutput: '1 minute ago'
@@ -85,7 +88,7 @@ const testCases: SlRelativeTimeTestCase[] = [
   }
 ];
 
-describe('sl-relative-time', () => {
+describe('awc-relative-time', () => {
   it('should pass accessibility tests', async () => {
     const relativeTime = await createRelativeTimeWithDate(currentTime);
 
@@ -113,27 +116,27 @@ describe('sl-relative-time', () => {
       it(`shows the correct relative time given a String object: ${testCase.expectedOutput}`, async () => {
         const dateString = testCase.date.toISOString();
 
-        const relativeTime: SlRelativeTime = await fixture<SlRelativeTime>(
-          html` <sl-relative-time lang="en-US" date="${dateString}"></sl-relative-time> `
-        );
+        const relativeTime: AWCRelativeTime = await fixture<AWCRelativeTime>(html`
+          <awc-relative-time lang="en-US" date="${dateString}"></awc-relative-time>
+        `);
 
         await expectFormattedRelativeTimeToBe(relativeTime, testCase.expectedOutput);
       });
     });
 
     it('always shows numeric if requested via numeric property', async () => {
-      const relativeTime: SlRelativeTime = await fixture<SlRelativeTime>(
-        html` <sl-relative-time lang="en-US" numeric="always"></sl-relative-time> `
-      );
+      const relativeTime: AWCRelativeTime = await fixture<AWCRelativeTime>(html`
+        <awc-relative-time lang="en-US" numeric="always"></awc-relative-time>
+      `);
       relativeTime.date = yesterday;
 
       await expectFormattedRelativeTimeToBe(relativeTime, '1 day ago');
     });
 
     it('shows human readable form if appropriate and numeric property is auto', async () => {
-      const relativeTime: SlRelativeTime = await fixture<SlRelativeTime>(
-        html` <sl-relative-time lang="en-US" numeric="auto"></sl-relative-time> `
-      );
+      const relativeTime: AWCRelativeTime = await fixture<AWCRelativeTime>(html`
+        <awc-relative-time lang="en-US" numeric="auto"></awc-relative-time>
+      `);
       relativeTime.date = yesterday;
 
       await expectFormattedRelativeTimeToBe(relativeTime, 'yesterday');
@@ -150,9 +153,9 @@ describe('sl-relative-time', () => {
 
     it('allows to use a short form of the unit', async () => {
       const twoYearsAgo = new Date(currentTime.getTime() - 2 * nonLeapYearInSeconds);
-      const relativeTime: SlRelativeTime = await fixture<SlRelativeTime>(
-        html` <sl-relative-time lang="en-US" numeric="always" format="short"></sl-relative-time> `
-      );
+      const relativeTime: AWCRelativeTime = await fixture<AWCRelativeTime>(html`
+        <awc-relative-time lang="en-US" numeric="always" format="short"></awc-relative-time>
+      `);
       relativeTime.date = twoYearsAgo;
 
       await expectFormattedRelativeTimeToBe(relativeTime, '2 yr. ago');
@@ -160,18 +163,18 @@ describe('sl-relative-time', () => {
 
     it('allows to use a long form of the unit', async () => {
       const twoYearsAgo = new Date(currentTime.getTime() - 2 * nonLeapYearInSeconds);
-      const relativeTime: SlRelativeTime = await fixture<SlRelativeTime>(
-        html` <sl-relative-time lang="en-US" numeric="always" format="long"></sl-relative-time> `
-      );
+      const relativeTime: AWCRelativeTime = await fixture<AWCRelativeTime>(html`
+        <awc-relative-time lang="en-US" numeric="always" format="long"></awc-relative-time>
+      `);
       relativeTime.date = twoYearsAgo;
 
       await expectFormattedRelativeTimeToBe(relativeTime, '2 years ago');
     });
 
     it('is formatted according to the requested locale', async () => {
-      const relativeTime: SlRelativeTime = await fixture<SlRelativeTime>(
-        html` <sl-relative-time lang="de-DE" numeric="auto"></sl-relative-time> `
-      );
+      const relativeTime: AWCRelativeTime = await fixture<AWCRelativeTime>(html`
+        <awc-relative-time lang="de-DE" numeric="auto"></awc-relative-time>
+      `);
       relativeTime.date = yesterday;
 
       await expectFormattedRelativeTimeToBe(relativeTime, 'gestern');
@@ -192,9 +195,9 @@ describe('sl-relative-time', () => {
   it('does not display a time element on invalid time string', async () => {
     const invalidDateString = 'thisIsNotATimeString';
 
-    const relativeTime: SlRelativeTime = await fixture<SlRelativeTime>(
-      html` <sl-relative-time lang="en-US" date="${invalidDateString}"></sl-relative-time> `
-    );
+    const relativeTime: AWCRelativeTime = await fixture<AWCRelativeTime>(html`
+      <awc-relative-time lang="en-US" date="${invalidDateString}"></awc-relative-time>
+    `);
 
     await relativeTime.updateComplete;
     expect(extractTimeElement(relativeTime)).to.be.null;

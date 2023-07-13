@@ -6,13 +6,13 @@ layout: component
 ---
 
 ```html:preview
-<sl-badge>Badge</sl-badge>
+<awc-badge>Badge</awc-badge>
 ```
 
 ```jsx:react
-import { SlBadge } from '@shoelace-style/shoelace/dist/react';
+import { AWCBadge } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlBadge>Badge</SlBadge>;
+const App = () => <AWCBadge>Badge</AWCBadge>;
 ```
 
 ## Examples
@@ -22,23 +22,23 @@ const App = () => <SlBadge>Badge</SlBadge>;
 Set the `variant` attribute to change the badge's variant.
 
 ```html:preview
-<sl-badge variant="primary">Primary</sl-badge>
-<sl-badge variant="success">Success</sl-badge>
-<sl-badge variant="neutral">Neutral</sl-badge>
-<sl-badge variant="warning">Warning</sl-badge>
-<sl-badge variant="danger">Danger</sl-badge>
+<awc-badge variant="primary">Primary</awc-badge>
+<awc-badge variant="success">Success</awc-badge>
+<awc-badge variant="neutral">Neutral</awc-badge>
+<awc-badge variant="warning">Warning</awc-badge>
+<awc-badge variant="danger">Danger</awc-badge>
 ```
 
 ```jsx:react
-import { SlBadge } from '@shoelace-style/shoelace/dist/react';
+import { AWCBadge } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlBadge variant="primary">Primary</SlBadge>
-    <SlBadge variant="success">Success</SlBadge>
-    <SlBadge variant="neutral">Neutral</SlBadge>
-    <SlBadge variant="warning">Warning</SlBadge>
-    <SlBadge variant="danger">Danger</SlBadge>
+    <AWCBadge variant="primary">Primary</AWCBadge>
+    <AWCBadge variant="success">Success</AWCBadge>
+    <AWCBadge variant="neutral">Neutral</AWCBadge>
+    <AWCBadge variant="warning">Warning</AWCBadge>
+    <AWCBadge variant="danger">Danger</AWCBadge>
   </>
 );
 ```
@@ -48,33 +48,33 @@ const App = () => (
 Use the `pill` attribute to give badges rounded edges.
 
 ```html:preview
-<sl-badge variant="primary" pill>Primary</sl-badge>
-<sl-badge variant="success" pill>Success</sl-badge>
-<sl-badge variant="neutral" pill>Neutral</sl-badge>
-<sl-badge variant="warning" pill>Warning</sl-badge>
-<sl-badge variant="danger" pill>Danger</sl-badge>
+<awc-badge variant="primary" pill>Primary</awc-badge>
+<awc-badge variant="success" pill>Success</awc-badge>
+<awc-badge variant="neutral" pill>Neutral</awc-badge>
+<awc-badge variant="warning" pill>Warning</awc-badge>
+<awc-badge variant="danger" pill>Danger</awc-badge>
 ```
 
 ```jsx:react
-import { SlBadge } from '@shoelace-style/shoelace/dist/react';
+import { AWCBadge } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlBadge variant="primary" pill>
+    <AWCBadge variant="primary" pill>
       Primary
-    </SlBadge>
-    <SlBadge variant="success" pill>
+    </AWCBadge>
+    <AWCBadge variant="success" pill>
       Success
-    </SlBadge>
-    <SlBadge variant="neutral" pill>
+    </AWCBadge>
+    <AWCBadge variant="neutral" pill>
       Neutral
-    </SlBadge>
-    <SlBadge variant="warning" pill>
+    </AWCBadge>
+    <AWCBadge variant="warning" pill>
       Warning
-    </SlBadge>
-    <SlBadge variant="danger" pill>
+    </AWCBadge>
+    <AWCBadge variant="danger" pill>
       Danger
-    </SlBadge>
+    </AWCBadge>
   </>
 );
 ```
@@ -85,25 +85,25 @@ Use the `pulse` attribute to draw attention to the badge with a subtle animation
 
 ```html:preview
 <div class="badge-pulse">
-  <sl-badge variant="primary" pill pulse>1</sl-badge>
-  <sl-badge variant="success" pill pulse>1</sl-badge>
-  <sl-badge variant="neutral" pill pulse>1</sl-badge>
-  <sl-badge variant="warning" pill pulse>1</sl-badge>
-  <sl-badge variant="danger" pill pulse>1</sl-badge>
+  <awc-badge variant="primary" pill pulse>1</awc-badge>
+  <awc-badge variant="success" pill pulse>1</awc-badge>
+  <awc-badge variant="neutral" pill pulse>1</awc-badge>
+  <awc-badge variant="warning" pill pulse>1</awc-badge>
+  <awc-badge variant="danger" pill pulse>1</awc-badge>
 </div>
 
 <style>
-  .badge-pulse sl-badge:not(:last-of-type) {
+  .badge-pulse awc-badge:not(:last-of-type) {
     margin-right: 1rem;
   }
 </style>
 ```
 
 ```jsx:react
-import { SlBadge } from '@shoelace-style/shoelace/dist/react';
+import { AWCBadge } from '@agence-adeliom/awc/dist/react';
 
 const css = `
-  .badge-pulse sl-badge:not(:last-of-type) {
+  .badge-pulse awc-badge:not(:last-of-type) {
     margin-right: 1rem;
   }
 `;
@@ -111,21 +111,21 @@ const css = `
 const App = () => (
   <>
     <div className="badge-pulse">
-      <SlBadge variant="primary" pill pulse>
+      <AWCBadge variant="primary" pill pulse>
         1
-      </SlBadge>
-      <SlBadge variant="success" pill pulse>
+      </AWCBadge>
+      <AWCBadge variant="success" pill pulse>
         1
-      </SlBadge>
-      <SlBadge variant="neutral" pill pulse>
+      </AWCBadge>
+      <AWCBadge variant="neutral" pill pulse>
         1
-      </SlBadge>
-      <SlBadge variant="warning" pill pulse>
+      </AWCBadge>
+      <AWCBadge variant="warning" pill pulse>
         1
-      </SlBadge>
-      <SlBadge variant="danger" pill pulse>
+      </AWCBadge>
+      <AWCBadge variant="danger" pill pulse>
         1
-      </SlBadge>
+      </AWCBadge>
     </div>
 
     <style>{css}</style>
@@ -138,47 +138,47 @@ const App = () => (
 One of the most common use cases for badges is attaching them to buttons. To make this easier, badges will be automatically positioned at the top-right when they're a child of a button.
 
 ```html:preview
-<sl-button>
+<awc-button>
   Requests
-  <sl-badge pill>30</sl-badge>
-</sl-button>
+  <awc-badge pill>30</awc-badge>
+</awc-button>
 
-<sl-button style="margin-inline-start: 1rem;">
+<awc-button style="margin-inline-start: 1rem;">
   Warnings
-  <sl-badge variant="warning" pill>8</sl-badge>
-</sl-button>
+  <awc-badge variant="warning" pill>8</awc-badge>
+</awc-button>
 
-<sl-button style="margin-inline-start: 1rem;">
+<awc-button style="margin-inline-start: 1rem;">
   Errors
-  <sl-badge variant="danger" pill>6</sl-badge>
-</sl-button>
+  <awc-badge variant="danger" pill>6</awc-badge>
+</awc-button>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlBadge, SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCBadge, AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton>
+    <AWCButton>
       Requests
-      <SlBadge pill>30</SlBadge>
-    </SlButton>
+      <AWCBadge pill>30</AWCBadge>
+    </AWCButton>
 
-    <SlButton style={{ marginInlineStart: '1rem' }}>
+    <AWCButton style={{ marginInlineStart: '1rem' }}>
       Warnings
-      <SlBadge variant="warning" pill>
+      <AWCBadge variant="warning" pill>
         8
-      </SlBadge>
-    </SlButton>
+      </AWCBadge>
+    </AWCButton>
 
-    <SlButton style={{ marginInlineStart: '1rem' }}>
+    <AWCButton style={{ marginInlineStart: '1rem' }}>
       Errors
-      <SlBadge variant="danger" pill>
+      <AWCBadge variant="danger" pill>
         6
-      </SlBadge>
-    </SlButton>
+      </AWCBadge>
+    </AWCButton>
   </>
 );
 ```
@@ -190,40 +190,40 @@ const App = () => (
 When including badges in menu items, use the `suffix` slot to make sure they're aligned correctly.
 
 ```html:preview
-<sl-menu style="max-width: 240px;">
-  <sl-menu-label>Messages</sl-menu-label>
-  <sl-menu-item>Comments <sl-badge slot="suffix" variant="neutral" pill>4</sl-badge></sl-menu-item>
-  <sl-menu-item>Replies <sl-badge slot="suffix" variant="neutral" pill>12</sl-badge></sl-menu-item>
-</sl-menu>
+<awc-menu style="max-width: 240px;">
+  <awc-menu-label>Messages</awc-menu-label>
+  <awc-menu-item>Comments <awc-badge slot="suffix" variant="neutral" pill>4</awc-badge></awc-menu-item>
+  <awc-menu-item>Replies <awc-badge slot="suffix" variant="neutral" pill>12</awc-badge></awc-menu-item>
+</awc-menu>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlBadge, SlButton, SlMenu, SlMenuItem, SlMenuLabel } from '@shoelace-style/shoelace/dist/react';
+import { AWCBadge, AWCButton, AWCMenu, AWCMenuItem, AWCMenuLabel } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlMenu
+  <AWCMenu
     style={{
       maxWidth: '240px',
-      border: 'solid 1px var(--sl-panel-border-color)',
-      borderRadius: 'var(--sl-border-radius-medium)'
+      border: 'solid 1px var(--awc-panel-border-color)',
+      borderRadius: 'var(--awc-border-radius-medium)'
     }}
   >
-    <SlMenuLabel>Messages</SlMenuLabel>
-    <SlMenuItem>
+    <AWCMenuLabel>Messages</AWCMenuLabel>
+    <AWCMenuItem>
       Comments
-      <SlBadge slot="suffix" variant="neutral" pill>
+      <AWCBadge slot="suffix" variant="neutral" pill>
         4
-      </SlBadge>
-    </SlMenuItem>
-    <SlMenuItem>
+      </AWCBadge>
+    </AWCMenuItem>
+    <AWCMenuItem>
       Replies
-      <SlBadge slot="suffix" variant="neutral" pill>
+      <AWCBadge slot="suffix" variant="neutral" pill>
         12
-      </SlBadge>
-    </SlMenuItem>
-  </SlMenu>
+      </AWCBadge>
+    </AWCMenuItem>
+  </AWCMenu>
 );
 ```
 

@@ -6,21 +6,21 @@ layout: component
 ---
 
 ```html:preview
-<sl-tab>Tab</sl-tab>
-<sl-tab active>Active</sl-tab>
-<sl-tab closable>Closable</sl-tab>
-<sl-tab disabled>Disabled</sl-tab>
+<awc-tab>Tab</awc-tab>
+<awc-tab active>Active</awc-tab>
+<awc-tab closable>Closable</awc-tab>
+<awc-tab disabled>Disabled</awc-tab>
 ```
 
 ```jsx:react
-import { SlTab } from '@shoelace-style/shoelace/dist/react';
+import { AWCTab } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlTab>Tab</SlTab>
-    <SlTab active>Active</SlTab>
-    <SlTab closable>Closable</SlTab>
-    <SlTab disabled>Disabled</SlTab>
+    <AWCTab>Tab</AWCTab>
+    <AWCTab active>Active</AWCTab>
+    <AWCTab closable>Closable</AWCTab>
+    <AWCTab disabled>Disabled</AWCTab>
   </>
 );
 ```

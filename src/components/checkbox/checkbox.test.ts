@@ -1,19 +1,19 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/awc.js';
 import { aTimeout, expect, fixture, html, oneEvent, waitUntil } from '@open-wc/testing';
 import { clickOnElement } from '../../internal/test.js';
 import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type SlCheckbox from './checkbox.js';
+import type AWCCheckbox from './checkbox.js';
 
-describe('<sl-checkbox>', () => {
+describe('<awc-checkbox>', () => {
   it('should pass accessibility tests', async () => {
-    const el = await fixture<SlCheckbox>(html` <sl-checkbox>Checkbox</sl-checkbox> `);
+    const el = await fixture<AWCCheckbox>(html` <awc-checkbox>Checkbox</awc-checkbox> `);
     await expect(el).to.be.accessible();
   });
 
   it('default properties', async () => {
-    const el = await fixture<SlCheckbox>(html` <sl-checkbox></sl-checkbox> `);
+    const el = await fixture<AWCCheckbox>(html` <awc-checkbox></awc-checkbox> `);
 
     expect(el.name).to.equal('');
     expect(el.value).to.be.undefined;
@@ -26,21 +26,21 @@ describe('<sl-checkbox>', () => {
   });
 
   it('should have title if title attribute is set', async () => {
-    const el = await fixture<SlCheckbox>(html` <sl-checkbox title="Test"></sl-checkbox> `);
+    const el = await fixture<AWCCheckbox>(html` <awc-checkbox title="Test"></awc-checkbox> `);
     const input = el.shadowRoot!.querySelector('input')!;
 
     expect(input.title).to.equal('Test');
   });
 
   it('should be disabled with the disabled attribute', async () => {
-    const el = await fixture<SlCheckbox>(html` <sl-checkbox disabled></sl-checkbox> `);
+    const el = await fixture<AWCCheckbox>(html` <awc-checkbox disabled></awc-checkbox> `);
     const checkbox = el.shadowRoot!.querySelector('input')!;
 
     expect(checkbox.disabled).to.be.true;
   });
 
   it('should be disabled when disabled property is set', async () => {
-    const el = await fixture<SlCheckbox>(html`<sl-checkbox></sl-checkbox>`);
+    const el = await fixture<AWCCheckbox>(html`<awc-checkbox></awc-checkbox>`);
     const checkbox = el.shadowRoot!.querySelector('input')!;
 
     el.disabled = true;
@@ -50,17 +50,17 @@ describe('<sl-checkbox>', () => {
   });
 
   it('should be valid by default', async () => {
-    const el = await fixture<SlCheckbox>(html` <sl-checkbox></sl-checkbox> `);
+    const el = await fixture<AWCCheckbox>(html` <awc-checkbox></awc-checkbox> `);
     expect(el.checkValidity()).to.be.true;
   });
 
-  it('should emit sl-change and sl-input when clicked', async () => {
-    const el = await fixture<SlCheckbox>(html` <sl-checkbox></sl-checkbox> `);
+  it('should emit awc-change and awc-input when clicked', async () => {
+    const el = await fixture<AWCCheckbox>(html` <awc-checkbox></awc-checkbox> `);
     const changeHandler = sinon.spy();
     const inputHandler = sinon.spy();
 
-    el.addEventListener('sl-change', changeHandler);
-    el.addEventListener('sl-input', inputHandler);
+    el.addEventListener('awc-change', changeHandler);
+    el.addEventListener('awc-input', inputHandler);
     el.click();
     await el.updateComplete;
 
@@ -69,13 +69,13 @@ describe('<sl-checkbox>', () => {
     expect(el.checked).to.be.true;
   });
 
-  it('should emit sl-change and sl-input when toggled with spacebar', async () => {
-    const el = await fixture<SlCheckbox>(html` <sl-checkbox></sl-checkbox> `);
+  it('should emit awc-change and awc-input when toggled with spacebar', async () => {
+    const el = await fixture<AWCCheckbox>(html` <awc-checkbox></awc-checkbox> `);
     const changeHandler = sinon.spy();
     const inputHandler = sinon.spy();
 
-    el.addEventListener('sl-change', changeHandler);
-    el.addEventListener('sl-input', inputHandler);
+    el.addEventListener('awc-change', changeHandler);
+    el.addEventListener('awc-input', inputHandler);
     el.focus();
     await el.updateComplete;
     await sendKeys({ press: ' ' });
@@ -85,11 +85,11 @@ describe('<sl-checkbox>', () => {
     expect(el.checked).to.be.true;
   });
 
-  it('should not emit sl-change or sl-input when checked programmatically', async () => {
-    const el = await fixture<SlCheckbox>(html` <sl-checkbox></sl-checkbox> `);
+  it('should not emit awc-change or awc-input when checked programmatically', async () => {
+    const el = await fixture<AWCCheckbox>(html` <awc-checkbox></awc-checkbox> `);
 
-    el.addEventListener('sl-change', () => expect.fail('sl-change should not be emitted'));
-    el.addEventListener('sl-input', () => expect.fail('sl-input should not be emitted'));
+    el.addEventListener('awc-change', () => expect.fail('awc-change should not be emitted'));
+    el.addEventListener('awc-input', () => expect.fail('awc-input should not be emitted'));
     el.checked = true;
     await el.updateComplete;
     el.checked = false;
@@ -98,9 +98,9 @@ describe('<sl-checkbox>', () => {
 
   it('should hide the native input with the correct positioning to scroll correctly when contained in an overflow', async () => {
     //
-    // See: https://github.com/shoelace-style/shoelace/issues/1169
+    // See: https://github.com/awc-style/awc/issues/1169
     //
-    const el = await fixture<SlCheckbox>(html` <sl-checkbox></sl-checkbox> `);
+    const el = await fixture<AWCCheckbox>(html` <awc-checkbox></awc-checkbox> `);
     const label = el.shadowRoot!.querySelector('.checkbox')!;
     const input = el.shadowRoot!.querySelector('.checkbox__input')!;
 
@@ -115,11 +115,11 @@ describe('<sl-checkbox>', () => {
     it('should submit the correct value when a value is provided', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-checkbox name="a" value="1" checked></sl-checkbox>
-          <sl-button type="submit">Submit</sl-button>
+          <awc-checkbox name="a" value="1" checked></awc-checkbox>
+          <awc-button type="submit">Submit</awc-button>
         </form>
       `);
-      const button = form.querySelector('sl-button')!;
+      const button = form.querySelector('awc-button')!;
       const submitHandler = sinon.spy((event: SubmitEvent) => {
         formData = new FormData(form);
         event.preventDefault();
@@ -137,11 +137,11 @@ describe('<sl-checkbox>', () => {
     it('should submit "on" when no value is provided', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-checkbox name="a" checked></sl-checkbox>
-          <sl-button type="submit">Submit</sl-button>
+          <awc-checkbox name="a" checked></awc-checkbox>
+          <awc-button type="submit">Submit</awc-button>
         </form>
       `);
-      const button = form.querySelector('sl-button')!;
+      const button = form.querySelector('awc-button')!;
       const submitHandler = sinon.spy((event: SubmitEvent) => {
         formData = new FormData(form);
         event.preventDefault();
@@ -157,7 +157,7 @@ describe('<sl-checkbox>', () => {
     });
 
     it('should be invalid when setCustomValidity() is called with a non-empty value', async () => {
-      const checkbox = await fixture<HTMLFormElement>(html` <sl-checkbox></sl-checkbox> `);
+      const checkbox = await fixture<HTMLFormElement>(html` <awc-checkbox></awc-checkbox> `);
 
       // Submitting the form after setting custom validity should not trigger the handler
       checkbox.setCustomValidity('Invalid selection');
@@ -178,12 +178,12 @@ describe('<sl-checkbox>', () => {
     });
 
     it('should be invalid when required and unchecked', async () => {
-      const checkbox = await fixture<HTMLFormElement>(html` <sl-checkbox required></sl-checkbox> `);
+      const checkbox = await fixture<HTMLFormElement>(html` <awc-checkbox required></awc-checkbox> `);
       expect(checkbox.checkValidity()).to.be.false;
     });
 
     it('should be valid when required and checked', async () => {
-      const checkbox = await fixture<HTMLFormElement>(html` <sl-checkbox required checked></sl-checkbox> `);
+      const checkbox = await fixture<HTMLFormElement>(html` <awc-checkbox required checked></awc-checkbox> `);
       expect(checkbox.checkValidity()).to.be.true;
     });
 
@@ -191,9 +191,9 @@ describe('<sl-checkbox>', () => {
       const el = await fixture<HTMLFormElement>(html`
         <div>
           <form id="f">
-            <sl-button type="submit">Submit</sl-button>
+            <awc-button type="submit">Submit</awc-button>
           </form>
-          <sl-checkbox form="f" name="a" value="1" checked></sl-checkbox>
+          <awc-checkbox form="f" name="a" value="1" checked></awc-checkbox>
         </div>
       `);
       const form = el.querySelector('form')!;
@@ -203,8 +203,8 @@ describe('<sl-checkbox>', () => {
     });
 
     it('should receive validation attributes ("states") even when novalidate is used on the parent form', async () => {
-      const el = await fixture<HTMLFormElement>(html` <form novalidate><sl-checkbox required></sl-checkbox></form> `);
-      const checkbox = el.querySelector<SlCheckbox>('sl-checkbox')!;
+      const el = await fixture<HTMLFormElement>(html` <form novalidate><awc-checkbox required></awc-checkbox></form> `);
+      const checkbox = el.querySelector<AWCCheckbox>('awc-checkbox')!;
 
       expect(checkbox.hasAttribute('data-required')).to.be.true;
       expect(checkbox.hasAttribute('data-optional')).to.be.false;
@@ -219,12 +219,12 @@ describe('<sl-checkbox>', () => {
     it('should reset the element to its initial value', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-checkbox name="a" value="1" checked></sl-checkbox>
-          <sl-button type="reset">Reset</sl-button>
+          <awc-checkbox name="a" value="1" checked></awc-checkbox>
+          <awc-button type="reset">Reset</awc-button>
         </form>
       `);
-      const button = form.querySelector('sl-button')!;
-      const checkbox = form.querySelector('sl-checkbox')!;
+      const button = form.querySelector('awc-button')!;
+      const checkbox = form.querySelector('awc-checkbox')!;
       checkbox.checked = false;
 
       await checkbox.updateComplete;
@@ -247,7 +247,7 @@ describe('<sl-checkbox>', () => {
 
   describe('click', () => {
     it('should click the inner input', async () => {
-      const el = await fixture<SlCheckbox>(html`<sl-checkbox></sl-checkbox>`);
+      const el = await fixture<AWCCheckbox>(html`<awc-checkbox></awc-checkbox>`);
       const checkbox = el.shadowRoot!.querySelector('input')!;
       const clickSpy = sinon.spy();
 
@@ -263,7 +263,7 @@ describe('<sl-checkbox>', () => {
 
   describe('focus', () => {
     it('should focus the inner input', async () => {
-      const el = await fixture<SlCheckbox>(html`<sl-checkbox></sl-checkbox>`);
+      const el = await fixture<AWCCheckbox>(html`<awc-checkbox></awc-checkbox>`);
       const checkbox = el.shadowRoot!.querySelector('input')!;
       const focusSpy = sinon.spy();
 
@@ -277,47 +277,47 @@ describe('<sl-checkbox>', () => {
     });
 
     it('should not jump the page to the bottom when focusing a checkbox at the bottom of an element with overflow: auto;', async () => {
-      // https://github.com/shoelace-style/shoelace/issues/1169
+      // https://github.com/awc-style/awc/issues/1169
       const el = await fixture<HTMLDivElement>(html`
         <div style="display: flex; flex-direction: column; overflow: auto; max-height: 400px; gap: 8px;">
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
-          <sl-checkbox>Checkbox</sl-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
+          <awc-checkbox>Checkbox</awc-checkbox>
         </div>
         ;
       `);
 
-      const checkboxes = el.querySelectorAll<SlCheckbox>('sl-checkbox');
+      const checkboxes = el.querySelectorAll<AWCCheckbox>('awc-checkbox');
       const lastSwitch = checkboxes[checkboxes.length - 1];
 
       expect(window.scrollY).to.equal(0);
@@ -331,7 +331,7 @@ describe('<sl-checkbox>', () => {
 
   describe('blur', () => {
     it('should blur the inner input', async () => {
-      const el = await fixture<SlCheckbox>(html`<sl-checkbox></sl-checkbox>`);
+      const el = await fixture<AWCCheckbox>(html`<awc-checkbox></awc-checkbox>`);
       const checkbox = el.shadowRoot!.querySelector('input')!;
       const blurSpy = sinon.spy();
 
@@ -350,7 +350,7 @@ describe('<sl-checkbox>', () => {
 
   describe('indeterminate', () => {
     it('should render indeterminate icon until checked', async () => {
-      const el = await fixture<SlCheckbox>(html`<sl-checkbox indeterminate></sl-checkbox>`);
+      const el = await fixture<AWCCheckbox>(html`<awc-checkbox indeterminate></awc-checkbox>`);
       let indeterminateIcon = el.shadowRoot!.querySelector('[part~="indeterminate-icon"]')!;
 
       expect(indeterminateIcon).not.to.be.null;
@@ -363,6 +363,6 @@ describe('<sl-checkbox>', () => {
       expect(indeterminateIcon).to.be.null;
     });
 
-    runFormControlBaseTests('sl-checkbox');
+    runFormControlBaseTests('awc-checkbox');
   });
 });

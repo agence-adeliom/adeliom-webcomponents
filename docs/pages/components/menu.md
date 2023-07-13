@@ -8,32 +8,32 @@ layout: component
 You can use [menu items](/components/menu-item), [menu labels](/components/menu-label), and [dividers](/components/divider) to compose a menu. Menus support keyboard interactions, including type-to-select an option.
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item value="undo">Undo</sl-menu-item>
-  <sl-menu-item value="redo">Redo</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-item value="cut">Cut</sl-menu-item>
-  <sl-menu-item value="copy">Copy</sl-menu-item>
-  <sl-menu-item value="paste">Paste</sl-menu-item>
-  <sl-menu-item value="delete">Delete</sl-menu-item>
-</sl-menu>
+<awc-menu style="max-width: 200px;">
+  <awc-menu-item value="undo">Undo</awc-menu-item>
+  <awc-menu-item value="redo">Redo</awc-menu-item>
+  <awc-divider></awc-divider>
+  <awc-menu-item value="cut">Cut</awc-menu-item>
+  <awc-menu-item value="copy">Copy</awc-menu-item>
+  <awc-menu-item value="paste">Paste</awc-menu-item>
+  <awc-menu-item value="delete">Delete</awc-menu-item>
+</awc-menu>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlDivider, SlMenu, SlMenuItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCDivider, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem value="undo">Undo</SlMenuItem>
-    <SlMenuItem value="redo">Redo</SlMenuItem>
-    <SlDivider />
-    <SlMenuItem value="cut">Cut</SlMenuItem>
-    <SlMenuItem value="copy">Copy</SlMenuItem>
-    <SlMenuItem value="paste">Paste</SlMenuItem>
-    <SlMenuItem value="delete">Delete</SlMenuItem>
-  </SlMenu>
+  <AWCMenu style={{ maxWidth: '200px' }}>
+    <AWCMenuItem value="undo">Undo</AWCMenuItem>
+    <AWCMenuItem value="redo">Redo</AWCMenuItem>
+    <AWCDivider />
+    <AWCMenuItem value="cut">Cut</AWCMenuItem>
+    <AWCMenuItem value="copy">Copy</AWCMenuItem>
+    <AWCMenuItem value="paste">Paste</AWCMenuItem>
+    <AWCMenuItem value="delete">Delete</AWCMenuItem>
+  </AWCMenu>
 );
 ```
 

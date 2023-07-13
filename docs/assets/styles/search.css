@@ -1,31 +1,31 @@
 /* Search plugin */
 :root,
-:root.sl-theme-dark {
-  --docs-search-box-background: var(--sl-color-neutral-0);
+:root.awc-theme-dark {
+  --docs-search-box-background: var(--awc-color-neutral-0);
   --docs-search-box-border-width: 1px;
-  --docs-search-box-border-color: var(--sl-color-neutral-300);
-  --docs-search-box-color: var(--sl-color-neutral-600);
-  --docs-search-dialog-background: var(--sl-color-neutral-0);
+  --docs-search-box-border-color: var(--awc-color-neutral-300);
+  --docs-search-box-color: var(--awc-color-neutral-600);
+  --docs-search-dialog-background: var(--awc-color-neutral-0);
   --docs-search-border-width: var(--docs-border-width);
   --docs-search-border-color: var(--docs-border-color);
-  --docs-search-text-color: var(--sl-color-neutral-900);
-  --docs-search-text-color-muted: var(--sl-color-neutral-500);
-  --docs-search-font-weight-normal: var(--sl-font-weight-normal);
-  --docs-search-font-weight-semibold: var(--sl-font-weight-semibold);
+  --docs-search-text-color: var(--awc-color-neutral-900);
+  --docs-search-text-color-muted: var(--awc-color-neutral-500);
+  --docs-search-font-weight-normal: var(--awc-font-weight-normal);
+  --docs-search-font-weight-semibold: var(--awc-font-weight-semibold);
   --docs-search-border-radius: calc(2 * var(--docs-border-radius));
-  --docs-search-accent-color: var(--sl-color-primary-600);
-  --docs-search-icon-color: var(--sl-color-neutral-500);
-  --docs-search-icon-color-active: var(--sl-color-neutral-600);
+  --docs-search-accent-color: var(--awc-color-primary-600);
+  --docs-search-icon-color: var(--awc-color-neutral-500);
+  --docs-search-icon-color-active: var(--awc-color-neutral-600);
   --docs-search-shadow: var(--docs-shadow-x-large);
-  --docs-search-result-background-hover: var(--sl-color-neutral-100);
-  --docs-search-result-color-hover: var(--sl-color-neutral-900);
-  --docs-search-result-background-active: var(--sl-color-primary-600);
-  --docs-search-result-color-active: var(--sl-color-neutral-0);
-  --docs-search-focus-ring: var(--sl-focus-ring);
+  --docs-search-result-background-hover: var(--awc-color-neutral-100);
+  --docs-search-result-color-hover: var(--awc-color-neutral-900);
+  --docs-search-result-background-active: var(--awc-color-primary-600);
+  --docs-search-result-color-active: var(--awc-color-neutral-0);
+  --docs-search-focus-ring: var(--awc-focus-ring);
   --docs-search-overlay-background: rgb(0 0 0 / 0.33);
 }
 
-:root.sl-theme-dark {
+:root.awc-theme-dark {
   --docs-search-overlay-background: rgb(71 71 71 / 0.33);
 }
 
@@ -47,7 +47,7 @@ body.search-visible {
   font: inherit;
   color: var(--docs-search-box-color);
   padding: 0.75rem 1rem;
-  margin: var(--sl-spacing-large) 0;
+  margin: var(--awc-spacing-large) 0;
   cursor: pointer;
 }
 
@@ -150,7 +150,7 @@ body.search-visible {
   align-items: center;
 }
 
-.search__input-wrapper sl-icon {
+.search__input-wrapper awc-icon {
   width: 1.5rem;
   height: 1.5rem;
   flex: 0 0 auto;
@@ -172,7 +172,7 @@ body.search-visible {
   display: none;
 }
 
-.search__clear-button:active sl-icon {
+.search__clear-button:active awc-icon {
   color: var(--docs-search-icon-color-active);
 }
 
@@ -276,7 +276,7 @@ body.search-visible {
   color: var(--docs-search-text-color-muted);
 }
 
-.search__result-icon sl-icon {
+.search__result-icon awc-icon {
   font-size: 1.5rem;
 }
 

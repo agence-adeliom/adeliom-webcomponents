@@ -1,56 +1,56 @@
 ---
 meta:
   title: Customizing
-  description: Learn how to customize Shoelace through parts and custom properties.
+  description: Learn how to customize Adeliom WebComponents through parts and custom properties.
 ---
 
 # Customizing
 
-Shoelace components can be customized at a high level through design tokens. This gives you control over theme colors and general styling. For more advanced customizations, you can make use of component parts and custom properties to target individual components.
+Adeliom WebComponents components can be customized at a high level through design tokens. This gives you control over theme colors and general styling. For more advanced customizations, you can make use of component parts and custom properties to target individual components.
 
 ## Design Tokens
 
-Shoelace makes use of several design tokens to provide a consistent appearance across components. You can customize them and use them in your own application with pure CSS — no preprocessor required.
+Adeliom WebComponents makes use of several design tokens to provide a consistent appearance across components. You can customize them and use them in your own application with pure CSS — no preprocessor required.
 
 Design tokens offer a high-level way to customize the library with minimal effort. There are no component-specific variables, however, as design tokens are intended to be generic and highly reusable. To customize an individual component, refer to the section entitled [Component Parts](#component-parts).
 
-Design tokens are accessed through CSS custom properties that are defined in your theme. Because design tokens live at the page level, they're prefixed with `--sl-` to avoid collisions with other libraries.
+Design tokens are accessed through CSS custom properties that are defined in your theme. Because design tokens live at the page level, they're prefixed with `--awc-` to avoid collisions with other libraries.
 
 To customize a design token, simply override it in your stylesheet using a `:root` block. Here's an example that changes the primary theme to purple based on existing [color primitives](/tokens/color#primitives).
 
 ```css
 :root {
   /* Changes the primary theme color to purple using primitives */
-  --sl-color-primary-50: var(--sl-color-purple-50);
-  --sl-color-primary-100: var(--sl-color-purple-100);
-  --sl-color-primary-200: var(--sl-color-purple-200);
-  --sl-color-primary-300: var(--sl-color-purple-300);
-  --sl-color-primary-400: var(--sl-color-purple-400);
-  --sl-color-primary-500: var(--sl-color-purple-500);
-  --sl-color-primary-600: var(--sl-color-purple-600);
-  --sl-color-primary-700: var(--sl-color-purple-700);
-  --sl-color-primary-800: var(--sl-color-purple-800);
-  --sl-color-primary-900: var(--sl-color-purple-900);
-  --sl-color-primary-950: var(--sl-color-purple-950);
+  --awc-color-primary-50: var(--awc-color-purple-50);
+  --awc-color-primary-100: var(--awc-color-purple-100);
+  --awc-color-primary-200: var(--awc-color-purple-200);
+  --awc-color-primary-300: var(--awc-color-purple-300);
+  --awc-color-primary-400: var(--awc-color-purple-400);
+  --awc-color-primary-500: var(--awc-color-purple-500);
+  --awc-color-primary-600: var(--awc-color-purple-600);
+  --awc-color-primary-700: var(--awc-color-purple-700);
+  --awc-color-primary-800: var(--awc-color-purple-800);
+  --awc-color-primary-900: var(--awc-color-purple-900);
+  --awc-color-primary-950: var(--awc-color-purple-950);
 }
 ```
 
-Many design tokens are described further along in this documentation. For a complete list, refer to `src/themes/light.css` in the project's [source code](https://github.com/shoelace-style/shoelace/blob/current/src/themes/light.css).
+Many design tokens are described further along in this documentation. For a complete list, refer to `src/themes/light.css` in the project's [source code](https://github.com/agence-adeliom/awc/blob/current/src/themes/light.css).
 
 ## Component Parts
 
 Whereas design tokens offer a high-level way to customize the library, component parts offer a low-level way to customize individual components. Again, this is done with pure CSS — no preprocessor required.
 
-Shoelace components use a [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to encapsulate their styles and behaviors. As a result, you can't simply target their internals with the usual CSS selectors. Instead, components expose "parts" that can be targeted with the [CSS part selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part), or `::part()`.
+Adeliom WebComponents components use a [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to encapsulate their styles and behaviors. As a result, you can't simply target their internals with the usual CSS selectors. Instead, components expose "parts" that can be targeted with the [CSS part selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part), or `::part()`.
 
 Here's an example that modifies buttons with the `tomato-button` class.
 
 ```html:preview
-<sl-button class="tomato-button"> Tomato Button </sl-button>
+<awc-button class="tomato-button"> Tomato Button </awc-button>
 
 <style>
   .tomato-button::part(base) {
-    background: var(--sl-color-neutral-0);
+    background: var(--awc-color-neutral-0);
     border: solid 1px tomato;
   }
 
@@ -84,12 +84,12 @@ Most (but not all) components expose parts. You can find them in each component'
 
 ## Custom Properties
 
-For convenience, some components expose CSS custom properties you can override. These are not design tokens, nor do they have the same `--sl-` prefix since they're scoped to a component.
+For convenience, some components expose CSS custom properties you can override. These are not design tokens, nor do they have the same `--awc-` prefix since they're scoped to a component.
 
 You can set custom properties on a component in your stylesheet.
 
 ```css
-sl-avatar {
+awc-avatar {
   --size: 6rem;
 }
 ```
@@ -97,7 +97,7 @@ sl-avatar {
 This will also work if you need to target a subset of components with a specific class.
 
 ```css
-sl-avatar.your-class {
+awc-avatar.your-class {
   --size: 6rem;
 }
 ```
@@ -105,21 +105,21 @@ sl-avatar.your-class {
 Alternatively, you can set them inline directly on the element.
 
 ```html
-<sl-avatar style="--size: 6rem;"></sl-avatar>
+<awc-avatar style="--size: 6rem;"></awc-avatar>
 ```
 
 Not all components expose CSS custom properties. For those that do, they can be found in the component's API documentation.
 
 ## Animations
 
-Some components use animation, such as when a dialog is shown or hidden. Animations are performed using the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) rather than CSS. However, you can still customize them through Shoelace's animation registry. If a component has customizable animations, they'll be listed in the "Animation" section of its documentation.
+Some components use animation, such as when a dialog is shown or hidden. Animations are performed using the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) rather than CSS. However, you can still customize them through Adeliom WebComponents's animation registry. If a component has customizable animations, they'll be listed in the "Animation" section of its documentation.
 
 To customize a default animation, use the `setDefaultAnimation()` method. The function accepts an animation name (found in the component's docs) and an object with `keyframes`, and `options` or `null` to disable the animation.
 
 This example will make all dialogs use a custom show animation.
 
 ```js
-import { setDefaultAnimation } from '@shoelace-style/shoelace/dist/utilities/animation-registry.js';
+import { setDefaultAnimation } from '@agence-adeliom/awc/dist/utilities/animation-registry.js';
 
 // Change the default animation for all dialogs
 setDefaultAnimation('dialog.show', {
@@ -142,7 +142,7 @@ If you only want to target a single component, use the `setAnimation()` method i
 In this example, only the target dialog will use a custom show animation.
 
 ```js
-import { setAnimation } from '@shoelace-style/shoelace/dist/utilities/animation-registry.js';
+import { setAnimation } from '@agence-adeliom/awc/dist/utilities/animation-registry.js';
 
 // Change the animation for a single dialog
 const dialog = document.querySelector('#my-dialog');

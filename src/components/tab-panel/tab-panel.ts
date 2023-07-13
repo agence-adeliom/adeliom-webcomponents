@@ -2,7 +2,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property } from 'lit/decorators.js';
 import { html } from 'lit';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './tab-panel.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -10,7 +10,7 @@ let id = 0;
 
 /**
  * @summary Tab panels are used inside [tab groups](/components/tab-group) to display tabbed content.
- * @documentation https://shoelace.style/components/tab-panel
+ * @documentation https://awc.a-dev.cloud/components/tab-panel
  * @status stable
  * @since 2.0
  *
@@ -20,12 +20,12 @@ let id = 0;
  *
  * @cssproperty --padding - The tab panel's padding.
  */
-@customElement('sl-tab-panel')
-export default class SlTabPanel extends ShoelaceElement {
+@customElement('awc-tab-panel')
+export default class AWCTabPanel extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private readonly attrId = ++id;
-  private readonly componentId = `sl-tab-panel-${this.attrId}`;
+  private readonly componentId = `awc-tab-panel-${this.attrId}`;
 
   /** The tab panel's name. */
   @property({ reflect: true }) name = '';
@@ -59,6 +59,6 @@ export default class SlTabPanel extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-tab-panel': SlTabPanel;
+    'awc-tab-panel': AWCTabPanel;
   }
 }

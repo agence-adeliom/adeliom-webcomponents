@@ -1,25 +1,25 @@
 import { customElement, query } from 'lit/decorators.js';
 import { html } from 'lit';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './menu.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type SlMenuItem from '../menu-item/menu-item.js';
+import type AWCMenuItem from '../menu-item/menu-item.js';
 export interface MenuSelectEventDetail {
-  item: SlMenuItem;
+  item: AWCMenuItem;
 }
 
 /**
  * @summary Menus provide a list of options for the user to choose from.
- * @documentation https://shoelace.style/components/menu
+ * @documentation https://awc.a-dev.cloud/components/menu
  * @status stable
  * @since 2.0
  *
  * @slot - The menu's content, including menu items, menu labels, and dividers.
  *
- * @event {{ item: SlMenuItem }} sl-select - Emitted when a menu item is selected.
+ * @event {{ item: AWCMenuItem }} awc-select - Emitted when a menu item is selected.
  */
-@customElement('sl-menu')
-export default class SlMenu extends ShoelaceElement {
+@customElement('awc-menu')
+export default class AWCMenu extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   @query('slot') defaultSlot: HTMLSlotElement;
@@ -31,7 +31,7 @@ export default class SlMenu extends ShoelaceElement {
 
   private handleClick(event: MouseEvent) {
     const target = event.target as HTMLElement;
-    const item = target.closest('sl-menu-item');
+    const item = target.closest('awc-menu-item');
 
     if (!item || item.disabled || item.inert) {
       return;
@@ -41,7 +41,7 @@ export default class SlMenu extends ShoelaceElement {
       item.checked = !item.checked;
     }
 
-    this.emit('sl-select', { detail: { item } });
+    this.emit('awc-select', { detail: { item } });
   }
 
   private handleKeyDown(event: KeyboardEvent) {
@@ -90,7 +90,7 @@ export default class SlMenu extends ShoelaceElement {
     const target = event.target as HTMLElement;
 
     if (this.isMenuItem(target)) {
-      this.setCurrentItem(target as SlMenuItem);
+      this.setCurrentItem(target as AWCMenuItem);
     }
   }
 
@@ -105,7 +105,7 @@ export default class SlMenu extends ShoelaceElement {
 
   private isMenuItem(item: HTMLElement) {
     return (
-      item.tagName.toLowerCase() === 'sl-menu-item' ||
+      item.tagName.toLowerCase() === 'awc-menu-item' ||
       ['menuitem', 'menuitemcheckbox', 'menuitemradio'].includes(item.getAttribute('role') ?? '')
     );
   }
@@ -117,7 +117,7 @@ export default class SlMenu extends ShoelaceElement {
         return false;
       }
       return true;
-    }) as SlMenuItem[];
+    }) as AWCMenuItem[];
   }
 
   /**
@@ -132,7 +132,7 @@ export default class SlMenu extends ShoelaceElement {
    * @internal Sets the current menu item to the specified element. This sets `tabindex="0"` on the target element and
    * `tabindex="-1"` to all other items. This method must be called prior to setting focus on a menu item.
    */
-  setCurrentItem(item: SlMenuItem) {
+  setCurrentItem(item: AWCMenuItem) {
     const items = this.getAllItems();
 
     // Update tab indexes
@@ -155,6 +155,6 @@ export default class SlMenu extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-menu': SlMenu;
+    'awc-menu': AWCMenu;
   }
 }

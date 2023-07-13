@@ -5,8 +5,8 @@ export default css`
   ${componentStyles}
 
   :host {
-    --indicator-color: var(--sl-color-primary-600);
-    --track-color: var(--sl-color-neutral-200);
+    --indicator-color: var(--awc-color-primary-600);
+    --track-color: var(--awc-color-neutral-200);
     --track-width: 2px;
 
     display: block;
@@ -24,12 +24,14 @@ export default css`
 
   .tab-group__indicator {
     position: absolute;
-    transition: var(--sl-transition-fast) translate ease, var(--sl-transition-fast) width ease;
+    transition:
+      var(--awc-transition-fast) translate ease,
+      var(--awc-transition-fast) width ease;
   }
 
   .tab-group--has-scroll-controls .tab-group__nav-container {
     position: relative;
-    padding: 0 var(--sl-spacing-x-large);
+    padding: 0 var(--awc-spacing-x-large);
   }
 
   .tab-group__body {
@@ -44,7 +46,7 @@ export default css`
     position: absolute;
     top: 0;
     bottom: 0;
-    width: var(--sl-spacing-x-large);
+    width: var(--awc-spacing-x-large);
   }
 
   .tab-group__scroll-button--start {
@@ -107,8 +109,8 @@ export default css`
     order: 2;
   }
 
-  .tab-group--top ::slotted(sl-tab-panel) {
-    --padding: var(--sl-spacing-medium) 0;
+  .tab-group--top ::slotted(awc-tab-panel) {
+    --padding: var(--awc-spacing-medium) 0;
   }
 
   /*
@@ -153,8 +155,8 @@ export default css`
     order: 1;
   }
 
-  .tab-group--bottom ::slotted(sl-tab-panel) {
-    --padding: var(--sl-spacing-medium) 0;
+  .tab-group--bottom ::slotted(awc-tab-panel) {
+    --padding: var(--awc-spacing-medium) 0;
   }
 
   /*
@@ -190,8 +192,8 @@ export default css`
     order: 2;
   }
 
-  .tab-group--start ::slotted(sl-tab-panel) {
-    --padding: 0 var(--sl-spacing-medium);
+  .tab-group--start ::slotted(awc-tab-panel) {
+    --padding: 0 var(--awc-spacing-medium);
   }
 
   /*
@@ -227,7 +229,7 @@ export default css`
     order: 1;
   }
 
-  .tab-group--end ::slotted(sl-tab-panel) {
-    --padding: 0 var(--sl-spacing-medium);
+  .tab-group--end ::slotted(awc-tab-panel) {
+    --padding: 0 var(--awc-spacing-medium);
   }
 `;

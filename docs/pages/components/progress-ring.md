@@ -6,13 +6,13 @@ layout: component
 ---
 
 ```html:preview
-<sl-progress-ring value="25"></sl-progress-ring>
+<awc-progress-ring value="25"></awc-progress-ring>
 ```
 
 ```jsx:react
-import { SlProgressRing } from '@shoelace-style/shoelace/dist/react';
+import { AWCProgressRing } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlProgressRing value="25" />;
+const App = () => <AWCProgressRing value="25" />;
 ```
 
 ## Examples
@@ -22,15 +22,15 @@ const App = () => <SlProgressRing value="25" />;
 Use the `--size` custom property to set the diameter of the progress ring.
 
 ```html:preview
-<sl-progress-ring value="50" style="--size: 200px;"></sl-progress-ring>
+<awc-progress-ring value="50" style="--size: 200px;"></awc-progress-ring>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlProgressRing } from '@shoelace-style/shoelace/dist/react';
+import { AWCProgressRing } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlProgressRing value="50" style={{ '--size': '200px' }} />;
+const App = () => <AWCProgressRing value="50" style={{ '--size': '200px' }} />;
 ```
 
 {% endraw %}
@@ -40,15 +40,15 @@ const App = () => <SlProgressRing value="50" style={{ '--size': '200px' }} />;
 Use the `--track-width` and `--indicator-width` custom properties to set the width of the progress ring's track and indicator.
 
 ```html:preview
-<sl-progress-ring value="50" style="--track-width: 6px; --indicator-width: 12px;"></sl-progress-ring>
+<awc-progress-ring value="50" style="--track-width: 6px; --indicator-width: 12px;"></awc-progress-ring>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlProgressRing } from '@shoelace-style/shoelace/dist/react';
+import { AWCProgressRing } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlProgressRing value="50" style={{ '--track-width': '6px', '--indicator-width': '12px' }} />;
+const App = () => <AWCProgressRing value="50" style={{ '--track-width': '6px', '--indicator-width': '12px' }} />;
 ```
 
 {% endraw %}
@@ -58,22 +58,22 @@ const App = () => <SlProgressRing value="50" style={{ '--track-width': '6px', '-
 To change the color, use the `--track-color` and `--indicator-color` custom properties.
 
 ```html:preview
-<sl-progress-ring
+<awc-progress-ring
   value="50"
   style="
     --track-color: pink;
     --indicator-color: deeppink;
   "
-></sl-progress-ring>
+></awc-progress-ring>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlProgressRing } from '@shoelace-style/shoelace/dist/react';
+import { AWCProgressRing } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlProgressRing
+  <AWCProgressRing
     value="50"
     style={{
       '--track-color': 'pink',
@@ -90,13 +90,13 @@ const App = () => (
 Use the `label` attribute to label the progress ring and tell assistive devices how to announce it.
 
 ```html:preview
-<sl-progress-ring value="50" label="Upload progress"></sl-progress-ring>
+<awc-progress-ring value="50" label="Upload progress"></awc-progress-ring>
 ```
 
 ```jsx:react
-import { SlProgressRing } from '@shoelace-style/shoelace/dist/react';
+import { AWCProgressRing } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlProgressRing value="50" label="Upload progress" />;
+const App = () => <AWCProgressRing value="50" label="Upload progress" />;
 ```
 
 ### Showing Values
@@ -104,12 +104,12 @@ const App = () => <SlProgressRing value="50" label="Upload progress" />;
 Use the default slot to show a label inside the progress ring.
 
 ```html:preview
-<sl-progress-ring value="50" class="progress-ring-values" style="margin-bottom: .5rem;">50%</sl-progress-ring>
+<awc-progress-ring value="50" class="progress-ring-values" style="margin-bottom: .5rem;">50%</awc-progress-ring>
 
 <br />
 
-<sl-button circle><sl-icon name="dash" label="Decrease"></sl-icon></sl-button>
-<sl-button circle><sl-icon name="plus" label="Increase"></sl-icon></sl-button>
+<awc-button circle><awc-icon name="dash" label="Decrease"></awc-icon></awc-button>
+<awc-button circle><awc-icon name="plus" label="Increase"></awc-icon></awc-button>
 
 <script>
   const progressRing = document.querySelector('.progress-ring-values');
@@ -134,7 +134,7 @@ Use the default slot to show a label inside the progress ring.
 
 ```jsx:react
 import { useState } from 'react';
-import { SlButton, SlIcon, SlProgressRing } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCIcon, AWCProgressRing } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [value, setValue] = useState(50);
@@ -148,19 +148,19 @@ const App = () => {
 
   return (
     <>
-      <SlProgressRing value={value} style={{ marginBottom: '.5rem' }}>
+      <AWCProgressRing value={value} style={{ marginBottom: '.5rem' }}>
         {value}%
-      </SlProgressRing>
+      </AWCProgressRing>
 
       <br />
 
-      <SlButton circle onClick={() => adjustValue(-10)}>
-        <SlIcon name="dash" label="Decrease" />
-      </SlButton>
+      <AWCButton circle onClick={() => adjustValue(-10)}>
+        <AWCIcon name="dash" label="Decrease" />
+      </AWCButton>
 
-      <SlButton circle onClick={() => adjustValue(10)}>
-        <SlIcon name="plus" label="Increase" />
-      </SlButton>
+      <AWCButton circle onClick={() => adjustValue(10)}>
+        <AWCIcon name="plus" label="Increase" />
+      </AWCButton>
     </>
   );
 };

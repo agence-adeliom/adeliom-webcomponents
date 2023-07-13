@@ -1,18 +1,18 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type SlRadioButton from './radio-button';
-import type SlRadioGroup from '../radio-group/radio-group';
+import type AWCRadioButton from './radio-button';
+import type AWCRadioGroup from '../radio-group/radio-group';
 
-describe('<sl-radio-button>', () => {
+describe('<awc-radio-button>', () => {
   it('should not get checked when disabled', async () => {
-    const radioGroup = await fixture<SlRadioGroup>(html`
-      <sl-radio-group value="1">
-        <sl-radio-button id="radio-1" value="1"></sl-radio-button>
-        <sl-radio-button id="radio-2" value="2" disabled></sl-radio-button>
-      </sl-radio-group>
+    const radioGroup = await fixture<AWCRadioGroup>(html`
+      <awc-radio-group value="1">
+        <awc-radio-button id="radio-1" value="1"></awc-radio-button>
+        <awc-radio-button id="radio-2" value="2" disabled></awc-radio-button>
+      </awc-radio-group>
     `);
-    const radio1 = radioGroup.querySelector<SlRadioButton>('#radio-1')!;
-    const radio2 = radioGroup.querySelector<SlRadioButton>('#radio-2')!;
+    const radio1 = radioGroup.querySelector<AWCRadioButton>('#radio-1')!;
+    const radio2 = radioGroup.querySelector<AWCRadioButton>('#radio-2')!;
 
     radio2.click();
     await Promise.all([radio1.updateComplete, radio2.updateComplete]);

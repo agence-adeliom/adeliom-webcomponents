@@ -6,22 +6,22 @@ layout: component
 ---
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio value="1">Option 1</sl-radio>
-  <sl-radio value="2">Option 2</sl-radio>
-  <sl-radio value="3">Option 3</sl-radio>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio value="1">Option 1</awc-radio>
+  <awc-radio value="2">Option 2</awc-radio>
+  <awc-radio value="3">Option 3</awc-radio>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlRadio, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadio value="1">Option 1</SlRadio>
-    <SlRadio value="2">Option 2</SlRadio>
-    <SlRadio value="3">Option 3</SlRadio>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadio value="1">Option 1</AWCRadio>
+    <AWCRadio value="2">Option 2</AWCRadio>
+    <AWCRadio value="3">Option 3</AWCRadio>
+  </AWCRadioGroup>
 );
 ```
 
@@ -32,22 +32,22 @@ const App = () => (
 Add descriptive help text to a radio group with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
 
 ```html:preview
-<sl-radio-group label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
-  <sl-radio value="1">Option 1</sl-radio>
-  <sl-radio value="2">Option 2</sl-radio>
-  <sl-radio value="3">Option 3</sl-radio>
-</sl-radio-group>
+<awc-radio-group label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
+  <awc-radio value="1">Option 1</awc-radio>
+  <awc-radio value="2">Option 2</awc-radio>
+  <awc-radio value="3">Option 3</awc-radio>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlRadio, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
-    <SlRadio value="1">Option 1</SlRadio>
-    <SlRadio value="2">Option 2</SlRadio>
-    <SlRadio value="3">Option 3</SlRadio>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
+    <AWCRadio value="1">Option 1</AWCRadio>
+    <AWCRadio value="2">Option 2</AWCRadio>
+    <AWCRadio value="3">Option 3</AWCRadio>
+  </AWCRadioGroup>
 );
 ```
 
@@ -56,22 +56,22 @@ const App = () => (
 [Radio buttons](/components/radio-button) offer an alternate way to display radio controls. In this case, an internal [button group](/components/button-group) is used to group the buttons into a single, cohesive control.
 
 ```html:preview
-<sl-radio-group label="Select an option" help-text="Select an option that makes you proud." name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2">Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<awc-radio-group label="Select an option" help-text="Select an option that makes you proud." name="a" value="1">
+  <awc-radio-button value="1">Option 1</awc-radio-button>
+  <awc-radio-button value="2">Option 2</awc-radio-button>
+  <awc-radio-button value="3">Option 3</awc-radio-button>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlRadioButton, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadioButton value="1">Option 1</SlRadioButton>
-    <SlRadioButton value="2">Option 2</SlRadioButton>
-    <SlRadioButton value="3">Option 3</SlRadioButton>
-  </SlRadioGroup>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadioButton value="1">Option 1</AWCRadioButton>
+    <AWCRadioButton value="2">Option 2</AWCRadioButton>
+    <AWCRadioButton value="3">Option 3</AWCRadioButton>
+  </AWCRadioGroup>
 );
 ```
 
@@ -80,24 +80,24 @@ const App = () => (
 Radios and radio buttons can be disabled by adding the `disabled` attribute to the respective options inside the radio group.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio value="1">Option 1</sl-radio>
-  <sl-radio value="2" disabled>Option 2</sl-radio>
-  <sl-radio value="3">Option 3</sl-radio>
-</sl-radio-group>
+<awc-radio-group label="Select an option" name="a" value="1">
+  <awc-radio value="1">Option 1</awc-radio>
+  <awc-radio value="2" disabled>Option 2</awc-radio>
+  <awc-radio value="3">Option 3</awc-radio>
+</awc-radio-group>
 ```
 
 ```jsx:react
-import { SlRadio, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadio value="1">Option 1</SlRadio>
-    <SlRadio value="2" disabled>
+  <AWCRadioGroup label="Select an option" name="a" value="1">
+    <AWCRadio value="1">Option 1</AWCRadio>
+    <AWCRadio value="2" disabled>
       Option 2
-    </SlRadio>
-    <SlRadio value="3">Option 3</SlRadio>
-  </SlRadioGroup>
+    </AWCRadio>
+    <AWCRadio value="3">Option 3</AWCRadio>
+  </AWCRadioGroup>
 );
 ```
 
@@ -106,16 +106,16 @@ const App = () => (
 The size of [Radios](/components/radio) and [Radio Buttons](/components/radio-buttons) will be determined by the Radio Group's `size` attribute.
 
 ```html preview
-<sl-radio-group label="Select an option" size="medium" value="medium" class="radio-group-size">
-  <sl-radio value="small">Small</sl-radio>
-  <sl-radio value="medium">Medium</sl-radio>
-  <sl-radio value="large">Large</sl-radio>
-</sl-radio-group>
+<awc-radio-group label="Select an option" size="medium" value="medium" class="radio-group-size">
+  <awc-radio value="small">Small</awc-radio>
+  <awc-radio value="medium">Medium</awc-radio>
+  <awc-radio value="large">Large</awc-radio>
+</awc-radio-group>
 
 <script>
   const radioGroup = document.querySelector('.radio-group-size');
 
-  radioGroup.addEventListener('sl-change', () => {
+  radioGroup.addEventListener('awc-change', () => {
     radioGroup.size = radioGroup.value;
   });
 </script>
@@ -123,24 +123,24 @@ The size of [Radios](/components/radio) and [Radio Buttons](/components/radio-bu
 
 ```jsx react
 import { useState } from 'react';
-import { SlRadio, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [size, setSize] = useState('medium');
 
   return (
     <>
-      <SlRadioGroup
+      <AWCRadioGroup
         label="Select an option"
         size={size}
         value={size}
         class="radio-group-size"
-        onSlChange={event => setSize(event.target.value)}
+        onAwcChange={event => setSize(event.target.value)}
       >
-        <SlRadio value="small">Small</SlRadio>
-        <SlRadio value="medium">Medium</SlRadio>
-        <SlRadio value="large">Large</SlRadio>
-      </SlRadioGroup>
+        <AWCRadio value="small">Small</AWCRadio>
+        <AWCRadio value="medium">Medium</AWCRadio>
+        <AWCRadio value="large">Large</AWCRadio>
+      </AWCRadioGroup>
     </>
   );
 };
@@ -156,13 +156,13 @@ Setting the `required` attribute to make selecting an option mandatory. If a val
 
 ```html:preview
 <form class="validation">
-  <sl-radio-group label="Select an option" name="a" required>
-    <sl-radio value="1">Option 1</sl-radio>
-    <sl-radio value="2">Option 2</sl-radio>
-    <sl-radio value="3">Option 3</sl-radio>
-  </sl-radio-group>
+  <awc-radio-group label="Select an option" name="a" required>
+    <awc-radio value="1">Option 1</awc-radio>
+    <awc-radio value="2">Option 2</awc-radio>
+    <awc-radio value="3">Option 3</awc-radio>
+  </awc-radio-group>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
+  <awc-button type="submit" variant="primary">Submit</awc-button>
 </form>
 
 <script>
@@ -177,7 +177,7 @@ Setting the `required` attribute to make selecting an option mandatory. If a val
 ```
 
 ```jsx:react
-import { SlButton, SlIcon, SlRadio, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCIcon, AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 const App = () => {
   function handleSubmit(event) {
     event.preventDefault();
@@ -186,21 +186,21 @@ const App = () => {
 
   return (
     <form class="custom-validity" onSubmit={handleSubmit}>
-      <SlRadioGroup label="Select an option" name="a" required onSlChange={handleChange}>
-        <SlRadio value="1">
+      <AWCRadioGroup label="Select an option" name="a" required onAwcChange={handleChange}>
+        <AWCRadio value="1">
           Option 1
-        </SlRadio>
-        <SlRadiovalue="2">
+        </AWCRadio>
+        <AWCRadiovalue="2">
           Option 2
-        </SlRadio>
-        <SlRadio value="3">
+        </AWCRadio>
+        <AWCRadio value="3">
           Option 3
-        </SlRadio>
-      </SlRadioGroup>
+        </AWCRadio>
+      </AWCRadioGroup>
       <br />
-      <SlButton type="submit" variant="primary">
+      <AWCButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </AWCButton>
     </form>
   );
 };
@@ -212,27 +212,27 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```html:preview
 <form class="custom-validity">
-  <sl-radio-group label="Select an option" name="a" value="1">
-    <sl-radio value="1">Not me</sl-radio>
-    <sl-radio value="2">Me neither</sl-radio>
-    <sl-radio value="3">Choose me</sl-radio>
-  </sl-radio-group>
+  <awc-radio-group label="Select an option" name="a" value="1">
+    <awc-radio value="1">Not me</awc-radio>
+    <awc-radio value="2">Me neither</awc-radio>
+    <awc-radio value="3">Choose me</awc-radio>
+  </awc-radio-group>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
+  <awc-button type="submit" variant="primary">Submit</awc-button>
 </form>
 
 <script>
   const form = document.querySelector('.custom-validity');
-  const radioGroup = form.querySelector('sl-radio-group');
+  const radioGroup = form.querySelector('awc-radio-group');
   const errorMessage = 'You must choose the last option';
 
   // Set initial validity as soon as the element is defined
-  customElements.whenDefined('sl-radio').then(() => {
+  customElements.whenDefined('awc-radio').then(() => {
     radioGroup.setCustomValidity(errorMessage);
   });
 
   // Update validity when a selection is made
-  form.addEventListener('sl-change', () => {
+  form.addEventListener('awc-change', () => {
     const isValid = radioGroup.value === '3';
     radioGroup.setCustomValidity(isValid ? '' : errorMessage);
   });
@@ -247,7 +247,7 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```jsx:react
 import { useEffect, useRef } from 'react';
-import { SlButton, SlIcon, SlRadio, SlRadioGroup } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCIcon, AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
 const App = () => {
   const radioGroup = useRef(null);
   const errorMessage = 'You must choose this option';
@@ -267,15 +267,15 @@ const App = () => {
 
   return (
     <form class="custom-validity" onSubmit={handleSubmit}>
-      <SlRadioGroup ref={radioGroup} label="Select an option" name="a" value="1" onSlChange={handleChange}>
-        <SlRadio value="1">Not me</SlRadio>
-        <SlRadio value="2">Me neither</SlRadio>
-        <SlRadio value="3">Choose me</SlRadio>
-      </SlRadioGroup>
+      <AWCRadioGroup ref={radioGroup} label="Select an option" name="a" value="1" onAwcChange={handleChange}>
+        <AWCRadio value="1">Not me</AWCRadio>
+        <AWCRadio value="2">Me neither</AWCRadio>
+        <AWCRadio value="3">Choose me</AWCRadio>
+      </AWCRadioGroup>
       <br />
-      <SlButton type="submit" variant="primary">
+      <AWCButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </AWCButton>
     </form>
   );
 };

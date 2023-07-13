@@ -1,22 +1,22 @@
 import { customElement, property } from 'lit/decorators.js';
 import { html } from 'lit';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './mutation-observer.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary The Mutation Observer component offers a thin, declarative interface to the [`MutationObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
- * @documentation https://shoelace.style/components/mutation-observer
+ * @documentation https://awc.a-dev.cloud/components/mutation-observer
  * @status stable
  * @since 2.0
  *
- * @event {{ mutationList: MutationRecord[] }} sl-mutation - Emitted when a mutation occurs.
+ * @event {{ mutationList: MutationRecord[] }} awc-mutation - Emitted when a mutation occurs.
  *
  * @slot - The content to watch for mutations.
  */
-@customElement('sl-mutation-observer')
-export default class SlMutationObserver extends ShoelaceElement {
+@customElement('awc-mutation-observer')
+export default class AWCMutationObserver extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private mutationObserver: MutationObserver;
@@ -57,7 +57,7 @@ export default class SlMutationObserver extends ShoelaceElement {
   }
 
   private handleMutation = (mutationList: MutationRecord[]) => {
-    this.emit('sl-mutation', {
+    this.emit('awc-mutation', {
       detail: { mutationList }
     });
   };
@@ -115,6 +115,6 @@ export default class SlMutationObserver extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-mutation-observer': SlMutationObserver;
+    'awc-mutation-observer': AWCMutationObserver;
   }
 }

@@ -4,13 +4,13 @@ import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './progress-bar.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Progress bars are used to show the status of an ongoing operation.
- * @documentation https://shoelace.style/components/progress-bar
+ * @documentation https://awc.a-dev.cloud/components/progress-bar
  * @status stable
  * @since 2.0
  *
@@ -25,8 +25,8 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --indicator-color - The color of the indicator.
  * @cssproperty --label-color - The color of the label.
  */
-@customElement('sl-progress-bar')
-export default class SlProgressBar extends ShoelaceElement {
+@customElement('awc-progress-bar')
+export default class AWCProgressBar extends AWCElement {
   static styles: CSSResultGroup = styles;
   private readonly localize = new LocalizeController(this);
 
@@ -65,6 +65,6 @@ export default class SlProgressBar extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-progress-bar': SlProgressBar;
+    'awc-progress-bar': AWCProgressBar;
   }
 }

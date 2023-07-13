@@ -1,15 +1,15 @@
 import { customElement, property } from 'lit/decorators.js';
 import { LocalizeController } from '../../utilities/localize.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 
 /**
  * @summary Formats a number using the specified locale and options.
- * @documentation https://shoelace.style/components/format-number
+ * @documentation https://awc.a-dev.cloud/components/format-number
  * @status stable
  * @since 2.0
  */
-@customElement('sl-format-number')
-export default class SlFormatNumber extends ShoelaceElement {
+@customElement('awc-format-number')
+export default class AWCFormatNumber extends AWCElement {
   private readonly localize = new LocalizeController(this);
 
   /** The number to format. */
@@ -63,6 +63,6 @@ export default class SlFormatNumber extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-format-number': SlFormatNumber;
+    'awc-format-number': AWCFormatNumber;
   }
 }

@@ -15,75 +15,78 @@ export default css`
     align-items: center;
     position: relative;
     width: 100%;
-    font-family: var(--sl-input-font-family);
-    font-weight: var(--sl-input-font-weight);
-    line-height: var(--sl-line-height-normal);
-    letter-spacing: var(--sl-input-letter-spacing);
+    font-family: var(--awc-input-font-family);
+    font-weight: var(--awc-input-font-weight);
+    line-height: var(--awc-line-height-normal);
+    letter-spacing: var(--awc-input-letter-spacing);
     vertical-align: middle;
-    transition: var(--sl-transition-fast) color, var(--sl-transition-fast) border, var(--sl-transition-fast) box-shadow,
-      var(--sl-transition-fast) background-color;
+    transition:
+      var(--awc-transition-fast) color,
+      var(--awc-transition-fast) border,
+      var(--awc-transition-fast) box-shadow,
+      var(--awc-transition-fast) background-color;
     cursor: text;
   }
 
   /* Standard textareas */
   .textarea--standard {
-    background-color: var(--sl-input-background-color);
-    border: solid var(--sl-input-border-width) var(--sl-input-border-color);
+    background-color: var(--awc-input-background-color);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
   }
 
   .textarea--standard:hover:not(.textarea--disabled) {
-    background-color: var(--sl-input-background-color-hover);
-    border-color: var(--sl-input-border-color-hover);
+    background-color: var(--awc-input-background-color-hover);
+    border-color: var(--awc-input-border-color-hover);
   }
   .textarea--standard:hover:not(.textarea--disabled) .textarea__control {
-    color: var(--sl-input-color-hover);
+    color: var(--awc-input-color-hover);
   }
 
   .textarea--standard.textarea--focused:not(.textarea--disabled) {
-    background-color: var(--sl-input-background-color-focus);
-    border-color: var(--sl-input-border-color-focus);
-    color: var(--sl-input-color-focus);
-    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-input-focus-ring-color);
+    background-color: var(--awc-input-background-color-focus);
+    border-color: var(--awc-input-border-color-focus);
+    color: var(--awc-input-color-focus);
+    box-shadow: 0 0 0 var(--awc-focus-ring-width) var(--awc-input-focus-ring-color);
   }
 
   .textarea--standard.textarea--focused:not(.textarea--disabled) .textarea__control {
-    color: var(--sl-input-color-focus);
+    color: var(--awc-input-color-focus);
   }
 
   .textarea--standard.textarea--disabled {
-    background-color: var(--sl-input-background-color-disabled);
-    border-color: var(--sl-input-border-color-disabled);
+    background-color: var(--awc-input-background-color-disabled);
+    border-color: var(--awc-input-border-color-disabled);
     opacity: 0.5;
     cursor: not-allowed;
   }
 
   .textarea--standard.textarea--disabled .textarea__control {
-    color: var(--sl-input-color-disabled);
+    color: var(--awc-input-color-disabled);
   }
 
   .textarea--standard.textarea--disabled .textarea__control::placeholder {
-    color: var(--sl-input-placeholder-color-disabled);
+    color: var(--awc-input-placeholder-color-disabled);
   }
 
   /* Filled textareas */
   .textarea--filled {
     border: none;
-    background-color: var(--sl-input-filled-background-color);
-    color: var(--sl-input-color);
+    background-color: var(--awc-input-filled-background-color);
+    color: var(--awc-input-color);
   }
 
   .textarea--filled:hover:not(.textarea--disabled) {
-    background-color: var(--sl-input-filled-background-color-hover);
+    background-color: var(--awc-input-filled-background-color-hover);
   }
 
   .textarea--filled.textarea--focused:not(.textarea--disabled) {
-    background-color: var(--sl-input-filled-background-color-focus);
-    outline: var(--sl-focus-ring);
-    outline-offset: var(--sl-focus-ring-offset);
+    background-color: var(--awc-input-filled-background-color-focus);
+    outline: var(--awc-focus-ring);
+    outline-offset: var(--awc-focus-ring-offset);
   }
 
   .textarea--filled.textarea--disabled {
-    background-color: var(--sl-input-filled-background-color-disabled);
+    background-color: var(--awc-input-filled-background-color-disabled);
     opacity: 0.5;
     cursor: not-allowed;
   }
@@ -94,7 +97,7 @@ export default css`
     font-size: inherit;
     font-weight: inherit;
     line-height: 1.4;
-    color: var(--sl-input-color);
+    color: var(--awc-input-color);
     border: none;
     background: none;
     box-shadow: none;
@@ -110,7 +113,7 @@ export default css`
   }
 
   .textarea__control::placeholder {
-    color: var(--sl-input-placeholder-color);
+    color: var(--awc-input-placeholder-color);
     user-select: none;
   }
 
@@ -123,30 +126,30 @@ export default css`
    */
 
   .textarea--small {
-    border-radius: var(--sl-input-border-radius-small);
-    font-size: var(--sl-input-font-size-small);
+    border-radius: var(--awc-input-border-radius-small);
+    font-size: var(--awc-input-font-size-small);
   }
 
   .textarea--small .textarea__control {
-    padding: 0.5em var(--sl-input-spacing-small);
+    padding: 0.5em var(--awc-input-spacing-small);
   }
 
   .textarea--medium {
-    border-radius: var(--sl-input-border-radius-medium);
-    font-size: var(--sl-input-font-size-medium);
+    border-radius: var(--awc-input-border-radius-medium);
+    font-size: var(--awc-input-font-size-medium);
   }
 
   .textarea--medium .textarea__control {
-    padding: 0.5em var(--sl-input-spacing-medium);
+    padding: 0.5em var(--awc-input-spacing-medium);
   }
 
   .textarea--large {
-    border-radius: var(--sl-input-border-radius-large);
-    font-size: var(--sl-input-font-size-large);
+    border-radius: var(--awc-input-border-radius-large);
+    font-size: var(--awc-input-font-size-large);
   }
 
   .textarea--large .textarea__control {
-    padding: 0.5em var(--sl-input-spacing-large);
+    padding: 0.5em var(--awc-input-spacing-large);
   }
 
   /*

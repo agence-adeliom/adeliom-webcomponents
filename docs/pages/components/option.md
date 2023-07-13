@@ -6,22 +6,22 @@ layout: component
 ---
 
 ```html:preview
-<sl-select label="Select one">
-  <sl-option value="option-1">Option 1</sl-option>
-  <sl-option value="option-2">Option 2</sl-option>
-  <sl-option value="option-3">Option 3</sl-option>
-</sl-select>
+<awc-select label="Select one">
+  <awc-option value="option-1">Option 1</awc-option>
+  <awc-option value="option-2">Option 2</awc-option>
+  <awc-option value="option-3">Option 3</awc-option>
+</awc-select>
 ```
 
 ```jsx:react
-import { SlOption, SlSelect } from '@shoelace-style/shoelace/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSelect>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+  <AWCSelect>
+    <AWCOption value="option-1">Option 1</AWCOption>
+    <AWCOption value="option-2">Option 2</AWCOption>
+    <AWCOption value="option-3">Option 3</AWCOption>
+  </AWCSelect>
 );
 ```
 
@@ -32,24 +32,24 @@ const App = () => (
 Use the `disabled` attribute to disable an option and prevent it from being selected.
 
 ```html:preview
-<sl-select label="Select one">
-  <sl-option value="option-1">Option 1</sl-option>
-  <sl-option value="option-2" disabled>Option 2</sl-option>
-  <sl-option value="option-3">Option 3</sl-option>
-</sl-select>
+<awc-select label="Select one">
+  <awc-option value="option-1">Option 1</awc-option>
+  <awc-option value="option-2" disabled>Option 2</awc-option>
+  <awc-option value="option-3">Option 3</awc-option>
+</awc-select>
 ```
 
 ```jsx:react
-import { SlOption, SlSelect } from '@shoelace-style/shoelace/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSelect>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2" disabled>
+  <AWCSelect>
+    <AWCOption value="option-1">Option 1</AWCOption>
+    <AWCOption value="option-2" disabled>
       Option 2
-    </SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+    </AWCOption>
+    <AWCOption value="option-3">Option 3</AWCOption>
+  </AWCSelect>
 );
 ```
 
@@ -58,23 +58,23 @@ const App = () => (
 Add icons to the start and end of menu items using the `prefix` and `suffix` slots.
 
 ```html:preview
-<sl-select label="Select one">
-  <sl-option value="option-1">
-    <sl-icon slot="prefix" name="envelope"></sl-icon>
+<awc-select label="Select one">
+  <awc-option value="option-1">
+    <awc-icon slot="prefix" name="envelope"></awc-icon>
     Email
-    <sl-icon slot="suffix" name="patch-check"></sl-icon>
-  </sl-option>
+    <awc-icon slot="suffix" name="patch-check"></awc-icon>
+  </awc-option>
 
-  <sl-option value="option-2">
-    <sl-icon slot="prefix" name="telephone"></sl-icon>
+  <awc-option value="option-2">
+    <awc-icon slot="prefix" name="telephone"></awc-icon>
     Phone
-    <sl-icon slot="suffix" name="patch-check"></sl-icon>
-  </sl-option>
+    <awc-icon slot="suffix" name="patch-check"></awc-icon>
+  </awc-option>
 
-  <sl-option value="option-3">
-    <sl-icon slot="prefix" name="chat-dots"></sl-icon>
+  <awc-option value="option-3">
+    <awc-icon slot="prefix" name="chat-dots"></awc-icon>
     Chat
-    <sl-icon slot="suffix" name="patch-check"></sl-icon>
-  </sl-option>
-</sl-select>
+    <awc-icon slot="suffix" name="patch-check"></awc-icon>
+  </awc-option>
+</awc-select>
 ```

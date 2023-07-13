@@ -6,13 +6,13 @@ layout: component
 ---
 
 ```html:preview
-<sl-button>Button</sl-button>
+<awc-button>Button</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlButton>Button</SlButton>;
+const App = () => <AWCButton>Button</AWCButton>;
 ```
 
 ## Examples
@@ -22,25 +22,25 @@ const App = () => <SlButton>Button</SlButton>;
 Use the `variant` attribute to set the button's variant.
 
 ```html:preview
-<sl-button variant="default">Default</sl-button>
-<sl-button variant="primary">Primary</sl-button>
-<sl-button variant="success">Success</sl-button>
-<sl-button variant="neutral">Neutral</sl-button>
-<sl-button variant="warning">Warning</sl-button>
-<sl-button variant="danger">Danger</sl-button>
+<awc-button variant="default">Default</awc-button>
+<awc-button variant="primary">Primary</awc-button>
+<awc-button variant="success">Success</awc-button>
+<awc-button variant="neutral">Neutral</awc-button>
+<awc-button variant="warning">Warning</awc-button>
+<awc-button variant="danger">Danger</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton variant="default">Default</SlButton>
-    <SlButton variant="primary">Primary</SlButton>
-    <SlButton variant="success">Success</SlButton>
-    <SlButton variant="neutral">Neutral</SlButton>
-    <SlButton variant="warning">Warning</SlButton>
-    <SlButton variant="danger">Danger</SlButton>
+    <AWCButton variant="default">Default</AWCButton>
+    <AWCButton variant="primary">Primary</AWCButton>
+    <AWCButton variant="success">Success</AWCButton>
+    <AWCButton variant="neutral">Neutral</AWCButton>
+    <AWCButton variant="warning">Warning</AWCButton>
+    <AWCButton variant="danger">Danger</AWCButton>
   </>
 );
 ```
@@ -50,19 +50,19 @@ const App = () => (
 Use the `size` attribute to change a button's size.
 
 ```html:preview
-<sl-button size="small">Small</sl-button>
-<sl-button size="medium">Medium</sl-button>
-<sl-button size="large">Large</sl-button>
+<awc-button size="small">Small</awc-button>
+<awc-button size="medium">Medium</awc-button>
+<awc-button size="large">Large</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton size="small">Small</SlButton>
-    <SlButton size="medium">Medium</SlButton>
-    <SlButton size="large">Large</SlButton>
+    <AWCButton size="small">Small</AWCButton>
+    <AWCButton size="medium">Medium</AWCButton>
+    <AWCButton size="large">Large</AWCButton>
   </>
 );
 ```
@@ -72,37 +72,37 @@ const App = () => (
 Use the `outline` attribute to draw outlined buttons with transparent backgrounds.
 
 ```html:preview
-<sl-button variant="default" outline>Default</sl-button>
-<sl-button variant="primary" outline>Primary</sl-button>
-<sl-button variant="success" outline>Success</sl-button>
-<sl-button variant="neutral" outline>Neutral</sl-button>
-<sl-button variant="warning" outline>Warning</sl-button>
-<sl-button variant="danger" outline>Danger</sl-button>
+<awc-button variant="default" outline>Default</awc-button>
+<awc-button variant="primary" outline>Primary</awc-button>
+<awc-button variant="success" outline>Success</awc-button>
+<awc-button variant="neutral" outline>Neutral</awc-button>
+<awc-button variant="warning" outline>Warning</awc-button>
+<awc-button variant="danger" outline>Danger</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton variant="default" outline>
+    <AWCButton variant="default" outline>
       Default
-    </SlButton>
-    <SlButton variant="primary" outline>
+    </AWCButton>
+    <AWCButton variant="primary" outline>
       Primary
-    </SlButton>
-    <SlButton variant="success" outline>
+    </AWCButton>
+    <AWCButton variant="success" outline>
       Success
-    </SlButton>
-    <SlButton variant="neutral" outline>
+    </AWCButton>
+    <AWCButton variant="neutral" outline>
       Neutral
-    </SlButton>
-    <SlButton variant="warning" outline>
+    </AWCButton>
+    <AWCButton variant="warning" outline>
       Warning
-    </SlButton>
-    <SlButton variant="danger" outline>
+    </AWCButton>
+    <AWCButton variant="danger" outline>
       Danger
-    </SlButton>
+    </AWCButton>
   </>
 );
 ```
@@ -112,61 +112,61 @@ const App = () => (
 Use the `pill` attribute to give buttons rounded edges.
 
 ```html:preview
-<sl-button size="small" pill>Small</sl-button>
-<sl-button size="medium" pill>Medium</sl-button>
-<sl-button size="large" pill>Large</sl-button>
+<awc-button size="small" pill>Small</awc-button>
+<awc-button size="medium" pill>Medium</awc-button>
+<awc-button size="large" pill>Large</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton size="small" pill>
+    <AWCButton size="small" pill>
       Small
-    </SlButton>
-    <SlButton size="medium" pill>
+    </AWCButton>
+    <AWCButton size="medium" pill>
       Medium
-    </SlButton>
-    <SlButton size="large" pill>
+    </AWCButton>
+    <AWCButton size="large" pill>
       Large
-    </SlButton>
+    </AWCButton>
   </>
 );
 ```
 
 ### Circle Buttons
 
-Use the `circle` attribute to create circular icon buttons. When this attribute is set, the button expects a single `<sl-icon>` in the default slot.
+Use the `circle` attribute to create circular icon buttons. When this attribute is set, the button expects a single `<awc-icon>` in the default slot.
 
 ```html:preview
-<sl-button variant="default" size="small" circle>
-  <sl-icon name="gear" label="Settings"></sl-icon>
-</sl-button>
+<awc-button variant="default" size="small" circle>
+  <awc-icon name="gear" label="Settings"></awc-icon>
+</awc-button>
 
-<sl-button variant="default" size="medium" circle>
-  <sl-icon name="gear" label="Settings"></sl-icon>
-</sl-button>
+<awc-button variant="default" size="medium" circle>
+  <awc-icon name="gear" label="Settings"></awc-icon>
+</awc-button>
 
-<sl-button variant="default" size="large" circle>
-  <sl-icon name="gear" label="Settings"></sl-icon>
-</sl-button>
+<awc-button variant="default" size="large" circle>
+  <awc-icon name="gear" label="Settings"></awc-icon>
+</awc-button>
 ```
 
 ```jsx:react
-import { SlButton, SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCIcon } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton variant="default" size="small" circle>
-      <SlIcon name="gear" />
-    </SlButton>
-    <SlButton variant="default" size="medium" circle>
-      <SlIcon name="gear" />
-    </SlButton>
-    <SlButton variant="default" size="large" circle>
-      <SlIcon name="gear" />
-    </SlButton>
+    <AWCButton variant="default" size="small" circle>
+      <AWCIcon name="gear" />
+    </AWCButton>
+    <AWCButton variant="default" size="medium" circle>
+      <AWCIcon name="gear" />
+    </AWCButton>
+    <AWCButton variant="default" size="large" circle>
+      <AWCIcon name="gear" />
+    </AWCButton>
   </>
 );
 ```
@@ -176,25 +176,25 @@ const App = () => (
 Use the `text` variant to create text buttons that share the same size as regular buttons but don't have backgrounds or borders.
 
 ```html:preview
-<sl-button variant="text" size="small">Text</sl-button>
-<sl-button variant="text" size="medium">Text</sl-button>
-<sl-button variant="text" size="large">Text</sl-button>
+<awc-button variant="text" size="small">Text</awc-button>
+<awc-button variant="text" size="medium">Text</awc-button>
+<awc-button variant="text" size="large">Text</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton variant="text" size="small">
+    <AWCButton variant="text" size="small">
       Text
-    </SlButton>
-    <SlButton variant="text" size="medium">
+    </AWCButton>
+    <AWCButton variant="text" size="medium">
       Text
-    </SlButton>
-    <SlButton variant="text" size="large">
+    </AWCButton>
+    <AWCButton variant="text" size="large">
       Text
-    </SlButton>
+    </AWCButton>
   </>
 );
 ```
@@ -204,27 +204,27 @@ const App = () => (
 It's often helpful to have a button that works like a link. This is possible by setting the `href` attribute, which will make the component render an `<a>` under the hood. This gives you all the default link behavior the browser provides (e.g. [[CMD/CTRL/SHIFT]] + [[CLICK]]) and exposes the `target` and `download` attributes.
 
 ```html:preview
-<sl-button href="https://example.com/">Link</sl-button>
-<sl-button href="https://example.com/" target="_blank">New Window</sl-button>
-<sl-button href="/assets/images/wordmark.svg" download="shoelace.svg">Download</sl-button>
-<sl-button href="https://example.com/" disabled>Disabled</sl-button>
+<awc-button href="https://example.com/">Link</awc-button>
+<awc-button href="https://example.com/" target="_blank">New Window</awc-button>
+<awc-button href="/assets/images/wordmark.svg" download="wordmark.svg">Download</awc-button>
+<awc-button href="https://example.com/" disabled>Disabled</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton href="https://example.com/">Link</SlButton>
-    <SlButton href="https://example.com/" target="_blank">
+    <AWCButton href="https://example.com/">Link</AWCButton>
+    <AWCButton href="https://example.com/" target="_blank">
       New Window
-    </SlButton>
-    <SlButton href="/assets/images/wordmark.svg" download="shoelace.svg">
+    </AWCButton>
+    <AWCButton href="/assets/images/wordmark.svg" download="wordmark.svg">
       Download
-    </SlButton>
-    <SlButton href="https://example.com/" disabled>
+    </AWCButton>
+    <AWCButton href="https://example.com/" disabled>
       Disabled
-    </SlButton>
+    </AWCButton>
   </>
 );
 ```
@@ -238,27 +238,27 @@ When a `target` is set, the link will receive `rel="noreferrer noopener"` for [s
 As expected, buttons can be given a custom width by setting the `width` attribute. This is useful for making buttons span the full width of their container on smaller screens.
 
 ```html:preview
-<sl-button variant="default" size="small" style="width: 100%; margin-bottom: 1rem;">Small</sl-button>
-<sl-button variant="default" size="medium" style="width: 100%; margin-bottom: 1rem;">Medium</sl-button>
-<sl-button variant="default" size="large" style="width: 100%;">Large</sl-button>
+<awc-button variant="default" size="small" style="width: 100%; margin-bottom: 1rem;">Small</awc-button>
+<awc-button variant="default" size="medium" style="width: 100%; margin-bottom: 1rem;">Medium</awc-button>
+<awc-button variant="default" size="large" style="width: 100%;">Large</awc-button>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton variant="default" size="small" style={{ width: '100%', marginBottom: '1rem' }}>
+    <AWCButton variant="default" size="small" style={{ width: '100%', marginBottom: '1rem' }}>
       Small
-    </SlButton>
-    <SlButton variant="default" size="medium" style={{ width: '100%', marginBottom: '1rem' }}>
+    </AWCButton>
+    <AWCButton variant="default" size="medium" style={{ width: '100%', marginBottom: '1rem' }}>
       Medium
-    </SlButton>
-    <SlButton variant="default" size="large" style={{ width: '100%' }}>
+    </AWCButton>
+    <AWCButton variant="default" size="large" style={{ width: '100%' }}>
       Large
-    </SlButton>
+    </AWCButton>
   </>
 );
 ```
@@ -270,117 +270,117 @@ const App = () => (
 Use the `prefix` and `suffix` slots to add icons.
 
 ```html:preview
-<sl-button variant="default" size="small">
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<awc-button variant="default" size="small">
+  <awc-icon slot="prefix" name="gear"></awc-icon>
   Settings
-</sl-button>
+</awc-button>
 
-<sl-button variant="default" size="small">
-  <sl-icon slot="suffix" name="arrow-counterclockwise"></sl-icon>
+<awc-button variant="default" size="small">
+  <awc-icon slot="suffix" name="arrow-counterclockwise"></awc-icon>
   Refresh
-</sl-button>
+</awc-button>
 
-<sl-button variant="default" size="small">
-  <sl-icon slot="prefix" name="link-45deg"></sl-icon>
-  <sl-icon slot="suffix" name="box-arrow-up-right"></sl-icon>
+<awc-button variant="default" size="small">
+  <awc-icon slot="prefix" name="link-45deg"></awc-icon>
+  <awc-icon slot="suffix" name="box-arrow-up-right"></awc-icon>
   Open
-</sl-button>
+</awc-button>
 
 <br /><br />
 
-<sl-button variant="default">
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<awc-button variant="default">
+  <awc-icon slot="prefix" name="gear"></awc-icon>
   Settings
-</sl-button>
+</awc-button>
 
-<sl-button variant="default">
-  <sl-icon slot="suffix" name="arrow-counterclockwise"></sl-icon>
+<awc-button variant="default">
+  <awc-icon slot="suffix" name="arrow-counterclockwise"></awc-icon>
   Refresh
-</sl-button>
+</awc-button>
 
-<sl-button variant="default">
-  <sl-icon slot="prefix" name="link-45deg"></sl-icon>
-  <sl-icon slot="suffix" name="box-arrow-up-right"></sl-icon>
+<awc-button variant="default">
+  <awc-icon slot="prefix" name="link-45deg"></awc-icon>
+  <awc-icon slot="suffix" name="box-arrow-up-right"></awc-icon>
   Open
-</sl-button>
+</awc-button>
 
 <br /><br />
 
-<sl-button variant="default" size="large">
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<awc-button variant="default" size="large">
+  <awc-icon slot="prefix" name="gear"></awc-icon>
   Settings
-</sl-button>
+</awc-button>
 
-<sl-button variant="default" size="large">
-  <sl-icon slot="suffix" name="arrow-counterclockwise"></sl-icon>
+<awc-button variant="default" size="large">
+  <awc-icon slot="suffix" name="arrow-counterclockwise"></awc-icon>
   Refresh
-</sl-button>
+</awc-button>
 
-<sl-button variant="default" size="large">
-  <sl-icon slot="prefix" name="link-45deg"></sl-icon>
-  <sl-icon slot="suffix" name="box-arrow-up-right"></sl-icon>
+<awc-button variant="default" size="large">
+  <awc-icon slot="prefix" name="link-45deg"></awc-icon>
+  <awc-icon slot="suffix" name="box-arrow-up-right"></awc-icon>
   Open
-</sl-button>
+</awc-button>
 ```
 
 ```jsx:react
-import { SlButton, SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCIcon } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton variant="default" size="small">
-      <SlIcon slot="prefix" name="gear"></SlIcon>
+    <AWCButton variant="default" size="small">
+      <AWCIcon slot="prefix" name="gear"></AWCIcon>
       Settings
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="default" size="small">
-      <SlIcon slot="suffix" name="arrow-counterclockwise"></SlIcon>
+    <AWCButton variant="default" size="small">
+      <AWCIcon slot="suffix" name="arrow-counterclockwise"></AWCIcon>
       Refresh
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="default" size="small">
-      <SlIcon slot="prefix" name="link-45deg"></SlIcon>
-      <SlIcon slot="suffix" name="box-arrow-up-right"></SlIcon>
+    <AWCButton variant="default" size="small">
+      <AWCIcon slot="prefix" name="link-45deg"></AWCIcon>
+      <AWCIcon slot="suffix" name="box-arrow-up-right"></AWCIcon>
       Open
-    </SlButton>
+    </AWCButton>
 
     <br />
     <br />
 
-    <SlButton variant="default">
-      <SlIcon slot="prefix" name="gear"></SlIcon>
+    <AWCButton variant="default">
+      <AWCIcon slot="prefix" name="gear"></AWCIcon>
       Settings
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="default">
-      <SlIcon slot="suffix" name="arrow-counterclockwise"></SlIcon>
+    <AWCButton variant="default">
+      <AWCIcon slot="suffix" name="arrow-counterclockwise"></AWCIcon>
       Refresh
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="default">
-      <SlIcon slot="prefix" name="link-45deg"></SlIcon>
-      <SlIcon slot="suffix" name="box-arrow-up-right"></SlIcon>
+    <AWCButton variant="default">
+      <AWCIcon slot="prefix" name="link-45deg"></AWCIcon>
+      <AWCIcon slot="suffix" name="box-arrow-up-right"></AWCIcon>
       Open
-    </SlButton>
+    </AWCButton>
 
     <br />
     <br />
 
-    <SlButton variant="default" size="large">
-      <SlIcon slot="prefix" name="gear"></SlIcon>
+    <AWCButton variant="default" size="large">
+      <AWCIcon slot="prefix" name="gear"></AWCIcon>
       Settings
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="default" size="large">
-      <SlIcon slot="suffix" name="arrow-counterclockwise"></SlIcon>
+    <AWCButton variant="default" size="large">
+      <AWCIcon slot="suffix" name="arrow-counterclockwise"></AWCIcon>
       Refresh
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="default" size="large">
-      <SlIcon slot="prefix" name="link-45deg"></SlIcon>
-      <SlIcon slot="suffix" name="box-arrow-up-right"></SlIcon>
+    <AWCButton variant="default" size="large">
+      <AWCIcon slot="prefix" name="link-45deg"></AWCIcon>
+      <AWCIcon slot="suffix" name="box-arrow-up-right"></AWCIcon>
       Open
-    </SlButton>
+    </AWCButton>
   </>
 );
 ```
@@ -390,25 +390,25 @@ const App = () => (
 Use the `caret` attribute to add a dropdown indicator when a button will trigger a dropdown, menu, or popover.
 
 ```html:preview
-<sl-button size="small" caret>Small</sl-button>
-<sl-button size="medium" caret>Medium</sl-button>
-<sl-button size="large" caret>Large</sl-button>
+<awc-button size="small" caret>Small</awc-button>
+<awc-button size="medium" caret>Medium</awc-button>
+<awc-button size="large" caret>Large</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton size="small" caret>
+    <AWCButton size="small" caret>
       Small
-    </SlButton>
-    <SlButton size="medium" caret>
+    </AWCButton>
+    <AWCButton size="medium" caret>
       Medium
-    </SlButton>
-    <SlButton size="large" caret>
+    </AWCButton>
+    <AWCButton size="large" caret>
       Large
-    </SlButton>
+    </AWCButton>
   </>
 );
 ```
@@ -418,37 +418,37 @@ const App = () => (
 Use the `loading` attribute to make a button busy. The width will remain the same as before, preventing adjacent elements from moving around. Clicks will be suppressed until the loading state is removed.
 
 ```html:preview
-<sl-button variant="default" loading>Default</sl-button>
-<sl-button variant="primary" loading>Primary</sl-button>
-<sl-button variant="success" loading>Success</sl-button>
-<sl-button variant="neutral" loading>Neutral</sl-button>
-<sl-button variant="warning" loading>Warning</sl-button>
-<sl-button variant="danger" loading>Danger</sl-button>
+<awc-button variant="default" loading>Default</awc-button>
+<awc-button variant="primary" loading>Primary</awc-button>
+<awc-button variant="success" loading>Success</awc-button>
+<awc-button variant="neutral" loading>Neutral</awc-button>
+<awc-button variant="warning" loading>Warning</awc-button>
+<awc-button variant="danger" loading>Danger</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton variant="default" loading>
+    <AWCButton variant="default" loading>
       Default
-    </SlButton>
-    <SlButton variant="primary" loading>
+    </AWCButton>
+    <AWCButton variant="primary" loading>
       Primary
-    </SlButton>
-    <SlButton variant="success" loading>
+    </AWCButton>
+    <AWCButton variant="success" loading>
       Success
-    </SlButton>
-    <SlButton variant="neutral" loading>
+    </AWCButton>
+    <AWCButton variant="neutral" loading>
       Neutral
-    </SlButton>
-    <SlButton variant="warning" loading>
+    </AWCButton>
+    <AWCButton variant="warning" loading>
       Warning
-    </SlButton>
-    <SlButton variant="danger" loading>
+    </AWCButton>
+    <AWCButton variant="danger" loading>
       Danger
-    </SlButton>
+    </AWCButton>
   </>
 );
 ```
@@ -458,58 +458,58 @@ const App = () => (
 Use the `disabled` attribute to disable a button. Clicks will be suppressed until the disabled state is removed.
 
 ```html:preview
-<sl-button variant="default" disabled>Default</sl-button>
-<sl-button variant="primary" disabled>Primary</sl-button>
-<sl-button variant="success" disabled>Success</sl-button>
-<sl-button variant="neutral" disabled>Neutral</sl-button>
-<sl-button variant="warning" disabled>Warning</sl-button>
-<sl-button variant="danger" disabled>Danger</sl-button>
+<awc-button variant="default" disabled>Default</awc-button>
+<awc-button variant="primary" disabled>Primary</awc-button>
+<awc-button variant="success" disabled>Success</awc-button>
+<awc-button variant="neutral" disabled>Neutral</awc-button>
+<awc-button variant="warning" disabled>Warning</awc-button>
+<awc-button variant="danger" disabled>Danger</awc-button>
 ```
 
 ```jsx:react
-import { SlButton } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlButton variant="default" disabled>
+    <AWCButton variant="default" disabled>
       Default
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="primary" disabled>
+    <AWCButton variant="primary" disabled>
       Primary
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="success" disabled>
+    <AWCButton variant="success" disabled>
       Success
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="neutral" disabled>
+    <AWCButton variant="neutral" disabled>
       Neutral
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="warning" disabled>
+    <AWCButton variant="warning" disabled>
       Warning
-    </SlButton>
+    </AWCButton>
 
-    <SlButton variant="danger" disabled>
+    <AWCButton variant="danger" disabled>
       Danger
-    </SlButton>
+    </AWCButton>
   </>
 );
 ```
 
 ### Styling Buttons
 
-This example demonstrates how to style buttons using a custom class. This is the recommended approach if you need to add additional variations. To customize an existing variation, modify the selector to target the button's `variant` attribute instead of a class (e.g. `sl-button[variant="primary"]`).
+This example demonstrates how to style buttons using a custom class. This is the recommended approach if you need to add additional variations. To customize an existing variation, modify the selector to target the button's `variant` attribute instead of a class (e.g. `awc-button[variant="primary"]`).
 
 ```html:preview
-<sl-button class="pink">Pink Button</sl-button>
+<awc-button class="pink">Pink Button</awc-button>
 
 <style>
-  sl-button.pink::part(base) {
+  awc-button.pink::part(base) {
     /* Set design tokens for height and border width */
-    --sl-input-height-medium: 48px;
-    --sl-input-border-width: 4px;
+    --awc-input-height-medium: 48px;
+    --awc-input-border-width: 4px;
 
     border-radius: 0;
     background-color: #ff1493;
@@ -520,14 +520,14 @@ This example demonstrates how to style buttons using a custom class. This is the
     color: white;
     font-size: 1.125rem;
     box-shadow: 0 2px 10px #0002;
-    transition: var(--sl-transition-medium) transform ease, var(--sl-transition-medium) border ease;
+    transition: var(--awc-transition-medium) transform ease, var(--awc-transition-medium) border ease;
   }
 
-  sl-button.pink::part(base):hover {
+  awc-button.pink::part(base):hover {
     transform: scale(1.05) rotate(-1deg);
   }
 
-  sl-button.pink::part(base):active {
+  awc-button.pink::part(base):active {
     border-top-color: #ad005c;
     border-right-color: #ff7ac1;
     border-bottom-color: #ff7ac1;
@@ -535,7 +535,7 @@ This example demonstrates how to style buttons using a custom class. This is the
     transform: scale(1.05) rotate(-1deg) translateY(2px);
   }
 
-  sl-button.pink::part(base):focus-visible {
+  awc-button.pink::part(base):focus-visible {
     outline: dashed 2px deeppink;
     outline-offset: 4px;
   }

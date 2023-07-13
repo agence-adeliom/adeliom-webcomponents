@@ -1,6 +1,6 @@
 import { customElement } from 'lit/decorators.js';
 import { html } from 'lit';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './carousel-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -15,8 +15,8 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --aspect-ratio - The slide's aspect ratio. Inherited from the carousel by default.
  *
  */
-@customElement('sl-carousel-item')
-export default class SlCarouselItem extends ShoelaceElement {
+@customElement('awc-carousel-item')
+export default class AWCCarouselItem extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   static isCarouselItem(node: Node) {
@@ -35,6 +35,6 @@ export default class SlCarouselItem extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-carousel-item': SlCarouselItem;
+    'awc-carousel-item': AWCCarouselItem;
   }
 }

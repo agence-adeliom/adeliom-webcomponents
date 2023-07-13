@@ -8,20 +8,20 @@ layout: component
 <!-- cspell:dictionaries lorem-ipsum -->
 
 ```html:preview
-<sl-details summary="Toggle Me">
+<awc-details summary="Toggle Me">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
   aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</sl-details>
+</awc-details>
 ```
 
 ```jsx:react
-import { SlDetails } from '@shoelace-style/shoelace/dist/react';
+import { AWCDetails } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlDetails summary="Toggle Me">
+  <AWCDetails summary="Toggle Me">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </SlDetails>
+  </AWCDetails>
 );
 ```
 
@@ -32,20 +32,20 @@ const App = () => (
 Use the `disable` attribute to prevent the details from expanding.
 
 ```html:preview
-<sl-details summary="Disabled" disabled>
+<awc-details summary="Disabled" disabled>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
   aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</sl-details>
+</awc-details>
 ```
 
 ```jsx:react
-import { SlDetails } from '@shoelace-style/shoelace/dist/react';
+import { AWCDetails } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlDetails summary="Disabled" disabled>
+  <AWCDetails summary="Disabled" disabled>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </SlDetails>
+  </AWCDetails>
 );
 ```
 
@@ -54,16 +54,16 @@ const App = () => (
 Use the `expand-icon` and `collapse-icon` slots to change the expand and collapse icons, respectively. To disable the animation, override the `rotate` property on the `summary-icon` part as shown below.
 
 ```html:preview
-<sl-details summary="Toggle Me" class="custom-icons">
-  <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
-  <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+<awc-details summary="Toggle Me" class="custom-icons">
+  <awc-icon name="plus-square" slot="expand-icon"></awc-icon>
+  <awc-icon name="dash-square" slot="collapse-icon"></awc-icon>
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
   aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</sl-details>
+</awc-details>
 
 <style>
-  sl-details.custom-icons::part(summary-icon) {
+  awc-details.custom-icons::part(summary-icon) {
     /* Disable the expand/collapse animation */
     rotate: none;
   }
@@ -71,10 +71,10 @@ Use the `expand-icon` and `collapse-icon` slots to change the expand and collaps
 ```
 
 ```jsx:react
-import { SlDetails, SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCDetails, AWCIcon } from '@agence-adeliom/awc/dist/react';
 
 const css = `
-  sl-details.custom-icon::part(summary-icon) {
+  awc-details.custom-icon::part(summary-icon) {
     /* Disable the expand/collapse animation */
     rotate: none;
   }
@@ -82,13 +82,13 @@ const css = `
 
 const App = () => (
   <>
-    <SlDetails summary="Toggle Me" class="custom-icon">
-      <SlIcon name="plus-square" slot="expand-icon" />
-      <SlIcon name="dash-square" slot="collapse-icon" />
+    <AWCDetails summary="Toggle Me" class="custom-icon">
+      <AWCIcon name="plus-square" slot="expand-icon" />
+      <AWCIcon name="dash-square" slot="collapse-icon" />
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
-    </SlDetails>
+    </AWCDetails>
 
     <style>{css}</style>
   </>
@@ -97,38 +97,38 @@ const App = () => (
 
 ### Grouping Details
 
-Details are designed to function independently, but you can simulate a group or "accordion" where only one is shown at a time by listening for the `sl-show` event.
+Details are designed to function independently, but you can simulate a group or "accordion" where only one is shown at a time by listening for the `awc-show` event.
 
 ```html:preview
 <div class="details-group-example">
-  <sl-details summary="First" open>
+  <awc-details summary="First" open>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </sl-details>
+  </awc-details>
 
-  <sl-details summary="Second">
+  <awc-details summary="Second">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </sl-details>
+  </awc-details>
 
-  <sl-details summary="Third">
+  <awc-details summary="Third">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </sl-details>
+  </awc-details>
 </div>
 
 <script>
   const container = document.querySelector('.details-group-example');
 
   // Close all other details when one is shown
-  container.addEventListener('sl-show', event => {
-    [...container.querySelectorAll('sl-details')].map(details => (details.open = event.target === details));
+  container.addEventListener('awc-show', event => {
+    [...container.querySelectorAll('awc-details')].map(details => (details.open = event.target === details));
   });
 </script>
 
 <style>
-  .details-group-example sl-details:not(:last-of-type) {
-    margin-bottom: var(--sl-spacing-2x-small);
+  .details-group-example awc-details:not(:last-of-type) {
+    margin-bottom: var(--awc-spacing-2x-small);
   }
 </style>
 ```

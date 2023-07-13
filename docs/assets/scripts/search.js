@@ -10,7 +10,7 @@
       <div class="search__content">
         <div class="search__header">
           <div id="search-combobox" class="search__input-wrapper">
-            <sl-icon name="search"></sl-icon>
+            <awc-icon name="search"></awc-icon>
             <input
               id="search-input"
               class="search__input"
@@ -30,7 +30,7 @@
               aria-activedescendant
             >
             <button type="button" class="search__clear-button" aria-label="Clear entry" tabindex="-1" hidden>
-              <sl-icon name="x-circle-fill"></sl-icon>
+              <awc-icon name="x-circle-fill"></awc-icon>
             </button>
           </div>
         </div>
@@ -57,7 +57,7 @@
   const input = siteSearch.querySelector('.search__input');
   const clearButton = siteSearch.querySelector('.search__clear-button');
   const results = siteSearch.querySelector('.search__results');
-  const version = document.documentElement.getAttribute('data-shoelace-version');
+  const version = document.documentElement.getAttribute('data-awc-version');
   const animationDuration = 150;
   const searchDebounce = 50;
   let isShowing = false;
@@ -284,7 +284,7 @@
         const a = document.createElement('a');
         const displayTitle = page.title ?? '';
         const displayDescription = page.description ?? '';
-        const displayUrl = page.url.replace(/^\//, '');
+        const displayUrl = page.url?.replace(/^\//, '');
         let icon = 'file-text';
 
         a.setAttribute('role', 'option');
@@ -298,6 +298,9 @@
         }
         if (page.url.includes('components/')) {
           icon = 'puzzle';
+        }
+        if (page.url.includes('layouts/')) {
+          icon = 'boxes';
         }
         if (page.url.includes('tokens/')) {
           icon = 'palette2';
@@ -317,7 +320,7 @@
         a.href = page.url;
         a.innerHTML = `
           <div class="search__result-icon" aria-hidden="true">
-            <sl-icon name="${icon}"></sl-icon>
+            <awc-icon name="${icon}"></awc-icon>
           </div>
           <div class="search__result__details">
             <div class="search__result-title"></div>
@@ -327,7 +330,7 @@
         `;
         a.querySelector('.search__result-title').textContent = displayTitle;
         a.querySelector('.search__result-description').textContent = displayDescription;
-        a.querySelector('.search__result-url').textContent = displayUrl;
+        a.querySelector('.search__result-url').textContent = displayUrl.replace('.html', '');
 
         li.appendChild(a);
         results.appendChild(li);

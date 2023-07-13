@@ -2,19 +2,19 @@ import { customElement, property } from 'lit/decorators.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './{{ tagWithoutPrefix tag }}.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Short summary of the component's intended use.
- * @documentation https://shoelace.style/components/{{ tagWithoutPrefix tag }}
+ * @documentation https://awc.a-dev.cloud/components/{{ tagWithoutPrefix tag }}
  * @status experimental
  * @since 2.0
  *
- * @dependency sl-example
+ * @dependency awc-example
  *
- * @event sl-event-name - Emitted as an example.
+ * @event awc-event-name - Emitted as an example.
  *
  * @slot - The default slot.
  * @slot example - An example slot.
@@ -24,7 +24,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --example - An example CSS custom property.
  */
 @customElement('{{ tag }}')
-export default class {{ properCase tag }} extends ShoelaceElement {
+export default class {{ componentCase tag }} extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private readonly localize = new LocalizeController(this);
@@ -44,6 +44,6 @@ export default class {{ properCase tag }} extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    '{{ tag }}': {{ properCase tag }};
+    '{{ tag }}': {{ componentCase tag }};
   }
 }

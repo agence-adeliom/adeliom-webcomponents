@@ -14,8 +14,12 @@ module.exports.getAllComponents = function () {
   customElementsManifest.modules?.forEach(module => {
     module.declarations?.forEach(declaration => {
       if (declaration.customElement) {
+
+        if(!module.path.startsWith('components')){
+          return
+        }
         // Generate the dist path based on the src path and attach it to the component
-        declaration.path = module.path.replace(/^src\//, 'dist/').replace(/\.ts$/, '.js');
+        declaration.path = module.path?.replace(/^src\//, 'dist/').replace(/\.ts$/, '.js');
 
         // Remove members that are private or don't have a description
         const members = declaration.members?.filter(member => member.description && member.privacy !== 'private');
@@ -64,6 +68,75 @@ module.exports.getAllComponents = function () {
 
   // Sort by name
   return allComponents.sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+  });
+};
+
+//
+// Gets all layouts from custom-elements.json and returns them in a more documentation-friendly format.
+//
+module.exports.getAllLayouts = function () {
+  const allLayouts = [];
+
+  customElementsManifest.modules?.forEach(module => {
+    module.declarations?.forEach(declaration => {
+      if (declaration.customElement) {
+
+        if(!module.path.startsWith('layouts')){
+          return
+        }
+        // Generate the dist path based on the src path and attach it to the component
+        declaration.path = module.path?.replace(/^src\//, 'dist/').replace(/\.ts$/, '.js');
+
+        // Remove members that are private or don't have a description
+        const members = declaration.members?.filter(member => member.description && member.privacy !== 'private');
+        const methods = members?.filter(prop => prop.kind === 'method' && prop.privacy !== 'private');
+        const properties = members?.filter(prop => {
+          // Look for a corresponding attribute
+          const attribute = declaration.attributes?.find(attr => attr.fieldName === prop.name);
+          if (attribute) {
+            prop.attribute = attribute.name || attribute.fieldName;
+          }
+
+          return prop.kind === 'field' && prop.privacy !== 'private';
+        });
+        allLayouts.push({
+          ...declaration,
+          methods,
+          properties
+        });
+      }
+    });
+  });
+
+  // Build dependency graphs
+  allLayouts.forEach(layout => {
+    const dependencies = [];
+
+    // Recursively fetch sub-dependencies
+    function getDependencies(tag) {
+      const cmp = allLayouts.find(c => c.tagName === tag);
+      if (!cmp || !Array.isArray(layout.dependencies)) {
+        return;
+      }
+
+      cmp.dependencies?.forEach(dependentTag => {
+        if (!dependencies.includes(dependentTag)) {
+          dependencies.push(dependentTag);
+        }
+        getDependencies(dependentTag);
+      });
+    }
+
+    getDependencies(layout.tagName);
+
+    layout.dependencies = dependencies.sort();
+  });
+
+  // Sort by name
+  return allLayouts.sort((a, b) => {
     if (a.name < b.name) return -1;
     if (a.name > b.name) return 1;
     return 0;

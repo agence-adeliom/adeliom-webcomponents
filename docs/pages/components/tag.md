@@ -6,23 +6,23 @@ layout: component
 ---
 
 ```html:preview
-<sl-tag variant="primary">Primary</sl-tag>
-<sl-tag variant="success">Success</sl-tag>
-<sl-tag variant="neutral">Neutral</sl-tag>
-<sl-tag variant="warning">Warning</sl-tag>
-<sl-tag variant="danger">Danger</sl-tag>
+<awc-tag variant="primary">Primary</awc-tag>
+<awc-tag variant="success">Success</awc-tag>
+<awc-tag variant="neutral">Neutral</awc-tag>
+<awc-tag variant="warning">Warning</awc-tag>
+<awc-tag variant="danger">Danger</awc-tag>
 ```
 
 ```jsx:react
-import { SlTag } from '@shoelace-style/shoelace/dist/react';
+import { AWCTag } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlTag variant="primary">Primary</SlTag>
-    <SlTag variant="success">Success</SlTag>
-    <SlTag variant="neutral">Neutral</SlTag>
-    <SlTag variant="warning">Warning</SlTag>
-    <SlTag variant="danger">Danger</SlTag>
+    <AWCTag variant="primary">Primary</AWCTag>
+    <AWCTag variant="success">Success</AWCTag>
+    <AWCTag variant="neutral">Neutral</AWCTag>
+    <AWCTag variant="warning">Warning</AWCTag>
+    <AWCTag variant="danger">Danger</AWCTag>
   </>
 );
 ```
@@ -34,19 +34,19 @@ const App = () => (
 Use the `size` attribute to change a tab's size.
 
 ```html:preview
-<sl-tag size="small">Small</sl-tag>
-<sl-tag size="medium">Medium</sl-tag>
-<sl-tag size="large">Large</sl-tag>
+<awc-tag size="small">Small</awc-tag>
+<awc-tag size="medium">Medium</awc-tag>
+<awc-tag size="large">Large</awc-tag>
 ```
 
 ```jsx:react
-import { SlTag } from '@shoelace-style/shoelace/dist/react';
+import { AWCTag } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlTag size="small">Small</SlTag>
-    <SlTag size="medium">Medium</SlTag>
-    <SlTag size="large">Large</SlTag>
+    <AWCTag size="small">Small</AWCTag>
+    <AWCTag size="medium">Medium</AWCTag>
+    <AWCTag size="large">Large</AWCTag>
   </>
 );
 ```
@@ -56,25 +56,25 @@ const App = () => (
 Use the `pill` attribute to give tabs rounded edges.
 
 ```html:preview
-<sl-tag size="small" pill>Small</sl-tag>
-<sl-tag size="medium" pill>Medium</sl-tag>
-<sl-tag size="large" pill>Large</sl-tag>
+<awc-tag size="small" pill>Small</awc-tag>
+<awc-tag size="medium" pill>Medium</awc-tag>
+<awc-tag size="large" pill>Large</awc-tag>
 ```
 
 ```jsx:react
-import { SlTag } from '@shoelace-style/shoelace/dist/react';
+import { AWCTag } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlTag size="small" pill>
+    <AWCTag size="small" pill>
       Small
-    </SlTag>
-    <SlTag size="medium" pill>
+    </AWCTag>
+    <AWCTag size="medium" pill>
       Medium
-    </SlTag>
-    <SlTag size="large" pill>
+    </AWCTag>
+    <AWCTag size="large" pill>
       Large
-    </SlTag>
+    </AWCTag>
   </>
 );
 ```
@@ -85,15 +85,15 @@ Use the `removable` attribute to add a remove button to the tag.
 
 ```html:preview
 <div class="tags-removable">
-  <sl-tag size="small" removable>Small</sl-tag>
-  <sl-tag size="medium" removable>Medium</sl-tag>
-  <sl-tag size="large" removable>Large</sl-tag>
+  <awc-tag size="small" removable>Small</awc-tag>
+  <awc-tag size="medium" removable>Medium</awc-tag>
+  <awc-tag size="large" removable>Large</awc-tag>
 </div>
 
 <script>
   const div = document.querySelector('.tags-removable');
 
-  div.addEventListener('sl-remove', event => {
+  div.addEventListener('awc-remove', event => {
     const tag = event.target;
     tag.style.opacity = '0';
     setTimeout(() => (tag.style.opacity = '1'), 2000);
@@ -101,18 +101,18 @@ Use the `removable` attribute to add a remove button to the tag.
 </script>
 
 <style>
-  .tags-removable sl-tag {
-    transition: var(--sl-transition-medium) opacity;
+  .tags-removable awc-tag {
+    transition: var(--awc-transition-medium) opacity;
   }
 </style>
 ```
 
 ```jsx:react
-import { SlTag } from '@shoelace-style/shoelace/dist/react';
+import { AWCTag } from '@agence-adeliom/awc/dist/react';
 
 const css = `
-  .tags-removable sl-tag {
-    transition: var(--sl-transition-medium) opacity;
+  .tags-removable awc-tag {
+    transition: var(--awc-transition-medium) opacity;
   }
 `;
 
@@ -126,17 +126,17 @@ const App = () => {
   return (
     <>
       <div className="tags-removable">
-        <SlTag size="small" removable onSlRemove={handleRemove}>
+        <AWCTag size="small" removable onAwcRemove={handleRemove}>
           Small
-        </SlTag>
+        </AWCTag>
 
-        <SlTag size="medium" removable onSlRemove={handleRemove}>
+        <AWCTag size="medium" removable onAwcRemove={handleRemove}>
           Medium
-        </SlTag>
+        </AWCTag>
 
-        <SlTag size="large" removable onSlRemove={handleRemove}>
+        <AWCTag size="large" removable onAwcRemove={handleRemove}>
           Large
-        </SlTag>
+        </AWCTag>
       </div>
 
       <style>{css}</style>

@@ -96,27 +96,27 @@
     updateSelection();
 
     // Toggle the dark mode class
-    document.documentElement.classList.toggle('sl-theme-dark', isDark());
+    document.documentElement.classList.toggle('awc-theme-dark', isDark());
   }
 
   function updateSelection() {
-    const menu = document.querySelector('#theme-selector sl-menu');
+    const menu = document.querySelector('#theme-selector awc-menu');
     if (!menu) return;
-    [...menu.querySelectorAll('sl-menu-item')].map(item => (item.checked = item.getAttribute('value') === theme));
+    [...menu.querySelectorAll('awc-menu-item')].map(item => (item.checked = item.getAttribute('value') === theme));
   }
 
   let theme = getTheme();
 
   // Selection is not preserved when changing page, so update when opening dropdown
-  document.addEventListener('sl-show', event => {
+  document.addEventListener('awc-show', event => {
     const themeSelector = event.target.closest('#theme-selector');
     if (!themeSelector) return;
     updateSelection();
   });
 
   // Listen for selections
-  document.addEventListener('sl-select', event => {
-    const menu = event.target.closest('#theme-selector sl-menu');
+  document.addEventListener('awc-select', event => {
+    const menu = event.target.closest('#theme-selector awc-menu');
     if (!menu) return;
     setTheme(event.detail.item.value);
   });
@@ -288,7 +288,7 @@
     const el = document.querySelector('.sidebar-version');
     if (!el) return;
 
-    if (location.hostname === 'next.shoelace.style') el.textContent = 'Next';
+    if (location.hostname === 'next.awc.a-dev.cloud') el.textContent = 'Next';
     if (location.hostname === 'localhost') el.textContent = 'Development';
   }
 

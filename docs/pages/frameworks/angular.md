@@ -1,32 +1,32 @@
 ---
 meta:
   title: Angular
-  description: Tips for using Shoelace in your Angular app.
+  description: Tips for using Adeliom WebComponents in your Angular app.
 ---
 
 # Angular
 
-Angular [plays nice](https://custom-elements-everywhere.com/#angular) with custom elements, so you can use Shoelace in your Angular apps with ease.
+Angular [plays nice](https://custom-elements-everywhere.com/#angular) with custom elements, so you can use Adeliom WebComponents in your Angular apps with ease.
 
 ## Installation
 
-To add Shoelace to your Angular app, install the package from npm.
+To add Adeliom WebComponents to your Angular app, install the package from npm.
 
 ```bash
-npm install @shoelace-style/shoelace
+npm install @agence-adeliom/awc
 ```
 
 Next, [include a theme](/getting-started/themes) and set the [base path](/getting-started/installation#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
-import '@shoelace-style/shoelace/%NPMDIR%/themes/light.css';
-import { setBasePath } from '@shoelace-style/shoelace/%NPMDIR%/utilities/base-path';
+import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@%VERSION%/%CDNDIR%/');
+setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/');
 ```
 
 :::tip
-If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@shoelace-style/shoelace/%NPMDIR%/assets` into a public folder in your app. Then you can point the base path to that folder instead.
+If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@agence-adeliom/awc/%NPMDIR%/assets` into a public folder in your app. Then you can point the base path to that folder instead.
 :::
 
 ## Configuration
@@ -49,20 +49,20 @@ import { AppComponent } from './app.component';
 export class AppModule {}
 ```
 
-## Reference Shoelace components in your Angular component code
+## Reference Adeliom WebComponents components in your Angular component code
 
 ```js
-import { SlDrawer } from '@shoelace-style/shoelace';
+import { AWCDrawer } from '@agence-adeliom/awc';
 
 @Component({
   selector: 'app-drawer-example',
-  template: '<div id="page"><button (click)="showDrawer()">Show drawer</button><sl-drawer #drawer label="Drawer" class="drawer-focus" style="--size: 50vw"><p>Drawer content</p></sl-drawer></div>'
+  template: '<div id="page"><button (click)="showDrawer()">Show drawer</button><awc-drawer #drawer label="Drawer" class="drawer-focus" style="--size: 50vw"><p>Drawer content</p></awc-drawer></div>'
 })
 export class DrawerExampleComponent implements OnInit {
 
   // use @ViewChild to get a reference to the #drawer element within component template
   @ViewChild('drawer')
-  drawer?: ElementRef<SlDrawer>;
+  drawer?: ElementRef<AWCDrawer>;
 
   ...
 
@@ -75,14 +75,14 @@ export class DrawerExampleComponent implements OnInit {
   ...
 
   showDrawer() {
-    // use nativeElement to access Shoelace components
+    // use nativeElement to access Adeliom WebComponents components
     this.drawer?.nativeElement.show();
   }
 }
 ```
 
-Now you can start using Shoelace components in your app!
+Now you can start using Adeliom WebComponents components in your app!
 
 :::tip
-Are you using Shoelace with Angular? [Help us improve this page!](https://github.com/shoelace-style/shoelace/blob/next/docs/frameworks/angular.md)
+Are you using Adeliom WebComponents with Angular? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/next/docs/frameworks/angular.md)
 :::

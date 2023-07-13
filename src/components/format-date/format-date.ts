@@ -1,16 +1,16 @@
 import { customElement, property } from 'lit/decorators.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 
 /**
  * @summary Formats a date/time using the specified locale and options.
- * @documentation https://shoelace.style/components/format-date
+ * @documentation https://awc.a-dev.cloud/components/format-date
  * @status stable
  * @since 2.0
  */
-@customElement('sl-format-date')
-export default class SlFormatDate extends ShoelaceElement {
+@customElement('awc-format-date')
+export default class AWCFormatDate extends AWCElement {
   private readonly localize = new LocalizeController(this);
 
   /**
@@ -84,6 +84,6 @@ export default class SlFormatDate extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-format-date': SlFormatDate;
+    'awc-format-date': AWCFormatDate;
   }
 }

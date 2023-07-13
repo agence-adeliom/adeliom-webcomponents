@@ -6,13 +6,13 @@ layout: component
 ---
 
 ```html:preview
-<sl-checkbox>Checkbox</sl-checkbox>
+<awc-checkbox>Checkbox</awc-checkbox>
 ```
 
 ```jsx:react
-import { SlCheckbox } from '@shoelace-style/shoelace/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlCheckbox>Checkbox</SlCheckbox>;
+const App = () => <AWCCheckbox>Checkbox</AWCCheckbox>;
 ```
 
 :::tip
@@ -26,13 +26,13 @@ This component works with standard `<form>` elements. Please refer to the sectio
 Use the `checked` attribute to activate the checkbox.
 
 ```html:preview
-<sl-checkbox checked>Checked</sl-checkbox>
+<awc-checkbox checked>Checked</awc-checkbox>
 ```
 
 ```jsx:react
-import { SlCheckbox } from '@shoelace-style/shoelace/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlCheckbox checked>Checked</SlCheckbox>;
+const App = () => <AWCCheckbox checked>Checked</AWCCheckbox>;
 ```
 
 ### Indeterminate
@@ -40,13 +40,13 @@ const App = () => <SlCheckbox checked>Checked</SlCheckbox>;
 Use the `indeterminate` attribute to make the checkbox indeterminate.
 
 ```html:preview
-<sl-checkbox indeterminate>Indeterminate</sl-checkbox>
+<awc-checkbox indeterminate>Indeterminate</awc-checkbox>
 ```
 
 ```jsx:react
-import { SlCheckbox } from '@shoelace-style/shoelace/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlCheckbox indeterminate>Indeterminate</SlCheckbox>;
+const App = () => <AWCCheckbox indeterminate>Indeterminate</AWCCheckbox>;
 ```
 
 ### Disabled
@@ -54,13 +54,13 @@ const App = () => <SlCheckbox indeterminate>Indeterminate</SlCheckbox>;
 Use the `disabled` attribute to disable the checkbox.
 
 ```html:preview
-<sl-checkbox disabled>Disabled</sl-checkbox>
+<awc-checkbox disabled>Disabled</awc-checkbox>
 ```
 
 ```jsx:react
-import { SlCheckbox } from '@shoelace-style/shoelace/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlCheckbox disabled>Disabled</SlCheckbox>;
+const App = () => <AWCCheckbox disabled>Disabled</AWCCheckbox>;
 ```
 
 ### Sizes
@@ -68,23 +68,23 @@ const App = () => <SlCheckbox disabled>Disabled</SlCheckbox>;
 Use the `size` attribute to change a checkbox's size.
 
 ```html:preview
-<sl-checkbox size="small">Small</sl-checkbox>
+<awc-checkbox size="small">Small</awc-checkbox>
 <br />
-<sl-checkbox size="medium">Medium</sl-checkbox>
+<awc-checkbox size="medium">Medium</awc-checkbox>
 <br />
-<sl-checkbox size="large">Large</sl-checkbox>
+<awc-checkbox size="large">Large</awc-checkbox>
 ```
 
 ```jsx:react
-import { SlCheckbox } from '@shoelace-style/shoelace/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlCheckbox size="small">Small</SlCheckbox>
+    <AWCCheckbox size="small">Small</AWCCheckbox>
     <br />
-    <SlCheckbox size="medium">Medium</SlCheckbox>
+    <AWCCheckbox size="medium">Medium</AWCCheckbox>
     <br />
-    <SlCheckbox size="large">Large</SlCheckbox>
+    <AWCCheckbox size="large">Large</AWCCheckbox>
   </>
 );
 ```
@@ -95,23 +95,23 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```html:preview
 <form class="custom-validity">
-  <sl-checkbox>Check me</sl-checkbox>
+  <awc-checkbox>Check me</awc-checkbox>
   <br />
-  <sl-button type="submit" variant="primary" style="margin-top: 1rem;">Submit</sl-button>
+  <awc-button type="submit" variant="primary" style="margin-top: 1rem;">Submit</awc-button>
 </form>
 <script>
   const form = document.querySelector('.custom-validity');
-  const checkbox = form.querySelector('sl-checkbox');
+  const checkbox = form.querySelector('awc-checkbox');
   const errorMessage = `Don't forget to check me!`;
 
   // Set initial validity as soon as the element is defined
-  customElements.whenDefined('sl-checkbox').then(async () => {
+  customElements.whenDefined('awc-checkbox').then(async () => {
     await checkbox.updateComplete;
     checkbox.setCustomValidity(errorMessage);
   });
 
   // Update validity on change
-  checkbox.addEventListener('sl-change', () => {
+  checkbox.addEventListener('awc-change', () => {
     checkbox.setCustomValidity(checkbox.checked ? '' : errorMessage);
   });
 
@@ -127,7 +127,7 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```jsx:react
 import { useEffect, useRef } from 'react';
-import { SlButton, SlCheckbox } from '@shoelace-style/shoelace/dist/react';
+import { AWCButton, AWCCheckbox } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const checkbox = useRef(null);
@@ -148,13 +148,13 @@ const App = () => {
 
   return (
     <form class="custom-validity" onSubmit={handleSubmit}>
-      <SlCheckbox ref={checkbox} onSlChange={handleChange}>
+      <AWCCheckbox ref={checkbox} onAwcChange={handleChange}>
         Check me
-      </SlCheckbox>
+      </AWCCheckbox>
       <br />
-      <SlButton type="submit" variant="primary" style={{ marginTop: '1rem' }}>
+      <AWCButton type="submit" variant="primary" style={{ marginTop: '1rem' }}>
         Submit
-      </SlButton>
+      </AWCButton>
     </form>
   );
 };

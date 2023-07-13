@@ -6,13 +6,13 @@ layout: component
 ---
 
 ```html:preview
-<sl-switch>Switch</sl-switch>
+<awc-switch>Switch</awc-switch>
 ```
 
 ```jsx:react
-import { SlSwitch } from '@shoelace-style/shoelace/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlSwitch>Switch</SlSwitch>;
+const App = () => <AWCSwitch>Switch</AWCSwitch>;
 ```
 
 :::tip
@@ -26,13 +26,13 @@ This component works with standard `<form>` elements. Please refer to the sectio
 Use the `checked` attribute to activate the switch.
 
 ```html:preview
-<sl-switch checked>Checked</sl-switch>
+<awc-switch checked>Checked</awc-switch>
 ```
 
 ```jsx:react
-import { SlSwitch } from '@shoelace-style/shoelace/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlSwitch checked>Checked</SlSwitch>;
+const App = () => <AWCSwitch checked>Checked</AWCSwitch>;
 ```
 
 ### Disabled
@@ -40,13 +40,13 @@ const App = () => <SlSwitch checked>Checked</SlSwitch>;
 Use the `disabled` attribute to disable the switch.
 
 ```html:preview
-<sl-switch disabled>Disabled</sl-switch>
+<awc-switch disabled>Disabled</awc-switch>
 ```
 
 ```jsx:react
-import { SlSwitch } from '@shoelace-style/shoelace/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlSwitch disabled>Disabled</SlSwitch>;
+const App = () => <AWCSwitch disabled>Disabled</AWCSwitch>;
 ```
 
 ### Sizes
@@ -54,23 +54,23 @@ const App = () => <SlSwitch disabled>Disabled</SlSwitch>;
 Use the `size` attribute to change a switch's size.
 
 ```html:preview
-<sl-switch size="small">Small</sl-switch>
+<awc-switch size="small">Small</awc-switch>
 <br />
-<sl-switch size="medium">Medium</sl-switch>
+<awc-switch size="medium">Medium</awc-switch>
 <br />
-<sl-switch size="large">Large</sl-switch>
+<awc-switch size="large">Large</awc-switch>
 ```
 
 ```jsx:react
-import { SlSwitch } from '@shoelace-style/shoelace/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlSwitch size="small">Small</SlSwitch>
+    <AWCSwitch size="small">Small</AWCSwitch>
     <br />
-    <SlSwitch size="medium">Medium</SlSwitch>
+    <AWCSwitch size="medium">Medium</AWCSwitch>
     <br />
-    <SlSwitch size="large">Large</SlSwitch>
+    <AWCSwitch size="large">Large</AWCSwitch>
   </>
 );
 ```
@@ -80,16 +80,16 @@ const App = () => (
 Use the available custom properties to change how the switch is styled.
 
 ```html:preview
-<sl-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">Really big</sl-switch>
+<awc-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">Really big</awc-switch>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlSwitch } from '@shoelace-style/shoelace/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlSwitch
+  <AWCSwitch
     style={{
       '--width': '80px',
       '--height': '32px',

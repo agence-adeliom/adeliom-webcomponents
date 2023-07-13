@@ -3,19 +3,19 @@ import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, state } from 'lit/decorators.js';
 import { html } from 'lit';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './avatar.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Avatars are used to represent a person or object.
- * @documentation https://shoelace.style/components/avatar
+ * @documentation https://awc.a-dev.cloud/components/avatar
  * @status stable
  * @since 2.0
  *
- * @dependency sl-icon
+ * @dependency awc-icon
  *
- * @slot icon - The default icon to use when no image or initials are present. Works best with `<sl-icon>`.
+ * @slot icon - The default icon to use when no image or initials are present. Works best with `<awc-icon>`.
  *
  * @csspart base - The component's base wrapper.
  * @csspart icon - The container that wraps the avatar's icon.
@@ -24,8 +24,8 @@ import type { CSSResultGroup } from 'lit';
  *
  * @cssproperty --size - The size of the avatar.
  */
-@customElement('sl-avatar')
-export default class SlAvatar extends ShoelaceElement {
+@customElement('awc-avatar')
+export default class AWCAvatar extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   @state() private hasError = false;
@@ -70,7 +70,7 @@ export default class SlAvatar extends ShoelaceElement {
     } else {
       avatarWithoutImage = html`
         <slot name="icon" part="icon" class="avatar__icon" aria-hidden="true">
-          <sl-icon name="person-fill" library="system"></sl-icon>
+          <awc-icon name="person-fill" library="system"></awc-icon>
         </slot>
       `;
     }
@@ -95,6 +95,6 @@ export default class SlAvatar extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-avatar': SlAvatar;
+    'awc-avatar': AWCAvatar;
   }
 }

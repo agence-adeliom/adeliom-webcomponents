@@ -6,77 +6,77 @@ layout: component
 ---
 
 ```html:preview
-<sl-carousel pagination navigation mouse-dragging loop>
-  <sl-carousel-item>
+<awc-carousel pagination navigation mouse-dragging loop>
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 ```
 
 ```jsx:react
-import { SlCarousel, SlCarouselItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlCarousel pagination mouse-dragging>
-      <SlCarouselItem>
+    <AWCCarousel pagination mouse-dragging>
+      <AWCCarouselItem>
         <img
           alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
           src="/assets/examples/carousel/mountains.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
           src="/assets/examples/carousel/waterfall.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
           src="/assets/examples/carousel/sunset.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
           src="/assets/examples/carousel/field.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
           src="/assets/examples/carousel/valley.jpg"
         />
-      </SlCarouselItem>
-    </SlCarousel>
+      </AWCCarouselItem>
+    </AWCCarousel>
   </>
 );
 ```
@@ -88,76 +88,76 @@ const App = () => (
 Use the `pagination` attribute to show the total number of slides and the current slide as a set of interactive dots.
 
 ```html:preview
-<sl-carousel pagination>
-  <sl-carousel-item>
+<awc-carousel pagination>
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 ```
 
 ```jsx:react
-import { SlCarousel, SlCarouselItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlCarousel pagination>
-    <SlCarouselItem>
+  <AWCCarousel pagination>
+    <AWCCarouselItem>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </SlCarouselItem>
-  </SlCarousel>
+    </AWCCarouselItem>
+  </AWCCarousel>
 );
 ```
 
@@ -166,76 +166,76 @@ const App = () => (
 Use the `navigation` attribute to show previous and next buttons.
 
 ```html:preview
-<sl-carousel navigation>
-  <sl-carousel-item>
+<awc-carousel navigation>
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 ```
 
 ```jsx:react
-import { SlCarousel, SlCarouselItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlCarousel navigation>
-    <SlCarouselItem>
+  <AWCCarousel navigation>
+    <AWCCarouselItem>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </SlCarouselItem>
-  </SlCarousel>
+    </AWCCarouselItem>
+  </AWCCarousel>
 );
 ```
 
@@ -244,76 +244,76 @@ const App = () => (
 By default, the carousel will not advanced beyond the first and last slides. You can change this behavior and force the carousel to "wrap" with the `loop` attribute.
 
 ```html:preview
-<sl-carousel loop navigation pagination>
-  <sl-carousel-item>
+<awc-carousel loop navigation pagination>
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 ```
 
 ```jsx:react
-import { SlCarousel, SlCarouselItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlCarousel loop navigation pagination>
-    <SlCarouselItem>
+  <AWCCarousel loop navigation pagination>
+    <AWCCarouselItem>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </SlCarouselItem>
-  </SlCarousel>
+    </AWCCarouselItem>
+  </AWCCarousel>
 );
 ```
 
@@ -322,76 +322,76 @@ const App = () => (
 The carousel will automatically advance when the `autoplay` attribute is used. To change how long a slide is shown before advancing, set `autoplay-interval` to the desired number of milliseconds. For best results, use the `loop` attribute when autoplay is enabled. Note that autoplay will pause while the user interacts with the carousel.
 
 ```html:preview
-<sl-carousel autoplay loop pagination>
-  <sl-carousel-item>
+<awc-carousel autoplay loop pagination>
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 ```
 
 ```jsx:react
-import { SlCarousel, SlCarouselItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlCarousel autoplay loop pagination>
-    <SlCarouselItem>
+  <AWCCarousel autoplay loop pagination>
+    <AWCCarouselItem>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </AWCCarouselItem>
+    <AWCCarouselItem>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </SlCarouselItem>
-  </SlCarousel>
+    </AWCCarouselItem>
+  </AWCCarousel>
 );
 ```
 
@@ -403,50 +403,50 @@ This example is best demonstrated using a mouse. Try clicking and dragging the s
 
 ```html:preview
 <div class="mouse-dragging">
-  <sl-carousel pagination>
-    <sl-carousel-item>
+  <awc-carousel pagination>
+    <awc-carousel-item>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </sl-carousel-item>
-    <sl-carousel-item>
+    </awc-carousel-item>
+    <awc-carousel-item>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </sl-carousel-item>
-    <sl-carousel-item>
+    </awc-carousel-item>
+    <awc-carousel-item>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </sl-carousel-item>
-    <sl-carousel-item>
+    </awc-carousel-item>
+    <awc-carousel-item>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </sl-carousel-item>
-    <sl-carousel-item>
+    </awc-carousel-item>
+    <awc-carousel-item>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </sl-carousel-item>
-  </sl-carousel>
+    </awc-carousel-item>
+  </awc-carousel>
 
-  <sl-divider></sl-divider>
+  <awc-divider></awc-divider>
 
-  <sl-switch>Enable mouse dragging</sl-switch>
+  <awc-switch>Enable mouse dragging</awc-switch>
 </div>
 
 <script>
   const container = document.querySelector('.mouse-dragging');
-  const carousel = container.querySelector('sl-carousel');
-  const toggle = container.querySelector('sl-switch');
+  const carousel = container.querySelector('awc-carousel');
+  const toggle = container.querySelector('awc-switch');
 
-  toggle.addEventListener('sl-change', () => {
+  toggle.addEventListener('awc-change', () => {
     carousel.toggleAttribute('mouse-dragging', toggle.checked);
   });
 </script>
@@ -454,51 +454,51 @@ This example is best demonstrated using a mouse. Try clicking and dragging the s
 
 ```jsx:react
 import { useState } from 'react';
-import { SlCarousel, SlCarouselItem, SlDivider, SlSwitch } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCSwitch } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [isEnabled, setIsEnabled] = useState(false);
 
   return (
     <>
-      <SlCarousel navigation mouseDragging={isEnabled}>
-        <SlCarouselItem>
+      <AWCCarousel navigation mouseDragging={isEnabled}>
+        <AWCCarouselItem>
           <img
             alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
             src="/assets/examples/carousel/mountains.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </AWCCarouselItem>
+        <AWCCarouselItem>
           <img
             alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
             src="/assets/examples/carousel/waterfall.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </AWCCarouselItem>
+        <AWCCarouselItem>
           <img
             alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
             src="/assets/examples/carousel/sunset.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </AWCCarouselItem>
+        <AWCCarouselItem>
           <img
             alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
             src="/assets/examples/carousel/field.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </AWCCarouselItem>
+        <AWCCarouselItem>
           <img
             alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
             src="/assets/examples/carousel/valley.jpg"
           />
-        </SlCarouselItem>
-      </SlCarousel>
+        </AWCCarouselItem>
+      </AWCCarousel>
 
-      <SlDivider></SlDivider>
+      <AWCDivider></AWCDivider>
 
-      <SlSwitch checked={isEnabled} onSlInput={() => setIsEnabled(!isEnabled)}>
+      <AWCSwitch checked={isEnabled} onAwcInput={() => setIsEnabled(!isEnabled)}>
         Enable mouse dragging
-      </SlSwitch>
+      </AWCSwitch>
     </>
   );
 };
@@ -509,30 +509,30 @@ const App = () => {
 The `slides-per-page` attribute makes it possible to display multiple slides at a time. You can also use the `slides-per-move` attribute to advance more than once slide at a time, if desired.
 
 ```html:preview
-<sl-carousel navigation pagination slides-per-page="2" slides-per-move="2">
-  <sl-carousel-item style="background: var(--sl-color-red-200);">Slide 1</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-orange-200);">Slide 2</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-yellow-200);">Slide 3</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-green-200);">Slide 4</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-blue-200);">Slide 5</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-violet-200);">Slide 6</sl-carousel-item>
-</sl-carousel>
+<awc-carousel navigation pagination slides-per-page="2" slides-per-move="2">
+  <awc-carousel-item style="background: var(--awc-color-red-200);">Slide 1</awc-carousel-item>
+  <awc-carousel-item style="background: var(--awc-color-orange-200);">Slide 2</awc-carousel-item>
+  <awc-carousel-item style="background: var(--awc-color-yellow-200);">Slide 3</awc-carousel-item>
+  <awc-carousel-item style="background: var(--awc-color-green-200);">Slide 4</awc-carousel-item>
+  <awc-carousel-item style="background: var(--awc-color-blue-200);">Slide 5</awc-carousel-item>
+  <awc-carousel-item style="background: var(--awc-color-violet-200);">Slide 6</awc-carousel-item>
+</awc-carousel>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlCarousel, SlCarouselItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
-  <SlCarousel navigation pagination slidesPerPage={2} slidesPerMove={2}>
-    <SlCarouselItem style={{ background: 'var(--sl-color-red-200)' }}>Slide 1</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-orange-200)' }}>Slide 2</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-yellow-200)' }}>Slide 3</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-green-200)' }}>Slide 4</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-blue-200)' }}>Slide 5</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-violet-200)' }}>Slide 6</SlCarouselItem>
-  </SlCarousel>
+  <AWCCarousel navigation pagination slidesPerPage={2} slidesPerMove={2}>
+    <AWCCarouselItem style={{ background: 'var(--awc-color-red-200)' }}>Slide 1</AWCCarouselItem>
+    <AWCCarouselItem style={{ background: 'var(--awc-color-orange-200)' }}>Slide 2</AWCCarouselItem>
+    <AWCCarouselItem style={{ background: 'var(--awc-color-yellow-200)' }}>Slide 3</AWCCarouselItem>
+    <AWCCarouselItem style={{ background: 'var(--awc-color-green-200)' }}>Slide 4</AWCCarouselItem>
+    <AWCCarouselItem style={{ background: 'var(--awc-color-blue-200)' }}>Slide 5</AWCCarouselItem>
+    <AWCCarouselItem style={{ background: 'var(--awc-color-violet-200)' }}>Slide 6</AWCCarouselItem>
+  </AWCCarousel>
 );
 ```
 
@@ -543,15 +543,15 @@ const App = () => (
 The content of the carousel can be changed by adding or removing carousel items. The carousel will update itself automatically.
 
 ```html:preview
-<sl-carousel class="dynamic-carousel" pagination navigation>
-  <sl-carousel-item style="background: var(--sl-color-red-200)">Slide 1</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-orange-200)">Slide 2</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-yellow-200)">Slide 3</sl-carousel-item>
-</sl-carousel>
+<awc-carousel class="dynamic-carousel" pagination navigation>
+  <awc-carousel-item style="background: var(--awc-color-red-200)">Slide 1</awc-carousel-item>
+  <awc-carousel-item style="background: var(--awc-color-orange-200)">Slide 2</awc-carousel-item>
+  <awc-carousel-item style="background: var(--awc-color-yellow-200)">Slide 3</awc-carousel-item>
+</awc-carousel>
 
 <div class="carousel-options">
-  <sl-button id="dynamic-add">Add slide</sl-button>
-  <sl-button id="dynamic-remove">Remove slide</sl-button>
+  <awc-button id="dynamic-add">Add slide</awc-button>
+  <awc-button id="dynamic-remove">Remove slide</awc-button>
 </div>
 
 <style>
@@ -562,16 +562,16 @@ The content of the carousel can be changed by adding or removing carousel items.
   .dynamic-carousel ~ .carousel-options {
     display: flex;
     justify-content: center;
-    gap: var(--sl-spacing-x-small);
-    margin-top: var(--sl-spacing-large);
+    gap: var(--awc-spacing-x-small);
+    margin-top: var(--awc-spacing-large);
   }
 
-  .dynamic-carousel sl-carousel-item {
+  .dynamic-carousel awc-carousel-item {
     flex: 0 0 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--sl-font-size-2x-large);
+    font-size: var(--awc-font-size-2x-large);
   }
 </style>
 
@@ -584,17 +584,17 @@ The content of the carousel can be changed by adding or removing carousel items.
     let colorIndex = 2;
 
     const addSlide = () => {
-      const slide = document.createElement('sl-carousel-item');
+      const slide = document.createElement('awc-carousel-item');
       const color = colors[++colorIndex % colors.length];
       slide.innerText = `Slide ${dynamicCarousel.children.length + 1}`;
-      slide.style.setProperty('background', `var(--sl-color-${color}-200)`);
+      slide.style.setProperty('background', `var(--awc-color-${color}-200)`);
       dynamicCarousel.appendChild(slide);
       dynamicRemove.disabled = false;
     };
 
     const removeSlide = () => {
       const slide = dynamicCarousel.children[dynamicCarousel.children.length - 1];
-      const numSlides = dynamicCarousel.querySelectorAll('sl-carousel-item').length;
+      const numSlides = dynamicCarousel.querySelectorAll('awc-carousel-item').length;
 
       if (numSlides > 1) {
         slide.remove();
@@ -614,7 +614,7 @@ The content of the carousel can be changed by adding or removing carousel items.
 
 ```jsx:react
 import { useState } from 'react';
-import { SlCarousel, SlCarouselItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .dynamic-carousel {
@@ -624,16 +624,16 @@ const css = `
   .dynamic-carousel ~ .carousel-options {
     display: flex;
     justify-content: center;
-    margin-top: var(--sl-spacing-large);
+    margin-top: var(--awc-spacing-large);
   }
 
-  .dynamic-carousel sl-carousel-item {
+  .dynamic-carousel awc-carousel-item {
     flex: 0 0 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: var(--sl-font-size-2x-large);
+    font-size: var(--awc-font-size-2x-large);
   }
 `;
 
@@ -651,17 +651,17 @@ const App = () => {
 
   return (
     <>
-      <SlCarousel className="dynamic-carousel" pagination navigation>
+      <AWCCarousel className="dynamic-carousel" pagination navigation>
         {slides.map((color, i) => (
-          <SlCarouselItem style={{ background: colors[i % colors.length }}>
+          <AWCCarouselItem style={{ background: colors[i % colors.length }}>
             Slide {i}
-          </SlCarouselItem>
+          </AWCCarouselItem>
         ))}
-      </SlCarousel>
+      </AWCCarousel>
 
       <div className="carousel-options">
-        <SlButton onClick={addSlide}>Add slide</SlButton>
-        <SlButton onClick={removeSlide}>Remove slide</SlButton>
+        <AWCButton onClick={addSlide}>Add slide</AWCButton>
+        <AWCButton onClick={removeSlide}>Remove slide</AWCButton>
       </div>
 
       <style>{css}</style>
@@ -677,38 +677,38 @@ const App = () => {
 Setting the `orientation` attribute to `vertical` will render the carousel in a vertical layout. If the content of your slides vary in height, you will need to set amn explicit `height` or `max-height` on the carousel using CSS.
 
 ```html:preview
-<sl-carousel class="vertical" pagination orientation="vertical">
-  <sl-carousel-item>
+<awc-carousel class="vertical" pagination orientation="vertical">
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 <style>
   .vertical {
     max-height: 400px;
@@ -730,7 +730,7 @@ Setting the `orientation` attribute to `vertical` will render the carousel in a 
 ```
 
 ```jsx:react
-import { SlCarousel, SlCarouselItem } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .vertical {
@@ -753,38 +753,38 @@ const css = `
 
 const App = () => (
   <>
-    <SlCarousel className="vertical" loop pagination orientation="vertical">
-      <SlCarouselItem>
+    <AWCCarousel className="vertical" loop pagination orientation="vertical">
+      <AWCCarouselItem>
         <img
           alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
           src="/assets/examples/carousel/mountains.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
           src="/assets/examples/carousel/waterfall.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
           src="/assets/examples/carousel/sunset.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
           src="/assets/examples/carousel/field.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
           src="/assets/examples/carousel/valley.jpg"
         />
-      </SlCarouselItem>
-    </SlCarousel>
+      </AWCCarouselItem>
+    </AWCCarousel>
     <style>{css}</style>
   </>
 );
@@ -795,53 +795,54 @@ const App = () => (
 Use the `--aspect-ratio` custom property to customize the size of the carousel's viewport.
 
 ```html:preview
-<sl-carousel class="aspect-ratio" navigation pagination style="--aspect-ratio: 3/2;">
-  <sl-carousel-item>
+<awc-carousel class="aspect-ratio" navigation pagination style="--aspect-ratio: 3/2;">
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 
-<sl-divider></sl-divider>
+<awc-divider></awc-divider>
 
-<sl-select label="Aspect ratio" name="aspect" value="3/2">
-  <sl-option value="1/1">1/1</sl-option>
-  <sl-option value="3/2">3/2</sl-option>
-  <sl-option value="16/9">16/9</sl-option>
-</sl-select>
+<awc-select label="Aspect ratio" name="aspect" value="3/2">
+  <awc-option value="1/1">1/1</awc-option>
+  <awc-option value="3/2">3/2</awc-option>
+  <awc-option value="4/3">4/3</awc-option>
+  <awc-option value="16/9">16/9</awc-option>
+</awc-select>
 
 <script>
   (() => {
-    const carousel = document.querySelector('sl-carousel.aspect-ratio');
-    const aspectRatio = document.querySelector('sl-select[name="aspect"]');
+    const carousel = document.querySelector('awc-carousel.aspect-ratio');
+    const aspectRatio = document.querySelector('awc-select[name="aspect"]');
 
-    aspectRatio.addEventListener('sl-change', () => {
+    aspectRatio.addEventListener('awc-change', () => {
       carousel.style.setProperty('--aspect-ratio', aspectRatio.value);
     });
   })();
@@ -852,58 +853,58 @@ Use the `--aspect-ratio` custom property to customize the size of the carousel's
 
 ```jsx:react
 import { useState } from 'react';
-import { SlCarousel, SlCarouselItem, SlDivider, SlSelect, SlOption } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCSelect, AWCOption } from '@agence-adeliom/awc/dist/react';
 
 const App = () => {
   const [aspectRatio, setAspectRatio] = useState('3/2');
 
   return (
     <>
-      <SlCarousel className="aspect-ratio" navigation pagination style={{ '--aspect-ratio': aspectRatio }}>
-        <SlCarouselItem>
+      <AWCCarousel className="aspect-ratio" navigation pagination style={{ '--aspect-ratio': aspectRatio }}>
+        <AWCCarouselItem>
           <img
             alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
             src="/assets/examples/carousel/mountains.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </AWCCarouselItem>
+        <AWCCarouselItem>
           <img
             alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
             src="/assets/examples/carousel/waterfall.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </AWCCarouselItem>
+        <AWCCarouselItem>
           <img
             alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
             src="/assets/examples/carousel/sunset.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </AWCCarouselItem>
+        <AWCCarouselItem>
           <img
             alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
             src="/assets/examples/carousel/field.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </AWCCarouselItem>
+        <AWCCarouselItem>
           <img
             alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
             src="/assets/examples/carousel/valley.jpg"
           />
-        </SlCarouselItem>
-      </SlCarousel>
+        </AWCCarouselItem>
+      </AWCCarousel>
 
-      <SlDivider />
+      <AWCDivider />
 
-      <SlSelect
+      <AWCSelect
         label="Aspect ratio"
         name="aspect"
         value={aspectRatio}
-        onSlChange={event => setAspectRatio(event.target.value)}
+        onAwcChange={event => setAspectRatio(event.target.value)}
       >
-        <SlOption value="1 / 1">1 / 1</SlOption>
-        <SlOption value="3 / 2">3 / 2</SlOption>
-        <SlOption value="16 / 9">16 / 9</SlOption>
-      </SlSelect>
+        <AWCOption value="1 / 1">1 / 1</AWCOption>
+        <AWCOption value="3 / 2">3 / 2</AWCOption>
+        <AWCOption value="16 / 9">16 / 9</AWCOption>
+      </AWCSelect>
 
       <style>{css}</style>
     </>
@@ -918,80 +919,80 @@ const App = () => {
 Use the `--scroll-hint` custom property to add inline padding in horizontal carousels and block padding in vertical carousels. This will make the closest slides slightly visible, hinting that there are more items in the carousel.
 
 ```html:preview
-<sl-carousel class="scroll-hint" pagination style="--scroll-hint: 10%;">
-  <sl-carousel-item>
+<awc-carousel class="scroll-hint" pagination style="--scroll-hint: 10%;">
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 ```
 
 {% raw %}
 
 ```jsx:react
 import { useState } from 'react';
-import { SlCarousel, SlCarouselItem, SlDivider, SlRange } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCRange } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <SlCarousel className="scroll-hint" pagination style={{ '--scroll-hint': '10%' }}>
-      <SlCarouselItem>
+    <AWCCarousel className="scroll-hint" pagination style={{ '--scroll-hint': '10%' }}>
+      <AWCCarouselItem>
         <img
           alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
           src="/assets/examples/carousel/mountains.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
           src="/assets/examples/carousel/waterfall.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
           src="/assets/examples/carousel/sunset.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
           src="/assets/examples/carousel/field.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </AWCCarouselItem>
+      <AWCCarouselItem>
         <img
           alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
           src="/assets/examples/carousel/valley.jpg"
         />
-      </SlCarouselItem>
-    </SlCarousel>
+      </AWCCarouselItem>
+    </AWCCarousel>
   </>
 );
 ```
@@ -1003,38 +1004,38 @@ const App = () => (
 The carousel has a robust API that makes it possible to extend and customize. This example syncs the active slide with a set of thumbnails, effectively creating a gallery-style carousel.
 
 ```html:preview
-<sl-carousel class="carousel-thumbnails" navigation loop>
-  <sl-carousel-item>
+<awc-carousel class="carousel-thumbnails" navigation loop>
+  <awc-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </awc-carousel-item>
+  <awc-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </awc-carousel-item>
+</awc-carousel>
 
 <div class="thumbnails">
   <div class="thumbnails__scroller">
@@ -1058,11 +1059,11 @@ The carousel has a robust API that makes it possible to extend and customize. Th
 
   .thumbnails__scroller {
     display: flex;
-    gap: var(--sl-spacing-small);
+    gap: var(--awc-spacing-small);
     overflow-x: auto;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    scroll-padding: var(--sl-spacing-small);
+    scroll-padding: var(--awc-spacing-small);
   }
 
   .thumbnails__scroller::-webkit-scrollbar {
@@ -1101,7 +1102,7 @@ The carousel has a robust API that makes it possible to extend and customize. Th
       }
     });
 
-    carousel.addEventListener('sl-slide-change', e => {
+    carousel.addEventListener('awc-slide-change', e => {
       const slideIndex = e.detail.index;
 
       [...thumbnails].forEach((thumb, i) => {
@@ -1119,7 +1120,7 @@ The carousel has a robust API that makes it possible to extend and customize. Th
 
 ```jsx:react
 import { useRef } from 'react';
-import { SlCarousel, SlCarouselItem, SlDivider, SlRange } from '@shoelace-style/shoelace/dist/react';
+import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCRange } from '@agence-adeliom/awc/dist/react';
 
 const css = `
   .carousel-thumbnails {
@@ -1133,11 +1134,11 @@ const css = `
 
   .thumbnails__scroller {
     display: flex;
-    gap: var(--sl-spacing-small);
+    gap: var(--awc-spacing-small);
     overflow-x: auto;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    scroll-padding: var(--sl-spacing-small);
+    scroll-padding: var(--awc-spacing-small);
   }
 
   .thumbnails__scroller::-webkit-scrollbar {
@@ -1208,16 +1209,16 @@ const App = () => {
 
   return (
     <>
-      <SlCarousel className="carousel-thumbnails" navigation loop onSlSlideChange={handleSlideChange}>
+      <AWCCarousel className="carousel-thumbnails" navigation loop onAwcSlideChange={handleSlideChange}>
         {images.map({ src, alt }) => (
-          <SlCarouselItem>
+          <AWCCarouselItem>
             <img
               alt={alt}
               src={src}
             />
-          </SlCarouselItem>
+          </AWCCarouselItem>
         )}
-      </SlCarousel>
+      </AWCCarousel>
 
       <div class="thumbnails">
         <div class="thumbnails__scroller">

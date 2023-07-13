@@ -8,40 +8,40 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './alert.styles.js';
 import type { CSSResultGroup } from 'lit';
 
-const toastStack = Object.assign(document.createElement('div'), { className: 'sl-toast-stack' });
+const toastStack = Object.assign(document.createElement('div'), { className: 'awc-toast-stack' });
 
 /**
  * @summary Alerts are used to display important messages inline or as toast notifications.
- * @documentation https://shoelace.style/components/alert
+ * @documentation https://awc.a-dev.cloud/components/alert
  * @status stable
  * @since 2.0
  *
- * @dependency sl-icon-button
+ * @dependency awc-icon-button
  *
  * @slot - The alert's main content.
- * @slot icon - An icon to show in the alert. Works best with `<sl-icon>`.
+ * @slot icon - An icon to show in the alert. Works best with `<awc-icon>`.
  *
- * @event sl-show - Emitted when the alert opens.
- * @event sl-after-show - Emitted after the alert opens and all animations are complete.
- * @event sl-hide - Emitted when the alert closes.
- * @event sl-after-hide - Emitted after the alert closes and all animations are complete.
+ * @event awc-show - Emitted when the alert opens.
+ * @event awc-after-show - Emitted after the alert opens and all animations are complete.
+ * @event awc-hide - Emitted when the alert closes.
+ * @event awc-after-hide - Emitted after the alert closes and all animations are complete.
  *
  * @csspart base - The component's base wrapper.
  * @csspart icon - The container that wraps the optional icon.
  * @csspart message - The container that wraps the alert's main content.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<awc-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  *
  * @animation alert.show - The animation to use when showing the alert.
  * @animation alert.hide - The animation to use when hiding the alert.
  */
 
-@customElement('sl-alert')
-export default class SlAlert extends ShoelaceElement {
+@customElement('awc-alert')
+export default class AWCAlert extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private autoHideTimeout: number;
@@ -92,7 +92,7 @@ export default class SlAlert extends ShoelaceElement {
   async handleOpenChange() {
     if (this.open) {
       // Show
-      this.emit('sl-show');
+      this.emit('awc-show');
 
       if (this.duration < Infinity) {
         this.restartAutoHide();
@@ -103,10 +103,10 @@ export default class SlAlert extends ShoelaceElement {
       const { keyframes, options } = getAnimation(this, 'alert.show', { dir: this.localize.dir() });
       await animateTo(this.base, keyframes, options);
 
-      this.emit('sl-after-show');
+      this.emit('awc-after-show');
     } else {
       // Hide
-      this.emit('sl-hide');
+      this.emit('awc-hide');
 
       clearTimeout(this.autoHideTimeout);
 
@@ -115,7 +115,7 @@ export default class SlAlert extends ShoelaceElement {
       await animateTo(this.base, keyframes, options);
       this.base.hidden = true;
 
-      this.emit('sl-after-hide');
+      this.emit('awc-after-hide');
     }
   }
 
@@ -131,7 +131,7 @@ export default class SlAlert extends ShoelaceElement {
     }
 
     this.open = true;
-    return waitForEvent(this, 'sl-after-show');
+    return waitForEvent(this, 'awc-after-show');
   }
 
   /** Hides the alert */
@@ -141,7 +141,7 @@ export default class SlAlert extends ShoelaceElement {
     }
 
     this.open = false;
-    return waitForEvent(this, 'sl-after-hide');
+    return waitForEvent(this, 'awc-after-hide');
   }
 
   /**
@@ -165,13 +165,13 @@ export default class SlAlert extends ShoelaceElement {
       });
 
       this.addEventListener(
-        'sl-after-hide',
+        'awc-after-hide',
         () => {
           toastStack.removeChild(this);
           resolve();
 
           // Remove the toast stack from the DOM when there are no more alerts
-          if (toastStack.querySelector('sl-alert') === null) {
+          if (toastStack.querySelector('awc-alert') === null) {
             toastStack.remove();
           }
         },
@@ -205,7 +205,7 @@ export default class SlAlert extends ShoelaceElement {
 
         ${this.closable
           ? html`
-              <sl-icon-button
+              <awc-icon-button
                 part="close-button"
                 exportparts="base:close-button__base"
                 class="alert__close-button"
@@ -213,7 +213,7 @@ export default class SlAlert extends ShoelaceElement {
                 library="system"
                 label=${this.localize.term('close')}
                 @click=${this.handleCloseClick}
-              ></sl-icon-button>
+              ></awc-icon-button>
             `
           : ''}
       </div>
@@ -239,6 +239,6 @@ setDefaultAnimation('alert.hide', {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-alert': SlAlert;
+    'awc-alert': AWCAlert;
   }
 }

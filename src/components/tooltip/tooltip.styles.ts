@@ -13,13 +13,13 @@ export default css`
   }
 
   .tooltip {
-    --arrow-size: var(--sl-tooltip-arrow-size);
-    --arrow-color: var(--sl-tooltip-background-color);
+    --arrow-size: var(--awc-tooltip-arrow-size);
+    --arrow-color: var(--awc-tooltip-background-color);
   }
 
   .tooltip::part(popup) {
     pointer-events: none;
-    z-index: var(--sl-z-index-tooltip);
+    z-index: var(--awc-z-index-tooltip);
   }
 
   .tooltip[placement^='top']::part(popup) {
@@ -42,14 +42,14 @@ export default css`
     display: block;
     width: max-content;
     max-width: var(--max-width);
-    border-radius: var(--sl-tooltip-border-radius);
-    background-color: var(--sl-tooltip-background-color);
-    font-family: var(--sl-tooltip-font-family);
-    font-size: var(--sl-tooltip-font-size);
-    font-weight: var(--sl-tooltip-font-weight);
-    line-height: var(--sl-tooltip-line-height);
-    color: var(--sl-tooltip-color);
-    padding: var(--sl-tooltip-padding);
+    border-radius: var(--awc-tooltip-border-radius);
+    background-color: var(--awc-tooltip-background-color);
+    font-family: var(--awc-tooltip-font-family);
+    font-size: var(--awc-tooltip-font-size);
+    font-weight: var(--awc-tooltip-font-weight);
+    line-height: var(--awc-tooltip-line-height);
+    color: var(--awc-tooltip-color);
+    padding: var(--awc-tooltip-padding);
     pointer-events: none;
   }
 `;

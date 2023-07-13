@@ -1,11 +1,11 @@
 function normalizePathname(pathname) {
   // Remove /index.html
   if (pathname.endsWith('/index.html')) {
-    pathname = pathname.replace(/\/index\.html/, '');
+    pathname = pathname?.replace(/\/index\.html/, '');
   }
 
   // Remove trailing slashes
-  return pathname.replace(/\/$/, '');
+  return pathname?.replace(/\/$/, '');
 }
 
 /**

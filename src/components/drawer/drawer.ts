@@ -11,31 +11,31 @@ import { lockBodyScrolling, unlockBodyScrolling } from '../../internal/scroll.js
 import { uppercaseFirstLetter } from '../../internal/string.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
+import AWCElement from '../../internal/awc-element.js';
 import Modal from '../../internal/modal.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
 import styles from './drawer.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Drawers slide in from a container to expose additional options and information.
- * @documentation https://shoelace.style/components/drawer
+ * @documentation https://awc.a-dev.cloud/components/drawer
  * @status stable
  * @since 2.0
  *
- * @dependency sl-icon-button
+ * @dependency awc-icon-button
  *
  * @slot - The drawer's main content.
  * @slot label - The drawer's label. Alternatively, you can use the `label` attribute.
- * @slot header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @slot header-actions - Optional actions to add to the header. Works best with `<awc-icon-button>`.
  * @slot footer - The drawer's footer, usually one or more buttons representing various options.
  *
- * @event sl-show - Emitted when the drawer opens.
- * @event sl-after-show - Emitted after the drawer opens and all animations are complete.
- * @event sl-hide - Emitted when the drawer closes.
- * @event sl-after-hide - Emitted after the drawer closes and all animations are complete.
- * @event sl-initial-focus - Emitted when the drawer opens and is ready to receive focus. Calling
+ * @event awc-show - Emitted when the drawer opens.
+ * @event awc-after-show - Emitted after the drawer opens and all animations are complete.
+ * @event awc-hide - Emitted when the drawer closes.
+ * @event awc-after-hide - Emitted after the drawer closes and all animations are complete.
+ * @event awc-initial-focus - Emitted when the drawer opens and is ready to receive focus. Calling
  *   `event.preventDefault()` will prevent focusing and allow you to set it on a different element, such as an input.
- * @event {{ source: 'close-button' | 'keyboard' | 'overlay' }} sl-request-close - Emitted when the user attempts to
+ * @event {{ source: 'close-button' | 'keyboard' | 'overlay' }} awc-request-close - Emitted when the user attempts to
  *   close the drawer by clicking the close button, clicking the overlay, or pressing escape. Calling
  *   `event.preventDefault()` will keep the drawer open. Avoid using this unless closing the drawer will result in
  *   destructive behavior such as data loss.
@@ -44,9 +44,9 @@ import type { CSSResultGroup } from 'lit';
  * @csspart overlay - The overlay that covers the screen behind the drawer.
  * @csspart panel - The drawer's panel (where the drawer and its content are rendered).
  * @csspart header - The drawer's header. This element wraps the title and header actions.
- * @csspart header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @csspart header-actions - Optional actions to add to the header. Works best with `<awc-icon-button>`.
  * @csspart title - The drawer's title.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<awc-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  * @csspart body - The drawer's body.
  * @csspart footer - The drawer's footer.
@@ -69,8 +69,8 @@ import type { CSSResultGroup } from 'lit';
  * @animation drawer.overlay.show - The animation to use when showing the drawer's overlay.
  * @animation drawer.overlay.hide - The animation to use when hiding the drawer's overlay.
  */
-@customElement('sl-drawer')
-export default class SlDrawer extends ShoelaceElement {
+@customElement('awc-drawer')
+export default class AWCDrawer extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private readonly hasSlotController = new HasSlotController(this, 'footer');
@@ -128,7 +128,7 @@ export default class SlDrawer extends ShoelaceElement {
   }
 
   private requestClose(source: 'close-button' | 'keyboard' | 'overlay') {
-    const slRequestClose = this.emit('sl-request-close', {
+    const slRequestClose = this.emit('awc-request-close', {
       cancelable: true,
       detail: { source }
     });
@@ -161,7 +161,7 @@ export default class SlDrawer extends ShoelaceElement {
   async handleOpenChange() {
     if (this.open) {
       // Show
-      this.emit('sl-show');
+      this.emit('awc-show');
       this.addOpenListeners();
       this.originalTrigger = document.activeElement as HTMLElement;
 
@@ -175,7 +175,7 @@ export default class SlDrawer extends ShoelaceElement {
       // drawer's animation to jitter, so we'll temporarily remove the attribute, call `focus({ preventScroll: true })`
       // ourselves, and add the attribute back afterwards.
       //
-      // Related: https://github.com/shoelace-style/shoelace/issues/693
+      // Related: https://github.com/awc-style/awc/issues/693
       //
       const autoFocusTarget = this.querySelector('[autofocus]');
       if (autoFocusTarget) {
@@ -187,7 +187,7 @@ export default class SlDrawer extends ShoelaceElement {
 
       // Set initial focus
       requestAnimationFrame(() => {
-        const slInitialFocus = this.emit('sl-initial-focus', { cancelable: true });
+        const slInitialFocus = this.emit('awc-initial-focus', { cancelable: true });
 
         if (!slInitialFocus.defaultPrevented) {
           // Set focus to the autofocus target and restore the attribute
@@ -213,10 +213,10 @@ export default class SlDrawer extends ShoelaceElement {
         animateTo(this.overlay, overlayAnimation.keyframes, overlayAnimation.options)
       ]);
 
-      this.emit('sl-after-show');
+      this.emit('awc-after-show');
     } else {
       // Hide
-      this.emit('sl-hide');
+      this.emit('awc-hide');
       this.removeOpenListeners();
 
       if (!this.contained) {
@@ -254,7 +254,7 @@ export default class SlDrawer extends ShoelaceElement {
         setTimeout(() => trigger.focus());
       }
 
-      this.emit('sl-after-hide');
+      this.emit('awc-after-hide');
     }
   }
 
@@ -278,7 +278,7 @@ export default class SlDrawer extends ShoelaceElement {
     }
 
     this.open = true;
-    return waitForEvent(this, 'sl-after-show');
+    return waitForEvent(this, 'awc-after-show');
   }
 
   /** Hides the drawer */
@@ -288,7 +288,7 @@ export default class SlDrawer extends ShoelaceElement {
     }
 
     this.open = false;
-    return waitForEvent(this, 'sl-after-hide');
+    return waitForEvent(this, 'awc-after-hide');
   }
 
   render() {
@@ -329,7 +329,7 @@ export default class SlDrawer extends ShoelaceElement {
                   </h2>
                   <div part="header-actions" class="drawer__header-actions">
                     <slot name="header-actions"></slot>
-                    <sl-icon-button
+                    <awc-icon-button
                       part="close-button"
                       exportparts="base:close-button__base"
                       class="drawer__close"
@@ -337,7 +337,7 @@ export default class SlDrawer extends ShoelaceElement {
                       label=${this.localize.term('close')}
                       library="system"
                       @click=${() => this.requestClose('close-button')}
-                    ></sl-icon-button>
+                    ></awc-icon-button>
                   </div>
                 </header>
               `
@@ -457,6 +457,6 @@ setDefaultAnimation('drawer.overlay.hide', {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-drawer': SlDrawer;
+    'awc-drawer': AWCDrawer;
   }
 }

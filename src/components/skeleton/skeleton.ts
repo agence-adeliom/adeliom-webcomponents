@@ -1,13 +1,13 @@
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property } from 'lit/decorators.js';
 import { html } from 'lit';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './skeleton.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Skeletons are used to provide a visual representation of where content will eventually be drawn.
- * @documentation https://shoelace.style/components/skeleton
+ * @documentation https://awc.a-dev.cloud/components/skeleton
  * @status stable
  * @since 2.0
  *
@@ -18,8 +18,8 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --color - The color of the skeleton.
  * @cssproperty --sheen-color - The sheen color when the skeleton is in its loading state.
  */
-@customElement('sl-skeleton')
-export default class SlSkeleton extends ShoelaceElement {
+@customElement('awc-skeleton')
+export default class AWCSkeleton extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   /** Determines which effect the skeleton will use. */
@@ -43,6 +43,6 @@ export default class SlSkeleton extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-skeleton': SlSkeleton;
+    'awc-skeleton': AWCSkeleton;
   }
 }

@@ -5,10 +5,10 @@ meta:
 layout: component
 ---
 
-Shoelace comes bundled with over 1,500 icons courtesy of the [Bootstrap Icons](https://icons.getbootstrap.com/) project. These icons are part of the `default` icon library. If you prefer, you can register [custom icon libraries](#icon-libraries) as well.
+Adeliom WebComponents comes bundled with over 1,500 icons courtesy of the [Bootstrap Icons](https://icons.getbootstrap.com/) project. These icons are part of the `default` icon library. If you prefer, you can register [custom icon libraries](#icon-libraries) as well.
 
 :::tip
-Depending on how you're loading Shoelace, you may need to copy icon assets and/or [set the base path](getting-started/installation#setting-the-base-path) so Shoelace knows where to load them from. Otherwise, icons may not appear and you'll see 404 Not Found errors in the dev console.
+Depending on how you're loading Adeliom WebComponents, you may need to copy icon assets and/or [set the base path](getting-started/installation#setting-the-base-path) so Adeliom WebComponents knows where to load them from. Otherwise, icons may not appear and you'll see 404 Not Found errors in the dev console.
 :::
 
 ## Default Icons
@@ -16,19 +16,19 @@ Depending on how you're loading Shoelace, you may need to copy icon assets and/o
 All available icons in the `default` icon library are shown below. Click or tap on any icon to copy its name, then you can use it in your HTML like this.
 
 ```html
-<sl-icon name="icon-name-here"></sl-icon>
+<awc-icon name="icon-name-here"></awc-icon>
 ```
 
 <div class="icon-search">
   <div class="icon-search-controls">
-    <sl-input placeholder="Search Icons" clearable>
-      <sl-icon slot="prefix" name="search"></sl-icon>
-    </sl-input>
-    <sl-select value="outline">
-      <sl-option value="outline">Outlined</sl-option>
-      <sl-option value="fill">Filled</sl-option>
-      <sl-option value="all">All icons</sl-option>
-    </sl-select>
+    <awc-input placeholder="Search Icons" clearable>
+      <awc-icon slot="prefix" name="search"></awc-icon>
+    </awc-input>
+    <awc-select value="outline">
+      <awc-option value="outline">Outlined</awc-option>
+      <awc-option value="fill">Filled</awc-option>
+      <awc-option value="all">All icons</awc-option>
+    </awc-select>
   </div>
   <div class="icon-list"></div>
   <input type="text" class="icon-copy-input" aria-hidden="true" tabindex="-1">
@@ -38,65 +38,65 @@ All available icons in the `default` icon library are shown below. Click or tap 
 
 ### Colors
 
-Icons inherit their color from the current text color. Thus, you can set the `color` property on the `<sl-icon>` element or an ancestor to change the color.
+Icons inherit their color from the current text color. Thus, you can set the `color` property on the `<awc-icon>` element or an ancestor to change the color.
 
 ```html:preview
 <div style="color: #4a90e2;">
-  <sl-icon name="exclamation-triangle"></sl-icon>
-  <sl-icon name="archive"></sl-icon>
-  <sl-icon name="battery-charging"></sl-icon>
-  <sl-icon name="bell"></sl-icon>
+  <awc-icon name="exclamation-triangle"></awc-icon>
+  <awc-icon name="archive"></awc-icon>
+  <awc-icon name="battery-charging"></awc-icon>
+  <awc-icon name="bell"></awc-icon>
 </div>
 <div style="color: #9013fe;">
-  <sl-icon name="clock"></sl-icon>
-  <sl-icon name="cloud"></sl-icon>
-  <sl-icon name="download"></sl-icon>
-  <sl-icon name="file-earmark"></sl-icon>
+  <awc-icon name="clock"></awc-icon>
+  <awc-icon name="cloud"></awc-icon>
+  <awc-icon name="download"></awc-icon>
+  <awc-icon name="file-earmark"></awc-icon>
 </div>
 <div style="color: #417505;">
-  <sl-icon name="flag"></sl-icon>
-  <sl-icon name="heart"></sl-icon>
-  <sl-icon name="image"></sl-icon>
-  <sl-icon name="lightning"></sl-icon>
+  <awc-icon name="flag"></awc-icon>
+  <awc-icon name="heart"></awc-icon>
+  <awc-icon name="image"></awc-icon>
+  <awc-icon name="lightning"></awc-icon>
 </div>
 <div style="color: #f5a623;">
-  <sl-icon name="mic"></sl-icon>
-  <sl-icon name="search"></sl-icon>
-  <sl-icon name="star"></sl-icon>
-  <sl-icon name="trash"></sl-icon>
+  <awc-icon name="mic"></awc-icon>
+  <awc-icon name="search"></awc-icon>
+  <awc-icon name="star"></awc-icon>
+  <awc-icon name="trash"></awc-icon>
 </div>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCIcon } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
     <div style={{ color: '#4a90e2' }}>
-      <SlIcon name="exclamation-triangle"></SlIcon>
-      <SlIcon name="archive"></SlIcon>
-      <SlIcon name="battery-charging"></SlIcon>
-      <SlIcon name="bell"></SlIcon>
+      <AWCIcon name="exclamation-triangle"></AWCIcon>
+      <AWCIcon name="archive"></AWCIcon>
+      <AWCIcon name="battery-charging"></AWCIcon>
+      <AWCIcon name="bell"></AWCIcon>
     </div>
     <div style={{ color: '#9013fe' }}>
-      <SlIcon name="clock"></SlIcon>
-      <SlIcon name="cloud"></SlIcon>
-      <SlIcon name="download"></SlIcon>
-      <SlIcon name="file-earmark"></SlIcon>
+      <AWCIcon name="clock"></AWCIcon>
+      <AWCIcon name="cloud"></AWCIcon>
+      <AWCIcon name="download"></AWCIcon>
+      <AWCIcon name="file-earmark"></AWCIcon>
     </div>
     <div style={{ color: '#417505' }}>
-      <SlIcon name="flag"></SlIcon>
-      <SlIcon name="heart"></SlIcon>
-      <SlIcon name="image"></SlIcon>
-      <SlIcon name="lightning"></SlIcon>
+      <AWCIcon name="flag"></AWCIcon>
+      <AWCIcon name="heart"></AWCIcon>
+      <AWCIcon name="image"></AWCIcon>
+      <AWCIcon name="lightning"></AWCIcon>
     </div>
     <div style={{ color: '#f5a623' }}>
-      <SlIcon name="mic"></SlIcon>
-      <SlIcon name="search"></SlIcon>
-      <SlIcon name="star"></SlIcon>
-      <SlIcon name="trash"></SlIcon>
+      <AWCIcon name="mic"></AWCIcon>
+      <AWCIcon name="search"></AWCIcon>
+      <AWCIcon name="star"></AWCIcon>
+      <AWCIcon name="trash"></AWCIcon>
     </div>
   </>
 );
@@ -110,48 +110,48 @@ Icons are sized relative to the current font size. To change their size, set the
 
 ```html:preview
 <div style="font-size: 32px;">
-  <sl-icon name="exclamation-triangle"></sl-icon>
-  <sl-icon name="archive"></sl-icon>
-  <sl-icon name="battery-charging"></sl-icon>
-  <sl-icon name="bell"></sl-icon>
-  <sl-icon name="clock"></sl-icon>
-  <sl-icon name="cloud"></sl-icon>
-  <sl-icon name="download"></sl-icon>
-  <sl-icon name="file-earmark"></sl-icon>
-  <sl-icon name="flag"></sl-icon>
-  <sl-icon name="heart"></sl-icon>
-  <sl-icon name="image"></sl-icon>
-  <sl-icon name="lightning"></sl-icon>
-  <sl-icon name="mic"></sl-icon>
-  <sl-icon name="search"></sl-icon>
-  <sl-icon name="star"></sl-icon>
-  <sl-icon name="trash"></sl-icon>
+  <awc-icon name="exclamation-triangle"></awc-icon>
+  <awc-icon name="archive"></awc-icon>
+  <awc-icon name="battery-charging"></awc-icon>
+  <awc-icon name="bell"></awc-icon>
+  <awc-icon name="clock"></awc-icon>
+  <awc-icon name="cloud"></awc-icon>
+  <awc-icon name="download"></awc-icon>
+  <awc-icon name="file-earmark"></awc-icon>
+  <awc-icon name="flag"></awc-icon>
+  <awc-icon name="heart"></awc-icon>
+  <awc-icon name="image"></awc-icon>
+  <awc-icon name="lightning"></awc-icon>
+  <awc-icon name="mic"></awc-icon>
+  <awc-icon name="search"></awc-icon>
+  <awc-icon name="star"></awc-icon>
+  <awc-icon name="trash"></awc-icon>
 </div>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCIcon } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <div style={{ fontSize: '32px' }}>
-    <SlIcon name="exclamation-triangle" />
-    <SlIcon name="archive" />
-    <SlIcon name="battery-charging" />
-    <SlIcon name="bell" />
-    <SlIcon name="clock" />
-    <SlIcon name="cloud" />
-    <SlIcon name="download" />
-    <SlIcon name="file-earmark" />
-    <SlIcon name="flag" />
-    <SlIcon name="heart" />
-    <SlIcon name="image" />
-    <SlIcon name="lightning" />
-    <SlIcon name="mic" />
-    <SlIcon name="search" />
-    <SlIcon name="star" />
-    <SlIcon name="trash" />
+    <AWCIcon name="exclamation-triangle" />
+    <AWCIcon name="archive" />
+    <AWCIcon name="battery-charging" />
+    <AWCIcon name="bell" />
+    <AWCIcon name="clock" />
+    <AWCIcon name="cloud" />
+    <AWCIcon name="download" />
+    <AWCIcon name="file-earmark" />
+    <AWCIcon name="flag" />
+    <AWCIcon name="heart" />
+    <AWCIcon name="image" />
+    <AWCIcon name="lightning" />
+    <AWCIcon name="mic" />
+    <AWCIcon name="search" />
+    <AWCIcon name="star" />
+    <AWCIcon name="trash" />
   </div>
 );
 ```
@@ -163,13 +163,13 @@ const App = () => (
 For non-decorative icons, use the `label` attribute to announce it to assistive devices.
 
 ```html:preview
-<sl-icon name="star-fill" label="Add to favorites"></sl-icon>
+<awc-icon name="star-fill" label="Add to favorites"></awc-icon>
 ```
 
 ```jsx:react
-import { SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCIcon } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlIcon name="star-fill" label="Add to favorites" />;
+const App = () => <AWCIcon name="star-fill" label="Add to favorites" />;
 ```
 
 ### Custom Icons
@@ -177,24 +177,24 @@ const App = () => <SlIcon name="star-fill" label="Add to favorites" />;
 Custom icons can be loaded individually with the `src` attribute. Only SVGs on a local or CORS-enabled endpoint are supported. If you're using more than one custom icon, it might make sense to register a [custom icon library](#icon-libraries).
 
 ```html:preview
-<sl-icon src="https://shoelace.style/assets/images/shoe.svg" style="font-size: 8rem;"></sl-icon>
+<awc-icon src="https://awc.a-dev.cloud/assets/images/shoe.svg" style="font-size: 8rem;"></awc-icon>
 ```
 
 {% raw %}
 
 ```jsx:react
-import { SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { AWCIcon } from '@agence-adeliom/awc/dist/react';
 
-const App = () => <SlIcon src="https://shoelace.style/assets/images/shoe.svg" style={{ fontSize: '8rem' }}></SlIcon>;
+const App = () => <AWCIcon src="https://awc.a-dev.cloud/assets/images/shoe.svg" style={{ fontSize: '8rem' }}></AWCIcon>;
 ```
 
 {% endraw %}
 
 ## Icon Libraries
 
-You can register additional icons to use with the `<sl-icon>` component through icon libraries. Icon files can exist locally or on a CORS-enabled endpoint (e.g. a CDN). There is no limit to how many icon libraries you can register and there is no cost associated with registering them, as individual icons are only requested when they're used.
+You can register additional icons to use with the `<awc-icon>` component through icon libraries. Icon files can exist locally or on a CORS-enabled endpoint (e.g. a CDN). There is no limit to how many icon libraries you can register and there is no cost associated with registering them, as individual icons are only requested when they're used.
 
-Shoelace ships with two built-in icon libraries, `default` and `system`. The [default icon library](#customizing-the-default-library) contains all of the icons in the Bootstrap Icons project. The [system icon library](#customizing-the-system-library) contains only a small subset of icons that are used internally by Shoelace components.
+Adeliom WebComponents ships with two built-in icon libraries, `default` and `system`. The [default icon library](#customizing-the-default-library) contains all of the icons in the Bootstrap Icons project. The [system icon library](#customizing-the-system-library) contains only a small subset of icons that are used internally by Adeliom WebComponents components.
 
 To register an additional icon library, use the `registerIconLibrary()` function that's exported from `utilities/icon-library.js`. At a minimum, you must provide a name and a resolver function. The resolver function translates an icon name to a URL where the corresponding SVG file exists. Refer to the examples below to better understand how it works.
 
@@ -213,11 +213,11 @@ Here's an example that registers an icon library located in the `/assets/icons` 
 </script>
 ```
 
-To display an icon, set the `library` and `name` attributes of an `<sl-icon>` element.
+To display an icon, set the `library` and `name` attributes of an `<awc-icon>` element.
 
 ```html
 <!-- This will show the icon located at /assets/icons/smile.svg -->
-<sl-icon library="my-icons" name="smile"></sl-icon>
+<awc-icon library="my-icons" name="smile"></awc-icon>
 ```
 
 If an icon is used before registration occurs, it will be empty initially but shown when registered.
@@ -246,26 +246,26 @@ Icons in this library are licensed under the [Creative Commons 4.0 License](http
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="boxicons" name="bx-bot"></sl-icon>
-  <sl-icon library="boxicons" name="bx-cookie"></sl-icon>
-  <sl-icon library="boxicons" name="bx-joystick"></sl-icon>
-  <sl-icon library="boxicons" name="bx-save"></sl-icon>
-  <sl-icon library="boxicons" name="bx-server"></sl-icon>
-  <sl-icon library="boxicons" name="bx-wine"></sl-icon>
+  <awc-icon library="boxicons" name="bx-bot"></awc-icon>
+  <awc-icon library="boxicons" name="bx-cookie"></awc-icon>
+  <awc-icon library="boxicons" name="bx-joystick"></awc-icon>
+  <awc-icon library="boxicons" name="bx-save"></awc-icon>
+  <awc-icon library="boxicons" name="bx-server"></awc-icon>
+  <awc-icon library="boxicons" name="bx-wine"></awc-icon>
   <br />
-  <sl-icon library="boxicons" name="bxs-bot"></sl-icon>
-  <sl-icon library="boxicons" name="bxs-cookie"></sl-icon>
-  <sl-icon library="boxicons" name="bxs-joystick"></sl-icon>
-  <sl-icon library="boxicons" name="bxs-save"></sl-icon>
-  <sl-icon library="boxicons" name="bxs-server"></sl-icon>
-  <sl-icon library="boxicons" name="bxs-wine"></sl-icon>
+  <awc-icon library="boxicons" name="bxs-bot"></awc-icon>
+  <awc-icon library="boxicons" name="bxs-cookie"></awc-icon>
+  <awc-icon library="boxicons" name="bxs-joystick"></awc-icon>
+  <awc-icon library="boxicons" name="bxs-save"></awc-icon>
+  <awc-icon library="boxicons" name="bxs-server"></awc-icon>
+  <awc-icon library="boxicons" name="bxs-wine"></awc-icon>
   <br />
-  <sl-icon library="boxicons" name="bxl-apple"></sl-icon>
-  <sl-icon library="boxicons" name="bxl-chrome"></sl-icon>
-  <sl-icon library="boxicons" name="bxl-edge"></sl-icon>
-  <sl-icon library="boxicons" name="bxl-firefox"></sl-icon>
-  <sl-icon library="boxicons" name="bxl-opera"></sl-icon>
-  <sl-icon library="boxicons" name="bxl-microsoft"></sl-icon>
+  <awc-icon library="boxicons" name="bxl-apple"></awc-icon>
+  <awc-icon library="boxicons" name="bxl-chrome"></awc-icon>
+  <awc-icon library="boxicons" name="bxl-edge"></awc-icon>
+  <awc-icon library="boxicons" name="bxl-firefox"></awc-icon>
+  <awc-icon library="boxicons" name="bxl-opera"></awc-icon>
+  <awc-icon library="boxicons" name="bxl-microsoft"></awc-icon>
 </div>
 ```
 
@@ -277,12 +277,12 @@ Icons in this library are licensed under the [MIT License](https://github.com/lu
 
 ```html:preview
 <div style="font-size: 24px;">
-  <sl-icon library="lucide" name="feather"></sl-icon>
-  <sl-icon library="lucide" name="pie-chart"></sl-icon>
-  <sl-icon library="lucide" name="settings"></sl-icon>
-  <sl-icon library="lucide" name="map-pin"></sl-icon>
-  <sl-icon library="lucide" name="printer"></sl-icon>
-  <sl-icon library="lucide" name="shopping-cart"></sl-icon>
+  <awc-icon library="lucide" name="feather"></awc-icon>
+  <awc-icon library="lucide" name="pie-chart"></awc-icon>
+  <awc-icon library="lucide" name="settings"></awc-icon>
+  <awc-icon library="lucide" name="map-pin"></awc-icon>
+  <awc-icon library="lucide" name="printer"></awc-icon>
+  <awc-icon library="lucide" name="shopping-cart"></awc-icon>
 </div>
 
 <script type="module">
@@ -317,26 +317,26 @@ Icons in this library are licensed under the [Font Awesome Free License](https:/
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="fa" name="far-bell"></sl-icon>
-  <sl-icon library="fa" name="far-comment"></sl-icon>
-  <sl-icon library="fa" name="far-hand-point-right"></sl-icon>
-  <sl-icon library="fa" name="far-hdd"></sl-icon>
-  <sl-icon library="fa" name="far-heart"></sl-icon>
-  <sl-icon library="fa" name="far-star"></sl-icon>
+  <awc-icon library="fa" name="far-bell"></awc-icon>
+  <awc-icon library="fa" name="far-comment"></awc-icon>
+  <awc-icon library="fa" name="far-hand-point-right"></awc-icon>
+  <awc-icon library="fa" name="far-hdd"></awc-icon>
+  <awc-icon library="fa" name="far-heart"></awc-icon>
+  <awc-icon library="fa" name="far-star"></awc-icon>
   <br />
-  <sl-icon library="fa" name="fas-archive"></sl-icon>
-  <sl-icon library="fa" name="fas-book"></sl-icon>
-  <sl-icon library="fa" name="fas-chess-knight"></sl-icon>
-  <sl-icon library="fa" name="fas-dice"></sl-icon>
-  <sl-icon library="fa" name="fas-pizza-slice"></sl-icon>
-  <sl-icon library="fa" name="fas-scroll"></sl-icon>
+  <awc-icon library="fa" name="fas-archive"></awc-icon>
+  <awc-icon library="fa" name="fas-book"></awc-icon>
+  <awc-icon library="fa" name="fas-chess-knight"></awc-icon>
+  <awc-icon library="fa" name="fas-dice"></awc-icon>
+  <awc-icon library="fa" name="fas-pizza-slice"></awc-icon>
+  <awc-icon library="fa" name="fas-scroll"></awc-icon>
   <br />
-  <sl-icon library="fa" name="fab-apple"></sl-icon>
-  <sl-icon library="fa" name="fab-chrome"></sl-icon>
-  <sl-icon library="fa" name="fab-edge"></sl-icon>
-  <sl-icon library="fa" name="fab-firefox"></sl-icon>
-  <sl-icon library="fa" name="fab-opera"></sl-icon>
-  <sl-icon library="fa" name="fab-microsoft"></sl-icon>
+  <awc-icon library="fa" name="fab-apple"></awc-icon>
+  <awc-icon library="fa" name="fab-chrome"></awc-icon>
+  <awc-icon library="fa" name="fab-edge"></awc-icon>
+  <awc-icon library="fa" name="fab-firefox"></awc-icon>
+  <awc-icon library="fa" name="fab-opera"></awc-icon>
+  <awc-icon library="fa" name="fab-microsoft"></awc-icon>
 </div>
 ```
 
@@ -356,12 +356,12 @@ Icons in this library are licensed under the [MIT License](https://github.com/ta
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="heroicons" name="chat-bubble-left"></sl-icon>
-  <sl-icon library="heroicons" name="cloud"></sl-icon>
-  <sl-icon library="heroicons" name="cog"></sl-icon>
-  <sl-icon library="heroicons" name="document-text"></sl-icon>
-  <sl-icon library="heroicons" name="gift"></sl-icon>
-  <sl-icon library="heroicons" name="speaker-wave"></sl-icon>
+  <awc-icon library="heroicons" name="chat-bubble-left"></awc-icon>
+  <awc-icon library="heroicons" name="cloud"></awc-icon>
+  <awc-icon library="heroicons" name="cog"></awc-icon>
+  <awc-icon library="heroicons" name="document-text"></awc-icon>
+  <awc-icon library="heroicons" name="gift"></awc-icon>
+  <awc-icon library="heroicons" name="speaker-wave"></awc-icon>
 </div>
 ```
 
@@ -381,12 +381,12 @@ Icons in this library are licensed under the [MIT License](https://github.com/lu
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="iconoir" name="check-circled-outline"></sl-icon>
-  <sl-icon library="iconoir" name="drawer"></sl-icon>
-  <sl-icon library="iconoir" name="keyframes"></sl-icon>
-  <sl-icon library="iconoir" name="headset-help"></sl-icon>
-  <sl-icon library="iconoir" name="color-picker"></sl-icon>
-  <sl-icon library="iconoir" name="wifi"></sl-icon>
+  <awc-icon library="iconoir" name="check-circled-outline"></awc-icon>
+  <awc-icon library="iconoir" name="drawer"></awc-icon>
+  <awc-icon library="iconoir" name="keyframes"></awc-icon>
+  <awc-icon library="iconoir" name="headset-help"></awc-icon>
+  <awc-icon library="iconoir" name="color-picker"></awc-icon>
+  <awc-icon library="iconoir" name="wifi"></awc-icon>
 </div>
 ```
 
@@ -412,26 +412,26 @@ Icons in this library are licensed under the [MIT License](https://github.com/io
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="ionicons" name="alarm"></sl-icon>
-  <sl-icon library="ionicons" name="american-football"></sl-icon>
-  <sl-icon library="ionicons" name="bug"></sl-icon>
-  <sl-icon library="ionicons" name="chatbubble"></sl-icon>
-  <sl-icon library="ionicons" name="settings"></sl-icon>
-  <sl-icon library="ionicons" name="warning"></sl-icon>
+  <awc-icon library="ionicons" name="alarm"></awc-icon>
+  <awc-icon library="ionicons" name="american-football"></awc-icon>
+  <awc-icon library="ionicons" name="bug"></awc-icon>
+  <awc-icon library="ionicons" name="chatbubble"></awc-icon>
+  <awc-icon library="ionicons" name="settings"></awc-icon>
+  <awc-icon library="ionicons" name="warning"></awc-icon>
   <br />
-  <sl-icon library="ionicons" name="alarm-outline"></sl-icon>
-  <sl-icon library="ionicons" name="american-football-outline"></sl-icon>
-  <sl-icon library="ionicons" name="bug-outline"></sl-icon>
-  <sl-icon library="ionicons" name="chatbubble-outline"></sl-icon>
-  <sl-icon library="ionicons" name="settings-outline"></sl-icon>
-  <sl-icon library="ionicons" name="warning-outline"></sl-icon>
+  <awc-icon library="ionicons" name="alarm-outline"></awc-icon>
+  <awc-icon library="ionicons" name="american-football-outline"></awc-icon>
+  <awc-icon library="ionicons" name="bug-outline"></awc-icon>
+  <awc-icon library="ionicons" name="chatbubble-outline"></awc-icon>
+  <awc-icon library="ionicons" name="settings-outline"></awc-icon>
+  <awc-icon library="ionicons" name="warning-outline"></awc-icon>
   <br />
-  <sl-icon library="ionicons" name="alarm-sharp"></sl-icon>
-  <sl-icon library="ionicons" name="american-football-sharp"></sl-icon>
-  <sl-icon library="ionicons" name="bug-sharp"></sl-icon>
-  <sl-icon library="ionicons" name="chatbubble-sharp"></sl-icon>
-  <sl-icon library="ionicons" name="settings-sharp"></sl-icon>
-  <sl-icon library="ionicons" name="warning-sharp"></sl-icon>
+  <awc-icon library="ionicons" name="alarm-sharp"></awc-icon>
+  <awc-icon library="ionicons" name="american-football-sharp"></awc-icon>
+  <awc-icon library="ionicons" name="bug-sharp"></awc-icon>
+  <awc-icon library="ionicons" name="chatbubble-sharp"></awc-icon>
+  <awc-icon library="ionicons" name="settings-sharp"></awc-icon>
+  <awc-icon library="ionicons" name="warning-sharp"></awc-icon>
 </div>
 ```
 
@@ -452,19 +452,19 @@ Icons in this library are licensed under the [MIT License](https://github.com/mi
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="jam" name="calendar"></sl-icon>
-  <sl-icon library="jam" name="camera"></sl-icon>
-  <sl-icon library="jam" name="filter"></sl-icon>
-  <sl-icon library="jam" name="leaf"></sl-icon>
-  <sl-icon library="jam" name="picture"></sl-icon>
-  <sl-icon library="jam" name="set-square"></sl-icon>
+  <awc-icon library="jam" name="calendar"></awc-icon>
+  <awc-icon library="jam" name="camera"></awc-icon>
+  <awc-icon library="jam" name="filter"></awc-icon>
+  <awc-icon library="jam" name="leaf"></awc-icon>
+  <awc-icon library="jam" name="picture"></awc-icon>
+  <awc-icon library="jam" name="set-square"></awc-icon>
   <br />
-  <sl-icon library="jam" name="calendar-f"></sl-icon>
-  <sl-icon library="jam" name="camera-f"></sl-icon>
-  <sl-icon library="jam" name="filter-f"></sl-icon>
-  <sl-icon library="jam" name="leaf-f"></sl-icon>
-  <sl-icon library="jam" name="picture-f"></sl-icon>
-  <sl-icon library="jam" name="set-square-f"></sl-icon>
+  <awc-icon library="jam" name="calendar-f"></awc-icon>
+  <awc-icon library="jam" name="camera-f"></awc-icon>
+  <awc-icon library="jam" name="filter-f"></awc-icon>
+  <awc-icon library="jam" name="leaf-f"></awc-icon>
+  <awc-icon library="jam" name="picture-f"></awc-icon>
+  <awc-icon library="jam" name="set-square-f"></awc-icon>
 </div>
 ```
 
@@ -488,26 +488,26 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="material" name="notifications"></sl-icon>
-  <sl-icon library="material" name="email"></sl-icon>
-  <sl-icon library="material" name="delete"></sl-icon>
-  <sl-icon library="material" name="volume_up"></sl-icon>
-  <sl-icon library="material" name="settings"></sl-icon>
-  <sl-icon library="material" name="shopping_basket"></sl-icon>
+  <awc-icon library="material" name="notifications"></awc-icon>
+  <awc-icon library="material" name="email"></awc-icon>
+  <awc-icon library="material" name="delete"></awc-icon>
+  <awc-icon library="material" name="volume_up"></awc-icon>
+  <awc-icon library="material" name="settings"></awc-icon>
+  <awc-icon library="material" name="shopping_basket"></awc-icon>
   <br />
-  <sl-icon library="material" name="notifications_round"></sl-icon>
-  <sl-icon library="material" name="email_round"></sl-icon>
-  <sl-icon library="material" name="delete_round"></sl-icon>
-  <sl-icon library="material" name="volume_up_round"></sl-icon>
-  <sl-icon library="material" name="settings_round"></sl-icon>
-  <sl-icon library="material" name="shopping_basket_round"></sl-icon>
+  <awc-icon library="material" name="notifications_round"></awc-icon>
+  <awc-icon library="material" name="email_round"></awc-icon>
+  <awc-icon library="material" name="delete_round"></awc-icon>
+  <awc-icon library="material" name="volume_up_round"></awc-icon>
+  <awc-icon library="material" name="settings_round"></awc-icon>
+  <awc-icon library="material" name="shopping_basket_round"></awc-icon>
   <br />
-  <sl-icon library="material" name="notifications_sharp"></sl-icon>
-  <sl-icon library="material" name="email_sharp"></sl-icon>
-  <sl-icon library="material" name="delete_sharp"></sl-icon>
-  <sl-icon library="material" name="volume_up_sharp"></sl-icon>
-  <sl-icon library="material" name="settings_sharp"></sl-icon>
-  <sl-icon library="material" name="shopping_basket_sharp"></sl-icon>
+  <awc-icon library="material" name="notifications_sharp"></awc-icon>
+  <awc-icon library="material" name="email_sharp"></awc-icon>
+  <awc-icon library="material" name="delete_sharp"></awc-icon>
+  <awc-icon library="material" name="volume_up_sharp"></awc-icon>
+  <awc-icon library="material" name="settings_sharp"></awc-icon>
+  <awc-icon library="material" name="shopping_basket_sharp"></awc-icon>
 </div>
 ```
 
@@ -532,19 +532,19 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="remixicon" name="business/cloud-line"></sl-icon>
-  <sl-icon library="remixicon" name="design/brush-line"></sl-icon>
-  <sl-icon library="remixicon" name="business/pie-chart-line"></sl-icon>
-  <sl-icon library="remixicon" name="development/bug-line"></sl-icon>
-  <sl-icon library="remixicon" name="media/image-line"></sl-icon>
-  <sl-icon library="remixicon" name="system/alert-line"></sl-icon>
+  <awc-icon library="remixicon" name="business/cloud-line"></awc-icon>
+  <awc-icon library="remixicon" name="design/brush-line"></awc-icon>
+  <awc-icon library="remixicon" name="business/pie-chart-line"></awc-icon>
+  <awc-icon library="remixicon" name="development/bug-line"></awc-icon>
+  <awc-icon library="remixicon" name="media/image-line"></awc-icon>
+  <awc-icon library="remixicon" name="system/alert-line"></awc-icon>
   <br />
-  <sl-icon library="remixicon" name="business/cloud-fill"></sl-icon>
-  <sl-icon library="remixicon" name="design/brush-fill"></sl-icon>
-  <sl-icon library="remixicon" name="business/pie-chart-fill"></sl-icon>
-  <sl-icon library="remixicon" name="development/bug-fill"></sl-icon>
-  <sl-icon library="remixicon" name="media/image-fill"></sl-icon>
-  <sl-icon library="remixicon" name="system/alert-fill"></sl-icon>
+  <awc-icon library="remixicon" name="business/cloud-fill"></awc-icon>
+  <awc-icon library="remixicon" name="design/brush-fill"></awc-icon>
+  <awc-icon library="remixicon" name="business/pie-chart-fill"></awc-icon>
+  <awc-icon library="remixicon" name="development/bug-fill"></awc-icon>
+  <awc-icon library="remixicon" name="media/image-fill"></awc-icon>
+  <awc-icon library="remixicon" name="system/alert-fill"></awc-icon>
 </div>
 ```
 
@@ -564,19 +564,19 @@ Icons in this library are licensed under the [MIT License](https://github.com/ta
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="tabler" name="alert-triangle"></sl-icon>
-  <sl-icon library="tabler" name="arrow-back"></sl-icon>
-  <sl-icon library="tabler" name="at"></sl-icon>
-  <sl-icon library="tabler" name="ball-baseball"></sl-icon>
-  <sl-icon library="tabler" name="cake"></sl-icon>
-  <sl-icon library="tabler" name="files"></sl-icon>
+  <awc-icon library="tabler" name="alert-triangle"></awc-icon>
+  <awc-icon library="tabler" name="arrow-back"></awc-icon>
+  <awc-icon library="tabler" name="at"></awc-icon>
+  <awc-icon library="tabler" name="ball-baseball"></awc-icon>
+  <awc-icon library="tabler" name="cake"></awc-icon>
+  <awc-icon library="tabler" name="files"></awc-icon>
   <br />
-  <sl-icon library="tabler" name="keyboard"></sl-icon>
-  <sl-icon library="tabler" name="moon"></sl-icon>
-  <sl-icon library="tabler" name="pig"></sl-icon>
-  <sl-icon library="tabler" name="printer"></sl-icon>
-  <sl-icon library="tabler" name="ship"></sl-icon>
-  <sl-icon library="tabler" name="toilet-paper"></sl-icon>
+  <awc-icon library="tabler" name="keyboard"></awc-icon>
+  <awc-icon library="tabler" name="moon"></awc-icon>
+  <awc-icon library="tabler" name="pig"></awc-icon>
+  <awc-icon library="tabler" name="printer"></awc-icon>
+  <awc-icon library="tabler" name="ship"></awc-icon>
+  <awc-icon library="tabler" name="toilet-paper"></awc-icon>
 </div>
 ```
 
@@ -602,25 +602,25 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="unicons" name="clock"></sl-icon>
-  <sl-icon library="unicons" name="graph-bar"></sl-icon>
-  <sl-icon library="unicons" name="padlock"></sl-icon>
-  <sl-icon library="unicons" name="polygon"></sl-icon>
-  <sl-icon library="unicons" name="rocket"></sl-icon>
-  <sl-icon library="unicons" name="star"></sl-icon>
+  <awc-icon library="unicons" name="clock"></awc-icon>
+  <awc-icon library="unicons" name="graph-bar"></awc-icon>
+  <awc-icon library="unicons" name="padlock"></awc-icon>
+  <awc-icon library="unicons" name="polygon"></awc-icon>
+  <awc-icon library="unicons" name="rocket"></awc-icon>
+  <awc-icon library="unicons" name="star"></awc-icon>
   <br />
-  <sl-icon library="unicons" name="clock-s"></sl-icon>
-  <sl-icon library="unicons" name="graph-bar-s"></sl-icon>
-  <sl-icon library="unicons" name="padlock-s"></sl-icon>
-  <sl-icon library="unicons" name="polygon-s"></sl-icon>
-  <sl-icon library="unicons" name="rocket-s"></sl-icon>
-  <sl-icon library="unicons" name="star-s"></sl-icon>
+  <awc-icon library="unicons" name="clock-s"></awc-icon>
+  <awc-icon library="unicons" name="graph-bar-s"></awc-icon>
+  <awc-icon library="unicons" name="padlock-s"></awc-icon>
+  <awc-icon library="unicons" name="polygon-s"></awc-icon>
+  <awc-icon library="unicons" name="rocket-s"></awc-icon>
+  <awc-icon library="unicons" name="star-s"></awc-icon>
 </div>
 ```
 
 ### Customizing the Default Library
 
-The default icon library contains over 1,300 icons courtesy of the [Bootstrap Icons](https://icons.getbootstrap.com/) project. These are the icons that display when you use `<sl-icon>` without the `library` attribute. If you prefer to have these icons resolve elsewhere or to a different icon library, register an icon library using the `default` name and a custom resolver.
+The default icon library contains over 1,300 icons courtesy of the [Bootstrap Icons](https://icons.getbootstrap.com/) project. These are the icons that display when you use `<awc-icon>` without the `library` attribute. If you prefer to have these icons resolve elsewhere or to a different icon library, register an icon library using the `default` name and a custom resolver.
 
 This example will load the same set of icons from the jsDelivr CDN instead of your local assets folder.
 
@@ -641,11 +641,11 @@ To improve performance you can use a SVG sprites to avoid multiple trips for eac
 As always, make sure to benchmark these changes. When using HTTP/2, it may in fact be more bandwidth-friendly to use multiple small requests instead of 1 large sprite sheet.
 
 :::danger
-When using sprite sheets, the `sl-load` and `sl-error` events will not fire.
+When using sprite sheets, the `awc-load` and `awc-error` events will not fire.
 :::
 
 :::danger
-For security reasons, browsers may apply the same-origin policy on `<use>` elements located in the `<sl-icon>` shadow dom and
+For security reasons, browsers may apply the same-origin policy on `<use>` elements located in the `<awc-icon>` shadow dom and
 may refuse to load a cross-origin URL. There is currently no defined way to set a cross-origin policy for `<use>` elements.
 For this reason, sprite sheets should only be used if you're self-hosting them.
 :::
@@ -662,16 +662,16 @@ For this reason, sprite sheets should only be used if you're self-hosting them.
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="sprite" name="clock"></sl-icon>
-  <sl-icon library="sprite" name="speedometer"></sl-icon>
+  <awc-icon library="sprite" name="clock"></awc-icon>
+  <awc-icon library="sprite" name="speedometer"></awc-icon>
 </div>
 ```
 
 ### Customizing the System Library
 
-The system library contains only the icons used internally by Shoelace components. Unlike the default icon library, the system library does not rely on physical assets. Instead, its icons are hard-coded as data URIs into the resolver to ensure their availability.
+The system library contains only the icons used internally by Adeliom WebComponents components. Unlike the default icon library, the system library does not rely on physical assets. Instead, its icons are hard-coded as data URIs into the resolver to ensure their availability.
 
-If you want to change the icons Shoelace uses internally, you can register an icon library using the `system` name and a custom resolver. If you choose to do this, it's your responsibility to provide all of the icons that are required by components. You can reference `src/components/library.system.ts` for a complete list of system icons used by Shoelace.
+If you want to change the icons Adeliom WebComponents uses internally, you can register an icon library using the `system` name and a custom resolver. If you choose to do this, it's your responsibility to provide all of the icons that are required by components. You can reference `src/components/library.system.ts` for a complete list of system icons used by Adeliom WebComponents.
 
 ```html
 <script type="module">
@@ -686,11 +686,11 @@ If you want to change the icons Shoelace uses internally, you can register an ic
 <!-- Supporting scripts and styles for the search utility -->
 <script>
   function wrapWithTooltip(item) {
-    const tooltip = document.createElement('sl-tooltip');
+    const tooltip = document.createElement('awc-tooltip');
     tooltip.content = item.getAttribute('data-name');
 
     // Close open tooltips
-    document.querySelectorAll('.icon-list sl-tooltip[open]').forEach(tooltip => tooltip.hide());
+    document.querySelectorAll('.icon-list awc-tooltip[open]').forEach(tooltip => tooltip.hide());
 
     // Wrap it with a tooltip and trick it into showing up
     item.parentNode.insertBefore(tooltip, item);
@@ -702,8 +702,8 @@ If you want to change the icons Shoelace uses internally, you can register an ic
     .then(res => res.json())
     .then(icons => {
       const container = document.querySelector('.icon-search');
-      const input = container.querySelector('sl-input');
-      const select = container.querySelector('sl-select');
+      const input = container.querySelector('awc-input');
+      const select = container.querySelector('awc-select');
       const copyInput = container.querySelector('.icon-copy-input');
       const loader = container.querySelector('.icon-loader');
       const list = container.querySelector('.icon-list');
@@ -724,12 +724,12 @@ If you want to change the icons Shoelace uses internally, you can register an ic
         list.appendChild(item);
 
         // Wrap it with a tooltip the first time the mouse lands on it. We do this instead of baking them into the DOM
-        // to improve this page's performance. See: https://github.com/shoelace-style/shoelace/issues/1122
+        // to improve this page's performance. See: https://github.com/agence-adeliom/awc/issues/1122
         item.addEventListener('mouseover', () => wrapWithTooltip(item), { once: true });
 
         // Copy on click
         item.addEventListener('click', () => {
-          const tooltip = item.closest('sl-tooltip');
+          const tooltip = item.closest('awc-tooltip');
           copyInput.value = i.name;
           copyInput.select();
           document.execCommand('copy');
@@ -742,7 +742,7 @@ If you want to change the icons Shoelace uses internally, you can register an ic
       });
 
       // Filter as the user types
-      input.addEventListener('sl-input', () => {
+      input.addEventListener('awc-input', () => {
         clearTimeout(inputTimeout);
         inputTimeout = setTimeout(() => {
           [...list.querySelectorAll('.icon-list-item')].map(item => {
@@ -758,21 +758,21 @@ If you want to change the icons Shoelace uses internally, you can register an ic
       });
 
       // Sort by type and remember preference
-      const iconType = sessionStorage.getItem('sl-icon:type') || 'outline';
+      const iconType = sessionStorage.getItem('awc-icon:type') || 'outline';
       select.value = iconType;
       list.setAttribute('data-type', select.value);
-      select.addEventListener('sl-change', () => {
+      select.addEventListener('awc-change', () => {
         list.setAttribute('data-type', select.value);
-        sessionStorage.setItem('sl-icon:type', select.value);
+        sessionStorage.setItem('awc-icon:type', select.value);
       });
     });
 </script>
 
 <style>
   .icon-search {
-    border: solid 1px var(--sl-panel-border-color);
-    border-radius: var(--sl-border-radius-medium);
-    padding: var(--sl-spacing-medium);
+    border: solid 1px var(--awc-panel-border-color);
+    border-radius: var(--awc-border-radius-medium);
+    padding: var(--awc-spacing-medium);
   }
 
   .icon-search [hidden] {
@@ -783,11 +783,11 @@ If you want to change the icons Shoelace uses internally, you can register an ic
     display: flex;
   }
 
-  .icon-search-controls sl-input {
+  .icon-search-controls awc-input {
     flex: 1 1 auto;
   }
 
-  .icon-search-controls sl-select {
+  .icon-search-controls awc-select {
     width: 10rem;
     flex: 0 0 auto;
     margin-left: 1rem;
@@ -816,18 +816,18 @@ If you want to change the icons Shoelace uses internally, you can register an ic
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--sl-border-radius-medium);
+    border-radius: var(--awc-border-radius-medium);
     font-size: 24px;
     width: 2em;
     height: 2em;
     margin: 0 auto;
     cursor: copy;
-    transition: var(--sl-transition-medium) all;
+    transition: var(--awc-transition-medium) all;
   }
 
   .icon-list-item:hover {
-    background-color: var(--sl-color-primary-50);
-    color: var(--sl-color-primary-600);
+    background-color: var(--awc-color-primary-50);
+    color: var(--awc-color-primary-600);
   }
 
   .icon-list[data-type="outline"] .icon-list-item[data-name$="-fill"] {
@@ -857,7 +857,7 @@ If you want to change the icons Shoelace uses internally, you can register an ic
       display: block;
     }
 
-    .icon-search-controls sl-select {
+    .icon-search-controls awc-select {
       width: auto;
       margin: 1rem 0 0 0;
     }

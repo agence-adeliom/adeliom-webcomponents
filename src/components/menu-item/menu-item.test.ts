@@ -1,26 +1,26 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/awc.js';
 import { clickOnElement } from '../../internal/test.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type SlMenuItem from './menu-item';
+import type AWCMenuItem from './menu-item';
 
-describe('<sl-menu-item>', () => {
+describe('<awc-menu-item>', () => {
   it('should pass accessibility tests', async () => {
-    const el = await fixture<SlMenuItem>(html`
-      <sl-menu>
-        <sl-menu-item>Item 1</sl-menu-item>
-        <sl-menu-item>Item 2</sl-menu-item>
-        <sl-menu-item>Item 3</sl-menu-item>
-        <sl-divider></sl-divider>
-        <sl-menu-item type="checkbox" checked>Checked</sl-menu-item>
-        <sl-menu-item type="checkbox">Unchecked</sl-menu-item>
-      </sl-menu>
+    const el = await fixture<AWCMenuItem>(html`
+      <awc-menu>
+        <awc-menu-item>Item 1</awc-menu-item>
+        <awc-menu-item>Item 2</awc-menu-item>
+        <awc-menu-item>Item 3</awc-menu-item>
+        <awc-divider></awc-divider>
+        <awc-menu-item type="checkbox" checked>Checked</awc-menu-item>
+        <awc-menu-item type="checkbox">Unchecked</awc-menu-item>
+      </awc-menu>
     `);
     await expect(el).to.be.accessible();
   });
 
   it('should have the correct default properties', async () => {
-    const el = await fixture<SlMenuItem>(html` <sl-menu-item>Test</sl-menu-item> `);
+    const el = await fixture<AWCMenuItem>(html` <awc-menu-item>Test</awc-menu-item> `);
 
     expect(el.value).to.equal('');
     expect(el.disabled).to.be.false;
@@ -28,12 +28,12 @@ describe('<sl-menu-item>', () => {
   });
 
   it('should render the correct aria attributes when disabled', async () => {
-    const el = await fixture<SlMenuItem>(html` <sl-menu-item disabled>Test</sl-menu-item> `);
+    const el = await fixture<AWCMenuItem>(html` <awc-menu-item disabled>Test</awc-menu-item> `);
     expect(el.getAttribute('aria-disabled')).to.equal('true');
   });
 
   it('should not emit the click event when disabled', async () => {
-    const el = await fixture<SlMenuItem>(html` <sl-menu-item disabled>Test</sl-menu-item> `);
+    const el = await fixture<AWCMenuItem>(html` <awc-menu-item disabled>Test</awc-menu-item> `);
     const clickHandler = sinon.spy();
     el.addEventListener('click', clickHandler);
     await clickOnElement(el);
@@ -43,12 +43,12 @@ describe('<sl-menu-item>', () => {
   });
 
   it('should return a text label when calling getTextLabel()', async () => {
-    const el = await fixture<SlMenuItem>(html` <sl-menu-item>Test</sl-menu-item> `);
+    const el = await fixture<AWCMenuItem>(html` <awc-menu-item>Test</awc-menu-item> `);
     expect(el.getTextLabel()).to.equal('Test');
   });
 
   it('should emit the slotchange event when the label changes', async () => {
-    const el = await fixture<SlMenuItem>(html` <sl-menu-item>Text</sl-menu-item> `);
+    const el = await fixture<AWCMenuItem>(html` <awc-menu-item>Text</awc-menu-item> `);
     const slotChangeHandler = sinon.spy();
 
     el.addEventListener('slotchange', slotChangeHandler);
@@ -59,14 +59,14 @@ describe('<sl-menu-item>', () => {
   });
 
   it('should render a hidden menu item when the inert attribute is used', async () => {
-    const menu = await fixture<SlMenuItem>(html`
-      <sl-menu>
-        <sl-menu-item inert>Item 1</sl-menu-item>
-        <sl-menu-item>Item 2</sl-menu-item>
-        <sl-menu-item>Item 3</sl-menu-item>
-      </sl-menu>
+    const menu = await fixture<AWCMenuItem>(html`
+      <awc-menu>
+        <awc-menu-item inert>Item 1</awc-menu-item>
+        <awc-menu-item>Item 2</awc-menu-item>
+        <awc-menu-item>Item 3</awc-menu-item>
+      </awc-menu>
     `);
-    const item1 = menu.querySelector('sl-menu-item')!;
+    const item1 = menu.querySelector('awc-menu-item')!;
 
     expect(getComputedStyle(item1).display).to.equal('none');
   });

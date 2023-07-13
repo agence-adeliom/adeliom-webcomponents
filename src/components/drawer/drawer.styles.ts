@@ -6,9 +6,9 @@ export default css`
 
   :host {
     --size: 25rem;
-    --header-spacing: var(--sl-spacing-large);
-    --body-spacing: var(--sl-spacing-large);
-    --footer-spacing: var(--sl-spacing-large);
+    --header-spacing: var(--awc-spacing-large);
+    --body-spacing: var(--awc-spacing-large);
+    --footer-spacing: var(--awc-spacing-large);
 
     display: contents;
   }
@@ -29,7 +29,7 @@ export default css`
 
   .drawer--fixed {
     position: fixed;
-    z-index: var(--sl-z-index-drawer);
+    z-index: var(--awc-z-index-drawer);
   }
 
   .drawer__panel {
@@ -39,8 +39,8 @@ export default css`
     z-index: 2;
     max-width: 100%;
     max-height: 100%;
-    background-color: var(--sl-panel-background-color);
-    box-shadow: var(--sl-shadow-x-large);
+    background-color: var(--awc-panel-background-color);
+    box-shadow: var(--awc-shadow-x-large);
     overflow: auto;
     pointer-events: all;
   }
@@ -92,8 +92,8 @@ export default css`
   .drawer__title {
     flex: 1 1 auto;
     font: inherit;
-    font-size: var(--sl-font-size-large);
-    line-height: var(--sl-line-height-dense);
+    font-size: var(--awc-font-size-large);
+    line-height: var(--awc-line-height-dense);
     padding: var(--header-spacing);
     margin: 0;
   }
@@ -103,16 +103,16 @@ export default css`
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
-    gap: var(--sl-spacing-2x-small);
+    gap: var(--awc-spacing-2x-small);
     padding: 0 var(--header-spacing);
   }
 
-  .drawer__header-actions sl-icon-button,
-  .drawer__header-actions ::slotted(sl-icon-button) {
+  .drawer__header-actions awc-icon-button,
+  .drawer__header-actions ::slotted(awc-icon-button) {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    font-size: var(--sl-font-size-medium);
+    font-size: var(--awc-font-size-medium);
   }
 
   .drawer__body {
@@ -128,8 +128,8 @@ export default css`
     padding: var(--footer-spacing);
   }
 
-  .drawer__footer ::slotted(sl-button:not(:last-of-type)) {
-    margin-inline-end: var(--sl-spacing-x-small);
+  .drawer__footer ::slotted(awc-button:not(:last-of-type)) {
+    margin-inline-end: var(--awc-spacing-x-small);
   }
 
   .drawer:not(.drawer--has-footer) .drawer__footer {
@@ -143,7 +143,7 @@ export default css`
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: var(--sl-overlay-background-color);
+    background-color: var(--awc-overlay-background-color);
     pointer-events: all;
   }
 
@@ -153,7 +153,7 @@ export default css`
 
   @media (forced-colors: active) {
     .drawer__panel {
-      border: solid 1px var(--sl-color-neutral-0);
+      border: solid 1px var(--awc-color-neutral-0);
     }
   }
 `;

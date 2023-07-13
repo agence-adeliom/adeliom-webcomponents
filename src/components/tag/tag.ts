@@ -3,29 +3,29 @@ import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property } from 'lit/decorators.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import AWCElement from '../../internal/awc-element.js';
 import styles from './tag.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Tags are used as labels to organize things or to indicate a selection.
- * @documentation https://shoelace.style/components/tag
+ * @documentation https://awc.a-dev.cloud/components/tag
  * @status stable
  * @since 2.0
  *
- * @dependency sl-icon-button
+ * @dependency awc-icon-button
  *
  * @slot - The tag's content.
  *
- * @event sl-remove - Emitted when the remove button is activated.
+ * @event awc-remove - Emitted when the remove button is activated.
  *
  * @csspart base - The component's base wrapper.
  * @csspart content - The tag's content.
- * @csspart remove-button - The tag's remove button, an `<sl-icon-button>`.
+ * @csspart remove-button - The tag's remove button, an `<awc-icon-button>`.
  * @csspart remove-button__base - The remove button's exported `base` part.
  */
-@customElement('sl-tag')
-export default class SlTag extends ShoelaceElement {
+@customElement('awc-tag')
+export default class AWCTag extends AWCElement {
   static styles: CSSResultGroup = styles;
   private readonly localize = new LocalizeController(this);
 
@@ -42,7 +42,7 @@ export default class SlTag extends ShoelaceElement {
   @property({ type: Boolean }) removable = false;
 
   private handleRemoveClick() {
-    this.emit('sl-remove');
+    this.emit('awc-remove');
   }
 
   render() {
@@ -74,7 +74,7 @@ export default class SlTag extends ShoelaceElement {
 
         ${this.removable
           ? html`
-              <sl-icon-button
+              <awc-icon-button
                 part="remove-button"
                 exportparts="base:remove-button__base"
                 name="x-lg"
@@ -83,7 +83,7 @@ export default class SlTag extends ShoelaceElement {
                 class="tag__remove"
                 @click=${this.handleRemoveClick}
                 tabindex="-1"
-              ></sl-icon-button>
+              ></awc-icon-button>
             `
           : ''}
       </span>
@@ -93,6 +93,6 @@ export default class SlTag extends ShoelaceElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-tag': SlTag;
+    'awc-tag': AWCTag;
   }
 }
