@@ -21,7 +21,7 @@ import type AWCRadioButton from '../radio-button/radio-button.js';
  * @summary Radio groups are used to group multiple [radios](/components/radio) or [radio buttons](/components/radio-button) so they function as a single form control.
  * @documentation https://awc.a-dev.cloud/components/radio-group
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-button-group
  *
@@ -341,14 +341,14 @@ export default class AWCRadioGroup extends AWCElement implements AWCFormControl 
       <fieldset
         part="form-control"
         class=${classMap({
-          'form-control': true,
-          'form-control--small': this.size === 'small',
-          'form-control--medium': this.size === 'medium',
-          'form-control--large': this.size === 'large',
-          'form-control--radio-group': true,
-          'form-control--has-label': hasLabel,
-          'form-control--has-help-text': hasHelpText
-        })}
+      'form-control': true,
+      'form-control--small': this.size === 'small',
+      'form-control--medium': this.size === 'medium',
+      'form-control--large': this.size === 'large',
+      'form-control--radio-group': true,
+      'form-control--has-label': hasLabel,
+      'form-control--has-help-text': hasHelpText
+    })}
         role="radiogroup"
         aria-labelledby="label"
         aria-describedby="help-text"
@@ -380,12 +380,12 @@ export default class AWCRadioGroup extends AWCElement implements AWCFormControl 
           </div>
 
           ${this.hasButtonGroup
-            ? html`
+        ? html`
                 <awc-button-group part="button-group" exportparts="base:button-group__base">
                   ${defaultSlot}
                 </awc-button-group>
               `
-            : defaultSlot}
+        : defaultSlot}
         </div>
 
         <slot

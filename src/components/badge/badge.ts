@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Badges are used to draw attention and display statuses or counts.
  * @documentation https://awc.a-dev.cloud/components/badge
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot - The badge's content.
  *
@@ -33,15 +33,15 @@ export default class AWCBadge extends AWCElement {
       <slot
         part="base"
         class=${classMap({
-          badge: true,
-          'badge--primary': this.variant === 'primary',
-          'badge--success': this.variant === 'success',
-          'badge--neutral': this.variant === 'neutral',
-          'badge--warning': this.variant === 'warning',
-          'badge--danger': this.variant === 'danger',
-          'badge--pill': this.pill,
-          'badge--pulse': this.pulse
-        })}
+      badge: true,
+      'badge--primary': this.variant === 'primary',
+      'badge--success': this.variant === 'success',
+      'badge--neutral': this.variant === 'neutral',
+      'badge--warning': this.variant === 'warning',
+      'badge--danger': this.variant === 'danger',
+      'badge--pill': this.pill,
+      'badge--pulse': this.pulse
+    })}
         role="status"
       ></slot>
     `;

@@ -19,7 +19,7 @@ const iconCache = new Map<string, Promise<SVGResult>>();
  * @summary Icons are symbols that can be used to represent various options within an application.
  * @documentation https://awc.a-dev.cloud/components/icon
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @event awc-load - Emitted when the icon has loaded. When using `spriteSheet: true` this will not emit.
  * @event awc-error - Emitted when the icon fails to load due to an error. When using `spriteSheet: true` this will not emit.

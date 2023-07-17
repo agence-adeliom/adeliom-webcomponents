@@ -11,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Icons buttons are simple, icon-only buttons that can be used for actions and in toolbars.
  * @documentation https://awc.a-dev.cloud/components/icon-button
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-icon
  *
@@ -99,10 +99,10 @@ export default class AWCIconButton extends AWCElement {
       <${tag}
         part="base"
         class=${classMap({
-          'icon-button': true,
-          'icon-button--disabled': !isLink && this.disabled,
-          'icon-button--focused': this.hasFocus
-        })}
+      'icon-button': true,
+      'icon-button--disabled': !isLink && this.disabled,
+      'icon-button--focused': this.hasFocus
+    })}
         ?disabled=${ifDefined(isLink ? undefined : this.disabled)}
         type=${ifDefined(isLink ? undefined : 'button')}
         href=${ifDefined(isLink ? this.href : undefined)}

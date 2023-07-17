@@ -12,7 +12,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Options define the selectable items within various form controls such as [select](/components/select).
  * @documentation https://awc.a-dev.cloud/components/option
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-icon
  *
@@ -114,12 +114,12 @@ export default class AWCOption extends AWCElement {
       <div
         part="base"
         class=${classMap({
-          option: true,
-          'option--current': this.current,
-          'option--disabled': this.disabled,
-          'option--selected': this.selected,
-          'option--hover': this.hasHover
-        })}
+      option: true,
+      'option--current': this.current,
+      'option--disabled': this.disabled,
+      'option--selected': this.selected,
+      'option--hover': this.hasHover
+    })}
         @mouseenter=${this.handleMouseEnter}
         @mouseleave=${this.handleMouseLeave}
       >

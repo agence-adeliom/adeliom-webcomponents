@@ -25,7 +25,7 @@ import type AWCRemoveEvent from '../../events/awc-remove.js';
  * @summary Selects allow you to choose items from a menu of predefined options.
  * @documentation https://awc.a-dev.cloud/components/select
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-icon
  * @dependency awc-popup
@@ -675,13 +675,13 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
       <div
         part="form-control"
         class=${classMap({
-          'form-control': true,
-          'form-control--small': this.size === 'small',
-          'form-control--medium': this.size === 'medium',
-          'form-control--large': this.size === 'large',
-          'form-control--has-label': hasLabel,
-          'form-control--has-help-text': hasHelpText
-        })}
+      'form-control': true,
+      'form-control--small': this.size === 'small',
+      'form-control--medium': this.size === 'medium',
+      'form-control--large': this.size === 'large',
+      'form-control--has-label': hasLabel,
+      'form-control--has-help-text': hasHelpText
+    })}
       >
         <label
           id="label"
@@ -696,21 +696,21 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
         <div part="form-control-input" class="form-control-input">
           <awc-popup
             class=${classMap({
-              select: true,
-              'select--standard': true,
-              'select--filled': this.filled,
-              'select--pill': this.pill,
-              'select--open': this.open,
-              'select--disabled': this.disabled,
-              'select--multiple': this.multiple,
-              'select--focused': this.hasFocus,
-              'select--placeholder-visible': isPlaceholderVisible,
-              'select--top': this.placement === 'top',
-              'select--bottom': this.placement === 'bottom',
-              'select--small': this.size === 'small',
-              'select--medium': this.size === 'medium',
-              'select--large': this.size === 'large'
-            })}
+      select: true,
+      'select--standard': true,
+      'select--filled': this.filled,
+      'select--pill': this.pill,
+      'select--open': this.open,
+      'select--disabled': this.disabled,
+      'select--multiple': this.multiple,
+      'select--focused': this.hasFocus,
+      'select--placeholder-visible': isPlaceholderVisible,
+      'select--top': this.placement === 'top',
+      'select--bottom': this.placement === 'bottom',
+      'select--small': this.size === 'small',
+      'select--medium': this.size === 'medium',
+      'select--large': this.size === 'large'
+    })}
             placement=${this.placement}
             strategy=${this.hoist ? 'fixed' : 'absolute'}
             flip
@@ -752,11 +752,11 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
               />
 
               ${this.multiple
-                ? html`
+        ? html`
                     <div part="tags" class="select__tags">
                       ${this.selectedOptions.map((option, index) => {
-                        if (index < this.maxOptionsVisible || this.maxOptionsVisible <= 0) {
-                          return html`
+          if (index < this.maxOptionsVisible || this.maxOptionsVisible <= 0) {
+            return html`
                             <awc-tag
                               part="tag"
                               exportparts="
@@ -773,15 +773,15 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
                               ${option.getTextLabel()}
                             </awc-tag>
                           `;
-                        } else if (index === this.maxOptionsVisible) {
-                          return html` <awc-tag size=${this.size}> +${this.selectedOptions.length - index} </awc-tag> `;
-                        } else {
-                          return null;
-                        }
-                      })}
+          } else if (index === this.maxOptionsVisible) {
+            return html` <awc-tag size=${this.size}> +${this.selectedOptions.length - index} </awc-tag> `;
+          } else {
+            return null;
+          }
+        })}
                     </div>
                   `
-                : ''}
+        : ''}
 
               <input
                 class="select__value-input"
@@ -796,7 +796,7 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
               />
 
               ${hasClearIcon
-                ? html`
+        ? html`
                     <button
                       part="clear-button"
                       class="select__clear"
@@ -811,7 +811,7 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
                       </slot>
                     </button>
                   `
-                : ''}
+        : ''}
 
               <slot name="expand-icon" part="expand-icon" class="select__expand-icon">
                 <awc-icon library="system" name="chevron-down"></awc-icon>

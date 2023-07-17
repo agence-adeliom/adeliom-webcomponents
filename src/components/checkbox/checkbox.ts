@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Checkboxes allow the user to toggle an option on or off.
  * @documentation https://awc.a-dev.cloud/components/checkbox
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-icon
  *
@@ -187,15 +187,15 @@ export default class AWCCheckbox extends AWCElement implements AWCFormControl {
       <label
         part="base"
         class=${classMap({
-          checkbox: true,
-          'checkbox--checked': this.checked,
-          'checkbox--disabled': this.disabled,
-          'checkbox--focused': this.hasFocus,
-          'checkbox--indeterminate': this.indeterminate,
-          'checkbox--small': this.size === 'small',
-          'checkbox--medium': this.size === 'medium',
-          'checkbox--large': this.size === 'large'
-        })}
+      checkbox: true,
+      'checkbox--checked': this.checked,
+      'checkbox--disabled': this.disabled,
+      'checkbox--focused': this.hasFocus,
+      'checkbox--indeterminate': this.indeterminate,
+      'checkbox--small': this.size === 'small',
+      'checkbox--medium': this.size === 'medium',
+      'checkbox--large': this.size === 'large'
+    })}
       >
         <input
           class="checkbox__input"
@@ -220,12 +220,12 @@ export default class AWCCheckbox extends AWCElement implements AWCFormControl {
           class="checkbox__control"
         >
           ${this.checked
-            ? html`
+        ? html`
                 <awc-icon part="checked-icon" class="checkbox__checked-icon" library="system" name="check"></awc-icon>
               `
-            : ''}
+        : ''}
           ${!this.checked && this.indeterminate
-            ? html`
+        ? html`
                 <awc-icon
                   part="indeterminate-icon"
                   class="checkbox__indeterminate-icon"
@@ -233,7 +233,7 @@ export default class AWCCheckbox extends AWCElement implements AWCFormControl {
                   name="indeterminate"
                 ></awc-icon>
               `
-            : ''}
+        : ''}
         </span>
 
         <div part="label" class="checkbox__label">

@@ -1,5 +1,6 @@
 import { classMap } from 'lit/directives/class-map.js';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
+import { ifDefined } from "lit/directives/if-defined.js";
 import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import AWCElement from '../../internal/awc-element.js';
@@ -10,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Cards can be used to group related subjects in a container.
  * @documentation https://awc.a-dev.cloud/components/card
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot - The card's main content.
  * @slot header - An optional header for the card.
@@ -34,23 +35,41 @@ export default class AWCCard extends AWCElement {
 
   private readonly hasSlotController = new HasSlotController(this, 'footer', 'header', 'image');
 
+  /** Indicates if card has border. */
+  @property({ type: Boolean, reflect: true }) bordered?: boolean = false;
+
+  /** Indicates if card has shadow. */
+  @property({ type: Boolean, reflect: true }) shadow?: boolean = false;
+
+  /** Indicates if card is horizontal. */
+  @property({ type: Boolean, reflect: true }) horizontal?: boolean = false;
+
+  /** Indicates if card is inner. */
+  @property({ type: Boolean, reflect: true }) inner?: boolean = false;
+
   render() {
     return html`
       <div
         part="base"
         class=${classMap({
-          card: true,
-          'card--has-footer': this.hasSlotController.test('footer'),
-          'card--has-image': this.hasSlotController.test('image'),
-          'card--has-header': this.hasSlotController.test('header')
-        })}
+      card: true,
+      'card--is-horizontal': !!ifDefined(this.horizontal),
+      'card--is-inner': !!ifDefined(this.inner),
+      'card--has-border': !!ifDefined(this.bordered),
+      'card--has-shadow': !!ifDefined(this.shadow),
+      'card--has-footer': this.hasSlotController.test('footer'),
+      'card--has-image': this.hasSlotController.test('image'),
+      'card--has-header': this.hasSlotController.test('header')
+    })}
       >
         <slot name="image" part="image" class="card__image"></slot>
-        <slot name="header" part="header" class="card__header"></slot>
-        <slot part="body" class="card__body"></slot>
-        <slot name="footer" part="footer" class="card__footer"></slot>
+        <div class="card__wrapper">
+          <slot name="header" part="header" class="card__header"></slot>
+          <slot part="body" class="card__body"></slot>
+          <slot name="footer" part="footer" class="card__footer"></slot>
+        </div>
       </div>
-    `;
+      `;
   }
 }
 

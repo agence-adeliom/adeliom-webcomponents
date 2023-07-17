@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Button groups can be used to group related buttons into sections.
  * @documentation https://awc.a-dev.cloud/components/button-group
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot - One or more `<awc-button>` elements to display in the button group.
  *

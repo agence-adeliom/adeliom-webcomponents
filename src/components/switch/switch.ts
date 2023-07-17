@@ -15,7 +15,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Switches allow the user to toggle an option on or off.
  * @documentation https://awc.a-dev.cloud/components/switch
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot - The switch's label.
  *
@@ -184,14 +184,14 @@ export default class AWCSwitch extends AWCElement implements AWCFormControl {
       <label
         part="base"
         class=${classMap({
-          switch: true,
-          'switch--checked': this.checked,
-          'switch--disabled': this.disabled,
-          'switch--focused': this.hasFocus,
-          'switch--small': this.size === 'small',
-          'switch--medium': this.size === 'medium',
-          'switch--large': this.size === 'large'
-        })}
+      switch: true,
+      'switch--checked': this.checked,
+      'switch--disabled': this.disabled,
+      'switch--focused': this.hasFocus,
+      'switch--small': this.size === 'small',
+      'switch--medium': this.size === 'medium',
+      'switch--large': this.size === 'large'
+    })}
       >
         <input
           class="switch__input"

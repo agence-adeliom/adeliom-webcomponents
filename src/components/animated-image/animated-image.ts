@@ -10,7 +10,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary A component for displaying animated GIFs and WEBPs that play and pause on interaction.
  * @documentation https://awc.a-dev.cloud/components/animated-image
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-icon
  *
@@ -95,7 +95,7 @@ export default class AWCAnimatedImage extends AWCElement {
         />
 
         ${this.isLoaded
-          ? html`
+        ? html`
               <img
                 class="animated-image__frozen"
                 src=${this.frozenFrame}
@@ -109,7 +109,7 @@ export default class AWCAnimatedImage extends AWCElement {
                 <slot name="pause-icon"><awc-icon name="pause-fill" library="system"></awc-icon></slot>
               </div>
             `
-          : ''}
+        : ''}
       </div>
     `;
   }

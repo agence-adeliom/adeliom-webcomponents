@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Skeletons are used to provide a visual representation of where content will eventually be drawn.
  * @documentation https://awc.a-dev.cloud/components/skeleton
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @csspart base - The component's base wrapper.
  * @csspart indicator - The skeleton's indicator which is responsible for its color and animation.
@@ -30,10 +30,10 @@ export default class AWCSkeleton extends AWCElement {
       <div
         part="base"
         class=${classMap({
-          skeleton: true,
-          'skeleton--pulse': this.effect === 'pulse',
-          'skeleton--sheen': this.effect === 'sheen'
-        })}
+      skeleton: true,
+      'skeleton--pulse': this.effect === 'pulse',
+      'skeleton--sheen': this.effect === 'sheen'
+    })}
       >
         <div part="indicator" class="skeleton__indicator"></div>
       </div>

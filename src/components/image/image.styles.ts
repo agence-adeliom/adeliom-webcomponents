@@ -6,6 +6,7 @@ export default css`
 
   :host {
     display: inline-block;
+    position: relative;
     line-height: 0;
     overflow: hidden;
   }

@@ -17,7 +17,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Ranges allow the user to select a single value within a given range using a slider.
  * @documentation https://awc.a-dev.cloud/components/range
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot label - The range's label. Alternatively, you can use the `label` attribute.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
@@ -282,11 +282,11 @@ export default class AWCRange extends AWCElement implements AWCFormControl {
       <div
         part="form-control"
         class=${classMap({
-          'form-control': true,
-          'form-control--medium': true, // range only has one size
-          'form-control--has-label': hasLabel,
-          'form-control--has-help-text': hasHelpText
-        })}
+      'form-control': true,
+      'form-control--medium': true, // range only has one size
+      'form-control--has-label': hasLabel,
+      'form-control--has-help-text': hasHelpText
+    })}
       >
         <label
           part="form-control-label"
@@ -301,14 +301,14 @@ export default class AWCRange extends AWCElement implements AWCFormControl {
           <div
             part="base"
             class=${classMap({
-              range: true,
-              'range--disabled': this.disabled,
-              'range--focused': this.hasFocus,
-              'range--rtl': this.localize.dir() === 'rtl',
-              'range--tooltip-visible': this.hasTooltip,
-              'range--tooltip-top': this.tooltip === 'top',
-              'range--tooltip-bottom': this.tooltip === 'bottom'
-            })}
+      range: true,
+      'range--disabled': this.disabled,
+      'range--focused': this.hasFocus,
+      'range--rtl': this.localize.dir() === 'rtl',
+      'range--tooltip-visible': this.hasTooltip,
+      'range--tooltip-top': this.tooltip === 'top',
+      'range--tooltip-bottom': this.tooltip === 'bottom'
+    })}
             @mousedown=${this.handleThumbDragStart}
             @mouseup=${this.handleThumbDragEnd}
             @touchstart=${this.handleThumbDragStart}
@@ -334,12 +334,12 @@ export default class AWCRange extends AWCElement implements AWCFormControl {
               @blur=${this.handleBlur}
             />
             ${this.tooltip !== 'none' && !this.disabled
-              ? html`
+        ? html`
                   <output part="tooltip" class="range__tooltip">
                     ${typeof this.tooltipFormatter === 'function' ? this.tooltipFormatter(this.value) : this.value}
                   </output>
                 `
-              : ''}
+        : ''}
           </div>
         </div>
 

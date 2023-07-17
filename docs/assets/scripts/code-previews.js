@@ -183,6 +183,7 @@
       if (!isReact) {
         htmlTemplate =
           `<script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@${awcVersion}/${cdndir}/awc.js"></script>\n` +
+          `<script src="https://cdn.tailwindcss.com"></script>\n` +
           `\n${htmlExample}`;
         jsTemplate = '';
       }

@@ -28,6 +28,8 @@ module.exports = function (doc, options) {
     const sourceGroupId = `code-preview-source-group-${count}`;
     const isExpanded = code.getAttribute('class').includes(':expanded');
     const noCodePen = code.getAttribute('class').includes(':no-codepen');
+    const noResizer = code.getAttribute('class').includes(':no-resizer');
+    const tailwindWrapper = code.getAttribute('class').includes(':tailwind');
 
     count++;
 
@@ -64,12 +66,14 @@ module.exports = function (doc, options) {
     `;
 
     const codePreview = `
-      <div class="code-preview ${isExpanded ? 'code-preview--expanded' : ''}">
+      <div class="code-preview ${isExpanded ? 'code-preview--expanded' : ''} ${tailwindWrapper ? 'code-preview--tailwind' : ''}">
         <div class="code-preview__preview">
           ${code.textContent}
-          <div class="code-preview__resizer">
-            <awc-icon name="grip-vertical"></awc-icon>
-          </div>
+          ${!noResizer ? `
+            <div class="code-preview__resizer">
+              <awc-icon name="grip-vertical"></awc-icon>
+            </div>
+            ` : '' }
         </div>
 
         <div class="code-preview__source-group" id="${sourceGroupId}">

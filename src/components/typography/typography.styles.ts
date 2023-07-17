@@ -7,7 +7,7 @@ export default css`
   :host {
     display: block;
     --font-family: var(--awc-font-sans);
-    --color: var(--awc-color-neutral-900);
+    --color: current;
     --font-weight: var(--awc-font-weight-normal);
     --font-size: var(--awc-font-size-base);
   }

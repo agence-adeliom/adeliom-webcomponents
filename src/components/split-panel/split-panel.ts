@@ -13,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Split panels display two adjacent panels, allowing the user to reposition them.
  * @documentation https://awc.a-dev.cloud/components/split-panel
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @event awc-reposition - Emitted when the divider's position changes.
  *

@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Short summary of the layout's intended use.
  * @documentation https://awc.a-dev.cloud/layout/block
  * @status experimental
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-example
  *

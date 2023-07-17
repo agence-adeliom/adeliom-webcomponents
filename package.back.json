@@ -1,7 +1,7 @@
 {
   "name": "@agence-adeliom/awc",
   "description": "A forward-thinking library of web components.",
-  "version": "1.0.0",
+  "version": "2.5.2",
   "homepage": "https://github.com/agence-adeliom/awc",
   "author": "Agence Adeliom",
   "license": "MIT",
@@ -40,34 +40,51 @@
   },
   "scripts": {
     "create": "plop --plopfile scripts/plop/plopfile.js",
-    "start": "node scripts/build.js --serve",
-    "build": "node scripts/build.js",
+    "start": "node scripts/run.js --serve",
+    "watch": "node scripts/run.js",
+
     "esbuild": "npm run hook:pre:build && node esbuild.config.mjs",
     "esbuild:watch": "npm run esbuild -- --watch",
+
     "verify": "npm run prettier:check && npm run lint && npm run build && npm run test",
+    "clear": "rm -rf _site dist cdn && mkdir -p dist",
+
     "prettier:check": "prettier --check --loglevel warn .",
     "prettier:fix": "prettier --write --loglevel warn .",
+
     "lint:check": "eslint src --max-warnings 0",
     "lint:fix": "npm run lint:check --fix",
+
     "test:run": "web-test-runner --group default",
     "test:watch": "npm run test:run -- --watch",
     "test:component": "web-test-runner -- --watch --group",
+
     "spell:check": "cspell \"**/*.{js,ts,json,html,css,md}\" --no-progress",
     "ts:check": "tsc --noEmit --project ./tsconfig.json",
     "ts:build": "tsc --project ./tsconfig.prod.json --outdir dist",
+
     "dependencies:list": "npm-check-updates --format repo --peer",
     "dependencies:update": "npm-check-updates --peer -u && npm install",
     "prepublishOnly": "npm run verify",
+
+    "make": "npm run make:metadata && npm run make:react && npm run make:web-types && npm run make:themes && npm run make:icons ",
     "make:metadata": "node scripts/make-metadata.js --outdir dist && node scripts/make-metadata.js --outdir cdn",
     "make:web-types": "node scripts/make-web-types.js --outdir dist && node scripts/make-web-types.js --outdir cdn",
     "make:themes": "node scripts/make-themes.js --outdir dist && node scripts/make-themes.js --outdir cdn",
     "make:icons": "node scripts/make-icons.js --outdir dist",
     "make:react": "node scripts/make-react.js --outdir dist",
+
+    "copy:cdn": "rm -rf cdn && cp -R dist cdn",
+    "copy:site": "rm -rf _site/cdn && cp -R cdn _site/cdn",
+
     "doc:build": "eleventy --config=eleventy.config.cjs",
     "doc:watch": "npm run doc:build -- --watch --incremental",
     "doc:serve": "npm run doc:build -- --serve",
-    "tailwindcss:build": "tailwindcss -i docs/assets/styles/tailwind.css -o docs/assets/styles/tailwind.min.css --postcss",
-    "tailwindcss:watch": "npm run tailwindcss:build -- --watch"
+
+    "tailwindcss:build": "tailwindcss -i docs/assets/styles/tailwind/tailwind.css -o docs/assets/styles/tailwind/build.css",
+    "tailwindcss:watch": "npm run tailwindcss:build -- --watch",
+
+    "hook:pre:build": "npm run ts:build && npm run copy:cdn"
   },
   "engines": {
     "node": ">=14.17.0"
@@ -134,8 +151,6 @@
     "ora": "^6.3.1",
     "pascal-case": "^3.1.2",
     "plop": "^3.1.2",
-    "postcss-import": "^15.1.0",
-    "postcss-nested": "^6.0.1",
     "prettier": "^3.0.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",

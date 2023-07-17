@@ -12,7 +12,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Menu items provide options for the user to pick from in a menu.
  * @documentation https://awc.a-dev.cloud/components/menu-item
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-icon
  *
@@ -120,11 +120,11 @@ export default class AWCMenuItem extends AWCElement {
       <div
         part="base"
         class=${classMap({
-          'menu-item': true,
-          'menu-item--checked': this.checked,
-          'menu-item--disabled': this.disabled,
-          'menu-item--has-submenu': false // reserved for future use
-        })}
+      'menu-item': true,
+      'menu-item--checked': this.checked,
+      'menu-item--disabled': this.disabled,
+      'menu-item--has-submenu': false // reserved for future use
+    })}
       >
         <span part="checked-icon" class="menu-item__check">
           <awc-icon name="check" library="system" aria-hidden="true"></awc-icon>

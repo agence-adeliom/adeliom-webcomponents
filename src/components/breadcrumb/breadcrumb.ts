@@ -11,7 +11,7 @@ import type AWCBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';
  * @summary Breadcrumbs provide a group of links so users can easily navigate a website's hierarchy.
  * @documentation https://awc.a-dev.cloud/components/breadcrumb
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot - One or more breadcrumb items to display.
  * @slot separator - The separator to use between breadcrumb items. Works best with `<awc-icon>`.

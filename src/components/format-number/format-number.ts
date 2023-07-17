@@ -6,7 +6,7 @@ import AWCElement from '../../internal/awc-element.js';
  * @summary Formats a number using the specified locale and options.
  * @documentation https://awc.a-dev.cloud/components/format-number
  * @status stable
- * @since 2.0
+ * @since 1.0
  */
 @customElement('awc-format-number')
 export default class AWCFormatNumber extends AWCElement {

@@ -18,7 +18,7 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
  * @summary A tree item serves as a hierarchical node that lives inside a [tree](/components/tree).
  * @documentation https://awc.a-dev.cloud/components/tree-item
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-checkbox
  * @dependency awc-icon
@@ -210,8 +210,8 @@ export default class AWCTreeItem extends AWCElement {
   getChildrenItems({ includeDisabled = true }: { includeDisabled?: boolean } = {}): AWCTreeItem[] {
     return this.childrenSlot
       ? ([...this.childrenSlot.assignedElements({ flatten: true })].filter(
-          (item: AWCTreeItem) => AWCTreeItem.isTreeItem(item) && (includeDisabled || !item.disabled)
-        ) as AWCTreeItem[])
+        (item: AWCTreeItem) => AWCTreeItem.isTreeItem(item) && (includeDisabled || !item.disabled)
+      ) as AWCTreeItem[])
       : [];
   }
 
@@ -223,14 +223,14 @@ export default class AWCTreeItem extends AWCElement {
       <div
         part="base"
         class="${classMap({
-          'tree-item': true,
-          'tree-item--expanded': this.expanded,
-          'tree-item--selected': this.selected,
-          'tree-item--disabled': this.disabled,
-          'tree-item--leaf': this.isLeaf,
-          'tree-item--has-expand-button': showExpandButton,
-          'tree-item--rtl': this.localize.dir() === 'rtl'
-        })}"
+      'tree-item': true,
+      'tree-item--expanded': this.expanded,
+      'tree-item--selected': this.selected,
+      'tree-item--disabled': this.disabled,
+      'tree-item--leaf': this.isLeaf,
+      'tree-item--has-expand-button': showExpandButton,
+      'tree-item--rtl': this.localize.dir() === 'rtl'
+    })}"
       >
         <div
           class="tree-item__item"
@@ -247,9 +247,9 @@ export default class AWCTreeItem extends AWCElement {
           <div
             part="expand-button"
             class=${classMap({
-              'tree-item__expand-button': true,
-              'tree-item__expand-button--visible': showExpandButton
-            })}
+      'tree-item__expand-button': true,
+      'tree-item__expand-button--visible': showExpandButton
+    })}
             aria-hidden="true"
           >
             ${when(this.loading, () => html` <awc-spinner></awc-spinner> `)}
@@ -262,8 +262,8 @@ export default class AWCTreeItem extends AWCElement {
           </div>
 
           ${when(
-            this.selectable,
-            () => html`
+      this.selectable,
+      () => html`
               <awc-checkbox
                 part="checkbox"
                 exportparts="
@@ -282,7 +282,7 @@ export default class AWCTreeItem extends AWCElement {
                 tabindex="-1"
               ></awc-checkbox>
             `
-          )}
+    )}
 
           <slot class="tree-item__label" part="label"></slot>
         </div>

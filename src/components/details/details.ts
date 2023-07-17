@@ -15,7 +15,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Details show a brief summary and expand to show additional content.
  * @documentation https://awc.a-dev.cloud/components/details
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-icon
  *
@@ -164,11 +164,11 @@ export default class AWCDetails extends AWCElement {
       <div
         part="base"
         class=${classMap({
-          details: true,
-          'details--open': this.open,
-          'details--disabled': this.disabled,
-          'details--rtl': isRtl
-        })}
+      details: true,
+      'details--open': this.open,
+      'details--disabled': this.disabled,
+      'details--rtl': isRtl
+    })}
       >
         <div
           part="header"

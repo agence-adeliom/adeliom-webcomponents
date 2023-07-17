@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Textareas collect data from the user and allow multiple lines of text.
  * @documentation https://awc.a-dev.cloud/components/textarea
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot label - The textarea's label. Alternatively, you can use the `label` attribute.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
@@ -307,13 +307,13 @@ export default class AWCTextarea extends AWCElement implements AWCFormControl {
       <div
         part="form-control"
         class=${classMap({
-          'form-control': true,
-          'form-control--small': this.size === 'small',
-          'form-control--medium': this.size === 'medium',
-          'form-control--large': this.size === 'large',
-          'form-control--has-label': hasLabel,
-          'form-control--has-help-text': hasHelpText
-        })}
+      'form-control': true,
+      'form-control--small': this.size === 'small',
+      'form-control--medium': this.size === 'medium',
+      'form-control--large': this.size === 'large',
+      'form-control--has-label': hasLabel,
+      'form-control--has-help-text': hasHelpText
+    })}
       >
         <label
           part="form-control-label"
@@ -328,19 +328,19 @@ export default class AWCTextarea extends AWCElement implements AWCFormControl {
           <div
             part="base"
             class=${classMap({
-              textarea: true,
-              'textarea--small': this.size === 'small',
-              'textarea--medium': this.size === 'medium',
-              'textarea--large': this.size === 'large',
-              'textarea--standard': !this.filled,
-              'textarea--filled': this.filled,
-              'textarea--disabled': this.disabled,
-              'textarea--focused': this.hasFocus,
-              'textarea--empty': !this.value,
-              'textarea--resize-none': this.resize === 'none',
-              'textarea--resize-vertical': this.resize === 'vertical',
-              'textarea--resize-auto': this.resize === 'auto'
-            })}
+      textarea: true,
+      'textarea--small': this.size === 'small',
+      'textarea--medium': this.size === 'medium',
+      'textarea--large': this.size === 'large',
+      'textarea--standard': !this.filled,
+      'textarea--filled': this.filled,
+      'textarea--disabled': this.disabled,
+      'textarea--focused': this.hasFocus,
+      'textarea--empty': !this.value,
+      'textarea--resize-none': this.resize === 'none',
+      'textarea--resize-vertical': this.resize === 'vertical',
+      'textarea--resize-auto': this.resize === 'auto'
+    })}
           >
             <textarea
               part="textarea"

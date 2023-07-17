@@ -21,7 +21,7 @@ import type AWCSelectEvent from '../../events/awc-select.js';
  * @summary Dropdowns expose additional content that "drops down" in a panel.
  * @documentation https://awc.a-dev.cloud/components/dropdown
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-popup
  *
@@ -396,9 +396,9 @@ export default class AWCDropdown extends AWCElement {
         auto-size="vertical"
         auto-size-padding="10"
         class=${classMap({
-          dropdown: true,
-          'dropdown--open': this.open
-        })}
+      dropdown: true,
+      'dropdown--open': this.open
+    })}
       >
         <slot
           name="trigger"

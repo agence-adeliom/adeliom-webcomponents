@@ -23,38 +23,8 @@ let buildResults;
 
 const bundleDirectories = [cdndir, outdir];
 
-async function buildTailwind(watch = false) {
-  return new Promise(async (resolve, reject) => {
-    const args = ['tailwindcss', '-i', 'docs/assets/styles/tailwind/tailwind.css', '-o', 'docs/assets/styles/tailwind/build.css'];
-    const output = [];
-
-    if (watch) {
-      args.push('--watch');
-    }
-
-    const child = spawn('npx', args, {
-      stdio: 'pipe',
-      cwd: '.',
-      shell: true // for Windows
-    });
-
-    child.stdout.on('data', data => {
-      output.push(data.toString());
-    });
-
-    if (watch) {
-      // The process doesn't terminate in watch mode so, before resolving, we listen for a known signal in stdout that
-      // tells us when the first build completes.
-      child.stdout.on('data', data => {
-        //console.log(data)
-        //resolve({ child, output });
-      });
-    } else {
-      child.on('close', () => {
-        resolve({ child, output });
-      });
-    }
-  });
+async function buildTailwind() {
+  return execPromise(`npm run tailwindcss:build`, { stdio: 'inherit' });
 }
 
 //
@@ -202,31 +172,31 @@ await nextTask('Cleaning up the previous build', async () => {
 });
 
 await nextTask('Generating component metadata', () => {
-  return Promise.all(
-    bundleDirectories.map(dir => {
-      return execPromise(`node scripts/make-metadata.js --outdir "${dir}"`, { stdio: 'inherit' });
-    })
-  );
+  return execPromise(`npm run make:metadata`, { stdio: 'inherit' });
 });
 
 await nextTask('Wrapping components for React', () => {
-  return execPromise(`node scripts/make-react.js --outdir "${outdir}"`, { stdio: 'inherit' });
+  return execPromise(`npm run make:react`, { stdio: 'inherit' });
 });
 
 await nextTask('Generating Web Types', () => {
-  return execPromise(`node scripts/make-web-types.js --outdir "${outdir}"`, { stdio: 'inherit' });
+  return execPromise(`npm run make:web-types`, { stdio: 'inherit' });
 });
 
 await nextTask('Generating themes', () => {
-  return execPromise(`node scripts/make-themes.js --outdir "${outdir}"`, { stdio: 'inherit' });
+  return execPromise(`npm run make:themes`, { stdio: 'inherit' });
 });
 
 await nextTask('Packaging up icons', () => {
-  return execPromise(`node scripts/make-icons.js --outdir "${outdir}"`, { stdio: 'inherit' });
+  return execPromise(`npm run make:icons`, { stdio: 'inherit' });
+});
+
+await nextTask('Compile Tailwind', () => {
+  return execPromise(`npm run tailwindcss:build`, { stdio: 'inherit' });
 });
 
 await nextTask('Running the TypeScript compiler', () => {
-  return execPromise(`tsc --project ./tsconfig.prod.json --outdir "${outdir}"`, { stdio: 'inherit' });
+  return execPromise(`npm run ts:build`, { stdio: 'inherit' });
 });
 
 // Copy the above steps to the CDN directory directly so we don't need to twice the work for nothing.
@@ -257,10 +227,6 @@ if (serve) {
   // Spin up Eleventy and Wait for the search index to appear before proceeding. The search index is generated during
   // eleventy.after, so it appears after the docs are fully published. This is kinda hacky, but here we are.
   // Kick off the Eleventy dev server with --watch and --incremental
-  /*await nextTask('Building Tailwind', async () => {
-    result = await buildTailwind(true);
-  });*/
-
   await nextTask('Building docs', async () => {
     result = await buildTheDocs(true);
   });
@@ -311,26 +277,25 @@ if (serve) {
 
       // Rebuild stylesheets when a theme file changes
       if (isTheme) {
-        await Promise.all(
-          bundleDirectories.map(dir => {
-            execPromise(`node scripts/make-themes.js --outdir "${dir}"`, { stdio: 'inherit' });
-          })
-        );
+        await execPromise(`npm run make:themes`, { stdio: 'inherit' });
       }
 
       // Rebuild metadata (but not when styles are changed)
       if (!isStylesheet) {
-        await Promise.all(
-          bundleDirectories.map(dir => {
-            return execPromise(`node scripts/make-metadata.js --outdir "${dir}"`, { stdio: 'inherit' });
-          })
-        );
+        await execPromise(`npm run make:metadata`, { stdio: 'inherit' });
       }
 
       bs.reload();
     } catch (err) {
       console.error(chalk.red(err));
     }
+  });
+
+  // Reload without rebuilding when the docs change
+  bs.watch([`docs/assets/styles/tailwind/tailwind.css`]).on('change', async filename => {
+    console.log(filename)
+    await buildTailwind();
+    bs.reload();
   });
 
   // Reload without rebuilding when the docs change

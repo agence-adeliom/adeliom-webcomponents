@@ -28,7 +28,7 @@ import type AWCInputEvent from '../../events/awc-input.js';
 const hasEyeDropper = 'EyeDropper' in window;
 
 interface EyeDropperConstructor {
-  new (): EyeDropperInterface;
+  new(): EyeDropperInterface;
 }
 
 interface EyeDropperInterface {
@@ -41,7 +41,7 @@ declare const EyeDropper: EyeDropperConstructor;
  * @summary Color pickers allow the user to select a color.
  * @documentation https://awc.a-dev.cloud/components/color-picker
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-button
  * @dependency awc-button-group
@@ -796,22 +796,22 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
       <div
         part="base"
         class=${classMap({
-          'color-picker': true,
-          'color-picker--inline': this.inline,
-          'color-picker--disabled': this.disabled,
-          'color-picker--focused': this.hasFocus
-        })}
+      'color-picker': true,
+      'color-picker--inline': this.inline,
+      'color-picker--disabled': this.disabled,
+      'color-picker--focused': this.hasFocus
+    })}
         aria-disabled=${this.disabled ? 'true' : 'false'}
         aria-labelledby="label"
         tabindex=${this.inline ? '0' : '-1'}
       >
         ${this.inline
-          ? html`
+        ? html`
               <awc-visually-hidden id="label">
                 <slot name="label">${this.label}</slot>
               </awc-visually-hidden>
             `
-          : null}
+        : null}
 
         <div
           part="grid"
@@ -823,14 +823,14 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
           <span
             part="grid-handle"
             class=${classMap({
-              'color-picker__grid-handle': true,
-              'color-picker__grid-handle--dragging': this.isDraggingGridHandle
-            })}
+          'color-picker__grid-handle': true,
+          'color-picker__grid-handle--dragging': this.isDraggingGridHandle
+        })}
             style=${styleMap({
-              top: `${gridHandleY}%`,
-              left: `${gridHandleX}%`,
-              backgroundColor: this.getHexString(this.hue, this.saturation, this.brightness, this.alpha)
-            })}
+          top: `${gridHandleY}%`,
+          left: `${gridHandleX}%`,
+          backgroundColor: this.getHexString(this.hue, this.saturation, this.brightness, this.alpha)
+        })}
             role="application"
             aria-label="HSV"
             tabindex=${ifDefined(this.disabled ? undefined : '0')}
@@ -850,8 +850,8 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
                 part="slider-handle hue-slider-handle"
                 class="color-picker__slider-handle"
                 style=${styleMap({
-                  left: `${this.hue === 0 ? 0 : 100 / (360 / this.hue)}%`
-                })}
+          left: `${this.hue === 0 ? 0 : 100 / (360 / this.hue)}%`
+        })}
                 role="slider"
                 aria-label="hue"
                 aria-orientation="horizontal"
@@ -864,7 +864,7 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
             </div>
 
             ${this.opacity
-              ? html`
+        ? html`
                   <div
                     part="slider opacity-slider"
                     class="color-picker__alpha color-picker__slider color-picker__transparent-bg"
@@ -874,19 +874,19 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
                     <div
                       class="color-picker__alpha-gradient"
                       style=${styleMap({
-                        backgroundImage: `linear-gradient(
+          backgroundImage: `linear-gradient(
                           to right,
                           ${this.getHexString(this.hue, this.saturation, this.brightness, 0)} 0%
                           ${this.getHexString(this.hue, this.saturation, this.brightness, 100)} 100%
                         )`
-                      })}
+        })}
                     ></div>
                     <span
                       part="slider-handle opacity-slider-handle"
                       class="color-picker__slider-handle"
                       style=${styleMap({
-                        left: `${this.alpha}%`
-                      })}
+          left: `${this.alpha}%`
+        })}
                       role="slider"
                       aria-label="alpha"
                       aria-orientation="horizontal"
@@ -898,7 +898,7 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
                     ></span>
                   </div>
                 `
-              : ''}
+        : ''}
           </div>
 
           <button
@@ -907,8 +907,8 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
             class="color-picker__preview color-picker__transparent-bg"
             aria-label=${this.localize.term('copy')}
             style=${styleMap({
-              '--preview-color': this.getHexString(this.hue, this.saturation, this.brightness, this.alpha)
-            })}
+          '--preview-color': this.getHexString(this.hue, this.saturation, this.brightness, this.alpha)
+        })}
             @click=${this.handleCopy}
           ></button>
         </div>
@@ -936,7 +936,7 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
 
           <awc-button-group>
             ${!this.noFormatToggle
-              ? html`
+        ? html`
                   <awc-button
                     part="format-button"
                     aria-label=${this.localize.term('toggleColorFormat')}
@@ -954,9 +954,9 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
                     ${this.setLetterCase(this.format)}
                   </awc-button>
                 `
-              : ''}
+        : ''}
             ${hasEyeDropper
-              ? html`
+        ? html`
                   <awc-button
                     part="eye-dropper-button"
                     exportparts="
@@ -977,23 +977,23 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
                     ></awc-icon>
                   </awc-button>
                 `
-              : ''}
+        : ''}
           </awc-button-group>
         </div>
 
         ${swatches.length > 0
-          ? html`
+        ? html`
               <div part="swatches" class="color-picker__swatches">
                 ${swatches.map(swatch => {
-                  const parsedColor = this.parseColor(swatch);
+          const parsedColor = this.parseColor(swatch);
 
-                  // If we can't parse it, skip it
-                  if (!parsedColor) {
-                    console.error(`Unable to parse swatch color: "${swatch}"`, this);
-                    return '';
-                  }
+          // If we can't parse it, skip it
+          if (!parsedColor) {
+            console.error(`Unable to parse swatch color: "${swatch}"`, this);
+            return '';
+          }
 
-                  return html`
+          return html`
                     <div
                       part="swatch"
                       class="color-picker__swatch color-picker__transparent-bg"
@@ -1002,7 +1002,7 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
                       aria-label=${swatch}
                       @click=${() => this.selectSwatch(swatch)}
                       @keydown=${(event: KeyboardEvent) =>
-                        !this.disabled && event.key === 'Enter' && this.setColor(parsedColor.hexa)}
+              !this.disabled && event.key === 'Enter' && this.setColor(parsedColor.hexa)}
                     >
                       <div
                         class="color-picker__swatch-color"
@@ -1010,10 +1010,10 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
                       ></div>
                     </div>
                   `;
-                })}
+        })}
               </div>
             `
-          : ''}
+        : ''}
       </div>
     `;
 
@@ -1036,18 +1036,18 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
           part="trigger"
           slot="trigger"
           class=${classMap({
-            'color-dropdown__trigger': true,
-            'color-dropdown__trigger--disabled': this.disabled,
-            'color-dropdown__trigger--small': this.size === 'small',
-            'color-dropdown__trigger--medium': this.size === 'medium',
-            'color-dropdown__trigger--large': this.size === 'large',
-            'color-dropdown__trigger--empty': this.isEmpty,
-            'color-dropdown__trigger--focused': this.hasFocus,
-            'color-picker__transparent-bg': true
-          })}
+      'color-dropdown__trigger': true,
+      'color-dropdown__trigger--disabled': this.disabled,
+      'color-dropdown__trigger--small': this.size === 'small',
+      'color-dropdown__trigger--medium': this.size === 'medium',
+      'color-dropdown__trigger--large': this.size === 'large',
+      'color-dropdown__trigger--empty': this.isEmpty,
+      'color-dropdown__trigger--focused': this.hasFocus,
+      'color-picker__transparent-bg': true
+    })}
           style=${styleMap({
-            color: this.getHexString(this.hue, this.saturation, this.brightness, this.alpha)
-          })}
+      color: this.getHexString(this.hue, this.saturation, this.brightness, this.alpha)
+    })}
           type="button"
         >
           <awc-visually-hidden>

@@ -16,7 +16,7 @@ import type AWCPopup from '../popup/popup.js';
  * @summary Tooltips display additional information based on a specific action.
  * @documentation https://awc.a-dev.cloud/components/tooltip
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-popup
  *
@@ -250,9 +250,9 @@ export default class AWCTooltip extends AWCElement {
           arrow:base__arrow
         "
         class=${classMap({
-          tooltip: true,
-          'tooltip--open': this.open
-        })}
+      tooltip: true,
+      'tooltip--open': this.open
+    })}
         placement=${this.placement}
         distance=${this.distance}
         skidding=${this.skidding}

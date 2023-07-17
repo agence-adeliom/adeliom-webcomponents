@@ -2,19 +2,19 @@ import { customElement, property } from "lit/decorators.js";
 import { html } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
-import {transformProps} from "./image.utils";
+import { transformProps } from "./image.utils";
 import AWCElement from '../../internal/awc-element.js';
 import styles from './image.styles.js';
-import type {AWCImageProps, BaseImageProps, CoreImageAttributes, Layout} from "./image.utils";
+import type { AWCImageProps, BaseImageProps, CoreImageAttributes, Layout } from "./image.utils";
 import type { CSSResultGroup } from 'lit';
-import type {ImageCdn, UrlTransformer} from "unpic";
-import type {StyleInfo} from "lit/directives/style-map.js";
+import type { ImageCdn, UrlTransformer } from "unpic";
+import type { StyleInfo } from "lit/directives/style-map.js";
 
 /**
  * @summary A image component for responsive, high-performance images using image CDNs
  * @documentation https://awc.a-dev.cloud/components/image
  * @status experimental
- * @since 2.0
+ * @since 1.0
  *
  * @event awc-load - Emitted when the image is loaded successfully.
  * @event awc-error - Emitted if an error occurs while loading.
@@ -62,7 +62,7 @@ export default class AWCImage extends AWCElement implements BaseImageProps<Parti
   @property({ type: String }) background?: string;
 
   /** Instead of specifying both `width` and `height`, you can specify can `aspectRatio`. */
-  @property({ type: Number}) aspectRatio?: number;
+  @property({ type: Number }) aspectRatio?: number;
 
   /** By default, the CDN is auto-detected from the `src` URL. If you want to override this, you can specify a CDN object. See the [unpic](https://github.com/ascorbic/unpic) for supported values. */
   @property({ type: String }) cdn?: ImageCdn;

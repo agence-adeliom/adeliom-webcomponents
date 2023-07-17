@@ -1,0 +1,11 @@
+{% extends "default.njk" %}
+
+{% block content_wrapper %}
+  <article id="content" class="content" style="--docs-content-max-width: 100%">
+    <div class="content__body">
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}

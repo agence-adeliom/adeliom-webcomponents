@@ -12,7 +12,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Radios buttons allow the user to select a single option from a group using a button-like control.
  * @documentation https://awc.a-dev.cloud/components/radio-button
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot - The radio button's label.
  * @slot prefix - A presentational prefix icon or similar element.
@@ -108,20 +108,20 @@ export default class AWCRadioButton extends AWCElement {
           role="radio"
           aria-checked="${this.checked}"
           class=${classMap({
-            button: true,
-            'button--default': true,
-            'button--small': this.size === 'small',
-            'button--medium': this.size === 'medium',
-            'button--large': this.size === 'large',
-            'button--checked': this.checked,
-            'button--disabled': this.disabled,
-            'button--focused': this.hasFocus,
-            'button--outline': true,
-            'button--pill': this.pill,
-            'button--has-label': this.hasSlotController.test('[default]'),
-            'button--has-prefix': this.hasSlotController.test('prefix'),
-            'button--has-suffix': this.hasSlotController.test('suffix')
-          })}
+      button: true,
+      'button--default': true,
+      'button--small': this.size === 'small',
+      'button--medium': this.size === 'medium',
+      'button--large': this.size === 'large',
+      'button--checked': this.checked,
+      'button--disabled': this.disabled,
+      'button--focused': this.hasFocus,
+      'button--outline': true,
+      'button--pill': this.pill,
+      'button--has-label': this.hasSlotController.test('[default]'),
+      'button--has-prefix': this.hasSlotController.test('prefix'),
+      'button--has-suffix': this.hasSlotController.test('suffix')
+    })}
           aria-disabled=${this.disabled}
           type="button"
           value=${ifDefined(this.value)}

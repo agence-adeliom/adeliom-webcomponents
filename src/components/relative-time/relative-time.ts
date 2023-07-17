@@ -22,7 +22,7 @@ const availableUnits: UnitConfig[] = [
  * @summary Outputs a localized time phrase relative to the current date and time.
  * @documentation https://awc.a-dev.cloud/components/relative-time
  * @status stable
- * @since 2.0
+ * @since 1.0
  */
 @customElement('awc-relative-time')
 export default class AWCRelativeTime extends AWCElement {

@@ -17,7 +17,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Buttons represent actions that are available to the user.
  * @documentation https://awc.a-dev.cloud/components/button
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-icon
  * @dependency awc-spinner
@@ -283,30 +283,30 @@ export default class AWCButton extends AWCElement implements AWCFormControl {
       <${tag}
         part="base"
         class=${classMap({
-          button: true,
-          'button--default': this.variant === 'default',
-          'button--primary': this.variant === 'primary',
-          'button--success': this.variant === 'success',
-          'button--neutral': this.variant === 'neutral',
-          'button--warning': this.variant === 'warning',
-          'button--danger': this.variant === 'danger',
-          'button--text': this.variant === 'text',
-          'button--small': this.size === 'small',
-          'button--medium': this.size === 'medium',
-          'button--large': this.size === 'large',
-          'button--caret': this.caret,
-          'button--circle': this.circle,
-          'button--disabled': this.disabled,
-          'button--focused': this.hasFocus,
-          'button--loading': this.loading,
-          'button--standard': !this.outline,
-          'button--outline': this.outline,
-          'button--pill': this.pill,
-          'button--rtl': this.localize.dir() === 'rtl',
-          'button--has-label': this.hasSlotController.test('[default]'),
-          'button--has-prefix': this.hasSlotController.test('prefix'),
-          'button--has-suffix': this.hasSlotController.test('suffix')
-        })}
+      button: true,
+      'button--default': this.variant === 'default',
+      'button--primary': this.variant === 'primary',
+      'button--success': this.variant === 'success',
+      'button--neutral': this.variant === 'neutral',
+      'button--warning': this.variant === 'warning',
+      'button--danger': this.variant === 'danger',
+      'button--text': this.variant === 'text',
+      'button--small': this.size === 'small',
+      'button--medium': this.size === 'medium',
+      'button--large': this.size === 'large',
+      'button--caret': this.caret,
+      'button--circle': this.circle,
+      'button--disabled': this.disabled,
+      'button--focused': this.hasFocus,
+      'button--loading': this.loading,
+      'button--standard': !this.outline,
+      'button--outline': this.outline,
+      'button--pill': this.pill,
+      'button--rtl': this.localize.dir() === 'rtl',
+      'button--has-label': this.hasSlotController.test('[default]'),
+      'button--has-prefix': this.hasSlotController.test('prefix'),
+      'button--has-suffix': this.hasSlotController.test('suffix')
+    })}
         ?disabled=${ifDefined(isLink ? undefined : this.disabled)}
         type=${ifDefined(isLink ? undefined : this.type)}
         title=${this.title /* An empty title prevents browser validation tooltips from appearing on hover */}
@@ -327,11 +327,10 @@ export default class AWCButton extends AWCElement implements AWCFormControl {
         <slot name="prefix" part="prefix" class="button__prefix"></slot>
         <slot part="label" class="button__label"></slot>
         <slot name="suffix" part="suffix" class="button__suffix"></slot>
-        ${
-          this.caret
-            ? html` <awc-icon part="caret" class="button__caret" library="system" name="caret"></awc-icon> `
-            : ''
-        }
+        ${this.caret
+        ? html` <awc-icon part="caret" class="button__caret" library="system" name="caret"></awc-icon> `
+        : ''
+      }
         ${this.loading ? html`<awc-spinner></awc-spinner>` : ''}
       </${tag}>
     `;

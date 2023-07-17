@@ -1,7 +1,7 @@
-import {getCanonicalCdnForUrl, getTransformer} from "unpic";
-import type {ImageCdn, UrlTransformer,} from "unpic";
+import { getCanonicalCdnForUrl, getTransformer } from "unpic";
+import type { ImageCdn, UrlTransformer, } from "unpic";
 
-export type Layout = "fixed" | "constrained" | "fullWidth";
+export type Layout = "fixed" | "constrained" | "fullWidth" | "inset";
 
 type Prettify<T> = {
   [K in keyof T]: T[K];
@@ -43,10 +43,10 @@ export type BaseImageProps<
   TStyle
 > = Exclude<TImageAttributes, "srcset" | "style"> &
   ImageSourceOptions & {
-  priority?: boolean;
-  fetchpriority?: "high" | "low";
-  background?: string;
-  objectFit?:
+    priority?: boolean;
+    fetchpriority?: "high" | "low";
+    background?: string;
+    objectFit?:
     | "contain"
     | "cover"
     | "fill"
@@ -54,7 +54,7 @@ export type BaseImageProps<
     | "scale-down"
     | "inherit"
     | "initial";
-};
+  };
 
 type BaseImageWithAspectRatioProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
@@ -98,8 +98,8 @@ export type FixedImageProps<
   TStyle
 > = Prettify<
   ImageWithSizeProps<TImageAttributes, TStyle> & {
-  layout: "fixed";
-}
+    layout: "fixed";
+  }
 >;
 
 export type ConstrainedImageProps<
@@ -118,13 +118,21 @@ export type FullWidthImageProps<
   width?: never;
 };
 
+export type InsetImageProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> = BaseImageProps<TImageAttributes, TStyle> & {
+  layout: "inset";
+};
+
 export type AWCImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = TImageAttributes["style"]
 > =
   | FixedImageProps<TImageAttributes, TStyle>
   | ConstrainedImageProps<TImageAttributes, TStyle>
-  | FullWidthImageProps<TImageAttributes, TStyle>;
+  | FullWidthImageProps<TImageAttributes, TStyle>
+  | InsetImageProps<TImageAttributes, TStyle>;
 
 /**
  * Gets the `sizes` attribute for an image, based on the layout and width
@@ -165,18 +173,19 @@ export const getStyle = <
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = Record<string, string>
 >({
-    width,
-    height,
-    aspectRatio,
-    layout,
-    objectFit = "cover",
-    background,
-  }: Pick<
+  width,
+  height,
+  aspectRatio,
+  layout,
+  objectFit = "cover",
+  background,
+}: Pick<
   AWCImageProps<TImageAttributes, TStyle>,
   "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
 >): TImageAttributes["style"] => {
   const styleEntries: Array<[prop: string, value: string | undefined]> = [
     ["object-fit", objectFit],
+    ["object-position", "center"],
   ];
 
   // If background is a URL, set it to cover the image and not repeat
@@ -212,6 +221,19 @@ export const getStyle = <
     ]);
     styleEntries.push(["height", pixelate(height)]);
   }
+  if (layout === "inset") {
+    styleEntries.push(["width", "100%"]);
+    styleEntries.push(["height", "100%"]);
+    styleEntries.push(["position", "absolute"]);
+    styleEntries.push(["top", "0"]);
+    styleEntries.push(["left", "0"]);
+    styleEntries.push(["right", "0"]);
+    styleEntries.push(["bottom", "0"]);
+    styleEntries.push([
+      "aspect-ratio",
+      aspectRatio ? `${aspectRatio}` : undefined,
+    ]);
+  }
   return Object.fromEntries(
     styleEntries.filter(([, value]) => value)
   ) as TImageAttributes["style"];
@@ -243,7 +265,7 @@ const LOW_RES_WIDTH = 24;
 /**
  * Gets the breakpoints for an image, based on the layout and width
  */
-export const getBreakpoints = ({width, layout}: {
+export const getBreakpoints = ({ width, layout }: {
   width?: number;
   layout: Layout;
 }): number[] => {
@@ -274,15 +296,15 @@ export const getBreakpoints = ({width, layout}: {
  * Generate an image srcset
  */
 export const getSrcSet = ({
-                            src,
-                            width,
-                            layout = "constrained",
-                            height,
-                            aspectRatio,
-                            breakpoints,
-                            cdn,
-                            transformer,
-                          }: Omit<ImageSourceOptions, "src"> & { src: URL | string }):
+  src,
+  width,
+  layout = "constrained",
+  height,
+  aspectRatio,
+  breakpoints,
+  cdn,
+  transformer,
+}: Omit<ImageSourceOptions, "src"> & { src: URL | string }):
   | string
   | undefined => {
   const canonical = getCanonicalCdnForUrl(src, cdn);
@@ -294,7 +316,7 @@ export const getSrcSet = ({
   if (!transformer) {
     return;
   }
-  breakpoints ||= getBreakpoints({width, layout});
+  breakpoints ||= getBreakpoints({ width, layout });
   if (!breakpoints) {
     return;
   }
@@ -329,19 +351,19 @@ export function transformProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = Record<string, string>
 >({
-    src,
-    width,
-    height,
-    priority,
-    layout = "constrained",
-    aspectRatio,
-    cdn,
-    transformer,
-    objectFit = "cover",
-    background,
-    breakpoints,
-    ...props
-  }: AWCImageProps<TImageAttributes, TStyle>): TImageAttributes {
+  src,
+  width,
+  height,
+  priority,
+  layout = "constrained",
+  aspectRatio,
+  cdn,
+  transformer,
+  objectFit = "cover",
+  background,
+  breakpoints,
+  ...props
+}: AWCImageProps<TImageAttributes, TStyle>): TImageAttributes {
   const canonical = getCanonicalCdnForUrl(src, cdn);
   let url: URL | string = src;
   if (canonical) {
@@ -439,7 +461,7 @@ export function transformProps<
       cdn,
     });
 
-    const transformed = transformer({url, width, height});
+    const transformed = transformer({ url, width, height });
 
     if (transformed) {
       url = transformed;

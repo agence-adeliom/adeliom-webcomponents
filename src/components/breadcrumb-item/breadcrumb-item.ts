@@ -11,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Breadcrumb Items are used inside [breadcrumbs](/components/breadcrumb) to represent different links.
  * @documentation https://awc.a-dev.cloud/components/breadcrumb-item
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot - The breadcrumb item's label.
  * @slot prefix - An optional prefix, usually an icon or icon button.
@@ -50,15 +50,15 @@ export default class AWCBreadcrumbItem extends AWCElement {
       <div
         part="base"
         class=${classMap({
-          'breadcrumb-item': true,
-          'breadcrumb-item--has-prefix': this.hasSlotController.test('prefix'),
-          'breadcrumb-item--has-suffix': this.hasSlotController.test('suffix')
-        })}
+      'breadcrumb-item': true,
+      'breadcrumb-item--has-prefix': this.hasSlotController.test('prefix'),
+      'breadcrumb-item--has-suffix': this.hasSlotController.test('suffix')
+    })}
       >
         <slot name="prefix" part="prefix" class="breadcrumb-item__prefix"></slot>
 
         ${isLink
-          ? html`
+        ? html`
               <a
                 part="label"
                 class="breadcrumb-item__label breadcrumb-item__label--link"
@@ -69,7 +69,7 @@ export default class AWCBreadcrumbItem extends AWCElement {
                 <slot></slot>
               </a>
             `
-          : html`
+        : html`
               <button part="label" type="button" class="breadcrumb-item__label breadcrumb-item__label--button">
                 <slot></slot>
               </button>

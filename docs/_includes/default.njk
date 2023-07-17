@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ assetUrl('styles/docs.css') }}" />
     <link rel="stylesheet" href="{{ assetUrl('styles/code-previews.css') }}" />
     <link rel="stylesheet" href="{{ assetUrl('styles/search.css') }}" />
-    <link rel="stylesheet" href="{{ assetUrl('styles/tailwind/build.css') }}" />
+    <link rel="stylesheet" href="{{ assetUrl('styles/tailwind.min.css') }}" />
 
     {# Favicons #}
     <link rel="icon" href="{{ assetUrl('images/logo.svg') }}" type="image/x-icon" />
@@ -118,6 +118,7 @@
     {# Content #}
     <main>
       <a id="main-content"></a>
+      {% block content_wrapper %}
       <article id="content" class="content{% if toc %} content--with-toc{% endif %}">
         {% if toc %}
           <div class="content__toc">
@@ -133,6 +134,7 @@
           {% endblock %}
         </div>
       </article>
+      {% endblock %}
     </main>
   </body>
 </html>

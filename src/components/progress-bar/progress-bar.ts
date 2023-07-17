@@ -12,7 +12,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Progress bars are used to show the status of an ongoing operation.
  * @documentation https://awc.a-dev.cloud/components/progress-bar
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot - A label to show inside the progress indicator.
  *
@@ -44,10 +44,10 @@ export default class AWCProgressBar extends AWCElement {
       <div
         part="base"
         class=${classMap({
-          'progress-bar': true,
-          'progress-bar--indeterminate': this.indeterminate,
-          'progress-bar--rtl': this.localize.dir() === 'rtl'
-        })}
+      'progress-bar': true,
+      'progress-bar--indeterminate': this.indeterminate,
+      'progress-bar--rtl': this.localize.dir() === 'rtl'
+    })}
         role="progressbar"
         title=${ifDefined(this.title)}
         aria-label=${this.label.length > 0 ? this.label : this.localize.term('progress')}

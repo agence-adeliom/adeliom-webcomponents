@@ -1,4 +1,5 @@
 import '../icon/icon.js';
+import '../image/image.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, state } from 'lit/decorators.js';
 import { html } from 'lit';
@@ -11,9 +12,10 @@ import type { CSSResultGroup } from 'lit';
  * @summary Avatars are used to represent a person or object.
  * @documentation https://awc.a-dev.cloud/components/avatar
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @dependency awc-icon
+ * @dependency awc-image
  *
  * @slot icon - The default icon to use when no image or initials are present. Works best with `<awc-icon>`.
  *
@@ -53,14 +55,16 @@ export default class AWCAvatar extends AWCElement {
 
   render() {
     const avatarWithImage = html`
-      <img
+      <awc-image
         part="image"
         class="avatar__image"
         src="${this.image}"
         loading="${this.loading}"
+        aspectRatio="1"
+        width="48"
         alt=""
         @error="${() => (this.hasError = true)}"
-      />
+      ></awc-icon>
     `;
 
     let avatarWithoutImage = html``;
@@ -79,11 +83,11 @@ export default class AWCAvatar extends AWCElement {
       <div
         part="base"
         class=${classMap({
-          avatar: true,
-          'avatar--circle': this.shape === 'circle',
-          'avatar--rounded': this.shape === 'rounded',
-          'avatar--square': this.shape === 'square'
-        })}
+      avatar: true,
+      'avatar--circle': this.shape === 'circle',
+      'avatar--rounded': this.shape === 'rounded',
+      'avatar--square': this.shape === 'square'
+    })}
         role="img"
         aria-label=${this.label}
       >

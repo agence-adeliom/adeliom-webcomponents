@@ -1,6 +1,6 @@
 /* eslint-disable lit/binding-positions, lit/no-invalid-html */
-import {classMap} from "lit/directives/class-map.js";
-import {styleMap} from "lit/directives/style-map.js";
+import { classMap } from "lit/directives/class-map.js";
+import { styleMap } from "lit/directives/style-map.js";
 import { customElement, property } from 'lit/decorators.js';
 import { html, unsafeStatic } from 'lit/static-html.js';
 import AWCElement from '../../internal/awc-element.js';
@@ -11,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Allow to render content in différent type and tag.
  * @documentation https://awc.a-dev.cloud/components/typography
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @slot - The typography's content.
  *
@@ -67,20 +67,20 @@ export default class AWCTypography extends AWCElement {
     return html`<${unsafeStatic(renderAs)}
       part="base"
       style=${styleMap({
-        textTransform: this.transform
-      })}
+      textTransform: this.transform
+    })}
       class=${classMap({
-        typography: true,
-        'typography--heading': ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(this.type),
-        'typography--heading1': this.type === 'h1',
-        'typography--heading2': this.type === 'h2',
-        'typography--heading3': this.type === 'h3',
-        'typography--heading4': this.type === 'h4',
-        'typography--heading5': this.type === 'h5',
-        'typography--heading6': this.type === 'h6',
-        'typography--subtitle': this.type === 'subtitle',
-        'typography--content': this.type === 'content'
-      })}
+      typography: true,
+      'typography--heading': ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(this.type),
+      'typography--heading1': this.type === 'h1',
+      'typography--heading2': this.type === 'h2',
+      'typography--heading3': this.type === 'h3',
+      'typography--heading4': this.type === 'h4',
+      'typography--heading5': this.type === 'h5',
+      'typography--heading6': this.type === 'h6',
+      'typography--subtitle': this.type === 'subtitle',
+      'typography--content': this.type === 'content'
+    })}
     >
       <slot></slot>
     </${unsafeStatic(renderAs)}>`;

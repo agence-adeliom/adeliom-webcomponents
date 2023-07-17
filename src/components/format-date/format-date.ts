@@ -7,7 +7,7 @@ import AWCElement from '../../internal/awc-element.js';
  * @summary Formats a date/time using the specified locale and options.
  * @documentation https://awc.a-dev.cloud/components/format-date
  * @status stable
- * @since 2.0
+ * @since 1.0
  */
 @customElement('awc-format-date')
 export default class AWCFormatDate extends AWCElement {
@@ -65,18 +65,18 @@ export default class AWCFormatDate extends AWCElement {
     return html`
       <time datetime=${date.toISOString()}>
         ${this.localize.date(date, {
-          weekday: this.weekday,
-          era: this.era,
-          year: this.year,
-          month: this.month,
-          day: this.day,
-          hour: this.hour,
-          minute: this.minute,
-          second: this.second,
-          timeZoneName: this.timeZoneName,
-          timeZone: this.timeZone,
-          hour12: hour12
-        })}
+      weekday: this.weekday,
+      era: this.era,
+      year: this.year,
+      month: this.month,
+      day: this.day,
+      hour: this.hour,
+      minute: this.minute,
+      second: this.second,
+      timeZoneName: this.timeZoneName,
+      timeZone: this.timeZone,
+      hour12: hour12
+    })}
       </time>
     `;
   }

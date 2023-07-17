@@ -6,7 +6,7 @@ export default css`
 
   :host {
     --border-color: var(--awc-color-neutral-200);
-    --border-radius: var(--awc-border-radius-medium);
+    --border-radius: 0;
     --border-width: 1px;
     --padding: var(--awc-spacing-large);
 
@@ -17,9 +17,49 @@ export default css`
     display: flex;
     flex-direction: column;
     background-color: var(--awc-panel-background-color);
-    box-shadow: var(--awc-shadow-x-small);
-    border: solid var(--border-width) var(--border-color);
     border-radius: var(--border-radius);
+    height: 100%;
+  }
+
+  .card .card__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+  }
+
+  .card.card--is-inner {
+    position: relative;
+  }
+
+  .card.card--is-inner .card__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card.card--is-inner .card__body {
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .card.card--is-horizontal {
+      flex-direction: row;
+    }
+
+    .card.card--is-horizontal .card__image {
+      border-radius: 0;
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
+    }
+  }
+  .card.card--has-border {
+    border: solid var(--border-width) var(--border-color);
+  }
+
+  .card.card--has-shadow {
+    box-shadow: var(--awc-shadow-x-small);
   }
 
   .card__image {
@@ -28,7 +68,10 @@ export default css`
     border-top-right-radius: var(--border-radius);
     margin: calc(-1 * var(--border-width));
     overflow: hidden;
+    line-height: 0;
   }
+
+  
 
   .card__image::slotted(img) {
     display: block;
@@ -41,8 +84,11 @@ export default css`
 
   .card__header {
     display: block;
-    border-bottom: solid var(--border-width) var(--border-color);
     padding: calc(var(--padding) / 2) var(--padding);
+  }
+
+  .card.card--has-border.card--has-header .card__header {
+    border-bottom: solid var(--border-width) var(--border-color);
   }
 
   .card:not(.card--has-header) .card__header {
@@ -55,14 +101,18 @@ export default css`
   }
 
   .card__body {
-    display: block;
+    display: flex;
     padding: var(--padding);
+    flex: 1
   }
 
   .card--has-footer .card__footer {
     display: block;
-    border-top: solid var(--border-width) var(--border-color);
     padding: var(--padding);
+  }
+
+  .card.card--has-border.card--has-footer .card__footer {
+    border-top: solid var(--border-width) var(--border-color);
   }
 
   .card:not(.card--has-footer) .card__footer {

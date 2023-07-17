@@ -6,7 +6,7 @@ import AWCElement from '../../internal/awc-element.js';
  * @summary Formats a number as a human readable bytes value.
  * @documentation https://awc.a-dev.cloud/components/format-bytes
  * @status stable
- * @since 2.0
+ * @since 1.0
  */
 @customElement('awc-format-bytes')
 export default class AWCFormatBytes extends AWCElement {

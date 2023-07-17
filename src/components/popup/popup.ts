@@ -11,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary Popup is a utility that lets you declaratively anchor "popup" containers to another element.
  * @documentation https://awc.a-dev.cloud/components/popup
  * @status stable
- * @since 2.0
+ * @since 1.0
  *
  * @event awc-reposition - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive
  *  operations in your listener or consider debouncing it.
@@ -451,11 +451,11 @@ export default class AWCPopup extends AWCElement {
       <div
         part="popup"
         class=${classMap({
-          popup: true,
-          'popup--active': this.active,
-          'popup--fixed': this.strategy === 'fixed',
-          'popup--has-arrow': this.arrow
-        })}
+      popup: true,
+      'popup--active': this.active,
+      'popup--fixed': this.strategy === 'fixed',
+      'popup--has-arrow': this.arrow
+    })}
       >
         <slot></slot>
         ${this.arrow ? html`<div part="arrow" class="popup__arrow" role="presentation"></div>` : ''}
