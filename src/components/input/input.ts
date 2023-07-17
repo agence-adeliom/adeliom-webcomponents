@@ -413,13 +413,13 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
       <div
         part="form-control"
         class=${classMap({
-      'form-control': true,
-      'form-control--small': this.size === 'small',
-      'form-control--medium': this.size === 'medium',
-      'form-control--large': this.size === 'large',
-      'form-control--has-label': hasLabel,
-      'form-control--has-help-text': hasHelpText
-    })}
+          'form-control': true,
+          'form-control--small': this.size === 'small',
+          'form-control--medium': this.size === 'medium',
+          'form-control--large': this.size === 'large',
+          'form-control--has-label': hasLabel,
+          'form-control--has-help-text': hasHelpText
+        })}
       >
         <label
           part="form-control-label"
@@ -434,22 +434,22 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
           <div
             part="base"
             class=${classMap({
-      input: true,
+              input: true,
 
-      // Sizes
-      'input--small': this.size === 'small',
-      'input--medium': this.size === 'medium',
-      'input--large': this.size === 'large',
+              // Sizes
+              'input--small': this.size === 'small',
+              'input--medium': this.size === 'medium',
+              'input--large': this.size === 'large',
 
-      // States
-      'input--pill': this.pill,
-      'input--standard': !this.filled,
-      'input--filled': this.filled,
-      'input--disabled': this.disabled,
-      'input--focused': this.hasFocus,
-      'input--empty': !this.value,
-      'input--no-spin-buttons': this.noSpinButtons
-    })}
+              // States
+              'input--pill': this.pill,
+              'input--standard': !this.filled,
+              'input--filled': this.filled,
+              'input--disabled': this.disabled,
+              'input--focused': this.hasFocus,
+              'input--empty': !this.value,
+              'input--no-spin-buttons': this.noSpinButtons
+            })}
           >
             <slot name="prefix" part="prefix" class="input__prefix"></slot>
             <input
@@ -486,8 +486,9 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
               @blur=${this.handleBlur}
             />
 
-            ${hasClearIcon
-        ? html`
+            ${
+              hasClearIcon
+                ? html`
                     <button
                       part="clear-button"
                       class="input__clear"
@@ -501,10 +502,11 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
                       </slot>
                     </button>
                   `
-        : ''
-      }
-            ${this.passwordToggle && !this.disabled
-        ? html`
+                : ''
+            }
+            ${
+              this.passwordToggle && !this.disabled
+                ? html`
                     <button
                       part="password-toggle-button"
                       class="input__password-toggle"
@@ -514,20 +516,20 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
                       tabindex="-1"
                     >
                       ${this.passwordVisible
-            ? html`
+                        ? html`
                             <slot name="show-password-icon">
                               <awc-icon name="eye-slash" library="system"></awc-icon>
                             </slot>
                           `
-            : html`
+                        : html`
                             <slot name="hide-password-icon">
                               <awc-icon name="eye" library="system"></awc-icon>
                             </slot>
                           `}
                     </button>
                   `
-        : ''
-      }
+                : ''
+            }
 
             <slot name="suffix" part="suffix" class="input__suffix"></slot>
           </div>

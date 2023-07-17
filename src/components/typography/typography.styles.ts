@@ -12,7 +12,7 @@ export default css`
     --font-size: var(--awc-font-size-base);
   }
 
-  .typography{
+  .typography {
     font-family: var(--font-family);
     font-style: normal;
     font-weight: var(--font-weight);
@@ -21,16 +21,28 @@ export default css`
     color: var(--color);
   }
 
-  .typography--heading{
+  .typography--heading {
     --font-weight: var(--awc-font-weight-bold);
     font-family: var(--font-family);
     margin: var(--margin-heading, 1rem 0 0.5rem 0);
   }
 
-  .typography--heading1{--font-size: var(--awc-font-size-heading1);}
-  .typography--heading2{--font-size: var(--awc-font-size-heading2);}
-  .typography--heading3{--font-size: var(--awc-font-size-heading3);}
-  .typography--heading4{--font-size: var(--awc-font-size-heading4);}
-  .typography--heading5{--font-size: var(--awc-font-size-heading5);}
-  .typography--heading6{--font-size: var(--awc-font-size-heading6);}
+  .typography--heading1 {
+    --font-size: var(--awc-font-size-heading1);
+  }
+  .typography--heading2 {
+    --font-size: var(--awc-font-size-heading2);
+  }
+  .typography--heading3 {
+    --font-size: var(--awc-font-size-heading3);
+  }
+  .typography--heading4 {
+    --font-size: var(--awc-font-size-heading4);
+  }
+  .typography--heading5 {
+    --font-size: var(--awc-font-size-heading5);
+  }
+  .typography--heading6 {
+    --font-size: var(--awc-font-size-heading6);
+  }
 `;

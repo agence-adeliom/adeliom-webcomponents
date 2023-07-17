@@ -1,14 +1,14 @@
-import { customElement, property } from "lit/decorators.js";
-import { html } from "lit";
-import { ifDefined } from "lit/directives/if-defined.js";
-import { styleMap } from "lit/directives/style-map.js";
-import { transformProps } from "./image.utils";
+import { customElement, property } from 'lit/decorators.js';
+import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
+import { styleMap } from 'lit/directives/style-map.js';
+import { transformProps } from './image.utils';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './image.styles.js';
-import type { AWCImageProps, BaseImageProps, CoreImageAttributes, Layout } from "./image.utils";
+import type { AWCImageProps, BaseImageProps, CoreImageAttributes, Layout } from './image.utils';
 import type { CSSResultGroup } from 'lit';
-import type { ImageCdn, UrlTransformer } from "unpic";
-import type { StyleInfo } from "lit/directives/style-map.js";
+import type { ImageCdn, UrlTransformer } from 'unpic';
+import type { StyleInfo } from 'lit/directives/style-map.js';
 
 /**
  * @summary A image component for responsive, high-performance images using image CDNs
@@ -22,15 +22,17 @@ import type { StyleInfo } from "lit/directives/style-map.js";
  *
  */
 @customElement('awc-image')
-export default class AWCImage extends AWCElement implements BaseImageProps<Partial<HTMLImageElement>, CSSStyleDeclaration> {
-
+export default class AWCImage
+  extends AWCElement
+  implements BaseImageProps<Partial<HTMLImageElement>, CSSStyleDeclaration>
+{
   static styles: CSSResultGroup = styles;
 
   /** The image URL */
-  @property({ type: String }) src = "";
+  @property({ type: String }) src = '';
 
   /** Defines an alternative text description of the image. */
-  @property({ type: String }) alt = "";
+  @property({ type: String }) alt = '';
 
   /** The intrinsic height of the image in pixels. Must be an integer without a unit. */
   @property({ type: Number }) height?: number;
@@ -39,17 +41,11 @@ export default class AWCImage extends AWCElement implements BaseImageProps<Parti
   @property({ type: Number }) width?: number;
 
   /** By default, images cover the container. If `objectFit` is set, the property is used to specify how an images should be resized to fit its container. */
-  @property({ type: String }) objectFit:
-    | "contain"
-    | "cover"
-    | "fill"
-    | "none"
-    | "scale-down"
-    | "inherit"
-    | "initial" = "cover";
+  @property({ type: String }) objectFit: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down' | 'inherit' | 'initial' =
+    'cover';
 
   /** The resizing behaviour of the image. */
-  @property({ type: String }) layout: Layout = "constrained";
+  @property({ type: String }) layout: Layout = 'constrained';
 
   /** By default, images are loaded lazily. If `priority` is set to `true`, the image will be loaded eagerly, and will be given high priority by the browser. This is useful for images that are above the fold, particularly large ones such as hero images. */
   @property({ type: Boolean }) priority = false;
@@ -71,27 +67,27 @@ export default class AWCImage extends AWCElement implements BaseImageProps<Parti
   @property({ type: Array }) breakpoints?: number[];
 
   /** Indicates if the fetching of the image must be done using a CORS request. see [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#crossorigin) */
-  @property({ type: String }) crossOrigin?: "anonymous" | "use-credentials";
+  @property({ type: String }) crossOrigin?: 'anonymous' | 'use-credentials';
 
   /** Provides a hint of the relative priority to use when fetching the image. see [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#fetchpriority) */
-  @property({ type: String }) fetchPriority?: "high" | "low";
+  @property({ type: String }) fetchPriority?: 'high' | 'low';
 
   /** Indicates how the browser should load the image. see [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#loading) */
-  @property({ type: String }) loading?: "eager" | "lazy";
+  @property({ type: String }) loading?: 'eager' | 'lazy';
 
   /** Provides an image decoding hint to the browser. see [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#decoding) */
-  @property({ type: String }) decoding?: "sync" | "async" | "auto";
+  @property({ type: String }) decoding?: 'sync' | 'async' | 'auto';
 
   /** A string indicating which referrer to use when fetching the resource. see [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#referrerpolicy) */
   @property({ type: String }) referrerPolicy?:
-    | "no-referrer"
-    | "no-referrer-when-downgrade"
-    | "origin"
-    | "origin-when-cross-origin"
-    | "same-origin"
-    | "strict-origin"
-    | "strict-origin-when-cross-origin"
-    | "unsafe-url";
+    | 'no-referrer'
+    | 'no-referrer-when-downgrade'
+    | 'origin'
+    | 'origin-when-cross-origin'
+    | 'same-origin'
+    | 'strict-origin'
+    | 'strict-origin-when-cross-origin'
+    | 'unsafe-url';
 
   /** One or more strings separated by commas, indicating a set of source sizes. see [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#sizes) */
   @property({ type: String }) sizes?: string;
@@ -134,10 +130,7 @@ export default class AWCImage extends AWCElement implements BaseImageProps<Parti
       transformer: this.transformer
     } as AWCImageProps<CoreImageAttributes<StyleInfo>>;
 
-    const transformedProps = transformProps<
-      CoreImageAttributes<StyleInfo>,
-      StyleInfo
-    >(inputProps);
+    const transformedProps = transformProps<CoreImageAttributes<StyleInfo>, StyleInfo>(inputProps);
 
     return html`
       <img

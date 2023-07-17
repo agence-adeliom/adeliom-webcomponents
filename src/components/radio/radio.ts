@@ -95,21 +95,21 @@ export default class AWCRadio extends AWCElement {
       <span
         part="base"
         class=${classMap({
-      radio: true,
-      'radio--checked': this.checked,
-      'radio--disabled': this.disabled,
-      'radio--focused': this.hasFocus,
-      'radio--small': this.size === 'small',
-      'radio--medium': this.size === 'medium',
-      'radio--large': this.size === 'large'
-    })}
+          radio: true,
+          'radio--checked': this.checked,
+          'radio--disabled': this.disabled,
+          'radio--focused': this.hasFocus,
+          'radio--small': this.size === 'small',
+          'radio--medium': this.size === 'medium',
+          'radio--large': this.size === 'large'
+        })}
       >
         <span part="${`control${this.checked ? ' control--checked' : ''}`}" class="radio__control">
           ${this.checked
-        ? html`
+            ? html`
                 <awc-icon part="checked-icon" class="radio__checked-icon" library="system" name="radio"></awc-icon>
               `
-        : ''}
+            : ''}
         </span>
 
         <slot part="label" class="radio__label"></slot>

@@ -390,10 +390,10 @@ export default class AWCCarousel extends AWCElement {
           id="scroll-container"
           part="scroll-container"
           class="${classMap({
-      carousel__slides: true,
-      'carousel__slides--horizontal': this.orientation === 'horizontal',
-      'carousel__slides--vertical': this.orientation === 'vertical'
-    })}"
+            carousel__slides: true,
+            'carousel__slides--horizontal': this.orientation === 'horizontal',
+            'carousel__slides--vertical': this.orientation === 'vertical'
+          })}"
           style="--slides-per-page: ${this.slidesPerPage};"
           aria-busy="${scrollController.scrolling ? 'true' : 'false'}"
           aria-atomic="true"
@@ -405,15 +405,15 @@ export default class AWCCarousel extends AWCElement {
         </div>
 
         ${this.navigation
-        ? html`
+          ? html`
               <div part="navigation" class="carousel__navigation">
                 <button
                   part="navigation-button navigation-button--previous"
                   class="${classMap({
-          'carousel__navigation-button': true,
-          'carousel__navigation-button--previous': true,
-          'carousel__navigation-button--disabled': !prevEnabled
-        })}"
+                    'carousel__navigation-button': true,
+                    'carousel__navigation-button--previous': true,
+                    'carousel__navigation-button--disabled': !prevEnabled
+                  })}"
                   aria-label="${this.localize.term('previousSlide')}"
                   aria-controls="scroll-container"
                   aria-disabled="${prevEnabled ? 'false' : 'true'}"
@@ -427,10 +427,10 @@ export default class AWCCarousel extends AWCElement {
                 <button
                   part="navigation-button navigation-button--next"
                   class=${classMap({
-          'carousel__navigation-button': true,
-          'carousel__navigation-button--next': true,
-          'carousel__navigation-button--disabled': !nextEnabled
-        })}
+                    'carousel__navigation-button': true,
+                    'carousel__navigation-button--next': true,
+                    'carousel__navigation-button--disabled': !nextEnabled
+                  })}
                   aria-label="${this.localize.term('nextSlide')}"
                   aria-controls="scroll-container"
                   aria-disabled="${nextEnabled ? 'false' : 'true'}"
@@ -442,19 +442,19 @@ export default class AWCCarousel extends AWCElement {
                 </button>
               </div>
             `
-        : ''}
+          : ''}
         ${this.pagination
-        ? html`
+          ? html`
               <div part="pagination" role="tablist" class="carousel__pagination" aria-controls="scroll-container">
                 ${map(range(pagesCount), index => {
-          const isActive = index === currentPage;
-          return html`
+                  const isActive = index === currentPage;
+                  return html`
                     <button
                       part="pagination-item ${isActive ? 'pagination-item--active' : ''}"
                       class="${classMap({
-            'carousel__pagination-item': true,
-            'carousel__pagination-item--active': isActive
-          })}"
+                        'carousel__pagination-item': true,
+                        'carousel__pagination-item--active': isActive
+                      })}"
                       role="tab"
                       aria-selected="${isActive ? 'true' : 'false'}"
                       aria-label="${this.localize.term('goToSlide', index + 1, pagesCount)}"
@@ -463,10 +463,10 @@ export default class AWCCarousel extends AWCElement {
                       @keydown=${this.handleKeyDown}
                     ></button>
                   `;
-        })}
+                })}
               </div>
             `
-        : ''}
+          : ''}
       </div>
     `;
   }

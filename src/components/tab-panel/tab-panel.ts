@@ -49,9 +49,9 @@ export default class AWCTabPanel extends AWCElement {
       <slot
         part="base"
         class=${classMap({
-      'tab-panel': true,
-      'tab-panel--active': this.active
-    })}
+          'tab-panel': true,
+          'tab-panel--active': this.active
+        })}
       ></slot>
     `;
   }

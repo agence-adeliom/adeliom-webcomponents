@@ -164,11 +164,11 @@ export default class AWCDetails extends AWCElement {
       <div
         part="base"
         class=${classMap({
-      details: true,
-      'details--open': this.open,
-      'details--disabled': this.disabled,
-      'details--rtl': isRtl
-    })}
+          details: true,
+          'details--open': this.open,
+          'details--disabled': this.disabled,
+          'details--rtl': isRtl
+        })}
       >
         <div
           part="header"

@@ -250,9 +250,9 @@ export default class AWCTooltip extends AWCElement {
           arrow:base__arrow
         "
         class=${classMap({
-      tooltip: true,
-      'tooltip--open': this.open
-    })}
+          tooltip: true,
+          'tooltip--open': this.open
+        })}
         placement=${this.placement}
         distance=${this.distance}
         skidding=${this.skidding}

@@ -31,19 +31,19 @@ import { AWCImage } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <AWCImage 
+    <AWCImage
       src="https://placehold.co/1200x300"
       layout="constrained"
       width="600"
       height="150"
     ></AWCImage>
-    <AWCImage 
+    <AWCImage
       src="https://placehold.co/1200x300"
       layout="fullWidth"
       width="600"
       height="150"
     ></AWCImage>
-    <AWCImage 
+    <AWCImage
       src="https://placehold.co/1200x300"
       layout="fixed"
       width="600"

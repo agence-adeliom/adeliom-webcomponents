@@ -255,10 +255,10 @@ export default class AWCDialog extends AWCElement {
       <div
         part="base"
         class=${classMap({
-      dialog: true,
-      'dialog--open': this.open,
-      'dialog--has-footer': this.hasSlotController.test('footer')
-    })}
+          dialog: true,
+          'dialog--open': this.open,
+          'dialog--has-footer': this.hasSlotController.test('footer')
+        })}
       >
         <div part="overlay" class="dialog__overlay" @click=${() => this.requestClose('overlay')} tabindex="-1"></div>
 
@@ -273,7 +273,7 @@ export default class AWCDialog extends AWCElement {
           tabindex="-1"
         >
           ${!this.noHeader
-        ? html`
+            ? html`
                 <header part="header" class="dialog__header">
                   <h2 part="title" class="dialog__title" id="title">
                     <slot name="label"> ${this.label.length > 0 ? this.label : String.fromCharCode(65279)} </slot>
@@ -292,9 +292,10 @@ export default class AWCDialog extends AWCElement {
                   </div>
                 </header>
               `
-        : ''}
-          ${'' /* The tabindex="-1" is here because the body is technically scrollable if overflowing. However, if there's no focusable elements inside, you won't actually be able to scroll it via keyboard. */
-      }
+            : ''}
+          ${
+            '' /* The tabindex="-1" is here because the body is technically scrollable if overflowing. However, if there's no focusable elements inside, you won't actually be able to scroll it via keyboard. */
+          }
           <slot part="body" class="dialog__body" tabindex="-1"></slot>
 
           <footer part="footer" class="dialog__footer">

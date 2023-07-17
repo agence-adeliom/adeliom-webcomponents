@@ -50,30 +50,30 @@ export default class AWCTag extends AWCElement {
       <span
         part="base"
         class=${classMap({
-      tag: true,
+          tag: true,
 
-      // Types
-      'tag--primary': this.variant === 'primary',
-      'tag--success': this.variant === 'success',
-      'tag--neutral': this.variant === 'neutral',
-      'tag--warning': this.variant === 'warning',
-      'tag--danger': this.variant === 'danger',
-      'tag--text': this.variant === 'text',
+          // Types
+          'tag--primary': this.variant === 'primary',
+          'tag--success': this.variant === 'success',
+          'tag--neutral': this.variant === 'neutral',
+          'tag--warning': this.variant === 'warning',
+          'tag--danger': this.variant === 'danger',
+          'tag--text': this.variant === 'text',
 
-      // Sizes
-      'tag--small': this.size === 'small',
-      'tag--medium': this.size === 'medium',
-      'tag--large': this.size === 'large',
+          // Sizes
+          'tag--small': this.size === 'small',
+          'tag--medium': this.size === 'medium',
+          'tag--large': this.size === 'large',
 
-      // Modifiers
-      'tag--pill': this.pill,
-      'tag--removable': this.removable
-    })}
+          // Modifiers
+          'tag--pill': this.pill,
+          'tag--removable': this.removable
+        })}
       >
         <slot part="content" class="tag__content"></slot>
 
         ${this.removable
-        ? html`
+          ? html`
               <awc-icon-button
                 part="remove-button"
                 exportparts="base:remove-button__base"
@@ -85,7 +85,7 @@ export default class AWCTag extends AWCElement {
                 tabindex="-1"
               ></awc-icon-button>
             `
-        : ''}
+          : ''}
       </span>
     `;
   }

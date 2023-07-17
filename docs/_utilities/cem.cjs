@@ -14,9 +14,8 @@ module.exports.getAllComponents = function () {
   customElementsManifest.modules?.forEach(module => {
     module.declarations?.forEach(declaration => {
       if (declaration.customElement) {
-
-        if(!module.path.startsWith('components')){
-          return
+        if (!module.path.startsWith('components')) {
+          return;
         }
         // Generate the dist path based on the src path and attach it to the component
         declaration.path = module.path?.replace(/^src\//, 'dist/').replace(/\.ts$/, '.js');
@@ -83,9 +82,8 @@ module.exports.getAllLayouts = function () {
   customElementsManifest.modules?.forEach(module => {
     module.declarations?.forEach(declaration => {
       if (declaration.customElement) {
-
-        if(!module.path.startsWith('layouts')){
-          return
+        if (!module.path.startsWith('layouts')) {
+          return;
         }
         // Generate the dist path based on the src path and attach it to the component
         declaration.path = module.path?.replace(/^src\//, 'dist/').replace(/\.ts$/, '.js');

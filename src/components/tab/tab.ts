@@ -86,16 +86,16 @@ export default class AWCTab extends AWCElement {
       <div
         part="base"
         class=${classMap({
-      tab: true,
-      'tab--active': this.active,
-      'tab--closable': this.closable,
-      'tab--disabled': this.disabled
-    })}
+          tab: true,
+          'tab--active': this.active,
+          'tab--closable': this.closable,
+          'tab--disabled': this.disabled
+        })}
         tabindex=${this.disabled ? '-1' : '0'}
       >
         <slot></slot>
         ${this.closable
-        ? html`
+          ? html`
               <awc-icon-button
                 part="close-button"
                 exportparts="base:close-button__base"
@@ -107,7 +107,7 @@ export default class AWCTab extends AWCElement {
                 tabindex="-1"
               ></awc-icon-button>
             `
-        : ''}
+          : ''}
       </div>
     `;
   }

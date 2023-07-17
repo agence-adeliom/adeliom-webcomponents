@@ -451,11 +451,11 @@ export default class AWCPopup extends AWCElement {
       <div
         part="popup"
         class=${classMap({
-      popup: true,
-      'popup--active': this.active,
-      'popup--fixed': this.strategy === 'fixed',
-      'popup--has-arrow': this.arrow
-    })}
+          popup: true,
+          'popup--active': this.active,
+          'popup--fixed': this.strategy === 'fixed',
+          'popup--has-arrow': this.arrow
+        })}
       >
         <slot></slot>
         ${this.arrow ? html`<div part="arrow" class="popup__arrow" role="presentation"></div>` : ''}

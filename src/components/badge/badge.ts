@@ -33,15 +33,15 @@ export default class AWCBadge extends AWCElement {
       <slot
         part="base"
         class=${classMap({
-      badge: true,
-      'badge--primary': this.variant === 'primary',
-      'badge--success': this.variant === 'success',
-      'badge--neutral': this.variant === 'neutral',
-      'badge--warning': this.variant === 'warning',
-      'badge--danger': this.variant === 'danger',
-      'badge--pill': this.pill,
-      'badge--pulse': this.pulse
-    })}
+          badge: true,
+          'badge--primary': this.variant === 'primary',
+          'badge--success': this.variant === 'success',
+          'badge--neutral': this.variant === 'neutral',
+          'badge--warning': this.variant === 'warning',
+          'badge--danger': this.variant === 'danger',
+          'badge--pill': this.pill,
+          'badge--pulse': this.pulse
+        })}
         role="status"
       ></slot>
     `;

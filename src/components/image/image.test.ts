@@ -1,6 +1,6 @@
 import '../../../dist/awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type {AWCImage} from "./image";
+import type AWCImage from './image';
 
 describe('<awc-image>', () => {
   it('should render a component', async () => {

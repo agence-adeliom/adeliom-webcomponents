@@ -115,7 +115,7 @@ export default {
 
             if (classDoc?.events) {
               classDoc.events.forEach(event => {
-                console.log(className)
+                console.log(className);
                 event.reactName = `on${pascalCase(event.name)}`;
               });
             }

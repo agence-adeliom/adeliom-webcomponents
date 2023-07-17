@@ -1,7 +1,7 @@
 ---
 meta:
   title: Banner
-  description: 
+  description:
 layout: blocks
 ---
 

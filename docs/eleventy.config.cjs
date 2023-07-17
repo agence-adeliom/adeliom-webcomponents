@@ -29,7 +29,8 @@ module.exports = function (eleventyConfig) {
   //
   // Global data
   //
-  eleventyConfig.addGlobalData('baseUrl', 'https://awc.a-dev.cloud/'); // the production URL
+  eleventyConfig.addGlobalData('baseUrl', 'https://awc.a-dev.cloud'); // the production URL
+  eleventyConfig.addGlobalData('cdnUrl', ''); // the production URL
   eleventyConfig.addGlobalData('layout', 'default'); // make 'default' the default layout
   eleventyConfig.addGlobalData('toc', true); // enable the table of contents
   eleventyConfig.addGlobalData('meta', {
@@ -61,13 +62,17 @@ module.exports = function (eleventyConfig) {
   // Generates a URL relative to the site's root
   eleventyConfig.addNunjucksGlobal('rootUrl', (value = '', absolute = false) => {
     value = path.join('/', value);
-    return absolute ? new URL(value, eleventyConfig.globalData.baseUrl).toString() : value;
+    return absolute || process.env.CI
+      ? new URL(path.join(`/${eleventyConfig.globalData.cdnUrl}`, value), eleventyConfig.globalData.baseUrl).toString()
+      : value;
   });
 
   // Generates a URL relative to the site's asset directory
   eleventyConfig.addNunjucksGlobal('assetUrl', (value = '', absolute = false) => {
     value = path.join(`/${assetsDir}`, value);
-    return absolute ? new URL(value, eleventyConfig.globalData.baseUrl).toString() : value;
+    return absolute || process.env.CI
+      ? new URL(path.join(`/${eleventyConfig.globalData.cdnUrl}`, value), eleventyConfig.globalData.baseUrl).toString()
+      : value;
   });
 
   // Fetches a specific component's metadata
@@ -76,7 +81,7 @@ module.exports = function (eleventyConfig) {
     if (!component) {
       throw new Error(
         `Unable to find a component called "${tagName}". Make sure the file name is the same as the component's tag ` +
-        `name (minus the awc- prefix).`
+          `name (minus the awc- prefix).`
       );
     }
     return component;
@@ -87,7 +92,7 @@ module.exports = function (eleventyConfig) {
     if (!layout) {
       throw new Error(
         `Unable to find a layout called "${tagName}". Make sure the file name is the same as the layout's tag ` +
-        `name (minus the awc- prefix).`
+          `name (minus the awc- prefix).`
       );
     }
     return layout;

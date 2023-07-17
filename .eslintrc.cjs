@@ -65,7 +65,7 @@ module.exports = {
           }
         ],
         '@typescript-eslint/consistent-type-assertions': [
-          'warn',
+          'off',
           {
             assertionStyle: 'as',
             objectLiteralTypeAssertions: 'never'

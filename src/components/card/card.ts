@@ -1,8 +1,8 @@
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property } from 'lit/decorators.js';
-import { ifDefined } from "lit/directives/if-defined.js";
 import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './card.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -52,15 +52,15 @@ export default class AWCCard extends AWCElement {
       <div
         part="base"
         class=${classMap({
-      card: true,
-      'card--is-horizontal': !!ifDefined(this.horizontal),
-      'card--is-inner': !!ifDefined(this.inner),
-      'card--has-border': !!ifDefined(this.bordered),
-      'card--has-shadow': !!ifDefined(this.shadow),
-      'card--has-footer': this.hasSlotController.test('footer'),
-      'card--has-image': this.hasSlotController.test('image'),
-      'card--has-header': this.hasSlotController.test('header')
-    })}
+          card: true,
+          'card--is-horizontal': !!ifDefined(this.horizontal),
+          'card--is-inner': !!ifDefined(this.inner),
+          'card--has-border': !!ifDefined(this.bordered),
+          'card--has-shadow': !!ifDefined(this.shadow),
+          'card--has-footer': this.hasSlotController.test('footer'),
+          'card--has-image': this.hasSlotController.test('image'),
+          'card--has-header': this.hasSlotController.test('header')
+        })}
       >
         <slot name="image" part="image" class="card__image"></slot>
         <div class="card__wrapper">
@@ -69,7 +69,7 @@ export default class AWCCard extends AWCElement {
           <slot name="footer" part="footer" class="card__footer"></slot>
         </div>
       </div>
-      `;
+    `;
   }
 }
 

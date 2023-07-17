@@ -14,7 +14,7 @@ import { AWCOembed } from '@agence-adeliom/awc/dist/react';
 
 const App = () => (
   <>
-    <AWCOembed 
+    <AWCOembed
       src="https://www.youtube.com/watch?v=YE7VzlLtp-4"
       layout="fullWidth"
       aspectRatio="1.5"

@@ -1,7 +1,7 @@
 ---
 meta:
   title: Footer
-  description: 
+  description:
 layout: blocks
 ---
 

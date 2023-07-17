@@ -1,7 +1,6 @@
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-.code-preview--tailwind > .code-preview__preview{
-@import "tailwindcss/base";
+.code-preview--tailwind > .code-preview__preview {
+  @import 'tailwindcss/base';
 }
-

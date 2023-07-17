@@ -56,13 +56,11 @@ export { default as AWCTooltip } from './components/tooltip/tooltip.js';
 export { default as AWCTree } from './components/tree/tree.js';
 export { default as AWCTreeItem } from './components/tree-item/tree-item.js';
 export { default as AWCVisuallyHidden } from './components/visually-hidden/visually-hidden.js';
-export { default as AwcTypography } from './components/typography/typography.js';
-export { default as AwcImage } from './components/image/image.js';
-export { default as AwcOembed } from './components/oembed/oembed.js';
+export { default as AWCTypography } from './components/typography/typography.js';
+export { default as AWCImage } from './components/image/image.js';
+export { default as AWCOembed } from './components/oembed/oembed.js';
 /* plop:component */
-export { default as AWCBlock } from './layouts/block/block.js';
 /* plop:layout */
-
 
 // Utilities
 export * from './utilities/animation.js';

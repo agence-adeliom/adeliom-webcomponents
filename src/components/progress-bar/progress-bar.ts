@@ -44,10 +44,10 @@ export default class AWCProgressBar extends AWCElement {
       <div
         part="base"
         class=${classMap({
-      'progress-bar': true,
-      'progress-bar--indeterminate': this.indeterminate,
-      'progress-bar--rtl': this.localize.dir() === 'rtl'
-    })}
+          'progress-bar': true,
+          'progress-bar--indeterminate': this.indeterminate,
+          'progress-bar--rtl': this.localize.dir() === 'rtl'
+        })}
         role="progressbar"
         title=${ifDefined(this.title)}
         aria-label=${this.label.length > 0 ? this.label : this.localize.term('progress')}

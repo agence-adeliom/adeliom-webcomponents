@@ -71,8 +71,6 @@ export default css`
     line-height: 0;
   }
 
-  
-
   .card__image::slotted(img) {
     display: block;
     width: 100%;
@@ -103,7 +101,7 @@ export default css`
   .card__body {
     display: flex;
     padding: var(--padding);
-    flex: 1
+    flex: 1;
   }
 
   .card--has-footer .card__footer {

@@ -2,13 +2,13 @@
 
 import { globby } from 'globby';
 import esbuild from 'esbuild';
-import commandLineArgs from "command-line-args";
+import commandLineArgs from 'command-line-args';
 import { EventEmitter } from 'events';
 import { exec, spawn } from 'child_process';
-const emitter = new EventEmitter()
-import * as fs from "node:fs";
-import * as http from "node:http";
-import * as path from "node:path";
+const emitter = new EventEmitter();
+import * as fs from 'node:fs';
+import * as http from 'node:http';
+import * as path from 'node:path';
 const alwaysExternal = ['@lit-labs/react', 'react'];
 
 const { watch } = commandLineArgs([{ name: 'watch', type: Boolean }]);
@@ -62,11 +62,11 @@ Promise.all([
     plugins: [
       {
         name: 'cdn-build-finished',
-        setup({onEnd}) {
-          onEnd((result) => {
-            console.log(`[CDN] Build ended with ${result.errors.length} errors`)
-            emitter.emit('cdn-build-finished')
-          })
+        setup({ onEnd }) {
+          onEnd(result => {
+            console.log(`[CDN] Build ended with ${result.errors.length} errors`);
+            emitter.emit('cdn-build-finished');
+          });
         }
       }
     ]
@@ -75,45 +75,41 @@ Promise.all([
     ...cdnConfig,
     bundle: false,
     external: undefined,
-    outdir: "dist",
+    outdir: 'dist',
     plugins: [
       {
         name: 'npm-build-finished',
-        setup({onEnd}) {
-          onEnd((result) => {
-            console.log(`[NPM] Build ended with ${result.errors.length} errors`)
-            emitter.emit('npm-build-finished')
-          })
+        setup({ onEnd }) {
+          onEnd(result => {
+            console.log(`[NPM] Build ended with ${result.errors.length} errors`);
+            emitter.emit('npm-build-finished');
+          });
         }
       }
     ]
-  }),
-]).then(async ([cdnBuild, npmBuild]) => {
-
-  //exec(`npm run doc:watch`, { stdio: 'inherit' })
-  //exec(`npm run tailwindcss:watch`, { stdio: 'inherit' })
-
-  console.log('Building...')
-
-  await cdnBuild.rebuild()
-  await npmBuild.rebuild()
-
-  emitter.on('cdn-build-finished', () => {
-    exec(`npm run make:themes`, { stdio: 'inherit' })
-    exec(`npm run make:metadata`, { stdio: 'inherit' })
-    exec(`npm run make:web-types`, { stdio: 'inherit' })
-    exec(`npm run copy:site`, { stdio: 'inherit' })
   })
+])
+  .then(async ([cdnBuild, npmBuild]) => {
+    //exec(`npm run doc:watch`, { stdio: 'inherit' })
+    //exec(`npm run tailwindcss:watch`, { stdio: 'inherit' })
 
-  if(watch){
-    console.log('Watching...')
-    await Promise.all([
-      cdnBuild.watch(),
-      npmBuild.watch(),
-    ])
-  } else {
-    process.exit(0)
-  }
+    console.log('Building...');
 
-})
-.catch(() => process.exit(1));
+    await cdnBuild.rebuild();
+    await npmBuild.rebuild();
+
+    emitter.on('cdn-build-finished', () => {
+      exec(`npm run make:themes`, { stdio: 'inherit' });
+      exec(`npm run make:metadata`, { stdio: 'inherit' });
+      exec(`npm run make:web-types`, { stdio: 'inherit' });
+      exec(`npm run copy:site`, { stdio: 'inherit' });
+    });
+
+    if (watch) {
+      console.log('Watching...');
+      await Promise.all([cdnBuild.watch(), npmBuild.watch()]);
+    } else {
+      process.exit(0);
+    }
+  })
+  .catch(() => process.exit(1));

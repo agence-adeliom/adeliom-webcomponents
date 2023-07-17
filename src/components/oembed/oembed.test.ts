@@ -1,6 +1,6 @@
 import '../../../dist/awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type { AWCOembed } from "./oembed";
+import type AWCOembed from './oembed.js';
 
 describe('<awc-oembed>', () => {
   it('should render a component', async () => {

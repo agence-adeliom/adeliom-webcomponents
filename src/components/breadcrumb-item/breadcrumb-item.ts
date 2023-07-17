@@ -50,15 +50,15 @@ export default class AWCBreadcrumbItem extends AWCElement {
       <div
         part="base"
         class=${classMap({
-      'breadcrumb-item': true,
-      'breadcrumb-item--has-prefix': this.hasSlotController.test('prefix'),
-      'breadcrumb-item--has-suffix': this.hasSlotController.test('suffix')
-    })}
+          'breadcrumb-item': true,
+          'breadcrumb-item--has-prefix': this.hasSlotController.test('prefix'),
+          'breadcrumb-item--has-suffix': this.hasSlotController.test('suffix')
+        })}
       >
         <slot name="prefix" part="prefix" class="breadcrumb-item__prefix"></slot>
 
         ${isLink
-        ? html`
+          ? html`
               <a
                 part="label"
                 class="breadcrumb-item__label breadcrumb-item__label--link"
@@ -69,7 +69,7 @@ export default class AWCBreadcrumbItem extends AWCElement {
                 <slot></slot>
               </a>
             `
-        : html`
+          : html`
               <button part="label" type="button" class="breadcrumb-item__label breadcrumb-item__label--button">
                 <slot></slot>
               </button>

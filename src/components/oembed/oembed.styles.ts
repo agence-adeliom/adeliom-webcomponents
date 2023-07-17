@@ -15,11 +15,11 @@ export default css`
     overflow: hidden;
   }
 
-  .oembed{
+  .oembed {
     position: relative;
   }
 
-  .oembed__thumbnail{
+  .oembed__thumbnail {
     position: absolute;
     top: 0;
     left: 0;

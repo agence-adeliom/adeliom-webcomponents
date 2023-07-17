@@ -99,10 +99,10 @@ export default class AWCIconButton extends AWCElement {
       <${tag}
         part="base"
         class=${classMap({
-      'icon-button': true,
-      'icon-button--disabled': !isLink && this.disabled,
-      'icon-button--focused': this.hasFocus
-    })}
+          'icon-button': true,
+          'icon-button--disabled': !isLink && this.disabled,
+          'icon-button--focused': this.hasFocus
+        })}
         ?disabled=${ifDefined(isLink ? undefined : this.disabled)}
         type=${ifDefined(isLink ? undefined : 'button')}
         href=${ifDefined(isLink ? this.href : undefined)}

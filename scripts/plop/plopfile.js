@@ -60,7 +60,7 @@ export default function (plop) {
         type: 'modify',
         path: '../../src/awc.ts',
         pattern: /\/\* plop:component \*\//,
-        template: `export { default as {{ properCase tag }} } from './components/{{ tagWithoutPrefix tag }}/{{ tagWithoutPrefix tag }}.js';\n/* plop:component */`
+        template: `export { default as {{ componentCase tag }} } from './components/{{ tagWithoutPrefix tag }}/{{ tagWithoutPrefix tag }}.js';\n/* plop:component */`
       }
     ]
   });

@@ -95,7 +95,7 @@ export default class AWCAnimatedImage extends AWCElement {
         />
 
         ${this.isLoaded
-        ? html`
+          ? html`
               <img
                 class="animated-image__frozen"
                 src=${this.frozenFrame}
@@ -109,7 +109,7 @@ export default class AWCAnimatedImage extends AWCElement {
                 <slot name="pause-icon"><awc-icon name="pause-fill" library="system"></awc-icon></slot>
               </div>
             `
-        : ''}
+          : ''}
       </div>
     `;
   }

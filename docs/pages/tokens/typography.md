@@ -13,7 +13,7 @@ Typography tokens are used to maintain a consistent set of font styles throughou
 The default font stack is designed to be simple and highly available on as many devices as possible.
 
 | Token              | Value                                                                                                                                         | Example                                                                                               |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `--awc-font-sans`  | -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' | <span style="font-family: var(--awc-font-sans)">The quick brown fox jumped over the lazy dog.</span>  |
 | `--awc-font-serif` | Georgia, 'Times New Roman', serif                                                                                                             | <span style="font-family: var(--awc-font-serif)">The quick brown fox jumped over the lazy dog.</span> |
 | `--awc-font-mono`  | SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;                                                                                | <span style="font-family: var(--awc-font-mono)">The quick brown fox jumped over the lazy dog.</span>  |
@@ -24,7 +24,7 @@ Font sizes use `rem` units so they scale with the base font size. The pixel valu
 size.
 
 | Token                       | Value           | Example                                                           |
-|-----------------------------|-----------------|-------------------------------------------------------------------|
+| --------------------------- | --------------- | ----------------------------------------------------------------- |
 | `--awc-font-size-2x-small`  | 0.625rem (10px) | <span style="font-size: var(--awc-font-size-2x-small)">Aa</span>  |
 | `--awc-font-size-x-small`   | 0.75rem (12px)  | <span style="font-size: var(--awc-font-size-x-small)">Aa</span>   |
 | `--awc-font-size-small`     | 0.875rem (14px) | <span style="font-size: var(--awc-font-size-small)">Aa</span>     |
@@ -44,8 +44,8 @@ size.
 Font sizes use `rem` units so they scale with the base font size. The pixel values displayed are based on a 16px font
 size.
 
-| Token                      | Value                           | Value >= 1024px               | Value >= 1280px               | Example                                                          |
-|----------------------------|---------------------------------|-------------------------------|-------------------------------|------------------------------------------------------------------|
+| Token                      | Value                           | Value >= 1024px                 | Value >= 1280px                 | Example                                                          |
+| -------------------------- | ------------------------------- | ------------------------------- | ------------------------------- | ---------------------------------------------------------------- |
 | `--awc-font-size-base`     | `var(--awc-font-size-medium)`   | `var(--awc-font-size-medium)`   | `var(--awc-font-size-medium)`   | <span style="font-size: var(--awc-font-size-base)">Aa</span>     |
 | `--awc-font-size-heading1` | `var(--awc-font-size-5x-large)` | `var(--awc-font-size-6x-large)` | `var(--awc-font-size-7x-large)` | <span style="font-size: var(--awc-font-size-heading1)">Aa</span> |
 | `--awc-font-size-heading2` | `var(--awc-font-size-4x-large)` | `var(--awc-font-size-5x-large)` | `var(--awc-font-size-6x-large)` | <span style="font-size: var(--awc-font-size-heading2)">Aa</span> |
@@ -57,7 +57,7 @@ size.
 ## Font Weight
 
 | Token                        | Value | Example                                                                                                          |
-|------------------------------|-------|------------------------------------------------------------------------------------------------------------------|
+| ---------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------- |
 | `--awc-font-weight-light`    | 300   | <span style="font-weight: var(--awc-font-weight-light);">The quick brown fox jumped over the lazy dog.</span>    |
 | `--awc-font-weight-normal`   | 400   | <span style="font-weight: var(--awc-font-weight-normal);">The quick brown fox jumped over the lazy dog.</span>   |
 | `--awc-font-weight-semibold` | 500   | <span style="font-weight: var(--awc-font-weight-semibold);">The quick brown fox jumped over the lazy dog.</span> |
@@ -66,7 +66,7 @@ size.
 ## Letter Spacing
 
 | Token                         | Value    | Example                                                                                                              |
-|-------------------------------|----------|----------------------------------------------------------------------------------------------------------------------|
+| ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
 | `--awc-letter-spacing-denser` | -0.03em  | <span style="letter-spacing: var(--awc-letter-spacing-denser);">The quick brown fox jumped over the lazy dog.</span> |
 | `--awc-letter-spacing-dense`  | -0.015em | <span style="letter-spacing: var(--awc-letter-spacing-dense);">The quick brown fox jumped over the lazy dog.</span>  |
 | `--awc-letter-spacing-normal` | normal   | <span style="letter-spacing: var(--awc-letter-spacing-normal);">The quick brown fox jumped over the lazy dog.</span> |
@@ -76,7 +76,7 @@ size.
 ## Line Height
 
 | Token                      | Value | Example                                                                                                                                                                                                        |
-|----------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--awc-line-height-denser` | 1     | <div style="line-height: var(--awc-line-height-denser);">The quick brown fox jumped over the lazy dog.<br>The quick brown fox jumped over the lazy dog.<br>The quick brown fox jumped over the lazy dog.</div> |
 | `--awc-line-height-dense`  | 1.4   | <div style="line-height: var(--awc-line-height-dense);">The quick brown fox jumped over the lazy dog.<br>The quick brown fox jumped over the lazy dog.<br>The quick brown fox jumped over the lazy dog.</div>  |
 | `--awc-line-height-normal` | 1.8   | <div style="line-height: var(--awc-line-height-normal);">The quick brown fox jumped over the lazy dog.<br>The quick brown fox jumped over the lazy dog.<br>The quick brown fox jumped over the lazy dog.</div> |

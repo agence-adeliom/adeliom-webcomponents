@@ -554,8 +554,6 @@
   --awc-font-size-heading5: var(--awc-font-size-x-large);
   --awc-font-size-heading6: var(--awc-font-size-large);
   --awc-font-size-base: var(--awc-font-size-medium);
-
-
 }
 @media (min-width: 1024px) {
   :root,

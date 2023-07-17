@@ -74,9 +74,9 @@ export default class AWCQrCode extends AWCElement {
         role="img"
         aria-label=${this.label?.length > 0 ? this.label : this.value}
         style=${styleMap({
-      width: `${this.size}px`,
-      height: `${this.size}px`
-    })}
+          width: `${this.size}px`,
+          height: `${this.size}px`
+        })}
       ></canvas>
     `;
   }

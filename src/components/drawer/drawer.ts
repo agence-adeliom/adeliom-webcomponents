@@ -296,17 +296,17 @@ export default class AWCDrawer extends AWCElement {
       <div
         part="base"
         class=${classMap({
-      drawer: true,
-      'drawer--open': this.open,
-      'drawer--top': this.placement === 'top',
-      'drawer--end': this.placement === 'end',
-      'drawer--bottom': this.placement === 'bottom',
-      'drawer--start': this.placement === 'start',
-      'drawer--contained': this.contained,
-      'drawer--fixed': !this.contained,
-      'drawer--rtl': this.localize.dir() === 'rtl',
-      'drawer--has-footer': this.hasSlotController.test('footer')
-    })}
+          drawer: true,
+          'drawer--open': this.open,
+          'drawer--top': this.placement === 'top',
+          'drawer--end': this.placement === 'end',
+          'drawer--bottom': this.placement === 'bottom',
+          'drawer--start': this.placement === 'start',
+          'drawer--contained': this.contained,
+          'drawer--fixed': !this.contained,
+          'drawer--rtl': this.localize.dir() === 'rtl',
+          'drawer--has-footer': this.hasSlotController.test('footer')
+        })}
       >
         <div part="overlay" class="drawer__overlay" @click=${() => this.requestClose('overlay')} tabindex="-1"></div>
 
@@ -321,7 +321,7 @@ export default class AWCDrawer extends AWCElement {
           tabindex="0"
         >
           ${!this.noHeader
-        ? html`
+            ? html`
                 <header part="header" class="drawer__header">
                   <h2 part="title" class="drawer__title" id="title">
                     <!-- If there's no label, use an invisible character to prevent the header from collapsing -->
@@ -341,7 +341,7 @@ export default class AWCDrawer extends AWCElement {
                   </div>
                 </header>
               `
-        : ''}
+            : ''}
 
           <slot part="body" class="drawer__body"></slot>
 

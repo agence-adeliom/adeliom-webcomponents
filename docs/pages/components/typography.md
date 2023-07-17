@@ -5,7 +5,6 @@ meta:
 layout: component
 ---
 
-
 ```html:preview
 <awc-typography type='h1'>Hello World</awc-typography>
 <awc-typography type='h2'>Hello World</awc-typography>

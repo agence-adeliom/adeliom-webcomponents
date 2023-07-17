@@ -19,7 +19,6 @@ toc: false
 - First-class [React support](/frameworks/react) ⚛️
 - Built-in localization 💬
 - Open source 😸
-- [More awesome than ever](https://blog.fontawesome.com/shoelace-joins-font-awesome/) ![Awesome emoji](/assets/images/awesome.svg)
 
 </div>
 <div class="splash-end">
@@ -30,8 +29,6 @@ toc: false
 [![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@agence-adeliom/awc/badge)](https://www.jsdelivr.com/package/npm/@agence-adeliom/awc)
 [![npm](https://img.shields.io/npm/dw/@agence-adeliom/awc?label=npm&style=flat-square)](https://www.npmjs.com/package/@agence-adeliom/awc)
 [![License](https://img.shields.io/badge/license-MIT-232323.svg?style=flat-square)](https://github.com/agence-adeliom/awc/blob/next/LICENSE.md)<br>
-[![Discord](https://img.shields.io/badge/Discord-Join%20the%20chat-5965f2.svg?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/mg8f26C)
-[![Twitter](https://img.shields.io/badge/Twitter-Follow-00acee.svg?style=flat-square&logo=twitter&logoColor=white)](https://twitter.com/shoelace_style)
 [![Sponsor](https://img.shields.io/badge/GitHub-Code-232323.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/agence-adeliom/awc)
 
 ## Quick Start
@@ -120,4 +117,3 @@ Special thanks to the following projects and individuals that help make Adeliom 
 - Positioning of dropdowns, tooltips, et al is handled by [Floating UI](https://floating-ui.com/)
 - Animations are courtesy of [animate.css](https://animate.style/)
 - Search is powered by [Lunr](https://lunrjs.com/)
-- The Adeliom WebComponents logo was designed with a single shoelace by [Adam K Olson](https://twitter.com/adamkolson)

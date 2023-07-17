@@ -293,7 +293,7 @@ if (serve) {
 
   // Reload without rebuilding when the docs change
   bs.watch([`docs/assets/styles/tailwind/tailwind.css`]).on('change', async filename => {
-    console.log(filename)
+    console.log(filename);
     await buildTailwind();
     bs.reload();
   });

@@ -307,13 +307,13 @@ export default class AWCTextarea extends AWCElement implements AWCFormControl {
       <div
         part="form-control"
         class=${classMap({
-      'form-control': true,
-      'form-control--small': this.size === 'small',
-      'form-control--medium': this.size === 'medium',
-      'form-control--large': this.size === 'large',
-      'form-control--has-label': hasLabel,
-      'form-control--has-help-text': hasHelpText
-    })}
+          'form-control': true,
+          'form-control--small': this.size === 'small',
+          'form-control--medium': this.size === 'medium',
+          'form-control--large': this.size === 'large',
+          'form-control--has-label': hasLabel,
+          'form-control--has-help-text': hasHelpText
+        })}
       >
         <label
           part="form-control-label"
@@ -328,19 +328,19 @@ export default class AWCTextarea extends AWCElement implements AWCFormControl {
           <div
             part="base"
             class=${classMap({
-      textarea: true,
-      'textarea--small': this.size === 'small',
-      'textarea--medium': this.size === 'medium',
-      'textarea--large': this.size === 'large',
-      'textarea--standard': !this.filled,
-      'textarea--filled': this.filled,
-      'textarea--disabled': this.disabled,
-      'textarea--focused': this.hasFocus,
-      'textarea--empty': !this.value,
-      'textarea--resize-none': this.resize === 'none',
-      'textarea--resize-vertical': this.resize === 'vertical',
-      'textarea--resize-auto': this.resize === 'auto'
-    })}
+              textarea: true,
+              'textarea--small': this.size === 'small',
+              'textarea--medium': this.size === 'medium',
+              'textarea--large': this.size === 'large',
+              'textarea--standard': !this.filled,
+              'textarea--filled': this.filled,
+              'textarea--disabled': this.disabled,
+              'textarea--focused': this.hasFocus,
+              'textarea--empty': !this.value,
+              'textarea--resize-none': this.resize === 'none',
+              'textarea--resize-vertical': this.resize === 'vertical',
+              'textarea--resize-auto': this.resize === 'auto'
+            })}
           >
             <textarea
               part="textarea"

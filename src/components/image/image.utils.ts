@@ -1,7 +1,7 @@
-import { getCanonicalCdnForUrl, getTransformer } from "unpic";
-import type { ImageCdn, UrlTransformer, } from "unpic";
+import { getCanonicalCdnForUrl, getTransformer } from 'unpic';
+import type { ImageCdn, UrlTransformer } from 'unpic';
 
-export type Layout = "fixed" | "constrained" | "fullWidth" | "inset";
+export type Layout = 'fixed' | 'constrained' | 'fullWidth' | 'inset';
 
 type Prettify<T> = {
   [K in keyof T]: T[K];
@@ -28,38 +28,31 @@ export interface CoreImageAttributes<TStyle = Record<string, string>> {
   width?: string | number | null;
   height?: string | number | null;
   alt?: string | number | null;
-  loading?: "eager" | "lazy" | null;
-  decoding?: "sync" | "async" | "auto" | null;
+  loading?: 'eager' | 'lazy' | null;
+  decoding?: 'sync' | 'async' | 'auto' | null;
   style?: TStyle;
   srcset?: string | number | null;
   // eslint-disable-next-line @typescript-eslint/ban-types
-  role?: "presentation" | "img" | "none" | "figure" | (string & {}) | null;
+  role?: 'presentation' | 'img' | 'none' | 'figure' | (string & {}) | null;
   sizes?: string | number | null;
-  fetchpriority?: "high" | "low" | "auto" | null;
+  fetchpriority?: 'high' | 'low' | 'auto' | null;
 }
 
-export type BaseImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
-> = Exclude<TImageAttributes, "srcset" | "style"> &
+export type BaseImageProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle> = Exclude<
+  TImageAttributes,
+  'srcset' | 'style'
+> &
   ImageSourceOptions & {
     priority?: boolean;
-    fetchpriority?: "high" | "low";
+    fetchpriority?: 'high' | 'low';
     background?: string;
-    objectFit?:
-    | "contain"
-    | "cover"
-    | "fill"
-    | "none"
-    | "scale-down"
-    | "inherit"
-    | "initial";
+    objectFit?: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down' | 'inherit' | 'initial';
   };
 
-type BaseImageWithAspectRatioProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
+type BaseImageWithAspectRatioProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle> = BaseImageProps<
+  TImageAttributes,
   TStyle
-> = BaseImageProps<TImageAttributes, TStyle> & {
+> & {
   aspectRatio: number;
 };
 
@@ -77,58 +70,49 @@ type ImageWithAspectRatioAndHeightProps<
   height: number;
 };
 
-type ImageWithWidthAndHeightProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
+type ImageWithWidthAndHeightProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle> = BaseImageProps<
+  TImageAttributes,
   TStyle
-> = BaseImageProps<TImageAttributes, TStyle> & {
+> & {
   width: number;
   height: number;
 };
 
-type ImageWithSizeProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
-> =
+type ImageWithSizeProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle> =
   | ImageWithAspectRatioAndWidthProps<TImageAttributes, TStyle>
   | ImageWithAspectRatioAndHeightProps<TImageAttributes, TStyle>
   | ImageWithWidthAndHeightProps<TImageAttributes, TStyle>;
 
-export type FixedImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
-> = Prettify<
+export type FixedImageProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle> = Prettify<
   ImageWithSizeProps<TImageAttributes, TStyle> & {
-    layout: "fixed";
+    layout: 'fixed';
   }
 >;
 
-export type ConstrainedImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
+export type ConstrainedImageProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle> = ImageWithSizeProps<
+  TImageAttributes,
   TStyle
-> = ImageWithSizeProps<TImageAttributes, TStyle> & {
+> & {
   // Default is `constrained`, so this is optional
-  layout?: "constrained";
+  layout?: 'constrained';
 };
 
-export type FullWidthImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
+export type FullWidthImageProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle> = BaseImageProps<
+  TImageAttributes,
   TStyle
-> = BaseImageProps<TImageAttributes, TStyle> & {
-  layout: "fullWidth";
+> & {
+  layout: 'fullWidth';
   width?: never;
 };
 
-export type InsetImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
+export type InsetImageProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle> = BaseImageProps<
+  TImageAttributes,
   TStyle
-> = BaseImageProps<TImageAttributes, TStyle> & {
-  layout: "inset";
+> & {
+  layout: 'inset';
 };
 
-export type AWCImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = TImageAttributes["style"]
-> =
+export type AWCImageProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle = TImageAttributes['style']> =
   | FixedImageProps<TImageAttributes, TStyle>
   | ConstrainedImageProps<TImageAttributes, TStyle>
   | FullWidthImageProps<TImageAttributes, TStyle>
@@ -137,10 +121,7 @@ export type AWCImageProps<
 /**
  * Gets the `sizes` attribute for an image, based on the layout and width
  */
-export const getSizes = (
-  width?: number,
-  layout?: Layout
-): string | undefined => {
+export const getSizes = (width?: number, layout?: Layout): string | undefined => {
   if (!width || !layout) {
     return undefined;
   }
@@ -163,80 +144,61 @@ export const getSizes = (
   }
 };
 
-const pixelate = (value?: number) =>
-  value || value === 0 ? `${value}px` : undefined;
+const pixelate = (value?: number) => (value || value === 0 ? `${value}px` : undefined);
 
 /**
  * Gets the styles for an image
  */
-export const getStyle = <
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = Record<string, string>
->({
+export const getStyle = <TImageAttributes extends CoreImageAttributes<TStyle>, TStyle = Record<string, string>>({
   width,
   height,
   aspectRatio,
   layout,
-  objectFit = "cover",
-  background,
+  objectFit = 'cover',
+  background
 }: Pick<
   AWCImageProps<TImageAttributes, TStyle>,
-  "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
->): TImageAttributes["style"] => {
-  const styleEntries: Array<[prop: string, value: string | undefined]> = [
-    ["object-fit", objectFit],
-    ["object-position", "center"],
+  'width' | 'height' | 'aspectRatio' | 'layout' | 'objectFit' | 'background'
+>): TImageAttributes['style'] => {
+  const styleEntries: [prop: string, value: string | undefined][] = [
+    ['object-fit', objectFit],
+    ['object-position', 'center']
   ];
 
   // If background is a URL, set it to cover the image and not repeat
-  if (
-    background?.startsWith("https:") ||
-    background?.startsWith("http:") ||
-    background?.startsWith("data:")
-  ) {
-    styleEntries.push(["background-image", `url(${background})`]);
-    styleEntries.push(["background-size", "cover"]);
-    styleEntries.push(["background-repeat", "no-repeat"]);
+  if (background?.startsWith('https:') || background?.startsWith('http:') || background?.startsWith('data:')) {
+    styleEntries.push(['background-image', `url(${background})`]);
+    styleEntries.push(['background-size', 'cover']);
+    styleEntries.push(['background-repeat', 'no-repeat']);
   } else {
-    styleEntries.push(["background", background]);
+    styleEntries.push(['background', background]);
   }
-  if (layout === "fixed") {
-    styleEntries.push(["width", pixelate(width)]);
-    styleEntries.push(["height", pixelate(height)]);
+  if (layout === 'fixed') {
+    styleEntries.push(['width', pixelate(width)]);
+    styleEntries.push(['height', pixelate(height)]);
   }
-  if (layout === "constrained") {
-    styleEntries.push(["max-width", pixelate(width)]);
-    styleEntries.push(["max-height", pixelate(height)]);
-    styleEntries.push([
-      "aspect-ratio",
-      aspectRatio ? `${aspectRatio}` : undefined,
-    ]);
-    styleEntries.push(["width", "100%"]);
+  if (layout === 'constrained') {
+    styleEntries.push(['max-width', pixelate(width)]);
+    styleEntries.push(['max-height', pixelate(height)]);
+    styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
+    styleEntries.push(['width', '100%']);
   }
-  if (layout === "fullWidth") {
-    styleEntries.push(["width", "100%"]);
-    styleEntries.push([
-      "aspect-ratio",
-      aspectRatio ? `${aspectRatio}` : undefined,
-    ]);
-    styleEntries.push(["height", pixelate(height)]);
+  if (layout === 'fullWidth') {
+    styleEntries.push(['width', '100%']);
+    styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
+    styleEntries.push(['height', pixelate(height)]);
   }
-  if (layout === "inset") {
-    styleEntries.push(["width", "100%"]);
-    styleEntries.push(["height", "100%"]);
-    styleEntries.push(["position", "absolute"]);
-    styleEntries.push(["top", "0"]);
-    styleEntries.push(["left", "0"]);
-    styleEntries.push(["right", "0"]);
-    styleEntries.push(["bottom", "0"]);
-    styleEntries.push([
-      "aspect-ratio",
-      aspectRatio ? `${aspectRatio}` : undefined,
-    ]);
+  if (layout === 'inset') {
+    styleEntries.push(['width', '100%']);
+    styleEntries.push(['height', '100%']);
+    styleEntries.push(['position', 'absolute']);
+    styleEntries.push(['top', '0']);
+    styleEntries.push(['left', '0']);
+    styleEntries.push(['right', '0']);
+    styleEntries.push(['bottom', '0']);
+    styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
   }
-  return Object.fromEntries(
-    styleEntries.filter(([, value]) => value)
-  ) as TImageAttributes["style"];
+  return Object.fromEntries(styleEntries.filter(([, value]) => value)) as TImageAttributes['style'];
 };
 
 // Common screen widths. These will be filtered
@@ -256,7 +218,7 @@ const DEFAULT_RESOLUTIONS = [
   960, // older horizontal phones
   828, // iPhone XR/11
   750, // iPhone 6-8
-  640, // older and lower-end phones
+  640 // older and lower-end phones
 ];
 
 // Width of the blurred, low-res image
@@ -265,27 +227,24 @@ const LOW_RES_WIDTH = 24;
 /**
  * Gets the breakpoints for an image, based on the layout and width
  */
-export const getBreakpoints = ({ width, layout }: {
-  width?: number;
-  layout: Layout;
-}): number[] => {
-  if (layout === "fullWidth") {
+export const getBreakpoints = ({ width, layout }: { width?: number; layout: Layout }): number[] => {
+  if (layout === 'fullWidth') {
     return DEFAULT_RESOLUTIONS;
   }
   if (!width) {
     return [];
   }
   const doubleWidth = width * 2;
-  if (layout === "fixed") {
+  if (layout === 'fixed') {
     return [width, doubleWidth];
   }
-  if (layout === "constrained") {
+  if (layout === 'constrained') {
     return [
       // Always include the image at 1x and 2x the specified width
       width,
       doubleWidth,
       // Filter out any resolutions that are larger than the double-res image
-      ...DEFAULT_RESOLUTIONS.filter((w) => w < doubleWidth),
+      ...DEFAULT_RESOLUTIONS.filter(w => w < doubleWidth)
     ];
   }
 
@@ -298,15 +257,13 @@ export const getBreakpoints = ({ width, layout }: {
 export const getSrcSet = ({
   src,
   width,
-  layout = "constrained",
+  layout = 'constrained',
   height,
   aspectRatio,
   breakpoints,
   cdn,
-  transformer,
-}: Omit<ImageSourceOptions, "src"> & { src: URL | string }):
-  | string
-  | undefined => {
+  transformer
+}: Omit<ImageSourceOptions, 'src'> & { src: URL | string }): string | undefined => {
   const canonical = getCanonicalCdnForUrl(src, cdn);
 
   if (canonical && !transformer) {
@@ -324,7 +281,7 @@ export const getSrcSet = ({
   // eslint-disable-next-line consistent-return
   return breakpoints
     .sort((a, b) => a - b)
-    .map((bp) => {
+    .map(bp => {
       let transformedHeight;
       if (height && aspectRatio) {
         transformedHeight = Math.round(bp / aspectRatio);
@@ -334,32 +291,29 @@ export const getSrcSet = ({
       const transformed = transformer!({
         url: canonical ? canonical.url : src,
         width: bp,
-        height: transformedHeight,
+        height: transformedHeight
       });
       if (transformed) {
         return `${transformed.toString()} ${bp}w`;
       }
-      return "";
+      return '';
     })
-    .join(",\n");
+    .join(',\n');
 };
 
 /**
  * Generates the props for an img element
  */
-export function transformProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = Record<string, string>
->({
+export function transformProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle = Record<string, string>>({
   src,
   width,
   height,
   priority,
-  layout = "constrained",
+  layout = 'constrained',
   aspectRatio,
   cdn,
   transformer,
-  objectFit = "cover",
+  objectFit = 'cover',
   background,
   breakpoints,
   ...props
@@ -376,54 +330,48 @@ export function transformProps<
 
   // High priority images should be loaded eagerly
   if (priority) {
-    props.loading ||= "eager";
-    props.fetchpriority ||= "high";
+    props.loading ||= 'eager';
+    props.fetchpriority ||= 'high';
   } else {
     // Otherwise use native lazy loading and async decoding
-    props.loading ||= "lazy";
-    props.decoding ||= "async";
+    props.loading ||= 'lazy';
+    props.decoding ||= 'async';
   }
 
   // If the user has set the alt attribute to an empty string and not set
   // the role, we assume the image is decorative and set it to presentation
-  if (props.alt === "") {
-    props.role ||= "presentation";
+  if (props.alt === '') {
+    props.role ||= 'presentation';
   }
 
   // Calculate dimensions from aspect ratio
   if (aspectRatio) {
     if (width) {
       if (height) {
-        console.error(
-          "Ignoring aspectRatio because width and height are both set"
-        );
+        console.error('Ignoring aspectRatio because width and height are both set');
       } else {
         height = width / aspectRatio;
       }
     } else if (height) {
       width = height * aspectRatio;
-    } else if (layout !== "fullWidth") {
+    } else if (layout !== 'fullWidth') {
       // Fullwidth images have 100% width, so aspectRatio is applicable
-      console.error(
-        "When aspectRatio is set, either width or height must also be set"
-      );
+      console.error('When aspectRatio is set, either width or height must also be set');
     }
   } else if (width && height) {
     aspectRatio = width / height;
-  } else if (layout !== "fullWidth") {
+  } else if (layout !== 'fullWidth') {
     // Fullwidth images don't need dimensions
-    console.error("Either aspectRatio or both width and height must be set");
+    console.error('Either aspectRatio or both width and height must be set');
   }
 
   // Auto-generate a low-res image for blurred placeholders
-  if (transformer && background === "auto") {
-    const lowResHeight = aspectRatio
-      ? Math.round(LOW_RES_WIDTH / aspectRatio)
-      : undefined;
+  if (transformer && background === 'auto') {
+    const lowResHeight = aspectRatio ? Math.round(LOW_RES_WIDTH / aspectRatio) : undefined;
     const lowResImage = transformer({
       url,
       width: LOW_RES_WIDTH,
-      height: lowResHeight,
+      height: lowResHeight
     });
     if (lowResImage) {
       background = lowResImage.toString();
@@ -436,15 +384,15 @@ export function transformProps<
     aspectRatio,
     layout,
     objectFit,
-    background,
+    background
   } as Pick<
     AWCImageProps<TImageAttributes, TStyle>,
-    "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
+    'width' | 'height' | 'aspectRatio' | 'layout' | 'objectFit' | 'background'
   >;
 
   props.style = {
     ...getStyle<TImageAttributes, TStyle>(styleProps),
-    ...props.style,
+    ...props.style
   };
 
   if (transformer) {
@@ -458,7 +406,7 @@ export function transformProps<
       layout,
       breakpoints,
       transformer,
-      cdn,
+      cdn
     });
 
     const transformed = transformer({ url, width, height });
@@ -468,7 +416,7 @@ export function transformProps<
     }
   }
 
-  if (layout === "fullWidth" || layout === "constrained") {
+  if (layout === 'fullWidth' || layout === 'constrained') {
     width = undefined;
     height = undefined;
   }
@@ -477,6 +425,6 @@ export function transformProps<
     ...props,
     src: url.toString(),
     width,
-    height,
+    height
   } as TImageAttributes;
 }

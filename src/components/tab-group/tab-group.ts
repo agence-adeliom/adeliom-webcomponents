@@ -370,20 +370,20 @@ export default class AWCTabGroup extends AWCElement {
       <div
         part="base"
         class=${classMap({
-      'tab-group': true,
-      'tab-group--top': this.placement === 'top',
-      'tab-group--bottom': this.placement === 'bottom',
-      'tab-group--start': this.placement === 'start',
-      'tab-group--end': this.placement === 'end',
-      'tab-group--rtl': this.localize.dir() === 'rtl',
-      'tab-group--has-scroll-controls': this.hasScrollControls
-    })}
+          'tab-group': true,
+          'tab-group--top': this.placement === 'top',
+          'tab-group--bottom': this.placement === 'bottom',
+          'tab-group--start': this.placement === 'start',
+          'tab-group--end': this.placement === 'end',
+          'tab-group--rtl': this.localize.dir() === 'rtl',
+          'tab-group--has-scroll-controls': this.hasScrollControls
+        })}
         @click=${this.handleClick}
         @keydown=${this.handleKeyDown}
       >
         <div class="tab-group__nav-container" part="nav">
           ${this.hasScrollControls
-        ? html`
+            ? html`
                 <awc-icon-button
                   part="scroll-button scroll-button--start"
                   exportparts="base:scroll-button__base"
@@ -394,7 +394,7 @@ export default class AWCTabGroup extends AWCElement {
                   @click=${this.handleScrollToStart}
                 ></awc-icon-button>
               `
-        : ''}
+            : ''}
 
           <div class="tab-group__nav">
             <div part="tabs" class="tab-group__tabs" role="tablist">
@@ -404,7 +404,7 @@ export default class AWCTabGroup extends AWCElement {
           </div>
 
           ${this.hasScrollControls
-        ? html`
+            ? html`
                 <awc-icon-button
                   part="scroll-button scroll-button--end"
                   exportparts="base:scroll-button__base"
@@ -415,7 +415,7 @@ export default class AWCTabGroup extends AWCElement {
                   @click=${this.handleScrollToEnd}
                 ></awc-icon-button>
               `
-        : ''}
+            : ''}
         </div>
 
         <slot part="body" class="tab-group__body" @slotchange=${this.syncTabsAndPanels}></slot>
