@@ -26,6 +26,7 @@ jobs:
       - run: npx playwright install-deps
       - run: npm ci
       - run: npm run verify
+      - run: npm run build
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:

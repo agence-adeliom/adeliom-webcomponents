@@ -35,6 +35,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart label - The button's label.
  * @csspart suffix - The container that wraps the suffix.
  * @csspart caret - The button's caret icon, an `<awc-icon>` element.
+ * @csspart spinner - The spinner that shows when the button is in the loading state.
  */
 @customElement('awc-button')
 export default class AWCButton extends AWCElement implements AWCFormControl {
@@ -344,7 +345,7 @@ export default class AWCButton extends AWCElement implements AWCFormControl {
             ? html` <awc-icon part="caret" class="button__caret" library="system" name="caret"></awc-icon> `
             : ''
         }
-        ${this.loading ? html`<awc-spinner></awc-spinner>` : ''}
+        ${this.loading ? html`<awc-spinner part="spinner"></awc-spinner>` : ''}
       </${tag}>
     `;
     /* eslint-enable lit/no-invalid-html */

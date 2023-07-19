@@ -115,8 +115,8 @@ export default {
 
             if (classDoc?.events) {
               classDoc.events.forEach(event => {
-                console.log(className);
                 event.reactName = `on${pascalCase(event.name)}`;
+                event.eventName = `${pascalCase(event.name).replace('Awc', 'AWC')}Event`;
               });
             }
           }

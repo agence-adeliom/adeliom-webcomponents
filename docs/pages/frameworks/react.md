@@ -72,12 +72,31 @@ If you're using TypeScript, it's important to note that `event.target` will be a
 ```tsx
 import { useState } from 'react';
 import { AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
-import type SlInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
+import type AWCInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');
 
-  return <AWCInput value={value} onAwcInput={event => setValue((event.target as SlInputElement).value)} />;
+  return <AWCInput value={value} onAwcInput={event => setValue((event.target as AWCInputElement).value)} />;
+}
+
+export default MyComponent;
+```
+
+You can also import the event type for use in your callbacks, shown below.
+
+```tsx
+import { useCallback, useState } from 'react';
+import { AWCInput, AWCInputEvent } from '@agence-adeliom/awc/%NPMDIR%/react';
+import type AWCInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
+
+function MyComponent() {
+  const [value, setValue] = useState('');
+  const onInput = useCallback((event: AWCInputEvent) => {
+    setValue(event.detail);
+  }, []);
+
+  return <AWCInput value={value} onAwcInput={event => setValue((event.target as AWCInputElement).value)} />;
 }
 
 export default MyComponent;

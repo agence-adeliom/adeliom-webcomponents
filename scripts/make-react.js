@@ -26,35 +26,38 @@ Promise.all(
     const componentDir = path.join(reactDir, tagWithoutPrefix);
     const componentFile = path.join(componentDir, 'index.ts');
     const importPath = component.path;
-    const eventImports = (component.events || [])
+    console.log(component?.events || []);
+    const eventImports = (component?.events || [])
       .map(event => `import { ${event.eventName} } from '../../../src/events/events';`)
       .join('\n');
     const eventNameImport =
-      (component.events || []).length > 0 ? `import { type EventName  } from '@lit-labs/react';` : ``;
-    const events = (component.events || [])
+      (component?.events || []).length > 0 ? `import { type EventName  } from '@lit-labs/react';` : ``;
+    const events = (component?.events || [])
       .map(event => `${event.reactName}: '${event.name}' as EventName<${event.eventName}>`)
       .join(',\n');
 
     fs.mkdirSync(componentDir, { recursive: true });
 
+    const code = `
+    import * as React from 'react';
+    import { createComponent } from '@lit-labs/react';
+    import Component from '../../${importPath}';
+
+    ${eventNameImport}
+    ${eventImports}
+
+    export default createComponent({
+      tagName: '${component.tagName}',
+      elementClass: Component,
+      react: React,
+      events: {
+        ${events}
+      }
+    });
+    `;
+    console.log(code);
     const source = await prettier.format(
-      `
-      import * as React from 'react';
-      import { createComponent } from '@lit-labs/react';
-      import Component from '../../${importPath}';
-
-      ${eventNameImport}
-      ${eventImports}
-
-      export default createComponent({
-        tagName: '${component.tagName}',
-        elementClass: Component,
-        react: React,
-        events: {
-          ${events}
-        }
-      });
-    `,
+      code,
       Object.assign(prettierConfig, {
         parser: 'babel-ts'
       })

@@ -1,11 +1,11 @@
 import type AWCCarouselItem from '../components/carousel-item/carousel-item';
 
-type AWCSlideChange = CustomEvent<{ index: number; slide: AWCCarouselItem }>;
+type AWCSlideChangeEvent = CustomEvent<{ index: number; slide: AWCCarouselItem }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
-    'awc-slide-change': AWCSlideChange;
+    'awc-slide-change': AWCSlideChangeEvent;
   }
 }
 
-export default AWCSlideChange;
+export default AWCSlideChangeEvent;
