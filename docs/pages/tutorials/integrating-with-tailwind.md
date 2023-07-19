@@ -13,7 +13,6 @@ This page explains how to integrate Adeliom WebComponents with a [Tailwind](http
 This integration has been tested with the following:
 
 - Tailwind >= 3.0
-- Vite 3.0
 
 ## Instructions
 
