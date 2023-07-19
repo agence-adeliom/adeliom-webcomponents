@@ -1,9 +1,9 @@
 (() => {
   function convertModuleLinks(html) {
     html = html
-      ?.replace(/@agence-adeliom\/awc/g, `https://cdn.skypack.dev/@agence-adeliom/awc@${awcVersion}`)
-      ?.replace(/from 'react'/g, `from 'https://cdn.skypack.dev/react@${reactVersion}'`)
-      ?.replace(/from "react"/g, `from "https://cdn.skypack.dev/react@${reactVersion}"`);
+      ?.replace(/@agence-adeliom\/awc/g, `https://unpkg.com/@agence-adeliom/awc@${awcVersion}`)
+      ?.replace(/from 'react'/g, `from 'https://unpkg.com/react@${reactVersion}'`)
+      ?.replace(/from "react"/g, `from "https://unpkg.com/react@${reactVersion}"`);
 
     return html;
   }
@@ -192,12 +192,12 @@
       if (isReact) {
         htmlTemplate = '<div id="root"></div>';
         jsTemplate =
-          `import React from 'https://cdn.skypack.dev/react@${reactVersion}';\n` +
-          `import ReactDOM from 'https://cdn.skypack.dev/react-dom@${reactVersion}';\n` +
-          `import { setBasePath } from 'https://cdn.skypack.dev/@agence-adeliom/awc@${awcVersion}/${cdndir}/utilities/base-path';\n` +
+          `import React from 'https://unpkg.com/react@${reactVersion}';\n` +
+          `import ReactDOM from 'https://unpkg.com/react-dom@${reactVersion}';\n` +
+          `import { setBasePath } from 'https://unpkg.com/@agence-adeliom/awc@${awcVersion}/${cdndir}/utilities/base-path';\n` +
           `\n` +
           `// Set the base path for Adeliom WebComponents assets\n` +
-          `setBasePath('https://cdn.skypack.dev/@agence-adeliom/awc@${awcVersion}/${npmdir}/')\n` +
+          `setBasePath('https://unpkg.com/@agence-adeliom/awc@${awcVersion}/${npmdir}/')\n` +
           `\n${convertModuleLinks(reactExample)}\n` +
           `\n` +
           `ReactDOM.render(<App />, document.getElementById('root'));`;
