@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/agence-adeliom/awc/compare/v1.0.2...v1.0.3) (2023-07-19)
+
+
+### Bug Fixes
+
+* Codepen React sample ([e6d1ea5](https://github.com/agence-adeliom/awc/commit/e6d1ea5dc97ec4891ead37a4b6b260a17c31e1a5))
+
 ## [1.0.2](https://github.com/agence-adeliom/awc/compare/v1.0.1...v1.0.2) (2023-07-19)
 
 
