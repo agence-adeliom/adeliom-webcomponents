@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/agence-adeliom/awc/compare/v1.0.3...v1.0.4) (2023-07-19)
+
+
+### Bug Fixes
+
+* React components ([3efc87c](https://github.com/agence-adeliom/awc/commit/3efc87cd30bb12130ab0608ba136711576a6a303))
+
 ## [1.0.3](https://github.com/agence-adeliom/awc/compare/v1.0.2...v1.0.3) (2023-07-19)
 
 
