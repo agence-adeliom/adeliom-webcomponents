@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/agence-adeliom/awc/compare/v1.0.1...v1.0.2) (2023-07-19)
+
+
+### Bug Fixes
+
+* code style ([c11faae](https://github.com/agence-adeliom/awc/commit/c11faaec3d933bcf515344fed2b9d6781b0b5876))
+
 ## [1.0.1](https://github.com/agence-adeliom/awc/compare/v1.0.0...v1.0.1) (2023-07-19)
 
 ### Bug Fixes
