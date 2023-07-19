@@ -1,0 +1,127 @@
+/* _primitive.css */
+
+:host,
+.awc-theme-dark,
+[data-mode='dark'] {
+  color-scheme: dark;
+
+  --awc-background-color: var(--awc-color-neutral-950);
+  --awc-text-color: var(--awc-color-neutral-0);
+
+  /* Focus rings */
+  --awc-focus-ring-color: var(--awc-color-primary-700);
+  --awc-focus-ring-style: solid;
+  --awc-focus-ring-width: 3px;
+  --awc-focus-ring: var(--awc-focus-ring-style) var(--awc-focus-ring-width) var(--awc-focus-ring-color);
+  --awc-focus-ring-offset: 1px;
+
+  /*
+   * Forms
+   */
+
+  /* Buttons */
+  --awc-button-font-size-small: var(--awc-font-size-x-small);
+  --awc-button-font-size-medium: var(--awc-font-size-small);
+  --awc-button-font-size-large: var(--awc-font-size-medium);
+
+  /* Inputs */
+  --awc-input-height-small: 1.875rem; /* 30px */
+  --awc-input-height-medium: 2.5rem; /* 40px */
+  --awc-input-height-large: 3.125rem; /* 50px */
+
+  --awc-input-background-color: var(--awc-color-neutral-0);
+  --awc-input-background-color-hover: var(--awc-input-background-color);
+  --awc-input-background-color-focus: var(--awc-input-background-color);
+  --awc-input-background-color-disabled: var(--awc-color-neutral-100);
+  --awc-input-border-color: var(--awc-color-neutral-300);
+  --awc-input-border-color-hover: var(--awc-color-neutral-400);
+  --awc-input-border-color-focus: var(--awc-color-primary-default);
+  --awc-input-border-color-disabled: var(--awc-color-neutral-300);
+  --awc-input-border-width: 1px;
+  --awc-input-required-content: '*';
+  --awc-input-required-content-offset: -2px;
+  --awc-input-required-content-color: var(--awc-input-label-color);
+
+  --awc-input-border-radius-small: var(--awc-border-radius-medium);
+  --awc-input-border-radius-medium: var(--awc-border-radius-medium);
+  --awc-input-border-radius-large: var(--awc-border-radius-medium);
+
+  --awc-input-font-family: var(--awc-font-sans);
+  --awc-input-font-weight: var(--awc-font-weight-normal);
+  --awc-input-font-size-small: var(--awc-font-size-small);
+  --awc-input-font-size-medium: var(--awc-font-size-medium);
+  --awc-input-font-size-large: var(--awc-font-size-large);
+  --awc-input-letter-spacing: var(--awc-letter-spacing-normal);
+
+  --awc-input-color: var(--awc-color-neutral-700);
+  --awc-input-color-hover: var(--awc-color-neutral-700);
+  --awc-input-color-focus: var(--awc-color-neutral-700);
+  --awc-input-color-disabled: var(--awc-color-neutral-900);
+  --awc-input-icon-color: var(--awc-color-neutral-500);
+  --awc-input-icon-color-hover: var(--awc-color-neutral-600);
+  --awc-input-icon-color-focus: var(--awc-color-neutral-600);
+  --awc-input-placeholder-color: var(--awc-color-neutral-500);
+  --awc-input-placeholder-color-disabled: var(--awc-color-neutral-600);
+  --awc-input-spacing-small: var(--awc-spacing-small);
+  --awc-input-spacing-medium: var(--awc-spacing-medium);
+  --awc-input-spacing-large: var(--awc-spacing-large);
+
+  --awc-input-focus-ring-color: hsl(198.6 88.7% 48.4% / 40%);
+  --awc-input-focus-ring-offset: 0;
+
+  --awc-input-filled-background-color: var(--awc-color-neutral-100);
+  --awc-input-filled-background-color-hover: var(--awc-color-neutral-100);
+  --awc-input-filled-background-color-focus: var(--awc-color-neutral-100);
+  --awc-input-filled-background-color-disabled: var(--awc-color-neutral-100);
+  --awc-input-filled-color: var(--awc-color-neutral-800);
+  --awc-input-filled-color-hover: var(--awc-color-neutral-800);
+  --awc-input-filled-color-focus: var(--awc-color-neutral-700);
+  --awc-input-filled-color-disabled: var(--awc-color-neutral-800);
+
+  /* Labels */
+  --awc-input-label-font-size-small: var(--awc-font-size-small);
+  --awc-input-label-font-size-medium: var(--awc-font-size-medium);
+  --awc-input-label-font-size-large: var(--awc-font-size-large);
+  --awc-input-label-color: inherit;
+
+  /* Help text */
+  --awc-input-help-text-font-size-small: var(--awc-font-size-x-small);
+  --awc-input-help-text-font-size-medium: var(--awc-font-size-small);
+  --awc-input-help-text-font-size-large: var(--awc-font-size-medium);
+  --awc-input-help-text-color: var(--awc-color-neutral-500);
+
+  /* Toggles (checkboxes, radios, switches) */
+  --awc-toggle-size-small: 0.875rem; /* 14px */
+  --awc-toggle-size-medium: 1.125rem; /* 18px */
+  --awc-toggle-size-large: 1.375rem; /* 22px */
+
+  /*
+   * Overlays
+   */
+
+  --awc-overlay-background-color: hsl(0 0% 0% / 43%);
+
+  /*
+   * Panels
+   */
+
+  --awc-panel-background-color: var(--awc-color-neutral-50);
+  --awc-panel-border-color: var(--awc-color-neutral-200);
+  --awc-panel-border-width: 1px;
+
+  /*
+   * Tooltips
+   */
+
+  --awc-tooltip-border-radius: var(--awc-border-radius-medium);
+  --awc-tooltip-background-color: var(--awc-color-neutral-800);
+  --awc-tooltip-color: var(--awc-color-neutral-0);
+  --awc-tooltip-font-family: var(--awc-font-sans);
+  --awc-tooltip-font-weight: var(--awc-font-weight-normal);
+  --awc-tooltip-font-size: var(--awc-font-size-small);
+  --awc-tooltip-line-height: var(--awc-line-height-dense);
+  --awc-tooltip-padding: var(--awc-spacing-2x-small) var(--awc-spacing-x-small);
+  --awc-tooltip-arrow-size: 6px;
+}
+
+/* _utility.css */

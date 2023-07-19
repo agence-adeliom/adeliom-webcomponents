@@ -1,0 +1,9 @@
+_site
+.cache
+.DS_Store
+dist
+docs/assets/images/sprite.svg
+node_modules
+src/react
+cdn
+/docs/assets/styles/tailwind.min.css
