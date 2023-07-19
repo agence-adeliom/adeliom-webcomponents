@@ -5,9 +5,13 @@ export default css`
   ${componentStyles}
 
   :host {
-    display: inline-block;
+    display: block;
     position: relative;
     line-height: 0;
     overflow: hidden;
+  }
+
+  img {
+    line-height: 0;
   }
 `;

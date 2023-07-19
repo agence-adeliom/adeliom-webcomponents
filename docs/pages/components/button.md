@@ -28,6 +28,7 @@ Use the `variant` attribute to set the button's variant.
 <awc-button variant="neutral">Neutral</awc-button>
 <awc-button variant="warning">Warning</awc-button>
 <awc-button variant="danger">Danger</awc-button>
+<awc-button variant="ghost">Ghost</awc-button>
 ```
 
 ```jsx:react
@@ -41,6 +42,7 @@ const App = () => (
     <AWCButton variant="neutral">Neutral</AWCButton>
     <AWCButton variant="warning">Warning</AWCButton>
     <AWCButton variant="danger">Danger</AWCButton>
+    <AWCButton variant="ghost">Ghost</AWCButton>
   </>
 );
 ```
@@ -424,6 +426,8 @@ Use the `loading` attribute to make a button busy. The width will remain the sam
 <awc-button variant="neutral" loading>Neutral</awc-button>
 <awc-button variant="warning" loading>Warning</awc-button>
 <awc-button variant="danger" loading>Danger</awc-button>
+<awc-button variant="ghost" loading>Ghost</awc-button>
+
 ```
 
 ```jsx:react
@@ -449,6 +453,9 @@ const App = () => (
     <AWCButton variant="danger" loading>
       Danger
     </AWCButton>
+    <AWCButton variant="ghost" loading>
+      Ghost
+    </AWCButton>
   </>
 );
 ```
@@ -464,6 +471,7 @@ Use the `disabled` attribute to disable a button. Clicks will be suppressed unti
 <awc-button variant="neutral" disabled>Neutral</awc-button>
 <awc-button variant="warning" disabled>Warning</awc-button>
 <awc-button variant="danger" disabled>Danger</awc-button>
+<awc-button variant="ghost" disabled>Ghost</awc-button>
 ```
 
 ```jsx:react
@@ -493,6 +501,10 @@ const App = () => (
 
     <AWCButton variant="danger" disabled>
       Danger
+    </AWCButton>
+
+    <AWCButton variant="ghost" disabled>
+      Ghost
     </AWCButton>
   </>
 );

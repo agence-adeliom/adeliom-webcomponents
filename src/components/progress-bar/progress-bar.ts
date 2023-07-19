@@ -20,10 +20,12 @@ import type { CSSResultGroup } from 'lit';
  * @csspart indicator - The progress bar's indicator.
  * @csspart label - The progress bar's label.
  *
- * @cssproperty --height - The progress bar's height.
- * @cssproperty --track-color - The color of the track.
- * @cssproperty --indicator-color - The color of the indicator.
- * @cssproperty --label-color - The color of the label.
+ * @cssproperty [--height=1rem] - The progress bar's height.
+ * @cssproperty [--border-radius=var(--awc-border-radius-none)] - The progress bar's border radius.
+ * @cssproperty [--track-color=var(--awc-color-neutral-200)] - The color of the track.
+ * @cssproperty [--indicator-color=var(--awc-color-primary-600)] - The color of the indicator.
+ * @cssproperty [--label-color=var(--awc-color-neutral-0)] - The color of the label.
+ *
  */
 @customElement('awc-progress-bar')
 export default class AWCProgressBar extends AWCElement {

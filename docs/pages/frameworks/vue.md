@@ -9,7 +9,7 @@ meta:
 Vue [plays nice](https://custom-elements-everywhere.com/#vue) with custom elements, so you can use Adeliom WebComponents in your Vue apps with ease.
 
 :::tip
-These instructions are for Vue 3 and above. If you're using Vue 2, please see the [Vue 2 instructions](/frameworks/vue-2).
+These instructions are for Vue 3 and above.
 :::
 
 ## Installation

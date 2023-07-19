@@ -9,6 +9,7 @@ export default css`
     --track-color: var(--awc-color-neutral-200);
     --indicator-color: var(--awc-color-primary-600);
     --label-color: var(--awc-color-neutral-0);
+    --border-radius: var(--awc-border-radius-none);
 
     display: block;
   }
@@ -17,7 +18,7 @@ export default css`
     position: relative;
     background-color: var(--track-color);
     height: var(--height);
-    border-radius: var(--awc-border-radius-pill);
+    border-radius: var(--border-radius);
     box-shadow: inset var(--awc-shadow-small);
     overflow: hidden;
   }

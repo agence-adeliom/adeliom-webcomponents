@@ -33,6 +33,9 @@ export default class AWCTypography extends AWCElement {
   /** The typography's render tag. */
   @property() renderAs: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'div' | 'span' | string | undefined = undefined;
 
+  /** The set root margin to `0`. */
+  @property({ type: Boolean, reflect: true }) noMargin?: boolean;
+
   /** The typography's transform. */
   @property() transform:
     | 'none'
@@ -46,6 +49,7 @@ export default class AWCTypography extends AWCElement {
   render() {
     const renderAs =
       this.renderAs ?? (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(this.type) ? this.type : 'p') ?? 'p';
+
     return html`<${unsafeStatic(renderAs)}
       part="base"
       style=${styleMap({
@@ -53,6 +57,7 @@ export default class AWCTypography extends AWCElement {
       })}
       class=${classMap({
         typography: true,
+        'typography--no-margin': !!this.noMargin,
         'typography--heading': ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(this.type),
         'typography--heading1': this.type === 'h1',
         'typography--heading2': this.type === 'h2',

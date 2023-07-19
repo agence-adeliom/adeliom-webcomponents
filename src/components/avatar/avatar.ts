@@ -61,7 +61,8 @@ export default class AWCAvatar extends AWCElement {
         src="${this.image}"
         loading="${this.loading}"
         aspectRatio="1"
-        width="48"
+        layout="filled"
+        width="256"
         alt=""
         @error="${() => (this.hasError = true)}"
       ></awc-icon>

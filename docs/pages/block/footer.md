@@ -574,9 +574,8 @@ layout: blocks
         </div>
 
         <form class="flex w-full gap-2 md:max-w-md">
-          <input placeholder="Email" class="w-full flex-1 rounded border border-white bg-indigo-400 px-3 py-2 text-white placeholder-indigo-100 outline-none ring-indigo-300 transition duration-100 focus:ring" />
-
-          <button class="inline-block rounded bg-white px-8 py-2 text-center text-sm font-semibold text-indigo-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:text-indigo-600 md:text-base">Send</button>
+          <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
+          <awc-button variant="default">Sign up</awc-button>
         </form>
       </div>
     </div>

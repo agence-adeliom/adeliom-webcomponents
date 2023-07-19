@@ -44,7 +44,7 @@
     "build": "node scripts/build.js",
     "esbuild": "npm run hook:pre:build && node esbuild.config.mjs",
     "esbuild:watch": "npm run esbuild -- --watch",
-    "verify": "npm run prettier:check && npm run lint:check && npm run build",
+    "verify": "npm run prettier:check && npm run lint:check",
     "prettier:check": "prettier --check --loglevel warn .",
     "prettier:fix": "prettier --write --loglevel warn .",
     "lint:check": "eslint src --max-warnings 0",
@@ -67,7 +67,8 @@
     "doc:serve": "npm run doc:build -- --serve",
     "tailwindcss:build": "tailwindcss -i docs/assets/styles/tailwind.css -o docs/assets/styles/tailwind.min.css --postcss",
     "tailwindcss:watch": "npm run tailwindcss:build -- --watch",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepublishOnly": "npm run verify && npm run build"
   },
   "engines": {
     "node": ">=14.17.0"

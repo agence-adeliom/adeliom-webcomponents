@@ -159,10 +159,83 @@ npm install @agence-adeliom/awc
 
 Now it's time to configure your bundler. Configurations vary for each tool, but here are some examples to help you get started.
 
-- [Example webpack config](https://github.com/shoelace-style/webpack-example/blob/master/webpack.config.js)
-- [Example Rollup config](https://github.com/shoelace-style/rollup-example/blob/master/rollup.config.js)
+<details>
+<summary>Example webpack config</summary>
 
-Once your bundler is configured, you'll be able to import Adeliom WebComponents components and utilities.
+```js
+const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    // Bundle styles into main.css
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [
+        // Copy AWC assets to dist/awc
+        {
+          from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
+          to: path.resolve(__dirname, 'dist/awc/assets')
+        }
+      ]
+    })
+  ]
+};
+```
+
+</details>
+
+<details>
+<summary>Example Rollup config</summary>
+
+```js
+import path from 'path';
+import commonjs from '@rollup/plugin-commonjs';
+import copy from 'rollup-plugin-copy';
+import css from 'rollup-plugin-css-only';
+import resolve from '@rollup/plugin-node-resolve';
+
+export default {
+  input: 'src/index.js',
+  output: [{ dir: path.resolve(__dirname, 'dist'), format: 'es' }],
+  plugins: [
+    resolve(),
+    commonjs(),
+    // Bundle styles into dist/bundle.css
+    css({
+      output: 'bundle.css'
+    }),
+    // Copy AWC assets to dist/awc
+    copy({
+      copyOnce: true,
+      targets: [
+        {
+          src: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
+          dest: path.resolve(__dirname, 'dist/awc')
+        }
+      ]
+    })
+  ]
+};
+```
+
+</details>
+
+#### Once your bundler is configured, you'll be able to import Adeliom WebComponents components and utilities.
 
 ```js
 import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
@@ -191,4 +264,4 @@ TL;DR:
 - `@agence-adeliom/awc/%CDNDIR%` is for CDN users
 - `@agence-adeliom/awc/%NPMDIR%` is for npm users
 
-This change was introduced in `v2.5.0` to address issues around installations from npm loading multiple versions of libraries (such as the Lit) that Adeliom WebComponents uses internally.
+This change was introduced in `v1.0.0` to address issues around installations from npm loading multiple versions of libraries (such as the Lit) that Adeliom WebComponents uses internally.

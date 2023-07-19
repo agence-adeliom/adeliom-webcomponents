@@ -17,6 +17,8 @@
       <li><a href="/frameworks/react">React</a></li>
       <li><a href="/frameworks/vue">Vue</a></li>
       <li><a href="/frameworks/angular">Angular</a></li>
+      <li><a href="/frameworks/svelte">Svelte</a></li>
+      <li><a href="/frameworks/preact">Preact</a></li>
     </ul>
   </li>
   <li>
@@ -31,6 +33,7 @@
       {% endfor %}
     </ul>
   </li>
+  {% if meta.layouts | length %}
   <li>
     <h2>Layouts</h2>
     <ul>
@@ -43,13 +46,30 @@
       {% endfor %}
     </ul>
   </li>
+  {% endif %}
   <li>
     <h2>Blocks</h2>
     <ul>
       <li><a href="/block/banner">Banner</a></li>
       <li><a href="/block/blog">Blog</a></li>
       <li><a href="/block/collections">Collections</a></li>
+      <li><a href="/block/content">Content</a></li>
+      <li><a href="/block/cta">Call to Action</a></li>
+      <li><a href="/block/errors">Errors</a></li>
+      <li><a href="/block/faq">FAQ</a></li>
+      <li><a href="/block/features">Features</a></li>
       <li><a href="/block/footer">Footer</a></li>
+      <li><a href="/block/gallery">Gallery</a></li>
+      {# <li><a href="/block/header">Header</a></li> #}
+      <li><a href="/block/heading">Heading</a></li>
+      <li><a href="/block/hero">Hero</a></li>
+      <li><a href="/block/logo-cloud">Logo cloud</a></li>
+      {# <li><a href="/block/newsletter">Newsletter</a></li> #}
+      {# <li><a href="/block/pricing">Pricing</a></li> #}
+      <li><a href="/block/reviews">Reviews</a></li>
+      <li><a href="/block/stats">Stats</a></li>
+      <li><a href="/block/team">Team</a></li>
+      <li><a href="/block/testimonials">Testimonials</a></li>
     </ul>
   </li>
   <li>

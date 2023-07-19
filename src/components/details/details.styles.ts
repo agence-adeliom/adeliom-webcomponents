@@ -6,12 +6,17 @@ export default css`
 
   :host {
     display: block;
+    --padding: 0;
+    --border-width: 0;
+    --border-color: var(--awc-color-neutral-200);
+    --border-radius: var(--awc-border-radius-none);
+    --background-color: transparent;
   }
 
   .details {
-    border: solid 1px var(--awc-color-neutral-200);
-    border-radius: var(--awc-border-radius-medium);
-    background-color: var(--awc-color-neutral-0);
+    border: solid var(--border-width) var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
     overflow-anchor: none;
   }
 
@@ -23,7 +28,7 @@ export default css`
     display: flex;
     align-items: center;
     border-radius: inherit;
-    padding: var(--awc-spacing-medium);
+    padding: var(--padding);
     user-select: none;
     cursor: pointer;
   }
@@ -78,6 +83,6 @@ export default css`
 
   .details__content {
     display: block;
-    padding: var(--awc-spacing-medium);
+    padding: var(--padding);
   }
 `;

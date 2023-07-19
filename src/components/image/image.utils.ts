@@ -1,7 +1,7 @@
 import { getCanonicalCdnForUrl, getTransformer } from 'unpic';
 import type { ImageCdn, UrlTransformer } from 'unpic';
 
-export type Layout = 'fixed' | 'constrained' | 'fullWidth' | 'inset';
+export type Layout = 'fixed' | 'constrained' | 'fullWidth' | 'inset' | 'filled';
 
 type Prettify<T> = {
   [K in keyof T]: T[K];
@@ -112,11 +112,19 @@ export type InsetImageProps<TImageAttributes extends CoreImageAttributes<TStyle>
   layout: 'inset';
 };
 
+export type FilledImageProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle> = BaseImageProps<
+  TImageAttributes,
+  TStyle
+> & {
+  layout: 'filled';
+};
+
 export type AWCImageProps<TImageAttributes extends CoreImageAttributes<TStyle>, TStyle = TImageAttributes['style']> =
   | FixedImageProps<TImageAttributes, TStyle>
   | ConstrainedImageProps<TImageAttributes, TStyle>
   | FullWidthImageProps<TImageAttributes, TStyle>
-  | InsetImageProps<TImageAttributes, TStyle>;
+  | InsetImageProps<TImageAttributes, TStyle>
+  | FilledImageProps<TImageAttributes, TStyle>;
 
 /**
  * Gets the `sizes` attribute for an image, based on the layout and width
@@ -129,6 +137,8 @@ export const getSizes = (width?: number, layout?: Layout): string | undefined =>
     // If screen is wider than the max size, image width is the max size,
     // otherwise it's the width of the screen
     case `constrained`:
+    case `inset`:
+    case `filled`:
       return `(min-width: ${width}px) ${width}px, 100vw`;
 
     // Image is always the same width, whatever the size of the screen
@@ -186,7 +196,12 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes<TStyle>, T
   if (layout === 'fullWidth') {
     styleEntries.push(['width', '100%']);
     styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
-    styleEntries.push(['height', pixelate(height)]);
+    styleEntries.push(['height', height ? pixelate(height) : '100%']);
+  }
+  if (layout === 'filled') {
+    styleEntries.push(['width', '100%']);
+    styleEntries.push(['height', '100%']);
+    styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
   }
   if (layout === 'inset') {
     styleEntries.push(['width', '100%']);
@@ -196,6 +211,7 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes<TStyle>, T
     styleEntries.push(['left', '0']);
     styleEntries.push(['right', '0']);
     styleEntries.push(['bottom', '0']);
+    styleEntries.push(['inset', '0']);
     styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
   }
   return Object.fromEntries(styleEntries.filter(([, value]) => value)) as TImageAttributes['style'];

@@ -8,6 +8,8 @@ export default css`
     display: inline-block;
 
     --size: 3rem;
+    width: var(--size);
+    height: var(--size);
   }
 
   .avatar {
@@ -15,8 +17,8 @@ export default css`
     align-items: center;
     justify-content: center;
     position: relative;
-    width: var(--size);
-    height: var(--size);
+    width: 100%;
+    height: 100%;
     background-color: var(--awc-color-neutral-400);
     font-family: var(--awc-font-sans);
     font-size: calc(var(--size) * 0.5);

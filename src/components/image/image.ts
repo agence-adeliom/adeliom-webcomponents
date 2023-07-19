@@ -133,6 +133,12 @@ export default class AWCImage
     const transformedProps = transformProps<CoreImageAttributes<StyleInfo>, StyleInfo>(inputProps);
 
     return html`
+      <style>
+        ${this.layout === 'filled' ? `:host { width: 100%; height: 100%; }` : ''}
+        ${this.layout === 'inset'
+          ? `:host { position: absolute !important; inset: 0; width: 100%; height: 100%; }`
+          : ''}
+      </style>
       <img
         src="${transformedProps.src}"
         alt="${transformedProps.alt}"

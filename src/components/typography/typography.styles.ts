@@ -27,6 +27,10 @@ export default css`
     margin: var(--margin-heading, 1rem 0 0.5rem 0);
   }
 
+  .typography--no-margin {
+    margin: 0;
+  }
+
   .typography--heading1 {
     --font-size: var(--awc-font-size-heading1);
   }

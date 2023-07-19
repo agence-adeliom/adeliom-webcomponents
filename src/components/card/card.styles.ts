@@ -16,7 +16,6 @@ export default css`
   .card {
     display: flex;
     flex-direction: column;
-    background-color: var(--awc-panel-background-color);
     border-radius: var(--border-radius);
     height: 100%;
   }
@@ -30,6 +29,8 @@ export default css`
 
   .card.card--is-inner {
     position: relative;
+    width: 100%;
+    height: 100%;
   }
 
   .card.card--is-inner .card__image {
@@ -99,9 +100,9 @@ export default css`
   }
 
   .card__body {
-    display: flex;
+    display: block;
     padding: var(--padding);
-    flex: 1;
+    height: inherit;
   }
 
   .card--has-footer .card__footer {

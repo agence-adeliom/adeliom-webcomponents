@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<awc-card class="card-overview">
+<awc-card class="card-overview" bordered>
   <img
     slot="image"
     src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
@@ -61,7 +61,7 @@ const css = `
 
 const App = () => (
   <>
-    <AWCCard className="card-overview">
+    <AWCCard className="card-overview" bordered>
       <img
         slot="image"
         src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
@@ -92,7 +92,7 @@ const App = () => (
 Basic cards aren't very exciting, but they can display any content you want them to.
 
 ```html:preview
-<awc-card class="card-basic">
+<awc-card class="card-basic" bordered>
   This is just a basic card. No image, no header, and no footer. Just your content.
 </awc-card>
 
@@ -114,7 +114,7 @@ const css = `
 
 const App = () => (
   <>
-    <AWCCard className="card-basic">
+    <AWCCard className="card-basic" bordered>
       This is just a basic card. No image, no header, and no footer. Just your content.
     </AWCCard>
 
@@ -128,7 +128,7 @@ const App = () => (
 Headers can be used to display titles and more.
 
 ```html:preview
-<awc-card class="card-header">
+<awc-card class="card-header" bordered>
   <div slot="header">
     Header Title
     <awc-icon-button name="gear" label="Settings"></awc-icon-button>
@@ -183,7 +183,7 @@ const css = `
 
 const App = () => (
   <>
-    <AWCCard className="card-header">
+    <AWCCard className="card-header" bordered>
       <div slot="header">
         Header Title
         <AWCIconButton name="gear"></AWCIconButton>
@@ -201,7 +201,7 @@ const App = () => (
 Footers can be used to display actions, summaries, or other relevant content.
 
 ```html:preview
-<awc-card class="card-footer">
+<awc-card class="card-footer" bordered>
   This card has a footer. You can put all sorts of things in it!
 
   <div slot="footer">
@@ -240,7 +240,7 @@ const css = `
 
 const App = () => (
   <>
-    <AWCCard className="card-footer">
+    <AWCCard className="card-footer" bordered>
       This card has a footer. You can put all sorts of things in it!
       <div slot="footer">
         <AWCRating></AWCRating>
@@ -260,7 +260,7 @@ const App = () => (
 Cards accept an `image` slot. The image is displayed atop the card and stretches to fit.
 
 ```html:preview
-<awc-card class="card-image">
+<awc-card class="card-image" bordered>
   <img
     slot="image"
     src="https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
@@ -287,7 +287,7 @@ const css = `
 
 const App = () => (
   <>
-    <AWCCard className="card-image">
+    <AWCCard className="card-image" bordered>
       <img
         slot="image"
         src="https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"

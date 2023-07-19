@@ -189,6 +189,25 @@ export default css`
     color: var(--awc-color-neutral-0);
   }
 
+  /* Default */
+  .button--standard.button--ghost {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--awc-color-neutral-700);
+  }
+
+  .button--standard.button--ghost:hover:not(.button--disabled) {
+    background-color: var(--awc-color-neutral-50);
+    border-color: var(--awc-color-neutral-50);
+    color: var(--awc-color-neutral-700);
+  }
+
+  .button--standard.button--ghost:active:not(.button--disabled) {
+    background-color: var(--awc-color-neutral-100);
+    border-color: var(--awc-color-neutral-100);
+    color: var(--awc-color-neutral-700);
+  }
+
   /*
    * Outline buttons
    */
@@ -539,6 +558,10 @@ export default css`
   .button--has-suffix.button--large .button__label,
   .button--caret.button--large .button__label {
     padding-inline-end: var(--awc-spacing-small);
+  }
+
+  .button--has-label.button--text:not(.button--has-suffix) .button__label {
+    padding: 0;
   }
 
   /*
