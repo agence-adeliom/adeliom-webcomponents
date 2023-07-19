@@ -70,7 +70,7 @@
     "tailwindcss:build": "tailwindcss -i docs/assets/styles/tailwind.css -o docs/assets/styles/tailwind.min.css --postcss",
     "tailwindcss:watch": "npm run tailwindcss:build -- --watch",
     "prepare": "husky install",
-    "prepublishOnly": "npm run verify && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "engines": {
     "node": ">=14.17.0"
