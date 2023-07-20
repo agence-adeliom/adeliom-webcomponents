@@ -211,9 +211,9 @@
         '\n' +
         'body {\n' +
         '  font: 16px sans-serif;\n' +
-        '  background-color: var(--awc-color-neutral-0);\n' +
-        '  color: var(--awc-color-neutral-900);\n' +
-        '  padding: 1rem;\n' +
+        '  background-color: var(--awc-background-color, #FFFFFF);\n' +
+        '  color: var(--awc-text-color, #000000);\n' +
+        '  padding: 0;\n' +
         '}';
 
       // Docs: https://blog.codepen.io/documentation/prefill/

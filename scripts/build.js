@@ -294,13 +294,17 @@ if (serve) {
   });
 
   // Reload without rebuilding when the docs change
-  bs.watch([`docs/**/tailwind.css`]).on('change', async filename => {
-    await execPromise(`npm run tailwindcss:build`, { stdio: 'inherit' });
-    bs.reload();
+  bs.watch([`docs/**/tailwind.css`, `docs/**/*.md`]).on('change', async filename => {
+    try {
+      await execPromise(`npm run tailwindcss:build`, { stdio: 'inherit' });
+      bs.reload();
+    } catch (err) {
+      console.error(chalk.red(err));
+    }
   });
 
   // Reload without rebuilding when the docs change
-  bs.watch([`${sitedir}/**/*.*`]).on('change', filename => {
+  bs.watch([`${sitedir}/**/*.*`], { usePolling: true, interval: 10 }).on('change', filename => {
     bs.reload();
   });
 }

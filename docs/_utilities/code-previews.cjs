@@ -67,8 +67,8 @@ module.exports = function (doc, options) {
 
     const codePreview = `
       <div class="code-preview ${isExpanded ? 'code-preview--expanded' : ''} ${
-        tailwindWrapper ? 'code-preview--tailwind' : ''
-      }">
+        noResizer ? 'code-preview--no-resizer' : ''
+      } ${tailwindWrapper ? 'code-preview--tailwind' : ''}">
         <div class="code-preview__preview">
           ${code.textContent}
           ${

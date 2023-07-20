@@ -281,7 +281,7 @@ layout: blocks
 
 ## Footer 3
 
-```html:preview:tailwind
+```html:preview:tailwind:no-resizer
 <footer class="bg-white  dark:bg-neutral-950">
   <div class="pb-16 pt-4 sm:pt-10 lg:pt-12">
     <div class="container mx-auto px-4 md:px-8">
@@ -426,7 +426,7 @@ layout: blocks
 
 ## Footer 4
 
-```html:preview:tailwind
+```html:preview:tailwind:no-resizer
 <footer class="bg-white  dark:bg-neutral-950 pb-10 pt-4 sm:py-10 lg:py-12">
   <div class="container mx-auto px-4 md:px-8">
     <div class="grid grid-cols-2 gap-12 border-t pt-10 md:grid-cols-3 lg:grid-cols-3 lg:grid-rows-2 lg:gap-8 lg:pt-12">
@@ -563,7 +563,7 @@ layout: blocks
 
 ## Footer 5
 
-```html:preview:tailwind
+```html:preview:tailwind:no-resizer
 <footer class="bg-white  dark:bg-neutral-950">
   <div class="bg-primary py-6">
     <div class="container mx-auto px-4 md:px-8">
@@ -718,7 +718,7 @@ layout: blocks
 
 ## Footer 6
 
-```html:preview:tailwind
+```html:preview:tailwind:no-resizer
 <footer class="bg-white  dark:bg-neutral-950 pt-4 sm:pt-6 lg:pt-8">
   <div class="container mx-auto px-4 md:px-8">
     <div class="flex flex-col items-center justify-between gap-2 border-b border-t py-6 md:flex-row">
@@ -872,7 +872,7 @@ layout: blocks
 
 ## Footer 7
 
-```html:preview:tailwind
+```html:preview:tailwind:no-resizer
 <div class="bg-white  dark:bg-neutral-950 pt-4 sm:pt-10 lg:pt-12">
   <footer class="container mx-auto px-4 md:px-8">
     <div class="flex flex-col items-center justify-between gap-4 border-t border-b py-6 md:flex-row">
@@ -911,7 +911,7 @@ layout: blocks
 
 ## Footer 8
 
-```html:preview:tailwind
+```html:preview:tailwind:no-resizer
 <div class="bg-white  dark:bg-neutral-950 pt-4 sm:pt-10 lg:pt-12">
   <footer class="container mx-auto px-4 md:px-8">
     <div class="flex flex-col items-center border-t pt-6">

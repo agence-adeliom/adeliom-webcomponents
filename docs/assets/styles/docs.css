@@ -692,13 +692,17 @@ pre:hover .copy-code-button--copied {
   z-index: 20;
   width: var(--docs-sidebar-width);
   background-color: var(--docs-background-color);
-  border-right: solid var(--docs-border-width) var(--docs-border-color);
+  border-right: solid 1px var(--awc-color-neutral-300);
   border-radius: 0;
   padding: 2rem;
   margin: 0;
   overflow: auto;
   scrollbar-width: thin;
   transition: var(--docs-sidebar-transition-speed) translate ease-in-out;
+}
+
+.awc-theme-dark #sidebar {
+  border-right: solid 1px var(--awc-color-neutral-700);
 }
 
 #sidebar::-webkit-scrollbar {
@@ -984,20 +988,17 @@ main {
   display: none;
   position: fixed;
   z-index: 30;
-  top: 0.25rem;
-  left: 0.25rem;
+  top: 0;
+  left: 0;
   height: auto;
   width: auto;
-  color: var(--awc-text-color);
+  color: var(--awc-color-neutral-0);
   border: none;
-  border-radius: 50%;
-  background: var(--docs-background-color);
-  padding: 0.5rem;
+  border-bottom-right-radius: 50%;
+  background: var(--awc-color-neutral-800);
+  padding: 0.75rem 1rem 1rem 0.75rem;
   margin: 0;
   cursor: pointer;
-  transition:
-    250ms scale ease,
-    250ms rotate ease;
 }
 
 @media screen and (max-width: 900px) {
@@ -1006,23 +1007,31 @@ main {
   }
 }
 
-#menu-toggle:hover {
-  scale: 1.1;
-}
-
 #menu-toggle svg {
   width: 1.25rem;
   height: 1.25rem;
+  transition:
+    250ms scale ease,
+    250ms rotate ease;
 }
 
-html.sidebar-open #menu-toggle {
+#menu-toggle:hover svg {
+  scale: 1.1;
+}
+
+html.sidebar-open #menu-toggle svg {
   rotate: 180deg;
+}
+
+.awc-theme-dark #menu-toggle {
+  background: var(--awc-color-neutral-200);
+  color: var(--awc-color-neutral-1000);
 }
 
 /* Skip to main content */
 #skip-to-main {
   position: fixed;
-  top: 0.25rem;
+  top: 0.5rem;
   left: calc(50% - var(--docs-skip-to-main-width) / 2);
   z-index: 100;
   width: var(--docs-skip-to-main-width);

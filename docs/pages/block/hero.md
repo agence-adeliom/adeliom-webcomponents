@@ -8,16 +8,16 @@ layout: blocks
 ## Hero 1
 
 ```html:preview:tailwind:no-resizer
-<div class="bg-white  dark:bg-neutral-950 pb-6 sm:pb-8 lg:pb-12">
+<div class="bg-white dark:bg-neutral-950 pt-4 pb-6 sm:pb-8 lg:pb-12">
   <div class="container mx-auto px-4 md:px-8">
     <section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
       <!-- content - start -->
       <div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
         <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-        <awc-typography type="h2" class="mb-8 md:mb-12 text-black" noMargin >Revolutionary way to build the web</awc-typography>
+        <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
 
-        <p class="mb-8 leading-relaxed text-neutral-500 md:mb-12 lg:w-4/5 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random.</p>
+        <p class="mb-8 leading-relaxed md:mb-12 lg:w-4/5 xl:text-lg text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random.</p>
 
         <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
           <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -43,7 +43,7 @@ layout: blocks
 ## Hero 2
 
 ```html:preview:tailwind:no-resizer
-<div class="bg-white  dark:bg-neutral-950 pb-6 sm:pb-8 lg:pb-12">
+<div class="bg-white dark:bg-neutral-950 pt-4 pb-6 sm:pb-8 lg:pb-12">
   <div class="container mx-auto px-4 md:px-8">
     <section class="min-h-96 relative flex flex-1 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-neutral-100 py-16 shadow-lg md:py-20 xl:py-48">
       <!-- image - start -->
@@ -55,17 +55,17 @@ layout: blocks
       <!-- image - end -->
 
       <!-- overlay - start -->
-      <div class="absolute inset-0 bg-primary mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-neutral-600 mix-blend-multiply"></div>
       <!-- overlay - end -->
 
       <!-- text start -->
       <div class="relative flex flex-col items-center p-4 sm:max-w-xl">
-        <p class="mb-4 text-center text-lg text-primary-200 sm:text-xl md:mb-8">Very proud to introduce</p>
+        <p class="mb-4 text-center font-semibold text-lg text-primary sm:text-xl md:mb-8">Very proud to introduce</p>
         <awc-typography type="h2" class="mb-8 md:mb-12 text-white text-center" noMargin >Revolutionary way to build the web</awc-typography>
 
         <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
           <awc-button href="#" variant="primary" size="large">Start now</awc-button>
-          <awc-button href="#" variant="ghost" size="large">Take tour</awc-button>
+          <awc-button href="#" variant="ghost" class="text-white" size="large">Take tour</awc-button>
         </div>
       </div>
       <!-- text end -->
@@ -77,7 +77,7 @@ layout: blocks
 ## Hero 3
 
 ```html:preview:tailwind:no-resizer
-<div class="bg-white  dark:bg-neutral-950 pb-6 sm:pb-8 lg:pb-12">
+<div class="bg-white dark:bg-neutral-950 pt-4 pb-6 sm:pb-8 lg:pb-12">
   <div class="container mx-auto px-4 md:px-8">
     <section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
       <!-- content - start -->
@@ -87,7 +87,7 @@ layout: blocks
         <div class="sm:text-center lg:py-12 lg:text-left xl:py-24">
           <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-          <awc-typography type="h2" class="mb-8 md:mb-12 text-black" noMargin >Revolutionary way to build the web</awc-typography>
+          <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
 
           <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
             <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -136,13 +136,13 @@ layout: blocks
 ## Hero 4
 
 ```html:preview:tailwind:no-resizer
-<div class="bg-white  dark:bg-neutral-950 pb-6 sm:pb-8 lg:pb-12">
+<div class="bg-white dark:bg-neutral-950 pt-4 pb-6 sm:pb-8 lg:pb-12">
   <div class="container mx-auto px-4 md:px-8">
     <section class="flex flex-col items-center">
       <div class="flex max-w-xl flex-col items-center pb-16 pt-8 text-center lg:pb-48 lg:pt-32">
         <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-        <awc-typography type="h2" class="mb-8 md:mb-12 text-black text-center" noMargin >Revolutionary way to build the web</awc-typography>
+        <awc-typography type="h2" class="mb-8 md:mb-12 text-center" noMargin >Revolutionary way to build the web</awc-typography>
 
         <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
           <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -179,14 +179,14 @@ layout: blocks
 ## Hero 5
 
 ```html:preview:tailwind:no-resizer
-<div class="bg-white  dark:bg-neutral-950 pb-6 sm:pb-8 lg:pb-12">
+<div class="bg-white dark:bg-neutral-950 pt-4 pb-6 sm:pb-8 lg:pb-12">
   <div class="container mx-auto px-4 md:px-8">
     <section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
       <!-- content - start -->
       <div class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
-        <awc-typography type="h2" class="mb-8 md:mb-12 text-black" noMargin >Revolutionary way to build the web</awc-typography>
+        <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
 
-        <p class="mb-8 leading-relaxed text-neutral-500 md:mb-12 lg:w-4/5 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random.</p>
+        <p class="mb-8 leading-relaxed text-neutral-500 dark:text-neutral-200 md:mb-12 lg:w-4/5 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random.</p>
 
         <form class="flex w-full gap-2 md:max-w-md">
           <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
@@ -212,14 +212,14 @@ layout: blocks
 ## Hero 6
 
 ```html:preview:tailwind:no-resizer
-<div class="bg-white  dark:bg-neutral-950 pb-6 sm:pb-8 lg:pb-12">
+<div class="bg-white dark:bg-neutral-950 pt-4 pb-6 sm:pb-8 lg:pb-12">
   <div class="container mx-auto px-4 md:px-8">
     <section class="mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
       <!-- content - start -->
       <div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
         <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-        <awc-typography type="h2" class="mb-8 md:mb-12 text-black" noMargin >Revolutionary way to build the web</awc-typography>
+        <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
 
         <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
           <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -245,22 +245,22 @@ layout: blocks
       <div class="-mx-6 grid grid-cols-2 gap-4 md:-mx-8 md:flex md:divide-x">
         <div class="px-6 md:px-8">
           <span class="block text-center text-lg font-bold text-primary md:text-left md:text-xl">200</span>
-          <span class="block text-center text-sm font-semibold text-neutral-800 md:text-left md:text-base">People</span>
+          <span class="block text-center text-sm font-semibold opacity-75 md:text-left md:text-base">People</span>
         </div>
 
         <div class="px-6 md:px-8">
           <span class="block text-center text-lg font-bold text-primary md:text-left md:text-xl">500+</span>
-          <span class="block text-center text-sm font-semibold text-neutral-800 md:text-left md:text-base">Projects</span>
+          <span class="block text-center text-sm font-semibold opacity-75 md:text-left md:text-base">Projects</span>
         </div>
 
         <div class="px-6 md:px-8">
           <span class="block text-center text-lg font-bold text-primary md:text-left md:text-xl">250+</span>
-          <span class="block text-center text-sm font-semibold text-neutral-800 md:text-left md:text-base">Customers</span>
+          <span class="block text-center text-sm font-semibold opacity-75 md:text-left md:text-base">Customers</span>
         </div>
 
         <div class="px-6 md:px-8">
           <span class="block text-center text-lg font-bold text-primary md:text-left md:text-xl">A couple</span>
-          <span class="block text-center text-sm font-semibold text-neutral-800 md:text-left md:text-base">Coffee breaks</span>
+          <span class="block text-center text-sm font-semibold opacity-75 md:text-left md:text-base">Coffee breaks</span>
         </div>
       </div>
       <!-- stats - end -->
@@ -294,15 +294,15 @@ layout: blocks
 ## Hero 7
 
 ```html:preview:tailwind:no-resizer
-<div class="bg-white  dark:bg-neutral-950 pb-6 sm:pb-8 lg:pb-12">
+<div class="bg-white dark:bg-neutral-950 pt-4 pb-6 sm:pb-8 lg:pb-12">
   <div class="container mx-auto px-4 md:px-8">
     <section class="flex flex-col items-center">
       <div class="flex max-w-xl flex-col items-center pb-0 pt-8 text-center sm:pb-16 lg:pb-32 lg:pt-32">
         <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-        <awc-typography type="h2" class="mb-8 md:mb-12 text-black" noMargin >Revolutionary way to build the web</awc-typography>
+        <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
 
-        <p class="mb-8 leading-relaxed text-neutral-500 md:mb-12 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares characteristics of real text.</p>
+        <p class="mb-8 leading-relaxed text-neutral-500 dark:text-neutral-200 md:mb-12 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares characteristics of real text.</p>
 
         <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
           <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -317,13 +317,13 @@ layout: blocks
 ## Hero 8
 
 ```html:preview:tailwind:no-resizer
-<div class="bg-white  dark:bg-neutral-950 pb-6 sm:pb-8 lg:pb-12">
+<div class="bg-white dark:bg-neutral-950 pt-4 pb-6 sm:pb-8 lg:pb-12">
   <section class="container mx-auto px-4 md:px-8">
     <div class="mb-8 flex flex-wrap justify-between md:mb-16">
       <div class="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48">
-        <awc-typography type="h2" class="mb-8 md:mb-12 text-black" noMargin >Revolutionary way to build the web</awc-typography>
+        <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
 
-        <p class="max-w-md leading-relaxed text-neutral-500 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares characteristics of real text.</p>
+        <p class="max-w-md leading-relaxed text-neutral-500 dark:text-neutral-200 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares characteristics of real text.</p>
       </div>
 
       <div class="mb-12 flex w-full md:mb-16 lg:w-2/3">

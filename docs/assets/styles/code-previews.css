@@ -18,6 +18,16 @@
   padding: 1.5rem 3.25rem 1.5rem 1.5rem;
 }
 
+.code-preview.code-preview--no-resizer .code-preview__preview {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+.code-preview.code-preview--tailwind .code-preview__preview {
+  padding: 0 1.5rem 0 0;
+}
+.code-preview.code-preview--tailwind.code-preview--no-resizer .code-preview__preview {
+  padding: 0;
+}
+
 /* Block the preview while dragging to prevent iframes from intercepting drag events */
 .code-preview__preview--dragging:after {
   content: '';
