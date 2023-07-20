@@ -9,7 +9,7 @@ meta:
 This page explains how to integrate Adeliom WebComponents with a [Laravel 9](https://laravel.com) app using Vite. For additional details refer to the [Bundling Assets (Vite)](https://laravel.com/docs/9.x/vite) section in the official Laravel docs.
 
 :::tip
-This is a community-maintained document. Please [ask the community](/resources/community) if you have questions about this integration. You can also [suggest improvements](https://github.com/agence-adeliom/awc/blob/next/docs/tutorials/integrating-with-laravel.md) to make it better.
+This is a community-maintained document. Please [ask the community](/resources/community) if you have questions about this integration. You can also [suggest improvements](https://github.com/agence-adeliom/awc/blob/main/docs/tutorials/integrating-with-laravel.md) to make it better.
 :::
 
 ## Requirements

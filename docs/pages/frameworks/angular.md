@@ -84,5 +84,5 @@ export class DrawerExampleComponent implements OnInit {
 Now you can start using Adeliom WebComponents components in your app!
 
 :::tip
-Are you using Adeliom WebComponents with Angular? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/next/docs/frameworks/angular.md)
+Are you using Adeliom WebComponents with Angular? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/main/docs/frameworks/angular.md)
 :::

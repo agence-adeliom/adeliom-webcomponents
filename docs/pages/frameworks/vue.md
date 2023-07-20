@@ -108,7 +108,7 @@ When binding complex data such as objects and arrays, use the `.prop` modifier t
 ```
 
 :::tip
-Are you using Adeliom WebComponents with Vue? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/next/docs/frameworks/vue.md)
+Are you using Adeliom WebComponents with Vue? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/main/docs/frameworks/vue.md)
 :::
 
 ### Slots

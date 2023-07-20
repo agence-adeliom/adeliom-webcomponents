@@ -53,11 +53,11 @@ Adeliom WebComponents uses English as a fallback to provide a better experience 
 
 ### Submitting New Translations or Improvements
 
-To contribute new translations or improvements to existing translations, please submit a pull request on GitHub. Translations are located in [`src/translations`](https://github.com/agence-adeliom/awc/blob/next/src/translations) and can be edited directly on GitHub if you don't want to clone the repo locally.
+To contribute new translations or improvements to existing translations, please submit a pull request on GitHub. Translations are located in [`src/translations`](https://github.com/agence-adeliom/awc/blob/main/src/translations) and can be edited directly on GitHub if you don't want to clone the repo locally.
 
 Regional translations are welcome! For example, if a German translation (`de`) exists it's perfectly acceptable to submit a German (Switzerland) (`de-CH`) translation.
 
-If you have any questions, please start a [discussion](https://github.com/agence-adeliom/awc/discussions) or ask in the [community chat](https://discord.gg/mg8f26C).
+If you have any questions, please start a [discussion](https://github.com/agence-adeliom/awc/discussions).
 
 :::tip
 Adeliom WebComponents provides a localization mechanism for component internals. This is not designed to be used as localization tool for your entire application. You should use a more appropriate tool such as [i18next](https://www.i18next.com/) if you need to localize content in your app.

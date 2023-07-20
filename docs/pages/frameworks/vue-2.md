@@ -103,5 +103,5 @@ Now you can use the `v-awc-model` directive to keep your data in sync!
 ```
 
 :::tip
-Are you using Adeliom WebComponents with Vue? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/next/docs/frameworks/vue-2.md)
+Are you using Adeliom WebComponents with Vue? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/main/docs/frameworks/vue-2.md)
 :::

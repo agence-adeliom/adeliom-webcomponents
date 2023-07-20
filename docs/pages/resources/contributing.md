@@ -8,8 +8,6 @@ meta:
 
 Adeliom WebComponents is an open source project, meaning everyone can use it and contribute to its development. When you join our community, you'll find a friendly group of enthusiasts at all experience levels who are willing to chat about anything and everything related to Adeliom WebComponents.
 
-The easiest way to get started contributing is to join the [community chat](https://discord.gg/mg8f26C). This is where we hang out, discuss new ideas, ask for feedback, and more!
-
 A common misconception about contributing to an open source project is that you need to know how to code. This simply isn't true. In fact, there are _many_ ways to contribute, and some of the most important contributions come from those who never write a single line of code. Here's a list of ways you can make a meaningful contribution to the project:
 
 - Submitting well-written bug reports
@@ -51,8 +49,6 @@ Feature requests can be added using the issue tracker.
 - Please **do** share substantial use cases and perspective that support new features if they haven't already been mentioned.
 - Please **do not** bump, spam, or ping contributors to prioritize your own feature.
 
-If you would like your feature prioritized, please consider [sponsoring the project](https://github.com/sponsors/claviska).
-
 ### Bug Reports
 
 A bug is _a demonstrable problem_ caused by code in the library. Bug reports are an important contribution to the quality of the project. When submitting a bug report, there are a few steps you can take to make sure your issues gets attention quickly.
@@ -64,8 +60,6 @@ A bug is _a demonstrable problem_ caused by code in the library. Bug reports are
 - Please **do** provide additional information, when necessary, to replicate the bug
 
 **A minimal test case is critical to a successful bug report.** It demonstrates that the bug exists in the library and not in surrounding code. Contributors should be able to understand the bug without studying your code, otherwise they'll probably move on to another bug.
-
-If you would like your bug prioritized, please consider [sponsoring the project](https://github.com/sponsors/claviska).
 
 ### Pull Requests
 
@@ -80,9 +74,7 @@ The author reserves the right to reject any PR that's outside the scope of the p
 
 ### Branches
 
-`current` - This branch reflects the latest release and powers [awc.a-dev.cloud](https://awc.a-dev.cloud/).
-
-`next` - This is the branch you should submit pull requests against. It reflects what's coming in the _next_ release, which can be previewed at [next.awc.a-dev.cloud](https://next.awc.a-dev.cloud/).
+`main` - This branch reflects the latest release and powers [awc.a-dev.cloud](https://awc.a-dev.cloud/).
 
 ## Developing
 
@@ -164,8 +156,6 @@ Instructions, code examples, and interactive demos are hand-curated to give user
 
 The docs are powered by [Eleventy](https://www.11ty.dev/). Check out `docs/components/*.md` to get an idea of how pages are structured and formatted. If you're creating a new component, it may help to use an existing component's markdown file as a template.
 
-If you need help with documentation, feel free to reach out on the [community chat](https://discord.gg/mg8f26C).
-
 ### Adeliom WebComponents-flavoured Markdown
 
 The Adeliom WebComponents documentation uses an extended version of [markdown-it](https://github.com/markdown-it/markdown-it). Generally speaking, it follows the [Commonmark spec](https://spec.commonmark.org/) while sprinkling in some additional features.
@@ -244,7 +234,7 @@ To link to a GitHub issue, PR, or discussion, use the following syntax.
 
 The following is a non-exhaustive list of conventions, patterns, and best practices we try to follow. As a contributor, we ask that you make a good faith effort to follow them as well. This ensures consistency and maintainability throughout the project.
 
-If in doubt, use your best judgment and the maintainers will be happy to guide you during the code review process. If you'd like clarification on something before submitting a PR, feel free to reach out on the [community chat](https://discord.gg/mg8f26C).
+If in doubt, use your best judgment and the maintainers will be happy to guide you during the code review process. If you'd like clarification on something before submitting a PR.
 
 :::tip
 This section can be a lot to digest in one sitting, so don't feel like you need to take it all in right now. Most contributors will be better off skimming this section and reviewing the relevant content as needed.

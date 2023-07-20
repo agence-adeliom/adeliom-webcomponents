@@ -64,6 +64,8 @@ The resizing behaviour of the image.
 - `constrained`: (default) the image will be rendered at a maximum of `width` and `height`, but will scale down automatically if the container is smaller, maintaining the aspect ratio.
 - `fullWidth`: the image will be rendered at full width of its container. This is optimized for full-width hero images. You can set `height` to a fixed value, which will mean the image will be rendered at that fixed height and scale horizontally to fill the container.
 - `fixed`: the image will be rendered at the exact size specified by `width` and `height`
+- `filled`: the image will be rendered to fill the parent container
+- `inset`: the image will be rendered to fill the parent container with absolute position
 
 ### `priority`
 

@@ -28,7 +28,7 @@ toc: false
 
 [![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@agence-adeliom/awc/badge)](https://www.jsdelivr.com/package/npm/@agence-adeliom/awc)
 [![npm](https://img.shields.io/npm/dw/@agence-adeliom/awc?label=npm&style=flat-square)](https://www.npmjs.com/package/@agence-adeliom/awc)
-[![License](https://img.shields.io/badge/license-MIT-232323.svg?style=flat-square)](https://github.com/agence-adeliom/awc/blob/next/LICENSE.md)<br>
+[![License](https://img.shields.io/badge/license-MIT-232323.svg?style=flat-square)](https://github.com/agence-adeliom/awc/blob/main/LICENSE.md)<br>
 [![Sponsor](https://img.shields.io/badge/GitHub-Code-232323.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/agence-adeliom/awc)
 
 ## Quick Start
@@ -79,11 +79,9 @@ With Adeliom WebComponents, you can:
 - Incrementally adopt components as needed (no need to ditch your framework)
 - Upgrade or switch frameworks without rebuilding foundational components
 
-If your organization is looking to build a design system, [Adeliom WebComponents will save you thousands of dollars](https://medium.com/eightshapes-llc/and-you-thought-buttons-were-easy-26eb5b5c1871).\* All the foundational components you need are right here, ready to be customized for your brand. And since it's built on web standards, browsers will continue to support it for many years to come.
+If your organization is looking to build a design system, [Adeliom WebComponents will save you thousands of dollars](https://medium.com/eightshapes-llc/and-you-thought-buttons-were-easy-26eb5b5c1871). All the foundational components you need are right here, ready to be customized for your brand. And since it's built on web standards, browsers will continue to support it for many years to come.
 
 Whether you use Adeliom WebComponents as a starting point for your organization's design system or for a fun personal project, there's no limit to what you can do with it.
-
-<small>\*Please consider giving back some of what you save by [supporting this project with a sponsorship](https://github.com/sponsors/claviska).</small>
 
 ## Browser Support
 
@@ -101,7 +99,7 @@ If you need to support IE11 or pre-Chromium Edge, this library isn't for you. Al
 
 ## License
 
-Adeliom WebComponents is based on Shoelace from [Cory LaViska](https://twitter.com/claviska). It's available under the terms of the [MIT license](https://github.com/agence-adeliom/awc/blob/next/LICENSE.md).
+Adeliom WebComponents is based on Shoelace from [Cory LaViska](https://twitter.com/claviska). It's available under the terms of the [MIT license](https://github.com/agence-adeliom/awc/blob/main/LICENSE.md).
 
 ## Attribution
 
