@@ -16,7 +16,7 @@ export default css`
     font-weight: var(--awc-font-weight-semibold);
     letter-spacing: var(--awc-letter-spacing-normal);
     line-height: 1;
-    border-radius: var(--awc-border-radius-small);
+    border-radius: var(--awc-badge-border-radius);
     white-space: nowrap;
     padding: 0.35em 0.6em;
     user-select: none;

@@ -30,8 +30,8 @@ export default css`
 
   /* Standard textareas */
   .textarea--standard {
-    background-color: var(--awc-input-background-color);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
+    background-color: var(--awc-input-background-color-base);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color-base);
   }
 
   .textarea--standard:hover:not(.textarea--disabled) {

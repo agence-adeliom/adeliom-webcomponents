@@ -15,6 +15,7 @@ export default css`
     line-height: 1;
     white-space: nowrap;
     user-select: none;
+    border-radius: var(--awc-tag-border-radius);
   }
 
   .tag__remove::part(base) {
@@ -104,7 +105,6 @@ export default css`
     font-size: var(--awc-button-font-size-small);
     height: calc(var(--awc-input-height-small) * 0.8);
     line-height: calc(var(--awc-input-height-small) - var(--awc-input-border-width) * 2);
-    border-radius: var(--awc-input-border-radius-small);
     padding: 0 var(--awc-spacing-x-small);
   }
 
@@ -112,7 +112,6 @@ export default css`
     font-size: var(--awc-button-font-size-medium);
     height: calc(var(--awc-input-height-medium) * 0.8);
     line-height: calc(var(--awc-input-height-medium) - var(--awc-input-border-width) * 2);
-    border-radius: var(--awc-input-border-radius-medium);
     padding: 0 var(--awc-spacing-small);
   }
 
@@ -120,7 +119,6 @@ export default css`
     font-size: var(--awc-button-font-size-large);
     height: calc(var(--awc-input-height-large) * 0.8);
     line-height: calc(var(--awc-input-height-large) - var(--awc-input-border-width) * 2);
-    border-radius: var(--awc-input-border-radius-large);
     padding: 0 var(--awc-spacing-medium);
   }
 

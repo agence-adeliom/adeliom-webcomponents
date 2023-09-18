@@ -354,6 +354,7 @@
 
   --awc-border-radius-circle: 50%;
   --awc-border-radius-pill: 9999px;
+  --awc-border-radius-none: 0;
 
   /*
    * Elevations
@@ -375,10 +376,13 @@
   --awc-spacing-small: 0.75rem; /* 12px */
   --awc-spacing-medium: 1rem; /* 16px */
   --awc-spacing-large: 1.25rem; /* 20px */
-  --awc-spacing-x-large: 1.75rem; /* 28px */
-  --awc-spacing-2x-large: 2.25rem; /* 36px */
-  --awc-spacing-3x-large: 3rem; /* 48px */
-  --awc-spacing-4x-large: 4.5rem; /* 72px */
+  --awc-spacing-x-large: 1.5rem; /* 24px */
+  --awc-spacing-2x-large: 1.75rem; /* 28px */
+  --awc-spacing-3x-large: 2rem; /* 32px */
+  --awc-spacing-4x-large: 2.25rem; /* 36px */
+  --awc-spacing-5x-large: 2.5rem; /* 40px */
+  --awc-spacing-6x-large: 3rem; /* 48px */
+  --awc-spacing-7x-large: 4.5rem; /* 72px */
 
   /*
    * Transitions

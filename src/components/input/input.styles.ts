@@ -32,8 +32,8 @@ export default css`
 
   /* Standard inputs */
   .input--standard {
-    background-color: var(--awc-input-background-color);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
+    background-color: var(--awc-input-background-color-base);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color-base);
   }
 
   .input--standard:hover:not(.input--disabled) {

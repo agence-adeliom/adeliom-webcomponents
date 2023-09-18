@@ -9,6 +9,7 @@ export default css`
     position: relative;
     line-height: 0;
     overflow: hidden;
+    border-radius: var(--awc-image-border-radius);
   }
 
   img {

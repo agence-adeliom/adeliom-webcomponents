@@ -171,7 +171,7 @@ export default css`
     line-height: var(--awc-tooltip-line-height);
     color: var(--awc-tooltip-color);
     opacity: 0;
-    padding: var(--awc-tooltip-padding);
+    padding: var(--awc-tooltip-padding-y) var(--awc-tooltip-padding-x);
     transition: var(--awc-transition-fast) opacity;
     pointer-events: none;
   }

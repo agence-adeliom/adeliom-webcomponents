@@ -49,7 +49,7 @@ export default css`
     font-weight: var(--awc-tooltip-font-weight);
     line-height: var(--awc-tooltip-line-height);
     color: var(--awc-tooltip-color);
-    padding: var(--awc-tooltip-padding);
+    padding: var(--awc-tooltip-padding-y) var(--awc-tooltip-padding-x);
     pointer-events: none;
   }
 `;

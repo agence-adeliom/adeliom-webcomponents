@@ -29,11 +29,11 @@
   --awc-input-height-medium: 2.5rem; /* 40px */
   --awc-input-height-large: 3.125rem; /* 50px */
 
-  --awc-input-background-color: var(--awc-color-neutral-0);
-  --awc-input-background-color-hover: var(--awc-input-background-color);
-  --awc-input-background-color-focus: var(--awc-input-background-color);
+  --awc-input-background-color-base: var(--awc-color-neutral-0);
+  --awc-input-background-color-hover: var(--awc-input-background-color-base);
+  --awc-input-background-color-focus: var(--awc-input-background-color-base);
   --awc-input-background-color-disabled: var(--awc-color-neutral-100);
-  --awc-input-border-color: var(--awc-color-neutral-300);
+  --awc-input-border-color-base: var(--awc-color-neutral-300);
   --awc-input-border-color-hover: var(--awc-color-neutral-400);
   --awc-input-border-color-focus: var(--awc-color-primary-default);
   --awc-input-border-color-disabled: var(--awc-color-neutral-300);
@@ -120,7 +120,8 @@
   --awc-tooltip-font-weight: var(--awc-font-weight-normal);
   --awc-tooltip-font-size: var(--awc-font-size-small);
   --awc-tooltip-line-height: var(--awc-line-height-dense);
-  --awc-tooltip-padding: var(--awc-spacing-2x-small) var(--awc-spacing-x-small);
+  --awc-tooltip-padding-x: var(--awc-spacing-x-small);
+  --awc-tooltip-padding-y: var(--awc-spacing-2x-small);
   --awc-tooltip-arrow-size: 6px;
 }
 

@@ -17,6 +17,7 @@ export default css`
     justify-content: center;
     width: 100%;
     border-style: solid;
+    border-radius: var(--awc-button-border-radius);
     border-width: var(--awc-input-border-width);
     font-family: var(--awc-input-font-family);
     font-weight: var(--awc-font-weight-semibold);
@@ -443,7 +444,6 @@ export default css`
     min-height: var(--awc-input-height-small);
     font-size: var(--awc-button-font-size-small);
     line-height: calc(var(--awc-input-height-small) - var(--awc-input-border-width) * 2);
-    border-radius: var(--awc-input-border-radius-small);
   }
 
   .button--medium {
@@ -451,7 +451,6 @@ export default css`
     min-height: var(--awc-input-height-medium);
     font-size: var(--awc-button-font-size-medium);
     line-height: calc(var(--awc-input-height-medium) - var(--awc-input-border-width) * 2);
-    border-radius: var(--awc-input-border-radius-medium);
   }
 
   .button--large {
@@ -459,7 +458,6 @@ export default css`
     min-height: var(--awc-input-height-large);
     font-size: var(--awc-button-font-size-large);
     line-height: calc(var(--awc-input-height-large) - var(--awc-input-border-width) * 2);
-    border-radius: var(--awc-input-border-radius-large);
   }
 
   /*
