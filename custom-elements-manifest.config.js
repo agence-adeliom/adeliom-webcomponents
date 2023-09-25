@@ -1,4 +1,6 @@
-import { generateCustomData } from 'cem-plugin-vs-code-custom-data-generator';
+import * as path from 'path';
+import { customElementJetBrainsPlugin } from 'custom-element-jet-brains-integration';
+import { customElementVsCodePlugin } from 'custom-element-vs-code-integration';
 import { parse } from 'comment-parser';
 import { pascalCase } from 'pascal-case';
 import commandLineArgs from 'command-line-args';
@@ -57,6 +59,9 @@ export default {
                 }
               });
             });
+
+            // This is what allows us to map JSDOC comments to ReactWrappers.
+            classDoc['jsDoc'] = node.jsDoc?.map(jsDoc => jsDoc.getFullText()).join('\n');
 
             const parsed = parse(`${customComments}\n */`);
             parsed[0].tags?.forEach(t => {
@@ -160,9 +165,24 @@ export default {
       }
     },
     // Generate custom VS Code data
-    generateCustomData({
+    customElementVsCodePlugin({
       outdir,
-      cssFileName: null
+      cssFileName: null,
+      referencesTemplate: (_, tag) => [
+        {
+          name: 'Documentation',
+          url: `https://awc.a-dev.cloud/components/${tag.replace('awc-', '')}`
+        }
+      ]
+    }),
+    customElementJetBrainsPlugin({
+      excludeCss: true,
+      referencesTemplate: (_, tag) => {
+        return {
+          name: 'Documentation',
+          url: `https://awc.a-dev.cloud/components/${tag.replace('awc-', '')}`
+        };
+      }
     })
   ]
 };

@@ -8,6 +8,7 @@ export type { default as AWCChangeEvent } from './awc-change';
 export type { default as AWCClearEvent } from './awc-clear';
 export type { default as AWCCloseEvent } from './awc-close';
 export type { default as AWCCollapseEvent } from './awc-collapse';
+export type { default as AWCCopyEvent } from './awc-copy';
 export type { default as AWCErrorEvent } from './awc-error';
 export type { default as AWCExpandEvent } from './awc-expand';
 export type { default as AWCFinishEvent } from './awc-finish';

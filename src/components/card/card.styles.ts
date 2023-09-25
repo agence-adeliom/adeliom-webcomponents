@@ -5,10 +5,11 @@ export default css`
   ${componentStyles}
 
   :host {
-    --border-color: var(--awc-color-neutral-200);
-    --border-radius: 0;
-    --border-width: 1px;
-    --padding: var(--awc-spacing-large);
+    --background-color: var(--awc-card-background-color);
+    --border-color: var(--awc-card-border-color);
+    --border-radius: var(--awc-card-border-radius);
+    --border-width: var(--awc-card-border-width);
+    --padding: var(--awc-card-padding);
 
     display: inline-block;
   }
@@ -17,6 +18,7 @@ export default css`
     display: flex;
     flex-direction: column;
     border-radius: var(--border-radius);
+    background-color: var(--background-color);
     height: 100%;
     text-decoration: none;
     color: currentColor;

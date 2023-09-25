@@ -114,6 +114,16 @@
   --awc-panel-border-padding: var(--awc-spacing-x-large);
 
   /*
+   * Cards
+   */
+
+  --awc-card-border-radius: var(--awc-border-radius-medium);
+  --awc-card-border-width: 1px;
+  --awc-card-padding: var(--awc-spacing-x-large);
+  --awc-card-background-color: var(--awc-color-neutral-0);
+  --awc-card-border-color: var(--awc-color-neutral-200);
+
+  /*
    * Tooltips
    */
 
