@@ -37,7 +37,7 @@ export default class AWCBadge extends AWCElement {
 
   render() {
     return html`
-      <slot
+      <span
         part="base"
         class=${classMap({
           badge: true,
@@ -52,7 +52,8 @@ export default class AWCBadge extends AWCElement {
           'badge--pulse': this.pulse
         })}
         role="status"
-      ></slot>
+        ><slot></slot
+      ></span>
     `;
   }
 }

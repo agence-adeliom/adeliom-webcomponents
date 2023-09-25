@@ -33,6 +33,10 @@ export default css`
     cursor: pointer;
   }
 
+  .details__header::-webkit-details-marker {
+    display: none;
+  }
+
   .details__header:focus {
     outline: none;
   }

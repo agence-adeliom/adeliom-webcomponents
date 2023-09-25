@@ -208,9 +208,12 @@ export default class AWCAlert extends AWCElement {
         aria-hidden=${this.open ? 'false' : 'true'}
         @mousemove=${this.handleMouseMove}
       >
-        <slot name="icon" part="icon" class="alert__icon"></slot>
-
-        <slot part="message" class="alert__message" aria-live="polite"></slot>
+        <div part="icon" class="alert__icon">
+          <slot name="icon"></slot>
+        </div>
+        <div part="message" class="alert__message" aria-live="polite">
+          <slot></slot>
+        </div>
 
         ${this.closable
           ? html`

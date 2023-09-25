@@ -13,6 +13,7 @@ export { default as AWCCarousel } from './components/carousel/carousel.js';
 export { default as AWCCarouselItem } from './components/carousel-item/carousel-item.js';
 export { default as AWCCheckbox } from './components/checkbox/checkbox.js';
 export { default as AWCColorPicker } from './components/color-picker/color-picker.js';
+export { default as AWCCopyButton } from './components/copy-button/copy-button.js';
 export { default as AWCDetails } from './components/details/details.js';
 export { default as AWCDialog } from './components/dialog/dialog.js';
 export { default as AWCDivider } from './components/divider/divider.js';

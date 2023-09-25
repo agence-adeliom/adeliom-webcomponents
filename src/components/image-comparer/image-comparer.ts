@@ -108,16 +108,19 @@ export default class AWCImageComparer extends AWCElement {
         @keydown=${this.handleKeyDown}
       >
         <div class="image-comparer__image">
-          <slot name="before" part="before" class="image-comparer__before"></slot>
-
-          <slot
+          <div part="before" class="image-comparer__before">
+            <slot name="before"></slot>
+          </div>
+          <div
             name="after"
             part="after"
             class="image-comparer__after"
             style=${styleMap({
               clipPath: isRtl ? `inset(0 0 0 ${100 - this.position}%)` : `inset(0 ${100 - this.position}% 0 0)`
             })}
-          ></slot>
+          >
+            <slot name="after"></slot>
+          </div>
         </div>
 
         <div
@@ -129,7 +132,7 @@ export default class AWCImageComparer extends AWCElement {
           @mousedown=${this.handleDrag}
           @touchstart=${this.handleDrag}
         >
-          <slot
+          <div
             name="handle"
             part="handle"
             class="image-comparer__handle"
@@ -140,8 +143,10 @@ export default class AWCImageComparer extends AWCElement {
             aria-controls="image-comparer"
             tabindex="0"
           >
-            <awc-icon library="system" name="grip-vertical"></awc-icon>
-          </slot>
+            <slot name="handle">
+              <awc-icon library="system" name="grip-vertical"></awc-icon>
+            </slot>
+          </div>
         </div>
       </div>
     `;

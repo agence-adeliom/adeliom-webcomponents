@@ -451,7 +451,9 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
               'input--no-spin-buttons': this.noSpinButtons
             })}
           >
-            <slot name="prefix" part="prefix" class="input__prefix"></slot>
+            <span part="prefix" class="input__prefix">
+              <slot name="prefix"></slot>
+            </span>
             <input
               part="input"
               id="input"
@@ -486,64 +488,65 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
               @blur=${this.handleBlur}
             />
 
-            ${
-              hasClearIcon
-                ? html`
-                    <button
-                      part="clear-button"
-                      class="input__clear"
-                      type="button"
-                      aria-label=${this.localize.term('clearEntry')}
-                      @click=${this.handleClearClick}
-                      tabindex="-1"
-                    >
-                      <slot name="clear-icon">
-                        <awc-icon name="x-circle-fill" library="system"></awc-icon>
-                      </slot>
-                    </button>
-                  `
-                : ''
-            }
-            ${
-              this.passwordToggle && !this.disabled
-                ? html`
-                    <button
-                      part="password-toggle-button"
-                      class="input__password-toggle"
-                      type="button"
-                      aria-label=${this.localize.term(this.passwordVisible ? 'hidePassword' : 'showPassword')}
-                      @click=${this.handlePasswordToggle}
-                      tabindex="-1"
-                    >
-                      ${this.passwordVisible
-                        ? html`
-                            <slot name="show-password-icon">
-                              <awc-icon name="eye-slash" library="system"></awc-icon>
-                            </slot>
-                          `
-                        : html`
-                            <slot name="hide-password-icon">
-                              <awc-icon name="eye" library="system"></awc-icon>
-                            </slot>
-                          `}
-                    </button>
-                  `
-                : ''
-            }
+              ${
+                hasClearIcon
+                  ? html`
+                      <button
+                        part="clear-button"
+                        class="input__clear"
+                        type="button"
+                        aria-label=${this.localize.term('clearEntry')}
+                        @click=${this.handleClearClick}
+                        tabindex="-1"
+                      >
+                        <slot name="clear-icon">
+                          <awc-icon name="x-circle-fill" library="system"></awc-icon>
+                        </slot>
+                      </button>
+                    `
+                  : ''
+              }
+              ${
+                this.passwordToggle && !this.disabled
+                  ? html`
+                      <button
+                        part="password-toggle-button"
+                        class="input__password-toggle"
+                        type="button"
+                        aria-label=${this.localize.term(this.passwordVisible ? 'hidePassword' : 'showPassword')}
+                        @click=${this.handlePasswordToggle}
+                        tabindex="-1"
+                      >
+                        ${this.passwordVisible
+                          ? html`
+                              <slot name="show-password-icon">
+                                <awc-icon name="eye-slash" library="system"></awc-icon>
+                              </slot>
+                            `
+                          : html`
+                              <slot name="hide-password-icon">
+                                <awc-icon name="eye" library="system"></awc-icon>
+                              </slot>
+                            `}
+                      </button>
+                    `
+                  : ''
+              }
 
-            <slot name="suffix" part="suffix" class="input__suffix"></slot>
+            <span part="suffix" class="input__suffix">
+              <slot name="suffix"></slot>
+            </span>
           </div>
         </div>
 
-        <slot
-          name="help-text"
+        <div
           part="form-control-help-text"
           id="help-text"
           class="form-control__help-text"
           aria-hidden=${hasHelpText ? 'false' : 'true'}
         >
-          ${this.helpText}
-        </slot>
+          <slot name="help-text">${this.helpText}</slot>
+        </div>
         </div>
       </div>
     `;
