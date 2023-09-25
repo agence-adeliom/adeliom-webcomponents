@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/agence-adeliom/awc/compare/v1.0.4...v1.1.0) (2023-09-25)
+
+
+### Features
+
+* **copy-button:** Add copy-button ([a8bfcc0](https://github.com/agence-adeliom/awc/commit/a8bfcc0a6aac421e89d25b8557438b1dd237616a))
+
 ## [1.0.4](https://github.com/agence-adeliom/awc/compare/v1.0.3...v1.0.4) (2023-07-19)
 
 
