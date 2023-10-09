@@ -183,7 +183,7 @@ details pre {
 }
 
 a {
-  color: var(--awc-color-primary-700);
+  color: var(--awc-color-primary-600);
 }
 
 a:hover {
@@ -192,7 +192,7 @@ a:hover {
 
 abbr[title] {
   text-decoration: none;
-  border-bottom: dashed 1px var(--awc-color-primary-700);
+  border-bottom: dashed 1px var(--awc-color-primary-600);
   cursor: help;
 }
 
@@ -230,23 +230,23 @@ kbd {
 }
 
 ins {
-  background-color: var(--awc-color-green-200);
-  color: var(--awc-color-green-900);
+  background-color: var(--awc-color-success-200);
+  color: var(--awc-color-success-800);
   border-radius: var(--docs-border-radius);
   text-decoration: none;
   padding: 0.125em 0.25em;
 }
 
 s {
-  background-color: var(--awc-color-red-200);
-  color: var(--awc-color-red-900);
+  background-color: var(--awc-color-error-200);
+  color: var(--awc-color-error-800);
   border-radius: var(--docs-border-radius);
   text-decoration: none;
   padding: 0.125em 0.25em;
 }
 
 mark {
-  background-color: var(--awc-color-yellow-200);
+  background-color: var(--awc-color-warning-200);
   border-radius: var(--docs-border-radius);
   padding: 0.125em 0.25em;
 }
@@ -321,7 +321,7 @@ ol ol:last-child {
 
 .anchor-heading a::after {
   content: '#';
-  color: var(--awc-color-primary-700);
+  color: var(--awc-color-primary-600);
   margin-inline: 0.5rem;
   opacity: 0;
   transition: 100ms opacity;
@@ -441,12 +441,12 @@ pre .token.property,
 pre .token.keyword,
 pre .token.tag,
 pre .token.url {
-  color: var(--awc-color-blue-700);
+  color: var(--awc-color-primary-800);
 }
 
 pre .token.symbol,
 pre .token.deleted {
-  color: var(--awc-color-red-700);
+  color: var(--awc-color-error-800);
 }
 
 pre .token.boolean,
@@ -457,24 +457,24 @@ pre .token.string,
 pre .token.char,
 pre .token.builtin,
 pre .token.inserted {
-  color: var(--awc-color-emerald-700);
+  color: var(--awc-color-success-800);
 }
 
 pre .token.atrule,
 pre .token.attr-value,
 pre .token.number,
 pre .token.variable {
-  color: var(--awc-color-violet-700);
+  color: var(--awc-color-secondary-800);
 }
 
 pre .token.function,
 pre .token.class-name,
 pre .token.regex {
-  color: var(--awc-color-orange-700);
+  color: var(--awc-color-warning-800);
 }
 
 pre .token.important {
-  color: var(--awc-color-red-700);
+  color: var(--awc-color-error-800);
 }
 
 pre .token.important,
@@ -776,13 +776,13 @@ pre:hover .copy-code-button--copied {
 }
 
 #sidebar ul li a:not(.active-link):hover {
-  color: var(--awc-color-primary-700);
+  color: var(--awc-color-primary-600);
 }
 
 #sidebar nav .active-link {
-  color: var(--awc-color-primary-500);
+  color: var(--awc-color-primary-600);
   font-weight: var(--awc-font-weight-bold);
-  border-bottom: dashed 1px var(--awc-color-primary-700);
+  border-bottom: dashed 1px var(--awc-color-primary-600);
 }
 
 #sidebar > header img {
@@ -918,13 +918,13 @@ main {
 }
 
 .content__toc a:hover {
-  color: var(--awc-color-primary-700);
+  color: var(--awc-color-primary-600);
 }
 
 .content__toc a.active {
-  color: var(--awc-color-primary-700);
+  color: var(--awc-color-primary-600);
   font-weight: var(--awc-font-weight-bold);
-  border-bottom: dashed 1px var(--awc-color-primary-700);
+  border-bottom: dashed 1px var(--awc-color-primary-600);
 }
 
 .content__toc .top a {

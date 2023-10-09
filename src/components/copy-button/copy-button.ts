@@ -195,10 +195,10 @@ export default class AWCCopyButton extends AWCElement {
     return html`
       <awc-tooltip
         class=${classMap({
-      'copy-button': true,
-      'copy-button--success': this.status === 'success',
-      'copy-button--error': this.status === 'error'
-    })}
+          'copy-button': true,
+          'copy-button--success': this.status === 'success',
+          'copy-button--error': this.status === 'error'
+        })}
         content=${copyLabel}
         placement=${this.tooltipPlacement}
         ?disabled=${this.disabled}
@@ -247,7 +247,6 @@ setDefaultAnimation('copy.out', {
   ],
   options: { duration: 100 }
 });
-
 
 declare global {
   interface HTMLElementTagNameMap {

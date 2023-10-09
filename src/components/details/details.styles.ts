@@ -6,10 +6,10 @@ export default css`
 
   :host {
     display: block;
-    --padding: 0;
-    --border-width: 0;
+    --padding: var(--awc-spacing-medium);
+    --border-width: 1px;
     --border-color: var(--awc-color-neutral-200);
-    --border-radius: var(--awc-border-radius-none);
+    --border-radius: var(--awc-card-border-radius);
     --background-color: transparent;
   }
 
@@ -59,6 +59,7 @@ export default css`
     flex: 1 1 auto;
     display: flex;
     align-items: center;
+    font-weight: var(--awc-font-weight-semibold)
   }
 
   .details__summary-icon {

@@ -150,8 +150,8 @@ export default css`
     cursor: default;
   }
 
-  .input__prefix::slotted(awc-icon),
-  .input__suffix::slotted(awc-icon) {
+  .input__prefix ::slotted(awc-icon),
+  .input__suffix ::slotted(awc-icon) {
     color: var(--awc-input-icon-color);
   }
 
@@ -175,11 +175,11 @@ export default css`
     width: calc(1em + var(--awc-input-spacing-small) * 2);
   }
 
-  .input--small .input__prefix::slotted(*) {
+  .input--small .input__prefix ::slotted(*) {
     margin-inline-start: var(--awc-input-spacing-small);
   }
 
-  .input--small .input__suffix::slotted(*) {
+  .input--small .input__suffix ::slotted(*) {
     margin-inline-end: var(--awc-input-spacing-small);
   }
 
@@ -199,11 +199,11 @@ export default css`
     width: calc(1em + var(--awc-input-spacing-medium) * 2);
   }
 
-  .input--medium .input__prefix::slotted(*) {
+  .input--medium .input__prefix ::slotted(*) {
     margin-inline-start: var(--awc-input-spacing-medium);
   }
 
-  .input--medium .input__suffix::slotted(*) {
+  .input--medium .input__suffix ::slotted(*) {
     margin-inline-end: var(--awc-input-spacing-medium);
   }
 
@@ -223,11 +223,11 @@ export default css`
     width: calc(1em + var(--awc-input-spacing-large) * 2);
   }
 
-  .input--large .input__prefix::slotted(*) {
+  .input--large .input__prefix ::slotted(*) {
     margin-inline-start: var(--awc-input-spacing-large);
   }
 
-  .input--large .input__suffix::slotted(*) {
+  .input--large .input__suffix ::slotted(*) {
     margin-inline-end: var(--awc-input-spacing-large);
   }
 

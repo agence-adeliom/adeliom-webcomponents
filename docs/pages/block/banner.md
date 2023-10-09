@@ -10,7 +10,7 @@ layout: blocks
 ```html:preview:tailwind:no-resizer
 <div class="bg-white  dark:bg-neutral-950 pb-5">
   <!-- banner - start -->
-  <div class="relative flex flex-wrap bg-primary-900 px-4 py-3 sm:flex-nowrap sm:items-center sm:justify-center sm:gap-3 sm:pr-8 md:px-8">
+  <div class="relative flex flex-wrap bg-primary-950 px-4 py-3 sm:flex-nowrap sm:items-center sm:justify-center sm:gap-3 sm:pr-8 md:px-8">
     <div class="order-1 mb-2 inline-block w-11/12 max-w-screen-sm text-sm text-white sm:order-none sm:mb-0 sm:w-auto md:text-base">This is a section of some simple filler text, also known as placeholder text.</div>
 
     <awc-button href="#" variant="primary" class="order-last">Learn more</awc-button>
@@ -33,7 +33,7 @@ layout: blocks
 <div class="bg-white  dark:bg-neutral-950 py-5">
   <!-- banner - start -->
   <div class="container mx-auto px-4 md:px-8">
-    <div class="relative flex flex-wrap rounded-lg bg-primary-900 px-4 py-3 shadow-lg sm:flex-nowrap sm:items-center sm:justify-center sm:gap-3 sm:pr-8 md:px-8">
+    <div class="relative flex flex-wrap rounded-lg bg-primary-950 px-4 py-3 shadow-lg sm:flex-nowrap sm:items-center sm:justify-center sm:gap-3 sm:pr-8 md:px-8">
       <div class="order-1 mb-2 inline-block w-11/12 max-w-screen-sm text-sm text-white sm:order-none sm:mb-0 sm:w-auto md:text-base">This is a section of some simple filler text, also known as placeholder text.</div>
 
      <awc-button href="#" variant="primary" class="order-last">Learn more</awc-button>

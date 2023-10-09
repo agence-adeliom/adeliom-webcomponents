@@ -18,7 +18,7 @@
   --docs-search-shadow: var(--docs-shadow-x-large);
   --docs-search-result-background-hover: var(--awc-color-neutral-100);
   --docs-search-result-color-hover: var(--awc-color-neutral-900);
-  --docs-search-result-background-active: var(--awc-color-primary-700);
+  --docs-search-result-background-active: var(--awc-color-primary-600);
   --docs-search-result-color-active: var(--awc-color-neutral-0);
   --docs-search-focus-ring: var(--awc-focus-ring);
   --docs-search-overlay-background: rgb(0 0 0 / 0.33);

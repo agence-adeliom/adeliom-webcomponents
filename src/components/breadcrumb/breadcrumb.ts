@@ -90,9 +90,14 @@ export default class AWCBreadcrumb extends AWCElement {
         <slot @slotchange=${this.handleSlotChange}></slot>
       </nav>
 
-      <slot name="separator" hidden aria-hidden="true">
-        <awc-icon name=${this.localize.dir() === 'rtl' ? 'chevron-left' : 'chevron-right'} library="system"></awc-icon>
-      </slot>
+      <span hidden aria-hidden="true">
+        <slot name="separator">
+          <awc-icon
+            name=${this.localize.dir() === 'rtl' ? 'chevron-left' : 'chevron-right'}
+            library="system"
+          ></awc-icon>
+        </slot>
+      </span>
     `;
   }
 }

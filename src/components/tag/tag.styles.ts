@@ -28,8 +28,8 @@ export default css`
    */
 
   .tag--primary {
-    background-color: var(--awc-color-primary-50);
-    border-color: var(--awc-color-primary-200);
+    background-color: var(--awc-color-primary-200);
+    border-color: var(--awc-color-primary-400);
     color: var(--awc-color-primary-800);
   }
 
@@ -38,8 +38,8 @@ export default css`
   }
 
   .tag--secondary {
-    background-color: var(--awc-color-secondary-50);
-    border-color: var(--awc-color-secondary-200);
+    background-color: var(--awc-color-secondary-200);
+    border-color: var(--awc-color-secondary-400);
     color: var(--awc-color-secondary-800);
   }
 
@@ -58,8 +58,8 @@ export default css`
   }
 
   .tag--success {
-    background-color: var(--awc-color-success-50);
-    border-color: var(--awc-color-success-200);
+    background-color: var(--awc-color-success-200);
+    border-color: var(--awc-color-success-400);
     color: var(--awc-color-success-800);
   }
 
@@ -68,8 +68,8 @@ export default css`
   }
 
   .tag--neutral {
-    background-color: var(--awc-color-neutral-50);
-    border-color: var(--awc-color-neutral-200);
+    background-color: var(--awc-color-neutral-200);
+    border-color: var(--awc-color-neutral-400);
     color: var(--awc-color-neutral-800);
   }
 
@@ -78,8 +78,8 @@ export default css`
   }
 
   .tag--warning {
-    background-color: var(--awc-color-warning-50);
-    border-color: var(--awc-color-warning-200);
+    background-color: var(--awc-color-warning-200);
+    border-color: var(--awc-color-warning-400);
     color: var(--awc-color-warning-800);
   }
 
@@ -88,8 +88,8 @@ export default css`
   }
 
   .tag--danger {
-    background-color: var(--awc-color-danger-50);
-    border-color: var(--awc-color-danger-200);
+    background-color: var(--awc-color-danger-200);
+    border-color: var(--awc-color-danger-400);
     color: var(--awc-color-danger-800);
   }
 

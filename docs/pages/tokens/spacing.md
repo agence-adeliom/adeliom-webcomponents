@@ -9,7 +9,7 @@ meta:
 Spacing tokens are used to provide consistent spacing between content in your app.
 
 | Token                    | Value          | Example                                                                                                           |
-|--------------------------|----------------|-------------------------------------------------------------------------------------------------------------------|
+| ------------------------ | -------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `--awc-spacing-3x-small` | 0.125rem (2px) | <div class="spacing-demo" style="width: var(--awc-spacing-3x-small); height: var(--awc-spacing-3x-small);"></div> |
 | `--awc-spacing-2x-small` | 0.25rem (4px)  | <div class="spacing-demo" style="width: var(--awc-spacing-2x-small); height: var(--awc-spacing-2x-small);"></div> |
 | `--awc-spacing-x-small`  | 0.5rem (8px)   | <div class="spacing-demo" style="width: var(--awc-spacing-x-small); height: var(--awc-spacing-x-small);"></div>   |

@@ -74,9 +74,11 @@ export default class AWCAvatar extends AWCElement {
       avatarWithoutImage = html`<div part="initials" class="avatar__initials">${this.initials}</div>`;
     } else {
       avatarWithoutImage = html`
-        <slot name="icon" part="icon" class="avatar__icon" aria-hidden="true">
-          <awc-icon name="person-fill" library="system"></awc-icon>
-        </slot>
+        <div part="icon" class="avatar__icon" aria-hidden="true">
+          <slot name="icon">
+            <awc-icon name="person-fill" library="system"></awc-icon>
+          </slot>
+        </div>
       `;
     }
 
