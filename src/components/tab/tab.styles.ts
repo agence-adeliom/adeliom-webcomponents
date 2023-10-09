@@ -26,7 +26,7 @@ export default css`
   }
 
   .tab:hover:not(.tab--disabled) {
-    color: var(--awc-color-primary-600);
+    color: var(--awc-color-primary-800);
   }
 
   .tab:focus {

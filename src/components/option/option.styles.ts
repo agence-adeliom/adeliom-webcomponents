@@ -29,8 +29,8 @@ export default css`
   }
 
   .option--hover:not(.option--current):not(.option--disabled) {
-    background-color: var(--awc-color-neutral-100);
-    color: var(--awc-color-neutral-1000);
+    background-color: var(--awc-color-primary-800);
+    color: var(--awc-color-neutral-0);
   }
 
   .option--current,
