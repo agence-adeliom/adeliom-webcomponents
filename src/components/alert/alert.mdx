@@ -1,0 +1,35 @@
+import {Title, Subtitle, Meta, ArgTypes, Primary, Description, Stories} from "@storybook/blocks";
+import * as AlertStories from './alert.stories';
+import {TagNames} from "../../../.storybook/blocks/TagNames.jsx";
+import {Summary} from "../../../.storybook/blocks/Summary.jsx";
+
+<Meta of={AlertStories} />
+
+<Title of={AlertStories} />
+<TagNames of={AlertStories} />
+<Summary of={AlertStories} />
+<Subtitle of={AlertStories} />
+<Description of={AlertStories} />
+
+<Primary of={AlertStories} />
+
+<Stories of={AlertStories} includePrimary={false} title={'Examples'} />
+
+### The Toast Stack
+
+The toast stack is a fixed position singleton element created and managed internally by the alert component. It will be added and removed from the DOM as needed when toasts are shown. When more than one toast is visible, they will stack vertically in the toast stack.
+
+By default, the toast stack is positioned at the top-right of the viewport. You can change its position by targeting `.awc-toast-stack` in your stylesheet. To make toasts appear at the top-left of the viewport, for example, use the following styles.
+
+```css
+.awc-toast-stack {
+  left: 0;
+  right: auto;
+}
+```
+
+By design, it is not possible to show toasts in more than one stack simultaneously. Such behavior is confusing and makes for a poor user experience.
+
+## API
+
+<ArgTypes of={AlertStories} />

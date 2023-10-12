@@ -451,7 +451,7 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
               'input--no-spin-buttons': this.noSpinButtons
             })}
           >
-            <span part="prefix" class="input__prefix">
+                <span part="prefix" class="input__prefix">
               <slot name="prefix"></slot>
             </span>
             <input

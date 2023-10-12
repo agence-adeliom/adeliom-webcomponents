@@ -32,6 +32,7 @@ async function buildTailwind() {
 // process and an array of strings containing any output are included in the resolved promise.
 //
 async function buildTheDocs(watch = false) {
+  return;
   return new Promise(async (resolve, reject) => {
     const afterSignal = '[eleventy.after]';
     const args = ['@11ty/eleventy', '--quiet'];
@@ -89,11 +90,11 @@ async function buildTheSource() {
       // The tailwind plugin
       './src/tailwind/preset.js',
       // Components
-      ...(await globby('./src/components/**/!(*.(style|test)).ts')),
+      ...(await globby('./src/components/**/!(*.(style|stories|test)).ts')),
       // Translations
       ...(await globby('./src/translations/**/*.ts')),
       // Public utilities
-      ...(await globby('./src/utilities/**/!(*.(style|test)).ts')),
+      ...(await globby('./src/utilities/**/!(*.(style|stories|test)).ts')),
       // Theme stylesheets
       ...(await globby('./src/themes/**/!(*.test).ts')),
       // React wrappers
@@ -248,22 +249,6 @@ if (serve) {
       }
     }
   };
-
-  // Launch browser sync
-  bs.init(browserSyncConfig, () => {
-    const url = `http://localhost:${port}`;
-    console.log(chalk.cyan(`\n🥾 The dev server is available at ${url}`));
-
-    // Log deferred output
-    if (result.output.length > 0) {
-      console.log('\n' + result.output.join('\n'));
-    }
-
-    // Log output that comes later on
-    result.child.stdout.on('data', data => {
-      console.log(data.toString());
-    });
-  });
 
   // Rebuild and reload when source files change
   bs.watch(['src/**/!(*.test).*']).on('change', async filename => {

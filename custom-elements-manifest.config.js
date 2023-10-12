@@ -29,7 +29,7 @@ function replace(string, terms) {
 
 export default {
   globs: ['src/components/**/*.ts', 'src/layouts/**/*.ts'],
-  exclude: ['**/*.styles.ts', '**/*.test.ts', '**/*.utils.ts'],
+  exclude: ['**/*.styles.ts','**/*.stories.ts', '**/*.test.ts', '**/*.utils.ts'],
   plugins: [
     // Append package data
     {

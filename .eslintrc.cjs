@@ -11,13 +11,7 @@ module.exports = {
     'import',
     'sort-imports-es6-autofix'
   ],
-  extends: [
-    'eslint:recommended',
-    'plugin:wc/recommended',
-    'plugin:wc/best-practice',
-    'plugin:lit/recommended',
-    'plugin:lit-a11y/recommended'
-  ],
+  extends: ['eslint:recommended', 'plugin:wc/recommended', 'plugin:wc/best-practice', 'plugin:lit/recommended', 'plugin:lit-a11y/recommended', 'plugin:storybook/recommended'],
   env: {
     es2021: true,
     browser: true

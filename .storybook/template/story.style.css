@@ -1,0 +1,8 @@
+.docs-story,
+.sb-main-padded.sb-show-main {
+    font: 16px var(--awc-font-sans);
+    font-weight: var(--awc-font-weight-normal);
+    background-color: var(--awc-background-color);
+    line-height: var(--awc-line-height-normal);
+    color: var(--awc-text-color);
+}

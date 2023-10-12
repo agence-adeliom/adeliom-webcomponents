@@ -60,14 +60,7 @@ export default class AWCAlert extends AWCElement {
   @property({ type: Boolean, reflect: true }) closable = false;
 
   /** The alert's theme variant. */
-  @property({ reflect: true }) variant:
-    | 'primary'
-    | 'secondary'
-    | 'tertiary'
-    | 'success'
-    | 'neutral'
-    | 'warning'
-    | 'danger' = 'primary';
+  @property({ type: String, reflect: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'success' | 'neutral' | 'warning' | 'danger' = 'primary';
 
   /**
    * The length of time, in milliseconds, the alert will show before closing itself. If the user interacts with
