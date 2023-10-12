@@ -2,7 +2,7 @@ import * as path from 'path';
 import { customElementJetBrainsPlugin } from 'custom-element-jet-brains-integration';
 import { customElementVsCodePlugin } from 'custom-element-vs-code-integration';
 import { parse } from 'comment-parser';
-import { pascalCase } from 'pascal-case';
+import { pascalCase } from 'change-case';
 import commandLineArgs from 'command-line-args';
 import fs from 'fs';
 
@@ -29,7 +29,7 @@ function replace(string, terms) {
 
 export default {
   globs: ['src/components/**/*.ts', 'src/layouts/**/*.ts'],
-  exclude: ['**/*.styles.ts','**/*.stories.ts', '**/*.test.ts', '**/*.utils.ts'],
+  exclude: ['**/*.styles.ts', '**/*.stories.ts', '**/*.test.ts', '**/*.utils.ts'],
   plugins: [
     // Append package data
     {

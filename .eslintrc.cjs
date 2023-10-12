@@ -11,7 +11,14 @@ module.exports = {
     'import',
     'sort-imports-es6-autofix'
   ],
-  extends: ['eslint:recommended', 'plugin:wc/recommended', 'plugin:wc/best-practice', 'plugin:lit/recommended', 'plugin:lit-a11y/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:wc/recommended',
+    'plugin:wc/best-practice',
+    'plugin:lit/recommended',
+    'plugin:lit-a11y/recommended',
+    'plugin:storybook/recommended'
+  ],
   env: {
     es2021: true,
     browser: true
@@ -88,7 +95,8 @@ module.exports = {
         '@typescript-eslint/no-extraneous-class': 'error',
         '@typescript-eslint/no-redundant-type-constituents': 'off',
         '@typescript-eslint/parameter-properties': 'error',
-        '@typescript-eslint/strict-boolean-expressions': 'off'
+        '@typescript-eslint/strict-boolean-expressions': 'off',
+        'storybook/no-redundant-story-name': 'off'
       }
     },
     {

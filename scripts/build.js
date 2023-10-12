@@ -175,7 +175,7 @@ await nextTask('Cleaning up the previous build', async () => {
 });
 
 await nextTask('Generating component metadata', () => {
-  return execPromise(`npm run make:metadata`, { stdio: 'inherit' });
+  return execPromise(`cem analyze --litelement --outdir "dist"`, { stdio: 'inherit' });
 });
 
 await nextTask('Wrapping components for React', () => {

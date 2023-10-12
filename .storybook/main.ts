@@ -12,14 +12,18 @@ const config: StorybookConfig = {
       name: '@storybook/addon-storysource',
       options: {
         loaderOptions: {
-          injectStoryParameters: false,
-        },
-      },
-    },
+          injectStoryParameters: false
+        }
+      }
+    }
   ],
   framework: {
     name: '@storybook/web-components-vite',
-    options: {}
+    options: {
+      builder: {
+        viteConfigPath: '.storybook/vite.config.js'
+      }
+    }
   },
   docs: {
     autodocs: 'tag'

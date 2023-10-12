@@ -59,7 +59,7 @@ export default css`
     flex: 1 1 auto;
     display: flex;
     align-items: center;
-    font-weight: var(--awc-font-weight-semibold)
+    font-weight: var(--awc-font-weight-semibold);
   }
 
   .details__summary-icon {

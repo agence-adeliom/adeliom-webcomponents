@@ -1,6 +1,6 @@
-import { TemplateResult } from "lit";
-import type { ArgTypes, Options } from "./storybook";
-import { getStyleTemplate, getTemplate } from "./html-templates.js";
+import { TemplateResult } from 'lit';
+import type { ArgTypes, Options } from './storybook';
+import { getStyleTemplate, getTemplate } from './html-templates.js';
 import {
   getComponentByTagName,
   getCssParts,
@@ -8,9 +8,9 @@ import {
   getAttributesAndProperties,
   getReactEvents,
   getReactProperties,
-  getSlots,
-} from "./cem-utilities.js";
-import { Declaration } from "./cem-schema";
+  getSlots
+} from './cem-utilities.js';
+import { Declaration } from './cem-schema';
 
 /**
  * sets the global config for the Storybook helpers
@@ -36,12 +36,12 @@ export function getWcStorybookHelpers(tagName: string) {
   const cem = (window as any).__STORYBOOK_CUSTOM_ELEMENTS_MANIFEST__;
   if (!cem) {
     throw new Error(
-      "Custom Elements Manifest not found. Be sure to follow the pre-install steps in this guide:\nhttps://www.npmjs.com/package/wc-storybook-helpers#before-you-install"
+      'Custom Elements Manifest not found. Be sure to follow the pre-install steps in this guide:\nhttps://www.npmjs.com/package/wc-storybook-helpers#before-you-install'
     );
   }
 
   const component = getComponentByTagName(tagName, cem);
-  const eventNames = component?.events?.map((event) => event.name) || [];
+  const eventNames = component?.events?.map(event => event.name) || [];
 
   return {
     args: getArgs(component),
@@ -49,8 +49,7 @@ export function getWcStorybookHelpers(tagName: string) {
     reactArgTypes: getReactProps(component),
     events: eventNames,
     styleTemplate: (args?: any) => getStyleTemplate(component, args),
-    template: (args?: any, slot?: TemplateResult) =>
-      getTemplate(component, args, slot),
+    template: (args?: any, slot?: TemplateResult) => getTemplate(component, args, slot)
   };
 }
 
@@ -60,7 +59,7 @@ function getArgTypes(component?: Declaration): ArgTypes {
     ...getCssProperties(component),
     ...getCssParts(component),
     ...getSlots(component),
-    ...getAttributesAndProperties(component),
+    ...getAttributesAndProperties(component)
   };
 
   return argTypes;
@@ -82,7 +81,7 @@ function getReactProps(component?: Declaration): ArgTypes {
     ...getReactEvents(component),
     ...getCssProperties(component),
     ...getCssParts(component),
-    ...getSlots(component),
+    ...getSlots(component)
   };
 
   return argTypes;

@@ -26,7 +26,7 @@ Promise.all(
     const componentDir = path.join(reactDir, tagWithoutPrefix);
     const componentFile = path.join(componentDir, 'index.ts');
     const importPath = component.path;
-    console.log(component?.events || []);
+
     const eventImports = (component?.events || [])
       .map(event => `import { ${event.eventName} } from '../../../src/events/events';`)
       .join('\n');
@@ -55,7 +55,7 @@ Promise.all(
       }
     });
     `;
-    console.log(code);
+
     const source = await prettier.format(
       code,
       Object.assign(prettierConfig, {
