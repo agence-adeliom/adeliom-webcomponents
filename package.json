@@ -1,7 +1,7 @@
 {
   "name": "@agence-adeliom/awc",
   "description": "A forward-thinking library of web components.",
-  "version": "1.1.0",
+  "version": "1.1.1-dev.0",
   "homepage": "https://github.com/agence-adeliom/awc",
   "author": "Agence Adeliom",
   "license": "MIT",
@@ -75,7 +75,7 @@
     "tailwindcss:build": "tailwindcss -i docs/assets/styles/tailwind.css -o docs/assets/styles/tailwind.min.css --postcss",
     "tailwindcss:watch": "npm run tailwindcss:build -- --watch",
     "prepare": "husky install",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npx vite build",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build"
   },
