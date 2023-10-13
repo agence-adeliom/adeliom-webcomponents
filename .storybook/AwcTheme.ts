@@ -4,25 +4,25 @@ export default create({
   base: 'dark',
   brandTitle: 'Adeliom Web Components',
   brandUrl: 'https://awc.a-dev.cloud',
-  brandImage: 'https://awc.a-dev.cloud/assets/images/logo.svg',
+  brandImage: '/images/wordmark.svg',
   brandTarget: '_self',
-  colorPrimary: '#f175bc',
-  colorSecondary: '#d72b80',
+  colorPrimary: '#C377FF',
+  colorSecondary: '#EC2E69',
 
   // UI
-  appBg: '#000000',
-  appContentBg: '#000000',
+  appBg: '#1F1F1F',
+  appContentBg: '#1F1F1F',
   appBorderColor: '#27272a',
   appBorderRadius: 4,
 
   // Text colors
-  textColor: '#e4e4e7',
-  textInverseColor: '#000000',
+  textColor: '#FFFFFF',
+  textInverseColor: '#0A0A0A',
 
   // Toolbar default and active colors
-  barTextColor: '#e4e4e7',
-  barSelectedColor: '#f175bc',
-  barBg: '#000000',
+  barTextColor: '#FFFFFF',
+  barSelectedColor: '#FF6897',
+  barBg: '#1F1F1F',
 
   // Form colors
   inputBg: '#000000',

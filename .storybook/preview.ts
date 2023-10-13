@@ -10,8 +10,10 @@ import '../src/themes/dark.css';
 import './template/story.style.css';
 
 import { setBasePath } from '../src/utilities/base-path.js';
+import prettify from '@liquify/prettify';
+import {withSource} from "./wc-helper/code/withSource";
 
-setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc/cdn');
+setBasePath('/');
 setCustomElementsManifest(customElements);
 
 export const decorators = [
@@ -22,7 +24,8 @@ export const decorators = [
     },
     defaultTheme: 'light',
     attributeName: 'data-mode'
-  })
+  }),
+  withSource()
 ];
 
 const preview: Preview = {
@@ -41,9 +44,18 @@ const preview: Preview = {
       page: DocumentationTemplate,
       story: {
         inline: true
+      },
+      source: {
+        transform: (code: string, _storyContext: StoryContext)  => {
+          // @ts-ignore
+          return prettify.formatSync(code, {
+            markup: {
+              preserveComment: false
+            }
+          }) ?? code
+        }
       }
-    },
-    package: customElements.package
+    }
   }
 };
 

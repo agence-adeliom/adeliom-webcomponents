@@ -39,16 +39,24 @@ const awcPlugin = () => {
     configResolved(resolvedConfig) {
       config = resolvedConfig;
     },
-    closeBundle: () => {
+    configureServer: () => {
       const outputDir = path.relative(process.cwd(), config.build.outDir);
-      console.log(`cem analyze --litelement --outdir "${outputDir}"`);
       execSync(`cem analyze --litelement --outdir "${outputDir}"`, { stdio: 'inherit' });
-      execSync(`node scripts/make-icons.js --outdir ${config.build.outDir}`, { stdio: 'inherit' });
-      execSync(`node scripts/make-react.js --outdir ${config.build.outDir}`, { stdio: 'inherit' });
-      execSync(`node scripts/make-themes.js --outdir ${config.build.outDir}`, { stdio: 'inherit' });
-      execSync(`npm run storybook`, { stdio: 'inherit' });
+      execSync(`node scripts/make-icons.js --outdir ${path.resolve(__dirname, 'static')}`, { stdio: 'inherit' });
     }
   };
 };
 
-export default {};
+export default {
+  build: {
+    chunkSizeWarningLimit: 300
+  },
+  resolve: {
+    alias: {
+      '@awc-storybook': path.resolve(__dirname, '.')
+    }
+  },
+  plugins: [
+    awcPlugin()
+  ]
+};

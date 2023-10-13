@@ -26,21 +26,14 @@ type Story = StoryObj<AWCAnimatedImage & typeof args>;
 export const Primary: Story = {
   name: 'Default Animation',
   args: {
-    src: 'https://awc.a-dev.cloud/assets/images/walk.gif',
+    src: '/images/walk.gif',
     alt: 'Animation of untied shoes walking on pavement'
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Another description, overriding the comments'
-      }
-    }
   }
 };
 
 export const WEBPImage: Story = {
   args: {
-    src: 'https://awc.a-dev.cloud/assets/images/tie.webp',
+    src: '/images/tie.webp',
     alt: 'Animation of a shoe being tied'
   },
   parameters: {
@@ -55,7 +48,7 @@ export const WEBPImage: Story = {
 export const Sized: Story = {
   name: 'Setting a Width and Height',
   args: {
-    src: 'https://awc.a-dev.cloud/assets/images/tie.webp',
+    src: '/images/walk.gif',
     alt: 'Animation of untied shoes walking on pavement',
     style: 'width: 150px; height: 200px;'
   },
@@ -72,7 +65,7 @@ export const Sized: Story = {
 export const Customized: Story = {
   name: 'Customizing the Control Box',
   args: {
-    src: 'https://awc.a-dev.cloud/assets/images/tie.webp',
+    src: '/images/tie.webp',
     alt: 'Animation of untied shoes walking on pavement',
     'control-box-part': `top: auto;
     right: auto;

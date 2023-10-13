@@ -20,7 +20,7 @@ const meta = {
       description: {
         component: `To animate an element, wrap it in \`<awc-animation>\` and set an animation \`name\`. The animation will not start until you add the \`play\` attribute. Refer to the [properties table](#properties) for a list of all animation options.
 
-> The animation will only be applied to the first child element found in \`<awc-animation>\`.`
+>❗The animation will only be applied to the first child element found in \`<awc-animation>\`.`
       }
     }
   },

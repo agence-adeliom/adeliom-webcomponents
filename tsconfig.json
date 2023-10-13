@@ -3,11 +3,13 @@
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     "rootDir": ".",
-    "target": "ES2020",
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "target": "es2021",
+    "module": "es2015",
+    "lib": ["es2021", "DOM", "DOM.Iterable"],
+    "declarationMap": true,
     "declaration": true,
     "strict": true,
+    "jsx": "preserve",
     "strictPropertyInitialization": false,
     "strictFunctionTypes": false,
     "noImplicitThis": false,
@@ -29,8 +31,8 @@
       "user-agent-data-types"
     ],
     "paths": {
-      "@awc-storybook/*": [".storybook/*"],
-      "@awc/*": ["src/*"]
+      "@awc-storybook/*": ["./.storybook/*"],
+      "@awc/*": ["./src/*"]
     }
   },
   "include": [

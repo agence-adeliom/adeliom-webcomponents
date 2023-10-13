@@ -73,7 +73,10 @@ function getTemplateOperators(component: Declaration, args: any) {
     const attrName = attr.name;
     const attrValue = args![key] as unknown;
     const prop: string = (attr.control as any).type === 'boolean' ? `?${attrName}` : attrName;
-    attrOperators[prop] = attrValue === 'false' ? false : attrValue;
+
+    if(attrValue && attrValue != attr.defaultValue){
+      attrOperators[prop] = attrValue === 'false' ? false : attrValue;
+    }
   });
 
   Object.keys(args)
@@ -84,7 +87,9 @@ function getTemplateOperators(component: Declaration, args: any) {
       }
 
       const propValue = args![key];
-      propOperators[`.${key}`] = propValue;
+      if(propValue){
+        propOperators[`.${key}`] = propValue;
+      }
     });
 
   return { attrOperators, propOperators };
@@ -126,7 +131,7 @@ function getCssPartsTemplate(component: Declaration, args: any) {
       .map(key => {
         const cssPartName = cssParts[key].name;
         const cssPartValue = args![key];
-        return cssPartValue?.replaceAll(/\s+/g, '') !== ''
+        return cssPartValue?.replaceAll(/\s+/g, '')
           ? `${component?.tagName}${args?.className ? `.${args?.className}` : ''}::part(${cssPartName}) {
     ${cssPartValue || ''}
   }`
@@ -153,7 +158,7 @@ function getSlotsTemplate(component: Declaration, args: any) {
         return slotValue
           ? slotName === 'default'
             ? `${slotValue || ''}`
-            : `<span slot="${slotName}">${slotValue || ''}</span>`
+            : (slotValue || '').includes(`slot="${slotName}"`) ? slotValue : `<span slot="${slotName}">${slotValue || ''}</span>`
           : null;
       })
       .filter(value => value !== null)

@@ -1,4 +1,5 @@
 /** @type {import('vite').UserConfig} */
+import { babel } from '@rollup/plugin-babel';
 import { execSync } from 'child_process';
 import { globbySync } from 'globby';
 import dts from 'vite-plugin-dts';
@@ -16,8 +17,6 @@ const entries = [
   //
   // The whole shebang
   './src/awc.ts',
-  // The auto-loader
-  './src/awc-autoloader.ts',
   // The tailwind plugin
   './src/tailwind/index.js',
   // Components
@@ -41,20 +40,19 @@ const awcPlugin = () => {
       config = resolvedConfig;
     },
     closeBundle: () => {
+      // eslint-disable-next-line no-undef
       const outputDir = path.relative(process.cwd(), config.build.outDir);
-      console.log(`cem analyze --litelement --outdir "${outputDir}"`);
       execSync(`cem analyze --litelement --outdir "${outputDir}"`, { stdio: 'inherit' });
-      execSync(`node scripts/make-icons.js --outdir ${config.build.outDir}`, { stdio: 'inherit' });
-      execSync(`node scripts/make-react.js --outdir ${config.build.outDir}`, { stdio: 'inherit' });
-      execSync(`node scripts/make-themes.js --outdir ${config.build.outDir}`, { stdio: 'inherit' });
-      //execSync(`npm run storybook`, { stdio: 'inherit' });
+      execSync(`node scripts/make-icons.js --outdir ${outputDir}`, { stdio: 'inherit' });
+      execSync(`node scripts/make-react.js --outdir ${outputDir}`, { stdio: 'inherit' });
+      execSync(`node scripts/make-themes.js --outdir ${outputDir}`, { stdio: 'inherit' });
     }
   };
 };
 
 export default {
   build: {
-    target: 'modules',
+    target: 'es2021',
     outDir: 'dist',
     lib: {
       entry: entries,
@@ -63,7 +61,7 @@ export default {
     rollupOptions: {
       external: externalPackages,
       output: {
-        chunkFileNames: 'chunks/[name]-[hash].[format].js',
+        chunkFileNames: 'chunks/[name]-[hash].js',
         preserveModules: true,
         preserveModulesRoot: 'src'
       }
@@ -74,6 +72,9 @@ export default {
     'process.env.NODE_ENV': '"production"'
   },
   plugins: [
+    babel({
+      babelHelpers: 'bundled',
+    }),
     dts({
       tsconfigPath: 'tsconfig.prod.json'
     }),

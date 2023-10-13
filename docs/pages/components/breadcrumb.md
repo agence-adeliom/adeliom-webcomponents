@@ -40,11 +40,8 @@ For websites, you'll probably want to use links instead. You can make any breadc
 ```html:preview
 <awc-breadcrumb>
   <awc-breadcrumb-item href="https://example.com/home">Homepage</awc-breadcrumb-item>
-
   <awc-breadcrumb-item href="https://example.com/home/services">Our Services</awc-breadcrumb-item>
-
   <awc-breadcrumb-item href="https://example.com/home/services/digital">Digital Media</awc-breadcrumb-item>
-
   <awc-breadcrumb-item href="https://example.com/home/services/digital/web-design">Web Design</awc-breadcrumb-item>
 </awc-breadcrumb>
 ```

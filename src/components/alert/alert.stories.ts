@@ -18,7 +18,7 @@ const meta = {
     },
     docs: {
       description: {
-        component: `> Alerts will not be visible if the \`open\` attribute is not present.`
+        component: `>❗Alerts will not be visible if the \`open\` attribute is not present.`
       }
     }
   },
