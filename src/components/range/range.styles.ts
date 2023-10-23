@@ -76,8 +76,8 @@ export default css`
   }
 
   .range__control:enabled::-webkit-slider-thumb:hover {
-    background-color: var(--awc-color-primary-default);
-    border-color: var(--awc-color-primary-default);
+    background-color: var(--awc-color-primary-600);
+    border-color: var(--awc-color-primary-600);
   }
 
   .range__control:enabled:focus-visible::-webkit-slider-thumb {
@@ -86,7 +86,7 @@ export default css`
   }
 
   .range__control:enabled::-webkit-slider-thumb:active {
-    background-color: var(--awc-color-primary-default);
+    background-color: var(--awc-color-primary-600);
     border-color: var(--awc-color-primary-default);
     cursor: grabbing;
   }
@@ -126,8 +126,8 @@ export default css`
   }
 
   .range__control:enabled::-moz-range-thumb:hover {
-    background-color: var(--awc-color-primary-default);
-    border-color: var(--awc-color-primary-default);
+    background-color: var(--awc-color-primary-600);
+    border-color: var(--awc-color-primary-600);
   }
 
   .range__control:enabled:focus-visible::-moz-range-thumb {
@@ -136,8 +136,8 @@ export default css`
   }
 
   .range__control:enabled::-moz-range-thumb:active {
-    background-color: var(--awc-color-primary-default);
-    border-color: var(--awc-color-primary-default);
+    background-color: var(--awc-color-primary-600);
+    border-color: var(--awc-color-primary-600);
     cursor: grabbing;
   }
 

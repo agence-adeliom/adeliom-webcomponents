@@ -6,7 +6,7 @@ const { events, args, argTypes, template } = getWcStorybookHelpers('awc-button-g
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
-  title: 'Components/Button/Button Group',
+  title: 'Components/Button/Group',
   component: 'awc-button-group',
   tags: ['autodocs'],
   args,
