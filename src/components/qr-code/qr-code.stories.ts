@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCQrCode from './qr-code';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-qr-code');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -20,7 +20,7 @@ const meta = {
       description: {
         component: `QR codes are useful for providing small pieces of information to users who can quickly scan them with a smartphone. Most smartphones have built-in QR code scanners, so simply pointing the camera at a QR code will decode it and allow the user to visit a website, dial a phone number, read a message, etc.`
       }
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCQrCode & typeof args>;
@@ -42,7 +42,7 @@ export const Colors: Story = {
   args: {
     ...Primary.args,
     fill: 'deeppink',
-    background: 'white',
+    background: 'white'
   },
   parameters: {
     docs: {
@@ -86,10 +86,10 @@ export const Radius: Story = {
 export const ErrorCorrection: Story = {
   name: 'Error Correction',
   render: () => html`
-      ${template({ ...Primary.args, errorCorrection: 'L' })} &nbsp;&nbsp;
-      ${template({ ...Primary.args, errorCorrection: 'M' })} &nbsp;&nbsp;
-      ${template({ ...Primary.args, errorCorrection: 'Q' })} &nbsp;&nbsp;
-      ${template({ ...Primary.args, errorCorrection: 'H' })}
+    ${template({ ...Primary.args, errorCorrection: 'L' })} &nbsp;&nbsp;
+    ${template({ ...Primary.args, errorCorrection: 'M' })} &nbsp;&nbsp;
+    ${template({ ...Primary.args, errorCorrection: 'Q' })} &nbsp;&nbsp;
+    ${template({ ...Primary.args, errorCorrection: 'H' })}
   `,
   parameters: {
     docs: {

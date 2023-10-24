@@ -1,11 +1,10 @@
 const assumptions = {
-    "setPublicClassFields": true
+  setPublicClassFields: true
 };
 
 const plugins = [
-    ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true } ],
-    ["@babel/plugin-proposal-class-properties"],
-
+  ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
+  ['@babel/plugin-proposal-class-properties']
 ];
 
-export default { assumptions, plugins }
+export default { assumptions, plugins };

@@ -263,4 +263,3 @@
 .awc-toast-stack awc-alert::part(base) {
   box-shadow: var(--awc-shadow-large);
 }
-

@@ -74,7 +74,7 @@ function getTemplateOperators(component: Declaration, args: any) {
     const attrValue = args![key] as unknown;
     const prop: string = (attr.control as any).type === 'boolean' ? `?${attrName}` : attrName;
 
-    if(attrValue && attrValue != attr.defaultValue){
+    if (attrValue && attrValue != attr.defaultValue) {
       attrOperators[prop] = attrValue === 'false' ? false : attrValue;
     }
   });
@@ -87,7 +87,7 @@ function getTemplateOperators(component: Declaration, args: any) {
       }
 
       const propValue = args![key];
-      if(propValue){
+      if (propValue) {
         propOperators[`.${key}`] = propValue;
       }
     });
@@ -158,7 +158,9 @@ function getSlotsTemplate(component: Declaration, args: any) {
         return slotValue
           ? slotName === 'default'
             ? `${slotValue || ''}`
-            : (slotValue || '').includes(`slot="${slotName}"`) ? slotValue : `<span slot="${slotName}">${slotValue || ''}</span>`
+            : (slotValue || '').includes(`slot="${slotName}"`)
+            ? slotValue
+            : `<span slot="${slotName}">${slotValue || ''}</span>`
           : null;
       })
       .filter(value => value !== null)

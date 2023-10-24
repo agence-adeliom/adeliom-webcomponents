@@ -31,7 +31,8 @@ type Story = StoryObj<AWCTabGroup & typeof args>;
 
 export const Primary: Story = {
   name: 'Default',
-  render: () => html`<awc-tab-group>
+  render: () =>
+    html`<awc-tab-group>
       <awc-tab slot="nav" panel="general">General</awc-tab>
       <awc-tab slot="nav" panel="custom">Custom</awc-tab>
       <awc-tab slot="nav" panel="advanced">Advanced</awc-tab>
@@ -41,13 +42,13 @@ export const Primary: Story = {
       <awc-tab-panel name="custom">This is the custom tab panel.</awc-tab-panel>
       <awc-tab-panel name="advanced">This is the advanced tab panel.</awc-tab-panel>
       <awc-tab-panel name="disabled">This is a disabled tab panel.</awc-tab-panel>
-  </awc-tab-group>`
+    </awc-tab-group>`
 };
-
 
 export const Bottom: Story = {
   name: 'Tabs on Bottom',
-  render: () => html`<awc-tab-group placement="bottom">
+  render: () =>
+    html`<awc-tab-group placement="bottom">
       <awc-tab slot="nav" panel="general">General</awc-tab>
       <awc-tab slot="nav" panel="custom">Custom</awc-tab>
       <awc-tab slot="nav" panel="advanced">Advanced</awc-tab>
@@ -57,7 +58,7 @@ export const Bottom: Story = {
       <awc-tab-panel name="custom">This is the custom tab panel.</awc-tab-panel>
       <awc-tab-panel name="advanced">This is the advanced tab panel.</awc-tab-panel>
       <awc-tab-panel name="disabled">This is a disabled tab panel.</awc-tab-panel>
-  </awc-tab-group>`,
+    </awc-tab-group>`,
   parameters: {
     docs: {
       description: {
@@ -69,7 +70,8 @@ export const Bottom: Story = {
 
 export const Start: Story = {
   name: 'Tabs on Start',
-  render: () => html`<awc-tab-group placement="start">
+  render: () =>
+    html`<awc-tab-group placement="start">
       <awc-tab slot="nav" panel="general">General</awc-tab>
       <awc-tab slot="nav" panel="custom">Custom</awc-tab>
       <awc-tab slot="nav" panel="advanced">Advanced</awc-tab>
@@ -79,7 +81,7 @@ export const Start: Story = {
       <awc-tab-panel name="custom">This is the custom tab panel.</awc-tab-panel>
       <awc-tab-panel name="advanced">This is the advanced tab panel.</awc-tab-panel>
       <awc-tab-panel name="disabled">This is a disabled tab panel.</awc-tab-panel>
-  </awc-tab-group>`,
+    </awc-tab-group>`,
   parameters: {
     docs: {
       description: {
@@ -91,7 +93,8 @@ export const Start: Story = {
 
 export const End: Story = {
   name: 'Tabs on End',
-  render: () => html`<awc-tab-group placement="end">
+  render: () =>
+    html`<awc-tab-group placement="end">
       <awc-tab slot="nav" panel="general">General</awc-tab>
       <awc-tab slot="nav" panel="custom">Custom</awc-tab>
       <awc-tab slot="nav" panel="advanced">Advanced</awc-tab>
@@ -101,7 +104,7 @@ export const End: Story = {
       <awc-tab-panel name="custom">This is the custom tab panel.</awc-tab-panel>
       <awc-tab-panel name="advanced">This is the advanced tab panel.</awc-tab-panel>
       <awc-tab-panel name="disabled">This is a disabled tab panel.</awc-tab-panel>
-  </awc-tab-group>`,
+    </awc-tab-group>`,
   parameters: {
     docs: {
       description: {
@@ -113,39 +116,41 @@ export const End: Story = {
 
 export const Closable: Story = {
   name: 'Closable Tabs',
-  render: () => html`<awc-tab-group class="tabs-closable">
-      <awc-tab slot="nav" panel="general">General</awc-tab>
-      <awc-tab slot="nav" panel="closable-1" closable>Closable 1</awc-tab>
-      <awc-tab slot="nav" panel="closable-2" closable>Closable 2</awc-tab>
-      <awc-tab slot="nav" panel="closable-3" closable>Closable 3</awc-tab>
+  render: () =>
+    html`<awc-tab-group class="tabs-closable">
+        <awc-tab slot="nav" panel="general">General</awc-tab>
+        <awc-tab slot="nav" panel="closable-1" closable>Closable 1</awc-tab>
+        <awc-tab slot="nav" panel="closable-2" closable>Closable 2</awc-tab>
+        <awc-tab slot="nav" panel="closable-3" closable>Closable 3</awc-tab>
 
-      <awc-tab-panel name="general">This is the general tab panel.</awc-tab-panel>
-      <awc-tab-panel name="closable-1">This is the first closable tab panel.</awc-tab-panel>
-      <awc-tab-panel name="closable-2">This is the second closable tab panel.</awc-tab-panel>
-      <awc-tab-panel name="closable-3">This is the third closable tab panel.</awc-tab-panel>
-  </awc-tab-group>
+        <awc-tab-panel name="general">This is the general tab panel.</awc-tab-panel>
+        <awc-tab-panel name="closable-1">This is the first closable tab panel.</awc-tab-panel>
+        <awc-tab-panel name="closable-2">This is the second closable tab panel.</awc-tab-panel>
+        <awc-tab-panel name="closable-3">This is the third closable tab panel.</awc-tab-panel>
+      </awc-tab-group>
 
-  <script>
-      const tabGroup = document.querySelector('.tabs-closable');
+      <script>
+        const tabGroup = document.querySelector('.tabs-closable');
 
-      tabGroup.addEventListener('awc-close', async event => {
+        tabGroup.addEventListener('awc-close', async event => {
           const tab = event.target;
           const panel = tabGroup.querySelector(\`awc-tab-panel[name="\${tab.panel}"]\`);
 
           // Show the previous tab if the tab is currently active
           if (tab.active) {
-              tabGroup.show(tab.previousElementSibling.panel);
+            tabGroup.show(tab.previousElementSibling.panel);
           }
 
           // Remove the tab + panel
           tab.remove();
           panel.remove();
-      });
-  </script>`,
+        });
+      </script>`,
   parameters: {
     docs: {
       description: {
-        story: 'Add the `closable` attribute to a tab to show a close button. This example shows how you can dynamically remove tabs from the DOM when the close button is activated.'
+        story:
+          'Add the `closable` attribute to a tab to show a close button. This example shows how you can dynamically remove tabs from the DOM when the close button is activated.'
       }
     }
   }
@@ -153,7 +158,8 @@ export const Closable: Story = {
 
 export const Scrolling: Story = {
   name: 'Scrolling Tabs',
-  render: () => html`<awc-tab-group>
+  render: () =>
+    html`<awc-tab-group>
       <awc-tab slot="nav" panel="tab-1">Tab 1</awc-tab>
       <awc-tab slot="nav" panel="tab-2">Tab 2</awc-tab>
       <awc-tab slot="nav" panel="tab-3">Tab 3</awc-tab>
@@ -195,7 +201,7 @@ export const Scrolling: Story = {
       <awc-tab-panel name="tab-18">Tab panel 18</awc-tab-panel>
       <awc-tab-panel name="tab-19">Tab panel 19</awc-tab-panel>
       <awc-tab-panel name="tab-20">Tab panel 20</awc-tab-panel>
-  </awc-tab-group>`,
+    </awc-tab-group>`,
   parameters: {
     docs: {
       description: {
@@ -205,10 +211,10 @@ export const Scrolling: Story = {
   }
 };
 
-
 export const ManualActivation: Story = {
   name: 'Manual Activation',
-  render: () => html`<awc-tab-group activation="manual">
+  render: () =>
+    html`<awc-tab-group activation="manual">
       <awc-tab slot="nav" panel="general">General</awc-tab>
       <awc-tab slot="nav" panel="custom">Custom</awc-tab>
       <awc-tab slot="nav" panel="advanced">Advanced</awc-tab>
@@ -218,11 +224,12 @@ export const ManualActivation: Story = {
       <awc-tab-panel name="custom">This is the custom tab panel.</awc-tab-panel>
       <awc-tab-panel name="advanced">This is the advanced tab panel.</awc-tab-panel>
       <awc-tab-panel name="disabled">This is a disabled tab panel.</awc-tab-panel>
-  </awc-tab-group>`,
+    </awc-tab-group>`,
   parameters: {
     docs: {
       description: {
-        story: 'When focused, keyboard users can press `Left` or `Right` to select the desired tab. By default, the corresponding tab panel will be shown immediately (automatic activation). You can change this behavior by setting `activation="manual"` which will require the user to press `Space` or `Enter` before showing the tab panel (manual activation).'
+        story:
+          'When focused, keyboard users can press `Left` or `Right` to select the desired tab. By default, the corresponding tab panel will be shown immediately (automatic activation). You can change this behavior by setting `activation="manual"` which will require the user to press `Space` or `Enter` before showing the tab panel (manual activation).'
       }
     }
   }

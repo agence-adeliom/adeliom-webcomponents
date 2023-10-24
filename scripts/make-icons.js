@@ -14,6 +14,6 @@ const srcPath = `./node_modules/bootstrap-icons`;
 await fs.rm(iconDir, { recursive: true, force: true });
 await fs.mkdir(iconDir, { recursive: true });
 await Promise.all([
-    fs.cp(`${srcPath}/icons`, iconDir, {recursive: true}),
-    fs.cp(`${srcPath}/LICENSE`, path.join(iconDir, 'LICENSE'))
+  fs.cp(`${srcPath}/icons`, iconDir, { recursive: true }),
+  fs.cp(`${srcPath}/LICENSE`, path.join(iconDir, 'LICENSE'))
 ]);

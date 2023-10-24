@@ -1,38 +1,37 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 
-import {useAddonState, useChannel, useParameter} from '@storybook/manager-api';
+import { useAddonState, useChannel, useParameter } from '@storybook/manager-api';
 import { AddonPanel } from '@storybook/components';
-import {Source} from "@storybook/blocks";
-import {ADDON_ID, EVENTS} from "./constants";
+import { Source } from '@storybook/blocks';
+import { ADDON_ID, EVENTS } from './constants';
 
 interface PanelProps {
   active: boolean;
 }
 
-export const Panel: React.FC<PanelProps> = (props) => {
+export const Panel: React.FC<PanelProps> = props => {
   // https://storybook.js.org/docs/react/addons/addons-api#useaddonstate
 
   const [{ code }, setState] = useAddonState(ADDON_ID, {
     code: null,
-    options: {},
+    options: {}
   }); // https://storybook.js.org/docs/react/addons/addons-api#usechannel
 
   useChannel({
     [EVENTS.CODE_UPDATE]: ({ code }) => {
-      setState((state) => ({ ...state, code }))
-    },
+      setState(state => ({ ...state, code }));
+    }
   });
 
-
   return (
-    <AddonPanel {...props} >
+    <AddonPanel {...props}>
       <style>
         {`#storybook-panel-root .docblock-source {
           margin: 0;
           border-radius: 0;
         }`}
       </style>
-        {code && <Source code={code} language={'html'} dark style={{ margin: '0' }} /> }
+      {code && <Source code={code} language={'html'} dark style={{ margin: '0' }} />}
     </AddonPanel>
   );
 };

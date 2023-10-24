@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCRadioGroup from './radio-group';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-radio-group');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -17,9 +17,8 @@ const meta = {
       handles: events
     },
     docs: {
-      description: {
-      }
-    },
+      description: {}
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCRadioGroup & typeof args>;
@@ -30,20 +29,27 @@ type Story = StoryObj<AWCRadioGroup & typeof args>;
 
 export const Primary: Story = {
   name: 'Default',
-  render: () => html`<awc-radio-group label="Select an option" name="radio" value="1">
+  render: () =>
+    html`<awc-radio-group label="Select an option" name="radio" value="1">
       <awc-radio value="1">Option 1</awc-radio>
       <awc-radio value="2">Option 2</awc-radio>
       <awc-radio value="3">Option 3</awc-radio>
-  </awc-radio-group>`
+    </awc-radio-group>`
 };
 
 export const HelpText: Story = {
   name: 'Help Text',
-  render: () => html`<awc-radio-group label="Select an option" help-text="Choose the most appropriate option." name="radio" value="1">
+  render: () =>
+    html`<awc-radio-group
+      label="Select an option"
+      help-text="Choose the most appropriate option."
+      name="radio"
+      value="1"
+    >
       <awc-radio value="1">Option 1</awc-radio>
       <awc-radio value="2">Option 2</awc-radio>
       <awc-radio value="3">Option 3</awc-radio>
-  </awc-radio-group>`,
+    </awc-radio-group>`,
   parameters: {
     docs: {
       description: {
@@ -55,11 +61,17 @@ export const HelpText: Story = {
 
 export const RadioButtons: Story = {
   name: 'Radio Buttons',
-  render: () => html`<awc-radio-group label="Select an option" help-text="Select an option that makes you proud." name="radio" value="1">
+  render: () =>
+    html`<awc-radio-group
+      label="Select an option"
+      help-text="Select an option that makes you proud."
+      name="radio"
+      value="1"
+    >
       <awc-radio-button value="1">Option 1</awc-radio-button>
       <awc-radio-button value="2">Option 2</awc-radio-button>
       <awc-radio-button value="3">Option 3</awc-radio-button>
-  </awc-radio-group>`,
+    </awc-radio-group>`,
   parameters: {
     docs: {
       description: {
@@ -71,11 +83,12 @@ export const RadioButtons: Story = {
 
 export const Disabled: Story = {
   name: 'Disabling Options',
-  render: () => html`<awc-radio-group label="Select an option" name="radio" value="1">
+  render: () =>
+    html`<awc-radio-group label="Select an option" name="radio" value="1">
       <awc-radio value="1">Option 1</awc-radio>
       <awc-radio value="2" disabled>Option 2</awc-radio>
       <awc-radio value="3">Option 3</awc-radio>
-  </awc-radio-group>`,
+    </awc-radio-group>`,
   parameters: {
     docs: {
       description: {
@@ -87,19 +100,20 @@ export const Disabled: Story = {
 
 export const SizingOptions: Story = {
   name: 'Sizing Options',
-  render: () => html`<awc-radio-group label="Select an option" size="medium" value="medium" class="radio-group-size">
-      <awc-radio value="small">Small</awc-radio>
-      <awc-radio value="medium">Medium</awc-radio>
-      <awc-radio value="large">Large</awc-radio>
-  </awc-radio-group>
+  render: () =>
+    html`<awc-radio-group label="Select an option" size="medium" value="medium" class="radio-group-size">
+        <awc-radio value="small">Small</awc-radio>
+        <awc-radio value="medium">Medium</awc-radio>
+        <awc-radio value="large">Large</awc-radio>
+      </awc-radio-group>
 
-  <script>
-      const radioGroupSize = document.querySelector('.radio-group-size');
+      <script>
+        const radioGroupSize = document.querySelector('.radio-group-size');
 
-      radioGroupSize.addEventListener('awc-change', () => {
+        radioGroupSize.addEventListener('awc-change', () => {
           radioGroupSize.size = radioGroupSize.value;
-      });
-  </script>`,
+        });
+      </script>`,
   parameters: {
     docs: {
       description: {
@@ -113,25 +127,26 @@ export const SizingOptions: Story = {
 
 export const Validation: Story = {
   name: 'Validation',
-  render: () => html`<form class="validation">
-      <awc-radio-group label="Select an option" name="radio" required>
+  render: () =>
+    html`<form class="validation">
+        <awc-radio-group label="Select an option" name="radio" required>
           <awc-radio value="1">Option 1</awc-radio>
           <awc-radio value="2">Option 2</awc-radio>
           <awc-radio value="3">Option 3</awc-radio>
-      </awc-radio-group>
-      <br />
-      <awc-button type="submit" variant="primary">Submit</awc-button>
-  </form>
+        </awc-radio-group>
+        <br />
+        <awc-button type="submit" variant="primary">Submit</awc-button>
+      </form>
 
-  <script>
-      const form = document.querySelector('.validation');
+      <script>
+        const form = document.querySelector('.validation');
 
-      // Handle form submit
-      form.addEventListener('submit', event => {
+        // Handle form submit
+        form.addEventListener('submit', event => {
           event.preventDefault();
           alert('All fields are valid!');
-      });
-  </script>`,
+        });
+      </script>`,
   parameters: {
     docs: {
       description: {
@@ -143,38 +158,39 @@ export const Validation: Story = {
 
 export const CustomValidity: Story = {
   name: 'Custom Validity',
-  render: () => html`<form class="custom-validity">
-      <awc-radio-group label="Select an option" name="radio" value="1">
+  render: () =>
+    html`<form class="custom-validity">
+        <awc-radio-group label="Select an option" name="radio" value="1">
           <awc-radio value="1">Not me</awc-radio>
           <awc-radio value="2">Me neither</awc-radio>
           <awc-radio value="3">Choose me</awc-radio>
-      </awc-radio-group>
-      <br />
-      <awc-button type="submit" variant="primary">Submit</awc-button>
-  </form>
+        </awc-radio-group>
+        <br />
+        <awc-button type="submit" variant="primary">Submit</awc-button>
+      </form>
 
-  <script>
-      const formCustomValidity = document.querySelector('.custom-validity');
-      const radioGroupCustomValidity = formCustomValidity.querySelector('awc-radio-group');
-      const errorMessage = 'You must choose the last option';
+      <script>
+        const formCustomValidity = document.querySelector('.custom-validity');
+        const radioGroupCustomValidity = formCustomValidity.querySelector('awc-radio-group');
+        const errorMessage = 'You must choose the last option';
 
-      // Set initial validity as soon as the element is defined
-      customElements.whenDefined('awc-radio').then(() => {
+        // Set initial validity as soon as the element is defined
+        customElements.whenDefined('awc-radio').then(() => {
           radioGroupCustomValidity.setCustomValidity(errorMessage);
-      });
+        });
 
-      // Update validity when a selection is made
-      formCustomValidity.addEventListener('awc-change', () => {
+        // Update validity when a selection is made
+        formCustomValidity.addEventListener('awc-change', () => {
           const isValid = radioGroupCustomValidity.value === '3';
           radioGroupCustomValidity.setCustomValidity(isValid ? '' : errorMessage);
-      });
+        });
 
-      // Handle form submit
-      formCustomValidity.addEventListener('submit', event => {
+        // Handle form submit
+        formCustomValidity.addEventListener('submit', event => {
           event.preventDefault();
           alert('All fields are valid!');
-      });
-  </script>`,
+        });
+      </script>`,
   parameters: {
     docs: {
       description: {

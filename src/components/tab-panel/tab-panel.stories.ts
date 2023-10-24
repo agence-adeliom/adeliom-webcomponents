@@ -31,15 +31,16 @@ type Story = StoryObj<AWCTabPanel & typeof args>;
 
 export const Primary: Story = {
   name: 'Default',
-  render: () => html`<awc-tab-group>
-    <awc-tab slot="nav" panel="general">General</awc-tab>
-    <awc-tab slot="nav" panel="custom">Custom</awc-tab>
-    <awc-tab slot="nav" panel="advanced">Advanced</awc-tab>
-    <awc-tab slot="nav" panel="disabled" disabled>Disabled</awc-tab>
+  render: () =>
+    html`<awc-tab-group>
+      <awc-tab slot="nav" panel="general">General</awc-tab>
+      <awc-tab slot="nav" panel="custom">Custom</awc-tab>
+      <awc-tab slot="nav" panel="advanced">Advanced</awc-tab>
+      <awc-tab slot="nav" panel="disabled" disabled>Disabled</awc-tab>
 
-    <awc-tab-panel name="general">This is the general tab panel.</awc-tab-panel>
-    <awc-tab-panel name="custom">This is the custom tab panel.</awc-tab-panel>
-    <awc-tab-panel name="advanced">This is the advanced tab panel.</awc-tab-panel>
-    <awc-tab-panel name="disabled">This is a disabled tab panel.</awc-tab-panel>
-</awc-tab-group>`
+      <awc-tab-panel name="general">This is the general tab panel.</awc-tab-panel>
+      <awc-tab-panel name="custom">This is the custom tab panel.</awc-tab-panel>
+      <awc-tab-panel name="advanced">This is the advanced tab panel.</awc-tab-panel>
+      <awc-tab-panel name="disabled">This is a disabled tab panel.</awc-tab-panel>
+    </awc-tab-group>`
 };

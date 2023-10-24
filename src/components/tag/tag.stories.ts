@@ -42,32 +42,26 @@ export const Variants: Story = {
       ...context,
       variant: 'primary'
     })}
-
     ${template({
       ...context,
       variant: 'secondary'
     })}
-
     ${template({
       ...context,
       variant: 'tertiary'
     })}
-
     ${template({
       ...context,
       variant: 'success'
     })}
-
     ${template({
       ...context,
       variant: 'neutral'
     })}
-
     ${template({
       ...context,
       variant: 'warning'
     })}
-
     ${template({
       ...context,
       variant: 'danger'
@@ -88,9 +82,8 @@ export const Sizes: Story = {
     ...Primary.args
   },
   render: context => html`
-      ${template({...context, size: 'small' })}
-      ${template({...context, size: 'medium' })}
-      ${template({...context, size: 'large' })}
+    ${template({ ...context, size: 'small' })} ${template({ ...context, size: 'medium' })}
+    ${template({ ...context, size: 'large' })}
   `,
   parameters: {
     docs: {
@@ -108,14 +101,13 @@ export const Pill: Story = {
     pill: true
   },
   render: context => html`
-    ${template({...context, size: 'small' })}
-    ${template({...context, size: 'medium' })}
-    ${template({...context, size: 'large' })}
+    ${template({ ...context, size: 'small' })} ${template({ ...context, size: 'medium' })}
+    ${template({ ...context, size: 'large' })}
   `,
   parameters: {
     docs: {
       description: {
-        story: "Use the `pill` attribute to give tabs rounded edges."
+        story: 'Use the `pill` attribute to give tabs rounded edges.'
       }
     }
   }
@@ -123,27 +115,28 @@ export const Pill: Story = {
 
 export const Removable: Story = {
   name: 'Removable',
-  render: () => html`<div class="tags-removable">
-    <awc-tag size="small" removable>Small</awc-tag>
-    <awc-tag size="medium" removable>Medium</awc-tag>
-    <awc-tag size="large" removable>Large</awc-tag>
-</div>
+  render: () =>
+    html`<div class="tags-removable">
+        <awc-tag size="small" removable>Small</awc-tag>
+        <awc-tag size="medium" removable>Medium</awc-tag>
+        <awc-tag size="large" removable>Large</awc-tag>
+      </div>
 
-<script>
-    const div = document.querySelector('.tags-removable');
+      <script>
+        const div = document.querySelector('.tags-removable');
 
-    div.addEventListener('awc-remove', event => {
-        const tag = event.target;
-        tag.style.opacity = '0';
-        setTimeout(() => (tag.style.opacity = '1'), 2000);
-    });
-</script>
+        div.addEventListener('awc-remove', event => {
+          const tag = event.target;
+          tag.style.opacity = '0';
+          setTimeout(() => (tag.style.opacity = '1'), 2000);
+        });
+      </script>
 
-<style>
-    .tags-removable awc-tag {
-        transition: var(--awc-transition-medium) opacity;
-    }
-</style>`,
+      <style>
+        .tags-removable awc-tag {
+          transition: var(--awc-transition-medium) opacity;
+        }
+      </style>`,
   parameters: {
     docs: {
       description: {

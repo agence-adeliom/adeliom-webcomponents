@@ -31,8 +31,9 @@ type Story = StoryObj<AWCTab & typeof args>;
 
 export const Primary: Story = {
   name: 'Default',
-  render: () => html`<awc-tab>Tab</awc-tab>
-  <awc-tab active>Active</awc-tab>
-  <awc-tab closable>Closable</awc-tab>
-  <awc-tab disabled>Disabled</awc-tab>`
+  render: () =>
+    html`<awc-tab>Tab</awc-tab>
+      <awc-tab active>Active</awc-tab>
+      <awc-tab closable>Closable</awc-tab>
+      <awc-tab disabled>Disabled</awc-tab>`
 };

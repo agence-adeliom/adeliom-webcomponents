@@ -1,5 +1,5 @@
 import type { StorybookConfig } from '@storybook/web-components-vite';
-import * as path from "path";
+import * as path from 'path';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -9,8 +9,8 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-styling',
-    '@storybook/addon-mdx-gfm',
-    './wc-helper/code/manager.ts'
+    './wc-helper/code/manager.ts',
+    '@storybook/addon-mdx-gfm'
   ],
   framework: {
     name: '@storybook/web-components-vite',
@@ -22,7 +22,7 @@ const config: StorybookConfig = {
   },
   staticDirs: ['./static'],
   core: {
-    disableTelemetry: true,
+    disableTelemetry: true
   },
   docs: {
     autodocs: 'tag'

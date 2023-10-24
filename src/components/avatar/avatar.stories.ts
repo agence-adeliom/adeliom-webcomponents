@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCAvatar from './avatar.ts';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-avatar');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -35,13 +35,14 @@ export const Images: Story = {
   name: 'Images',
   render: () => html`
     ${template({
-      image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-      label: "Avatar of a gray tabby kitten looking down"
+      image:
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80',
+      label: 'Avatar of a gray tabby kitten looking down'
     })}
-
     ${template({
-      image: "https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-      label: "Avatar of a white and grey kitten on grey textile",
+      image:
+        'https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80',
+      label: 'Avatar of a white and grey kitten on grey textile',
       lazy: true
     })}
   `,
@@ -73,9 +74,9 @@ export const Initials: Story = {
 export const CustomIcons: Story = {
   name: 'Custom Icons',
   render: () => html`
-      ${template({
-          'icon-slot': `<awc-icon slot="icon" name="image"></awc-icon>`,
-      })}
+    ${template({
+      'icon-slot': `<awc-icon slot="icon" name="image"></awc-icon>`
+    })}
     <awc-avatar label="Avatar with an image icon">
       <awc-icon slot="icon" name="image"></awc-icon>
     </awc-avatar>
@@ -113,36 +114,37 @@ export const Shapes: Story = {
   }
 };
 
-export const AvatarGroups : Story = {
+export const AvatarGroups: Story = {
   name: 'Avatar Groups',
-  render: () => html`<div class="avatar-group">
-  <awc-avatar
-      image="https://images.unsplash.com/photo-1490150028299-bf57d78394e0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80&crop=right"
-      label="Avatar 1 of 4"
-  ></awc-avatar>
-  <awc-avatar
-      image="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=left&q=80"
-      label="Avatar 2 of 4"
-  ></awc-avatar>
-  <awc-avatar
-      image="https://images.unsplash.com/photo-1456439663599-95b042d50252?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=left&q=80"
-      label="Avatar 3 of 4"
-  ></awc-avatar>
-  <awc-avatar
-      image="https://images.unsplash.com/flagged/photo-1554078875-e37cb8b0e27d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=top&q=80"
-      label="Avatar 4 of 4"
-  ></awc-avatar>
-</div>
+  render: () =>
+    html`<div class="avatar-group">
+        <awc-avatar
+          image="${'https://images.unsplash.com/photo-1490150028299-bf57d78394e0?&auto=format&fit=crop&w=256&h=256&crop=top&q=80'}"
+          label="Avatar 1 of 4"
+        ></awc-avatar>
+        <awc-avatar
+          image="${'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?&auto=format&fit=crop&w=256&h=256&crop=top&q=80'}"
+          label="Avatar 2 of 4"
+        ></awc-avatar>
+        <awc-avatar
+          image="${'https://images.unsplash.com/photo-1456439663599-95b042d50252?&auto=format&fit=crop&w=256&h=256&crop=top&q=80'}"
+          label="Avatar 3 of 4"
+        ></awc-avatar>
+        <awc-avatar
+          image="${'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?&auto=format&fit=crop&w=256&h=256&crop=top&q=80'}"
+          label="Avatar 4 of 4"
+        ></awc-avatar>
+      </div>
 
-<style>
-  .avatar-group awc-avatar:not(:first-of-type) {
-    margin-left: -1rem;
-  }
+      <style>
+        .avatar-group awc-avatar:not(:first-of-type) {
+          margin-left: -1rem;
+        }
 
-  .avatar-group awc-avatar::part(base) {
-    border: solid 2px var(--awc-color-neutral-0);
-  }
-</style>`,
+        .avatar-group awc-avatar::part(base) {
+          border: solid 2px var(--awc-color-neutral-0);
+        }
+      </style>`,
   parameters: {
     docs: {
       description: {
@@ -151,4 +153,3 @@ export const AvatarGroups : Story = {
     }
   }
 };
-

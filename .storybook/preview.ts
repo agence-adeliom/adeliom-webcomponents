@@ -1,4 +1,4 @@
-import type { Preview, Story, StoryContext, StoryFn } from '@storybook/web-components';
+import type { Preview, StoryContext } from '@storybook/web-components';
 import { withThemeByDataAttribute } from '@storybook/addon-styling';
 import { setCustomElementsManifest } from '@storybook/web-components';
 import customElements from '../dist/custom-elements.json';
@@ -11,7 +11,7 @@ import './template/story.style.css';
 
 import { setBasePath } from '../src/utilities/base-path.js';
 import prettify from '@liquify/prettify';
-import {withSource} from "./wc-helper/code/withSource";
+import { withSource } from './wc-helper/code/withSource';
 
 setBasePath('/');
 setCustomElementsManifest(customElements);
@@ -44,7 +44,7 @@ const preview: Preview = {
       storySort: {
         method: 'alphabetical',
         order: ['*'],
-        locales: 'en-US',
+        locales: 'en-US'
       }
     },
     docs: {
@@ -53,13 +53,15 @@ const preview: Preview = {
         inline: true
       },
       source: {
-        transform: (code: string, _storyContext: StoryContext)  => {
+        transform: (code: string, _storyContext: StoryContext) => {
           // @ts-ignore
-          return prettify.formatSync(code, {
-            markup: {
-              preserveComment: false
-            }
-          }) ?? code
+          return (
+            prettify.formatSync(code, {
+              markup: {
+                preserveComment: false
+              }
+            }) ?? code
+          );
         }
       }
     }

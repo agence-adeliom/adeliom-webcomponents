@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCRange from './range';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-range');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -20,7 +20,7 @@ const meta = {
       description: {
         component: `> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.`
       }
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCRange & typeof args>;
@@ -30,7 +30,7 @@ export default meta;
 type Story = StoryObj<AWCRange & typeof args>;
 
 export const Primary: Story = {
-  name: 'Default',
+  name: 'Default'
 };
 
 export const Labels: Story = {
@@ -47,7 +47,8 @@ export const Labels: Story = {
 
 export const HelpText: Story = {
   name: 'Help Text',
-  render: () => html`<awc-range label="Volume" help-text="Controls the volume of the current song." min="0" max="100"></awc-range>`,
+  render: () =>
+    html`<awc-range label="Volume" help-text="Controls the volume of the current song." min="0" max="100"></awc-range>`,
   parameters: {
     docs: {
       description: {
@@ -72,7 +73,7 @@ export const MinMaxStep: Story = {
 export const Disabled: Story = {
   name: 'Disabled',
   args: {
-    disabled: true,
+    disabled: true
   },
   parameters: {
     docs: {
@@ -86,7 +87,7 @@ export const Disabled: Story = {
 export const TooltipPlacement: Story = {
   name: 'Tooltip Placement',
   args: {
-    tooltip: "bottom",
+    tooltip: 'bottom'
   },
   parameters: {
     docs: {
@@ -100,7 +101,7 @@ export const TooltipPlacement: Story = {
 export const TooltipDisabled: Story = {
   name: 'Disable the Tooltip',
   args: {
-    tooltip: "none",
+    tooltip: 'none'
   },
   parameters: {
     docs: {
@@ -146,12 +147,12 @@ export const CustomTrackOffset: Story = {
 
 export const CustomTrackFormatter: Story = {
   name: 'Custom Tooltip Formatter',
-  render: () => html`
-      <awc-range min="0" max="100" step="1" class="range-with-custom-formatter"></awc-range>
+  render: () =>
+    html` <awc-range min="0" max="100" step="1" class="range-with-custom-formatter"></awc-range>
 
       <script>
-          const range = document.querySelector('.range-with-custom-formatter');
-          range.tooltipFormatter = value => \`Total - \${value}%\`;
+        const range = document.querySelector('.range-with-custom-formatter');
+        range.tooltipFormatter = value => \`Total - \${value}%\`;
       </script>`,
   parameters: {
     docs: {
@@ -161,4 +162,3 @@ export const CustomTrackFormatter: Story = {
     }
   }
 };
-

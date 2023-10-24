@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCTextarea from './textarea';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-textarea');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -20,7 +20,7 @@ const meta = {
       description: {
         component: `> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.`
       }
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCTextarea & typeof args>;
@@ -30,7 +30,7 @@ export default meta;
 type Story = StoryObj<AWCTextarea & typeof args>;
 
 export const Primary: Story = {
-  name: 'Default',
+  name: 'Default'
 };
 
 export const Labels: Story = {
@@ -79,7 +79,7 @@ export const Rows: Story = {
 export const Placeholders: Story = {
   name: 'Placeholders',
   args: {
-    placeholder: "Type something"
+    placeholder: 'Type something'
   },
   parameters: {
     docs: {
@@ -93,7 +93,7 @@ export const Placeholders: Story = {
 export const Filled: Story = {
   name: 'Filled Textareas',
   args: {
-    placeholder: "Type something",
+    placeholder: 'Type something',
     filled: true
   },
   parameters: {
@@ -108,7 +108,7 @@ export const Filled: Story = {
 export const Disabled: Story = {
   name: 'Disabled',
   args: {
-    placeholder: "Type something",
+    placeholder: 'Type something',
     disabled: true
   },
   parameters: {
@@ -120,14 +120,14 @@ export const Disabled: Story = {
   }
 };
 
-
 export const Sizes: Story = {
   name: 'Sizes',
-  render: () => html`<awc-textarea placeholder="Small" size="small"></awc-textarea>
-<br />
-<awc-textarea placeholder="Medium" size="medium"></awc-textarea>
-<br />
-<awc-textarea placeholder="Large" size="large"></awc-textarea>`,
+  render: () =>
+    html`<awc-textarea placeholder="Small" size="small"></awc-textarea>
+      <br />
+      <awc-textarea placeholder="Medium" size="medium"></awc-textarea>
+      <br />
+      <awc-textarea placeholder="Large" size="large"></awc-textarea>`,
   parameters: {
     docs: {
       description: {
@@ -137,11 +137,10 @@ export const Sizes: Story = {
   }
 };
 
-
 export const PreventResizing: Story = {
   name: 'Prevent Resizing',
   args: {
-    placeholder: "Type something",
+    placeholder: 'Type something',
     resize: 'none'
   },
   parameters: {
@@ -156,7 +155,7 @@ export const PreventResizing: Story = {
 export const ExpandContent: Story = {
   name: 'Expand with Content',
   args: {
-    placeholder: "Type something",
+    placeholder: 'Type something',
     resize: 'auto'
   },
   parameters: {

@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCRelativeTime from './relative-time';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-relative-time');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -24,7 +24,7 @@ The \`date\` attribute determines when the date/time is calculated from. It must
 
 > When using strings, avoid ambiguous dates such as \`03/04/2020\` which can be interpreted as March 4 or April 3 depending on the user's browser and locale. Instead, always use a valid [ISO 8601 date time string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse#Date_Time_String_Format) to ensure the date will be parsed properly by all clients.`
       }
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCRelativeTime & typeof args>;
@@ -36,16 +36,15 @@ type Story = StoryObj<AWCRelativeTime & typeof args>;
 export const Primary: Story = {
   name: 'Default',
   args: {
-    date: "2020-07-15T09:17:00-04:00",
+    date: '2020-07-15T09:17:00-04:00'
   }
 };
-
 
 export const Sync: Story = {
   name: 'Keeping Time in Sync',
   args: {
     date: new Date(new Date().getTime() - 60000),
-    sync: true,
+    sync: true
   },
   parameters: {
     docs: {
@@ -58,9 +57,10 @@ export const Sync: Story = {
 
 export const Formatting: Story = {
   name: 'Formatting Styles',
-  render: () => html`<awc-relative-time date="2020-07-15T09:17:00-04:00" format="narrow"></awc-relative-time><br />
-  <awc-relative-time date="2020-07-15T09:17:00-04:00" format="short"></awc-relative-time><br />
-  <awc-relative-time date="2020-07-15T09:17:00-04:00" format="long"></awc-relative-time>`,
+  render: () =>
+    html`<awc-relative-time date="2020-07-15T09:17:00-04:00" format="narrow"></awc-relative-time><br />
+      <awc-relative-time date="2020-07-15T09:17:00-04:00" format="short"></awc-relative-time><br />
+      <awc-relative-time date="2020-07-15T09:17:00-04:00" format="long"></awc-relative-time>`,
   parameters: {
     docs: {
       description: {
@@ -72,12 +72,13 @@ export const Formatting: Story = {
 
 export const Localization: Story = {
   name: 'Localization',
-  render: () => html`English: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="en-US"></awc-relative-time><br />
-  Chinese: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="zh-CN"></awc-relative-time><br />
-  German: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="de"></awc-relative-time><br />
-  French: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="fr"></awc-relative-time><br />
-  Greek: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="el"></awc-relative-time><br />
-  Russian: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="ru"></awc-relative-time>`,
+  render: () =>
+    html`English: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="en-US"></awc-relative-time><br />
+      Chinese: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="zh-CN"></awc-relative-time><br />
+      German: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="de"></awc-relative-time><br />
+      French: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="fr"></awc-relative-time><br />
+      Greek: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="el"></awc-relative-time><br />
+      Russian: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="ru"></awc-relative-time>`,
   parameters: {
     docs: {
       description: {

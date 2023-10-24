@@ -73,7 +73,7 @@ export default {
   },
   plugins: [
     babel({
-      babelHelpers: 'bundled',
+      babelHelpers: 'bundled'
     }),
     dts({
       tsconfigPath: 'tsconfig.prod.json'

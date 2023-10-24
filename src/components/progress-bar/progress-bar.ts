@@ -21,7 +21,8 @@ import type { CSSResultGroup } from 'lit';
  * @csspart label - The progress bar's label.
  *
  * @cssproperty [--height=1rem] - The progress bar's height.
- * @cssproperty [--border-radius=var(--awc-border-radius-none)] - The progress bar's border radius.
+ * @cssproperty [--track-radius=var(--awc-border-radius-none)] - The progress bar's track border radius.
+ * @cssproperty [--indicator-radius=var(--awc-border-radius-none)] - The progress bar's indicator border radius.
  * @cssproperty [--track-color=var(--awc-color-neutral-200)] - The color of the track.
  * @cssproperty [--indicator-color=var(--awc-color-primary-600)] - The color of the indicator.
  * @cssproperty [--label-color=var(--awc-color-neutral-0)] - The color of the label.

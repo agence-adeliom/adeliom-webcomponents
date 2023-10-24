@@ -56,7 +56,5 @@ export default {
       '@awc-storybook': path.resolve(__dirname, '.')
     }
   },
-  plugins: [
-    awcPlugin()
-  ]
+  plugins: [awcPlugin()]
 };

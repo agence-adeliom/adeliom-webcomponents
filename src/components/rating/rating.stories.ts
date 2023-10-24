@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCRating from './rating';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-rating');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -16,8 +16,7 @@ const meta = {
     actions: {
       handles: events
     },
-    docs: {
-    },
+    docs: {}
   },
   render: context => template(context)
 } satisfies Meta<AWCRating & typeof args>;
@@ -29,15 +28,14 @@ type Story = StoryObj<AWCRating & typeof args>;
 export const Primary: Story = {
   name: 'Default',
   args: {
-    label: "Rating",
+    label: 'Rating'
   }
 };
-
 
 export const Labels: Story = {
   name: 'Labels',
   args: {
-    label: "Rate this component",
+    label: 'Rate this component'
   },
   parameters: {
     docs: {
@@ -51,7 +49,7 @@ export const Labels: Story = {
 export const MaximumValue: Story = {
   name: 'Maximum Value',
   args: {
-    label: "Rating",
+    label: 'Rating',
     max: 3
   },
   parameters: {
@@ -66,7 +64,7 @@ export const MaximumValue: Story = {
 export const Precision: Story = {
   name: 'Precision',
   args: {
-    label: "Rating",
+    label: 'Rating',
     value: 2.5,
     precision: 0.5
   },
@@ -82,7 +80,7 @@ export const Precision: Story = {
 export const SymbolSizes: Story = {
   name: 'Symbol Sizes',
   args: {
-    label: "Rating",
+    label: 'Rating',
     '--symbol-size': '2rem'
   },
   parameters: {
@@ -97,7 +95,7 @@ export const SymbolSizes: Story = {
 export const Readonly: Story = {
   name: 'Readonly',
   args: {
-    label: "Rating",
+    label: 'Rating',
     readonly: true,
     value: 3
   },
@@ -113,7 +111,7 @@ export const Readonly: Story = {
 export const Disabled: Story = {
   name: 'Disabled',
   args: {
-    label: "Rating",
+    label: 'Rating',
     disabled: true,
     value: 3
   },
@@ -128,28 +126,29 @@ export const Disabled: Story = {
 
 export const DetectingHover: Story = {
   name: 'Detecting Hover',
-  render: () => html`<div class="detect-hover">
-      <awc-rating label="Rating"></awc-rating>
-      <span></span>
-  </div>
+  render: () =>
+    html`<div class="detect-hover">
+        <awc-rating label="Rating"></awc-rating>
+        <span></span>
+      </div>
 
-  <script>
-      const rating_hover = document.querySelector('.detect-hover > awc-rating');
-      const span = rating_hover.nextElementSibling;
-      const terms = ['No rating', 'Terrible', 'Bad', 'OK', 'Good', 'Excellent'];
+      <script>
+        const rating_hover = document.querySelector('.detect-hover > awc-rating');
+        const span = rating_hover.nextElementSibling;
+        const terms = ['No rating', 'Terrible', 'Bad', 'OK', 'Good', 'Excellent'];
 
-      rating.addEventListener('awc-hover', event => {
+        rating.addEventListener('awc-hover', event => {
           span.textContent = terms[event.detail.value];
 
           // Clear feedback when hovering stops
           if (event.detail.phase === 'end') {
-              span.textContent = '';
+            span.textContent = '';
           }
-      });
-  </script>
+        });
+      </script>
 
-  <style>
-      .detect-hover span {
+      <style>
+        .detect-hover span {
           position: relative;
           top: -4px;
           left: 8px;
@@ -158,12 +157,12 @@ export const DetectingHover: Story = {
           color: var(--awc-color-neutral-0);
           text-align: center;
           padding: 4px 6px;
-      }
+        }
 
-      .detect-hover span:empty {
+        .detect-hover span:empty {
           display: none;
-      }
-  </style>`,
+        }
+      </style>`,
   parameters: {
     docs: {
       description: {
@@ -177,12 +176,13 @@ The event has a payload with \`phase\` and \`value\` properties. The \`phase\` p
 
 export const CustomIcons: Story = {
   name: 'Custom Icons',
-  render: () => html`<awc-rating label="Rating" class="rating-hearts" style="--symbol-color-active: #ff4136;"></awc-rating>
+  render: () =>
+    html`<awc-rating label="Rating" class="rating-hearts" style="--symbol-color-active: #ff4136;"></awc-rating>
 
-  <script>
-      const rating_hearts = document.querySelector('.rating-hearts');
-      rating_hearts.getSymbol = () => '<awc-icon name="heart-fill"></awc-icon>';
-  </script>`,
+      <script>
+        const rating_hearts = document.querySelector('.rating-hearts');
+        rating_hearts.getSymbol = () => '<awc-icon name="heart-fill"></awc-icon>';
+      </script>`,
   parameters: {
     docs: {
       description: {
@@ -194,16 +194,16 @@ export const CustomIcons: Story = {
 
 export const ValueIcons: Story = {
   name: 'Value-based Icons',
-  render: () => html`
-      <awc-rating label="Rating" class="rating-emojis"></awc-rating>
+  render: () =>
+    html` <awc-rating label="Rating" class="rating-emojis"></awc-rating>
 
       <script>
-          const rating_emojis = document.querySelector('.rating-emojis');
+        const rating_emojis = document.querySelector('.rating-emojis');
 
-          rating_emojis.getSymbol = value => {
-              const icons = ['emoji-angry', 'emoji-frown', 'emoji-expressionless', 'emoji-smile', 'emoji-laughing'];
-              return \`<awc-icon name="\${icons[value - 1]}"></awc-icon>\`;
-          };
+        rating_emojis.getSymbol = value => {
+          const icons = ['emoji-angry', 'emoji-frown', 'emoji-expressionless', 'emoji-smile', 'emoji-laughing'];
+          return \`<awc-icon name="\${icons[value - 1]}"></awc-icon>\`;
+        };
       </script>`,
   parameters: {
     docs: {

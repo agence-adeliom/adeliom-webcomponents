@@ -9,7 +9,8 @@ export default css`
     --track-color: var(--awc-color-neutral-200);
     --indicator-color: var(--awc-color-primary-600);
     --label-color: var(--awc-color-neutral-0);
-    --border-radius: var(--awc-border-radius-none);
+    --track-radius: var(--awc-border-radius-none);
+    --indicator-radius: var(--awc-border-radius-none);
 
     display: block;
   }
@@ -18,7 +19,7 @@ export default css`
     position: relative;
     background-color: var(--track-color);
     height: var(--height);
-    border-radius: var(--border-radius);
+    border-radius: var(--track-radius);
     box-shadow: inset var(--awc-shadow-small);
     overflow: hidden;
   }
@@ -29,6 +30,7 @@ export default css`
     font-size: 12px;
     font-weight: var(--awc-font-weight-normal);
     background-color: var(--indicator-color);
+    border-radius: var(--indicator-radius);
     color: var(--label-color);
     text-align: center;
     line-height: var(--height);

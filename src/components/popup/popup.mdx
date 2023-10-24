@@ -1,0 +1,28 @@
+import { Title, Subtitle, Meta, ArgTypes, Primary, Description, Stories } from '@storybook/blocks';
+import * as PopupStories from './popup.stories';
+import { TagNames } from '@awc-storybook/blocks/TagNames.jsx';
+import { Summary } from '@awc-storybook/blocks/Summary.jsx';
+
+<Meta of={PopupStories} />
+
+<Title of={PopupStories} />
+<TagNames of={PopupStories} />
+<Summary of={PopupStories} />
+<Subtitle of={PopupStories} />
+<Description of={PopupStories} />
+
+This component's name is inspired by [`<popup>`](https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Popup/explainer.md). It uses [Floating UI](https://floating-ui.com/) under the hood to provide a well-tested, lightweight, and fully declarative positioning utility for tooltips, dropdowns, and more.
+
+Popup doesn't provide any styles — just positioning! The popup's preferred placement, distance, and skidding (offset) can be configured using attributes. An arrow that points to the anchor can be shown and customized to your liking. Additional positioning options are available and described in more detail below.
+
+> Popup is a low-level utility built specifically for positioning elements. Do not mistake it for a [tooltip](/components/tooltip) or similar because _it does not facilitate an accessible experience!_ Almost every correct usage of `<awc-popup>` will involve building other components. It should rarely, if ever, occur directly in your HTML.
+
+<Primary of={PopupStories} />
+
+> A popup's anchor should not be styled with `display: contents` since the coordinates will not be eligible for calculation. However, if the anchor is a `<slot>` element, popup will use the first assigned element as the anchor. This behavior allows other components to pass anchors through more easily via composition.
+
+<Stories of={PopupStories} includePrimary={false} title={'Examples'} />
+
+## API
+
+<ArgTypes of={PopupStories} />

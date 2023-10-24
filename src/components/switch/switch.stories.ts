@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCSwitch from './switch';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-switch');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -20,7 +20,7 @@ const meta = {
       description: {
         component: `> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.`
       }
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCSwitch & typeof args>;
@@ -68,11 +68,12 @@ export const Disabled: Story = {
 
 export const Sizes: Story = {
   name: 'Sizes',
-  render: () => html`<awc-switch size="small">Small</awc-switch>
-  <br />
-  <awc-switch size="medium">Medium</awc-switch>
-  <br />
-  <awc-switch size="large">Large</awc-switch>`,
+  render: () =>
+    html`<awc-switch size="small">Small</awc-switch>
+      <br />
+      <awc-switch size="medium">Medium</awc-switch>
+      <br />
+      <awc-switch size="large">Large</awc-switch>`,
   parameters: {
     docs: {
       description: {
@@ -81,7 +82,6 @@ export const Sizes: Story = {
     }
   }
 };
-
 
 export const CustomStyles: Story = {
   name: 'Custom Styles',

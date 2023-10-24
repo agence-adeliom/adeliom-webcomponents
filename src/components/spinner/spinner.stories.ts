@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCSpinner from './spinner';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-spinner');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -25,14 +25,15 @@ export default meta;
 type Story = StoryObj<AWCSpinner & typeof args>;
 
 export const Primary: Story = {
-  name: 'Default',
+  name: 'Default'
 };
 
 export const Size: Story = {
   name: 'Size',
-  render: () => html`<awc-spinner></awc-spinner>
-  <awc-spinner style="font-size: 2rem;"></awc-spinner>
-  <awc-spinner style="font-size: 3rem;"></awc-spinner>`,
+  render: () =>
+    html`<awc-spinner></awc-spinner>
+      <awc-spinner style="font-size: 2rem;"></awc-spinner>
+      <awc-spinner style="font-size: 3rem;"></awc-spinner>`,
   parameters: {
     docs: {
       description: {
@@ -56,7 +57,8 @@ export const TrackWidth: Story = {
 
 export const Color: Story = {
   name: 'Color',
-  render: () => html`<awc-spinner style="font-size: 3rem; --indicator-color: deeppink; --track-color: pink;"></awc-spinner>`,
+  render: () =>
+    html`<awc-spinner style="font-size: 3rem; --indicator-color: deeppink; --track-color: pink;"></awc-spinner>`,
   parameters: {
     docs: {
       description: {

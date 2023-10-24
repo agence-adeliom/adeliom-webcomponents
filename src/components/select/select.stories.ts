@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCSelect from './select';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-select');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -20,7 +20,7 @@ const meta = {
       description: {
         component: `> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.`
       }
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCSelect & typeof args>;
@@ -31,23 +31,25 @@ type Story = StoryObj<AWCSelect & typeof args>;
 
 export const Primary: Story = {
   name: 'Default',
-  render: () => html`<awc-select>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-    <awc-option value="option-4">Option 4</awc-option>
-    <awc-option value="option-5">Option 5</awc-option>
-    <awc-option value="option-6">Option 6</awc-option>
-  </awc-select>`
+  render: () =>
+    html`<awc-select>
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+      <awc-option value="option-4">Option 4</awc-option>
+      <awc-option value="option-5">Option 5</awc-option>
+      <awc-option value="option-6">Option 6</awc-option>
+    </awc-select>`
 };
 
 export const Labels: Story = {
   name: 'Labels',
-  render: () => html`<awc-select label="Select one">
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select label="Select one">
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -59,11 +61,12 @@ export const Labels: Story = {
 
 export const HelpText: Story = {
   name: 'Help Text',
-  render: () => html`<awc-select label="Experience" help-text="Please tell us your skill level.">
-    <awc-option value="1">Novice</awc-option>
-    <awc-option value="2">Intermediate</awc-option>
-    <awc-option value="3">Advanced</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select label="Experience" help-text="Please tell us your skill level.">
+      <awc-option value="1">Novice</awc-option>
+      <awc-option value="2">Intermediate</awc-option>
+      <awc-option value="3">Advanced</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -75,11 +78,12 @@ export const HelpText: Story = {
 
 export const Placeholders: Story = {
   name: 'Placeholders',
-  render: () => html`<awc-select placeholder="Select one">
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select placeholder="Select one">
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -91,11 +95,12 @@ export const Placeholders: Story = {
 
 export const Clearable: Story = {
   name: 'Clearable',
-  render: () => html`<awc-select clearable value="option-1">
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select clearable value="option-1">
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -107,11 +112,12 @@ export const Clearable: Story = {
 
 export const FilledSelects: Story = {
   name: 'Filled Selects',
-  render: () => html`<awc-select filled>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select filled>
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -123,11 +129,12 @@ export const FilledSelects: Story = {
 
 export const Pill: Story = {
   name: 'Pill',
-  render: () => html`<awc-select pill>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select pill>
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -139,11 +146,12 @@ export const Pill: Story = {
 
 export const Disabled: Story = {
   name: 'Disabled',
-  render: () => html`<awc-select placeholder="Disabled" disabled>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select placeholder="Disabled" disabled>
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -155,14 +163,15 @@ export const Disabled: Story = {
 
 export const Multiple: Story = {
   name: 'Multiple',
-  render: () => html`<awc-select label="Select a Few" value="option-1 option-2 option-3" multiple clearable>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-    <awc-option value="option-4">Option 4</awc-option>
-    <awc-option value="option-5">Option 5</awc-option>
-    <awc-option value="option-6">Option 6</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select label="Select a Few" value="option-1 option-2 option-3" multiple clearable>
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+      <awc-option value="option-4">Option 4</awc-option>
+      <awc-option value="option-5">Option 5</awc-option>
+      <awc-option value="option-6">Option 6</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -176,12 +185,13 @@ export const Multiple: Story = {
 
 export const InitialValues: Story = {
   name: 'Setting Initial Values',
-  render: () => html`<awc-select value="option-1 option-2" multiple clearable>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-    <awc-option value="option-4">Option 4</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select value="option-1 option-2" multiple clearable>
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+      <awc-option value="option-4">Option 4</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -193,17 +203,18 @@ export const InitialValues: Story = {
 
 export const Grouping: Story = {
   name: 'Grouping Options',
-  render: () => html`<awc-select>
-    <small>Section 1</small>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-    <awc-divider></awc-divider>
-    <small>Section 2</small>
-    <awc-option value="option-4">Option 4</awc-option>
-    <awc-option value="option-5">Option 5</awc-option>
-    <awc-option value="option-6">Option 6</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select>
+      <small>Section 1</small>
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+      <awc-divider></awc-divider>
+      <small>Section 2</small>
+      <awc-option value="option-4">Option 4</awc-option>
+      <awc-option value="option-5">Option 5</awc-option>
+      <awc-option value="option-6">Option 6</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -215,27 +226,28 @@ export const Grouping: Story = {
 
 export const Sizes: Story = {
   name: 'Sizes',
-  render: () => html`<awc-select placeholder="Small" size="small">
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>
+  render: () =>
+    html`<awc-select placeholder="Small" size="small">
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+      </awc-select>
 
-  <br />
+      <br />
 
-  <awc-select placeholder="Medium" size="medium">
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>
+      <awc-select placeholder="Medium" size="medium">
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+      </awc-select>
 
-  <br />
+      <br />
 
-  <awc-select placeholder="Large" size="large">
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+      <awc-select placeholder="Large" size="large">
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+      </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -247,11 +259,12 @@ export const Sizes: Story = {
 
 export const Placement: Story = {
   name: 'Placement',
-  render: () => html`<awc-select placement="top">
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select placement="top">
+      <awc-option value="option-1">Option 1</awc-option>
+      <awc-option value="option-2">Option 2</awc-option>
+      <awc-option value="option-3">Option 3</awc-option>
+    </awc-select>`,
   parameters: {
     docs: {
       description: {
@@ -263,26 +276,27 @@ export const Placement: Story = {
 
 export const PrefixIcons: Story = {
   name: 'Prefix Icons',
-  render: () => html`<awc-select placeholder="Small" size="small" clearable>
-    <awc-icon name="house" slot="prefix"></awc-icon>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>
-  <br />
-  <awc-select placeholder="Medium" size="medium" clearable>
-    <awc-icon name="house" slot="prefix"></awc-icon>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>
-  <br />
-  <awc-select placeholder="Large" size="large" clearable>
-    <awc-icon name="house" slot="prefix"></awc-icon>
-    <awc-option value="option-1">Option 1</awc-option>
-    <awc-option value="option-2">Option 2</awc-option>
-    <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+  render: () =>
+    html`<awc-select placeholder="Small" size="small" clearable>
+        <awc-icon name="house" slot="prefix"></awc-icon>
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+      </awc-select>
+      <br />
+      <awc-select placeholder="Medium" size="medium" clearable>
+        <awc-icon name="house" slot="prefix"></awc-icon>
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+      </awc-select>
+      <br />
+      <awc-select placeholder="Large" size="large" clearable>
+        <awc-icon name="house" slot="prefix"></awc-icon>
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+      </awc-select>`,
   parameters: {
     docs: {
       description: {

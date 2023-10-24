@@ -7,7 +7,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 import { transformProps } from './oembed.utils';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './oembed.styles.js';
-import type { AWCOEmbedProps, BaseOEmbedProps, CoreOEmbedAttributes, Layout } from './oembed.utils';
+import type { AWCOEmbedProps, BaseOEmbedProps, CoreOEmbedAttributes } from './oembed.utils';
 import type { CSSResultGroup } from 'lit';
 import type { OembedData, PhotoTypeData, RichTypeData, VideoTypeData } from '@extractus/oembed-extractor';
 import type { StyleInfo } from 'lit/development/directives/style-map';
@@ -56,7 +56,7 @@ export default class AWCOembed
   @property({ type: Number }) aspectRatio?: number;
 
   /** The resizing behaviour of the embed. */
-  @property({ type: String }) layout: Layout = 'constrained';
+  @property({ type: String }) layout: 'fixed' | 'constrained' | 'fullWidth' = 'constrained';
 
   /** Set the frameborder attribute, only used in iframe embeds. */
   @property({ type: String }) frameBorder = '0';
