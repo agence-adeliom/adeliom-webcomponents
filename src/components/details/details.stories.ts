@@ -15,11 +15,6 @@ const meta = {
     layout: 'padded',
     actions: {
       handles: events
-    },
-    docs: {
-      story: {
-        height: "120px"
-      }
     }
   },
   render: context => template(context)
