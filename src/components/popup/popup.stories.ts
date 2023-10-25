@@ -24,7 +24,7 @@ export default meta;
 type Story = StoryObj<AWCPopup & typeof args>;
 
 export const Primary: Story = {
-  name: 'Default',
+  name: 'Example',
   render: () => html`<div class="popup-overview p-4">
       <awc-popup placement="top" active>
           <span slot="anchor"></span>

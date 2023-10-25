@@ -24,7 +24,7 @@ export default meta;
 type Story = StoryObj<AWCOembed & typeof args>;
 
 export const Primary: Story = {
-  name: 'Default',
+  name: 'Example',
   args: {
     src: 'https://www.youtube.com/watch?v=YE7VzlLtp-4',
     aspectRatio: 1.76,
