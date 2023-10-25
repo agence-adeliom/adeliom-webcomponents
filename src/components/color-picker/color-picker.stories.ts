@@ -6,7 +6,7 @@ const { events, args, argTypes, template } = getWcStorybookHelpers('awc-color-pi
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
-  title: 'Components/ColorPicker',
+  title: 'Components/Color Picker',
   component: 'awc-color-picker',
   tags: ['autodocs'],
   args,
