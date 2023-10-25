@@ -85,9 +85,10 @@ export const HourFormatting: Story = {
 
 export const Localization: Story = {
   name: 'Localization',
-  render: () => html`English: <awc-format-date lang="en"></awc-format-date><br />
-  French: <awc-format-date lang="fr"></awc-format-date><br />
-  Russian: <awc-format-date lang="ru"></awc-format-date>
+  render: () => html`
+    English: <awc-format-date lang="en"></awc-format-date><br />
+    French: <awc-format-date lang="fr"></awc-format-date><br />
+    Russian: <awc-format-date lang="ru"></awc-format-date>
   `,
   parameters: {
     docs: {
