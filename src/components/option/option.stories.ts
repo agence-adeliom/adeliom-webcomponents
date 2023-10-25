@@ -30,7 +30,14 @@ export const Primary: Story = {
       <awc-option value="option-1">Option 1</awc-option>
       <awc-option value="option-2">Option 2</awc-option>
       <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`
+  </awc-select>`,
+  parameters: {
+    docs: {
+      story: {
+        height: "200px"
+      }
+    }
+  }
 };
 
 export const Disabled: Story = {
@@ -39,6 +46,9 @@ export const Disabled: Story = {
     docs: {
       description: {
         story: `Use the \`disabled\` attribute to disable an option and prevent it from being selected.`
+      },
+      story: {
+        height: "200px"
       }
     }
   },
@@ -55,6 +65,9 @@ export const PrefixSuffix: Story = {
     docs: {
       description: {
         story: `Add icons to the start and end of menu items using the \`prefix\` and \`suffix\` slots.`
+      },
+      story: {
+        height: "200px"
       }
     }
   },

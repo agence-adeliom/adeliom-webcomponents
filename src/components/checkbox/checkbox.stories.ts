@@ -18,7 +18,7 @@ const meta = {
     },
     docs: {
       description: {
-        component: `>❗ This component works with standard \`<form>\` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.`
+        component: `> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.`
       }
     }
   },
@@ -59,7 +59,7 @@ export const Indeterminate: Story = {
     'default-slot': 'Indeterminate',
     indeterminate: true
   },
-  
+
   parameters: {
     docs: {
       description: {
@@ -76,7 +76,7 @@ export const Disabled: Story = {
     'default-slot': 'Disabled',
     disabled: true
   },
-  
+
   parameters: {
     docs: {
       description: {

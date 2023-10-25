@@ -43,7 +43,7 @@ const preview: Preview = {
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['*'],
+        order: ['Components', 'Block', '*'],
         locales: 'en-US'
       }
     },
@@ -54,7 +54,6 @@ const preview: Preview = {
       },
       source: {
         transform: (code: string, _storyContext: StoryContext) => {
-          // @ts-ignore
           return (
             prettify.formatSync(code, {
               markup: {
