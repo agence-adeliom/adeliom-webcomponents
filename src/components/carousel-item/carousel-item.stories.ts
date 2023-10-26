@@ -6,7 +6,7 @@ const { events, args, argTypes, template } = getWcStorybookHelpers('awc-carousel
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
-  title: 'Components/Carousel Item',
+  title: 'Components/Carousel/Item',
   component: 'awc-carousel-item',
   tags: ['autodocs'],
   args,
