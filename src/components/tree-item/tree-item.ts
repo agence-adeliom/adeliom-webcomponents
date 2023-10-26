@@ -15,7 +15,7 @@ import styles from './tree-item.styles.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
 
 /**
- * @summary A tree item serves as a hierarchical node that lives inside a [tree](/components/tree).
+ * @summary A tree item serves as a hierarchical node that lives inside a [tree](/docs/components-tree--docs).
  * @documentation https://awc.a-dev.cloud/components/tree-item
  * @status stable
  * @since 1.0

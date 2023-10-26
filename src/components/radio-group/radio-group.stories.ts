@@ -75,7 +75,7 @@ export const RadioButtons: Story = {
   parameters: {
     docs: {
       description: {
-        story: `[Radio buttons](/components/radio-button) offer an alternate way to display radio controls. In this case, an internal [button group](/components/button-group) is used to group the buttons into a single, cohesive control.`
+        story: `[Radio buttons](/docs/components-radio-button--docs) offer an alternate way to display radio controls. In this case, an internal [button group](/docs/components-button-group--docs) is used to group the buttons into a single, cohesive control.`
       }
     }
   }
@@ -117,9 +117,9 @@ export const SizingOptions: Story = {
   parameters: {
     docs: {
       description: {
-        story: `The size of [Radios](/components/radio) and [Radio Buttons](/components/radio-buttons) will be determined by the Radio Group's \`size\` attribute.
+        story: `The size of [Radios](/docs/components-radio--docs) and [Radio Buttons](/docs/components-radio-buttons--docs) will be determined by the Radio Group's \`size\` attribute.
 
-> [Radios](/components/radio) and [Radio Buttons](/components/radio-button) also have a \`size\` attribute. This can be useful in certain compositions, but it will be ignored when used inside of a Radio Group.`
+> [Radios](/docs/components-radio--docs) and [Radio Buttons](/docs/components-radio-button--docs) also have a \`size\` attribute. This can be useful in certain compositions, but it will be ignored when used inside of a Radio Group.`
       }
     }
   }

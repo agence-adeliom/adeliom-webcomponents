@@ -19,7 +19,7 @@ const meta = {
     docs: {
       description: {
         component: `Dropdowns consist of a trigger and a panel. By default, activating the trigger will expose the panel and interacting outside of the panel will close it.<br>
-        Dropdowns are designed to work well with [menus](/components/menu) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](/components/color-picker) and [select](/components/select)). The API gives you complete control over showing, hiding, and positioning the panel.`
+        Dropdowns are designed to work well with [menus](/docs/components-menu--docs) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](/docs/components-color-picker--docs) and [select](/docs/components-select--docs)). The API gives you complete control over showing, hiding, and positioning the panel.`
       },
       story: {
         height: "400px"
@@ -71,11 +71,11 @@ export const Primary: Story = {
       </awc-menu>
     </awc-dropdown>
   </div>
-  
+
   <script>
     const containerSelection = document.querySelector('.dropdown-selection');
     const dropdown = containerSelection.querySelector('awc-dropdown');
-  
+
     dropdown.addEventListener('awc-select', event => {
       const selectedItem = event.detail.item;
       console.log(selectedItem.value);
@@ -84,7 +84,7 @@ export const Primary: Story = {
   parameters: {
     docs: {
       description: {
-        story: "When dropdowns are used with [menus](/components/menu), you can listen for the [`awc-select`](/components/menu#events) event to determine which menu item was selected. The menu item element will be exposed in `event.detail.item`. You can set `value` props to make it easier to identify commands."
+        story: "When dropdowns are used with [menus](/docs/components-menu--docs), you can listen for the [`awc-select`](/docs/components-menu--docs#events) event to determine which menu item was selected. The menu item element will be exposed in `event.detail.item`. You can set `value` props to make it easier to identify commands."
       }
     }
   }
@@ -103,13 +103,13 @@ export const GettingSelectedItemAlternative: Story = {
       </awc-menu>
     </awc-dropdown>
   </div>
-  
+
   <script>
     const containerSelectionAlt = document.querySelector('.dropdown-selection-alt');
     const cut = containerSelectionAlt.querySelector('awc-menu-item[value="cut"]');
     const copy = containerSelectionAlt.querySelector('awc-menu-item[value="copy"]');
     const paste = containerSelectionAlt.querySelector('awc-menu-item[value="paste"]');
-  
+
     cut.addEventListener('click', () => console.log('cut'));
     copy.addEventListener('click', () => console.log('copy'));
     paste.addEventListener('click', () => console.log('paste'));
@@ -204,7 +204,7 @@ export const Hoisting: Story = {
         <awc-menu-item>Item 3</awc-menu-item>
       </awc-menu>
     </awc-dropdown>
-  
+
     <awc-dropdown hoist>
       <awc-button slot="trigger" caret>Hoist</awc-button>
       <awc-menu>
@@ -214,7 +214,7 @@ export const Hoisting: Story = {
       </awc-menu>
     </awc-dropdown>
   </div>
-  
+
   <style>
     .dropdown-hoist {
       position: relative;

@@ -67,8 +67,7 @@
   --awc-font-size-x-small: 0.75rem;
   --awc-font-size-2x-small: 0.625rem;
   --awc-font-serif: Georgia, 'Times New Roman', serif;
-  --awc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --awc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --awc-font-mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
   --awc-transition-x-fast: 50ms;
   --awc-transition-fast: 150ms;

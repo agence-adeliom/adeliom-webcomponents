@@ -6,7 +6,7 @@ const { events, args, argTypes, template } = getWcStorybookHelpers('awc-format-n
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
-  title: 'Components/Format Number',
+  title: 'Components/Format/Number',
   component: 'awc-format-number',
   tags: ['autodocs'],
   args,
@@ -37,12 +37,12 @@ export const Primary: Story = {
     <br /><br />
     <awc-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></awc-input>
   </div>
-  
+
   <script>
     const container = document.querySelector('.format-number-overview');
     const formatter = container.querySelector('awc-format-number');
     const input = container.querySelector('awc-input');
-  
+
     input.addEventListener('awc-input', () => (formatter.value = input.value || 0));
   </script>`,
 };

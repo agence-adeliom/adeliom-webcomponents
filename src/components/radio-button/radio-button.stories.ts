@@ -18,7 +18,7 @@ const meta = {
     },
     docs: {
       description: {
-        component: `Radio buttons are designed to be used with [radio groups](/components/radio-group). When a radio button has focus, the arrow keys can be used to change the selected option just like standard radio controls.`
+        component: `Radio buttons are designed to be used with [radio groups](/docs/components-radio-group--docs). When a radio button has focus, the arrow keys can be used to change the selected option just like standard radio controls.`
       }
     }
   },

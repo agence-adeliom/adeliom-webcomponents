@@ -18,7 +18,7 @@ const meta = {
     },
     docs: {
       description: {
-        component: `>❗Additional demonstrations can be found in the [tab group examples](/components/tab-group).`
+        component: `> Additional demonstrations can be found in the [tab group examples](/docs/components-tab-group--docs).`
       }
     }
   },

@@ -1,7 +1,7 @@
 {
   "name": "@agence-adeliom/awc",
   "description": "A forward-thinking library of web components.",
-  "version": "1.1.1-dev.4",
+  "version": "1.1.1-dev.5",
   "homepage": "https://github.com/agence-adeliom/awc",
   "author": "Agence Adeliom",
   "license": "MIT",
@@ -15,21 +15,21 @@
       "types": "./dist/awc.d.ts",
       "import": "./dist/awc.js"
     },
-    "./dist/custom-elements.json": "./dist/custom-elements.json",
-    "./dist/themes/*": "./dist/themes/*",
-    "./dist/components/*": "./dist/components/*",
-    "./dist/utilities/*": "./dist/utilities/*",
-    "./dist/react": {
+    "./custom-elements.json": "./dist/custom-elements.json",
+    "./themes/*": "./dist/themes/*",
+    "./components/*": "./dist/components/*",
+    "./utilities/*": "./dist/utilities/*",
+    "./react": {
       "types": "./dist/react/index.d.ts",
       "import": "./dist/react/index.js"
     },
-    "./dist/react/*": "./dist/react/*",
-    "./dist/translations/*": "./dist/translations/*",
-    "./dist/tailwind": {
+    "./react/*": "./dist/react/*",
+    "./translations/*": "./dist/translations/*",
+    "./tailwind": {
       "import": "./dist/tailwind/index.js"
     }
   },
-  "files": ["dist", "cdn"],
+  "files": ["dist"],
   "keywords": ["web components", "custom elements", "components"],
   "repository": {
     "type": "git",
@@ -59,7 +59,6 @@
     "dependencies:list": "npm-check-updates --format repo --peer",
     "dependencies:update": "npm-check-updates --peer -u && npm install",
     "prepare": "husky install",
-    "prepublishOnly": "npx vite build",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build"
   },
@@ -116,6 +115,7 @@
     "custom-element-jet-brains-integration": "^1.3.1",
     "custom-element-vs-code-integration": "^1.2.1",
     "esbuild": "^0.19.5",
+    "escape-string-regexp": "^5.0.0",
     "eslint": "^8.52.0",
     "eslint-plugin-chai-expect": "^3.0.0",
     "eslint-plugin-chai-friendly": "^0.7.2",
@@ -136,12 +136,15 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-syntax-highlighter": "^15.5.0",
+    "remark-gfm": "^4.0.0",
+    "remark-github-beta-blockquote-admonitions": "^2.1.2",
     "storybook": "7.5.1",
     "storybook-source-link": "^2.0.9",
     "strip-css-comments": "^5.0.0",
     "terser": "^5.22.0",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
+    "unist-util-visit": "^5.0.0",
     "user-agent-data-types": "^0.4.2",
     "vite": "^4.5.0",
     "vite-plugin-dts": "^3.6.1"

@@ -64,7 +64,7 @@ export const CustomIcons: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Use the `copy-icon`, `success-icon`, and `error-icon` slots to customize the icons that get displayed for each state. You can use [`<awc-icon>`](/components/icon) or your own images."
+        story: "Use the `copy-icon`, `success-icon`, and `error-icon` slots to customize the icons that get displayed for each state. You can use [`<awc-icon>`](/docs/components-icon--docs) or your own images."
       }
     }
   }
@@ -76,15 +76,15 @@ export const CopyingValuesFromOtherElements: Story = {
     html`<!-- Copies the span's textContent -->
     <span id="my-phone">+1 (234) 456-7890</span>
     <awc-copy-button from="my-phone"></awc-copy-button>
-    
+
     <br><br>
-    
+
     <!-- Copies the input's "value" property -->
     <awc-input id="my-input" type="text" value="User input" style="display: inline-block; max-width: 300px;"></awc-input>
     <awc-copy-button from="my-input.value"></awc-copy-button>
-    
+
     <br><br>
-    
+
     <!-- Copies the link's "href" attribute -->
     <a id="my-link" href="https://awc.a-dev.cloud/">AWC Website</a>
     <awc-copy-button from="my-link[href]"></awc-copy-button>`,
@@ -114,7 +114,7 @@ export const HandlingErrors: Story = {
 export const Disabled: Story = {
   name: 'Disabled',
   args: {
-    value: 'You can\'t copy me', 
+    value: 'You can\'t copy me',
     disabled: true
   },
   parameters: {
@@ -149,14 +149,14 @@ export const CustomStyles: Story = {
       <awc-icon slot="success-icon" name="check-lg"></awc-icon>
       <awc-icon slot="error-icon" name="x-lg"></awc-icon>
     </awc-copy-button>
-    
+
     <style>
       .custom-styles {
         --success-color: white;
         --error-color: white;
         color: white;
       }
-    
+
       .custom-styles::part(button) {
         background-color: #ff1493;
         border: solid 4px #ff7ac1;
@@ -165,15 +165,15 @@ export const CustomStyles: Story = {
         border-radius: 0;
         transition: 100ms scale ease-in-out, 100ms translate ease-in-out;
       }
-    
+
       .custom-styles::part(button):hover {
         scale: 1.1;
       }
-    
+
       .custom-styles::part(button):active {
         translate: 0 2px;
       }
-    
+
       .custom-styles::part(button):focus-visible {
         outline: dashed 2px deeppink;
         outline-offset: 4px;

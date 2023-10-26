@@ -106,6 +106,11 @@ const meta = {
   argTypes,
   parameters: {
     layout: 'padded',
+    docs: {
+      toc: {
+        disable: false,
+      },
+    },
     actions: {
       handles: events
     },

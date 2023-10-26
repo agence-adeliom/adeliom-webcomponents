@@ -36,14 +36,14 @@ export const Primary: Story = {
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-dialog>
-  
+
   <awc-button>Open Dialog</awc-button>
-  
+
   <script>
     const dialog = document.querySelector('.dialog-overview');
     const openButton = dialog.nextElementSibling;
     const closeButton = dialog.querySelector('awc-button[slot="footer"]');
-  
+
     openButton.addEventListener('click', () => dialog.show());
     closeButton.addEventListener('click', () => dialog.hide());
   </script>`,
@@ -85,14 +85,14 @@ export const Scrolling: Story = {
     </div>
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-dialog>
-  
+
   <awc-button>Open Dialog</awc-button>
-  
+
   <script>
     const dialogScrolling = document.querySelector('.dialog-scrolling');
     const openButtonScrolling = dialogScrolling.nextElementSibling;
     const closeButtonScrolling = dialogScrolling.querySelector('awc-button[slot="footer"]');
-  
+
     openButtonScrolling.addEventListener('click', () => dialogScrolling.show());
     closeButtonScrolling.addEventListener('click', () => dialogScrolling.hide());
   </script>`,
@@ -116,15 +116,15 @@ export const HeaderActions: Story = {
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-dialog>
-  
+
   <awc-button>Open Dialog</awc-button>
-  
+
   <script>
     const dialogHeaderActions = document.querySelector('.dialog-header-actions');
     const openButtonHeaderActions = dialogHeaderActions.nextElementSibling;
     const closeButtonHeaderActions = dialogHeaderActions.querySelector('awc-button[slot="footer"]');
     const newWindowButton = dialogHeaderActions.querySelector('.new-window');
-  
+
     openButtonHeaderActions.addEventListener('click', () => dialogHeaderActions.show());
     closeButtonHeaderActions.addEventListener('click', () => dialogHeaderActions.hide());
     newWindowButton.addEventListener('click', () => window.open(location.href));
@@ -132,7 +132,7 @@ export const HeaderActions: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](/components/icon-button) if needed."
+        story: "The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](/docs/components-button-icon--docs) if needed."
       }
     }
   }

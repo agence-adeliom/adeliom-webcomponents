@@ -4,5 +4,65 @@
   font-weight: var(--awc-font-weight-normal);
   background-color: var(--awc-background-color);
   line-height: var(--awc-line-height-normal);
-  color: var(--awc-text-color);
+  color: var(--awc-text-paragraph-color);
+}
+
+
+.sbdocs.sbdocs-content {
+  max-width: 1920px;
+}
+
+.sbdocs.sbdocs-content ol {
+  list-style-type: decimal;
+}
+
+.sbdocs.sbdocs-content table:not(.sb-anchor, .sb-unstyled, .sb-unstyled table) {
+  line-height: normal;
+}
+
+
+/* Border radius demo */
+.border-radius-demo {
+  width: 3rem;
+  height: 3rem;
+  background: var(--awc-color-primary-600);
+}
+
+/* Transition demo */
+.transition-demo {
+  position: relative;
+  background: var(--awc-color-neutral-200);
+  width: 8rem;
+  height: 2rem;
+}
+
+.transition-demo:after {
+  content: '';
+  position: absolute;
+  background-color: var(--awc-color-primary-600);
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition-duration: inherit;
+  transition-property: width;
+}
+
+.transition-demo:hover:after {
+  width: 100%;
+}
+
+/* Spacing demo */
+.spacing-demo {
+  width: 100px;
+  background: var(--awc-color-primary-600);
+}
+
+/* Elevation demo */
+.elevation-demo {
+  background: transparent;
+  border-radius: 3px;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
 }

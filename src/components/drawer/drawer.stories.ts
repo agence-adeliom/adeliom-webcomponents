@@ -36,14 +36,14 @@ export const Primary: Story = {
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-drawer>
-  
+
   <awc-button>Open Drawer</awc-button>
-  
+
   <script>
     const drawer = document.querySelector('.drawer-overview');
     const openButton = drawer.nextElementSibling;
     const closeButton = drawer.querySelector('awc-button[variant="primary"]');
-  
+
     openButton.addEventListener('click', () => drawer.show());
     closeButton.addEventListener('click', () => drawer.hide());
   </script>`,
@@ -56,14 +56,14 @@ export const Primary: Story = {
     This drawer slides in from the start.
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-drawer>
-  
+
   <awc-button>Open Drawer</awc-button>
-  
+
   <script>
     const drawerStart = document.querySelector('.drawer-placement-start');
     const openButtonStart = drawerStart.nextElementSibling;
     const closeButtonStart = drawerStart.querySelector('awc-button[variant="primary"]');
-  
+
     openButtonStart.addEventListener('click', () => drawerStart.show());
     closeButtonStart.addEventListener('click', () => drawerStart.hide());
   </script>`,
@@ -83,14 +83,14 @@ export const SlideInFromTop: Story = {
     This drawer slides in from the top.
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-drawer>
-  
+
   <awc-button>Open Drawer</awc-button>
-  
+
   <script>
     const drawerTop = document.querySelector('.drawer-placement-top');
     const openButtonTop = drawerTop.nextElementSibling;
     const closeButtonTop = drawerTop.querySelector('awc-button[variant="primary"]');
-  
+
     openButtonTop.addEventListener('click', () => drawerTop.show());
     closeButtonTop.addEventListener('click', () => drawerTop.hide());
   </script>`,
@@ -110,14 +110,14 @@ export const SlideInFromBottom: Story = {
     This drawer slides in from the bottom.
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-drawer>
-  
+
   <awc-button>Open Drawer</awc-button>
-  
+
   <script>
     const drawerBottom = document.querySelector('.drawer-placement-bottom');
     const openButtonBottom = drawerBottom.nextElementSibling;
     const closeButtonBottom = drawerBottom.querySelector('awc-button[variant="primary"]');
-  
+
     openButtonBottom.addEventListener('click', () => drawerBottom.show());
     closeButtonBottom.addEventListener('click', () => drawerBottom.hide());
   </script>`,
@@ -137,20 +137,20 @@ export const ContainedElement: Story = {
     style="position: relative; border: solid 2px var(--awc-panel-border-color); height: 300px; padding: 1rem; margin-bottom: 1rem;"
   >
     The drawer will be contained to this box. This content won't shift or be affected in any way when the drawer opens.
-  
+
     <awc-drawer label="Drawer" contained class="drawer-contained" style="--size: 50%;">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       <awc-button slot="footer" variant="primary">Close</awc-button>
     </awc-drawer>
   </div>
-  
+
   <awc-button>Toggle Drawer</awc-button>
-  
+
   <script>
     const drawerContained = document.querySelector('.drawer-contained');
     const openButtonContained = drawerContained.parentElement.nextElementSibling;
     const closeButtonContained = drawerContained.querySelector('awc-button[variant="primary"]');
-  
+
     openButtonContained.addEventListener('click', () => (drawerContained.open = !drawerContained.open));
     closeButtonContained.addEventListener('click', () => drawerContained.hide());
   </script>`,
@@ -170,14 +170,14 @@ export const CustomSize: Story = {
     This drawer is always 50% of the viewport.
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-drawer>
-  
+
   <awc-button>Open Drawer</awc-button>
-  
+
   <script>
     const drawerCustomSize = document.querySelector('.drawer-custom-size');
     const openButtonCustomSize = drawerCustomSize.nextElementSibling;
     const closeButtonCustomSize = drawerCustomSize.querySelector('awc-button[variant="primary"]');
-  
+
     openButtonCustomSize.addEventListener('click', () => drawerCustomSize.show());
     closeButtonCustomSize.addEventListener('click', () => drawerCustomSize.hide());
   </script>`,
@@ -199,14 +199,14 @@ export const Scrolling: Story = {
     </div>
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-drawer>
-  
+
   <awc-button>Open Drawer</awc-button>
-  
+
   <script>
     const drawerScrolling = document.querySelector('.drawer-scrolling');
     const openButtonScrolling = drawerScrolling.nextElementSibling;
     const closeButtonScrolling = drawerScrolling.querySelector('awc-button[variant="primary"]');
-  
+
     openButtonScrolling.addEventListener('click', () => drawerScrolling.show());
     closeButtonScrolling.addEventListener('click', () => drawerScrolling.hide());
   </script>`,
@@ -227,15 +227,15 @@ export const HeaderActions: Story = {
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-drawer>
-  
+
   <awc-button>Open Drawer</awc-button>
-  
+
   <script>
     const drawerHeaderActions = document.querySelector('.drawer-header-actions');
     const openButtonHeaderActions = drawerHeaderActions.nextElementSibling;
     const closeButtonHeaderActions = drawerHeaderActions.querySelector('awc-button[variant="primary"]');
     const newWindowButton = drawerHeaderActions.querySelector('.new-window');
-  
+
     openButtonHeaderActions.addEventListener('click', () => drawerHeaderActions.show());
     closeButtonHeaderActions.addEventListener('click', () => drawerHeaderActions.hide());
     newWindowButton.addEventListener('click', () => window.open(location.href));
@@ -243,7 +243,7 @@ export const HeaderActions: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](/components/icon-button) if needed."
+        story: "The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](/docs/components-button-icon--docs) if needed."
       }
     }
   }
@@ -256,17 +256,17 @@ export const PreventingDrawerFromClosing: Story = {
     This drawer will not close when you click on the overlay.
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-drawer>
-  
+
   <awc-button>Open Drawer</awc-button>
-  
+
   <script>
     const drawerPrevent = document.querySelector('.drawer-deny-close');
     const openButtonPrevent = drawerPrevent.nextElementSibling;
     const closeButtonPrevent = drawerPrevent.querySelector('awc-button[variant="primary"]');
-  
+
     openButtonPrevent.addEventListener('click', () => drawerPrevent.show());
     closeButtonPrevent.addEventListener('click', () => drawerPrevent.hide());
-  
+
     // Prevent the drawer from closing when the user clicks on the overlay
     drawerPrevent.addEventListener('awc-request-close', event => {
       if (event.detail.source === 'overlay') {
@@ -290,15 +290,15 @@ export const CustomizingInitialFocus: Story = {
     <awc-input autofocus placeholder="I will have focus when the drawer is opened"></awc-input>
     <awc-button slot="footer" variant="primary">Close</awc-button>
   </awc-drawer>
-  
+
   <awc-button>Open Drawer</awc-button>
-  
+
   <script>
     const drawerFocus = document.querySelector('.drawer-focus');
     const input = drawerFocus.querySelector('awc-input');
     const openButtonFocus = drawerFocus.nextElementSibling;
     const closeButtonFocus = drawerFocus.querySelector('awc-button[variant="primary"]');
-  
+
     openButtonFocus.addEventListener('click', () => drawerFocus.show());
     closeButtonFocus.addEventListener('click', () => drawerFocus.hide());
   </script>`,

@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 let id = 0;
 
 /**
- * @summary Tab panels are used inside [tab groups](/components/tab-group) to display tabbed content.
+ * @summary Tab panels are used inside [tab groups](/docs/components-tab-group--docs) to display tabbed content.
  * @documentation https://awc.a-dev.cloud/components/tab-panel
  * @status stable
  * @since 1.0

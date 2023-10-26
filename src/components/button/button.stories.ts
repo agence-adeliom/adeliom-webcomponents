@@ -27,7 +27,7 @@ type Story = StoryObj<AWCButton & typeof args>;
 export const Primary: Story = {
   name: 'Default',
   args: {
-    'default-slot': 'Button'
+    'default-slot': 'Click me'
   }
 };
 
@@ -357,6 +357,41 @@ export const Styling: Story = {
       description: {
         story:
           'This example demonstrates how to style buttons using a custom class. This is the recommended approach if you need to add additional variations. To customize an existing variation, modify the selector to target the button\'s `variant` attribute instead of a class (e.g. `awc-button[variant="primary"]`).'
+      }
+    }
+  }
+};
+
+export const Tomato: Story = {
+  name: 'Tomato',
+  render: () => html`<awc-button class="tomato-button"> Tomato Button </awc-button>
+<style>
+  .tomato-button::part(base) {
+    background: var(--awc-color-neutral-0);
+    border: solid 1px tomato;
+  }
+
+  .tomato-button::part(base):hover {
+    background: rgba(255, 99, 71, 0.1);
+  }
+
+  .tomato-button::part(base):active {
+    background: rgba(255, 99, 71, 0.2);
+  }
+
+  .tomato-button::part(base):focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.33);
+  }
+
+  .tomato-button::part(label) {
+    color: tomato;
+  }
+</style>`,
+  parameters: {
+    docs: {
+      description: {
+        story:
+            'Customize buttons with CSS using the `::part` selector to target individual component parts.'
       }
     }
   }

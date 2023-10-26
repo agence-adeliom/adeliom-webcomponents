@@ -6,7 +6,7 @@ const { events, args, argTypes, template } = getWcStorybookHelpers('awc-format-d
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
-  title: 'Components/Format Date',
+  title: 'Components/Format/Date',
   component: 'awc-format-date',
   tags: ['autodocs'],
   args,
@@ -39,19 +39,19 @@ export const Primary: Story = {
   name: 'Date & Time Formatting',
   render: () => html`<!-- Human-readable date -->
   <awc-format-date month="long" day="numeric" year="numeric"></awc-format-date><br />
-  
+
   <!-- Time -->
   <awc-format-date hour="numeric" minute="numeric"></awc-format-date><br />
-  
+
   <!-- Weekday -->
   <awc-format-date weekday="long"></awc-format-date><br />
-  
+
   <!-- Month -->
   <awc-format-date month="long"></awc-format-date><br />
-  
+
   <!-- Year -->
   <awc-format-date year="numeric"></awc-format-date><br />
-  
+
   <!-- No formatting options -->
   <awc-format-date></awc-format-date>`,
   parameters: {
