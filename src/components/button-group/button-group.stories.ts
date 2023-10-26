@@ -193,7 +193,7 @@ export const SplitButtons: Story = {
     docs: {
       description: {
         story:
-          'Create a split button using a button and a dropdown. Use a [visually hidden](/docs/components-visually-hidden--docs) label to ensure the dropdown is accessible to users with assistive devices.'
+          'Create a split button using a button and a dropdown. Use a [visually hidden](?path=/docs/components-visually-hidden--docs) label to ensure the dropdown is accessible to users with assistive devices.'
       }
     }
   }

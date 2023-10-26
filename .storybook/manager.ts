@@ -13,7 +13,7 @@ addons.setConfig({
   initialActive: 'sidebar',
   sidebar: {
     showRoots: true,
-    collapsedRoots: ['framework', 'tutorial', 'components', 'block']
+    collapsedRoots: ['design-tokens', 'framework', 'tutorial', 'components', 'block']
   },
   toolbar: {
     title: { hidden: false },

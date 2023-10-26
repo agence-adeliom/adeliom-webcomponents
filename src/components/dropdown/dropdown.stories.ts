@@ -19,7 +19,7 @@ const meta = {
     docs: {
       description: {
         component: `Dropdowns consist of a trigger and a panel. By default, activating the trigger will expose the panel and interacting outside of the panel will close it.<br>
-        Dropdowns are designed to work well with [menus](/docs/components-menu--docs) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](/docs/components-color-picker--docs) and [select](/docs/components-select--docs)). The API gives you complete control over showing, hiding, and positioning the panel.`
+        Dropdowns are designed to work well with [menus](?path=/docs/components-menu--docs) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](?path=/docs/components-color-picker--docs) and [select](?path=/docs/components-select--docs)). The API gives you complete control over showing, hiding, and positioning the panel.`
       },
       story: {
         height: '400px'
@@ -85,7 +85,7 @@ export const GettingSelectedItem: Story = {
     docs: {
       description: {
         story:
-          'When dropdowns are used with [menus](/docs/components-menu--docs), you can listen for the [`awc-select`](/docs/components-menu--docs#events) event to determine which menu item was selected. The menu item element will be exposed in `event.detail.item`. You can set `value` props to make it easier to identify commands.'
+          'When dropdowns are used with [menus](?path=/docs/components-menu--docs), you can listen for the [`awc-select`](?path=/docs/components-menu--docs#events) event to determine which menu item was selected. The menu item element will be exposed in `event.detail.item`. You can set `value` props to make it easier to identify commands.'
       }
     }
   }

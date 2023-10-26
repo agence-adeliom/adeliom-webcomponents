@@ -6,7 +6,7 @@ import { Story, Canvas, Title, Subtitle, Meta } from '@storybook/blocks';
 
 ## CDN Installation
 
-You can load Adeliom WebComponents via CDN or by installing it locally. If you're using a framework, make sure to check out the pages for [React](/frameworks/react), [Vue](/frameworks/vue), and [Angular](/frameworks/angular) for additional information.
+You can load Adeliom WebComponents via CDN or by installing it locally. If you're using a framework, make sure to check out the pages for [React](?path=/docs/framework-react--docs), [Vue](?path=/docs/framework-vue--docs), and [Angular](?path=/docs/framework-angular--docs) for additional information.
 
 The CDN loader registers all Adeliom WebComponents elements up front. Note that, if you're only using a handful of components, it will be much more efficient to stick with the autoloader.
 However, you can also [cherry pick](#cherry-picking) components if you want to load specific ones up front.
@@ -18,7 +18,7 @@ However, you can also [cherry pick](#cherry-picking) components if you want to l
 
 ### Dark Theme
 
-The code above will load the light theme. If you want to use the [dark theme](/getting-started/themes#dark-theme) instead, update the stylesheet as shown below and add `<html class="awc-theme-dark">` to your page.
+The code above will load the light theme. If you want to use the [dark theme](?path=/docs/getting-started-themes--docs#dark-theme) instead, update the stylesheet as shown below and add `<html class="awc-theme-dark">` to your page.
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%NPMDIR%/themes/dark.css" />
@@ -26,7 +26,7 @@ The code above will load the light theme. If you want to use the [dark theme](/g
 
 ### Light & Dark Theme
 
-If you want to load the light or dark theme based on the user's `prefers-color-scheme` setting, use the stylesheets below. The `media` attributes ensure that only the user's preferred theme stylesheet loads and the `onload` attribute sets the appropriate [theme class](/getting-started/themes) on the `<html>` element.
+If you want to load the light or dark theme based on the user's `prefers-color-scheme` setting, use the stylesheets below. The `media` attributes ensure that only the user's preferred theme stylesheet loads and the `onload` attribute sets the appropriate [theme class](?path=/docs/getting-started-themes--docs) on the `<html>` element.
 
 ```html
 <link
@@ -42,7 +42,7 @@ If you want to load the light or dark theme based on the user's `prefers-color-s
 />
 ```
 
-Now you can [start using Adeliom WebComponents!](/getting-started/usage)
+Now you can [start using Adeliom WebComponents!](?path=/docs/getting-started-usage--docs)
 
 ## Package installation
 

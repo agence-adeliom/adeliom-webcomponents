@@ -11,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
 let id = 0;
 
 /**
- * @summary Tabs are used inside [tab groups](/docs/components-tab-group--docs) to represent and activate [tab panels](/docs/components-tab-panel--docs).
+ * @summary Tabs are used inside [tab groups](?path=/docs/components-tab-group--docs) to represent and activate [tab panels](?path=/docs/components-tab-panel--docs).
  * @documentation https://awc.a-dev.cloud/components/tab
  * @status stable
  * @since 1.0

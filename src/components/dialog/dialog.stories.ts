@@ -134,7 +134,7 @@ export const HeaderActions: Story = {
     docs: {
       description: {
         story:
-          'The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](/docs/components-button-icon--docs) if needed.'
+          'The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](?path=/docs/components-button-icon--docs) if needed.'
       }
     }
   }

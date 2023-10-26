@@ -9,7 +9,7 @@ import styles from './option.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
- * @summary Options define the selectable items within various form controls such as [select](/docs/components-select--docs).
+ * @summary Options define the selectable items within various form controls such as [select](?path=/docs/components-select--docs).
  * @documentation https://awc.a-dev.cloud/components/option
  * @status stable
  * @since 1.0

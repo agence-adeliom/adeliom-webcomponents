@@ -8,7 +8,7 @@ import styles from './breadcrumb-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
- * @summary Breadcrumb Items are used inside [breadcrumbs](/docs/components-breadcrumb--docs) to represent different links.
+ * @summary Breadcrumb Items are used inside [breadcrumbs](?path=/docs/components-breadcrumb--docs) to represent different links.
  * @documentation https://awc.a-dev.cloud/components/breadcrumb-item
  * @status stable
  * @since 1.0

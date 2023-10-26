@@ -5,7 +5,7 @@ import styles from './carousel-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
- * @summary A carousel item represent a slide within a [carousel](/docs/components-carousel--docs).
+ * @summary A carousel item represent a slide within a [carousel](?path=/docs/components-carousel--docs).
  *
  * @since 1.0
  * @status experimental

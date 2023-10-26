@@ -106,7 +106,7 @@ export const MenuDividers: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Use dividers in [menus](/docs/components-menu--docs) to visually group menu items.'
+        story: 'Use dividers in [menus](?path=/docs/components-menu--docs) to visually group menu items.'
       }
     }
   }
@@ -195,7 +195,7 @@ export const HeaderActions: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](/docs/components-button-icon--docs) if needed."
+        story: "The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](?path=/docs/components-button-icon--docs) if needed."
       }
     }
   }

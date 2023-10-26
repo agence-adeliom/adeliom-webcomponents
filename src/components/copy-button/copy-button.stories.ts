@@ -66,7 +66,7 @@ export const CustomIcons: Story = {
     docs: {
       description: {
         story:
-          'Use the `copy-icon`, `success-icon`, and `error-icon` slots to customize the icons that get displayed for each state. You can use [`<awc-icon>`](/docs/components-icon--docs) or your own images.'
+          'Use the `copy-icon`, `success-icon`, and `error-icon` slots to customize the icons that get displayed for each state. You can use [`<awc-icon>`](?path=/docs/components-icon--docs) or your own images.'
       }
     }
   }
