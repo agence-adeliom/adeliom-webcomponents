@@ -101,7 +101,8 @@ export const Pagination: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Use the `pagination` attribute to show the total number of slides and the current slide as a set of interactive dots."
+        story:
+          'Use the `pagination` attribute to show the total number of slides and the current slide as a set of interactive dots.'
       }
     }
   }
@@ -146,7 +147,7 @@ export const Navigation: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Use the `navigation` attribute to show previous and next buttons."
+        story: 'Use the `navigation` attribute to show previous and next buttons.'
       }
     }
   }
@@ -191,7 +192,8 @@ export const Looping: Story = {
   parameters: {
     docs: {
       description: {
-        story: "By default, the carousel will not advanced beyond the first and last slides. You can change this behavior and force the carousel to 'wrap' with the `loop` attribute."
+        story:
+          "By default, the carousel will not advanced beyond the first and last slides. You can change this behavior and force the carousel to 'wrap' with the `loop` attribute."
       }
     }
   }
@@ -236,7 +238,8 @@ export const Autoplay: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The carousel will automatically advance when the `autoplay` attribute is used. To change how long a slide is shown before advancing, set `autoplay-interval` to the desired number of milliseconds. For best results, use the `loop` attribute when autoplay is enabled. Note that autoplay will pause while the user interacts with the carousel."
+        story:
+          'The carousel will automatically advance when the `autoplay` attribute is used. To change how long a slide is shown before advancing, set `autoplay-interval` to the desired number of milliseconds. For best results, use the `loop` attribute when autoplay is enabled. Note that autoplay will pause while the user interacts with the carousel.'
       }
     }
   }
@@ -297,7 +300,8 @@ export const MouseDragging: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The carousel uses [scroll snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) to position slides at various snap positions. This allows users to scroll through the slides very naturally, especially on touch devices. Unfortunately, desktop users won't be able to click and drag with a mouse, which can feel unnatural. Adding the `mouse-dragging` attribute can help with this.<br><br>This example is best demonstrated using a mouse. Try clicking and dragging the slide to move it. Then toggle the switch and try again."
+        story:
+          "The carousel uses [scroll snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) to position slides at various snap positions. This allows users to scroll through the slides very naturally, especially on touch devices. Unfortunately, desktop users won't be able to click and drag with a mouse, which can feel unnatural. Adding the `mouse-dragging` attribute can help with this.<br><br>This example is best demonstrated using a mouse. Try clicking and dragging the slide to move it. Then toggle the switch and try again."
       }
     }
   }
@@ -318,7 +322,8 @@ export const MultipleSlidesPerView: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The `slides-per-page` attribute makes it possible to display multiple slides at a time. You can also use the `slides-per-move` attribute to advance more than once slide at a time, if desired."
+        story:
+          'The `slides-per-page` attribute makes it possible to display multiple slides at a time. You can also use the `slides-per-move` attribute to advance more than once slide at a time, if desired.'
       }
     }
   }
@@ -396,7 +401,8 @@ export const AddingRemovingSlides: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The content of the carousel can be changed by adding or removing carousel items. The carousel will update itself automatically."
+        story:
+          'The content of the carousel can be changed by adding or removing carousel items. The carousel will update itself automatically.'
       }
     }
   }
@@ -459,7 +465,8 @@ export const VerticalScrolling: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Setting the `orientation` attribute to `vertical` will render the carousel in a vertical layout. If the content of your slides vary in height, you will need to set amn explicit `height` or `max-height` on the carousel using CSS."
+        story:
+          'Setting the `orientation` attribute to `vertical` will render the carousel in a vertical layout. If the content of your slides vary in height, you will need to set amn explicit `height` or `max-height` on the carousel using CSS.'
       }
     }
   }
@@ -569,7 +576,8 @@ export const ScrollHint: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Use the `--scroll-hint` custom property to add inline padding in horizontal carousels and block padding in vertical carousels. This will make the closest slides slightly visible, hinting that there are more items in the carousel."
+        story:
+          'Use the `--scroll-hint` custom property to add inline padding in horizontal carousels and block padding in vertical carousels. This will make the closest slides slightly visible, hinting that there are more items in the carousel.'
       }
     }
   }
@@ -694,7 +702,8 @@ export const GalleryExample: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The carousel has a robust API that makes it possible to extend and customize. This example syncs the active slide with a set of thumbnails, effectively creating a gallery-style carousel."
+        story:
+          'The carousel has a robust API that makes it possible to extend and customize. This example syncs the active slide with a set of thumbnails, effectively creating a gallery-style carousel.'
       }
     }
   }

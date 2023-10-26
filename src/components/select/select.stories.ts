@@ -21,7 +21,6 @@ const meta = {
         component: `> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.`
       }
     }
-
   },
   render: context => template(context)
 } satisfies Meta<AWCSelect & typeof args>;
@@ -35,7 +34,7 @@ export const Primary: Story = {
   parameters: {
     docs: {
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   },
@@ -64,7 +63,7 @@ export const Labels: Story = {
         story: `Use the \`label\` attribute to give the select an accessible label. For labels that contain HTML, use the \`label\` slot instead.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -84,7 +83,7 @@ export const HelpText: Story = {
         story: `Add descriptive help text to a select with the \`help-text\` attribute. For help texts that contain HTML, use the \`help-text\` slot instead.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -104,7 +103,7 @@ export const Placeholders: Story = {
         story: `Use the \`placeholder\` attribute to add a placeholder.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -124,7 +123,7 @@ export const Clearable: Story = {
         story: `Use the \`clearable\` attribute to make the control clearable. The clear button only appears when an option is selected.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -144,7 +143,7 @@ export const FilledSelects: Story = {
         story: `Add the \`filled\` attribute to draw a filled select.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -164,7 +163,7 @@ export const Pill: Story = {
         story: `Use the \`pill\` attribute to give selects rounded edges.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -206,7 +205,7 @@ export const Multiple: Story = {
 > Note that multi-select options may wrap, causing the control to expand vertically. You can use the \`max-options-visible\` attribute to control the maximum number of selected options to show at once.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -227,7 +226,7 @@ export const InitialValues: Story = {
         story: `Use the \`value\` attribute to set the initial selection. When using \`multiple\`, use space-delimited values to select more than one option.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -253,7 +252,7 @@ export const Grouping: Story = {
         story: `Use \`<awc-divider>\` to group listbox items visually. You can also use \`<small>\` to provide labels, but they won't be announced by most assistive devices.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -306,7 +305,7 @@ export const Placement: Story = {
         story: `The preferred placement of the select's listbox can be set with the \`placement\` attribute. Note that the actual position may vary to ensure the panel remains in the viewport. Valid placements are \`top\` and \`bottom\`.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }

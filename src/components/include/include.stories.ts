@@ -34,8 +34,8 @@ type Story = StoryObj<AWCInclude & typeof args>;
 export const Primary: Story = {
   name: 'Example',
   args: {
-    src: '/examples/include.html',
-  },
+    src: '/examples/include.html'
+  }
 };
 
 export const Listening: Story = {
@@ -49,21 +49,22 @@ If the request fails, the \`awc-error\` event will be emitted. In this case, \`e
       }
     }
   },
-  render: () => html`<awc-include src="/examples/include.html"></awc-include>
+  render: () =>
+    html`<awc-include src="/examples/include.html"></awc-include>
 
-  <script>
-      const include = document.querySelector('awc-include');
+      <script>
+        const include = document.querySelector('awc-include');
 
-      include.addEventListener('awc-load', event => {
+        include.addEventListener('awc-load', event => {
           if (event.eventPhase === Event.AT_TARGET) {
-              console.log('Success');
+            console.log('Success');
           }
-      });
+        });
 
-      include.addEventListener('awc-error', event => {
+        include.addEventListener('awc-error', event => {
           if (event.eventPhase === Event.AT_TARGET) {
-              console.log('Error', event.detail.status);
+            console.log('Error', event.detail.status);
           }
-      });
-  </script>`,
+        });
+      </script>`
 };

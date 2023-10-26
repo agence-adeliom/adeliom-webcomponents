@@ -46,9 +46,10 @@ export const Sizes: Story = {
       }
     }
   },
-  render: () => html`<awc-icon-button name="pencil" label="Edit" style="font-size: 1.5rem;"></awc-icon-button>
-  <awc-icon-button name="pencil" label="Edit" style="font-size: 2rem;"></awc-icon-button>
-  <awc-icon-button name="pencil" label="Edit" style="font-size: 2.5rem;"></awc-icon-button>`
+  render: () =>
+    html`<awc-icon-button name="pencil" label="Edit" style="font-size: 1.5rem;"></awc-icon-button>
+      <awc-icon-button name="pencil" label="Edit" style="font-size: 2rem;"></awc-icon-button>
+      <awc-icon-button name="pencil" label="Edit" style="font-size: 2.5rem;"></awc-icon-button>`
 };
 
 export const Colors: Story = {
@@ -60,26 +61,27 @@ export const Colors: Story = {
       }
     }
   },
-  render: () => html`<div class="icon-button-color">
-      <awc-icon-button name="type-bold" label="Bold"></awc-icon-button>
-      <awc-icon-button name="type-italic" label="Italic"></awc-icon-button>
-      <awc-icon-button name="type-underline" label="Underline"></awc-icon-button>
-  </div>
+  render: () =>
+    html`<div class="icon-button-color">
+        <awc-icon-button name="type-bold" label="Bold"></awc-icon-button>
+        <awc-icon-button name="type-italic" label="Italic"></awc-icon-button>
+        <awc-icon-button name="type-underline" label="Underline"></awc-icon-button>
+      </div>
 
-  <style>
-      .icon-button-color awc-icon-button::part(base) {
+      <style>
+        .icon-button-color awc-icon-button::part(base) {
           color: #b00091;
-      }
+        }
 
-      .icon-button-color awc-icon-button::part(base):hover,
-      .icon-button-color awc-icon-button::part(base):focus {
+        .icon-button-color awc-icon-button::part(base):hover,
+        .icon-button-color awc-icon-button::part(base):focus {
           color: #c913aa;
-      }
+        }
 
-      .icon-button-color awc-icon-button::part(base):active {
+        .icon-button-color awc-icon-button::part(base):active {
           color: #960077;
-      }
-  </style>`
+        }
+      </style>`
 };
 
 export const LinkButtons: Story = {
@@ -95,7 +97,7 @@ export const LinkButtons: Story = {
     name: 'gear',
     label: 'Settings',
     href: 'https://example.com',
-    target: '_blank',
+    target: '_blank'
   }
 };
 
@@ -108,14 +110,12 @@ export const Tooltip: Story = {
       }
     }
   },
-  render: (args) => html`<awc-tooltip content="${args.label}">
-      ${template(args)}
-  </awc-tooltip>`,
+  render: args => html`<awc-tooltip content="${args.label}"> ${template(args)} </awc-tooltip>`,
   args: {
     name: 'gear',
     label: 'Settings',
     href: 'https://example.com',
-    target: '_blank',
+    target: '_blank'
   }
 };
 

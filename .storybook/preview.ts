@@ -13,8 +13,8 @@ import './template/story.style.css';
 import { setBasePath } from '../src/utilities/base-path.js';
 import prettify from '@liquify/prettify';
 import { withSource } from './wc-helper/code/withSource';
-import AwcTheme from "./AwcTheme";
-import AwcDocTheme from "./AwcDocTheme";
+import AwcTheme from './AwcTheme';
+import AwcDocTheme from './AwcDocTheme';
 
 setBasePath('/');
 setCustomElementsManifest(customElements);
@@ -48,17 +48,10 @@ const preview: Preview = {
         method: 'alphabetical',
         order: [
           'Welcome',
-          'Getting started', ['Installation', 'Usage', 'Themes', 'Customizing', 'Form Controls', 'Localization' ],
-          'Design Tokens', [
-            'Typography',
-            'Color',
-            'Spacing',
-            'Elevation',
-            'Border Radius',
-            'Transition',
-            'Z-Index',
-            'Other'
-          ],
+          'Getting started',
+          ['Installation', 'Usage', 'Themes', 'Customizing', 'Form Controls', 'Localization'],
+          'Design Tokens',
+          ['Typography', 'Color', 'Spacing', 'Elevation', 'Border Radius', 'Transition', 'Z-Index', 'Other'],
           'Framework',
           'Tutorial',
           'Components',
@@ -75,8 +68,8 @@ const preview: Preview = {
         headingSelector: 'h2, h3',
         ignoreSelector: '#primary, .sbdocs-title, .sbdocs-subtitle',
         unsafeTocbotOptions: {
-          orderedList: false,
-        },
+          orderedList: false
+        }
       },
       story: {
         inline: true

@@ -35,31 +35,31 @@ export const Primary: Story = {
     <awc-carousel pagination>
       <awc-carousel-item>
         <img
-          alt="The sun shines on the mountains and trees - Photo by Adam Kool on Unsplash"
+          alt="The sun shines on the mountains and trees - By Adam Kool on Unsplash"
           src="/assets/examples/carousel/mountains.jpg"
         />
       </awc-carousel-item>
       <awc-carousel-item>
         <img
-          alt="A waterfall in the middle of a forest - Photo by Thomas Kelly on Unsplash"
+          alt="A waterfall in the middle of a forest - By Thomas Kelly on Unsplash"
           src="/assets/examples/carousel/waterfall.jpg"
         />
       </awc-carousel-item>
       <awc-carousel-item>
         <img
-          alt="The sun is setting over a lavender field - Photo by Leonard Cotte on Unsplash"
+          alt="The sun is setting over a lavender field - By Leonard Cotte on Unsplash"
           src="/assets/examples/carousel/sunset.jpg"
         />
       </awc-carousel-item>
       <awc-carousel-item>
         <img
-          alt="A field of grass with the sun setting in the background - Photo by Sapan Patel on Unsplash"
+          alt="A field of grass with the sun setting in the background - By Sapan Patel on Unsplash"
           src="/assets/examples/carousel/field.jpg"
         />
       </awc-carousel-item>
       <awc-carousel-item>
         <img
-          alt="A scenic view of a mountain with clouds rolling in - Photo by V2osk on Unsplash"
+          alt="A scenic view of a mountain with clouds rolling in - By V2osk on Unsplash"
           src="/assets/examples/carousel/valley.jpg"
         />
       </awc-carousel-item>

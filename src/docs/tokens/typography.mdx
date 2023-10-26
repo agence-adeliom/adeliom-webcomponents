@@ -1,37 +1,37 @@
-import {Story, Canvas, Title, Subtitle, Meta, Typeset} from "@storybook/blocks";
-import {AWCTab, AWCTabGroup, AWCTabPanel, AWCTypography} from "../../react";
+import { Story, Canvas, Title, Subtitle, Meta, Typeset } from '@storybook/blocks';
+import { AWCTab, AWCTabGroup, AWCTabPanel, AWCTypography } from '../../react';
 
-<Meta title="Design Tokens/Typography" parameters={{docs: {toc: {disable: false}}}} />
+<Meta title="Design Tokens/Typography" parameters={{ docs: { toc: { disable: false } } }} />
 
 export const typography = {
-    type: {
-        sans: 'var(--awc-font-sans)',
-        serif: 'var(--awc-font-serif)',
-        mono: 'var(--awc-font-mono)',
-    },
-    weight: {
-        light: 'var(--awc-font-weight-light)',
-        normal: 'var(--awc-font-weight-normal)',
-        semibold: 'var(--awc-font-weight-semibold)',
-        bold: 'var(--awc-font-weight-bold)',
-    },
-    size: {
-        '2x-small' : 10,
-        'x-small'  : 12,
-        'small'    : 14,
-        'medium'   : 16,
-        'large'    : 18,
-        'x-large'  : 20,
-        '2x-large' : 24,
-        '3x-large' : 30,
-        '4x-large' : 36,
-        '5x-large' : 48,
-        '6x-large' : 60,
-        '7x-large' : 72,
-        '8x-large' : 76,
-        '9x-large' : 80,
-        '10x-large': 84,
-    },
+  type: {
+    sans: 'var(--awc-font-sans)',
+    serif: 'var(--awc-font-serif)',
+    mono: 'var(--awc-font-mono)'
+  },
+  weight: {
+    light: 'var(--awc-font-weight-light)',
+    normal: 'var(--awc-font-weight-normal)',
+    semibold: 'var(--awc-font-weight-semibold)',
+    bold: 'var(--awc-font-weight-bold)'
+  },
+  size: {
+    '2x-small': 10,
+    'x-small': 12,
+    small: 14,
+    medium: 16,
+    large: 18,
+    'x-large': 20,
+    '2x-large': 24,
+    '3x-large': 30,
+    '4x-large': 36,
+    '5x-large': 48,
+    '6x-large': 60,
+    '7x-large': 72,
+    '8x-large': 76,
+    '9x-large': 80,
+    '10x-large': 84
+  }
 };
 
 export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
@@ -44,8 +44,8 @@ Typography tokens are used to maintain a consistent set of font styles throughou
 
 The default font stack is designed to be simple and highly available on as many devices as possible.
 
-| Token              | Value                                                                                                                                         | Example                                                                                               |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Token              | Value                                                                                                                                         | Example                                                                                                    |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `--awc-font-sans`  | -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' | <span style={{ fontFamily: 'var(--awc-font-sans)' }}>The quick brown fox jumped over the lazy dog.</span>  |
 | `--awc-font-serif` | Georgia, 'Times New Roman', serif                                                                                                             | <span style={{ fontFamily: 'var(--awc-font-serif)' }}>The quick brown fox jumped over the lazy dog.</span> |
 | `--awc-font-mono`  | SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;                                                                                | <span style={{ fontFamily: 'var(--awc-font-mono)' }}>The quick brown fox jumped over the lazy dog.</span>  |
@@ -55,8 +55,8 @@ The default font stack is designed to be simple and highly available on as many 
 Font sizes use `rem` units so they scale with the base font size. The pixel values displayed are based on a 16px font
 size.
 
-| Token                       | Value           | Example                                                           |
-| --------------------------- | --------------- | ----------------------------------------------------------------- |
+| Token                       | Value           | Example                                                                |
+| --------------------------- | --------------- | ---------------------------------------------------------------------- |
 | `--awc-font-size-2x-small`  | 0.625rem (10px) | <span style={{ fontSize: 'var(--awc-font-size-2x-small)' }}>Aa</span>  |
 | `--awc-font-size-x-small`   | 0.75rem (12px)  | <span style={{ fontSize: 'var(--awc-font-size-x-small)' }}>Aa</span>   |
 | `--awc-font-size-small`     | 0.875rem (14px) | <span style={{ fontSize: 'var(--awc-font-size-small)' }}>Aa</span>     |
@@ -78,8 +78,8 @@ size.
 
 ## Responsive Font Size
 
-| Token                      | Value                           | Value >= 1024px                 | Value >= 1280px                 | Example                                                          |
-| -------------------------- | ------------------------------- | ------------------------------- | ------------------------------- | ---------------------------------------------------------------- |
+| Token                      | Value                           | Value >= 1024px                 | Value >= 1280px                 | Example                                                               |
+| -------------------------- | ------------------------------- | ------------------------------- | ------------------------------- | --------------------------------------------------------------------- |
 | `--awc-font-size-base`     | `var(--awc-font-size-medium)`   | `var(--awc-font-size-medium)`   | `var(--awc-font-size-medium)`   | <span style={{ fontSize: 'var(--awc-font-size-base)' }}>Aa</span>     |
 | `--awc-font-size-heading6` | `var(--awc-font-size-large)`    | `var(--awc-font-size-x-large)`  | `var(--awc-font-size-2x-large)` | <span style={{ fontSize: 'var(--awc-font-size-heading6)' }}>Aa</span> |
 | `--awc-font-size-heading5` | `var(--awc-font-size-x-large)`  | `var(--awc-font-size-2x-large)` | `var(--awc-font-size-3x-large)` | <span style={{ fontSize: 'var(--awc-font-size-heading5)' }}>Aa</span> |
@@ -90,8 +90,8 @@ size.
 
 ## Font Weight
 
-| Token                        | Value | Example                                                                                                          |
-| ---------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------- |
+| Token                        | Value | Example                                                                                                              |
+| ---------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------- |
 | `--awc-font-weight-light`    | 300   | <span style={{ fontWeight: 'var(--awc-font-weight-light)' }}>The quick brown fox jumped over the lazy dog.</span>    |
 | `--awc-font-weight-normal`   | 400   | <span style={{ fontWeight: 'var(--awc-font-weight-normal)' }}>The quick brown fox jumped over the lazy dog.</span>   |
 | `--awc-font-weight-semibold` | 500   | <span style={{ fontWeight: 'var(--awc-font-weight-semibold)' }}>The quick brown fox jumped over the lazy dog.</span> |
@@ -99,8 +99,8 @@ size.
 
 ## Letter Spacing
 
-| Token                         | Value    | Example                                                                                                              |
-| ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| Token                         | Value    | Example                                                                                                                  |
+| ----------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `--awc-letter-spacing-denser` | -0.03em  | <span style={{ letterSpacing: 'var(--awc-letter-spacing-denser)' }}>The quick brown fox jumped over the lazy dog.</span> |
 | `--awc-letter-spacing-dense`  | -0.015em | <span style={{ letterSpacing: 'var(--awc-letter-spacing-dense)' }}>The quick brown fox jumped over the lazy dog.</span>  |
 | `--awc-letter-spacing-normal` | normal   | <span style={{ letterSpacing: 'var(--awc-letter-spacing-normal)' }}>The quick brown fox jumped over the lazy dog.</span> |
@@ -109,8 +109,8 @@ size.
 
 ## Line Height
 
-| Token                      | Value | Example                                                                                                                                                                                                        |
-| -------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Token                      | Value | Example                                                                                                                                                                                                              |
+| -------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--awc-line-height-denser` | 1     | <div style={{ lineHeight: 'var(--awc-line-height-denser)' }}>The quick brown fox jumped over the lazy dog.<br/>The quick brown fox jumped over the lazy dog.<br/>The quick brown fox jumped over the lazy dog.</div> |
 | `--awc-line-height-dense`  | 1.4   | <div style={{ lineHeight: 'var(--awc-line-height-dense)' }}>The quick brown fox jumped over the lazy dog.<br/>The quick brown fox jumped over the lazy dog.<br/>The quick brown fox jumped over the lazy dog.</div>  |
 | `--awc-line-height-normal` | 1.8   | <div style={{ lineHeight: 'var(--awc-line-height-normal)' }}>The quick brown fox jumped over the lazy dog.<br/>The quick brown fox jumped over the lazy dog.<br/>The quick brown fox jumped over the lazy dog.</div> |
@@ -119,20 +119,22 @@ size.
 
 ## Typesets
 
-<AWCTabGroup data-mode={"light"}>
-    {Object.keys(typography.type).map((type) => {
-        return (
-            <>
-                <AWCTab slot='nav' panel={type}>{type.toUpperCase()}</AWCTab>
-                <AWCTabPanel name={type}>
-                    <Typeset
-                        fontSizes={Object.values(typography.size)}
-                        fontWeight={typography.weight.normal}
-                        sampleText={SampleText}
-                        fontFamily={typography.type[type]}
-                    />
-                </AWCTabPanel>
-            </>
-        )
-    })}
+<AWCTabGroup data-mode={'light'}>
+  {Object.keys(typography.type).map(type => {
+    return (
+      <>
+        <AWCTab slot="nav" panel={type}>
+          {type.toUpperCase()}
+        </AWCTab>
+        <AWCTabPanel name={type}>
+          <Typeset
+            fontSizes={Object.values(typography.size)}
+            fontWeight={typography.weight.normal}
+            sampleText={SampleText}
+            fontFamily={typography.type[type]}
+          />
+        </AWCTabPanel>
+      </>
+    );
+  })}
 </AWCTabGroup>

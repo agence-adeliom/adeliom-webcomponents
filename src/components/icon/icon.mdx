@@ -115,6 +115,7 @@ registerIconLibrary('boxicons', {
   mutator: svg => svg.setAttribute('fill', 'currentColor')
 });
 ```
+
 #### Usage
 
 <Canvas of={IconStories.Boxicons} />
@@ -134,6 +135,7 @@ registerIconLibrary('lucide', {
   resolver: name => `https://cdn.jsdelivr.net/npm/lucide-static@0.288.0/icons/${name}.svg`
 });
 ```
+
 #### Usage
 
 <Canvas of={IconStories.Lucide} />
@@ -160,6 +162,7 @@ registerIconLibrary('fa', {
   mutator: svg => svg.setAttribute('fill', 'currentColor')
 });
 ```
+
 #### Usage
 
 <Canvas of={IconStories.FontAwesome} />
@@ -184,6 +187,7 @@ registerIconLibrary('heroicons', {
   }
 });
 ```
+
 #### Usage
 
 <Canvas of={IconStories.Heroicons} />
@@ -194,7 +198,6 @@ This will register the [Iconoir](https://iconoir.com/) library using the jsDeliv
 
 Icons in this library are licensed under the [MIT License](https://github.com/lucaburgio/iconoir/blob/master/LICENSE).
 
-
 #### Library registration
 
 ```js
@@ -204,6 +207,7 @@ registerIconLibrary('iconoir', {
   resolver: name => `https://cdn.jsdelivr.net/npm/iconoir@6.11.0/icons/${name}.svg`
 });
 ```
+
 #### Usage
 
 <Canvas of={IconStories.Iconoir} />
@@ -381,9 +385,8 @@ As always, make sure to benchmark these changes. When using HTTP/2, it may in fa
 > When using sprite sheets, the `awc-load` and `awc-error` events will not fire.
 
 > For security reasons, browsers may apply the same-origin policy on `<use>` elements located in the `<awc-icon>` shadow dom and
-may refuse to load a cross-origin URL. There is currently no defined way to set a cross-origin policy for `<use>` elements.
-For this reason, sprite sheets should only be used if you're self-hosting them.
-
+> may refuse to load a cross-origin URL. There is currently no defined way to set a cross-origin policy for `<use>` elements.
+> For this reason, sprite sheets should only be used if you're self-hosting them.
 
 #### Library registration
 

@@ -50,7 +50,7 @@ module.exports = {
         'no-invalid-this': 'off',
         '@typescript-eslint/no-invalid-this': 'error',
         'no-shadow': 'off',
-        '@typescript-eslint/no-shadow': 'error',
+        '@typescript-eslint/no-shadow': 'off',
         'no-throw-literal': 'off',
         '@typescript-eslint/no-throw-literal': 'error',
         'no-unused-expressions': 'off',
@@ -96,7 +96,8 @@ module.exports = {
         '@typescript-eslint/no-redundant-type-constituents': 'off',
         '@typescript-eslint/parameter-properties': 'error',
         '@typescript-eslint/strict-boolean-expressions': 'off',
-        'storybook/no-redundant-story-name': 'off'
+        'storybook/no-redundant-story-name': 'off',
+        'lit-a11y/no-autofocus': 'off'
       }
     },
     {

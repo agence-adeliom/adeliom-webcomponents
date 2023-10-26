@@ -15,7 +15,7 @@ const meta = {
     layout: 'padded',
     actions: {
       handles: events
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCProgressBar & typeof args>;
@@ -27,7 +27,7 @@ type Story = StoryObj<AWCProgressBar & typeof args>;
 export const Primary: Story = {
   name: 'Default',
   args: {
-    value: 25,
+    value: 25
   }
 };
 
@@ -35,7 +35,7 @@ export const CustomHeight: Story = {
   name: 'Custom Height',
   args: {
     value: 50,
-    '--height': '6px',
+    '--height': '6px'
   },
   parameters: {
     docs: {
@@ -51,7 +51,7 @@ export const CustomRadius: Story = {
   args: {
     value: 50,
     '--track-radius': '9999px',
-    '--indicator-radius': '9999px',
+    '--indicator-radius': '9999px'
   },
   parameters: {
     docs: {
@@ -67,7 +67,7 @@ export const Colors: Story = {
   args: {
     value: 50,
     '--track-color': 'pink',
-    '--indicator-color': 'deeppink',
+    '--indicator-color': 'deeppink'
   },
   parameters: {
     docs: {
@@ -82,7 +82,7 @@ export const Labels: Story = {
   name: 'Labels',
   args: {
     value: 50,
-    label: 'Upload progress',
+    label: 'Upload progress'
   },
   parameters: {
     docs: {
@@ -95,34 +95,34 @@ export const Labels: Story = {
 
 export const ShowingValues: Story = {
   name: 'Showing Values',
-  render: () => html`
-      <awc-progress-bar value="50" class="progress-bar-values">50%</awc-progress-bar>
+  render: () =>
+    html` <awc-progress-bar value="50" class="progress-bar-values">50%</awc-progress-bar>
 
-      <br/>
+      <br />
 
       <awc-button circle>
-          <awc-icon name="dash" label="Decrease"></awc-icon>
+        <awc-icon name="dash" label="Decrease"></awc-icon>
       </awc-button>
       <awc-button circle>
-          <awc-icon name="plus" label="Increase"></awc-icon>
+        <awc-icon name="plus" label="Increase"></awc-icon>
       </awc-button>
 
       <script>
-          const progressBar = document.querySelector('.progress-bar-values');
-          const subtractButton = progressBar.nextElementSibling.nextElementSibling;
-          const addButton = subtractButton.nextElementSibling;
+        const progressBar = document.querySelector('.progress-bar-values');
+        const subtractButton = progressBar.nextElementSibling.nextElementSibling;
+        const addButton = subtractButton.nextElementSibling;
 
-          addButton.addEventListener('click', () => {
-              const value = Math.min(100, progressBar.value + 10);
-              progressBar.value = value;
-              progressBar.textContent = \`\${value}%\`;
-          });
+        addButton.addEventListener('click', () => {
+          const value = Math.min(100, progressBar.value + 10);
+          progressBar.value = value;
+          progressBar.textContent = \`\${value}%\`;
+        });
 
-          subtractButton.addEventListener('click', () => {
-              const value = Math.max(0, progressBar.value - 10);
-              progressBar.value = value;
-              progressBar.textContent = \`\${value}%\`;
-          });
+        subtractButton.addEventListener('click', () => {
+          const value = Math.max(0, progressBar.value - 10);
+          progressBar.value = value;
+          progressBar.textContent = \`\${value}%\`;
+        });
       </script>`,
   parameters: {
     docs: {
@@ -136,7 +136,7 @@ export const ShowingValues: Story = {
 export const Indeterminate: Story = {
   name: 'Indeterminate',
   args: {
-    indeterminate: true,
+    indeterminate: true
   },
   parameters: {
     docs: {

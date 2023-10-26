@@ -14,7 +14,7 @@ const meta = {
     layout: '',
     actions: {
       handles: events
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCPopup & typeof args>;
@@ -25,92 +25,93 @@ type Story = StoryObj<AWCPopup & typeof args>;
 
 export const Primary: Story = {
   name: 'Example',
-  render: () => html`<div class="popup-overview p-4">
-      <awc-popup placement="top" active>
+  render: () =>
+    html`<div class="popup-overview p-4">
+        <awc-popup placement="top" active>
           <span slot="anchor"></span>
           <div class="box"></div>
-      </awc-popup>
+        </awc-popup>
 
-      <div class="popup-overview-options">
+        <div class="popup-overview-options">
           <awc-select label="Placement" name="placement" value="top" class="popup-overview-select">
-              <awc-option value="top">top</awc-option>
-              <awc-option value="top-start">top-start</awc-option>
-              <awc-option value="top-end">top-end</awc-option>
-              <awc-option value="bottom">bottom</awc-option>
-              <awc-option value="bottom-start">bottom-start</awc-option>
-              <awc-option value="bottom-end">bottom-end</awc-option>
-              <awc-option value="right">right</awc-option>
-              <awc-option value="right-start">right-start</awc-option>
-              <awc-option value="right-end">right-end</awc-option>
-              <awc-option value="left">left</awc-option>
-              <awc-option value="left-start">left-start</awc-option>
-              <awc-option value="left-end">left-end</awc-option>
+            <awc-option value="top">top</awc-option>
+            <awc-option value="top-start">top-start</awc-option>
+            <awc-option value="top-end">top-end</awc-option>
+            <awc-option value="bottom">bottom</awc-option>
+            <awc-option value="bottom-start">bottom-start</awc-option>
+            <awc-option value="bottom-end">bottom-end</awc-option>
+            <awc-option value="right">right</awc-option>
+            <awc-option value="right-start">right-start</awc-option>
+            <awc-option value="right-end">right-end</awc-option>
+            <awc-option value="left">left</awc-option>
+            <awc-option value="left-start">left-start</awc-option>
+            <awc-option value="left-end">left-end</awc-option>
           </awc-select>
           <awc-input type="number" name="distance" label="distance" value="0"></awc-input>
           <awc-input type="number" name="skidding" label="Skidding" value="0"></awc-input>
-      </div>
+        </div>
 
-      <div class="popup-overview-options">
+        <div class="popup-overview-options">
           <awc-switch name="active" checked>Active</awc-switch>
           <awc-switch name="arrow">Arrow</awc-switch>
+        </div>
       </div>
-  </div>
 
-  <script>
-      const containerOverview = document.querySelector('.popup-overview');
-      const popupOverview = containerOverview.querySelector('awc-popup');
-      const selectOverview = containerOverview.querySelector('awc-select[name="placement"]');
-      const distanceOverview = containerOverview.querySelector('awc-input[name="distance"]');
-      const skiddingOverview = containerOverview.querySelector('awc-input[name="skidding"]');
-      const activeOverview = containerOverview.querySelector('awc-switch[name="active"]');
-      const arrowOverview = containerOverview.querySelector('awc-switch[name="arrow"]');
+      <script>
+        const containerOverview = document.querySelector('.popup-overview');
+        const popupOverview = containerOverview.querySelector('awc-popup');
+        const selectOverview = containerOverview.querySelector('awc-select[name="placement"]');
+        const distanceOverview = containerOverview.querySelector('awc-input[name="distance"]');
+        const skiddingOverview = containerOverview.querySelector('awc-input[name="skidding"]');
+        const activeOverview = containerOverview.querySelector('awc-switch[name="active"]');
+        const arrowOverview = containerOverview.querySelector('awc-switch[name="arrow"]');
 
-      selectOverview.addEventListener('awc-change', () => (popupOverview.placement = selectOverview.value));
-      distanceOverview.addEventListener('awc-input', () => (popupOverview.distance = distanceOverview.value));
-      skiddingOverview.addEventListener('awc-input', () => (popupOverview.skidding = skiddingOverview.value));
-      activeOverview.addEventListener('awc-change', () => (popupOverview.active = activeOverview.checked));
-      arrowOverview.addEventListener('awc-change', () => (popupOverview.arrow = arrowOverview.checked));
-  </script>
+        selectOverview.addEventListener('awc-change', () => (popupOverview.placement = selectOverview.value));
+        distanceOverview.addEventListener('awc-input', () => (popupOverview.distance = distanceOverview.value));
+        skiddingOverview.addEventListener('awc-input', () => (popupOverview.skidding = skiddingOverview.value));
+        activeOverview.addEventListener('awc-change', () => (popupOverview.active = activeOverview.checked));
+        arrowOverview.addEventListener('awc-change', () => (popupOverview.arrow = arrowOverview.checked));
+      </script>
 
-  <style>
-      .popup-overview awc-popup {
+      <style>
+        .popup-overview awc-popup {
           --arrow-color: var(--awc-color-primary-600);
-      }
+        }
 
-      .popup-overview span[slot='anchor'] {
+        .popup-overview span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 50px;
-      }
+        }
 
-      .popup-overview .box {
+        .popup-overview .box {
           width: 100px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
+        }
 
-      .popup-overview-options {
+        .popup-overview-options {
           display: flex;
           flex-wrap: wrap;
           align-items: end;
           gap: 1rem;
-      }
+        }
 
-      .popup-overview-options awc-select {
+        .popup-overview-options awc-select {
           width: 160px;
-      }
+        }
 
-      .popup-overview-options awc-input {
+        .popup-overview-options awc-input {
           width: 100px;
-      }
+        }
 
-      .popup-overview-options + .popup-overview-options {
+        .popup-overview-options + .popup-overview-options {
           margin-top: 1rem;
-      }
-  </style>`
+        }
+      </style>`
 };
 
 export const Activating: Story = {
@@ -122,40 +123,41 @@ export const Activating: Story = {
       }
     }
   },
-  render: () => html`<div class="popup-active p-4">
-      <awc-popup placement="top" active>
+  render: () =>
+    html`<div class="popup-active p-4">
+        <awc-popup placement="top" active>
           <span slot="anchor"></span>
           <div class="box"></div>
-      </awc-popup>
+        </awc-popup>
 
-      <br />
-      <awc-switch checked>Active</awc-switch>
-  </div>
+        <br />
+        <awc-switch checked>Active</awc-switch>
+      </div>
 
-  <style>
-      .popup-active span[slot='anchor'] {
+      <style>
+        .popup-active span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 50px;
-      }
+        }
 
-      .popup-active .box {
+        .popup-active .box {
           width: 100px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
-  </style>
+        }
+      </style>
 
-  <script>
-      const containerActive = document.querySelector('.popup-active');
-      const popupActive = containerActive.querySelector('awc-popup');
-      const active = containerActive.querySelector('awc-switch');
+      <script>
+        const containerActive = document.querySelector('.popup-active');
+        const popupActive = containerActive.querySelector('awc-popup');
+        const active = containerActive.querySelector('awc-switch');
 
-      active.addEventListener('awc-change', () => (popupActive.active = active.checked));
-  </script>`,
+        active.addEventListener('awc-change', () => (popupActive.active = active.checked));
+      </script>`
 };
 
 export const ExternalAnchors: Story = {
@@ -167,30 +169,31 @@ export const ExternalAnchors: Story = {
       }
     }
   },
-  render: () => html`<div class="p-4">
-    <span id="external-anchor"></span>
+  render: () =>
+    html`<div class="p-4">
+        <span id="external-anchor"></span>
 
-    <awc-popup anchor="external-anchor" placement="top" active>
-        <div class="box"></div>
-    </awc-popup>
-  </div>
+        <awc-popup anchor="external-anchor" placement="top" active>
+          <div class="box"></div>
+        </awc-popup>
+      </div>
 
-  <style>
-      #external-anchor {
+      <style>
+        #external-anchor {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 50px 0 0 50px;
-      }
+        }
 
-      #external-anchor ~ awc-popup .box {
+        #external-anchor ~ awc-popup .box {
           width: 100px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
-  </style>`,
+        }
+      </style>`
 };
 
 export const Placement: Story = {
@@ -204,13 +207,14 @@ Since placement is preferred when using \`flip\`, you can observe the popup's cu
       }
     }
   },
-  render: () => html`<div class="popup-placement p-4">
-      <awc-popup placement="top" active>
+  render: () =>
+    html`<div class="popup-placement p-4">
+        <awc-popup placement="top" active>
           <span slot="anchor"></span>
           <div class="box"></div>
-      </awc-popup>
+        </awc-popup>
 
-      <awc-select label="Placement" value="top">
+        <awc-select label="Placement" value="top">
           <awc-option value="top">top</awc-option>
           <awc-option value="top-start">top-start</awc-option>
           <awc-option value="top-end">top-end</awc-option>
@@ -223,37 +227,37 @@ Since placement is preferred when using \`flip\`, you can observe the popup's cu
           <awc-option value="left">left</awc-option>
           <awc-option value="left-start">left-start</awc-option>
           <awc-option value="left-end">left-end</awc-option>
-      </awc-select>
-  </div>
+        </awc-select>
+      </div>
 
-  <style>
-      .popup-placement span[slot='anchor'] {
+      <style>
+        .popup-placement span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 50px;
-      }
+        }
 
-      .popup-placement .box {
+        .popup-placement .box {
           width: 100px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
+        }
 
-      .popup-placement awc-select {
+        .popup-placement awc-select {
           max-width: 280px;
-      }
-  </style>
+        }
+      </style>
 
-  <script>
-      const containerPlacement = document.querySelector('.popup-placement');
-      const popupPlacement = containerPlacement.querySelector('awc-popup');
-      const select = containerPlacement.querySelector('awc-select');
+      <script>
+        const containerPlacement = document.querySelector('.popup-placement');
+        const popupPlacement = containerPlacement.querySelector('awc-popup');
+        const select = containerPlacement.querySelector('awc-select');
 
-      select.addEventListener('awc-change', () => (popupPlacement.placement = select.value));
-  </script>`,
+        select.addEventListener('awc-change', () => (popupPlacement.placement = select.value));
+      </script>`
 };
 
 export const Distance: Story = {
@@ -265,45 +269,45 @@ export const Distance: Story = {
       }
     }
   },
-  render: () => html`<div class="popup-distance p-4">
-      <awc-popup placement="top" distance="0" active>
+  render: () =>
+    html`<div class="popup-distance p-4">
+        <awc-popup placement="top" distance="0" active>
           <span slot="anchor"></span>
           <div class="box"></div>
-      </awc-popup>
+        </awc-popup>
 
-      <awc-range min="-50" max="50" step="1" value="0" label="Distance"></awc-range>
-  </div>
+        <awc-range min="-50" max="50" step="1" value="0" label="Distance"></awc-range>
+      </div>
 
-  <style>
-      .popup-distance span[slot='anchor'] {
+      <style>
+        .popup-distance span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 50px;
-      }
+        }
 
-      .popup-distance .box {
+        .popup-distance .box {
           width: 100px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
+        }
 
-      .popup-distance awc-range {
+        .popup-distance awc-range {
           max-width: 260px;
-      }
-  </style>
+        }
+      </style>
 
-  <script>
-      const containerDistance = document.querySelector('.popup-distance');
-      const popupDistance = containerDistance.querySelector('awc-popup');
-      const distance = containerDistance.querySelector('awc-range');
+      <script>
+        const containerDistance = document.querySelector('.popup-distance');
+        const popupDistance = containerDistance.querySelector('awc-popup');
+        const distance = containerDistance.querySelector('awc-range');
 
-      distance.addEventListener('awc-input', () => (popupDistance.distance = distance.value));
-  </script>`,
+        distance.addEventListener('awc-input', () => (popupDistance.distance = distance.value));
+      </script>`
 };
-
 
 export const Skidding: Story = {
   name: 'Skidding',
@@ -314,43 +318,44 @@ export const Skidding: Story = {
       }
     }
   },
-  render: () => html`<div class="popup-skidding p-4">
-      <awc-popup placement="top" skidding="0" active>
+  render: () =>
+    html`<div class="popup-skidding p-4">
+        <awc-popup placement="top" skidding="0" active>
           <span slot="anchor"></span>
           <div class="box"></div>
-      </awc-popup>
+        </awc-popup>
 
-      <awc-range min="-50" max="50" step="1" value="0" label="Skidding"></awc-range>
-  </div>
+        <awc-range min="-50" max="50" step="1" value="0" label="Skidding"></awc-range>
+      </div>
 
-  <style>
-      .popup-skidding span[slot='anchor'] {
+      <style>
+        .popup-skidding span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 50px;
-      }
+        }
 
-      .popup-skidding .box {
+        .popup-skidding .box {
           width: 100px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
+        }
 
-      .popup-skidding awc-range {
+        .popup-skidding awc-range {
           max-width: 260px;
-      }
-  </style>
+        }
+      </style>
 
-  <script>
-      const containerSkidding = document.querySelector('.popup-skidding');
-      const popupSkidding = containerSkidding.querySelector('awc-popup');
-      const skidding = containerSkidding.querySelector('awc-range');
+      <script>
+        const containerSkidding = document.querySelector('.popup-skidding');
+        const popupSkidding = containerSkidding.querySelector('awc-popup');
+        const skidding = containerSkidding.querySelector('awc-range');
 
-      skidding.addEventListener('awc-input', () => (popupSkidding.skidding = skidding.value));
-  </script>`,
+        skidding.addEventListener('awc-input', () => (popupSkidding.skidding = skidding.value));
+      </script>`
 };
 
 export const Arrows: Story = {
@@ -364,92 +369,93 @@ By default, the arrow will be aligned as close to the center of the _anchor_ as 
       }
     }
   },
-  render: () => html`<div class="popup-arrow p-4">
+  render: () =>
+    html`<div class="popup-arrow p-4">
       <awc-popup placement="top" arrow arrow-placement="anchor" distance="8" active>
-          <span slot="anchor"></span>
-          <div class="box"></div>
+        <span slot="anchor"></span>
+        <div class="box"></div>
       </awc-popup>
 
       <div class="popup-arrow-options">
-          <awc-select label="Placement" name="placement" value="top" class="popup-overview-select">
-              <awc-option value="top">top</awc-option>
-              <awc-option value="top-start">top-start</awc-option>
-              <awc-option value="top-end">top-end</awc-option>
-              <awc-option value="bottom">bottom</awc-option>
-              <awc-option value="bottom-start">bottom-start</awc-option>
-              <awc-option value="bottom-end">bottom-end</awc-option>
-              <awc-option value="right">right</awc-option>
-              <awc-option value="right-start">right-start</awc-option>
-              <awc-option value="right-end">right-end</awc-option>
-              <awc-option value="left">left</awc-option>
-              <awc-option value="left-start">left-start</awc-option>
-              <awc-option value="left-end">left-end</awc-option>
-          </awc-select>
+        <awc-select label="Placement" name="placement" value="top" class="popup-overview-select">
+          <awc-option value="top">top</awc-option>
+          <awc-option value="top-start">top-start</awc-option>
+          <awc-option value="top-end">top-end</awc-option>
+          <awc-option value="bottom">bottom</awc-option>
+          <awc-option value="bottom-start">bottom-start</awc-option>
+          <awc-option value="bottom-end">bottom-end</awc-option>
+          <awc-option value="right">right</awc-option>
+          <awc-option value="right-start">right-start</awc-option>
+          <awc-option value="right-end">right-end</awc-option>
+          <awc-option value="left">left</awc-option>
+          <awc-option value="left-start">left-start</awc-option>
+          <awc-option value="left-end">left-end</awc-option>
+        </awc-select>
 
-          <awc-select label="Arrow Placement" name="arrow-placement" value="anchor">
-              <awc-option value="anchor">anchor</awc-option>
-              <awc-option value="start">start</awc-option>
-              <awc-option value="end">end</awc-option>
-              <awc-option value="center">center</awc-option>
-          </awc-select>
+        <awc-select label="Arrow Placement" name="arrow-placement" value="anchor">
+          <awc-option value="anchor">anchor</awc-option>
+          <awc-option value="start">start</awc-option>
+          <awc-option value="end">end</awc-option>
+          <awc-option value="center">center</awc-option>
+        </awc-select>
       </div>
 
       <div class="popup-arrow-options">
-          <awc-switch name="arrow" checked>Arrow</awc-switch>
+        <awc-switch name="arrow" checked>Arrow</awc-switch>
       </div>
 
       <style>
-          .popup-arrow awc-popup {
-              --arrow-color: var(--awc-color-primary-600);
-          }
+        .popup-arrow awc-popup {
+          --arrow-color: var(--awc-color-primary-600);
+        }
 
-          .popup-arrow span[slot='anchor'] {
-              display: inline-block;
-              width: 150px;
-              height: 150px;
-              border: dashed 2px var(--awc-color-neutral-600);
-              margin: 50px;
-          }
+        .popup-arrow span[slot='anchor'] {
+          display: inline-block;
+          width: 150px;
+          height: 150px;
+          border: dashed 2px var(--awc-color-neutral-600);
+          margin: 50px;
+        }
 
-          .popup-arrow .box {
-              width: 100px;
-              height: 50px;
-              background: var(--awc-color-primary-600);
-              border-radius: var(--awc-border-radius-medium);
-          }
+        .popup-arrow .box {
+          width: 100px;
+          height: 50px;
+          background: var(--awc-color-primary-600);
+          border-radius: var(--awc-border-radius-medium);
+        }
 
-          .popup-arrow-options {
-              display: flex;
-              flex-wrap: wrap;
-              align-items: end;
-              gap: 1rem;
-          }
+        .popup-arrow-options {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: end;
+          gap: 1rem;
+        }
 
-          .popup-arrow-options awc-select {
-              width: 160px;
-          }
+        .popup-arrow-options awc-select {
+          width: 160px;
+        }
 
-          .popup-arrow-options + .popup-arrow-options {
-              margin-top: 1rem;
-          }
+        .popup-arrow-options + .popup-arrow-options {
+          margin-top: 1rem;
+        }
       </style>
 
       <script>
-          const containerArrow = document.querySelector('.popup-arrow');
-          const popupArrow = containerArrow.querySelector('awc-popup');
-          const placementArrow = containerArrow.querySelector('[name="placement"]');
-          const arrowPlacement = containerArrow.querySelector('[name="arrow-placement"]');
-          const arrow = containerArrow.querySelector('[name="arrow"]');
+        const containerArrow = document.querySelector('.popup-arrow');
+        const popupArrow = containerArrow.querySelector('awc-popup');
+        const placementArrow = containerArrow.querySelector('[name="placement"]');
+        const arrowPlacement = containerArrow.querySelector('[name="arrow-placement"]');
+        const arrow = containerArrow.querySelector('[name="arrow"]');
 
-          placementArrow.addEventListener('awc-change', () => (popupArrow.placement = placementArrow.value));
-          arrowPlacement.addEventListener('awc-change', () => (popupArrow.arrowPlacement = arrowPlacement.value));
-          arrow.addEventListener('awc-change', () => (popupArrow.arrow = arrow.checked));
+        placementArrow.addEventListener('awc-change', () => (popupArrow.placement = placementArrow.value));
+        arrowPlacement.addEventListener('awc-change', () => (popupArrow.arrowPlacement = arrowPlacement.value));
+        arrow.addEventListener('awc-change', () => (popupArrow.arrow = arrow.checked));
       </script>
-  </div>`,
+    </div>`
 };
 
 export const Syncing: Story = {
-  name: 'Syncing with the Anchor\'s Dimensions',
+  name: "Syncing with the Anchor's Dimensions",
   parameters: {
     docs: {
       description: {
@@ -457,50 +463,51 @@ export const Syncing: Story = {
       }
     }
   },
-  render: () => html`<div class="popup-sync p-4">
-      <awc-popup placement="top" sync="width" active>
+  render: () =>
+    html`<div class="popup-sync p-4">
+        <awc-popup placement="top" sync="width" active>
           <span slot="anchor"></span>
           <div class="box"></div>
-      </awc-popup>
+        </awc-popup>
 
-      <awc-select value="width" label="Sync">
+        <awc-select value="width" label="Sync">
           <awc-option value="width">Width</awc-option>
           <awc-option value="height">Height</awc-option>
           <awc-option value="both">Both</awc-option>
           <awc-option value="">None</awc-option>
-      </awc-select>
-  </div>
+        </awc-select>
+      </div>
 
-  <style>
-      .popup-sync span[slot='anchor'] {
+      <style>
+        .popup-sync span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 50px;
-      }
+        }
 
-      .popup-sync .box {
+        .popup-sync .box {
           width: 100%;
           height: 100%;
           min-width: 50px;
           min-height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
+        }
 
-      .popup-sync awc-select {
+        .popup-sync awc-select {
           width: 160px;
-      }
-  </style>
+        }
+      </style>
 
-  <script>
-      const containerSync = document.querySelector('.popup-sync');
-      const popupSync = containerSync.querySelector('awc-popup');
-      const sync = containerSync.querySelector('awc-select');
+      <script>
+        const containerSync = document.querySelector('.popup-sync');
+        const popupSync = containerSync.querySelector('awc-popup');
+        const sync = containerSync.querySelector('awc-select');
 
-      sync.addEventListener('awc-change', () => (popupSync.sync = sync.value));
-  </script>`,
+        sync.addEventListener('awc-change', () => (popupSync.sync = sync.value));
+      </script>`
 };
 
 export const Positioning: Story = {
@@ -518,52 +525,53 @@ Toggle the switch and scroll the container to see the difference.`
       }
     }
   },
-  render: () => html`<div class="popup-strategy p-4">
-      <div class="overflow">
+  render: () =>
+    html`<div class="popup-strategy p-4">
+        <div class="overflow">
           <awc-popup placement="top" strategy="fixed" active>
-              <span slot="anchor"></span>
-              <div class="box"></div>
+            <span slot="anchor"></span>
+            <div class="box"></div>
           </awc-popup>
+        </div>
+
+        <awc-switch checked>Fixed</awc-switch>
       </div>
 
-      <awc-switch checked>Fixed</awc-switch>
-  </div>
-
-  <style>
-      .popup-strategy .overflow {
+      <style>
+        .popup-strategy .overflow {
           position: relative;
           height: 300px;
           border: solid 2px var(--awc-color-neutral-200);
           overflow: auto;
-      }
+        }
 
-      .popup-strategy span[slot='anchor'] {
+        .popup-strategy span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 150px 50px;
-      }
+        }
 
-      .popup-strategy .box {
+        .popup-strategy .box {
           width: 100px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
+        }
 
-      .popup-strategy awc-switch {
+        .popup-strategy awc-switch {
           margin-top: 1rem;
-      }
-  </style>
+        }
+      </style>
 
-  <script>
-      const containerStrategy = document.querySelector('.popup-strategy');
-      const popupStrategy = containerStrategy.querySelector('awc-popup');
-      const fixed = containerStrategy.querySelector('awc-switch');
+      <script>
+        const containerStrategy = document.querySelector('.popup-strategy');
+        const popupStrategy = containerStrategy.querySelector('awc-popup');
+        const fixed = containerStrategy.querySelector('awc-switch');
 
-      fixed.addEventListener('awc-change', () => (popupStrategy.strategy = fixed.checked ? 'fixed' : 'absolute'));
-  </script>`,
+        fixed.addEventListener('awc-change', () => (popupStrategy.strategy = fixed.checked ? 'fixed' : 'absolute'));
+      </script>`
 };
 
 export const Flip: Story = {
@@ -577,49 +585,50 @@ Scroll the container to see how the popup flips to prevent clipping.`
       }
     }
   },
-  render: () => html`<div class="popup-flip p-4">
-      <div class="overflow">
+  render: () =>
+    html`<div class="popup-flip p-4">
+        <div class="overflow">
           <awc-popup placement="top" flip active>
-              <span slot="anchor"></span>
-              <div class="box"></div>
+            <span slot="anchor"></span>
+            <div class="box"></div>
           </awc-popup>
+        </div>
+
+        <br />
+        <awc-switch checked>Flip</awc-switch>
       </div>
 
-      <br />
-      <awc-switch checked>Flip</awc-switch>
-  </div>
-
-  <style>
-      .popup-flip .overflow {
+      <style>
+        .popup-flip .overflow {
           position: relative;
           height: 300px;
           border: solid 2px var(--awc-color-neutral-200);
           overflow: auto;
-      }
+        }
 
-      .popup-flip span[slot='anchor'] {
+        .popup-flip span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 150px 50px;
-      }
+        }
 
-      .popup-flip .box {
+        .popup-flip .box {
           width: 100px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
-  </style>
+        }
+      </style>
 
-  <script>
-      const containerFlip = document.querySelector('.popup-flip');
-      const popupFlip = containerFlip.querySelector('awc-popup');
-      const flip = containerFlip.querySelector('awc-switch');
+      <script>
+        const containerFlip = document.querySelector('.popup-flip');
+        const popupFlip = containerFlip.querySelector('awc-popup');
+        const flip = containerFlip.querySelector('awc-switch');
 
-      flip.addEventListener('awc-change', () => (popupFlip.flip = flip.checked));
-  </script>`,
+        flip.addEventListener('awc-change', () => (popupFlip.flip = flip.checked));
+      </script>`
 };
 
 export const FlipFallbacks: Story = {
@@ -637,38 +646,45 @@ Scroll the container to see how the popup changes it's fallback placement to pre
       }
     }
   },
-  render: () => html`<div class="popup-flip-fallbacks p-4">
-      <div class="overflow">
-          <awc-popup placement="top" flip flip-fallback-placements="right bottom" flip-fallback-strategy="initial" active>
-              <span slot="anchor"></span>
-              <div class="box"></div>
+  render: () =>
+    html`<div class="popup-flip-fallbacks p-4">
+        <div class="overflow">
+          <awc-popup
+            placement="top"
+            flip
+            flip-fallback-placements="right bottom"
+            flip-fallback-strategy="initial"
+            active
+          >
+            <span slot="anchor"></span>
+            <div class="box"></div>
           </awc-popup>
+        </div>
       </div>
-  </div>
 
-  <style>
-      .popup-flip-fallbacks .overflow {
+      <style>
+        .popup-flip-fallbacks .overflow {
           position: relative;
           height: 300px;
           border: solid 2px var(--awc-color-neutral-200);
           overflow: auto;
-      }
+        }
 
-      .popup-flip-fallbacks span[slot='anchor'] {
+        .popup-flip-fallbacks span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 250px 50px;
-      }
+        }
 
-      .popup-flip-fallbacks .box {
+        .popup-flip-fallbacks .box {
           width: 100px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
-  </style>`,
+        }
+      </style>`
 };
 
 export const Shift: Story = {
@@ -682,47 +698,48 @@ Toggle the switch to see the difference.`
       }
     }
   },
-  render: () => html`<div class="popup-shift p-4">
-      <div class="overflow">
+  render: () =>
+    html`<div class="popup-shift p-4">
+        <div class="overflow">
           <awc-popup placement="top" shift shift-padding="10" active>
-              <span slot="anchor"></span>
-              <div class="box"></div>
+            <span slot="anchor"></span>
+            <div class="box"></div>
           </awc-popup>
+        </div>
+
+        <awc-switch checked>Shift</awc-switch>
       </div>
 
-      <awc-switch checked>Shift</awc-switch>
-  </div>
-
-  <style>
-      .popup-shift .overflow {
+      <style>
+        .popup-shift .overflow {
           position: relative;
           border: solid 2px var(--awc-color-neutral-200);
           overflow: auto;
-      }
+        }
 
-      .popup-shift span[slot='anchor'] {
+        .popup-shift span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 60px 0 0 10px;
-      }
+        }
 
-      .popup-shift .box {
+        .popup-shift .box {
           width: 300px;
           height: 50px;
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
-      }
-  </style>
+        }
+      </style>
 
-  <script>
-      const containerShift = document.querySelector('.popup-shift');
-      const popupShift = containerShift.querySelector('awc-popup');
-      const shift = containerShift.querySelector('awc-switch');
+      <script>
+        const containerShift = document.querySelector('.popup-shift');
+        const popupShift = containerShift.querySelector('awc-popup');
+        const shift = containerShift.querySelector('awc-switch');
 
-      shift.addEventListener('awc-change', () => (popupShift.shift = shift.checked));
-  </script>`,
+        shift.addEventListener('awc-change', () => (popupShift.shift = shift.checked));
+      </script>`
 };
 
 export const AutoSize: Story = {
@@ -738,35 +755,36 @@ Scroll the container to see the popup resize as its available space changes.`
       }
     }
   },
-  render: () => html`<div class="popup-auto-size p-4">
-      <div class="overflow">
+  render: () =>
+    html`<div class="popup-auto-size p-4">
+        <div class="overflow">
           <awc-popup placement="top" auto-size="both" auto-size-padding="10" active>
-              <span slot="anchor"></span>
-              <div class="box"></div>
+            <span slot="anchor"></span>
+            <div class="box"></div>
           </awc-popup>
+        </div>
+
+        <br />
+        <awc-switch checked>Auto-size</awc-switch>
       </div>
 
-      <br />
-      <awc-switch checked>Auto-size</awc-switch>
-  </div>
-
-  <style>
-      .popup-auto-size .overflow {
+      <style>
+        .popup-auto-size .overflow {
           position: relative;
           height: 300px;
           border: solid 2px var(--awc-color-neutral-200);
           overflow: auto;
-      }
+        }
 
-      .popup-auto-size span[slot='anchor'] {
+        .popup-auto-size span[slot='anchor'] {
           display: inline-block;
           width: 150px;
           height: 150px;
           border: dashed 2px var(--awc-color-neutral-600);
           margin: 250px 50px 100px 50px;
-      }
+        }
 
-      .popup-auto-size .box {
+        .popup-auto-size .box {
           background: var(--awc-color-primary-600);
           border-radius: var(--awc-border-radius-medium);
 
@@ -778,14 +796,14 @@ Scroll the container to see the popup resize as its available space changes.`
           max-width: var(--auto-size-available-width);
           max-height: var(--auto-size-available-height);
           overflow: auto;
-      }
-  </style>
+        }
+      </style>
 
-  <script>
-      const containerAutoSize = document.querySelector('.popup-auto-size');
-      const popupAutoSize = containerAutoSize.querySelector('awc-popup');
-      const autoSize = containerAutoSize.querySelector('awc-switch');
+      <script>
+        const containerAutoSize = document.querySelector('.popup-auto-size');
+        const popupAutoSize = containerAutoSize.querySelector('awc-popup');
+        const autoSize = containerAutoSize.querySelector('awc-switch');
 
-      autoSize.addEventListener('awc-change', () => (popupAutoSize.autoSize = autoSize.checked ? 'both' : ''));
-  </script>`,
+        autoSize.addEventListener('awc-change', () => (popupAutoSize.autoSize = autoSize.checked ? 'both' : ''));
+      </script>`
 };

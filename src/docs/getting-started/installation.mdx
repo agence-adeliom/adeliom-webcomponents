@@ -1,7 +1,6 @@
-import {Story, Canvas, Title, Subtitle, Meta} from "@storybook/blocks";
+import { Story, Canvas, Title, Subtitle, Meta } from '@storybook/blocks';
 
-
-<Meta title="Getting started/Installation" parameters={{docs: {toc: {disable: false}}}} />
+<Meta title="Getting started/Installation" parameters={{ docs: { toc: { disable: false } } }} />
 
 # Installation
 
@@ -12,10 +11,9 @@ You can load Adeliom WebComponents via CDN or by installing it locally. If you'r
 The CDN loader registers all Adeliom WebComponents elements up front. Note that, if you're only using a handful of components, it will be much more efficient to stick with the autoloader.
 However, you can also [cherry pick](#cherry-picking) components if you want to load specific ones up front.
 
-
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%NPMDIR%/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%NPMDIR%/awc.js" ></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%NPMDIR%/awc.js"></script>
 ```
 
 ### Dark Theme
@@ -115,9 +113,7 @@ You can copy and paste the code to import a component from the "Importing" secti
 >
 > Never cherry pick components or utilities from `awc.js` as this will cause the browser to load the entire library. Instead, cherry pick from specific modules as shown above.
 >
->
 > You will see files named `chunk.[hash].js` in the `chunks` directory. Never import these files directly, as they are generated and change from version to version.
-
 
 ## Bundling
 
@@ -140,32 +136,32 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist')
-    },
-    module: {
-        // Bundle styles into main.css
-        rules: [
-            {
-                test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
-            }
-        ]
-    },
-    plugins: [
-        new MiniCssExtractPlugin(),
-        new CopyPlugin({
-            patterns: [
-                // Copy AWC assets to dist/awc
-                {
-                    from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
-                    to: path.resolve(__dirname, 'dist/awc/assets')
-                }
-            ]
-        })
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    // Bundle styles into main.css
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+      }
     ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [
+        // Copy AWC assets to dist/awc
+        {
+          from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
+          to: path.resolve(__dirname, 'dist/awc/assets')
+        }
+      ]
+    })
+  ]
 };
 ```
 
@@ -182,26 +178,26 @@ import css from 'rollup-plugin-css-only';
 import resolve from '@rollup/plugin-node-resolve';
 
 export default {
-    input: 'src/index.js',
-    output: [{ dir: path.resolve(__dirname, 'dist'), format: 'es' }],
-    plugins: [
-        resolve(),
-        commonjs(),
-        // Bundle styles into dist/bundle.css
-        css({
-            output: 'bundle.css'
-        }),
-        // Copy AWC assets to dist/awc
-        copy({
-            copyOnce: true,
-            targets: [
-                {
-                    src: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
-                    dest: path.resolve(__dirname, 'dist/awc')
-                }
-            ]
-        })
-    ]
+  input: 'src/index.js',
+  output: [{ dir: path.resolve(__dirname, 'dist'), format: 'es' }],
+  plugins: [
+    resolve(),
+    commonjs(),
+    // Bundle styles into dist/bundle.css
+    css({
+      output: 'bundle.css'
+    }),
+    // Copy AWC assets to dist/awc
+    copy({
+      copyOnce: true,
+      targets: [
+        {
+          src: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
+          dest: path.resolve(__dirname, 'dist/awc')
+        }
+      ]
+    })
+  ]
 };
 ```
 
@@ -227,4 +223,3 @@ setBasePath('/path/to/awc/%NPMDIR%/');
 > 🚧 **Warning**
 >
 > Component modules include side effects for registration purposes. Because of this, importing directly from `@agence-adeliom/awc` may result in a larger bundle size than necessary. For optimal tree shaking, always cherry pick, i.e. import components and utilities from their respective files, as shown above.
-

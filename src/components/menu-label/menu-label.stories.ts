@@ -26,7 +26,8 @@ type Story = StoryObj<AWCMenuLabel & typeof args>;
 
 export const Primary: Story = {
   name: 'Example',
-  render: () => html`<awc-menu style="max-width: 200px;">
+  render: () =>
+    html`<awc-menu style="max-width: 200px;">
       <awc-menu-label>Fruits</awc-menu-label>
       <awc-menu-item value="apple">Apple</awc-menu-item>
       <awc-menu-item value="banana">Banana</awc-menu-item>
@@ -36,5 +37,5 @@ export const Primary: Story = {
       <awc-menu-item value="broccoli">Broccoli</awc-menu-item>
       <awc-menu-item value="carrot">Carrot</awc-menu-item>
       <awc-menu-item value="zucchini">Zucchini</awc-menu-item>
-  </awc-menu>`
+    </awc-menu>`
 };

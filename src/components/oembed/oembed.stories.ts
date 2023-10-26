@@ -1,5 +1,4 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
-import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCOembed from './oembed';
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-oembed');
@@ -14,7 +13,7 @@ const meta = {
     layout: 'padded',
     actions: {
       handles: events
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCOembed & typeof args>;
@@ -28,6 +27,6 @@ export const Primary: Story = {
   args: {
     src: 'https://www.youtube.com/watch?v=YE7VzlLtp-4',
     aspectRatio: 1.76,
-    layout: 'fullWidth',
+    layout: 'fullWidth'
   }
 };

@@ -43,7 +43,7 @@ export const Labels: Story = {
     }
   },
   args: {
-    label: 'What is your name?',
+    label: 'What is your name?'
   }
 };
 
@@ -58,7 +58,7 @@ export const HelpText: Story = {
   },
   args: {
     label: 'Nickname',
-    'help-text': 'What would you like people to call you?',
+    'help-text': 'What would you like people to call you?'
   }
 };
 
@@ -146,11 +146,12 @@ export const Sizes: Story = {
       }
     }
   },
-  render: () => html`<awc-input placeholder="Small" size="small"></awc-input>
-  <br />
-  <awc-input placeholder="Medium" size="medium"></awc-input>
-  <br />
-  <awc-input placeholder="Large" size="large"></awc-input>`
+  render: () =>
+    html`<awc-input placeholder="Small" size="small"></awc-input>
+      <br />
+      <awc-input placeholder="Medium" size="medium"></awc-input>
+      <br />
+      <awc-input placeholder="Large" size="large"></awc-input>`
 };
 
 export const Pill: Story = {
@@ -162,11 +163,12 @@ export const Pill: Story = {
       }
     }
   },
-  render: () => html`<awc-input placeholder="Small" size="small" pill></awc-input>
-  <br />
-  <awc-input placeholder="Medium" size="medium" pill></awc-input>
-  <br />
-  <awc-input placeholder="Large" size="large" pill></awc-input>`
+  render: () =>
+    html`<awc-input placeholder="Small" size="small" pill></awc-input>
+      <br />
+      <awc-input placeholder="Medium" size="medium" pill></awc-input>
+      <br />
+      <awc-input placeholder="Large" size="large" pill></awc-input>`
 };
 
 export const InputTypes: Story = {
@@ -178,11 +180,12 @@ export const InputTypes: Story = {
       }
     }
   },
-  render: () => html`<awc-input type="email" placeholder="Email"></awc-input>
-  <br />
-  <awc-input type="number" placeholder="Number"></awc-input>
-  <br />
-  <awc-input type="date" placeholder="Date"></awc-input>`
+  render: () =>
+    html`<awc-input type="email" placeholder="Email"></awc-input>
+      <br />
+      <awc-input type="number" placeholder="Number"></awc-input>
+      <br />
+      <awc-input type="date" placeholder="Date"></awc-input>`
 };
 
 export const PrefixSuffixIcons: Story = {
@@ -194,20 +197,21 @@ export const PrefixSuffixIcons: Story = {
       }
     }
   },
-  render: () => html`<awc-input placeholder="Small" size="small">
-      <awc-icon name="house" slot="prefix"></awc-icon>
-      <awc-icon name="chat" slot="suffix"></awc-icon>
-  </awc-input>
-  <br />
-  <awc-input placeholder="Medium" size="medium">
-      <awc-icon name="house" slot="prefix"></awc-icon>
-      <awc-icon name="chat" slot="suffix"></awc-icon>
-  </awc-input>
-  <br />
-  <awc-input placeholder="Large" size="large">
-      <awc-icon name="house" slot="prefix"></awc-icon>
-      <awc-icon name="chat" slot="suffix"></awc-icon>
-  </awc-input>`
+  render: () =>
+    html`<awc-input placeholder="Small" size="small">
+        <awc-icon name="house" slot="prefix"></awc-icon>
+        <awc-icon name="chat" slot="suffix"></awc-icon>
+      </awc-input>
+      <br />
+      <awc-input placeholder="Medium" size="medium">
+        <awc-icon name="house" slot="prefix"></awc-icon>
+        <awc-icon name="chat" slot="suffix"></awc-icon>
+      </awc-input>
+      <br />
+      <awc-input placeholder="Large" size="large">
+        <awc-icon name="house" slot="prefix"></awc-icon>
+        <awc-icon name="chat" slot="suffix"></awc-icon>
+      </awc-input>`
 };
 
 export const CustomizingLabelPosition: Story = {
@@ -219,33 +223,34 @@ export const CustomizingLabelPosition: Story = {
       }
     }
   },
-  render: () => html`<awc-input class="label-on-left" label="Name" help-text="Enter your name"></awc-input>
-  <awc-input class="label-on-left" label="Email" type="email" help-text="Enter your email"></awc-input>
-  <awc-textarea class="label-on-left" label="Bio" help-text="Tell us something about yourself"></awc-textarea>
+  render: () =>
+    html`<awc-input class="label-on-left" label="Name" help-text="Enter your name"></awc-input>
+      <awc-input class="label-on-left" label="Email" type="email" help-text="Enter your email"></awc-input>
+      <awc-textarea class="label-on-left" label="Bio" help-text="Tell us something about yourself"></awc-textarea>
 
-  <style>
-      .label-on-left {
+      <style>
+        .label-on-left {
           --label-width: 3.75rem;
           --gap-width: 1rem;
-      }
+        }
 
-      .label-on-left + .label-on-left {
+        .label-on-left + .label-on-left {
           margin-top: var(--awc-spacing-medium);
-      }
+        }
 
-      .label-on-left::part(form-control) {
+        .label-on-left::part(form-control) {
           display: grid;
           grid: auto / var(--label-width) 1fr;
           gap: var(--awc-spacing-3x-small) var(--gap-width);
           align-items: center;
-      }
+        }
 
-      .label-on-left::part(form-control-label) {
+        .label-on-left::part(form-control-label) {
           text-align: right;
-      }
+        }
 
-      .label-on-left::part(form-control-help-text) {
+        .label-on-left::part(form-control-help-text) {
           grid-column-start: 2;
-      }
-  </style>`
+        }
+      </style>`
 };

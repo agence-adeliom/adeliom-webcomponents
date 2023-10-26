@@ -15,7 +15,7 @@ const meta = {
     layout: 'padded',
     actions: {
       handles: events
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCProgressRing & typeof args>;
@@ -27,7 +27,7 @@ type Story = StoryObj<AWCProgressRing & typeof args>;
 export const Primary: Story = {
   name: 'Default',
   args: {
-    value: 25,
+    value: 25
   }
 };
 
@@ -35,7 +35,7 @@ export const Size: Story = {
   name: 'Size',
   args: {
     value: 50,
-    '--size': '200px',
+    '--size': '200px'
   },
   parameters: {
     docs: {
@@ -51,7 +51,7 @@ export const TrackIndicatorWidth: Story = {
   args: {
     value: 50,
     '--track-width': '6px',
-    '--indicator-width': '12px',
+    '--indicator-width': '12px'
   },
   parameters: {
     docs: {
@@ -67,7 +67,7 @@ export const Colors: Story = {
   args: {
     value: 50,
     '--track-color': 'pink',
-    '--indicator-color': 'deeppink',
+    '--indicator-color': 'deeppink'
   },
   parameters: {
     docs: {
@@ -82,7 +82,7 @@ export const Labels: Story = {
   name: 'Labels',
   args: {
     value: 50,
-    label: 'Upload progress',
+    label: 'Upload progress'
   },
   parameters: {
     docs: {
@@ -95,34 +95,36 @@ export const Labels: Story = {
 
 export const ShowingValues: Story = {
   name: 'Showing Values',
-  render: () => html`
-      <awc-progress-ring value="50" class="progress-ring-values" style="margin-bottom: .5rem;">50%</awc-progress-ring>
+  render: () =>
+    html` <awc-progress-ring value="50" class="progress-ring-values" style="margin-bottom: .5rem;"
+        >50%</awc-progress-ring
+      >
 
-      <br/>
+      <br />
 
       <awc-button circle>
-          <awc-icon name="dash" label="Decrease"></awc-icon>
+        <awc-icon name="dash" label="Decrease"></awc-icon>
       </awc-button>
       <awc-button circle>
-          <awc-icon name="plus" label="Increase"></awc-icon>
+        <awc-icon name="plus" label="Increase"></awc-icon>
       </awc-button>
 
       <script>
-          const progressRing = document.querySelector('.progress-ring-values');
-          const subtractButton = progressRing.nextElementSibling.nextElementSibling;
-          const addButton = subtractButton.nextElementSibling;
+        const progressRing = document.querySelector('.progress-ring-values');
+        const subtractButton = progressRing.nextElementSibling.nextElementSibling;
+        const addButton = subtractButton.nextElementSibling;
 
-          addButton.addEventListener('click', () => {
-              const value = Math.min(100, progressRing.value + 10);
-              progressRing.value = value;
-              progressRing.textContent = \`\${value}%\`;
-          });
+        addButton.addEventListener('click', () => {
+          const value = Math.min(100, progressRing.value + 10);
+          progressRing.value = value;
+          progressRing.textContent = \`\${value}%\`;
+        });
 
-          subtractButton.addEventListener('click', () => {
-              const value = Math.max(0, progressRing.value - 10);
-              progressRing.value = value;
-              progressRing.textContent = \`\${value}%\`;
-          });
+        subtractButton.addEventListener('click', () => {
+          const value = Math.max(0, progressRing.value - 10);
+          progressRing.value = value;
+          progressRing.textContent = \`\${value}%\`;
+        });
       </script>`,
   parameters: {
     docs: {

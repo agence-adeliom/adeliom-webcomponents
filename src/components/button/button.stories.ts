@@ -332,7 +332,9 @@ export const Styling: Story = {
           color: white;
           font-size: 1.125rem;
           box-shadow: 0 2px 10px #0002;
-          transition: var(--awc-transition-medium) transform ease, var(--awc-transition-medium) border ease;
+          transition:
+            var(--awc-transition-medium) transform ease,
+            var(--awc-transition-medium) border ease;
         }
 
         awc-button.pink::part(base):hover {
@@ -364,34 +366,34 @@ export const Styling: Story = {
 
 export const Tomato: Story = {
   name: 'Tomato',
-  render: () => html`<awc-button class="tomato-button"> Tomato Button </awc-button>
-<style>
-  .tomato-button::part(base) {
-    background: var(--awc-color-neutral-0);
-    border: solid 1px tomato;
-  }
+  render: () =>
+    html`<awc-button class="tomato-button"> Tomato Button </awc-button>
+      <style>
+        .tomato-button::part(base) {
+          background: var(--awc-color-neutral-0);
+          border: solid 1px tomato;
+        }
 
-  .tomato-button::part(base):hover {
-    background: rgba(255, 99, 71, 0.1);
-  }
+        .tomato-button::part(base):hover {
+          background: rgba(255, 99, 71, 0.1);
+        }
 
-  .tomato-button::part(base):active {
-    background: rgba(255, 99, 71, 0.2);
-  }
+        .tomato-button::part(base):active {
+          background: rgba(255, 99, 71, 0.2);
+        }
 
-  .tomato-button::part(base):focus-visible {
-    box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.33);
-  }
+        .tomato-button::part(base):focus-visible {
+          box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.33);
+        }
 
-  .tomato-button::part(label) {
-    color: tomato;
-  }
-</style>`,
+        .tomato-button::part(label) {
+          color: tomato;
+        }
+      </style>`,
   parameters: {
     docs: {
       description: {
-        story:
-            'Customize buttons with CSS using the `::part` selector to target individual component parts.'
+        story: 'Customize buttons with CSS using the `::part` selector to target individual component parts.'
       }
     }
   }

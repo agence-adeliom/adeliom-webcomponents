@@ -7,7 +7,6 @@
   color: var(--awc-text-paragraph-color);
 }
 
-
 .sbdocs.sbdocs-content {
   max-width: 1920px;
 }
@@ -19,7 +18,6 @@
 .sbdocs.sbdocs-content table:not(.sb-anchor, .sb-unstyled, .sb-unstyled table) {
   line-height: normal;
 }
-
 
 /* Border radius demo */
 .border-radius-demo {

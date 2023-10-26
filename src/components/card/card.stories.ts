@@ -30,7 +30,7 @@ export const Primary: Story = {
     <awc-card class="card-overview" bordered>
       <img
         slot="image"
-        src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        src="${'https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80'}"
         alt="A kitten sits patiently between a terracotta pot and decorative grasses."
       />
 
@@ -119,7 +119,7 @@ export const CardWithHeader: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Headers can be used to display titles and more."
+        story: 'Headers can be used to display titles and more.'
       }
     }
   }
@@ -164,7 +164,7 @@ export const Images: Story = {
     <awc-card class="card-image" bordered>
       <img
         slot="image"
-        src="https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
+        src="${'https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'}"
         alt="A kitten walks towards camera on top of pallet."
       />
       This is a kitten, but not just any kitten. This kitten likes walking along pallets.
@@ -191,20 +191,20 @@ export const LinkCards: Story = {
     <awc-card class="card-image" href="https://example.com/" bordered>
       <img
         slot="image"
-        src="https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
+        src="${'https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'}"
         alt="A kitten walks towards camera on top of pallet."
       />
-      <strong>Open here</strong><br/>
+      <strong>Open here</strong><br />
       This is a kitten, but not just any kitten. This kitten likes walking along pallets.
     </awc-card>
 
     <awc-card class="card-image" href="https://example.com/" target="_blank" bordered>
       <img
         slot="image"
-        src="https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
+        src="${'https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'}"
         alt="A kitten walks towards camera on top of pallet."
       />
-      <strong>Open in new window</strong><br/>
+      <strong>Open in new window</strong><br />
       This is a kitten, but not just any kitten. This kitten likes walking along pallets.
     </awc-card>
 
@@ -217,7 +217,8 @@ export const LinkCards: Story = {
   parameters: {
     docs: {
       description: {
-        story: "It's often helpful to have a button that works like a link. This is possible by setting the `href` attribute, which will make the component render an `<a>` under the hood. This gives you all the default link behavior the browser provides (e.g. [[CMD/CTRL/SHIFT]] + [[CLICK]]) and exposes the `target` and `download` attributes."
+        story:
+          "It's often helpful to have a button that works like a link. This is possible by setting the `href` attribute, which will make the component render an `<a>` under the hood. This gives you all the default link behavior the browser provides (e.g. [[CMD/CTRL/SHIFT]] + [[CLICK]]) and exposes the `target` and `download` attributes."
       }
     }
   }

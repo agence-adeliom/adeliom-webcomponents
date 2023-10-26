@@ -7,5 +7,5 @@ export default create({
   brandImage: '/assets/images/wordmark.svg',
   brandTarget: '_self',
   colorPrimary: '#C377FF',
-  colorSecondary: '#EC2E69',
+  colorSecondary: '#EC2E69'
 });

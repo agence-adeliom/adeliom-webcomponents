@@ -31,7 +31,8 @@ type Story = StoryObj<AWCImageComparer & typeof args>;
 
 export const Primary: Story = {
   name: 'Example',
-  render: () => html`<awc-image-comparer>
+  render: () =>
+    html`<awc-image-comparer>
       <img
         slot="before"
         src="${`https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?fit=crop&w=800&q=80&sat=-100&bri=-5`}"
@@ -42,7 +43,7 @@ export const Primary: Story = {
         src="${`https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?auto=format&fit=crop&w=800&q=80`}"
         alt="Color version of kittens in a basket looking around."
       />
-  </awc-image-comparer>`
+    </awc-image-comparer>`
 };
 
 export const InitialPosition: Story = {
@@ -54,7 +55,8 @@ export const InitialPosition: Story = {
       }
     }
   },
-  render: () => html`<awc-image-comparer position="25">
+  render: () =>
+    html`<awc-image-comparer position="25">
       <img
         slot="before"
         src="${`https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?fit=crop&w=800&q=80&sat=-100&bri=-5`}"
@@ -65,5 +67,5 @@ export const InitialPosition: Story = {
         src="${`https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?auto=format&fit=crop&w=800&q=80`}"
         alt="Color version of kittens in a basket looking around."
       />
-  </awc-image-comparer>`
+    </awc-image-comparer>`
 };

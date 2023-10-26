@@ -13,13 +13,13 @@ addons.setConfig({
   initialActive: 'sidebar',
   sidebar: {
     showRoots: true,
-    collapsedRoots: ['framework', 'tutorial', 'components', 'block'],
+    collapsedRoots: ['framework', 'tutorial', 'components', 'block']
   },
   toolbar: {
     title: { hidden: false },
     zoom: { hidden: false },
     eject: { hidden: false },
     copy: { hidden: false },
-    fullscreen: { hidden: false },
-  },
+    fullscreen: { hidden: false }
+  }
 });

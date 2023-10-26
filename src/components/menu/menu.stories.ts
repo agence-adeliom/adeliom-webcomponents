@@ -33,7 +33,8 @@ type Story = StoryObj<AWCMenu & typeof args>;
 
 export const Primary: Story = {
   name: 'Example',
-  render: () => html`<awc-menu style="max-width: 200px;">
+  render: () =>
+    html`<awc-menu style="max-width: 200px;">
       <awc-menu-item value="undo">Undo</awc-menu-item>
       <awc-menu-item value="redo">Redo</awc-menu-item>
       <awc-divider></awc-divider>
@@ -41,5 +42,5 @@ export const Primary: Story = {
       <awc-menu-item value="copy">Copy</awc-menu-item>
       <awc-menu-item value="paste">Paste</awc-menu-item>
       <awc-menu-item value="delete">Delete</awc-menu-item>
-  </awc-menu>`
+    </awc-menu>`
 };

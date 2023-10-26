@@ -15,7 +15,7 @@ const meta = {
     layout: 'padded',
     actions: {
       handles: events
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCOption & typeof args>;
@@ -26,15 +26,16 @@ type Story = StoryObj<AWCOption & typeof args>;
 
 export const Primary: Story = {
   name: 'Default',
-  render: () => html`<awc-select label="Select one">
+  render: () =>
+    html`<awc-select label="Select one">
       <awc-option value="option-1">Option 1</awc-option>
       <awc-option value="option-2">Option 2</awc-option>
       <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+    </awc-select>`,
   parameters: {
     docs: {
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   }
@@ -48,15 +49,16 @@ export const Disabled: Story = {
         story: `Use the \`disabled\` attribute to disable an option and prevent it from being selected.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   },
-  render: () => html`<awc-select label="Select one">
+  render: () =>
+    html`<awc-select label="Select one">
       <awc-option value="option-1">Option 1</awc-option>
       <awc-option value="option-2" disabled>Option 2</awc-option>
       <awc-option value="option-3">Option 3</awc-option>
-  </awc-select>`,
+    </awc-select>`
 };
 
 export const PrefixSuffix: Story = {
@@ -67,27 +69,28 @@ export const PrefixSuffix: Story = {
         story: `Add icons to the start and end of menu items using the \`prefix\` and \`suffix\` slots.`
       },
       story: {
-        height: "200px"
+        height: '200px'
       }
     }
   },
-  render: () => html`<awc-select label="Select one">
+  render: () =>
+    html`<awc-select label="Select one">
       <awc-option value="option-1">
-          <awc-icon slot="prefix" name="envelope"></awc-icon>
-          Email
-          <awc-icon slot="suffix" name="patch-check"></awc-icon>
+        <awc-icon slot="prefix" name="envelope"></awc-icon>
+        Email
+        <awc-icon slot="suffix" name="patch-check"></awc-icon>
       </awc-option>
 
       <awc-option value="option-2">
-          <awc-icon slot="prefix" name="telephone"></awc-icon>
-          Phone
-          <awc-icon slot="suffix" name="patch-check"></awc-icon>
+        <awc-icon slot="prefix" name="telephone"></awc-icon>
+        Phone
+        <awc-icon slot="suffix" name="patch-check"></awc-icon>
       </awc-option>
 
       <awc-option value="option-3">
-          <awc-icon slot="prefix" name="chat-dots"></awc-icon>
-          Chat
-          <awc-icon slot="suffix" name="patch-check"></awc-icon>
+        <awc-icon slot="prefix" name="chat-dots"></awc-icon>
+        Chat
+        <awc-icon slot="suffix" name="patch-check"></awc-icon>
       </awc-option>
-  </awc-select>`,
+    </awc-select>`
 };

@@ -1,5 +1,5 @@
-import packageJson from "../package.json";
+import packageJson from '../package.json';
 
 export default {
-    VERSION: packageJson.version
-}
+  VERSION: packageJson.version
+};

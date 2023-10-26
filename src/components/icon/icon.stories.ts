@@ -3,13 +3,13 @@ import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCIcon from './icon';
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-icon');
-import {registerIconLibrary} from '../../utilities/icon-library';
+import { registerIconLibrary } from '../../utilities/icon-library.ts';
 
 registerIconLibrary('boxicons', {
   resolver: name => {
     let folder = 'regular';
-    if (name.substring(0, 4) === 'bxs-') folder = 'solid';
-    if (name.substring(0, 4) === 'bxl-') folder = 'logos';
+    if (name.startsWith('bxs-')) folder = 'solid';
+    if (name.startsWith('bxl-')) folder = 'logos';
     return `https://cdn.jsdelivr.net/npm/boxicons@2.1.4/svg/${folder}/${name}.svg`;
   },
   mutator: svg => svg.setAttribute('fill', 'currentColor')
@@ -23,8 +23,8 @@ registerIconLibrary('fa', {
   resolver: name => {
     const filename = name.replace(/^fa[rbs]-/, '');
     let folder = 'regular';
-    if (name.substring(0, 4) === 'fas-') folder = 'solid';
-    if (name.substring(0, 4) === 'fab-') folder = 'brands';
+    if (name.startsWith('fas-')) folder = 'solid';
+    if (name.startsWith('fab-')) folder = 'brands';
     return `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/${folder}/${filename}.svg`;
   },
   mutator: svg => svg.setAttribute('fill', 'currentColor')
@@ -34,7 +34,7 @@ registerIconLibrary('heroicons', {
   resolver: name => {
     const filename = name.replace(/^o-/, '');
     let folder = 'solid';
-    if (name.substring(0, 2) === 'o-') folder = 'outline';
+    if (name.startsWith('o-')) folder = 'outline';
     return `https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/${folder}/${filename}.svg`;
   }
 });
@@ -83,10 +83,10 @@ registerIconLibrary('unicons', {
   resolver: name => {
     const filename = name.replace(/^[lmst]-/, '');
     let folder = 'solid';
-    if (name.substring(0, 2) === 'l-') folder = 'line';
-    if (name.substring(0, 2) === 'm-') folder = 'monochrome';
-    if (name.substring(0, 2) === 's-') folder = 'solid';
-    if (name.substring(0, 2) === 't-') folder = 'thinline';
+    if (name.startsWith('l-')) folder = 'line';
+    if (name.startsWith('m-')) folder = 'monochrome';
+    if (name.startsWith('s-')) folder = 'solid';
+    if (name.startsWith('t-')) folder = 'thinline';
     return `https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/svg/${folder}/${filename}.svg`;
   },
   mutator: svg => svg.setAttribute('fill', 'currentColor')
@@ -108,12 +108,12 @@ const meta = {
     layout: 'padded',
     docs: {
       toc: {
-        disable: false,
-      },
+        disable: false
+      }
     },
     actions: {
       handles: events
-    },
+    }
   },
   render: context => template(context)
 } satisfies Meta<AWCIcon & typeof args>;
@@ -131,30 +131,31 @@ export const Colors: Story = {
       }
     }
   },
-  render: () => html`<div style="color: #4a90e2;">
-  <awc-icon name="exclamation-triangle"></awc-icon>
-  <awc-icon name="archive"></awc-icon>
-  <awc-icon name="battery-charging"></awc-icon>
-  <awc-icon name="bell"></awc-icon>
-</div>
-<div style="color: #9013fe;">
-  <awc-icon name="clock"></awc-icon>
-  <awc-icon name="cloud"></awc-icon>
-  <awc-icon name="download"></awc-icon>
-  <awc-icon name="file-earmark"></awc-icon>
-</div>
-<div style="color: #417505;">
-  <awc-icon name="flag"></awc-icon>
-  <awc-icon name="heart"></awc-icon>
-  <awc-icon name="image"></awc-icon>
-  <awc-icon name="lightning"></awc-icon>
-</div>
-<div style="color: #f5a623;">
-  <awc-icon name="mic"></awc-icon>
-  <awc-icon name="search"></awc-icon>
-  <awc-icon name="star"></awc-icon>
-  <awc-icon name="trash"></awc-icon>
-</div>`
+  render: () =>
+    html`<div style="color: #4a90e2;">
+        <awc-icon name="exclamation-triangle"></awc-icon>
+        <awc-icon name="archive"></awc-icon>
+        <awc-icon name="battery-charging"></awc-icon>
+        <awc-icon name="bell"></awc-icon>
+      </div>
+      <div style="color: #9013fe;">
+        <awc-icon name="clock"></awc-icon>
+        <awc-icon name="cloud"></awc-icon>
+        <awc-icon name="download"></awc-icon>
+        <awc-icon name="file-earmark"></awc-icon>
+      </div>
+      <div style="color: #417505;">
+        <awc-icon name="flag"></awc-icon>
+        <awc-icon name="heart"></awc-icon>
+        <awc-icon name="image"></awc-icon>
+        <awc-icon name="lightning"></awc-icon>
+      </div>
+      <div style="color: #f5a623;">
+        <awc-icon name="mic"></awc-icon>
+        <awc-icon name="search"></awc-icon>
+        <awc-icon name="star"></awc-icon>
+        <awc-icon name="trash"></awc-icon>
+      </div>`
 };
 
 export const Sizing: Story = {
@@ -166,7 +167,8 @@ export const Sizing: Story = {
       }
     }
   },
-  render: () => html`<div style="font-size: 32px;">
+  render: () =>
+    html`<div style="font-size: 32px;">
       <awc-icon name="exclamation-triangle"></awc-icon>
       <awc-icon name="archive"></awc-icon>
       <awc-icon name="battery-charging"></awc-icon>
@@ -183,7 +185,7 @@ export const Sizing: Story = {
       <awc-icon name="search"></awc-icon>
       <awc-icon name="star"></awc-icon>
       <awc-icon name="trash"></awc-icon>
-  </div>`
+    </div>`
 };
 
 export const Labels: Story = {
@@ -211,49 +213,51 @@ export const CustomIcons: Story = {
     }
   },
   args: {
-    src: '/images/shoe.svg',
+    src: '/images/shoe.svg'
   }
 };
 
 export const Boxicons: Story = {
-  render: () => html`
-      <div style="font-size: 24px;">
-          <awc-icon library="boxicons" name="bx-bot"></awc-icon>
-          <awc-icon library="boxicons" name="bx-cookie"></awc-icon>
-          <awc-icon library="boxicons" name="bx-joystick"></awc-icon>
-          <awc-icon library="boxicons" name="bx-save"></awc-icon>
-          <awc-icon library="boxicons" name="bx-server"></awc-icon>
-          <awc-icon library="boxicons" name="bx-wine"></awc-icon>
-          <br/>
-          <awc-icon library="boxicons" name="bxs-bot"></awc-icon>
-          <awc-icon library="boxicons" name="bxs-cookie"></awc-icon>
-          <awc-icon library="boxicons" name="bxs-joystick"></awc-icon>
-          <awc-icon library="boxicons" name="bxs-save"></awc-icon>
-          <awc-icon library="boxicons" name="bxs-server"></awc-icon>
-          <awc-icon library="boxicons" name="bxs-wine"></awc-icon>
-          <br/>
-          <awc-icon library="boxicons" name="bxl-apple"></awc-icon>
-          <awc-icon library="boxicons" name="bxl-chrome"></awc-icon>
-          <awc-icon library="boxicons" name="bxl-edge"></awc-icon>
-          <awc-icon library="boxicons" name="bxl-firefox"></awc-icon>
-          <awc-icon library="boxicons" name="bxl-opera"></awc-icon>
-          <awc-icon library="boxicons" name="bxl-microsoft"></awc-icon>
-      </div>`
+  render: () =>
+    html` <div style="font-size: 24px;">
+      <awc-icon library="boxicons" name="bx-bot"></awc-icon>
+      <awc-icon library="boxicons" name="bx-cookie"></awc-icon>
+      <awc-icon library="boxicons" name="bx-joystick"></awc-icon>
+      <awc-icon library="boxicons" name="bx-save"></awc-icon>
+      <awc-icon library="boxicons" name="bx-server"></awc-icon>
+      <awc-icon library="boxicons" name="bx-wine"></awc-icon>
+      <br />
+      <awc-icon library="boxicons" name="bxs-bot"></awc-icon>
+      <awc-icon library="boxicons" name="bxs-cookie"></awc-icon>
+      <awc-icon library="boxicons" name="bxs-joystick"></awc-icon>
+      <awc-icon library="boxicons" name="bxs-save"></awc-icon>
+      <awc-icon library="boxicons" name="bxs-server"></awc-icon>
+      <awc-icon library="boxicons" name="bxs-wine"></awc-icon>
+      <br />
+      <awc-icon library="boxicons" name="bxl-apple"></awc-icon>
+      <awc-icon library="boxicons" name="bxl-chrome"></awc-icon>
+      <awc-icon library="boxicons" name="bxl-edge"></awc-icon>
+      <awc-icon library="boxicons" name="bxl-firefox"></awc-icon>
+      <awc-icon library="boxicons" name="bxl-opera"></awc-icon>
+      <awc-icon library="boxicons" name="bxl-microsoft"></awc-icon>
+    </div>`
 };
 
 export const Lucide: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="lucide" name="feather"></awc-icon>
       <awc-icon library="lucide" name="pie-chart"></awc-icon>
       <awc-icon library="lucide" name="settings"></awc-icon>
       <awc-icon library="lucide" name="map-pin"></awc-icon>
       <awc-icon library="lucide" name="printer"></awc-icon>
       <awc-icon library="lucide" name="shopping-cart"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const FontAwesome: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="fa" name="far-bell"></awc-icon>
       <awc-icon library="fa" name="far-comment"></awc-icon>
       <awc-icon library="fa" name="far-hand-point-right"></awc-icon>
@@ -274,40 +278,43 @@ export const FontAwesome: Story = {
       <awc-icon library="fa" name="fab-firefox"></awc-icon>
       <awc-icon library="fa" name="fab-opera"></awc-icon>
       <awc-icon library="fa" name="fab-microsoft"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const Heroicons: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="heroicons" name="chat-bubble-left"></awc-icon>
       <awc-icon library="heroicons" name="cloud"></awc-icon>
       <awc-icon library="heroicons" name="cog"></awc-icon>
       <awc-icon library="heroicons" name="document-text"></awc-icon>
       <awc-icon library="heroicons" name="gift"></awc-icon>
       <awc-icon library="heroicons" name="speaker-wave"></awc-icon>
-      <br>
+      <br />
       <awc-icon library="heroicons" name="o-chat-bubble-left"></awc-icon>
       <awc-icon library="heroicons" name="o-cloud"></awc-icon>
       <awc-icon library="heroicons" name="o-cog"></awc-icon>
       <awc-icon library="heroicons" name="o-document-text"></awc-icon>
       <awc-icon library="heroicons" name="o-gift"></awc-icon>
       <awc-icon library="heroicons" name="o-speaker-wave"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const Iconoir: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="iconoir" name="check-circle"></awc-icon>
       <awc-icon library="iconoir" name="drawer"></awc-icon>
       <awc-icon library="iconoir" name="keyframes"></awc-icon>
       <awc-icon library="iconoir" name="headset-help"></awc-icon>
       <awc-icon library="iconoir" name="color-picker"></awc-icon>
       <awc-icon library="iconoir" name="wifi"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const Ionicons: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="ionicons" name="alarm"></awc-icon>
       <awc-icon library="ionicons" name="american-football"></awc-icon>
       <awc-icon library="ionicons" name="bug"></awc-icon>
@@ -328,11 +335,12 @@ export const Ionicons: Story = {
       <awc-icon library="ionicons" name="chatbubble-sharp"></awc-icon>
       <awc-icon library="ionicons" name="settings-sharp"></awc-icon>
       <awc-icon library="ionicons" name="warning-sharp"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const JamIcons: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="jam" name="calendar"></awc-icon>
       <awc-icon library="jam" name="camera"></awc-icon>
       <awc-icon library="jam" name="filter"></awc-icon>
@@ -346,11 +354,12 @@ export const JamIcons: Story = {
       <awc-icon library="jam" name="leaf-f"></awc-icon>
       <awc-icon library="jam" name="picture-f"></awc-icon>
       <awc-icon library="jam" name="set-square-f"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const MaterialIcons: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="material" name="notifications"></awc-icon>
       <awc-icon library="material" name="email"></awc-icon>
       <awc-icon library="material" name="delete"></awc-icon>
@@ -392,11 +401,12 @@ export const MaterialIcons: Story = {
       <awc-icon library="material" name="volume_up_twotone"></awc-icon>
       <awc-icon library="material" name="settings_twotone"></awc-icon>
       <awc-icon library="material" name="shopping_basket_twotone"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const RemixIcon: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="remixicon" name="business/cloud-line"></awc-icon>
       <awc-icon library="remixicon" name="design/brush-line"></awc-icon>
       <awc-icon library="remixicon" name="business/pie-chart-line"></awc-icon>
@@ -410,11 +420,12 @@ export const RemixIcon: Story = {
       <awc-icon library="remixicon" name="development/bug-fill"></awc-icon>
       <awc-icon library="remixicon" name="media/image-fill"></awc-icon>
       <awc-icon library="remixicon" name="system/alert-fill"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const TablerIcons: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="tabler" name="alert-triangle"></awc-icon>
       <awc-icon library="tabler" name="arrow-back"></awc-icon>
       <awc-icon library="tabler" name="at"></awc-icon>
@@ -428,11 +439,12 @@ export const TablerIcons: Story = {
       <awc-icon library="tabler" name="printer"></awc-icon>
       <awc-icon library="tabler" name="ship"></awc-icon>
       <awc-icon library="tabler" name="toilet-paper"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const Unicons: Story = {
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="unicons" name="clock"></awc-icon>
       <awc-icon library="unicons" name="anchor"></awc-icon>
       <awc-icon library="unicons" name="check-circle"></awc-icon>
@@ -460,20 +472,21 @@ export const Unicons: Story = {
       <awc-icon library="unicons" name="l-polygon"></awc-icon>
       <awc-icon library="unicons" name="l-rocket"></awc-icon>
       <awc-icon library="unicons" name="l-star"></awc-icon>
-      <br>
+      <br />
       <awc-icon library="unicons" name="t-clock"></awc-icon>
       <awc-icon library="unicons" name="t-anchor"></awc-icon>
       <awc-icon library="unicons" name="t-check-circle"></awc-icon>
       <awc-icon library="unicons" name="t-polygon"></awc-icon>
       <awc-icon library="unicons" name="t-rocket"></awc-icon>
       <awc-icon library="unicons" name="t-star"></awc-icon>
-  </div>`
-}
+    </div>`
+};
 
 export const SVGSprites: Story = {
   name: 'SVG sprites',
-  render: () => html`<div style="font-size: 24px;">
+  render: () =>
+    html`<div style="font-size: 24px;">
       <awc-icon library="sprite" name="clock"></awc-icon>
       <awc-icon library="sprite" name="speedometer"></awc-icon>
-  </div>`
-}
+    </div>`
+};

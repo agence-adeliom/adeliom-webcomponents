@@ -26,7 +26,8 @@ type Story = StoryObj<AWCMenuItem & typeof args>;
 
 export const Primary: Story = {
   name: 'Example',
-  render: () => html`<awc-menu style="max-width: 200px;">
+  render: () =>
+    html`<awc-menu style="max-width: 200px;">
       <awc-menu-item>Option 1</awc-menu-item>
       <awc-menu-item>Option 2</awc-menu-item>
       <awc-menu-item>Option 3</awc-menu-item>
@@ -35,14 +36,14 @@ export const Primary: Story = {
       <awc-menu-item disabled>Disabled</awc-menu-item>
       <awc-divider></awc-divider>
       <awc-menu-item>
-          Prefix Icon
-          <awc-icon slot="prefix" name="gift"></awc-icon>
+        Prefix Icon
+        <awc-icon slot="prefix" name="gift"></awc-icon>
       </awc-menu-item>
       <awc-menu-item>
-          Suffix Icon
-          <awc-icon slot="suffix" name="heart"></awc-icon>
+        Suffix Icon
+        <awc-icon slot="suffix" name="heart"></awc-icon>
       </awc-menu-item>
-  </awc-menu>`
+    </awc-menu>`
 };
 
 export const Disabled: Story = {
@@ -54,13 +55,13 @@ export const Disabled: Story = {
       }
     }
   },
-  render: () => html`<awc-menu style="max-width: 200px;">
+  render: () =>
+    html`<awc-menu style="max-width: 200px;">
       <awc-menu-item>Option 1</awc-menu-item>
       <awc-menu-item disabled>Option 2</awc-menu-item>
       <awc-menu-item>Option 3</awc-menu-item>
-  </awc-menu>`
+    </awc-menu>`
 };
-
 
 export const PrefixSuffix: Story = {
   name: 'Prefix & Suffix',
@@ -71,25 +72,26 @@ export const PrefixSuffix: Story = {
       }
     }
   },
-  render: () => html`<awc-menu style="max-width: 200px;">
+  render: () =>
+    html`<awc-menu style="max-width: 200px;">
       <awc-menu-item>
-          <awc-icon slot="prefix" name="house"></awc-icon>
-          Home
+        <awc-icon slot="prefix" name="house"></awc-icon>
+        Home
       </awc-menu-item>
 
       <awc-menu-item>
-          <awc-icon slot="prefix" name="envelope"></awc-icon>
-          Messages
-          <awc-badge slot="suffix" variant="primary" pill>12</awc-badge>
+        <awc-icon slot="prefix" name="envelope"></awc-icon>
+        Messages
+        <awc-badge slot="suffix" variant="primary" pill>12</awc-badge>
       </awc-menu-item>
 
       <awc-divider></awc-divider>
 
       <awc-menu-item>
-          <awc-icon slot="prefix" name="gear"></awc-icon>
-          Settings
+        <awc-icon slot="prefix" name="gear"></awc-icon>
+        Settings
       </awc-menu-item>
-  </awc-menu>`
+    </awc-menu>`
 };
 
 export const CheckboxItems: Story = {
@@ -103,11 +105,12 @@ Checkbox menu items are visually indistinguishable from regular menu items. Thei
       }
     }
   },
-  render: () => html`<awc-menu style="max-width: 200px;">
+  render: () =>
+    html`<awc-menu style="max-width: 200px;">
       <awc-menu-item type="checkbox">Autosave</awc-menu-item>
       <awc-menu-item type="checkbox" checked>Check Spelling</awc-menu-item>
       <awc-menu-item type="checkbox">Word Wrap</awc-menu-item>
-  </awc-menu>`
+    </awc-menu>`
 };
 
 export const ValueSelection: Story = {
@@ -119,29 +122,29 @@ export const ValueSelection: Story = {
       }
     }
   },
-  render: () => html`
-      <awc-menu class="menu-value" style="max-width: 200px;">
-          <awc-menu-item value="opt-1">Option 1</awc-menu-item>
-          <awc-menu-item value="opt-2">Option 2</awc-menu-item>
-          <awc-menu-item value="opt-3">Option 3</awc-menu-item>
-          <awc-divider></awc-divider>
-          <awc-menu-item type="checkbox" value="opt-4">Checkbox 4</awc-menu-item>
-          <awc-menu-item type="checkbox" value="opt-5">Checkbox 5</awc-menu-item>
-          <awc-menu-item type="checkbox" value="opt-6">Checkbox 6</awc-menu-item>
+  render: () =>
+    html` <awc-menu class="menu-value" style="max-width: 200px;">
+        <awc-menu-item value="opt-1">Option 1</awc-menu-item>
+        <awc-menu-item value="opt-2">Option 2</awc-menu-item>
+        <awc-menu-item value="opt-3">Option 3</awc-menu-item>
+        <awc-divider></awc-divider>
+        <awc-menu-item type="checkbox" value="opt-4">Checkbox 4</awc-menu-item>
+        <awc-menu-item type="checkbox" value="opt-5">Checkbox 5</awc-menu-item>
+        <awc-menu-item type="checkbox" value="opt-6">Checkbox 6</awc-menu-item>
       </awc-menu>
 
       <script>
-          const menu = document.querySelector('.menu-value');
+        const menu = document.querySelector('.menu-value');
 
-          menu.addEventListener('awc-select', event => {
-              const item = event.detail.item;
+        menu.addEventListener('awc-select', event => {
+          const item = event.detail.item;
 
-              // Log value
-              if (item.type === 'checkbox') {
-                  console.log(\`Selected value: \${item.value} (\${item.checked ? 'checked' : 'unchecked'})\`);
-              } else {
-                  console.log(\`Selected value: \${item.value}\`);
-              }
-          });
+          // Log value
+          if (item.type === 'checkbox') {
+            console.log(\`Selected value: \${item.value} (\${item.checked ? 'checked' : 'unchecked'})\`);
+          } else {
+            console.log(\`Selected value: \${item.value}\`);
+          }
+        });
       </script>`
 };

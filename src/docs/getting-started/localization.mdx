@@ -1,6 +1,6 @@
-import {Story, Canvas, Title, Subtitle, Meta} from "@storybook/blocks";
+import { Story, Canvas, Title, Subtitle, Meta } from '@storybook/blocks';
 
-<Meta title="Getting started/Localization" parameters={{docs: {toc: {disable: false}}}} />
+<Meta title="Getting started/Localization" parameters={{ docs: { toc: { disable: false } } }} />
 
 # Localization
 
@@ -43,9 +43,9 @@ import('/path/to/awc/dist/translations/de.js');
 
 The locale set by `<html lang="...">` is the default locale for the document. If a country code is provided, e.g. `es-PE` for Peruvian Spanish, the localization library will resolve it like this:
 
- 1. Look for `es-PE`
- 2. Look for `es`
- 3. Fall back to `en`
+1.  Look for `es-PE`
+2.  Look for `es`
+3.  Fall back to `en`
 
 Adeliom WebComponents uses English as a fallback to provide a better experience than rendering nothing or throwing an error.
 

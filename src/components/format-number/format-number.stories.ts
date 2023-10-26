@@ -1,7 +1,7 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCFormatNumber from './format-number.ts';
-import {html} from "lit";
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-format-number');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
@@ -18,7 +18,8 @@ const meta = {
     },
     docs: {
       description: {
-        component: "Localization is handled by the browser's [`Intl.NumberFormat` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat). No language packs are required."
+        component:
+          "Localization is handled by the browser's [`Intl.NumberFormat` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat). No language packs are required."
       }
     }
   },
@@ -33,40 +34,40 @@ export const Primary: Story = {
   name: 'Default',
   render: () =>
     html`<div class="format-number-overview">
-    <awc-format-number value="1000"></awc-format-number>
-    <br /><br />
-    <awc-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></awc-input>
-  </div>
+        <awc-format-number value="1000"></awc-format-number>
+        <br /><br />
+        <awc-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></awc-input>
+      </div>
 
-  <script>
-    const container = document.querySelector('.format-number-overview');
-    const formatter = container.querySelector('awc-format-number');
-    const input = container.querySelector('awc-input');
+      <script>
+        const container = document.querySelector('.format-number-overview');
+        const formatter = container.querySelector('awc-format-number');
+        const input = container.querySelector('awc-input');
 
-    input.addEventListener('awc-input', () => (formatter.value = input.value || 0));
-  </script>`,
+        input.addEventListener('awc-input', () => (formatter.value = input.value || 0));
+      </script>`
 };
 
- export const Percentages: Story = {
+export const Percentages: Story = {
   name: 'Percentages',
   args: {
     type: 'percent'
   },
   render: context => html`
-    ${template({...context, value: '0' })}
-    <br/>
-    ${template({...context, value: '0.25' })}
-    <br/>
-    ${template({...context, value: '0.50' })}
-    <br/>
-    ${template({...context, value: '0.75' })}
-    <br/>
-    ${template({...context, value: '1' })}
+    ${template({ ...context, value: '0' })}
+    <br />
+    ${template({ ...context, value: '0.25' })}
+    <br />
+    ${template({ ...context, value: '0.50' })}
+    <br />
+    ${template({ ...context, value: '0.75' })}
+    <br />
+    ${template({ ...context, value: '1' })}
   `,
   parameters: {
     docs: {
       description: {
-        story: "To get the value as a percent, set the `type` attribute to `percent`."
+        story: 'To get the value as a percent, set the `type` attribute to `percent`.'
       }
     }
   }
@@ -82,7 +83,7 @@ export const Localization: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Use the `lang` attribute to set the number formatting locale."
+        story: 'Use the `lang` attribute to set the number formatting locale.'
       }
     }
   }
@@ -95,20 +96,21 @@ export const Currency: Story = {
     value: 2000
   },
   render: context => html`
-    ${template({...context, currency: 'USD', lang: 'en-US' })}
-    <br/>
-    ${template({...context, currency: 'GBP', lang: 'en-GB' })}
-    <br/>
-    ${template({...context, currency: 'EUR', lang: 'de' })}
-    <br/>
-    ${template({...context, currency: 'RUB', lang: 'ru' })}
-    <br/>
-    ${template({...context, currency: 'CNY', lang: 'zh-cn' })}
+    ${template({ ...context, currency: 'USD', lang: 'en-US' })}
+    <br />
+    ${template({ ...context, currency: 'GBP', lang: 'en-GB' })}
+    <br />
+    ${template({ ...context, currency: 'EUR', lang: 'de' })}
+    <br />
+    ${template({ ...context, currency: 'RUB', lang: 'ru' })}
+    <br />
+    ${template({ ...context, currency: 'CNY', lang: 'zh-cn' })}
   `,
   parameters: {
     docs: {
       description: {
-        story: "To format a number as a monetary value, set the `type` attribute to `currency` and set the `currency` attribute to the desired ISO 4217 currency code. You should also specify `lang` to ensure the the number is formatted correctly for the target locale."
+        story:
+          'To format a number as a monetary value, set the `type` attribute to `currency` and set the `currency` attribute to the desired ISO 4217 currency code. You should also specify `lang` to ensure the the number is formatted correctly for the target locale.'
       }
     }
   }
