@@ -101,8 +101,8 @@ You can provide your own translations if you have specific needs or if you don't
 Let's create a Spanish translation as an example. The following assumes you're using TypeScript, but you can also create translations with regular JavaScript.
 
 ```js
-import { registerTranslation } from '@agence-adeliom/awc/dist/utilities/localize';
-import type { Translation } from '@agence-adeliom/awc/dist/utilities/localize';
+import { registerTranslation } from '@agence-adeliom/awc/%NPMDIR%/utilities/localize';
+import type { Translation } from '@agence-adeliom/awc/%NPMDIR%/utilities/localize';
 
 const translation: Translation = {
   $code: 'es',

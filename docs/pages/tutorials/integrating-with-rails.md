@@ -33,8 +33,8 @@ yarn add @agence-adeliom/awc copy-webpack-plugin
 The next step is to import Adeliom WebComponents's default theme (stylesheet) in `app/javascript/stylesheets/application.scss`.
 
 ```css
-@import '@agence-adeliom/awc/dist/themes/light';
-@import '@agence-adeliom/awc/dist/themes/dark'; // Optional dark theme
+@import '@agence-adeliom/awc/%NPMDIR%/themes/light';
+@import '@agence-adeliom/awc/%NPMDIR%/themes/dark'; // Optional dark theme
 ```
 
 Fore more details about themes, please refer to [Theme Basics](/getting-started/themes#theme-basics).
@@ -73,7 +73,7 @@ environment.plugins.append(
   new CopyPlugin({
     patterns: [
       {
-        from: path.resolve(__dirname, '../../node_modules/@agence-adeliom/awc/dist/assets'),
+        from: path.resolve(__dirname, '../../node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
         to: path.resolve(__dirname, '../../public/packs/js/assets')
       }
     ]

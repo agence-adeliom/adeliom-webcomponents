@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCOembed } from '@agence-adeliom/awc/dist/react';
+import { AWCOembed } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>

@@ -14,7 +14,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCRadioGroup label="Select an option" name="a" value="1">
@@ -40,7 +40,7 @@ Add descriptive help text to a radio group with the `help-text` attribute. For h
 ```
 
 ```jsx:react
-import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCRadioGroup label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
@@ -64,7 +64,7 @@ const App = () => (
 ```
 
 ```jsx:react
-import { AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCRadioButton, AWCRadioGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCRadioGroup label="Select an option" name="a" value="1">
@@ -88,7 +88,7 @@ Radios and radio buttons can be disabled by adding the `disabled` attribute to t
 ```
 
 ```jsx:react
-import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCRadioGroup label="Select an option" name="a" value="1">
@@ -123,7 +123,7 @@ The size of [Radios](/components/radio) and [Radio Buttons](/components/radio-bu
 
 ```jsx react
 import { useState } from 'react';
-import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [size, setSize] = useState('medium');
@@ -177,7 +177,7 @@ Setting the `required` attribute to make selecting an option mandatory. If a val
 ```
 
 ```jsx:react
-import { AWCButton, AWCIcon, AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCIcon, AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 const App = () => {
   function handleSubmit(event) {
     event.preventDefault();
@@ -247,7 +247,7 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```jsx:react
 import { useEffect, useRef } from 'react';
-import { AWCButton, AWCIcon, AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCIcon, AWCRadio, AWCRadioGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 const App = () => {
   const radioGroup = useRef(null);
   const errorMessage = 'You must choose this option';

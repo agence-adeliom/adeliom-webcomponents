@@ -24,7 +24,7 @@ layout: component
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCFormatBytes, AWCInput } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCFormatBytes, AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [value, setValue] = useState(1000);
@@ -62,7 +62,7 @@ Set the `value` attribute to a number to get the value in bytes.
 ```
 
 ```jsx:react
-import { AWCFormatBytes } from '@agence-adeliom/awc/dist/react';
+import { AWCFormatBytes } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -89,7 +89,7 @@ To get the value in bits, set the `unit` attribute to `bit`.
 ```
 
 ```jsx:react
-import { AWCFormatBytes } from '@agence-adeliom/awc/dist/react';
+import { AWCFormatBytes } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -116,7 +116,7 @@ Use the `lang` attribute to set the number formatting locale.
 ```
 
 ```jsx:react
-import { AWCFormatBytes } from '@agence-adeliom/awc/dist/react';
+import { AWCFormatBytes } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>

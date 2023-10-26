@@ -16,7 +16,7 @@ Tooltips use `display: contents` so they won't interfere with how elements are p
 ```
 
 ```jsx:react
-import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTooltip content="This is a tooltip">
@@ -125,7 +125,7 @@ Use the `placement` attribute to set the preferred placement of the tooltip.
 ```
 
 ```jsx:react
-import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .tooltip-placement-example {
@@ -235,7 +235,7 @@ Set the `trigger` attribute to `click` to toggle the tooltip on click instead of
 ```
 
 ```jsx:react
-import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTooltip content="Click again to dismiss" trigger="click">
@@ -267,7 +267,7 @@ Tooltips can be controller programmatically by setting the `trigger` attribute t
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCAvatar, AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCAvatar, AWCButton, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -301,7 +301,7 @@ You can control the size of tooltip arrows by overriding the `--awc-tooltip-arro
 {% raw %}
 
 ```jsx:react
-import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <div style={{ '--awc-tooltip-arrow-size': '0' }}>
@@ -339,7 +339,7 @@ Use the `content` slot to create tooltips with HTML content. Tooltips are design
 ```
 
 ```jsx:react
-import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTooltip>
@@ -365,7 +365,7 @@ Use the `--max-width` custom property to change the width the tooltip can grow t
 {% raw %}
 
 ```jsx:react
-import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTooltip style={{ '--max-width': '80px' }} content="This tooltip will wrap after only 80 pixels.">
@@ -402,7 +402,7 @@ Tooltips will be clipped if they're inside a container that has `overflow: auto|
 ```
 
 ```jsx:react
-import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .tooltip-hoist {

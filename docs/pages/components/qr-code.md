@@ -39,7 +39,7 @@ QR codes are useful for providing small pieces of information to users who can q
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCQrCode, AWCInput } from '@agence-adeliom/awc/dist/react';
+import { AWCQrCode, AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .qr-overview {
@@ -80,7 +80,7 @@ Use the `fill` and `background` attributes to modify the QR code's colors. You s
 ```
 
 ```jsx:react
-import { AWCQrCode } from '@agence-adeliom/awc/dist/react';
+import { AWCQrCode } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCQrCode value="https://awc.a-dev.cloud/" fill="deeppink" background="white" />;
 ```
@@ -94,7 +94,7 @@ Use the `size` attribute to change the size of the QR code.
 ```
 
 ```jsx:react
-import { AWCQrCode } from '@agence-adeliom/awc/dist/react';
+import { AWCQrCode } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCQrCode value="https://awc.a-dev.cloud/" size="64" />;
 ```
@@ -108,7 +108,7 @@ Create a rounded effect with the `radius` attribute.
 ```
 
 ```jsx:react
-import { AWCQrCode } from '@agence-adeliom/awc/dist/react';
+import { AWCQrCode } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCQrCode value="https://awc.a-dev.cloud/" radius="0.5" />;
 ```
@@ -135,7 +135,7 @@ QR codes can be rendered with various levels of [error correction](https://www.q
 ```
 
 ```jsx:react
-import { AWCQrCode } from '@agence-adeliom/awc/dist/react';
+import { AWCQrCode } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .qr-error-correction {

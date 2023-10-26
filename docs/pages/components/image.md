@@ -27,7 +27,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCImage } from '@agence-adeliom/awc/dist/react';
+import { AWCImage } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>

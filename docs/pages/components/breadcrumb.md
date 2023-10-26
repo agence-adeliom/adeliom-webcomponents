@@ -17,7 +17,7 @@ Breadcrumbs are usually placed before a page's main content with the current pag
 ```
 
 ```jsx:react
-import { AWCBreadcrumb, AWCBreadcrumbItem } from '@agence-adeliom/awc/dist/react';
+import { AWCBreadcrumb, AWCBreadcrumbItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCBreadcrumb>
@@ -47,7 +47,7 @@ For websites, you'll probably want to use links instead. You can make any breadc
 ```
 
 ```jsx:react
-import { AWCBreadcrumb, AWCBreadcrumbItem } from '@agence-adeliom/awc/dist/react';
+import { AWCBreadcrumb, AWCBreadcrumbItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCBreadcrumb>
@@ -94,8 +94,8 @@ Use the `separator` slot to change the separator that goes between breadcrumb it
 ```
 
 ```jsx:react
-import '@agence-adeliom/awc/dist/components/icon/icon.js';
-import { AWCBreadcrumb, AWCBreadcrumbItem } from '@agence-adeliom/awc/dist/react';
+import '@agence-adeliom/awc/%NPMDIR%/components/icon/icon.js';
+import { AWCBreadcrumb, AWCBreadcrumbItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -143,7 +143,7 @@ Use the `prefix` slot to add content before any breadcrumb item.
 ```
 
 ```jsx:react
-import { AWCBreadcrumb, AWCBreadcrumbItem, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCBreadcrumb, AWCBreadcrumbItem, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCBreadcrumb>
@@ -173,7 +173,7 @@ Use the `suffix` slot to add content after any breadcrumb item.
 ```
 
 ```jsx:react
-import { AWCBreadcrumb, AWCBreadcrumbItem, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCBreadcrumb, AWCBreadcrumbItem, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCBreadcrumb>
@@ -221,7 +221,7 @@ import {
   SlIcon,
   SlMenu,
   SlMenuItem
-} from '@agence-adeliom/awc/dist/react';
+} from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCBreadcrumb>

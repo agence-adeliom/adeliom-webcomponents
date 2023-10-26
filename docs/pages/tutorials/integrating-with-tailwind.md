@@ -27,7 +27,7 @@ npm install @agence-adeliom/awc
 Import the Adeliom WebComponents default theme (stylesheet) in your app:
 
 ```css
-@import '@agence-adeliom/awc/dist/themes/light.css';
+@import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
 ```
 
 ### Setup AWC Tailwind Preset
@@ -37,7 +37,7 @@ In your Tailwind config setup a [preset](https://tailwindcss.com/docs/presets)
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  presets: [require('@agence-adeliom/awc/dist/tailwind/preset.js')],
+  presets: [require('@agence-adeliom/awc/%NPMDIR%/tailwind/preset.js')],
   content: ['./src/**/*.{html,js}'],
   theme: {
     extend: {}

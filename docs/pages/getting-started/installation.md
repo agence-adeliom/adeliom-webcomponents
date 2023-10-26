@@ -188,7 +188,7 @@ module.exports = {
       patterns: [
         // Copy AWC assets to dist/awc
         {
-          from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
+          from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
           to: path.resolve(__dirname, 'dist/awc/assets')
         }
       ]
@@ -224,7 +224,7 @@ export default {
       copyOnce: true,
       targets: [
         {
-          src: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
+          src: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
           dest: path.resolve(__dirname, 'dist/awc')
         }
       ]

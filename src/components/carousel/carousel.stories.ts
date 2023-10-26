@@ -311,12 +311,12 @@ export const MultipleSlidesPerView: Story = {
   name: 'Multiple Slides Per View',
   render: () => html`
     <awc-carousel navigation pagination slides-per-page="2" slides-per-move="2">
-      <awc-carousel-item style="background: var(--awc-color-red-200);">Slide 1</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-orange-200);">Slide 2</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-yellow-200);">Slide 3</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-green-200);">Slide 4</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-blue-200);">Slide 5</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-violet-200);">Slide 6</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-primary-200);">Slide 1</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-secondary-200);">Slide 2</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-tertiary-200);">Slide 3</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-success-200);">Slide 4</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-warning-200);">Slide 5</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-danger-200);">Slide 6</awc-carousel-item>
     </awc-carousel>
   `,
   parameters: {
@@ -333,9 +333,9 @@ export const AddingRemovingSlides: Story = {
   name: 'Adding and Removing Slides',
   render: () => html`
     <awc-carousel class="dynamic-carousel" pagination navigation>
-      <awc-carousel-item style="background: var(--awc-color-red-200)">Slide 1</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-orange-200)">Slide 2</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-yellow-200)">Slide 3</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-danger-200)">Slide 1</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-warning-200)">Slide 2</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-tertiary-200)">Slide 3</awc-carousel-item>
     </awc-carousel>
 
     <div class="carousel-options">
@@ -369,7 +369,7 @@ export const AddingRemovingSlides: Story = {
         const dynamicCarousel = document.querySelector('.dynamic-carousel');
         const dynamicAdd = document.querySelector('#dynamic-add');
         const dynamicRemove = document.querySelector('#dynamic-remove');
-        const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];
+        const colors = ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger'];
         let colorIndex = 2;
 
         const addSlide = () => {

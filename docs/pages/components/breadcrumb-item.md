@@ -17,7 +17,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCBreadcrumb, AWCBreadcrumbItem, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCBreadcrumb, AWCBreadcrumbItem, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCBreadcrumb>

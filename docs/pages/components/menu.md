@@ -22,7 +22,7 @@ You can use [menu items](/components/menu-item), [menu labels](/components/menu-
 {% raw %}
 
 ```jsx:react
-import { AWCDivider, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCDivider, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCMenu style={{ maxWidth: '200px' }}>

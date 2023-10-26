@@ -13,7 +13,7 @@ Localization is handled by the browser's [`Intl.RelativeTimeFormat` API](https:/
 ```
 
 ```jsx:react
-import { AWCRelativeTime } from '@agence-adeliom/awc/dist/react';
+import { AWCRelativeTime } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCRelativeTime date="2020-07-15T09:17:00-04:00" />;
 ```
@@ -44,7 +44,7 @@ Use the `sync` attribute to update the displayed value automatically as time pas
 ```
 
 ```jsx:react
-import { AWCRelativeTime } from '@agence-adeliom/awc/dist/react';
+import { AWCRelativeTime } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const date = new Date(new Date().getTime() - 60000);
 
@@ -62,7 +62,7 @@ You can change how the time is displayed using the `format` attribute. Note that
 ```
 
 ```jsx:react
-import { AWCRelativeTime } from '@agence-adeliom/awc/dist/react';
+import { AWCRelativeTime } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -88,7 +88,7 @@ Russian: <awc-relative-time date="2020-07-15T09:17:00-04:00" lang="ru"></awc-rel
 ```
 
 ```jsx:react
-import { AWCRelativeTime } from '@agence-adeliom/awc/dist/react';
+import { AWCRelativeTime } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>

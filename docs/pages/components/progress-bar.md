@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCProgressBar } from '@agence-adeliom/awc/dist/react';
+import { AWCProgressBar } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCProgressBar value={50} />;
 ```
@@ -26,7 +26,7 @@ Use the `label` attribute to label the progress bar and tell assistive devices h
 ```
 
 ```jsx:react
-import { AWCProgressBar } from '@agence-adeliom/awc/dist/react';
+import { AWCProgressBar } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCProgressBar value="50" label="Upload progress" />;
 ```
@@ -42,7 +42,7 @@ Use the `--height` custom property to set the progress bar's height.
 {% raw %}
 
 ```jsx:react
-import { AWCProgressBar } from '@agence-adeliom/awc/dist/react';
+import { AWCProgressBar } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCProgressBar value={50} style={{ '--height': '6px' }} />;
 ```
@@ -82,7 +82,7 @@ Use the default slot to show a value.
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCIcon, AWCProgressBar } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCIcon, AWCProgressBar } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [value, setValue] = useState(50);
@@ -121,7 +121,7 @@ The `indeterminate` attribute can be used to inform the user that the operation 
 ```
 
 ```jsx:react
-import { AWCProgressBar } from '@agence-adeliom/awc/dist/react';
+import { AWCProgressBar } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCProgressBar indeterminate />;
 ```

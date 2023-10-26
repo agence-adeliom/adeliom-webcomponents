@@ -12,7 +12,7 @@ For a full list of icons that come bundled with Adeliom WebComponents, refer to 
 ```
 
 ```jsx:react
-import { AWCIconButton } from '@agence-adeliom/awc/dist/react';
+import { AWCIconButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCIconButton name="gear" label="Settings" />;
 ```
@@ -32,7 +32,7 @@ Icon buttons inherit their parent element's `font-size`.
 {% raw %}
 
 ```jsx:react
-import { AWCIconButton } from '@agence-adeliom/awc/dist/react';
+import { AWCIconButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -73,7 +73,7 @@ Icon buttons are designed to have a uniform appearance, so their color is not in
 ```
 
 ```jsx:react
-import { AWCIconButton } from '@agence-adeliom/awc/dist/react';
+import { AWCIconButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .icon-button-color awc-icon-button::part(base) {
@@ -112,7 +112,7 @@ Use the `href` attribute to convert the button to a link.
 ```
 
 ```jsx:react
-import { AWCIconButton } from '@agence-adeliom/awc/dist/react';
+import { AWCIconButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCIconButton name="gear" label="Settings" href="https://example.com" target="_blank" />;
 ```
@@ -128,7 +128,7 @@ Wrap a tooltip around an icon button to provide contextual information to the us
 ```
 
 ```jsx:react
-import { AWCIconButton, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCIconButton, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTooltip content="Settings">
@@ -146,7 +146,7 @@ Use the `disabled` attribute to disable the icon button.
 ```
 
 ```jsx:react
-import { AWCIconButton } from '@agence-adeliom/awc/dist/react';
+import { AWCIconButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCIconButton name="gear" label="Settings" disabled />;
 ```

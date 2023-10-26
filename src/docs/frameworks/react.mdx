@@ -37,7 +37,7 @@ Now you can start using components!
 Every Adeliom WebComponents component is available to import as a React component. Note that we're importing the `<AWCButton>` _React component_ instead of the `<awc-button>` _custom element_ in the example below.
 
 ```jsx
-import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
+import { AWCButton } from '@agence-adeliom/awc/react';
 
 const MyComponent = () => <AWCButton variant="primary">Click me</AWCButton>;
 
@@ -54,7 +54,7 @@ Here's how you can bind the input's value to a state variable.
 
 ```jsx
 import { useState } from 'react';
-import { AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
+import { AWCInput } from '@agence-adeliom/awc/react';
 
 function MyComponent() {
   const [value, setValue] = useState('');
@@ -69,7 +69,7 @@ If you're using TypeScript, it's important to note that `event.target` will be a
 
 ```tsx
 import { useState } from 'react';
-import { AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
+import { AWCInput } from '@agence-adeliom/awc/react';
 import type AWCInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
 
 function MyComponent() {
@@ -85,7 +85,7 @@ You can also import the event type for use in your callbacks, shown below.
 
 ```tsx
 import { useCallback, useState } from 'react';
-import { AWCInput, AWCInputEvent } from '@agence-adeliom/awc/%NPMDIR%/react';
+import { AWCInput, AWCInputEvent } from '@agence-adeliom/awc/react';
 import type AWCInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
 
 function MyComponent() {

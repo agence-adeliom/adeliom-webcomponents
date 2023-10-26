@@ -23,7 +23,7 @@ For best results, use images that share the same dimensions. The slider can be c
 ```
 
 ```jsx:react
-import { AWCImageComparer } from '@agence-adeliom/awc/dist/react';
+import { AWCImageComparer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCImageComparer>
@@ -63,7 +63,7 @@ Use the `position` attribute to set the initial position of the slider. This is 
 ```
 
 ```jsx:react
-import { AWCImageComparer } from '@agence-adeliom/awc/dist/react';
+import { AWCImageComparer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCImageComparer position={25}>

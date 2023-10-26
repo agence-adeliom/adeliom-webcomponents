@@ -3,7 +3,7 @@ import { withThemeByDataAttribute } from '@storybook/addon-styling';
 import { setCustomElementsManifest } from '@storybook/web-components';
 import customElements from '../dist/custom-elements.json';
 import DocumentationTemplate from './template/DocumentationTemplate.mdx';
-import { themes } from '@storybook/theming';
+
 
 import '../src/awc.ts';
 import '../src/themes/light.css';
@@ -11,9 +11,8 @@ import '../src/themes/dark.css';
 import './template/story.style.css';
 
 import { setBasePath } from '../src/utilities/base-path.js';
-import prettify from '@liquify/prettify';
+import prettify from 'esthetic';
 import { withSource } from './wc-helper/code/withSource';
-import AwcTheme from './AwcTheme';
 import AwcDocTheme from './AwcDocTheme';
 
 setBasePath('/');
@@ -76,13 +75,15 @@ const preview: Preview = {
       },
       source: {
         transform: (code: string, _storyContext: StoryContext) => {
-          return (
-            prettify.formatSync(code, {
+          try {
+            return prettify.format(code, {
               markup: {
                 preserveComment: false
               }
-            }) ?? code
-          );
+            })
+          }catch (e) {
+            return code;
+          }
         }
       }
     }

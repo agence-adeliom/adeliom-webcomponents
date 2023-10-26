@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCButton>Button</AWCButton>;
 ```
@@ -34,7 +34,7 @@ Use the `variant` attribute to set the button's variant.
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -62,7 +62,7 @@ Use the `size` attribute to change a button's size.
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -89,7 +89,7 @@ Use the `outline` attribute to draw outlined buttons with transparent background
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -132,7 +132,7 @@ Use the `pill` attribute to give buttons rounded edges.
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -168,7 +168,7 @@ Use the `circle` attribute to create circular icon buttons. When this attribute 
 ```
 
 ```jsx:react
-import { AWCButton, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -196,7 +196,7 @@ Use the `text` variant to create text buttons that share the same size as regula
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -225,7 +225,7 @@ It's often helpful to have a button that works like a link. This is possible by 
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -260,7 +260,7 @@ As expected, buttons can be given a custom width by setting the `width` attribut
 {% raw %}
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -338,7 +338,7 @@ Use the `prefix` and `suffix` slots to add icons.
 ```
 
 ```jsx:react
-import { AWCButton, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -410,7 +410,7 @@ Use the `caret` attribute to add a dropdown indicator when a button will trigger
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -445,7 +445,7 @@ Use the `loading` attribute to make a button busy. The width will remain the sam
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -497,7 +497,7 @@ Use the `disabled` attribute to disable a button. Clicks will be suppressed unti
 ```
 
 ```jsx:react
-import { AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>

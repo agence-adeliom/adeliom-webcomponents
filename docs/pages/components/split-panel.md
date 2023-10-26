@@ -25,7 +25,7 @@ layout: component
 {% raw %}
 
 ```jsx:react
-import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSplitPanel>
@@ -106,7 +106,7 @@ To set the initial position in pixels instead of a percentage, use the `position
 {% raw %}
 
 ```jsx:react
-import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSplitPanel position="200">
@@ -164,7 +164,7 @@ Add the `vertical` attribute to render the split panel in a vertical orientation
 {% raw %}
 
 ```jsx:react
-import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSplitPanel vertical style={{ height: '400px' }}>
@@ -252,7 +252,7 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
 {% raw %}
 
 ```jsx:react
-import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .split-panel-snapping {
@@ -344,7 +344,7 @@ Add the `disabled` attribute to prevent the divider from being repositioned.
 {% raw %}
 
 ```jsx:react
-import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSplitPanel disabled>
@@ -421,7 +421,7 @@ Try resizing the example below with each option and notice how the panels respon
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCSplitPanel, AWCSelect, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel, AWCSelect, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [primary, setPrimary] = useState('');
@@ -498,7 +498,7 @@ This examples demonstrates how you can ensure both panels are at least 150px usi
 {% raw %}
 
 ```jsx:react
-import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSplitPanel style={{ '--min': '150px', '--max': 'calc(100% - 150px)' }}>
@@ -566,7 +566,7 @@ Create complex layouts that can be repositioned independently by nesting split p
 {% raw %}
 
 ```jsx:react
-import { AWCSplitPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSplitPanel>
@@ -641,7 +641,7 @@ You can target the `divider` part to apply CSS properties to the divider. To add
 {% raw %}
 
 ```jsx:react
-import { AWCSplitPanel, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSplitPanel style={{ '--divider-width': '20px' }}>
@@ -728,7 +728,7 @@ Here's a more elaborate example that changes the divider's color and width and a
 {% raw %}
 
 ```jsx:react
-import { AWCSplitPanel, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCSplitPanel, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .split-panel-divider awc-split-panel {

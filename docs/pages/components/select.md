@@ -17,7 +17,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect>
@@ -50,7 +50,7 @@ Use the `label` attribute to give the select an accessible label. For labels tha
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect label="Select one">
@@ -74,7 +74,7 @@ Add descriptive help text to a select with the `help-text` attribute. For help t
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect label="Experience" help-text="Please tell us your skill level.">
@@ -98,7 +98,7 @@ Use the `placeholder` attribute to add a placeholder.
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect placeholder="Select one">
@@ -122,7 +122,7 @@ Use the `clearable` attribute to make the control clearable. The clear button on
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect placeholder="Clearable" clearable>
@@ -146,7 +146,7 @@ Add the `filled` attribute to draw a filled select.
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect filled>
@@ -170,7 +170,7 @@ Use the `pill` attribute to give selects rounded edges.
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect pill>
@@ -194,7 +194,7 @@ Use the `disabled` attribute to disable a select.
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect placeholder="Disabled" disabled>
@@ -221,7 +221,7 @@ To allow multiple options to be selected, use the `multiple` attribute. It's a g
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect label="Select a Few" value="option-1 option-2 option-3" multiple clearable>
@@ -253,7 +253,7 @@ Use the `value` attribute to set the initial selection. When using `multiple`, u
 ```
 
 ```jsx:react
-import { AWCDivider, AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCDivider, AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect value="option-1 option-2" multiple clearable>
@@ -283,7 +283,7 @@ Use `<awc-divider>` to group listbox items visually. You can also use `<small>` 
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect>
@@ -326,7 +326,7 @@ Use the `size` attribute to change a select's size. Note that size does not appl
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -371,7 +371,7 @@ The preferred placement of the select's listbox can be set with the `placement` 
 import {
   SlOption,
   SlSelect
-} from '@agence-adeliom/awc/dist/react';
+} from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect placement="top">
@@ -410,7 +410,7 @@ Use the `prefix` slot to prepend an icon to the control.
 ```
 
 ```jsx:react
-import { AWCIcon, AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCIcon, AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>

@@ -27,7 +27,7 @@ layout: component
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -73,7 +73,7 @@ By default, drawers slide in from the end. To make the drawer slide in from the 
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -117,7 +117,7 @@ To make the drawer slide in from the top, set the `placement` attribute to `top`
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -161,7 +161,7 @@ To make the drawer slide in from the bottom, set the `placement` attribute to `b
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -215,7 +215,7 @@ Unlike normal drawers, contained drawers are not modal. This means they do not s
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -282,7 +282,7 @@ Use the `--size` custom property to set the drawer's size. This will be applied 
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -332,7 +332,7 @@ By design, a drawer's height will never exceed 100% of its container. As such, d
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -389,7 +389,7 @@ The header shows a functional close button by default. You can use the `header-a
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer, AWCIconButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer, AWCIconButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -445,7 +445,7 @@ You can use `event.detail.source` to determine what triggered the request to clo
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -497,7 +497,7 @@ By default, the drawer's panel will gain focus when opened. This allows a subseq
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDrawer, AWCInput } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDrawer, AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);

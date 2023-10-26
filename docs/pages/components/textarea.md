@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCTextarea />;
 ```
@@ -30,7 +30,7 @@ Use the `label` attribute to give the textarea an accessible label. For labels t
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCTextarea label="Comments" />;
 ```
@@ -44,7 +44,7 @@ Add descriptive help text to a textarea with the `help-text` attribute. For help
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCTextarea label="Feedback" help-text="Please tell us what you think." />;
 ```
@@ -58,7 +58,7 @@ Use the `rows` attribute to change the number of text rows that get shown.
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCTextarea rows={2} />;
 ```
@@ -72,7 +72,7 @@ Use the `placeholder` attribute to add a placeholder.
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCTextarea placeholder="Type something" />;
 ```
@@ -86,7 +86,7 @@ Add the `filled` attribute to draw a filled textarea.
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCTextarea placeholder="Type something" filled />;
 ```
@@ -100,7 +100,7 @@ Use the `disabled` attribute to disable a textarea.
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCTextarea placeholder="Textarea" disabled />;
 ```
@@ -118,7 +118,7 @@ Use the `size` attribute to change a textarea's size.
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -140,7 +140,7 @@ By default, textareas can be resized vertically by the user. To prevent resizing
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCTextarea resize="none" />;
 ```
@@ -154,7 +154,7 @@ Textareas will automatically resize to expand to fit their content when `resize`
 ```
 
 ```jsx:react
-import { AWCTextarea } from '@agence-adeliom/awc/dist/react';
+import { AWCTextarea } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCTextarea resize="auto" />;
 ```

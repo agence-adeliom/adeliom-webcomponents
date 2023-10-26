@@ -22,7 +22,7 @@ Tab groups make use of [tabs](/components/tab) and [tab panels](/components/tab-
 ```
 
 ```jsx:react
-import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTabGroup>
@@ -68,7 +68,7 @@ Tabs can be shown on the bottom by setting `placement` to `bottom`.
 ```
 
 ```jsx:react
-import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTabGroup placement="bottom">
@@ -112,7 +112,7 @@ Tabs can be shown on the starting side by setting `placement` to `start`.
 ```
 
 ```jsx:react
-import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTabGroup placement="start">
@@ -156,7 +156,7 @@ Tabs can be shown on the ending side by setting `placement` to `end`.
 ```
 
 ```jsx:react
-import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTabGroup placement="end">
@@ -218,7 +218,7 @@ Add the `closable` attribute to a tab to show a close button. This example shows
 ```
 
 ```jsx:react
-import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   function handleClose(event) {
@@ -310,7 +310,7 @@ When there are more tabs than horizontal space allows, the nav will be scrollabl
 ```
 
 ```jsx:react
-import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTabGroup>
@@ -418,7 +418,7 @@ When focused, keyboard users can press [[Left]] or [[Right]] to select the desir
 ```
 
 ```jsx:react
-import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/dist/react';
+import { AWCTab, AWCTabGroup, AWCTabPanel } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTabGroup activation="manual">

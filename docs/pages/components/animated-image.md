@@ -13,7 +13,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCAnimatedImage } from '@agence-adeliom/awc/dist/react';
+import { AWCAnimatedImage } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCAnimatedImage
@@ -41,7 +41,7 @@ Both GIF and WEBP images are supported.
 ```
 
 ```jsx:react
-import { AWCAnimatedImage } from '@agence-adeliom/awc/dist/react';
+import { AWCAnimatedImage } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCAnimatedImage src="https://awc.a-dev.cloud/assets/images/tie.webp" alt="Animation of a shoe being tied" />
@@ -64,7 +64,7 @@ To set a custom size, apply a width and/or height to the host element.
 {% raw %}
 
 ```jsx:react
-import { AWCAnimatedImage } from '@agence-adeliom/awc/dist/react';
+import { AWCAnimatedImage } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCAnimatedImage
@@ -102,7 +102,7 @@ You can change the appearance and location of the control box by targeting the `
 ```
 
 ```jsx:react
-import { AWCAnimatedImage } from '@agence-adeliom/awc/dist/react';
+import { AWCAnimatedImage } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .animated-image-custom-control-box::part(control-box) {

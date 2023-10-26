@@ -14,7 +14,7 @@ The included content will be inserted into the `<awc-include>` element's default
 ```
 
 ```jsx:react
-import { AWCInclude } from '@agence-adeliom/awc/dist/react';
+import { AWCInclude } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCInclude src="https://awc.a-dev.cloud/assets/examples/include.html" />;
 ```

@@ -45,7 +45,7 @@ The mutation observer will report changes to the content it wraps through the `a
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCMutationObserver } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCMutationObserver } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .resize-observer-overview div {
@@ -146,7 +146,7 @@ Use the `child-list` attribute to watch for new child elements that are added or
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCMutationObserver } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCMutationObserver } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .mutation-child-list .buttons {

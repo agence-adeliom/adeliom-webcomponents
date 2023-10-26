@@ -1,6 +1,6 @@
 import { makeDecorator } from '@storybook/preview-api';
 import { render } from 'lit';
-import prettify from '@liquify/prettify';
+import prettify from 'esthetic';
 import { addons } from '@storybook/preview-api';
 import { EVENTS } from './constants';
 
@@ -19,7 +19,7 @@ export const withSource = makeDecorator({
     render(res, element);
     code = element.innerHTML.replace(/<!--[\s\S]*?(?:-->)/g, '');
     addons.getChannel().emit(EVENTS.CODE_UPDATE, {
-      code: prettify.formatSync(code, { language: 'html', markup: { preserveComment: false } })
+      code: prettify.format(code, { language: 'html', markup: { preserveComment: false } })
     });
     return getStory(context);
   }

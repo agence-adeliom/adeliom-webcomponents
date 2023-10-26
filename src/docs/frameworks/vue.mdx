@@ -21,15 +21,15 @@ npm install @agence-adeliom/awc
 Next, [include a theme](?path=/docs/getting-started-themes--docs) and set the [base path](?path=/docs/getting-started-installation--docs#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
-import '@agence-adeliom/awc/dist/themes/light.css';
-import { setBasePath } from '@agence-adeliom/awc/dist/utilities/base-path';
+import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path';
 
 setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/');
 ```
 
 > 📘 **Tip**
 >
-> If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@agence-adeliom/awc/dist/assets` into a public folder in your app. Then you can point the base path to that folder instead.
+> If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@agence-adeliom/awc/%NPMDIR%/assets` into a public folder in your app. Then you can point the base path to that folder instead.
 
 ## Configuration
 
@@ -67,34 +67,30 @@ Now you can start using Adeliom WebComponents components in your app!
 ### QR code generator example
 
 ```html
+<script setup lang="ts">
+import { ref } from "vue";
+
+import "@agence-adeliom/awc/%NPMDIR%/components/qr-code/qr-code.js";
+import "@agence-adeliom/awc/%NPMDIR%/components/input/input.js";
+
+const qrCode = ref();
+</script>
+
 <template>
-  <div class="container">
+  <div>
     <h1>QR code generator</h1>
 
-    <awc-input maxlength="255" clearable label="Value" v-model="qrCode"></awc-input>
+    <awc-input
+      maxlength="255"
+      clearable
+      label="Value"
+      v-model="qrCode"
+    ></awc-input>
 
     <awc-qr-code :value="qrCode"></awc-qr-code>
   </div>
 </template>
 
-<script setup>
-  import { ref } from 'vue';
-  import '@agence-adeliom/awc/dist/components/qr-code/qr-code.js';
-  import '@agence-adeliom/awc/dist/components/input/input.js';
-
-  const qrCode = ref();
-</script>
-
-<style>
-  .container {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  awc-input {
-    margin: var(--awc-spacing-large) 0;
-  }
-</style>
 ```
 
 ### Binding Complex Data

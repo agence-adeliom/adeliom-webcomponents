@@ -33,7 +33,7 @@ Dropdowns are designed to work well with [menus](/components/menu) to provide a 
 ```
 
 ```jsx:react
-import { AWCButton, AWCDivider, AWCDropdown, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCDropdown>
@@ -93,7 +93,7 @@ When dropdowns are used with [menus](/components/menu), you can listen for the [
 ```
 
 ```jsx:react
-import { AWCButton, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   function handleSelect(event) {
@@ -143,7 +143,7 @@ Alternatively, you can listen for the `click` event on individual menu items. No
 ```
 
 ```jsx:react
-import { AWCButton, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   function handleCut() {
@@ -192,7 +192,7 @@ The preferred placement of the dropdown can be set with the `placement` attribut
 ```
 
 ```jsx:react
-import { AWCButton, AWCDivider, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCDropdown placement="top-start">
@@ -230,7 +230,7 @@ The distance from the panel to the trigger can be customized using the `distance
 ```
 
 ```jsx:react
-import { AWCButton, AWCDivider, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCDropdown distance={30}>
@@ -268,7 +268,7 @@ The offset of the panel along the trigger can be customized using the `skidding`
 ```
 
 ```jsx:react
-import { AWCButton, AWCDivider, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCDropdown skidding={30}>
@@ -323,7 +323,7 @@ Dropdown panels will be clipped if they're inside a container that has `overflow
 ```
 
 ```jsx:react
-import { AWCButton, AWCDivider, AWCDropdown, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDivider, AWCDropdown, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .dropdown-hoist {

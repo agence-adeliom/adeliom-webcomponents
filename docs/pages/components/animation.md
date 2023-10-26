@@ -27,7 +27,7 @@ To animate an element, wrap it in `<awc-animation>` and set an animation `name`.
 ```
 
 ```jsx:react
-import { AWCAnimation } from '@agence-adeliom/awc/dist/react';
+import { AWCAnimation } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .animation-overview .box {
@@ -173,7 +173,7 @@ Use an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/
 
 ```jsx:react
 import { useEffect, useRef, useState } from 'react';
-import { AWCAnimation } from '@agence-adeliom/awc/dist/react';
+import { AWCAnimation } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .animation-scroll {
@@ -262,7 +262,7 @@ Supply your own [keyframe formats](https://developer.mozilla.org/en-US/docs/Web/
 ```
 
 ```jsx:react
-import { AWCAnimation } from '@agence-adeliom/awc/dist/react';
+import { AWCAnimation } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .animation-keyframes .box {
@@ -329,7 +329,7 @@ Animations won't play until you apply the `play` attribute. You can omit it init
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCAnimation, AWCButton } from '@agence-adeliom/awc/dist/react';
+import { AWCAnimation, AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [play, setPlay] = useState(false);

@@ -29,7 +29,7 @@ const data = new FormData(form);
 However, some folks find `FormData` tricky to work with or they need to pass a JSON payload to their server. To accommodate this, Adeliom WebComponents offers a serialization utility that gathers form data and returns a simple JavaScript object instead.
 
 ```js
-import { serialize } from '@agence-adeliom/awc/dist/utilities/form.js';
+import { serialize } from '@agence-adeliom/awc/%NPMDIR%/utilities/form.js';
 
 const form = document.querySelector('form');
 const data = serialize(form);
@@ -125,7 +125,7 @@ To disable the browser's error messages, you need to cancel the `awc-invalid` ev
 At this time, using [`HTMLFormElement.elements`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements) will not return Adeliom WebComponents form controls because the browser is unaware of their status as custom element form controls. Fortunately, Adeliom WebComponents provides an `elements()` function that does something very similar. However, instead of returning an [`HTMLFormControlsCollection`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormControlsCollection), it returns an array of HTML and Adeliom WebComponents form controls in the order they appear in the DOM.
 
 ```js
-import { getFormControls } from '@agence-adeliom/awc/dist/utilities/form.js';
+import { getFormControls } from '@agence-adeliom/awc/%NPMDIR%/utilities/form.js';
 
 const form = document.querySelector('#my-form');
 const formControls = getFormControls(form);

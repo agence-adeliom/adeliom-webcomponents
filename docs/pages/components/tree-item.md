@@ -20,7 +20,7 @@ layout: component
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTree>
@@ -62,7 +62,7 @@ A tree item can contain other tree items. This allows the node to be expanded or
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTree>
@@ -102,7 +102,7 @@ Use the `selected` attribute to select a tree item initially.
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTree>
@@ -142,7 +142,7 @@ Use the `expanded` attribute to expand a tree item initially.
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTree>

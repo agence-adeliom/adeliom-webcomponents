@@ -27,7 +27,7 @@ layout: component
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDialog } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDialog } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -75,7 +75,7 @@ Use the `--width` custom property to set the dialog's width.
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDialog } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDialog } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -125,7 +125,7 @@ By design, a dialog's height will never exceed that of the viewport. As such, di
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDialog } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDialog } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -183,7 +183,7 @@ The header shows a functional close button by default. You can use the `header-a
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDialog, AWCIconButton } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDialog, AWCIconButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -244,7 +244,7 @@ You can use `event.detail.source` to determine what triggered the request to clo
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDialog } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDialog } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -296,7 +296,7 @@ By default, the dialog's panel will gain focus when opened. This allows a subseq
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCButton, AWCDialog, AWCInput } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCDialog, AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(false);

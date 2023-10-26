@@ -22,7 +22,7 @@ layout: component
 {% raw %}
 
 ```jsx:react
-import { AWCDivider, AWCMenu, AWCMenuLabel, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCDivider, AWCMenu, AWCMenuLabel, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCMenu style={{ maxWidth: '200px' }}>

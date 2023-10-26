@@ -44,7 +44,7 @@ There's one more step to enable ESM in NextJS, but we'll tackle that in our Next
 The next step is to import Adeliom WebComponents's default theme (stylesheet) in your `_app.js` file:
 
 ```css
-import '@agence-adeliom/awc/dist/themes/light.css';
+import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
 ```
 
 ### Defining Custom Elements
@@ -63,14 +63,14 @@ function CustomEls({ URL }) {
       return;
     }
 
-    import('@agence-adeliom/awc/dist/utilities/base-path').then(({ setBasePath }) => {
+    import('@agence-adeliom/awc/%NPMDIR%/utilities/base-path').then(({ setBasePath }) => {
       setBasePath(`${URL}/static/static`);
 
       // This imports all components
-      import('@agence-adeliom/awc/dist/react');
+      import('@agence-adeliom/awc/%NPMDIR%/react');
       // If you're wanting to selectively import components, replace this line with your own definitions
 
-      // import("@agence-adeliom/awc/dist/components/button/button");
+      // import("@agence-adeliom/awc/%NPMDIR%/components/button/button");
       customEls.current = true;
     });
   }, [URL, customEls]);
@@ -152,7 +152,7 @@ export default withPlugins([withTMCompiled], {
       new CopyPlugin({
         patterns: [
           {
-            from: resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets/icons'),
+            from: resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets/icons'),
             to: resolve(__dirname, 'static/icons')
           }
         ]

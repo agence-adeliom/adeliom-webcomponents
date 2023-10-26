@@ -63,8 +63,8 @@ const config: StorybookConfig = {
                 interpolateVariable,
                 {
                   replacements: {
-                    NPMDIR: 'dist',
-                    CDNDIR: 'dist',
+                    NPMDIR: constant.NPMDIR,
+                    CDNDIR: constant.CDNDIR,
                     VERSION: constant.VERSION
                   }
                 }

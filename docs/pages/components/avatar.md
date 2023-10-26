@@ -12,7 +12,7 @@ By default, a generic icon will be shown. You can personalize avatars by adding 
 ```
 
 ```jsx:react
-import { AWCAvatar } from '@agence-adeliom/awc/dist/react';
+import { AWCAvatar } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCAvatar label="User avatar" />;
 ```
@@ -37,7 +37,7 @@ Avatar images can be lazily loaded by setting the `loading` attribute to `lazy`.
 ```
 
 ```jsx:react
-import { AWCAvatar } from '@agence-adeliom/awc/dist/react';
+import { AWCAvatar } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCAvatar
@@ -61,7 +61,7 @@ When you don't have an image to use, you can set the `initials` attribute to sho
 ```
 
 ```jsx:react
-import { AWCAvatar } from '@agence-adeliom/awc/dist/react';
+import { AWCAvatar } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCAvatar initials="SL" label="Avatar with initials: SL" />;
 ```
@@ -85,7 +85,7 @@ When no image or initials are set, an icon will be shown. The default avatar sho
 ```
 
 ```jsx:react
-import { AWCAvatar, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCAvatar, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -115,7 +115,7 @@ Avatars can be shaped using the `shape` attribute.
 ```
 
 ```jsx:react
-import { AWCAvatar, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCAvatar, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -165,7 +165,7 @@ You can group avatars with a few lines of CSS.
 ```
 
 ```jsx:react
-import { AWCAvatar, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCAvatar, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .avatar-group awc-avatar:not(:first-of-type) {

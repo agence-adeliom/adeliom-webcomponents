@@ -37,7 +37,7 @@ layout: component
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTree>
@@ -118,7 +118,7 @@ The `selection` attribute lets you change the selection behavior of the tree.
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [selection, setSelection] = useState('single');
@@ -197,7 +197,7 @@ Indent guides can be drawn by setting `--indent-guide-width`. You can also chang
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTree class="tree-with-lines" style={{ '--indent-guide-width': '1px' }}>
@@ -265,7 +265,7 @@ If you want to disable this behavior after the first load, simply remove the `la
 ```
 
 ```jsx:react
-import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [childItems, setChildItems] = useState([]);
@@ -340,7 +340,7 @@ Use the `expand-icon` and `collapse-icon` slots to change the expand and collaps
 
 <!-- prettier-ignore -->
 ```jsx:react
-import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCTree>
@@ -424,7 +424,7 @@ Decorative icons can be used before labels to provide hints for each node.
 ```
 
 ```jsx:react
-import { AWCIcon, AWCTree, AWCTreeItem } from '@agence-adeliom/awc/dist/react';
+import { AWCIcon, AWCTree, AWCTreeItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   return (

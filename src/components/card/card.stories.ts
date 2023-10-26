@@ -179,7 +179,7 @@ export const Images: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Use the `pill` attribute to give buttons rounded edges.'
+        story: 'Cards accept an `image` slot. The image is displayed atop the card and stretches to fit.'
       }
     }
   }

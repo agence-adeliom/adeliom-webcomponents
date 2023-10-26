@@ -35,7 +35,7 @@ npm install @agence-adeliom/awc
 Import the Adeliom WebComponents default theme (stylesheet) in `/resources/css/app.css`:
 
 ```css
-@import '/node_modules/@agence-adeliom/awc/dist/themes/light.css';
+@import '/node_modules/@agence-adeliom/awc/%NPMDIR%/themes/light.css';
 ```
 
 ### Import Your Adeliom WebComponents Components
@@ -43,9 +43,9 @@ Import the Adeliom WebComponents default theme (stylesheet) in `/resources/css/a
 Import each Adeliom WebComponents component you plan to use in `/resources/js/bootstrap.js`. Use the full path to each component (as outlined in the [Cherry Picking instructions](https://awc.a-dev.cloud/getting-started/installation#cherry-picking)). You can find the full import statement for a component in the _Importing_ section of the component's documentation (use the _Bundler_ import). Your imports should look similar to:
 
 ```js
-import '@agence-adeliom/awc/dist/components/button/button.js';
-import '@agence-adeliom/awc/dist/components/icon/icon.js';
-import '@agence-adeliom/awc/dist/components/dialog/dialog.js';
+import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
+import '@agence-adeliom/awc/%NPMDIR%/components/icon/icon.js';
+import '@agence-adeliom/awc/%NPMDIR%/components/dialog/dialog.js';
 ```
 
 ### Copy the Adeliom WebComponents Static Assets (icons, images, etc.) to a Public Folder
@@ -53,7 +53,7 @@ import '@agence-adeliom/awc/dist/components/dialog/dialog.js';
 Since Vite has no way to copy arbitrary assets into your build (like webpack), you need to manually copy the Adeliom WebComponents static assets to your project's public folder. Run this command from your project's root directory to copy the Adeliom WebComponents static assets to the `./public/assets` folder:
 
 ```sh
-cp -aR node_modules/@agence-adeliom/awc/dist/assets/ ./public/assets
+cp -aR node_modules/@agence-adeliom/awc/%NPMDIR%/assets/ ./public/assets
 ```
 
 ### Set the Base Path
@@ -61,19 +61,19 @@ cp -aR node_modules/@agence-adeliom/awc/dist/assets/ ./public/assets
 Add the base path to your Adeliom WebComponents assets (icons, images, etc.) in `/resources/js/bootstrap.js`. The path must point to the same folder where you copy assets to in the next step.
 
 ```js
-import { setBasePath } from '@agence-adeliom/awc/dist/utilities/base-path.js';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path.js';
 setBasePath('/');
 ```
 
 Example `/resources/js/bootstrap.js` file:
 
 ```js
-import { setBasePath } from '@agence-adeliom/awc/dist/utilities/base-path.js';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path.js';
 setBasePath('/');
 
-import '@agence-adeliom/awc/dist/components/button/button.js';
-import '@agence-adeliom/awc/dist/components/icon/icon.js';
-import '@agence-adeliom/awc/dist/components/dialog/dialog.js';
+import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
+import '@agence-adeliom/awc/%NPMDIR%/components/icon/icon.js';
+import '@agence-adeliom/awc/%NPMDIR%/components/dialog/dialog.js';
 ```
 
 ### Verify Vite Entry Points

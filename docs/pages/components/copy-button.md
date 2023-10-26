@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCCopyButton } from '@agence-adeliom/awc/dist/react';
+import { AWCCopyButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCopyButton value="AWC rocks!" />
@@ -33,7 +33,7 @@ Copy Buttons display feedback in a tooltip. You can customize the labels using t
 ```
 
 ```jsx:react
-import { AWCCopyButton } from '@agence-adeliom/awc/dist/react';
+import { AWCCopyButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCopyButton
@@ -58,7 +58,7 @@ Use the `copy-icon`, `success-icon`, and `error-icon` slots to customize the ico
 ```
 
 ```jsx:react
-import { AWCCopyButton, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCCopyButton, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -98,7 +98,7 @@ To copy data from an attribute, use `from="id[attr]"` where `id` is the id of th
 ```
 
 ```jsx:react
-import { AWCCopyButton, AWCInput } from '@agence-adeliom/awc/dist/react';
+import { AWCCopyButton, AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -132,7 +132,7 @@ This example demonstrates what happens when a copy error occurs. You can customi
 ```
 
 ```jsx:react
-import { AWCCopyButton } from '@agence-adeliom/awc/dist/react';
+import { AWCCopyButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCopyButton from="i-do-not-exist" />
@@ -148,7 +148,7 @@ Copy buttons can be disabled by adding the `disabled` attribute.
 ```
 
 ```jsx:react
-import { AWCCopyButton } from '@agence-adeliom/awc/dist/react';
+import { AWCCopyButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCopyButton value="You can't copy me" disabled />
@@ -164,7 +164,7 @@ A success indicator is briefly shown after copying. You can customize the length
 ```
 
 ```jsx:react
-import { AWCCopyButton } from '@agence-adeliom/awc/dist/react';
+import { AWCCopyButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCopyButton value="AWC rocks!" feedback-duration={250} />
@@ -214,7 +214,7 @@ You can customize the button to your liking with CSS.
 ```
 
 ```jsx:react
-import { AWCCopyButton } from '@agence-adeliom/awc/dist/react';
+import { AWCCopyButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .custom-styles {

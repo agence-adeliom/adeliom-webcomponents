@@ -41,7 +41,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -123,7 +123,7 @@ Use the `pagination` attribute to show the total number of slides and the curren
 ```
 
 ```jsx:react
-import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCarousel pagination>
@@ -201,7 +201,7 @@ Use the `navigation` attribute to show previous and next buttons.
 ```
 
 ```jsx:react
-import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCarousel navigation>
@@ -279,7 +279,7 @@ By default, the carousel will not advanced beyond the first and last slides. You
 ```
 
 ```jsx:react
-import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCarousel loop navigation pagination>
@@ -357,7 +357,7 @@ The carousel will automatically advance when the `autoplay` attribute is used. T
 ```
 
 ```jsx:react
-import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCarousel autoplay loop pagination>
@@ -454,7 +454,7 @@ This example is best demonstrated using a mouse. Try clicking and dragging the s
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -522,7 +522,7 @@ The `slides-per-page` attribute makes it possible to display multiple slides at 
 {% raw %}
 
 ```jsx:react
-import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCarousel navigation pagination slidesPerPage={2} slidesPerMove={2}>
@@ -614,7 +614,7 @@ The content of the carousel can be changed by adding or removing carousel items.
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .dynamic-carousel {
@@ -730,7 +730,7 @@ Setting the `orientation` attribute to `vertical` will render the carousel in a 
 ```
 
 ```jsx:react
-import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .vertical {
@@ -853,7 +853,7 @@ Use the `--aspect-ratio` custom property to customize the size of the carousel's
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCSelect, AWCOption } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCSelect, AWCOption } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [aspectRatio, setAspectRatio] = useState('3/2');
@@ -957,7 +957,7 @@ Use the `--scroll-hint` custom property to add inline padding in horizontal caro
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -1120,7 +1120,7 @@ The carousel has a robust API that makes it possible to extend and customize. Th
 
 ```jsx:react
 import { useRef } from 'react';
-import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem, AWCDivider, AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .carousel-thumbnails {

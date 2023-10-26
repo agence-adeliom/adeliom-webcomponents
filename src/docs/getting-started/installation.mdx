@@ -12,8 +12,8 @@ The CDN loader registers all Adeliom WebComponents elements up front. Note that,
 However, you can also [cherry pick](#cherry-picking) components if you want to load specific ones up front.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%NPMDIR%/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%NPMDIR%/awc.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc.js"></script>
 ```
 
 ### Dark Theme
@@ -32,12 +32,12 @@ If you want to load the light or dark theme based on the user's `prefers-color-s
 <link
   rel="stylesheet"
   media="(prefers-color-scheme:light)"
-  href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%NPMDIR%/themes/light.css"
+  href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/light.css"
 />
 <link
   rel="stylesheet"
   media="(prefers-color-scheme:dark)"
-  href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%NPMDIR%/themes/dark.css"
+  href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/dark.css"
   onload="document.documentElement.classList.add('awc-theme-dark');"
 />
 ```
@@ -156,7 +156,7 @@ module.exports = {
       patterns: [
         // Copy AWC assets to dist/awc
         {
-          from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
+          from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
           to: path.resolve(__dirname, 'dist/awc/assets')
         }
       ]
@@ -192,7 +192,7 @@ export default {
       copyOnce: true,
       targets: [
         {
-          src: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/dist/assets'),
+          src: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
           dest: path.resolve(__dirname, 'dist/awc')
         }
       ]

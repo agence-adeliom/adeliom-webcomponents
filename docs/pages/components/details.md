@@ -15,7 +15,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCDetails } from '@agence-adeliom/awc/dist/react';
+import { AWCDetails } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCDetails summary="Toggle Me">
@@ -39,7 +39,7 @@ Use the `disable` attribute to prevent the details from expanding.
 ```
 
 ```jsx:react
-import { AWCDetails } from '@agence-adeliom/awc/dist/react';
+import { AWCDetails } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCDetails summary="Disabled" disabled>
@@ -71,7 +71,7 @@ Use the `expand-icon` and `collapse-icon` slots to change the expand and collaps
 ```
 
 ```jsx:react
-import { AWCDetails, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCDetails, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   awc-details.custom-icon::part(summary-icon) {

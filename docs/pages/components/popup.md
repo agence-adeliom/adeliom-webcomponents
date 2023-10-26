@@ -104,7 +104,7 @@ Popup is a low-level utility built specifically for positioning elements. Do not
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCSelect, AWCMenuItem, AWCInput, AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCSelect, AWCMenuItem, AWCInput, AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-overview awc-popup {
@@ -269,7 +269,7 @@ Popups are inactive and hidden until the `active` attribute is applied. Removing
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-active span[slot='anchor'] {
@@ -341,7 +341,7 @@ By default, anchors are slotted into the popup using the `anchor` slot. If your 
 ```
 
 ```jsx:react
-import { AWCPopup } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   #external-anchor {
@@ -436,7 +436,7 @@ Since placement is preferred when using `flip`, you can observe the popup's curr
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCSelect, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCSelect, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-placement span[slot='anchor'] {
@@ -538,7 +538,7 @@ Use the `distance` attribute to change the distance between the popup and its an
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-distance span[slot='anchor'] {
@@ -634,7 +634,7 @@ The `skidding` attribute is similar to `distance`, but instead allows you to off
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-skidding span[slot='anchor'] {
@@ -777,7 +777,7 @@ By default, the arrow will be aligned as close to the center of the _anchor_ as 
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCSelect, AWCMenuItem, AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCSelect, AWCMenuItem, AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-arrow awc-popup {
@@ -930,7 +930,7 @@ Use the `sync` attribute to make the popup the same width or height as the ancho
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCSelect, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCSelect, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-sync span[slot='anchor'] {
@@ -1041,7 +1041,7 @@ Toggle the switch and scroll the container to see the difference.
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-strategy .overflow {
@@ -1149,7 +1149,7 @@ Scroll the container to see how the popup flips to prevent clipping.
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-flip .overflow {
@@ -1246,7 +1246,7 @@ Scroll the container to see how the popup changes it's fallback placement to pre
 ```
 
 ```jsx:react
-import { AWCPopup } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-flip-fallbacks .overflow {
@@ -1342,7 +1342,7 @@ Toggle the switch to see the difference.
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-shift .overflow {
@@ -1454,7 +1454,7 @@ Scroll the container to see the popup resize as its available space changes.
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCPopup, AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .popup-auto-size .overflow {

@@ -41,7 +41,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/dist/react';
+import { AWCCarousel, AWCCarouselItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCCarousel pagination>

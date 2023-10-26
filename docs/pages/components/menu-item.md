@@ -28,7 +28,7 @@ layout: component
 {% raw %}
 
 ```jsx:react
-import { AWCDivider, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCDivider, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCMenu style={{ maxWidth: '200px' }}>
@@ -72,7 +72,7 @@ Add the `disabled` attribute to disable the menu item so it cannot be selected.
 {% raw %}
 
 ```jsx:react
-import { AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCMenu style={{ maxWidth: '200px' }}>
@@ -114,7 +114,7 @@ Add content to the start and end of menu items using the `prefix` and `suffix` s
 {% raw %}
 
 ```jsx:react
-import { AWCBadge, AWCDivider, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCBadge, AWCDivider, AWCIcon, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCMenu style={{ maxWidth: '200px' }}>
@@ -160,7 +160,7 @@ Checkbox menu items are visually indistinguishable from regular menu items. Thei
 {% raw %}
 
 ```jsx:react
-import { AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCMenu style={{ maxWidth: '200px' }}>
@@ -209,7 +209,7 @@ The `value` attribute can be used to assign a hidden value, such as a unique ide
 {% raw %}
 
 ```jsx:react
-import { AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   function handleSelect(event) {

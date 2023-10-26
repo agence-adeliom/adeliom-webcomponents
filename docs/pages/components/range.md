@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCRange />;
 ```
@@ -30,7 +30,7 @@ Use the `label` attribute to give the range an accessible label. For labels that
 ```
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCRange label="Volume" min={0} max={100} />;
 ```
@@ -44,7 +44,7 @@ Add descriptive help text to a range with the `help-text` attribute. For help te
 ```
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCRange label="Volume" help-text="Controls the volume of the current song." min={0} max={100} />;
 ```
@@ -58,7 +58,7 @@ Use the `min` and `max` attributes to set the range's minimum and maximum values
 ```
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCRange min={0} max={10} step={1} />;
 ```
@@ -72,7 +72,7 @@ Use the `disabled` attribute to disable a slider.
 ```
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCRange disabled />;
 ```
@@ -86,7 +86,7 @@ By default, the tooltip is shown on top. Set `tooltip` to `bottom` to show it be
 ```
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCRange tooltip="bottom" />;
 ```
@@ -100,7 +100,7 @@ To disable the tooltip, set `tooltip` to `none`.
 ```
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCRange tooltip="none" />;
 ```
@@ -121,7 +121,7 @@ You can customize the active and inactive portions of the track using the `--tra
 {% raw %}
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCRange
@@ -154,7 +154,7 @@ You can customize the initial offset of the active track using the `--track-acti
 {% raw %}
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCRange
@@ -185,7 +185,7 @@ You can change the tooltip's content by setting the `tooltipFormatter` property 
 ```
 
 ```jsx:react
-import { AWCRange } from '@agence-adeliom/awc/dist/react';
+import { AWCRange } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCRange min={0} max={100} step={1} tooltipFormatter={value => `Total - ${value}%`} />;
 ```

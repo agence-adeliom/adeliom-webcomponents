@@ -23,14 +23,14 @@ npm install @agence-adeliom/awc
 Next, [include a theme](/getting-started/themes) and set the [base path](/getting-started/installation#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
-import '@agence-adeliom/awc/dist/themes/light.css';
-import { setBasePath } from '@agence-adeliom/awc/dist/utilities/base-path';
+import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path';
 
 setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/');
 ```
 
 :::tip
-If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@agence-adeliom/awc/dist/assets` into a public folder in your app. Then you can point the base path to that folder instead.
+If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@agence-adeliom/awc/%NPMDIR%/assets` into a public folder in your app. Then you can point the base path to that folder instead.
 :::
 
 ## Configuration
@@ -81,8 +81,8 @@ Now you can start using Adeliom WebComponents components in your app!
 
 <script setup>
   import { ref } from 'vue';
-  import '@agence-adeliom/awc/dist/components/qr-code/qr-code.js';
-  import '@agence-adeliom/awc/dist/components/input/input.js';
+  import '@agence-adeliom/awc/%NPMDIR%/components/qr-code/qr-code.js';
+  import '@agence-adeliom/awc/%NPMDIR%/components/input/input.js';
 
   const qrCode = ref();
 </script>

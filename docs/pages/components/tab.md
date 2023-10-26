@@ -13,7 +13,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCTab } from '@agence-adeliom/awc/dist/react';
+import { AWCTab } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>

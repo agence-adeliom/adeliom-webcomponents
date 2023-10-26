@@ -13,7 +13,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCAlert, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCAlert, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCAlert open>
@@ -90,7 +90,7 @@ Set the `variant` attribute to change the alert's variant.
 ```
 
 ```jsx:react
-import { AWCAlert, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCAlert, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -178,7 +178,7 @@ Add the `closable` attribute to show a close button that will hide the alert.
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCAlert, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCAlert, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const [open, setOpen] = useState(true);
@@ -206,7 +206,7 @@ Icons are optional. Simply omit the `icon` slot if you don't want them.
 ```
 
 ```jsx:react
-import { AWCAlert } from '@agence-adeliom/awc/dist/react';
+import { AWCAlert } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCAlert variant="primary" open>
@@ -246,7 +246,7 @@ Set the `duration` attribute to automatically hide an alert after a period of ti
 
 ```jsx:react
 import { useState } from 'react';
-import { AWCAlert, AWCButton, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCAlert, AWCButton, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .alert-duration awc-alert {
@@ -335,7 +335,7 @@ You should always use the `closable` attribute so users can dismiss the notifica
 
 ```jsx:react
 import { useRef } from 'react';
-import { AWCAlert, AWCButton, AWCIcon } from '@agence-adeliom/awc/dist/react';
+import { AWCAlert, AWCButton, AWCIcon } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 function showToast(alert) {
   alert.toast();

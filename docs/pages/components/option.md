@@ -14,7 +14,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect>
@@ -40,7 +40,7 @@ Use the `disabled` attribute to disable an option and prevent it from being sele
 ```
 
 ```jsx:react
-import { AWCOption, AWCSelect } from '@agence-adeliom/awc/dist/react';
+import { AWCOption, AWCSelect } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSelect>

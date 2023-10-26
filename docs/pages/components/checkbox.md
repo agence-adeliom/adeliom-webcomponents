@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCCheckbox>Checkbox</AWCCheckbox>;
 ```
@@ -30,7 +30,7 @@ Use the `checked` attribute to activate the checkbox.
 ```
 
 ```jsx:react
-import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCCheckbox checked>Checked</AWCCheckbox>;
 ```
@@ -44,7 +44,7 @@ Use the `indeterminate` attribute to make the checkbox indeterminate.
 ```
 
 ```jsx:react
-import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCCheckbox indeterminate>Indeterminate</AWCCheckbox>;
 ```
@@ -58,7 +58,7 @@ Use the `disabled` attribute to disable the checkbox.
 ```
 
 ```jsx:react
-import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCCheckbox disabled>Disabled</AWCCheckbox>;
 ```
@@ -76,7 +76,7 @@ Use the `size` attribute to change a checkbox's size.
 ```
 
 ```jsx:react
-import { AWCCheckbox } from '@agence-adeliom/awc/dist/react';
+import { AWCCheckbox } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -127,7 +127,7 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```jsx:react
 import { useEffect, useRef } from 'react';
-import { AWCButton, AWCCheckbox } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCCheckbox } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => {
   const checkbox = useRef(null);

@@ -18,7 +18,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCTypography } from '@agence-adeliom/awc/dist/react';
+import { AWCTypography } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -46,7 +46,7 @@ Use the `renderAs` attribute to change the rendered tag type.
 ```
 
 ```jsx:react
-import { AWCTypography } from '@agence-adeliom/awc/dist/react';
+import { AWCTypography } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>

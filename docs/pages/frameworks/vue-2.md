@@ -30,7 +30,7 @@ setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%
 ```
 
 :::tip
-If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@agence-adeliom/awc/dist/assets` into a public folder in your app. Then you can point the base path to that folder instead.
+If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@agence-adeliom/awc/%NPMDIR%/assets` into a public folder in your app. Then you can point the base path to that folder instead.
 :::
 
 ## Configuration

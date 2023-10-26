@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCSwitch>Switch</AWCSwitch>;
 ```
@@ -30,7 +30,7 @@ Use the `checked` attribute to activate the switch.
 ```
 
 ```jsx:react
-import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCSwitch checked>Checked</AWCSwitch>;
 ```
@@ -44,7 +44,7 @@ Use the `disabled` attribute to disable the switch.
 ```
 
 ```jsx:react
-import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => <AWCSwitch disabled>Disabled</AWCSwitch>;
 ```
@@ -62,7 +62,7 @@ Use the `size` attribute to change a switch's size.
 ```
 
 ```jsx:react
-import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -86,7 +86,7 @@ Use the available custom properties to change how the switch is styled.
 {% raw %}
 
 ```jsx:react
-import { AWCSwitch } from '@agence-adeliom/awc/dist/react';
+import { AWCSwitch } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCSwitch

@@ -14,7 +14,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCButtonGroup label="Alignment">
@@ -56,7 +56,7 @@ All button sizes are supported, but avoid mixing sizes within the same button gr
 ```
 
 ```jsx:react
-import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -132,7 +132,7 @@ Theme buttons are supported through the button's `variant` attribute.
 ```
 
 ```jsx:react
-import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -210,7 +210,7 @@ Pill buttons are supported through the button's `pill` attribute.
 ```
 
 ```jsx:react
-import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCButtonGroup } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -279,7 +279,7 @@ Dropdowns can be placed inside button groups as long as the trigger is an `<awc-
 ```
 
 ```jsx:react
-import { AWCButton, AWCButtonGroup, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCButtonGroup, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCButtonGroup label="Example Button Group">
@@ -320,7 +320,7 @@ Create a split button using a button and a dropdown. Use a [visually hidden](/co
 ```
 
 ```jsx:react
-import { AWCButton, AWCButtonGroup, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCButtonGroup, AWCDropdown, AWCMenu, AWCMenuItem } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <AWCButtonGroup label="Example Button Group">
@@ -358,7 +358,7 @@ Buttons can be wrapped in tooltips to provide more detail when the user interact
 ```
 
 ```jsx:react
-import { AWCButton, AWCButtonGroup, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCButtonGroup, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const App = () => (
   <>
@@ -427,7 +427,7 @@ Create interactive toolbars with button groups.
 ```
 
 ```jsx:react
-import { AWCButton, AWCButtonGroup, AWCIcon, AWCTooltip } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCButtonGroup, AWCIcon, AWCTooltip } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .button-group-toolbar awc-button-group:not(:last-of-type) {

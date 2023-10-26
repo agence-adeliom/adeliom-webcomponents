@@ -41,7 +41,7 @@ layout: component
 ```
 
 ```jsx:react
-import { AWCButton, AWCCard, AWCRating } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCCard, AWCRating } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .card-overview {
@@ -104,7 +104,7 @@ Basic cards aren't very exciting, but they can display any content you want them
 ```
 
 ```jsx:react
-import { AWCCard } from '@agence-adeliom/awc/dist/react';
+import { AWCCard } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .card-basic {
@@ -159,7 +159,7 @@ Headers can be used to display titles and more.
 ```
 
 ```jsx:react
-import { AWCCard, AWCIconButton } from '@agence-adeliom/awc/dist/react';
+import { AWCCard, AWCIconButton } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .card-header {
@@ -224,7 +224,7 @@ Footers can be used to display actions, summaries, or other relevant content.
 ```
 
 ```jsx:react
-import { AWCButton, AWCCard, AWCRating } from '@agence-adeliom/awc/dist/react';
+import { AWCButton, AWCCard, AWCRating } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .card-footer {
@@ -277,7 +277,7 @@ Cards accept an `image` slot. The image is displayed atop the card and stretches
 ```
 
 ```jsx:react
-import { AWCCard } from '@agence-adeliom/awc/dist/react';
+import { AWCCard } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .card-image {
@@ -334,7 +334,7 @@ It's often helpful to have a button that works like a link. This is possible by 
 ```
 
 ```jsx:react
-import { AWCCard } from '@agence-adeliom/awc/dist/react';
+import { AWCCard } from '@agence-adeliom/awc/%NPMDIR%/react';
 
 const css = `
   .card-image {
