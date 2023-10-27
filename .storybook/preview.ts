@@ -48,7 +48,7 @@ const preview: Preview = {
         order: [
           'Welcome',
           'Getting started',
-          ['Installation', 'Usage', 'Themes', 'Customizing', 'Form Controls', 'Localization'],
+          ['Installation', 'Usage', 'Themes', 'Customizing', 'Form Controls', 'Localization', 'Resources', ['Contributing & Support', 'Changelog']],
           'Design Tokens',
           ['Typography', 'Color', 'Spacing', 'Elevation', 'Border Radius', 'Transition', 'Z-Index', 'Other'],
           'Framework',

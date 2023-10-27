@@ -1,7 +1,7 @@
 import { create } from '@storybook/theming/create';
 
 export default create({
-  base: 'dark',
+  base: 'light',
   brandTitle: 'Adeliom Web Components',
   brandUrl: 'https://awc.a-dev.cloud',
   brandImage: '/assets/images/wordmark.svg',

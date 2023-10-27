@@ -61,7 +61,6 @@ export { default as AWCTypography } from './components/typography/typography.js'
 export { default as AWCImage } from './components/image/image.js';
 export { default as AWCOembed } from './components/oembed/oembed.js';
 /* plop:component */
-/* plop:layout */
 
 // Utilities
 export * from './utilities/animation.js';
