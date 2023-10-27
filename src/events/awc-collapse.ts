@@ -5,5 +5,3 @@ declare global {
     'awc-collapse': AWCCollapseEvent;
   }
 }
-
-

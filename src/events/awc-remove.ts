@@ -5,5 +5,3 @@ declare global {
     'awc-remove': AWCRemoveEvent;
   }
 }
-
-

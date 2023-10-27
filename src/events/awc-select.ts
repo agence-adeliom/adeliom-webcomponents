@@ -7,5 +7,3 @@ declare global {
     'awc-select': AWCSelectEvent;
   }
 }
-
-

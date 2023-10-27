@@ -6,11 +6,11 @@ import { isElementVisibleFromOverflow } from '../../internal/test/element-visibl
 import { queryByTestId } from '../../internal/test/data-testid-helpers.js';
 import { sendKeys } from '@web/test-runner-commands';
 import { waitForScrollingToEnd } from '../../internal/test/wait-for-scrolling.js';
+import type { AWCTabShowEvent } from '../../events/awc-tab-show.js';
 import type { HTMLTemplateResult } from 'lit';
 import type AWCTab from '../tab/tab.js';
 import type AWCTabGroup from './tab-group.js';
 import type AWCTabPanel from '../tab-panel/tab-panel.js';
-import type AWCTabShowEvent from '../../events/awc-tab-show.js';
 
 interface ClientRectangles {
   body?: DOMRect;

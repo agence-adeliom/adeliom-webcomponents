@@ -30,8 +30,8 @@ export default css`
 
   /* Standard textareas */
   .textarea--standard {
-    background-color: var(--awc-input-background-color-base);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color-base);
+    background-color: var(--awc-input-background-color);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
   }
 
   .textarea--standard:hover:not(.textarea--disabled) {
@@ -115,6 +115,7 @@ export default css`
   .textarea__control::placeholder {
     color: var(--awc-input-placeholder-color);
     user-select: none;
+    -webkit-user-select: none;
   }
 
   .textarea__control:focus {

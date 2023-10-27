@@ -17,6 +17,7 @@ const meta = {
       handles: events
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCButton & typeof args>;
 
@@ -305,8 +306,7 @@ export const Disabled: Story = {
   parameters: {
     docs: {
       description: {
-        story:
-          'Use the `disabled` attribute to disable a button.'
+        story: 'Use the `disabled` attribute to disable a button.'
       }
     }
   }

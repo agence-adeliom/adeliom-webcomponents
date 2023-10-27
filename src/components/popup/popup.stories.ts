@@ -16,6 +16,7 @@ const meta = {
       handles: events
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCPopup & typeof args>;
 
@@ -808,73 +809,76 @@ Scroll the container to see the popup resize as its available space changes.`
       </script>`
 };
 
-
 export const VirtualElements: Story = {
   name: 'Virtual Elements',
   render: () =>
     html`<div class="popup-virtual-element">
-      <awc-popup placement="right-start">
+        <awc-popup placement="right-start">
           <div class="circle"></div>
-      </awc-popup>
-      <awc-switch>Highlight mouse cursor</awc-switch>
-  </div>
-  <script>
-      const container = document.querySelector('.popup-virtual-element');
-      const popup = container.querySelector('awc-popup');
-      const circle = container.querySelector('.circle');
-      const enabled = container.querySelector('awc-switch');
-      let clientX = 0;
-      let clientY = 0;
-      // Set the virtual element as a property
-      popup.anchor = {
+        </awc-popup>
+        <awc-switch>Highlight mouse cursor</awc-switch>
+      </div>
+      <script>
+        const container = document.querySelector('.popup-virtual-element');
+        const popup = container.querySelector('awc-popup');
+        const circle = container.querySelector('.circle');
+        const enabled = container.querySelector('awc-switch');
+        let clientX = 0;
+        let clientY = 0;
+        // Set the virtual element as a property
+        popup.anchor = {
           getBoundingClientRect() {
-              return {
-                  width: 0,
-                  height: 0,
-                  x: clientX,
-                  y: clientY,
-                  top: clientY,
-                  left: clientX,
-                  right: clientX,
-                  bottom: clientY
-              };
+            return {
+              width: 0,
+              height: 0,
+              x: clientX,
+              y: clientY,
+              top: clientY,
+              left: clientX,
+              right: clientX,
+              bottom: clientY
+            };
           }
-      };
-      // Only activate the popup when the switch is checked
-      enabled.addEventListener('awc-change', () => {
+        };
+        // Only activate the popup when the switch is checked
+        enabled.addEventListener('awc-change', () => {
           popup.active = enabled.checked;
-      });
-      // Listen for the mouse to move
-      document.addEventListener('mousemove', handleMouseMove);
-      // Update the virtual element as the mouse moves
-      function handleMouseMove(event) {
+        });
+        // Listen for the mouse to move
+        document.addEventListener('mousemove', handleMouseMove);
+        // Update the virtual element as the mouse moves
+        function handleMouseMove(event) {
           clientX = event.clientX;
           clientY = event.clientY;
           // Reposition the popup when the virtual anchor moves
           if (popup.active) {
-              popup.reposition();
+            popup.reposition();
           }
-      }
-  </script>
-  <style>
-      /* If you need to set a z-index, set it on the popup part like this */
-      .popup-virtual-element awc-popup::part(popup) {
+        }
+      </script>
+      <style>
+        /* If you need to set a z-index, set it on the popup part like this */
+        .popup-virtual-element awc-popup::part(popup) {
           z-index: 1000;
           pointer-events: none;
-      }
-      .popup-virtual-element .circle {
+        }
+        .popup-virtual-element .circle {
           width: 100px;
           height: 100px;
           border: solid 4px var(--awc-color-primary-600);
           border-radius: 50%;
           translate: -50px -50px;
           animation: 1s virtual-cursor infinite;
-      }
-      @keyframes virtual-cursor {
-          0% { scale: 1; }
-          50% { scale: 1.1; }
-      }
-  </style>`,
+        }
+        @keyframes virtual-cursor {
+          0% {
+            scale: 1;
+          }
+          50% {
+            scale: 1.1;
+          }
+        }
+      </style>`,
   parameters: {
     docs: {
       description: {

@@ -4,8 +4,8 @@ import { expect, fixture } from '@open-wc/testing';
 import { html } from 'lit';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
+import type { AWCSelectEvent } from '../../events/awc-select';
 import type AWCMenu from './menu';
-import type AWCSelectEvent from '../../events/awc-select';
 
 describe('<awc-menu>', () => {
   it('emits awc-select with the correct event detail when clicking an item', async () => {
@@ -100,4 +100,24 @@ describe('<awc-menu>', () => {
 
     expect(selectHandler).to.not.have.been.called;
   });
+});
+
+// @see https://github.com/shoelace-style/shoelace/issues/1596
+it('Should fire "awc-select" when clicking an element within a menu-item', async () => {
+  // eslint-disable-next-line
+  const selectHandler = sinon.spy(() => {});
+
+  const menu: AWCMenu = await fixture(html`
+    <awc-menu>
+      <awc-menu-item>
+        <span>Menu item</span>
+      </awc-menu-item>
+    </awc-menu>
+  `);
+
+  menu.addEventListener('awc-select', selectHandler);
+  const span = menu.querySelector('span')!;
+  await clickOnElement(span);
+
+  expect(selectHandler).to.have.been.calledOnce;
 });

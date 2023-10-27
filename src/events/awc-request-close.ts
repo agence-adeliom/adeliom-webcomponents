@@ -5,5 +5,3 @@ declare global {
     'awc-request-close': AWCRequestCloseEvent;
   }
 }
-
-

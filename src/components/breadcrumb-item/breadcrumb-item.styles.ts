@@ -41,7 +41,7 @@ export default css`
   }
 
   :host(:not(:last-of-type)) .breadcrumb-item__label:hover {
-    color: var(--awc-color-primary-default);
+    color: var(--awc-color-primary-800);
   }
 
   :host(:not(:last-of-type)) .breadcrumb-item__label:active {
@@ -59,9 +59,8 @@ export default css`
 
   .breadcrumb-item__prefix,
   .breadcrumb-item__suffix {
-    display: none;
-    flex: 0 0 auto;
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
   }
 
@@ -84,5 +83,6 @@ export default css`
     align-items: center;
     margin: 0 var(--awc-spacing-x-small);
     user-select: none;
+    -webkit-user-select: none;
   }
 `;

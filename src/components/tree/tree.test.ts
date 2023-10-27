@@ -3,7 +3,7 @@ import { aTimeout, expect, fixture, html, triggerBlurFor, triggerFocusFor } from
 import { clickOnElement } from '../../internal/test.js';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type AWCTree from './tree.js';
+import type AWCTree from './tree.component.js';
 import type AWCTreeItem from '../tree-item/tree-item.js';
 
 describe('<awc-tree>', () => {

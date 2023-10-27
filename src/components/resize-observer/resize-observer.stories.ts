@@ -22,6 +22,7 @@ const meta = {
       }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCResizeObserver & typeof args>;
 
@@ -50,7 +51,7 @@ export const Primary: Story = {
       <style>
         .resize-observer-overview div {
           display: flex;
-          border: solid 2px var(--awc-input-border-color-base);
+          border: solid 2px var(--awc-input-border-color);
           align-items: center;
           justify-content: center;
           text-align: center;

@@ -22,6 +22,7 @@ const meta = {
       }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCSelect & typeof args>;
 
@@ -348,7 +349,7 @@ export const PrefixIcons: Story = {
 export const CustomTags: Story = {
   name: 'Custom Tags',
   render: () =>
-      html`<awc-select placeholder="Small" size="small" clearable>
+    html`<awc-select placeholder="Small" size="small" clearable>
         <awc-icon name="house" slot="prefix"></awc-icon>
         <awc-option value="option-1">Option 1</awc-option>
         <awc-option value="option-2">Option 2</awc-option>

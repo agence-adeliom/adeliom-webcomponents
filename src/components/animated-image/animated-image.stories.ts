@@ -16,6 +16,7 @@ const meta = {
       handles: events
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCAnimatedImage & typeof args>;
 
@@ -26,14 +27,14 @@ type Story = StoryObj<AWCAnimatedImage & typeof args>;
 export const Primary: Story = {
   name: 'Default Animation',
   args: {
-    src: '/images/walk.gif',
+    src: '/assets/images/walk.gif',
     alt: 'Animation of untied shoes walking on pavement'
   }
 };
 
 export const WEBPImage: Story = {
   args: {
-    src: '/images/tie.webp',
+    src: '/assets/images/tie.webp',
     alt: 'Animation of a shoe being tied'
   },
   parameters: {
@@ -48,7 +49,7 @@ export const WEBPImage: Story = {
 export const Sized: Story = {
   name: 'Setting a Width and Height',
   args: {
-    src: '/images/walk.gif',
+    src: '/assets/images/walk.gif',
     alt: 'Animation of untied shoes walking on pavement',
     style: 'width: 150px; height: 200px;'
   },
@@ -65,7 +66,7 @@ export const Sized: Story = {
 export const Customized: Story = {
   name: 'Customizing the Control Box',
   args: {
-    src: '/images/tie.webp',
+    src: '/assets/images/tie.webp',
     alt: 'Animation of untied shoes walking on pavement',
     'control-box-part': `top: auto;
     right: auto;

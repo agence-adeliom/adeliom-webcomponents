@@ -18,6 +18,7 @@ const meta = {
     }
   },
   // eslint-disable-next-line @typescript-eslint/no-shadow
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCTag & typeof args>;
 export default meta;

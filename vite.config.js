@@ -5,6 +5,7 @@ import { globbySync } from 'globby';
 import dts from 'vite-plugin-dts';
 import path from 'path';
 import pkg from './package.json';
+import replace from '@rollup/plugin-replace';
 
 const externalPackages = [
   //...Object.keys(pkg.dependencies || {}),
@@ -78,6 +79,9 @@ export default {
     dts({
       tsconfigPath: 'tsconfig.prod.json'
     }),
-    awcPlugin()
+    awcPlugin(),
+    replace({
+      __AWC_VERSION__: pkg.version
+    })
   ]
 };

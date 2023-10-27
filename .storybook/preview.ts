@@ -4,7 +4,6 @@ import { setCustomElementsManifest } from '@storybook/web-components';
 import customElements from '../dist/custom-elements.json';
 import DocumentationTemplate from './template/DocumentationTemplate.mdx';
 
-
 import '../src/awc.ts';
 import '../src/themes/light.css';
 import '../src/themes/dark.css';
@@ -48,7 +47,16 @@ const preview: Preview = {
         order: [
           'Welcome',
           'Getting started',
-          ['Installation', 'Usage', 'Themes', 'Customizing', 'Form Controls', 'Localization', 'Resources', ['Contributing & Support', 'Changelog']],
+          [
+            'Installation',
+            'Usage',
+            'Themes',
+            'Customizing',
+            'Form Controls',
+            'Localization',
+            'Resources',
+            ['Contributing & Support', 'Changelog']
+          ],
           'Design Tokens',
           ['Typography', 'Color', 'Spacing', 'Elevation', 'Border Radius', 'Transition', 'Z-Index', 'Other'],
           'Framework',
@@ -80,8 +88,8 @@ const preview: Preview = {
               markup: {
                 preserveComment: false
               }
-            })
-          }catch (e) {
+            });
+          } catch (e) {
             return code;
           }
         }

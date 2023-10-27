@@ -7,7 +7,7 @@ import type { ReactiveController, ReactiveElement } from 'lit';
 export class AutoplayController implements ReactiveController {
   private host: ReactiveElement;
   private timerId = 0;
-  private readonly tickCallback: () => void;
+  private tickCallback: () => void;
   private activeInteractions = 0;
 
   paused = false;

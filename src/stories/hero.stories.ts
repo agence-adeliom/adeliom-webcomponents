@@ -18,9 +18,12 @@ export const Hero1: StoryObj = {
           <div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
             <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
+            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin>Revolutionary way to build the web</awc-typography>
 
-            <p class="mb-8 leading-relaxed md:mb-12 lg:w-4/5 xl:text-lg text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random.</p>
+            <p class="mb-8 leading-relaxed md:mb-12 lg:w-4/5 xl:text-lg text-neutral-500 dark:text-neutral-200">
+              This is a section of some simple filler text, also known as placeholder text. It shares some
+              characteristics of a real written text but is random.
+            </p>
 
             <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -35,7 +38,8 @@ export const Hero1: StoryObj = {
               aspectRatio="1.3"
               layout="filled"
               width="1000"
-              src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e" ></awc-image>
+              src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e"
+            ></awc-image>
           </div>
           <!-- image - end -->
         </section>
@@ -49,13 +53,16 @@ export const Hero2: StoryObj = {
   render: () => html`
     <div class="bg-white dark:bg-neutral-950 pt-4 pb-6 sm:pb-8 lg:pb-12">
       <div class="container mx-auto px-4 md:px-8">
-        <section class="min-h-96 relative flex flex-1 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-neutral-100 py-16 shadow-lg md:py-20 xl:py-48">
+        <section
+          class="min-h-96 relative flex flex-1 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-neutral-100 py-16 shadow-lg md:py-20 xl:py-48"
+        >
           <!-- image - start -->
           <awc-image
             aspectRatio="1.5"
             layout="inset"
             width="1500"
-            src="https://images.unsplash.com/photo-1618004652321-13a63e576b80" ></awc-image>
+            src="https://images.unsplash.com/photo-1618004652321-13a63e576b80"
+          ></awc-image>
           <!-- image - end -->
 
           <!-- overlay - start -->
@@ -64,8 +71,12 @@ export const Hero2: StoryObj = {
 
           <!-- text start -->
           <div class="relative flex flex-col items-center p-4 sm:max-w-xl">
-            <p class="mb-4 text-center font-semibold text-lg text-primary sm:text-xl md:mb-8">Very proud to introduce</p>
-            <awc-typography type="h2" class="mb-8 md:mb-12 text-white text-center" noMargin >Revolutionary way to build the web</awc-typography>
+            <p class="mb-4 text-center font-semibold text-lg text-primary sm:text-xl md:mb-8">
+              Very proud to introduce
+            </p>
+            <awc-typography type="h2" class="mb-8 md:mb-12 text-white text-center" noMargin
+              >Revolutionary way to build the web</awc-typography
+            >
 
             <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
               <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -92,7 +103,9 @@ export const Hero3: StoryObj = {
             <div class="sm:text-center lg:py-12 lg:text-left xl:py-24">
               <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-              <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
+              <awc-typography type="h2" class="mb-8 md:mb-12" noMargin
+                >Revolutionary way to build the web</awc-typography
+              >
 
               <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
                 <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -106,16 +119,32 @@ export const Hero3: StoryObj = {
               <span class="h-px w-12 bg-neutral-200"></span>
 
               <div class="flex gap-4 text-xl leading-none">
-                <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+                >
                   <awc-icon name="instagram"></awc-icon>
                 </a>
-                <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+                >
                   <awc-icon name="facebook"></awc-icon>
                 </a>
-                <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+                >
                   <awc-icon name="linkedin"></awc-icon>
                 </a>
-                <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+                >
                   <awc-icon name="twitter"></awc-icon>
                 </a>
               </div>
@@ -130,7 +159,8 @@ export const Hero3: StoryObj = {
               aspectRatio="1.5"
               layout="filled"
               width="1000"
-              src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead" ></awc-image>
+              src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead"
+            ></awc-image>
           </div>
           <!-- image - end -->
         </section>
@@ -148,7 +178,9 @@ export const Hero4: StoryObj = {
           <div class="flex max-w-xl flex-col items-center pb-16 pt-8 text-center lg:pb-48 lg:pt-32">
             <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-            <awc-typography type="h2" class="mb-8 md:mb-12 text-center" noMargin >Revolutionary way to build the web</awc-typography>
+            <awc-typography type="h2" class="mb-8 md:mb-12 text-center" noMargin
+              >Revolutionary way to build the web</awc-typography
+            >
 
             <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
               <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -162,16 +194,32 @@ export const Hero4: StoryObj = {
             <span class="h-px w-12 bg-neutral-200"></span>
 
             <div class="flex gap-4 text-xl leading-none">
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="instagram"></awc-icon>
               </a>
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="facebook"></awc-icon>
               </a>
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="linkedin"></awc-icon>
               </a>
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="twitter"></awc-icon>
               </a>
             </div>
@@ -190,10 +238,15 @@ export const Hero5: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
           <!-- content - start -->
-          <div class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
-            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
+          <div
+            class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-5/12 xl:py-24"
+          >
+            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin>Revolutionary way to build the web</awc-typography>
 
-            <p class="mb-8 leading-relaxed text-neutral-500 dark:text-neutral-200 md:mb-12 lg:w-4/5 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random.</p>
+            <p class="mb-8 leading-relaxed text-neutral-500 dark:text-neutral-200 md:mb-12 lg:w-4/5 xl:text-lg">
+              This is a section of some simple filler text, also known as placeholder text. It shares some
+              characteristics of a real written text but is random.
+            </p>
 
             <form class="flex w-full gap-2 md:max-w-md">
               <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
@@ -205,10 +258,11 @@ export const Hero5: StoryObj = {
           <!-- image - start -->
           <div class="h-48 overflow-hidden rounded-lg bg-neutral-100 shadow-lg lg:h-auto xl:w-5/12">
             <awc-image
-                aspectRatio="1.5"
-                layout="filled"
-                width="1000"
-                src="https://images.unsplash.com/photo-1620206343767-7da98185edd4" ></awc-image>
+              aspectRatio="1.5"
+              layout="filled"
+              width="1000"
+              src="https://images.unsplash.com/photo-1620206343767-7da98185edd4"
+            ></awc-image>
           </div>
           <!-- image - end -->
         </section>
@@ -227,7 +281,7 @@ export const Hero6: StoryObj = {
           <div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
             <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
+            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin>Revolutionary way to build the web</awc-typography>
 
             <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -239,11 +293,12 @@ export const Hero6: StoryObj = {
           <!-- image - start -->
           <div class="h-48 overflow-hidden rounded-lg bg-neutral-100 shadow-lg lg:h-96 xl:w-5/12">
             <awc-image
-                aspectRatio="1.5"
-                layout="filled"
-                width="1000"
-                src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191"
-                class="w-full h-full"></awc-image>
+              aspectRatio="1.5"
+              layout="filled"
+              width="1000"
+              src="https://images.unsplash.com/photo-1618556450991-2f1af64e8191"
+              class="w-full h-full"
+            ></awc-image>
           </div>
           <!-- image - end -->
         </section>
@@ -263,12 +318,16 @@ export const Hero6: StoryObj = {
 
             <div class="px-6 md:px-8">
               <span class="block text-center text-lg font-bold text-primary md:text-left md:text-xl">250+</span>
-              <span class="block text-center text-sm font-semibold opacity-75 md:text-left md:text-base">Customers</span>
+              <span class="block text-center text-sm font-semibold opacity-75 md:text-left md:text-base"
+                >Customers</span
+              >
             </div>
 
             <div class="px-6 md:px-8">
               <span class="block text-center text-lg font-bold text-primary md:text-left md:text-xl">A couple</span>
-              <span class="block text-center text-sm font-semibold opacity-75 md:text-left md:text-base">Coffee breaks</span>
+              <span class="block text-center text-sm font-semibold opacity-75 md:text-left md:text-base"
+                >Coffee breaks</span
+              >
             </div>
           </div>
           <!-- stats - end -->
@@ -279,16 +338,32 @@ export const Hero6: StoryObj = {
             <span class="h-px w-12 bg-neutral-200"></span>
 
             <div class="flex gap-4 text-xl leading-none">
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="instagram"></awc-icon>
               </a>
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="facebook"></awc-icon>
               </a>
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="linkedin"></awc-icon>
               </a>
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="twitter"></awc-icon>
               </a>
             </div>
@@ -309,9 +384,12 @@ export const Hero7: StoryObj = {
           <div class="flex max-w-xl flex-col items-center pb-0 pt-8 text-center sm:pb-16 lg:pb-32 lg:pt-32">
             <p class="mb-4 font-semibold text-primary md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
+            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin>Revolutionary way to build the web</awc-typography>
 
-            <p class="mb-8 leading-relaxed text-neutral-500 dark:text-neutral-200 md:mb-12 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares characteristics of real text.</p>
+            <p class="mb-8 leading-relaxed text-neutral-500 dark:text-neutral-200 md:mb-12 xl:text-lg">
+              This is a section of some simple filler text, also known as placeholder text. It shares characteristics of
+              real text.
+            </p>
 
             <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
               <awc-button href="#" variant="primary" size="large">Start now</awc-button>
@@ -331,19 +409,25 @@ export const Hero8: StoryObj = {
       <section class="container mx-auto px-4 md:px-8">
         <div class="mb-8 flex flex-wrap justify-between md:mb-16">
           <div class="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48">
-            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin >Revolutionary way to build the web</awc-typography>
+            <awc-typography type="h2" class="mb-8 md:mb-12" noMargin>Revolutionary way to build the web</awc-typography>
 
-            <p class="max-w-md leading-relaxed text-neutral-500 dark:text-neutral-200 xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares characteristics of real text.</p>
+            <p class="max-w-md leading-relaxed text-neutral-500 dark:text-neutral-200 xl:text-lg">
+              This is a section of some simple filler text, also known as placeholder text. It shares characteristics of
+              real text.
+            </p>
           </div>
 
           <div class="mb-12 flex w-full md:mb-16 lg:w-2/3">
-            <div class="relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-neutral-100 shadow-lg md:left-16 md:top-16 lg:ml-0">
+            <div
+              class="relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-neutral-100 shadow-lg md:left-16 md:top-16 lg:ml-0"
+            >
               <awc-image
                 aspectRatio="1"
                 layout="filled"
                 width="600"
                 src="https://images.unsplash.com/photo-1542340916-951bb72c8f74"
-                class="w-full h-full"></awc-image>
+                class="w-full h-full"
+              ></awc-image>
             </div>
 
             <div class="overflow-hidden rounded-lg bg-neutral-100 shadow-lg">
@@ -352,7 +436,8 @@ export const Hero8: StoryObj = {
                 layout="filled"
                 width="600"
                 src="https://images.unsplash.com/photo-1586295166487-b265f7e83a7f"
-                class="w-full h-full"></awc-image>
+                class="w-full h-full"
+              ></awc-image>
             </div>
           </div>
         </div>
@@ -364,16 +449,32 @@ export const Hero8: StoryObj = {
             <span class="h-px w-12 bg-neutral-200"></span>
 
             <div class="flex gap-4 text-xl leading-none">
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="instagram"></awc-icon>
               </a>
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="facebook"></awc-icon>
               </a>
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="linkedin"></awc-icon>
               </a>
-              <a href="#" target="_blank" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+              <a
+                href="#"
+                target="_blank"
+                class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600"
+              >
                 <awc-icon name="twitter"></awc-icon>
               </a>
             </div>

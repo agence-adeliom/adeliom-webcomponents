@@ -25,6 +25,7 @@ export default css`
     font-weight: var(--awc-font-weight-normal);
     color: var(--awc-color-neutral-0);
     user-select: none;
+    -webkit-user-select: none;
     vertical-align: middle;
   }
 

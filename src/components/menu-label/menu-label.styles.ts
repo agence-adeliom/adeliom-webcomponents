@@ -18,5 +18,6 @@ export default css`
     color: var(--awc-color-neutral-500);
     padding: var(--awc-spacing-2x-small) var(--awc-spacing-x-large);
     user-select: none;
+    -webkit-user-select: none;
   }
 `;

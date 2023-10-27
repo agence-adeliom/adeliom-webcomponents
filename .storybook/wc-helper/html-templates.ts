@@ -1,10 +1,8 @@
 import { spread, spreadProps } from '@open-wc/lit-helpers';
 import { useArgs } from '@storybook/client-api';
-import { TemplateResult } from 'lit';
 import { html, unsafeStatic } from 'lit/static-html.js';
-import { Declaration } from './cem-schema';
+import type { Declaration } from './cem-schema';
 import { getAttributesAndProperties, getCssParts, getCssProperties, getSlots } from './cem-utilities.js';
-import { argsHash } from '@storybook/blocks';
 
 let argObserver: MutationObserver | undefined;
 let lastTagName: string | undefined;
@@ -20,7 +18,7 @@ function generateClassName(length: number = 5) {
   );
 }
 
-export function getTemplate(component?: Declaration, args?: any, slot?: TemplateResult): TemplateResult {
+export function getTemplate(component?: Declaration, args?: any, slot?: any): any {
   if (!args) {
     return html`<${unsafeStatic(component!.tagName!)}></${unsafeStatic(component!.tagName!)}>`;
   }

@@ -24,6 +24,7 @@ The included content will be inserted into the \`<awc-include>\` element's defau
       }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCInclude & typeof args>;
 

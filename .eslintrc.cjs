@@ -97,7 +97,9 @@ module.exports = {
         '@typescript-eslint/parameter-properties': 'error',
         '@typescript-eslint/strict-boolean-expressions': 'off',
         'storybook/no-redundant-story-name': 'off',
-        'lit-a11y/no-autofocus': 'off'
+        'lit-a11y/no-autofocus': 'off',
+        'lit/attribute-value-entities': 'off',
+        'lit-a11y/img-redundant-alt': 'off'
       }
     },
     {

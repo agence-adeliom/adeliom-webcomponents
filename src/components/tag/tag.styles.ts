@@ -15,6 +15,7 @@ export default css`
     line-height: 1;
     white-space: nowrap;
     user-select: none;
+    -webkit-user-select: none;
     border-radius: var(--awc-tag-border-radius);
   }
 

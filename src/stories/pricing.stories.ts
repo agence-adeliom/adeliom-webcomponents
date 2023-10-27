@@ -13,7 +13,9 @@ export const Pricing1: StoryObj = {
   render: () => html`
     <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
       <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-        <h2 class="mb-4 text-center text-2xl font-bold text-neutral-800 md:mb-8 lg:text-3xl xl:mb-12">Our plans for you</h2>
+        <h2 class="mb-4 text-center text-2xl font-bold text-neutral-800 md:mb-8 lg:text-3xl xl:mb-12">
+          Our plans for you
+        </h2>
 
         <div class="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
           <!-- plan - start -->
@@ -21,12 +23,20 @@ export const Pricing1: StoryObj = {
             <div class="mb-12">
               <div class="mb-2 text-center text-2xl font-bold text-neutral-800">Free</div>
 
-              <p class="mx-auto mb-8 px-8 text-center text-neutral-500">For individuals and organizations who want to try our system</p>
+              <p class="mx-auto mb-8 px-8 text-center text-neutral-500">
+                For individuals and organizations who want to try our system
+              </p>
 
               <div class="space-y-2">
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -36,7 +46,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -46,7 +62,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -56,7 +78,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -73,7 +101,11 @@ export const Pricing1: StoryObj = {
                 <span class="text-neutral-500">per user/month</span>
               </div>
 
-              <a href="#" class="block rounded-lg bg-neutral-200 px-8 py-3 text-center text-sm font-semibold text-neutral-500 outline-none ring-primary-300 transition duration-100 hover:bg-neutral-300 focus-visible:ring active:text-neutral-700 md:text-base">Join for free</a>
+              <a
+                href="#"
+                class="block rounded-lg bg-neutral-200 px-8 py-3 text-center text-sm font-semibold text-neutral-500 outline-none ring-primary-300 transition duration-100 hover:bg-neutral-300 focus-visible:ring active:text-neutral-700 md:text-base"
+                >Join for free</a
+              >
             </div>
           </div>
           <!-- plan - end -->
@@ -82,17 +114,28 @@ export const Pricing1: StoryObj = {
           <div class="relative flex flex-col rounded-lg border-2 border-primary p-4 pt-6">
             <div class="mb-12">
               <div class="absolute inset-x-0 -top-3 flex justify-center">
-                <span class="flex h-6 items-center justify-center rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">most popular</span>
+                <span
+                  class="flex h-6 items-center justify-center rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white"
+                  >most popular</span
+                >
               </div>
 
               <div class="mb-2 text-center text-2xl font-bold text-neutral-800">Team</div>
 
-              <p class="mx-auto mb-8 px-8 text-center text-neutral-500">Avanced feaures for Individuals and organizations</p>
+              <p class="mx-auto mb-8 px-8 text-center text-neutral-500">
+                Avanced feaures for Individuals and organizations
+              </p>
 
               <div class="space-y-2">
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -102,7 +145,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -112,7 +161,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -122,7 +177,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -132,7 +193,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -149,7 +216,11 @@ export const Pricing1: StoryObj = {
                 <span class="text-neutral-500">per user/month</span>
               </div>
 
-              <a href="#" class="block rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base">Continue with Team</a>
+              <a
+                href="#"
+                class="block rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
+                >Continue with Team</a
+              >
             </div>
           </div>
           <!-- plan - end -->
@@ -164,7 +235,13 @@ export const Pricing1: StoryObj = {
               <div class="space-y-2">
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -174,7 +251,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -184,7 +267,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -194,7 +283,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -204,7 +299,13 @@ export const Pricing1: StoryObj = {
 
                 <!-- check - start -->
                 <div class="flex gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
 
@@ -221,13 +322,24 @@ export const Pricing1: StoryObj = {
                 <span class="text-neutral-500">per user/month</span>
               </div>
 
-              <a href="#" class="block rounded-lg bg-neutral-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-neutral-700 focus-visible:ring active:bg-neutral-600 md:text-base">Contact Sales</a>
+              <a
+                href="#"
+                class="block rounded-lg bg-neutral-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-neutral-700 focus-visible:ring active:bg-neutral-600 md:text-base"
+                >Contact Sales</a
+              >
             </div>
           </div>
           <!-- plan - end -->
         </div>
 
-        <div class="text-center text-sm text-neutral-500 sm:text-base">Need help deciding? <a href="#" class="text-neutral-500 underline transition duration-100 hover:text-primary active:text-primary-600">Get in touch</a>.</div>
+        <div class="text-center text-sm text-neutral-500 sm:text-base">
+          Need help deciding?
+          <a
+            href="#"
+            class="text-neutral-500 underline transition duration-100 hover:text-primary active:text-primary-600"
+            >Get in touch</a
+          >.
+        </div>
       </div>
     </div>
   `
@@ -242,7 +354,10 @@ export const Pricing2: StoryObj = {
         <div class="mb-10 md:mb-16">
           <h2 class="mb-4 text-center text-2xl font-bold text-neutral-800 md:mb-6 lg:text-3xl">Choose a Bundle</h2>
 
-          <p class="mx-auto max-w-screen-md text-center text-neutral-500 md:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>
+          <p class="mx-auto max-w-screen-md text-center text-neutral-500 md:text-lg">
+            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+            of a real written text but is random or otherwise generated.
+          </p>
         </div>
         <!-- text - end -->
 
@@ -262,8 +377,17 @@ export const Pricing2: StoryObj = {
             <ul class="mb-6 space-y-2 text-neutral-300">
               <!-- feat - start -->
               <li class="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 shrink-0"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
 
                 <span>Ebook</span>
@@ -272,8 +396,17 @@ export const Pricing2: StoryObj = {
 
               <!-- feat - start -->
               <li class="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 shrink-0"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
 
                 <span>Multiple examples</span>
@@ -282,8 +415,17 @@ export const Pricing2: StoryObj = {
 
               <!-- feat - start -->
               <li class="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 shrink-0"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
 
                 <span>Basic support</span>
@@ -291,7 +433,11 @@ export const Pricing2: StoryObj = {
               <!-- feat - end -->
             </ul>
 
-            <a href="#" class="block rounded-lg bg-neutral-500 px-8 py-3 text-center text-sm font-semibold text-neutral-100 outline-none ring-primary-300 transition duration-100 hover:bg-neutral-600 focus-visible:ring active:text-neutral-300 md:text-base">Get the Basic Bundle</a>
+            <a
+              href="#"
+              class="block rounded-lg bg-neutral-500 px-8 py-3 text-center text-sm font-semibold text-neutral-100 outline-none ring-primary-300 transition duration-100 hover:bg-neutral-600 focus-visible:ring active:text-neutral-300 md:text-base"
+              >Get the Basic Bundle</a
+            >
           </div>
           <!-- left side - end -->
 
@@ -303,7 +449,10 @@ export const Pricing2: StoryObj = {
                 <p class="text-primary-100">Ebook + Video course</p>
               </div>
 
-              <span class="order-first inline-block rounded-full bg-primary-200 bg-opacity-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white lg:order-none">Best value</span>
+              <span
+                class="order-first inline-block rounded-full bg-primary-200 bg-opacity-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white lg:order-none"
+                >Best value</span
+              >
             </div>
 
             <div class="mb-4 space-x-2">
@@ -314,8 +463,17 @@ export const Pricing2: StoryObj = {
             <ul class="mb-6 space-y-2 text-primary-100">
               <!-- feat - start -->
               <li class="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 shrink-0"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
 
                 <span>Ebook</span>
@@ -324,8 +482,17 @@ export const Pricing2: StoryObj = {
 
               <!-- feat - start -->
               <li class="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 shrink-0"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
 
                 <span>Video course</span>
@@ -334,8 +501,17 @@ export const Pricing2: StoryObj = {
 
               <!-- feat - start -->
               <li class="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 shrink-0"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
 
                 <span>Multiple examples</span>
@@ -344,8 +520,17 @@ export const Pricing2: StoryObj = {
 
               <!-- feat - start -->
               <li class="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 shrink-0"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
 
                 <span>Work sheets</span>
@@ -354,8 +539,17 @@ export const Pricing2: StoryObj = {
 
               <!-- feat - start -->
               <li class="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 shrink-0"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
 
                 <span>Premium support</span>
@@ -363,7 +557,11 @@ export const Pricing2: StoryObj = {
               <!-- feat - end -->
             </ul>
 
-            <a href="#" class="block rounded-lg bg-primary-200 bg-opacity-50 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-300 focus-visible:ring active:bg-primary-400 md:text-base">Get the Pro Bundle</a>
+            <a
+              href="#"
+              class="block rounded-lg bg-primary-200 bg-opacity-50 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-300 focus-visible:ring active:bg-primary-400 md:text-base"
+              >Get the Pro Bundle</a
+            >
           </div>
           <!-- right side - end -->
         </div>
@@ -388,7 +586,9 @@ export const Pricing3: StoryObj = {
               <div class="mb-12">
                 <div class="mb-2 text-center text-2xl font-bold text-neutral-800">Free Trial</div>
 
-                <p class="mb-8 px-8 text-center text-neutral-500">For individuals and organizations who want to try our system</p>
+                <p class="mb-8 px-8 text-center text-neutral-500">
+                  For individuals and organizations who want to try our system
+                </p>
 
                 <div class="space-y-4">
                   <!-- check - start -->
@@ -438,7 +638,11 @@ export const Pricing3: StoryObj = {
               </div>
 
               <div class="mt-auto">
-                <a href="#" class="block rounded-lg bg-neutral-200 px-8 py-3 text-center text-sm font-semibold text-neutral-500 outline-none ring-primary-300 transition duration-100 hover:bg-neutral-300 focus-visible:ring active:text-neutral-700 md:text-base">$0 / Free</a>
+                <a
+                  href="#"
+                  class="block rounded-lg bg-neutral-200 px-8 py-3 text-center text-sm font-semibold text-neutral-500 outline-none ring-primary-300 transition duration-100 hover:bg-neutral-300 focus-visible:ring active:text-neutral-700 md:text-base"
+                  >$0 / Free</a
+                >
               </div>
             </div>
           </div>
@@ -446,13 +650,17 @@ export const Pricing3: StoryObj = {
 
           <!-- plan - start -->
           <div class="flex flex-col overflow-hidden rounded-lg border-2 border-primary">
-            <div class="bg-primary py-2 text-center text-sm font-semibold uppercase tracking-widest text-white">Popular choise</div>
+            <div class="bg-primary py-2 text-center text-sm font-semibold uppercase tracking-widest text-white">
+              Popular choise
+            </div>
 
             <div class="flex flex-1 flex-col p-6 pt-8">
               <div class="mb-12">
                 <div class="mb-2 text-center text-2xl font-bold text-neutral-800">Team</div>
 
-                <p class="mx-auto mb-8 px-8 text-center text-neutral-500">Avanced feaures for Individuals and organizations</p>
+                <p class="mx-auto mb-8 px-8 text-center text-neutral-500">
+                  Avanced feaures for Individuals and organizations
+                </p>
 
                 <div class="space-y-4">
                   <!-- check - start -->
@@ -513,7 +721,11 @@ export const Pricing3: StoryObj = {
               </div>
 
               <div class="mt-auto">
-                <a href="#" class="block rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base">$19</a>
+                <a
+                  href="#"
+                  class="block rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
+                  >$19</a
+                >
               </div>
             </div>
           </div>
@@ -588,7 +800,11 @@ export const Pricing3: StoryObj = {
               </div>
 
               <div class="mt-auto">
-                <a href="#" class="block rounded-lg bg-neutral-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-neutral-700 focus-visible:ring active:bg-neutral-600 md:text-base">$49</a>
+                <a
+                  href="#"
+                  class="block rounded-lg bg-neutral-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-neutral-700 focus-visible:ring active:bg-neutral-600 md:text-base"
+                  >$49</a
+                >
               </div>
             </div>
           </div>
@@ -604,7 +820,9 @@ export const Pricing4: StoryObj = {
   render: () => html`
     <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
       <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-        <h2 class="mb-4 text-center text-2xl font-bold text-neutral-800 md:mb-8 lg:text-3xl xl:mb-12">Pick your plan</h2>
+        <h2 class="mb-4 text-center text-2xl font-bold text-neutral-800 md:mb-8 lg:text-3xl xl:mb-12">
+          Pick your plan
+        </h2>
 
         <div class="mb-6 grid gap-x-6 gap-y-12 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-x-8">
           <!-- plan - start -->
@@ -621,17 +839,31 @@ export const Pricing4: StoryObj = {
                 14-day money backguarantee
 
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
               </div>
 
-              <a href="#" class="block rounded-lg bg-neutral-200 px-8 py-3 text-center text-sm font-semibold text-neutral-500 outline-none ring-primary-300 transition duration-100 hover:bg-neutral-300 focus-visible:ring active:text-neutral-700 md:text-base">Select Free</a>
+              <a
+                href="#"
+                class="block rounded-lg bg-neutral-200 px-8 py-3 text-center text-sm font-semibold text-neutral-500 outline-none ring-primary-300 transition duration-100 hover:bg-neutral-300 focus-visible:ring active:text-neutral-700 md:text-base"
+                >Select Free</a
+              >
             </div>
 
             <div class="flex-1 space-y-3 rounded-lg bg-neutral-100 px-4 py-6">
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -641,7 +873,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -651,7 +889,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -661,7 +905,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -676,7 +926,10 @@ export const Pricing4: StoryObj = {
           <div class="flex flex-col space-y-4">
             <div class="relative flex flex-col gap-4 rounded-lg border border-primary p-4 pt-6">
               <div class="absolute inset-x-0 -top-3 flex justify-center">
-                <span class="flex h-6 items-center justify-center rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">most popular</span>
+                <span
+                  class="flex h-6 items-center justify-center rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white"
+                  >most popular</span
+                >
               </div>
 
               <h3 class="text-center text-2xl font-semibold text-neutral-800">Team</h3>
@@ -690,17 +943,31 @@ export const Pricing4: StoryObj = {
                 14-day money backguarantee
 
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
               </div>
 
-              <a href="#" class="block rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base">Select Team</a>
+              <a
+                href="#"
+                class="block rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
+                >Select Team</a
+              >
             </div>
 
             <div class="flex-1 space-y-3 rounded-lg bg-neutral-100 px-4 py-6">
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -710,7 +977,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -720,7 +993,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -730,7 +1009,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -740,7 +1025,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -765,17 +1056,31 @@ export const Pricing4: StoryObj = {
                 14-day money backguarantee
 
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
               </div>
 
-              <a href="#" class="block rounded-lg bg-neutral-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-neutral-700 focus-visible:ring active:bg-neutral-600 md:text-base">Select Enterprise</a>
+              <a
+                href="#"
+                class="block rounded-lg bg-neutral-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-neutral-700 focus-visible:ring active:bg-neutral-600 md:text-base"
+                >Select Enterprise</a
+              >
             </div>
 
             <div class="flex-1 space-y-3 rounded-lg bg-neutral-100 px-4 py-6">
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -785,7 +1090,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -795,7 +1106,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -805,7 +1122,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 
@@ -815,7 +1138,13 @@ export const Pricing4: StoryObj = {
 
               <!-- check - start -->
               <div class="flex gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
 

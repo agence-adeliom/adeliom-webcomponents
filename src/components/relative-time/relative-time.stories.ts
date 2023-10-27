@@ -26,6 +26,7 @@ The \`date\` attribute determines when the date/time is calculated from. It must
       }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCRelativeTime & typeof args>;
 

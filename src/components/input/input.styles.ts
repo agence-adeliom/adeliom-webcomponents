@@ -118,7 +118,7 @@ export default css`
   .input__control:-webkit-autofill:focus,
   .input__control:-webkit-autofill:active {
     box-shadow: 0 0 0 var(--awc-input-height-large) var(--awc-input-background-color-hover) inset !important;
-    -webkit-text-fill-color: var(--awc-color-primary-default);
+    -webkit-text-fill-color: var(--awc-color-primary-600);
     caret-color: var(--awc-input-color);
   }
 
@@ -250,6 +250,10 @@ export default css`
   /*
    * Clearable + Password Toggle
    */
+
+  .input__clear:not(.input__clear--visible) {
+    visibility: hidden;
+  }
 
   .input__clear,
   .input__password-toggle {

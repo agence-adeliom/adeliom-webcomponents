@@ -24,6 +24,7 @@ Skeletons try not to be opinionated, as there are endless possibilities for desi
       }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCSkeleton & typeof args>;
 

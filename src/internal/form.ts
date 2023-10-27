@@ -1,5 +1,5 @@
-import type { ReactiveController, ReactiveControllerHost } from 'lit';
 import type { AWCFormControl } from '../internal/awc-element.js';
+import type { ReactiveController, ReactiveControllerHost } from 'lit';
 import type AWCButton from '../components/button/button.js';
 
 //

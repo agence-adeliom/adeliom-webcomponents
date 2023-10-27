@@ -4,7 +4,7 @@ import path from 'path';
 import chalk from 'chalk';
 import { deleteSync } from 'del';
 import prettier from 'prettier';
-import prettierConfig from '../prettier.config.cjs';
+import prettierConfig from '../prettier.config.js';
 import { getAllComponents } from './shared.js';
 
 const { outdir } = commandLineArgs({ name: 'outdir', type: String });
@@ -21,53 +21,39 @@ const components = getAllComponents(metadata);
 const index = [];
 
 for await (const component of components) {
-    const tagWithoutPrefix = component.tagName.replace(/^awc-/, '');
-    const componentDir = path.join(reactDir, tagWithoutPrefix);
-    const componentFile = path.join(componentDir, 'index.ts');
-    const importPath = component.path;
+  const tagWithoutPrefix = component.tagName.replace(/^awc-/, '');
+  const componentDir = path.join(reactDir, tagWithoutPrefix);
+  const componentFile = path.join(componentDir, 'index.ts');
+  const importPath = component.path.replace(/\.js$/, '.component.js');
 
-    const eventImports = (component.events || [])
-      .map(event => `import type { ${event.eventName} } from '../../../src/events/events';`)
-      .join('\n');
-    const eventExports = (component.events || [])
-      .map(event => `export type { ${event.eventName} } from '../../../src/events/events';`)
-      .join('\n');
-    const eventNameImport = (component.events || []).length > 0 ? `import { type EventName } from '@lit/react';` : ``;
-    const events = (component.events || [])
-      .map(event => `${event.reactName}: '${event.name}' as EventName<${event.eventName}>`)
-      .join(',\n');
+  const eventImports = (component.events || [])
+    .map(event => `import type { ${event.eventName} } from '../../../src/events/events';`)
+    .join('\n');
+  const eventExports = (component.events || [])
+    .map(event => `export type { ${event.eventName} } from '../../../src/events/events';`)
+    .join('\n');
+  const eventNameImport = (component.events || []).length > 0 ? `import { type EventName } from '@lit/react';` : ``;
+  const events = (component.events || [])
+    .map(event => `${event.reactName}: '${event.name}' as EventName<${event.eventName}>`)
+    .join(',\n');
 
-    fs.mkdirSync(componentDir, {recursive: true});
+  fs.mkdirSync(componentDir, { recursive: true });
 
-    const code = `
-    import * as React from 'react';
-    import { createComponent } from '@lit-labs/react';
-    import Component from '../../${importPath}';
+  const jsDoc = component.jsDoc || '';
 
-    ${eventNameImport}
-    ${eventImports}
-
-    export default createComponent({
-      tagName: '${component.tagName}',
-      elementClass: Component,
-      react: React,
-      events: {
-        ${events}
-      }
-    });
-    `;
-
-    const jsDoc = component.jsDoc || '';
-
-    const source = await prettier.format(`
+  const source = await prettier.format(
+    `
       import * as React from 'react';
       import { createComponent } from '@lit/react';
       import Component from '../../${importPath}';
+
       ${eventNameImport}
       ${eventImports}
       ${eventExports}
+
       const tagName = '${component.tagName}'
       Component.define('${component.tagName}')
+
       ${jsDoc}
       const reactWrapper = createComponent({
         tagName,
@@ -78,16 +64,17 @@ for await (const component of components) {
         },
         displayName: "${component.name}"
       })
+
       export default reactWrapper
-      `,
-      Object.assign(prettierConfig, {
-          parser: 'babel-ts'
-      })
-    );
+    `,
+    Object.assign(prettierConfig, {
+      parser: 'babel-ts'
+    })
+  );
 
-    index.push(`export { default as ${component.name} } from './${tagWithoutPrefix}/index.js';`);
+  index.push(`export { default as ${component.name} } from './${tagWithoutPrefix}/index.js';`);
 
-    fs.writeFileSync(componentFile, source, 'utf8');
+  fs.writeFileSync(componentFile, source, 'utf8');
 }
 
 // Generate the index file

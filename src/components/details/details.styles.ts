@@ -30,6 +30,7 @@ export default css`
     border-radius: inherit;
     padding: var(--padding);
     user-select: none;
+    -webkit-user-select: none;
     cursor: pointer;
   }
 

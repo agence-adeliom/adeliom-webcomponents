@@ -8,5 +8,3 @@ declare global {
     'awc-hover': AWCHoverEvent;
   }
 }
-
-

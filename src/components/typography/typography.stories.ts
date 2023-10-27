@@ -17,6 +17,8 @@ const meta = {
       handles: events
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCTypography & typeof args>;
 

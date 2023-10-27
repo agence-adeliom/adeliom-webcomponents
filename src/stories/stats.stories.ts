@@ -15,11 +15,13 @@ export const Stats1: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
-          <awc-typography type="h3" class="mb-4 text-center" noMargin >
-            Our Team by the numbers
-          </awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center text-neutral-500 dark:text-neutral-200 md:block" noMargin >
-            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.
+          <awc-typography type="h3" class="mb-4 text-center" noMargin> Our Team by the numbers </awc-typography>
+          <awc-typography
+            class="mx-auto max-w-screen-md text-center text-neutral-500 dark:text-neutral-200 md:block"
+            noMargin
+          >
+            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+            of a real written text but is random or otherwise generated.
           </awc-typography>
         </div>
         <!-- text - end -->
@@ -64,11 +66,13 @@ export const Stats2: StoryObj = {
       <div class="mx-auto max-w-screen-lg px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
-          <awc-typography type="h3" class="mb-4 text-center" noMargin >
-            Our Team by the numbers
-          </awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center text-neutral-500 dark:text-neutral-200 md:block" noMargin >
-            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.
+          <awc-typography type="h3" class="mb-4 text-center" noMargin> Our Team by the numbers </awc-typography>
+          <awc-typography
+            class="mx-auto max-w-screen-md text-center text-neutral-500 dark:text-neutral-200 md:block"
+            noMargin
+          >
+            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+            of a real written text but is random or otherwise generated.
           </awc-typography>
         </div>
         <!-- text - end -->
@@ -113,38 +117,48 @@ export const Stats3: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
-          <awc-typography type="h3" class="mb-4 text-center" noMargin >
-            Our Team by the numbers
-          </awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center text-neutral-500 dark:text-neutral-200 md:block" noMargin >
-            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.
+          <awc-typography type="h3" class="mb-4 text-center" noMargin> Our Team by the numbers </awc-typography>
+          <awc-typography
+            class="mx-auto max-w-screen-md text-center text-neutral-500 dark:text-neutral-200 md:block"
+            noMargin
+          >
+            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+            of a real written text but is random or otherwise generated.
           </awc-typography>
         </div>
         <!-- text - end -->
 
         <div class="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-8">
           <!-- stat - start -->
-          <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800 p-4 lg:p-8">
+          <div
+            class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800 p-4 lg:p-8"
+          >
             <div class="text-xl font-bold text-primary sm:text-2xl md:text-3xl">200</div>
             <div class="text-sm font-semibold sm:text-base">People</div>
           </div>
           <!-- stat - end -->
 
           <!-- stat - start -->
-          <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800 p-4 md:p-8">
+          <div
+            class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800 p-4 md:p-8"
+          >
             <div class="text-xl font-bold text-primary sm:text-2xl md:text-3xl">500+</div>
             <div class="text-sm font-semibold sm:text-base">People</div>
           </div>
 
           <!-- stat - start -->
-          <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800 p-4 md:p-8">
+          <div
+            class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800 p-4 md:p-8"
+          >
             <div class="text-xl font-bold text-primary sm:text-2xl md:text-3xl">1000+</div>
             <div class="text-sm font-semibold sm:text-base">Customers</div>
           </div>
           <!-- stat - end -->
 
           <!-- stat - start -->
-          <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800 p-4 md:p-8">
+          <div
+            class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800 p-4 md:p-8"
+          >
             <div class="text-xl font-bold text-primary sm:text-2xl md:text-3xl">A couple</div>
             <div class="text-sm font-semibold sm:text-base">Coffee breaks</div>
           </div>

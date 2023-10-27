@@ -39,6 +39,11 @@ export default function (plop) {
       {
         type: 'add',
         path: '../../src/components/{{ tagWithoutPrefix tag }}/{{ tagWithoutPrefix tag }}.ts',
+        templateFile: 'templates/component/define.hbs'
+      },
+      {
+        type: 'add',
+        path: '../../src/components/{{ tagWithoutPrefix tag }}/{{ tagWithoutPrefix tag }}.ts',
         templateFile: 'templates/component/component.hbs'
       },
       {

@@ -90,8 +90,8 @@ export default css`
   /* Checked/indeterminate + hover */
   .checkbox.checkbox--checked:not(.checkbox--disabled) .checkbox__control:hover,
   .checkbox.checkbox--indeterminate:not(.checkbox--disabled) .checkbox__control:hover {
-    border-color: var(--awc-color-primary-default);
-    background-color: var(--awc-color-primary-default);
+    border-color: var(--awc-color-primary-600);
+    background-color: var(--awc-color-primary-600);
   }
 
   /* Checked/indeterminate + focus */
@@ -113,6 +113,7 @@ export default css`
     line-height: var(--toggle-size);
     margin-inline-start: 0.5em;
     user-select: none;
+    -webkit-user-select: none;
   }
 
   :host([required]) .checkbox__label::after {

@@ -16,7 +16,10 @@ export const Reviews1: StoryObj = {
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
           <awc-typography type="h2" class="text-center mb-4">Customer Reviews</awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</awc-typography>
+          <awc-typography class="mx-auto max-w-screen-md text-center"
+            >This is a section of some simple filler text, also known as placeholder text. It shares some
+            characteristics of a real written text but is random or otherwise generated.</awc-typography
+          >
         </div>
         <!-- text - end -->
         <div class="mb-4 flex items-center justify-between border-t border-b py-4">
@@ -47,7 +50,11 @@ export const Reviews1: StoryObj = {
             <awc-rating label="Rating" readonly value="5"></awc-rating>
             <!-- stars - end -->
 
-            <p class="text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing.</p>
+            <p class="text-neutral-500 dark:text-neutral-200">
+              This is a section of some simple filler text, also known as placeholder text. It shares some
+              characteristics of a real written text but is random or otherwise generated. It may be used to display a
+              sample of fonts or generate text for testing.
+            </p>
           </div>
           <!-- review - end -->
 
@@ -64,7 +71,11 @@ export const Reviews1: StoryObj = {
             <awc-rating label="Rating" readonly value="5"></awc-rating>
             <!-- stars - end -->
 
-            <p class="text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing.</p>
+            <p class="text-neutral-500 dark:text-neutral-200">
+              This is a section of some simple filler text, also known as placeholder text. It shares some
+              characteristics of a real written text but is random or otherwise generated. It may be used to display a
+              sample of fonts or generate text for testing.
+            </p>
           </div>
           <!-- review - end -->
 
@@ -81,7 +92,11 @@ export const Reviews1: StoryObj = {
             <awc-rating label="Rating" readonly value="3"></awc-rating>
             <!-- stars - end -->
 
-            <p class="text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing.</p>
+            <p class="text-neutral-500 dark:text-neutral-200">
+              This is a section of some simple filler text, also known as placeholder text. It shares some
+              characteristics of a real written text but is random or otherwise generated. It may be used to display a
+              sample of fonts or generate text for testing.
+            </p>
           </div>
           <!-- review - end -->
         </div>
@@ -114,50 +129,75 @@ export const Reviews2: StoryObj = {
               <div class="my-5 flex flex-col gap-2 border-t border-b py-5">
                 <!-- star - start -->
                 <div class="flex items-center gap-3">
-                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200">5 Star</span>
+                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200"
+                    >5 Star</span
+                  >
 
                   <div class="block h-4 flex-1">
-                    <awc-progress-bar value="60" style="--indicator-color: var(--awc-color-amber-500)"></awc-progress-bar>
+                    <awc-progress-bar
+                      value="60"
+                      style="--indicator-color: var(--awc-color-amber-500)"
+                    ></awc-progress-bar>
                   </div>
                 </div>
                 <!-- star - end -->
 
                 <!-- star - start -->
                 <div class="flex items-center gap-3">
-                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200">4 Star</span>
+                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200"
+                    >4 Star</span
+                  >
 
                   <div class="block h-4 flex-1">
-                    <awc-progress-bar value="20" style="--indicator-color: var(--awc-color-amber-500)"></awc-progress-bar>
+                    <awc-progress-bar
+                      value="20"
+                      style="--indicator-color: var(--awc-color-amber-500)"
+                    ></awc-progress-bar>
                   </div>
                 </div>
                 <!-- star - end -->
 
                 <!-- star - start -->
                 <div class="flex items-center gap-3">
-                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200">3 Star</span>
+                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200"
+                    >3 Star</span
+                  >
 
                   <div class="block h-4 flex-1">
-                    <awc-progress-bar value="15" style="--indicator-color: var(--awc-color-amber-500)"></awc-progress-bar>
+                    <awc-progress-bar
+                      value="15"
+                      style="--indicator-color: var(--awc-color-amber-500)"
+                    ></awc-progress-bar>
                   </div>
                 </div>
                 <!-- star - end -->
 
                 <!-- star - start -->
                 <div class="flex items-center gap-3">
-                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200">2 Star</span>
+                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200"
+                    >2 Star</span
+                  >
 
                   <div class="block h-4 flex-1">
-                    <awc-progress-bar value="25" style="--indicator-color: var(--awc-color-amber-500)"></awc-progress-bar>
+                    <awc-progress-bar
+                      value="25"
+                      style="--indicator-color: var(--awc-color-amber-500)"
+                    ></awc-progress-bar>
                   </div>
                 </div>
                 <!-- star - end -->
 
                 <!-- star - start -->
                 <div class="flex items-center gap-3">
-                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200">1 Star</span>
+                  <span class="w-10 whitespace-nowrap text-right text-sm text-neutral-500 dark:text-neutral-200"
+                    >1 Star</span
+                  >
 
                   <div class="block h-4 flex-1">
-                    <awc-progress-bar value="8" style="--indicator-color: var(--awc-color-amber-500)"></awc-progress-bar>
+                    <awc-progress-bar
+                      value="8"
+                      style="--indicator-color: var(--awc-color-amber-500)"
+                    ></awc-progress-bar>
                   </div>
                 </div>
                 <!-- star - end -->
@@ -188,7 +228,11 @@ export const Reviews2: StoryObj = {
                 <awc-rating label="Rating" readonly value="5"></awc-rating>
                 <!-- stars - end -->
 
-                <p class="text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing.</p>
+                <p class="text-neutral-500 dark:text-neutral-200">
+                  This is a section of some simple filler text, also known as placeholder text. It shares some
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display
+                  a sample of fonts or generate text for testing.
+                </p>
               </div>
               <!-- review - end -->
 
@@ -205,7 +249,11 @@ export const Reviews2: StoryObj = {
                 <awc-rating label="Rating" readonly value="5"></awc-rating>
                 <!-- stars - end -->
 
-                <p class="text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing.</p>
+                <p class="text-neutral-500 dark:text-neutral-200">
+                  This is a section of some simple filler text, also known as placeholder text. It shares some
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display
+                  a sample of fonts or generate text for testing.
+                </p>
               </div>
               <!-- review - end -->
 
@@ -222,13 +270,17 @@ export const Reviews2: StoryObj = {
                 <awc-rating label="Rating" readonly value="3"></awc-rating>
                 <!-- stars - end -->
 
-                <p class="text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing.</p>
+                <p class="text-neutral-500 dark:text-neutral-200">
+                  This is a section of some simple filler text, also known as placeholder text. It shares some
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display
+                  a sample of fonts or generate text for testing.
+                </p>
               </div>
               <!-- review - end -->
             </div>
 
             <div class="border-t pt-6">
-              <awc-button href="#" variant="text" >Read all reviews</awc-button>
+              <awc-button href="#" variant="text">Read all reviews</awc-button>
             </div>
           </div>
           <!-- reviews - end -->
@@ -246,14 +298,17 @@ export const Reviews3: StoryObj = {
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
           <awc-typography type="h2" class="text-center mb-4">Customer Reviews</awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</awc-typography>
+          <awc-typography class="mx-auto max-w-screen-md text-center"
+            >This is a section of some simple filler text, also known as placeholder text. It shares some
+            characteristics of a real written text but is random or otherwise generated.</awc-typography
+          >
         </div>
         <!-- text - end -->
 
         <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
           <!-- review - start -->
           <awc-card bordered>
-            <div class="flex flex-col gap-3" >
+            <div class="flex flex-col gap-3">
               <div>
                 <span class="block text-sm font-bold md:text-base">John McCulling</span>
                 <span class="block text-sm text-neutral-500 dark:text-neutral-200">August 28, 2021</span>
@@ -263,14 +318,18 @@ export const Reviews3: StoryObj = {
               <awc-rating label="Rating" readonly value="5"></awc-rating>
               <!-- stars - end -->
 
-              <p class="text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing.</p>
+              <p class="text-neutral-500 dark:text-neutral-200">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
             </div>
           </awc-card>
           <!-- review - end -->
 
           <!-- review - start -->
           <awc-card bordered>
-            <div class="flex flex-col gap-3" >
+            <div class="flex flex-col gap-3">
               <div>
                 <span class="block text-sm font-bold md:text-base">Kate Berg</span>
                 <span class="block text-sm text-neutral-500 dark:text-neutral-200">July 21, 2021</span>
@@ -280,14 +339,18 @@ export const Reviews3: StoryObj = {
               <awc-rating label="Rating" readonly value="5"></awc-rating>
               <!-- stars - end -->
 
-              <p class="text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing.</p>
+              <p class="text-neutral-500 dark:text-neutral-200">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
             </div>
           </awc-card>
           <!-- review - end -->
 
           <!-- review - start -->
           <awc-card bordered>
-            <div class="flex flex-col gap-3" >
+            <div class="flex flex-col gap-3">
               <div>
                 <span class="block text-sm font-bold md:text-base">Greg Jackson</span>
                 <span class="block text-sm text-neutral-500 dark:text-neutral-200">March 16, 2021</span>
@@ -297,7 +360,11 @@ export const Reviews3: StoryObj = {
               <awc-rating label="Rating" readonly value="3"></awc-rating>
               <!-- stars - end -->
 
-              <p class="text-neutral-500 dark:text-neutral-200">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing.</p>
+              <p class="text-neutral-500 dark:text-neutral-200">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
             </div>
           </awc-card>
           <!-- review - end -->

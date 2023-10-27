@@ -76,8 +76,8 @@ Here's an example that registers an icon library located in the `/assets/icons` 
 import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
 
 registerIconLibrary('my-icons', {
-    resolver: name => `/assets/icons/${name}.svg`,
-    mutator: svg => svg.setAttribute('fill', 'currentColor')
+  resolver: name => `/assets/icons/${name}.svg`,
+  mutator: svg => svg.setAttribute('fill', 'currentColor')
 });
 ```
 

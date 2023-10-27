@@ -1,14 +1,14 @@
-import '../icon-button/icon-button.js';
 import { animateTo, stopAnimations } from '../../internal/animate.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { customElement, property, query } from 'lit/decorators.js';
 import { getAnimation, setDefaultAnimation } from '../../utilities/animation-registry.js';
 import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
+import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
+import AWCIconButton from '../icon-button/icon-button.component.js';
 import styles from './alert.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -16,7 +16,7 @@ const toastStack = Object.assign(document.createElement('div'), { className: 'aw
 
 /**
  * @summary Alerts are used to display important messages inline or as toast notifications.
- * @documentation https://awc.a-dev.cloud/components/alert
+ * @documentation https://awc.a-dev.cloud/?path=/docs/components-alert--docs
  * @status stable
  * @since 1.0
  *
@@ -41,6 +41,7 @@ const toastStack = Object.assign(document.createElement('div'), { className: 'aw
  */
 export default class AWCAlert extends AWCElement {
   static styles: CSSResultGroup = styles;
+  static dependencies = { 'awc-icon-button': AWCIconButton };
 
   private autoHideTimeout: number;
   private readonly hasSlotController = new HasSlotController(this, 'icon', 'suffix');
@@ -209,6 +210,7 @@ export default class AWCAlert extends AWCElement {
         <div part="icon" class="alert__icon">
           <slot name="icon"></slot>
         </div>
+
         <div part="message" class="alert__message" aria-live="polite">
           <slot></slot>
         </div>
@@ -246,9 +248,3 @@ setDefaultAnimation('alert.hide', {
   ],
   options: { duration: 250, easing: 'ease' }
 });
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'awc-alert': AWCAlert;
-  }
-}

@@ -26,6 +26,7 @@ export default css`
     color: var(--awc-color-neutral-700);
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none;
   }
 
   .tree-item__checkbox {

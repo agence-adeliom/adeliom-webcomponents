@@ -6,7 +6,7 @@ const { events, args, argTypes, template } = getWcStorybookHelpers('awc-icon-but
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
-  title: 'Components/Button/Icon',
+  title: 'Components/Icon/Button',
   component: 'awc-icon-button',
   tags: ['autodocs'],
   args,
@@ -22,6 +22,7 @@ const meta = {
       }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCIconButton & typeof args>;
 

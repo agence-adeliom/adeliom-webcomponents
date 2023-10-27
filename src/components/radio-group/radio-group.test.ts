@@ -4,7 +4,7 @@ import { clickOnElement } from '../../internal/test.js';
 import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type AWCChangeEvent from '../../events/awc-change.js';
+import type { AWCChangeEvent } from '../../events/awc-change.js';
 import type AWCRadio from '../radio/radio.js';
 import type AWCRadioGroup from './radio-group.js';
 

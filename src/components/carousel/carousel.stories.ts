@@ -17,6 +17,7 @@ const meta = {
       handles: events
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCCarousel & typeof args>;
 
@@ -531,7 +532,8 @@ export const AspectRatio: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Use the `--aspect-ratio` custom property to customize the size of the carousel's viewport from the default value of 16/9."
+        story:
+          "Use the `--aspect-ratio` custom property to customize the size of the carousel's viewport from the default value of 16/9."
       }
     }
   }

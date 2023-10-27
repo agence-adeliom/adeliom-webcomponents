@@ -24,6 +24,7 @@ export default css`
     background-color: var(--awc-panel-background-color);
     border-radius: var(--awc-border-radius-medium);
     user-select: none;
+    -webkit-user-select: none;
   }
 
   .color-picker--inline {
@@ -176,7 +177,7 @@ export default css`
 
   @keyframes pulse {
     0% {
-      box-shadow: 0 0 0 0 var(--awc-color-primary-default);
+      box-shadow: 0 0 0 0 var(--awc-color-primary-600);
     }
     70% {
       box-shadow: 0 0 0 0.5rem transparent;

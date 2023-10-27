@@ -67,6 +67,10 @@ export default css`
     -webkit-appearance: none;
   }
 
+  .select__display-input::placeholder {
+    color: var(--awc-input-placeholder-color);
+  }
+
   .select:not(.select--disabled):hover .select__display-input {
     color: var(--awc-input-color-hover);
   }

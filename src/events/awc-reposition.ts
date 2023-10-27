@@ -5,5 +5,3 @@ declare global {
     'awc-reposition': AWCRepositionEvent;
   }
 }
-
-

@@ -1,4 +1,4 @@
-import { CustomElementsManifest, Declaration } from './cem-schema';
+import type { CustomElementsManifest, Declaration } from './cem-schema';
 import type { ArgTypes, ControlOptions, Options } from './storybook';
 
 let options: Options = {};

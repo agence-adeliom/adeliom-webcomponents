@@ -1,27 +1,9 @@
-import { customElement } from 'lit/decorators.js';
-import { html } from 'lit';
-import AWCElement from '../../internal/awc-element.js';
-import styles from './menu-label.styles.js';
-import type { CSSResultGroup } from 'lit';
+import AWCMenuLabel from './menu-label.component.js';
 
-/**
- * @summary Menu labels are used to describe a group of menu items.
- * @documentation https://awc.a-dev.cloud/components/menu-label
- * @status stable
- * @since 1.0
- *
- * @slot - The menu label's content.
- *
- * @csspart base - The component's base wrapper.
- */
-@customElement('awc-menu-label')
-export default class AWCMenuLabel extends AWCElement {
-  static styles: CSSResultGroup = styles;
+export * from './menu-label.component.js';
+export default AWCMenuLabel;
 
-  render() {
-    return html` <slot part="base" class="menu-label"></slot> `;
-  }
-}
+AWCMenuLabel.define('awc-menu-label');
 
 declare global {
   interface HTMLElementTagNameMap {

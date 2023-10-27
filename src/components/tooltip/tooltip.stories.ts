@@ -24,6 +24,7 @@ Tooltips use \`display: contents\` so they won't interfere with how elements are
       }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCTooltip & typeof args>;
 

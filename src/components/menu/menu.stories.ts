@@ -24,6 +24,7 @@ const meta = {
       }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCMenu & typeof args>;
 
@@ -49,12 +50,12 @@ export const Dropdowns: Story = {
   name: 'In Dropdowns',
   render: () =>
     html`<awc-dropdown>
-        <awc-button slot="trigger" caret>Edit</awc-button>
-        <awc-menu>
-            <awc-menu-item value="cut">Cut</awc-menu-item>
-            <awc-menu-item value="copy">Copy</awc-menu-item>
-            <awc-menu-item value="paste">Paste</awc-menu-item>
-        </awc-menu>
+      <awc-button slot="trigger" caret>Edit</awc-button>
+      <awc-menu>
+        <awc-menu-item value="cut">Cut</awc-menu-item>
+        <awc-menu-item value="copy">Copy</awc-menu-item>
+        <awc-menu-item value="paste">Paste</awc-menu-item>
+      </awc-menu>
     </awc-dropdown>`,
   parameters: {
     docs: {
@@ -69,29 +70,29 @@ export const Submenus: Story = {
   name: 'Submenus',
   render: () =>
     html`<awc-menu style="max-width: 200px;">
-        <awc-menu-item value="undo">Undo</awc-menu-item>
-        <awc-menu-item value="redo">Redo</awc-menu-item>
-        <awc-divider></awc-divider>
-        <awc-menu-item value="cut">Cut</awc-menu-item>
-        <awc-menu-item value="copy">Copy</awc-menu-item>
-        <awc-menu-item value="paste">Paste</awc-menu-item>
-        <awc-divider></awc-divider>
-        <awc-menu-item>
-            Find
-            <awc-menu slot="submenu">
-                <awc-menu-item value="find">Find…</awc-menu-item>
-                <awc-menu-item value="find-previous">Find Next</awc-menu-item>
-                <awc-menu-item value="find-next">Find Previous</awc-menu-item>
-            </awc-menu>
-        </awc-menu-item>
-        <awc-menu-item>
-            Transformations
-            <awc-menu slot="submenu">
-                <awc-menu-item value="uppercase">Make uppercase</awc-menu-item>
-                <awc-menu-item value="lowercase">Make lowercase</awc-menu-item>
-                <awc-menu-item value="capitalize">Capitalize</awc-menu-item>
-            </awc-menu>
-        </awc-menu-item>
+      <awc-menu-item value="undo">Undo</awc-menu-item>
+      <awc-menu-item value="redo">Redo</awc-menu-item>
+      <awc-divider></awc-divider>
+      <awc-menu-item value="cut">Cut</awc-menu-item>
+      <awc-menu-item value="copy">Copy</awc-menu-item>
+      <awc-menu-item value="paste">Paste</awc-menu-item>
+      <awc-divider></awc-divider>
+      <awc-menu-item>
+        Find
+        <awc-menu slot="submenu">
+          <awc-menu-item value="find">Find…</awc-menu-item>
+          <awc-menu-item value="find-previous">Find Next</awc-menu-item>
+          <awc-menu-item value="find-next">Find Previous</awc-menu-item>
+        </awc-menu>
+      </awc-menu-item>
+      <awc-menu-item>
+        Transformations
+        <awc-menu slot="submenu">
+          <awc-menu-item value="uppercase">Make uppercase</awc-menu-item>
+          <awc-menu-item value="lowercase">Make lowercase</awc-menu-item>
+          <awc-menu-item value="capitalize">Capitalize</awc-menu-item>
+        </awc-menu>
+      </awc-menu-item>
     </awc-menu>`,
   parameters: {
     docs: {
@@ -104,4 +105,3 @@ export const Submenus: Story = {
     }
   }
 };
-

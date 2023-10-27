@@ -162,7 +162,7 @@ describe('<awc-dropdown>', () => {
     expect(el.open).to.be.true;
   });
 
-  it('should open on arrow navigation', async () => {
+  it('should open on arrow down navigation', async () => {
     const el = await fixture<AWCDropdown>(html`
       <awc-dropdown>
         <awc-button slot="trigger" caret>Toggle</awc-button>
@@ -173,12 +173,35 @@ describe('<awc-dropdown>', () => {
       </awc-dropdown>
     `);
     const trigger = el.querySelector('awc-button')!;
+    const firstMenuItem = el.querySelectorAll('awc-menu-item')[0];
 
     trigger.focus();
     await sendKeys({ press: 'ArrowDown' });
     await el.updateComplete;
 
     expect(el.open).to.be.true;
+    expect(document.activeElement).to.equal(firstMenuItem);
+  });
+
+  it('should open on arrow up navigation', async () => {
+    const el = await fixture<AWCDropdown>(html`
+      <awc-dropdown>
+        <awc-button slot="trigger" caret>Toggle</awc-button>
+        <awc-menu>
+          <awc-menu-item>Item 1</awc-menu-item>
+          <awc-menu-item>Item 2</awc-menu-item>
+        </awc-menu>
+      </awc-dropdown>
+    `);
+    const trigger = el.querySelector('awc-button')!;
+    const secondMenuItem = el.querySelectorAll('awc-menu-item')[1];
+
+    trigger.focus();
+    await sendKeys({ press: 'ArrowUp' });
+    await el.updateComplete;
+
+    expect(el.open).to.be.true;
+    expect(document.activeElement).to.equal(secondMenuItem);
   });
 
   it('should navigate to first focusable item on arrow navigation', async () => {

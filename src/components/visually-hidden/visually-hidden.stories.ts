@@ -25,6 +25,7 @@ Since visually hidden content can receive focus when tabbing, the element will b
       }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCVisuallyHidden & typeof args>;
 

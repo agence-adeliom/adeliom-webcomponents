@@ -1,4 +1,3 @@
-
 //
 // This script downloads and generates icons and icon metadata.
 //

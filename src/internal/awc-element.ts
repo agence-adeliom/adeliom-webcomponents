@@ -93,16 +93,13 @@ export default class AWCElement extends LitElement {
     return event as GetCustomEventType<T>;
   }
 
-
   /* eslint-disable */
   // @ts-expect-error This is auto-injected at build time.
-  static version = __AWC_VERSION__;
+  static version = '__AWC_VERSION__';
   /* eslint-enable */
 
   static define(name: string, elementConstructor = this, options: ElementDefinitionOptions = {}) {
-    const currentlyRegisteredConstructor = customElements.get(name) as
-      | CustomElementConstructor
-      | typeof AWCElement;
+    const currentlyRegisteredConstructor = customElements.get(name) as CustomElementConstructor | typeof AWCElement;
 
     if (!currentlyRegisteredConstructor) {
       customElements.define(name, class extends elementConstructor {} as unknown as CustomElementConstructor, options);

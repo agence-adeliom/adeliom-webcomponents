@@ -5,5 +5,3 @@ declare global {
     'awc-initial-focus': AWCInitialFocusEvent;
   }
 }
-
-

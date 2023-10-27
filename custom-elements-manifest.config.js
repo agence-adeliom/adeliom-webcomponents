@@ -28,7 +28,7 @@ function replace(string, terms) {
 }
 
 export default {
-  globs: ['src/components/**/*.ts', 'src/layouts/**/*.ts'],
+  globs: ['src/components/**/*.component.ts'],
   exclude: ['**/*.styles.ts', '**/*.stories.ts', '**/*.test.ts', '**/*.utils.ts'],
   plugins: [
     // Append package data
@@ -38,7 +38,34 @@ export default {
         customElementsManifest.package = { name, description, version, author, homepage, license };
       }
     },
+    // Infer tag names because we no longer use @customElement decorators.
+    {
+      name: 'awc-infer-tag-names',
+      analyzePhase({ ts, node, moduleDoc }) {
+        switch (node.kind) {
+          case ts.SyntaxKind.ClassDeclaration: {
+            const className = node.name.getText();
+            const classDoc = moduleDoc?.declarations?.find(declaration => declaration.name === className);
 
+            const importPath = moduleDoc.path;
+
+            // This is kind of a best guess at components. "thing.component.ts"
+            if (!importPath.endsWith('.component.ts')) {
+              return;
+            }
+
+            const tagNameWithoutPrefix = path.basename(importPath, '.component.ts');
+            const tagName = 'awc-' + tagNameWithoutPrefix;
+
+            classDoc.tagNameWithoutPrefix = tagNameWithoutPrefix;
+            classDoc.tagName = tagName;
+
+            // This used to be set to true by @customElement
+            classDoc.customElement = true;
+          }
+        }
+      }
+    },
     // Parse custom jsDoc tags
     {
       name: 'awc-custom-tags',
@@ -143,7 +170,7 @@ export default {
           //
           const terms = [
             { from: /^src\//, to: '' }, // Strip the src/ prefix
-            { from: /\.(t|j)sx?$/, to: '.js' } // Convert .ts to .js
+            { from: /\.component.(t|j)sx?$/, to: '.js' } // Convert .ts to .js
           ];
 
           mod.path = replace(mod.path, terms);

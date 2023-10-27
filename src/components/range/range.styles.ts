@@ -87,7 +87,7 @@ export default css`
 
   .range__control:enabled::-webkit-slider-thumb:active {
     background-color: var(--awc-color-primary-600);
-    border-color: var(--awc-color-primary-default);
+    border-color: var(--awc-color-primary-600);
     cursor: grabbing;
   }
 

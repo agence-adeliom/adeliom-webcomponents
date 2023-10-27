@@ -2,9 +2,9 @@ import '../../../dist/awc.js';
 // cspell:dictionaries lorem-ipsum
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
+import type { AWCHideEvent } from '../../events/awc-hide';
+import type { AWCShowEvent } from '../../events/awc-show';
 import type AWCDetails from './details';
-import type AWCHideEvent from '../../events/awc-hide';
-import type AWCShowEvent from '../../events/awc-show';
 
 describe('<awc-details>', () => {
   describe('accessibility', () => {
@@ -99,6 +99,7 @@ describe('<awc-details>', () => {
         consequat.
       </awc-details>
     `);
+    const body = el.shadowRoot!.querySelector<HTMLElement>('.details__body')!;
     const showHandler = sinon.spy();
     const afterShowHandler = sinon.spy();
 
@@ -111,6 +112,7 @@ describe('<awc-details>', () => {
 
     expect(showHandler).to.have.been.calledOnce;
     expect(afterShowHandler).to.have.been.calledOnce;
+    expect(body.hidden).to.be.false;
   });
 
   it('should emit awc-hide and awc-after-hide when setting open = false', async () => {

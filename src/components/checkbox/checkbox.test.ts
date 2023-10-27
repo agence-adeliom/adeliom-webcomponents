@@ -98,7 +98,7 @@ describe('<awc-checkbox>', () => {
 
   it('should hide the native input with the correct positioning to scroll correctly when contained in an overflow', async () => {
     //
-    // See: https://github.com/awc-style/awc/issues/1169
+    // See: https://github.com/shoelace-style/shoelace/issues/1169
     //
     const el = await fixture<AWCCheckbox>(html` <awc-checkbox></awc-checkbox> `);
     const label = el.shadowRoot!.querySelector('.checkbox')!;

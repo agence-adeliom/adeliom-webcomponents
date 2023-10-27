@@ -1,4 +1,3 @@
-import { TemplateResult } from 'lit';
 import type { ArgTypes, Options } from './storybook';
 import { getStyleTemplate, getTemplate } from './html-templates.js';
 import {
@@ -10,7 +9,7 @@ import {
   getReactProperties,
   getSlots
 } from './cem-utilities.js';
-import { Declaration } from './cem-schema';
+import type { Declaration } from './cem-schema';
 
 /**
  * sets the global config for the Storybook helpers
@@ -49,7 +48,7 @@ export function getWcStorybookHelpers(tagName: string) {
     reactArgTypes: getReactProps(component),
     events: eventNames,
     styleTemplate: (args?: any) => getStyleTemplate(component, args),
-    template: (args?: any, slot?: TemplateResult) => getTemplate(component, args, slot)
+    template: (args?: any, slot?: any) => getTemplate(component, args, slot)
   };
 }
 

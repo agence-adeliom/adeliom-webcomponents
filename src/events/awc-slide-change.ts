@@ -7,5 +7,3 @@ declare global {
     'awc-slide-change': AWCSlideChangeEvent;
   }
 }
-
-

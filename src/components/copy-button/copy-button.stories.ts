@@ -15,13 +15,9 @@ const meta = {
     layout: 'padded',
     actions: {
       handles: events
-    },
-    docs: {
-      story: {
-        height: '120px'
-      }
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCCopyButton & typeof args>;
 

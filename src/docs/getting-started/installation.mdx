@@ -86,10 +86,6 @@ However, if you're [cherry picking](#cherry-picking) or [bundling](#bundling) Ad
 > 📘 Info
 >
 > An easy way to make sure the base path is configured properly is to check if [icons](/?path=/docs/components-icon--docs) are loading.
->
-> For example, if I set the basePath to `/dist`, I should be able to go to `https://<my-site>/dist/assets/icons/arrow-left.svg` and the browser should show me the SVG.
->
-> Adeliom WebComponents also exports a `getBasePath()` method you can use to reference assets.
 
 ### Referencing Assets
 
@@ -130,6 +126,21 @@ You can copy and paste the code to import a component from the "Importing" secti
 > Never cherry pick components or utilities from `awc.js` as this will cause the browser to load the entire library. Instead, cherry pick from specific modules as shown above.
 >
 > You will see files named `chunk.[hash].js` in the `chunks` directory. Never import these files directly, as they are generated and change from version to version.
+
+### Avoiding auto-registering imports
+
+By default, imports to components will auto-register themselves. This may not be ideal in all cases. To import just the component's class without auto-registering it's tag we can do the following:
+
+```diff
+- import AWCButton from '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
++ import AWCButton from '@agence-adeliom/awc/%NPMDIR%/components/button/button.component.js';
+```
+
+Notice how the import ends with `.component.js`. This is the current convention to convey the import does not register itself.
+
+> ❗️**Danger**
+>
+> While you can override the class or re-register the shoelace class under a different tag name, if you do so, many components won’t work as expected.
 
 ## Bundling
 

@@ -6,7 +6,7 @@ const { events, args, argTypes, template } = getWcStorybookHelpers('awc-tab');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
-  title: 'Components/Tab/Tab',
+  title: 'Components/Tab',
   component: 'awc-tab',
   tags: ['autodocs'],
   args,
@@ -23,6 +23,7 @@ const meta = {
     }
   },
   // eslint-disable-next-line @typescript-eslint/no-shadow
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCTab & typeof args>;
 export default meta;

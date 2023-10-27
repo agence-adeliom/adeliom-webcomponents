@@ -3,6 +3,7 @@ import { execSync } from 'child_process';
 import { globbySync } from 'globby';
 import path from 'path';
 import pkg from '../package.json';
+import replace from '@rollup/plugin-replace';
 
 const externalPackages = [
   //...Object.keys(pkg.dependencies || {}),
@@ -56,5 +57,10 @@ export default {
       '@awc-storybook': path.resolve(__dirname, '.')
     }
   },
-  plugins: [awcPlugin()]
+  plugins: [
+    awcPlugin(),
+    replace({
+      __AWC_VERSION__: pkg.version
+    })
+  ]
 };
