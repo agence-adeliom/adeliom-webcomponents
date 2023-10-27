@@ -1,9 +1,9 @@
-import type { AWCFormControl } from '../internal/awc-element.js';
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
+import type { AWCFormControl } from '../internal/awc-element.js';
 import type AWCButton from '../components/button/button.js';
 
 //
-// We store a WeakMap of forms + controls so we can keep references to all AWC controls within a given form. As
+// We store a WeakMap of forms + controls so we can keep references to all Shoelace controls within a given form. As
 // elements connect and disconnect to/from the DOM, their containing form is used as the key and the form control is
 // added and removed from the form's set, respectively.
 //
@@ -78,14 +78,9 @@ export class FormControlController implements ReactiveController {
       disabled: input => input.disabled ?? false,
       reportValidity: input => (typeof input.reportValidity === 'function' ? input.reportValidity() : true),
       setValue: (input, value: string) => (input.value = value),
-      assumeInteractionOn: ['awc-input'],
+      assumeInteractionOn: ['sl-input'],
       ...options
     };
-    this.handleFormData = this.handleFormData.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleFormReset = this.handleFormReset.bind(this);
-    this.reportFormValidity = this.reportFormValidity.bind(this);
-    this.handleInteraction = this.handleInteraction.bind(this);
   }
 
   hostConnected() {
@@ -146,7 +141,7 @@ export class FormControlController implements ReactiveController {
       this.form.addEventListener('submit', this.handleFormSubmit);
       this.form.addEventListener('reset', this.handleFormReset);
 
-      // Overload the form's reportValidity() method so it looks at AWC form controls
+      // Overload the form's reportValidity() method so it looks at Shoelace form controls
       if (!reportValidityOverloads.has(this.form)) {
         reportValidityOverloads.set(this.form, this.form.reportValidity);
         this.form.reportValidity = () => this.reportFormValidity();
@@ -175,14 +170,14 @@ export class FormControlController implements ReactiveController {
     this.form = undefined;
   }
 
-  private handleFormData(event: FormDataEvent) {
+  private handleFormData = (event: FormDataEvent) => {
     const disabled = this.options.disabled(this.host);
     const name = this.options.name(this.host);
     const value = this.options.value(this.host);
 
     // For buttons, we only submit the value if they were the submitter. This is currently done in doAction() by
     // injecting the name/value on a temporary button, so we can just skip them here.
-    const isButton = this.host.tagName.toLowerCase() === 'awc-button';
+    const isButton = this.host.tagName.toLowerCase() === 'sl-button';
 
     if (!disabled && !isButton && typeof name === 'string' && name.length > 0 && typeof value !== 'undefined') {
       if (Array.isArray(value)) {
@@ -193,9 +188,9 @@ export class FormControlController implements ReactiveController {
         event.formData.append(name, (value as string | number | boolean).toString());
       }
     }
-  }
+  };
 
-  private handleFormSubmit(event: Event) {
+  private handleFormSubmit = (event: Event) => {
     const disabled = this.options.disabled(this.host);
     const reportValidity = this.options.reportValidity;
 
@@ -210,15 +205,15 @@ export class FormControlController implements ReactiveController {
       event.preventDefault();
       event.stopImmediatePropagation();
     }
-  }
+  };
 
-  private handleFormReset() {
+  private handleFormReset = () => {
     this.options.setValue(this.host, this.options.defaultValue(this.host));
     this.setUserInteracted(this.host, false);
     interactions.set(this.host, []);
-  }
+  };
 
-  private handleInteraction(event: Event) {
+  private handleInteraction = (event: Event) => {
     const emittedEvents = interactions.get(this.host)!;
 
     if (!emittedEvents.includes(event.type)) {
@@ -229,11 +224,11 @@ export class FormControlController implements ReactiveController {
     if (emittedEvents.length === this.options.assumeInteractionOn.length) {
       this.setUserInteracted(this.host, true);
     }
-  }
+  };
 
-  private reportFormValidity() {
+  private reportFormValidity = () => {
     //
-    // AWC form controls work hard to act like regular form controls. They support the Constraint Validation API
+    // Shoelace form controls work hard to act like regular form controls. They support the Constraint Validation API
     // and its associated methods such as setCustomValidity() and reportValidity(). However, the HTMLFormElement also
     // has a reportValidity() method that will trigger validation on all child controls. Since we're not yet using
     // ElementInternals, we need to overload this method so it looks for any element with the reportValidity() method.
@@ -245,7 +240,7 @@ export class FormControlController implements ReactiveController {
     // Note that we're also honoring the form's novalidate attribute.
     //
     if (this.form && !this.form.noValidate) {
-      // This seems sloppy, but checking all elements will cover native inputs, AWC inputs, and other custom
+      // This seems sloppy, but checking all elements will cover native inputs, Shoelace inputs, and other custom
       // elements that support the constraint validation API.
       const elements = this.form.querySelectorAll<HTMLInputElement>('*');
 
@@ -259,7 +254,7 @@ export class FormControlController implements ReactiveController {
     }
 
     return true;
-  }
+  };
 
   private setUserInteracted(el: AWCFormControl, hasInteracted: boolean) {
     if (hasInteracted) {
@@ -330,7 +325,7 @@ export class FormControlController implements ReactiveController {
     // We're mapping the following "states" to data attributes. In the future, we can use ElementInternals.states to
     // create a similar mapping, but instead of [data-invalid] it will look like :--invalid.
     //
-    // See this RFC for more details: https://github.com/awc-style/awc/issues/1011
+    // See this RFC for more details: https://github.com/shoelace-style/shoelace/issues/1011
     //
     host.toggleAttribute('data-required', required);
     host.toggleAttribute('data-optional', !required);
@@ -350,14 +345,14 @@ export class FormControlController implements ReactiveController {
   }
 
   /**
-   * Dispatches a non-bubbling, cancelable custom event of type `awc-invalid`.
-   * If the `awc-invalid` event will be cancelled then the original `invalid`
+   * Dispatches a non-bubbling, cancelable custom event of type `sl-invalid`.
+   * If the `sl-invalid` event will be cancelled then the original `invalid`
    * event (which may have been passed as argument) will also be cancelled.
-   * If no original `invalid` event has been passed then the `awc-invalid`
+   * If no original `invalid` event has been passed then the `sl-invalid`
    * event will be cancelled before being dispatched.
    */
   emitInvalidEvent(originalInvalidEvent?: Event) {
-    const slInvalidEvent = new CustomEvent<Record<PropertyKey, never>>('awc-invalid', {
+    const slInvalidEvent = new CustomEvent<Record<PropertyKey, never>>('sl-invalid', {
       bubbles: false,
       composed: false,
       cancelable: true,

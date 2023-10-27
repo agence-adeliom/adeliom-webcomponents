@@ -223,7 +223,9 @@ export const InitialValues: Story = {
   parameters: {
     docs: {
       description: {
-        story: `Use the \`value\` attribute to set the initial selection. When using \`multiple\`, use space-delimited values to select more than one option.`
+        story: `Use the \`value\` attribute to set the initial selection.
+
+When using \`multiple\`, the \`value\` _attribute_ uses space-delimited values to select more than one option. Because of this, \`<awc-option>\` values cannot contain spaces. If you're accessing the \`value\` _property_ through Javascript, it will be an array.`
       },
       story: {
         height: '200px'
@@ -338,6 +340,45 @@ export const PrefixIcons: Story = {
     docs: {
       description: {
         story: `Use the \`prefix\` slot to prepend an icon to the control.`
+      }
+    }
+  }
+};
+
+export const CustomTags: Story = {
+  name: 'Custom Tags',
+  render: () =>
+      html`<awc-select placeholder="Small" size="small" clearable>
+        <awc-icon name="house" slot="prefix"></awc-icon>
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+      </awc-select>
+      <br />
+      <awc-select placeholder="Medium" size="medium" clearable>
+        <awc-icon name="house" slot="prefix"></awc-icon>
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+      </awc-select>
+      <br />
+      <awc-select placeholder="Large" size="large" clearable>
+        <awc-icon name="house" slot="prefix"></awc-icon>
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+      </awc-select>`,
+  parameters: {
+    docs: {
+      description: {
+        story: `
+When multiple options can be selected, you can provide custom tags by passing a function to the \`getTag\` property. Your function can return a string of HTML, a <a href="https://lit.dev/docs/templates/overview/">Lit Template</a>, or an [\`HTMLElement\`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). The \`getTag()\` function will be called for each option. The first argument is an \`<awc-option>\` element and the second argument is the tag's index (its position in the tag list).
+
+Remember that custom tags are rendered in a shadow root. To style them, you can use the \`style\` attribute in your template or you can add your own [parts](/?path=/docs/getting-started-customizing--docs#css-parts) and target them with the [\`::part()\`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) selector.
+
+> 🚧 **Warning**
+>
+> Be sure you trust the content you are outputting! Passing unsanitized user input to \`getTag()\` can result in XSS vulnerabilities.`
       }
     }
   }

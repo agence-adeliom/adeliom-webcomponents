@@ -30,13 +30,13 @@ export const Primary: Story = {
     html`<awc-split-panel>
       <div
         slot="start"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         Start
       </div>
       <div
         slot="end"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         End
       </div>
@@ -49,13 +49,13 @@ export const InitialPosition: Story = {
     html`<awc-split-panel position="75">
       <div
         slot="start"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         Start
       </div>
       <div
         slot="end"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         End
       </div>
@@ -75,13 +75,13 @@ export const InitialPositionPixels: Story = {
     html`<awc-split-panel position-in-pixels="150">
       <div
         slot="start"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         Start
       </div>
       <div
         slot="end"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         End
       </div>
@@ -101,13 +101,13 @@ export const Vertical: Story = {
     html`<awc-split-panel vertical style="height: 400px;">
       <div
         slot="start"
-        style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         Start
       </div>
       <div
         slot="end"
-        style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         End
       </div>
@@ -128,13 +128,13 @@ export const Snapping: Story = {
         <awc-split-panel snap="100px 50%">
           <div
             slot="start"
-            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
           >
             Start
           </div>
           <div
             slot="end"
-            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
           >
             End
           </div>
@@ -183,13 +183,13 @@ export const Disabled: Story = {
     html`<awc-split-panel disabled>
       <div
         slot="start"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         Start
       </div>
       <div
         slot="end"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         End
       </div>
@@ -210,13 +210,13 @@ export const PrimaryPanel: Story = {
         <awc-split-panel>
           <div
             slot="start"
-            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
           >
             Start
           </div>
           <div
             slot="end"
-            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
           >
             End
           </div>
@@ -253,13 +253,13 @@ export const MinMax: Story = {
     html`<awc-split-panel style="--min: 150px; --max: calc(100% - 150px);">
       <div
         slot="start"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         Start
       </div>
       <div
         slot="end"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         End
       </div>
@@ -281,7 +281,7 @@ export const Nested: Story = {
     html`<awc-split-panel>
       <div
         slot="start"
-        style="height: 400px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 400px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         Start
       </div>
@@ -289,13 +289,13 @@ export const Nested: Story = {
         <awc-split-panel vertical style="height: 400px;">
           <div
             slot="start"
-            style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+            style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
           >
             Top
           </div>
           <div
             slot="end"
-            style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+            style="height: 100%; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
           >
             Bottom
           </div>
@@ -318,13 +318,13 @@ export const Customizing: Story = {
       <awc-icon slot="divider" name="grip-vertical"></awc-icon>
       <div
         slot="start"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         Start
       </div>
       <div
         slot="end"
-        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+        style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
       >
         End
       </div>
@@ -346,13 +346,13 @@ export const AdvancedCustomizing: Story = {
           <awc-icon slot="divider" name="grip-vertical"></awc-icon>
           <div
             slot="start"
-            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
           >
             Start
           </div>
           <div
             slot="end"
-            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center;"
+            style="height: 200px; background: var(--awc-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
           >
             End
           </div>

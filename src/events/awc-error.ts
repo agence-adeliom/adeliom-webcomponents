@@ -1,4 +1,4 @@
-type AWCErrorEvent = CustomEvent<{ status?: number }>;
+export type AWCErrorEvent = CustomEvent<{ status?: number }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -6,4 +6,4 @@ declare global {
   }
 }
 
-export default AWCErrorEvent;
+

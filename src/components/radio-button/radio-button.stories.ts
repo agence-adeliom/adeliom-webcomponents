@@ -76,26 +76,26 @@ export const Disabled: Story = {
 export const Sizes: Story = {
   name: 'Sizes',
   render: () =>
-    html`<awc-radio-group label="Select an option" name="radio" value="1">
-        <awc-radio-button size="small" value="1">Option 1</awc-radio-button>
-        <awc-radio-button size="small" value="2">Option 2</awc-radio-button>
-        <awc-radio-button size="small" value="3">Option 3</awc-radio-button>
+    html`<awc-radio-group label="Select an option" name="radio" value="1" size="small">
+        <awc-radio-button value="1">Option 1</awc-radio-button>
+        <awc-radio-button value="2">Option 2</awc-radio-button>
+        <awc-radio-button value="3">Option 3</awc-radio-button>
       </awc-radio-group>
 
       <br />
 
-      <awc-radio-group label="Select an option" name="radio" value="1">
-        <awc-radio-button size="medium" value="1">Option 1</awc-radio-button>
-        <awc-radio-button size="medium" value="2">Option 2</awc-radio-button>
-        <awc-radio-button size="medium" value="3">Option 3</awc-radio-button>
+      <awc-radio-group label="Select an option" name="radio" value="1" size="medium">
+        <awc-radio-button value="1">Option 1</awc-radio-button>
+        <awc-radio-button value="2">Option 2</awc-radio-button>
+        <awc-radio-button value="3">Option 3</awc-radio-button>
       </awc-radio-group>
 
       <br />
 
-      <awc-radio-group label="Select an option" name="radio" value="1">
-        <awc-radio-button size="large" value="1">Option 1</awc-radio-button>
-        <awc-radio-button size="large" value="2">Option 2</awc-radio-button>
-        <awc-radio-button size="large" value="3">Option 3</awc-radio-button>
+      <awc-radio-group label="Select an option" name="radio" value="1" size="large">
+        <awc-radio-button value="1">Option 1</awc-radio-button>
+        <awc-radio-button value="2">Option 2</awc-radio-button>
+        <awc-radio-button value="3">Option 3</awc-radio-button>
       </awc-radio-group>`,
   parameters: {
     docs: {
@@ -109,26 +109,26 @@ export const Sizes: Story = {
 export const PillButtons: Story = {
   name: 'Pill Buttons',
   render: () =>
-    html`<awc-radio-group label="Select an option" name="radio" value="1">
-        <awc-radio-button pill size="small" value="1">Option 1</awc-radio-button>
-        <awc-radio-button pill size="small" value="2">Option 2</awc-radio-button>
-        <awc-radio-button pill size="small" value="3">Option 3</awc-radio-button>
+    html`<awc-radio-group label="Select an option" name="radio" value="1" size="small">
+        <awc-radio-button pill value="1">Option 1</awc-radio-button>
+        <awc-radio-button pill value="2">Option 2</awc-radio-button>
+        <awc-radio-button pill value="3">Option 3</awc-radio-button>
       </awc-radio-group>
 
       <br />
 
-      <awc-radio-group label="Select an option" name="radio" value="1">
-        <awc-radio-button pill size="medium" value="1">Option 1</awc-radio-button>
-        <awc-radio-button pill size="medium" value="2">Option 2</awc-radio-button>
-        <awc-radio-button pill size="medium" value="3">Option 3</awc-radio-button>
+      <awc-radio-group label="Select an option" name="radio" value="1" size="medium">
+        <awc-radio-button pill value="1">Option 1</awc-radio-button>
+        <awc-radio-button pill value="2">Option 2</awc-radio-button>
+        <awc-radio-button pill value="3">Option 3</awc-radio-button>
       </awc-radio-group>
 
       <br />
 
-      <awc-radio-group label="Select an option" name="radio" value="1">
-        <awc-radio-button pill size="large" value="1">Option 1</awc-radio-button>
-        <awc-radio-button pill size="large" value="2">Option 2</awc-radio-button>
-        <awc-radio-button pill size="large" value="3">Option 3</awc-radio-button>
+      <awc-radio-group label="Select an option" name="radio" value="1" size="large">
+        <awc-radio-button pill value="1">Option 1</awc-radio-button>
+        <awc-radio-button pill value="2">Option 2</awc-radio-button>
+        <awc-radio-button pill value="3">Option 3</awc-radio-button>
       </awc-radio-group>`,
   parameters: {
     docs: {

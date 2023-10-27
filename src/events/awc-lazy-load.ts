@@ -1,4 +1,4 @@
-type AWCLazyLoadEvent = CustomEvent<Record<PropertyKey, never>>;
+export type AWCLazyLoadEvent = CustomEvent<Record<PropertyKey, never>>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -6,4 +6,4 @@ declare global {
   }
 }
 
-export default AWCLazyLoadEvent;
+

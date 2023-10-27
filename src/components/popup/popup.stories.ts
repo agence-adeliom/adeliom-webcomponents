@@ -807,3 +807,90 @@ Scroll the container to see the popup resize as its available space changes.`
         autoSize.addEventListener('awc-change', () => (popupAutoSize.autoSize = autoSize.checked ? 'both' : ''));
       </script>`
 };
+
+
+export const VirtualElements: Story = {
+  name: 'Virtual Elements',
+  render: () =>
+    html`<div class="popup-virtual-element">
+      <awc-popup placement="right-start">
+          <div class="circle"></div>
+      </awc-popup>
+      <awc-switch>Highlight mouse cursor</awc-switch>
+  </div>
+  <script>
+      const container = document.querySelector('.popup-virtual-element');
+      const popup = container.querySelector('awc-popup');
+      const circle = container.querySelector('.circle');
+      const enabled = container.querySelector('awc-switch');
+      let clientX = 0;
+      let clientY = 0;
+      // Set the virtual element as a property
+      popup.anchor = {
+          getBoundingClientRect() {
+              return {
+                  width: 0,
+                  height: 0,
+                  x: clientX,
+                  y: clientY,
+                  top: clientY,
+                  left: clientX,
+                  right: clientX,
+                  bottom: clientY
+              };
+          }
+      };
+      // Only activate the popup when the switch is checked
+      enabled.addEventListener('awc-change', () => {
+          popup.active = enabled.checked;
+      });
+      // Listen for the mouse to move
+      document.addEventListener('mousemove', handleMouseMove);
+      // Update the virtual element as the mouse moves
+      function handleMouseMove(event) {
+          clientX = event.clientX;
+          clientY = event.clientY;
+          // Reposition the popup when the virtual anchor moves
+          if (popup.active) {
+              popup.reposition();
+          }
+      }
+  </script>
+  <style>
+      /* If you need to set a z-index, set it on the popup part like this */
+      .popup-virtual-element awc-popup::part(popup) {
+          z-index: 1000;
+          pointer-events: none;
+      }
+      .popup-virtual-element .circle {
+          width: 100px;
+          height: 100px;
+          border: solid 4px var(--awc-color-primary-600);
+          border-radius: 50%;
+          translate: -50px -50px;
+          animation: 1s virtual-cursor infinite;
+      }
+      @keyframes virtual-cursor {
+          0% { scale: 1; }
+          50% { scale: 1.1; }
+      }
+  </style>`,
+  parameters: {
+    docs: {
+      description: {
+        story: `In most cases, popups are anchored to an actual element. Sometimes, it can be useful to anchor them to a non-element. To do this, you can pass a \`VirtualElement\` to the anchor property. A virtual element must contain a function called \`getBoundingClientRect()\` that returns a [\`DOMRect\`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) object as shown below.
+
+\`\`\`ts
+const virtualElement = {
+  getBoundingClientRect() {
+    // ...
+    return { width, height, x, y, top, left, right, bottom };
+  }
+};
+\`\`\`
+
+This example anchors a popup to the mouse cursor using a virtual element. As such, a mouse is required to properly view it.`
+      }
+    }
+  }
+};

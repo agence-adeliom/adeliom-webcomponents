@@ -1,4 +1,4 @@
-type AWCCancelEvent = CustomEvent<Record<PropertyKey, never>>;
+export type AWCCancelEvent = CustomEvent<Record<PropertyKey, never>>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -6,4 +6,4 @@ declare global {
   }
 }
 
-export default AWCCancelEvent;
+

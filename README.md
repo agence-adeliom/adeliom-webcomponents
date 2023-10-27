@@ -68,3 +68,7 @@ This will generate a source file, a stylesheet, and a docs page for you. When yo
 ### Contributing
 
 AWC is an open source project and contributions are encouraged! If you're interesting in contributing, please review the [contribution guidelines](CONTRIBUTING.md) first.
+
+## License
+
+AWC is available under the terms of the MIT license.

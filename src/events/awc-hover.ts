@@ -1,4 +1,4 @@
-type AWCHoverEvent = CustomEvent<{
+export type AWCHoverEvent = CustomEvent<{
   phase: 'start' | 'move' | 'end';
   value: number;
 }>;
@@ -9,4 +9,4 @@ declare global {
   }
 }
 
-export default AWCHoverEvent;
+

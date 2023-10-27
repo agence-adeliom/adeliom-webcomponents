@@ -19,7 +19,7 @@ const meta = {
     docs: {
       description: {
         component: `Dropdowns consist of a trigger and a panel. By default, activating the trigger will expose the panel and interacting outside of the panel will close it.<br>
-        Dropdowns are designed to work well with [menus](?path=/docs/components-menu--docs) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](?path=/docs/components-color-picker--docs) and [select](?path=/docs/components-select--docs)). The API gives you complete control over showing, hiding, and positioning the panel.`
+        Dropdowns are designed to work well with [menus](?path=/docs/components-menu--docs) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](?path=/docs/components-color-picker--docs). The API gives you complete control over showing, hiding, and positioning the panel.`
       },
       story: {
         height: '400px'
@@ -233,6 +233,50 @@ export const Hoisting: Story = {
       description: {
         story:
           "Dropdown panels will be clipped if they're inside a container that has `overflow: auto|hidden`. The `hoist` attribute forces the panel to use a fixed positioning strategy, allowing it to break out of the container. In this case, the panel will be positioned relative to its [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#Identifying_the_containing_block), which is usually the viewport unless an ancestor uses a `transform`, `perspective`, or `filter`. [Refer to this page](https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed) for more details."
+      }
+    }
+  }
+};
+
+export const Submenus: Story = {
+  name: 'Submenus',
+  render: () =>
+    html`<awc-dropdown>
+        <awc-button slot="trigger" caret>Edit</awc-button>
+        <awc-menu style="max-width: 200px;">
+            <awc-menu-item value="undo">Undo</awc-menu-item>
+            <awc-menu-item value="redo">Redo</awc-menu-item>
+            <awc-divider></awc-divider>
+            <awc-menu-item value="cut">Cut</awc-menu-item>
+            <awc-menu-item value="copy">Copy</awc-menu-item>
+            <awc-menu-item value="paste">Paste</awc-menu-item>
+            <awc-divider></awc-divider>
+            <awc-menu-item>
+                Find
+                <awc-menu slot="submenu">
+                    <awc-menu-item value="find">Find…</awc-menu-item>
+                    <awc-menu-item value="find-previous">Find Next</awc-menu-item>
+                    <awc-menu-item value="find-next">Find Previous</awc-menu-item>
+                </awc-menu>
+            </awc-menu-item>
+            <awc-menu-item>
+                Transformations
+                <awc-menu slot="submenu">
+                    <awc-menu-item value="uppercase">Make uppercase</awc-menu-item>
+                    <awc-menu-item value="lowercase">Make lowercase</awc-menu-item>
+                    <awc-menu-item value="capitalize">Capitalize</awc-menu-item>
+                </awc-menu>
+            </awc-menu-item>
+        </awc-menu>
+    </awc-dropdown>`,
+  parameters: {
+    docs: {
+      description: {
+        story: `To create a submenu, nest an \`<awc-menu slot="submenu">\` element in a [menu item](/?path=/docs/components-menu-item--docs).
+
+> 📘 **Tip**
+>
+> As a UX best practice, avoid using more than one level of submenu when possible.`
       }
     }
   }

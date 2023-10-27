@@ -1,9 +1,7 @@
-type AWCAbortEvent = CustomEvent<Record<PropertyKey, never>>;
+export type AWCAbortEvent = CustomEvent<Record<PropertyKey, never>>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
     'awc-abort': AWCAbortEvent;
   }
 }
-
-export default AWCAbortEvent;

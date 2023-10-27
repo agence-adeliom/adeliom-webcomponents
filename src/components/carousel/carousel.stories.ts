@@ -531,7 +531,7 @@ export const AspectRatio: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Use the `--aspect-ratio` custom property to customize the size of the carousel's viewport."
+        story: "Use the `--aspect-ratio` custom property to customize the size of the carousel's viewport from the default value of 16/9."
       }
     }
   }

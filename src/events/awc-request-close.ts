@@ -1,4 +1,4 @@
-type AWCRequestCloseEvent = CustomEvent<{ source: 'close-button' | 'keyboard' | 'overlay' }>;
+export type AWCRequestCloseEvent = CustomEvent<{ source: 'close-button' | 'keyboard' | 'overlay' }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -6,4 +6,4 @@ declare global {
   }
 }
 
-export default AWCRequestCloseEvent;
+

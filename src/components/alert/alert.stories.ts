@@ -208,7 +208,7 @@ You should always use the \`closable\` attribute so users can dismiss the notifi
         <awc-alert variant="neutral" duration="3000" closable>
           <awc-icon slot="icon" name="gear"></awc-icon>
           <strong>Your settings have been updated</strong><br />
-          Settings will take affect on next login.
+          Settings will take effect on next login.
         </awc-alert>
 
         <awc-alert variant="warning" duration="3000" closable>

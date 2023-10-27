@@ -1,4 +1,4 @@
-type AWCTabHideEvent = CustomEvent<{ name: string }>;
+export type AWCTabHideEvent = CustomEvent<{ name: string }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -6,4 +6,4 @@ declare global {
   }
 }
 
-export default AWCTabHideEvent;
+

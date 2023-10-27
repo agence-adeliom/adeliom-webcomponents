@@ -1,4 +1,4 @@
-type AWCTabShowEvent = CustomEvent<{ name: string }>;
+export type AWCTabShowEvent = CustomEvent<{ name: string }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -6,4 +6,4 @@ declare global {
   }
 }
 
-export default AWCTabShowEvent;
+

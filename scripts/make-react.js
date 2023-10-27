@@ -20,23 +20,24 @@ const metadata = JSON.parse(fs.readFileSync(path.join(outdir, 'custom-elements.j
 const components = getAllComponents(metadata);
 const index = [];
 
-Promise.all(
-  components.map(async component => {
+for await (const component of components) {
     const tagWithoutPrefix = component.tagName.replace(/^awc-/, '');
     const componentDir = path.join(reactDir, tagWithoutPrefix);
     const componentFile = path.join(componentDir, 'index.ts');
     const importPath = component.path;
 
-    const eventImports = (component?.events || [])
-      .map(event => `import { ${event.eventName} } from '../../../src/events/events';`)
+    const eventImports = (component.events || [])
+      .map(event => `import type { ${event.eventName} } from '../../../src/events/events';`)
       .join('\n');
-    const eventNameImport =
-      (component?.events || []).length > 0 ? `import { type EventName  } from '@lit-labs/react';` : ``;
-    const events = (component?.events || [])
+    const eventExports = (component.events || [])
+      .map(event => `export type { ${event.eventName} } from '../../../src/events/events';`)
+      .join('\n');
+    const eventNameImport = (component.events || []).length > 0 ? `import { type EventName } from '@lit/react';` : ``;
+    const events = (component.events || [])
       .map(event => `${event.reactName}: '${event.name}' as EventName<${event.eventName}>`)
       .join(',\n');
 
-    fs.mkdirSync(componentDir, { recursive: true });
+    fs.mkdirSync(componentDir, {recursive: true});
 
     const code = `
     import * as React from 'react';
@@ -56,18 +57,38 @@ Promise.all(
     });
     `;
 
-    const source = await prettier.format(
-      code,
+    const jsDoc = component.jsDoc || '';
+
+    const source = await prettier.format(`
+      import * as React from 'react';
+      import { createComponent } from '@lit/react';
+      import Component from '../../${importPath}';
+      ${eventNameImport}
+      ${eventImports}
+      ${eventExports}
+      const tagName = '${component.tagName}'
+      Component.define('${component.tagName}')
+      ${jsDoc}
+      const reactWrapper = createComponent({
+        tagName,
+        elementClass: Component,
+        react: React,
+        events: {
+          ${events}
+        },
+        displayName: "${component.name}"
+      })
+      export default reactWrapper
+      `,
       Object.assign(prettierConfig, {
-        parser: 'babel-ts'
+          parser: 'babel-ts'
       })
     );
 
     index.push(`export { default as ${component.name} } from './${tagWithoutPrefix}/index.js';`);
 
     fs.writeFileSync(componentFile, source, 'utf8');
-  })
-).then(() => {
-  // Generate the index file
-  fs.writeFileSync(path.join(reactDir, 'index.ts'), index.join('\n'), 'utf8');
-});
+}
+
+// Generate the index file
+fs.writeFileSync(path.join(reactDir, 'index.ts'), index.join('\n'), 'utf8');

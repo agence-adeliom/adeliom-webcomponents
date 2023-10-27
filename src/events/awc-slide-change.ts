@@ -1,6 +1,6 @@
 import type AWCCarouselItem from '../components/carousel-item/carousel-item';
 
-type AWCSlideChangeEvent = CustomEvent<{ index: number; slide: AWCCarouselItem }>;
+export type AWCSlideChangeEvent = CustomEvent<{ index: number; slide: AWCCarouselItem }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -8,4 +8,4 @@ declare global {
   }
 }
 
-export default AWCSlideChangeEvent;
+

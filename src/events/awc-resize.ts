@@ -1,4 +1,4 @@
-type AWCResizeEvent = CustomEvent<{ entries: ResizeObserverEntry[] }>;
+export type AWCResizeEvent = CustomEvent<{ entries: ResizeObserverEntry[] }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -6,4 +6,4 @@ declare global {
   }
 }
 
-export default AWCResizeEvent;
+

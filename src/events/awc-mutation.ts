@@ -1,4 +1,4 @@
-type AWCMutationEvent = CustomEvent<{ mutationList: MutationRecord[] }>;
+export type AWCMutationEvent = CustomEvent<{ mutationList: MutationRecord[] }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -6,4 +6,4 @@ declare global {
   }
 }
 
-export default AWCMutationEvent;
+

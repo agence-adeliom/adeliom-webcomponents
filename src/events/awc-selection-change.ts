@@ -1,6 +1,6 @@
 import type AWCTreeItem from '../components/tree-item/tree-item';
 
-type AWCSelectionChangeEvent = CustomEvent<{ selection: AWCTreeItem[] }>;
+export type AWCSelectionChangeEvent = CustomEvent<{ selection: AWCTreeItem[] }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {
@@ -8,4 +8,4 @@ declare global {
   }
 }
 
-export default AWCSelectionChangeEvent;
+

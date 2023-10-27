@@ -26,6 +26,7 @@
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "types": [
       "mocha",
       "user-agent-data-types"
