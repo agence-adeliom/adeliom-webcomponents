@@ -1,0 +1,8 @@
+import {Story, Canvas, Title, Description, Meta, Markdown} from '@storybook/blocks';
+import CHANGELOG from '../../../CHANGELOG.md?raw'
+
+<Meta title="Resources/Changelog" parameters={{ docs: { toc: { disable: false } } }} />
+
+<Markdown>
+  {CHANGELOG}
+</Markdown>
