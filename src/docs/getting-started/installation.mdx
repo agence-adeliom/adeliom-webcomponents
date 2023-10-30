@@ -1,4 +1,5 @@
 import { Story, Canvas, Title, Subtitle, Meta } from '@storybook/blocks';
+import { AWCTab, AWCTabGroup, AWCTabPanel } from '../../react/';
 
 <Meta title="Getting started/Installation" parameters={{ docs: { toc: { disable: false } } }} />
 
@@ -154,49 +155,50 @@ npm install @agence-adeliom/awc
 
 Now it's time to configure your bundler. Configurations vary for each tool, but here are some examples to help you get started.
 
-<details>
-    <summary>Example webpack config</summary>
+<AWCTabGroup data-mode={"light"}>
+  <AWCTab slot="nav" panel="webpack">Webpack</AWCTab>
+  <AWCTab slot="nav" panel="encore">Encore (Webpack)</AWCTab>
+  <AWCTab slot="nav" panel="rollup">Rollup</AWCTab>
+  <AWCTab slot="nav" panel="bud">Bud</AWCTab>
 
+  <AWCTabPanel name="webpack">
 ```js
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
-  },
-  module: {
-    // Bundle styles into main.css
-    rules: [
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
-      }
-    ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin(),
-    new CopyPlugin({
-      patterns: [
-        // Copy AWC assets to dist/awc
-        {
-          from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
-          to: path.resolve(__dirname, 'dist/awc/assets')
-        }
-      ]
-    })
-  ]
+entry: './src/index.js',
+output: {
+filename: 'main.js',
+path: path.resolve(**dirname, 'dist')
+},
+module: {
+// Bundle styles into main.css
+rules: [
+{
+test: /\.css$/i,
+use: [MiniCssExtractPlugin.loader, 'css-loader']
+}
+]
+},
+plugins: [
+new MiniCssExtractPlugin(),
+new CopyPlugin({
+patterns: [
+// Copy AWC assets to dist/awc
+{
+from: path.resolve(**dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
+to: path.resolve(\_\_dirname, 'dist/awc/assets')
+}
+]
+})
+]
 };
-```
 
-</details>
-
-<details>
-    <summary>Example Rollup config</summary>
-
+````
+  </AWCTabPanel>
+  <AWCTabPanel name="rollup">
 ```js
 import path from 'path';
 import commonjs from '@rollup/plugin-commonjs';
@@ -226,10 +228,49 @@ export default {
     })
   ]
 };
-```
+````
 
-</details>
-<br/>
+  </AWCTabPanel>
+  <AWCTabPanel name="encore">
+```js
+const path = require('path');
+const Encore = require('@symfony/webpack-encore');
+
+Encore
+.setOutputPath(path.resolve(**dirname, 'dist'))
+.setPublicPath('/dist')
+...
+.copyFiles({
+from: path.resolve(**dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
+to: `${path.resolve(__dirname, 'awc/assets')}/[path][name].[ext]`,
+})
+;
+
+````
+  </AWCTabPanel>
+  <AWCTabPanel name="bud">
+```js
+const path = require('path');
+
+/** @param {import('@roots/bud').Bud} bud */
+export default async bud => {
+  /* Set the source path.*/
+  bud.setPath('@src', 'src')
+  /* Set the output path.*/
+  bud.setPath('@dist', 'dist')
+
+  bud.entry(`app`, [`app.js`])
+
+  bud.assets({
+    from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
+    to: bud.path(`@dist`, 'assets', `@name`),
+    context: bud.path(),
+  })
+}
+````
+
+  </AWCTabPanel>
+</AWCTabGroup>
 
 #### Once your bundler is configured, you'll be able to import Adeliom WebComponents components and utilities.
 

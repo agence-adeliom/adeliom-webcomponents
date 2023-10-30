@@ -1,10 +1,10 @@
 import { animateTo, stopAnimations } from '../../internal/animate.js';
 import { classMap } from 'lit/directives/class-map.js';
+import { type CSSResultGroup, html, type TemplateResult } from 'lit';
 import { defaultValue } from '../../internal/default-value.js';
 import { FormControlController } from '../../internal/form.js';
 import { getAnimation, setDefaultAnimation } from '../../utilities/animation-registry.js';
 import { HasSlotController } from '../../internal/slot.js';
-import {html, type TemplateResult} from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import { scrollIntoView } from '../../internal/scroll.js';
@@ -16,7 +16,6 @@ import AWCPopup from '../popup/popup.component.js';
 import AWCTag from '../tag/tag.component.js';
 import styles from './select.styles.js';
 import type { AWCFormControl } from '../../internal/awc-element.js';
-import type { CSSResultGroup } from 'lit';
 import type AWCOption from '../option/option.component.js';
 
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
