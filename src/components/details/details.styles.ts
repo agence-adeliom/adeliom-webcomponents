@@ -61,6 +61,18 @@ export default css`
     display: flex;
     align-items: center;
     font-weight: var(--awc-font-weight-semibold);
+    color: var(--awc-text-title-color);
+    transition: var(--awc-transition-medium) color ease;
+  }
+
+  .details__summary:hover {
+    color: var(--awc-color-primary-600);
+  }
+
+  .details__summary:active,
+  .details--open .details__summary,
+  .details--open .details__summary-icon {
+    color: var(--awc-color-primary-800);
   }
 
   .details__summary-icon {
@@ -71,11 +83,11 @@ export default css`
   }
 
   .details--open .details__summary-icon {
-    rotate: 90deg;
+    rotate: -90deg;
   }
 
   .details--open.details--rtl .details__summary-icon {
-    rotate: -90deg;
+    rotate: 90deg;
   }
 
   .details--open slot[name='expand-icon'],

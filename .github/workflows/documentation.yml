@@ -17,16 +17,18 @@ jobs:
           node-version: 18.x
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
       - run: npm run verify
       - run: npm run build
       - name: Fix permissions
         run: |
-          chmod -c -R +rX "_site/" | while read line; do
+          chmod -c -R +rX "storybook-static/" | while read line; do
             echo "::warning title=Invalid file permissions automatically fixed::$line"
           done
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
+        with:
+          path: storybook-static
 
   deploy:
     needs: build

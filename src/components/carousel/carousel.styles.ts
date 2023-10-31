@@ -19,7 +19,7 @@ export default css`
     grid-template-areas:
       '. slides .'
       '. pagination .';
-    gap: var(--awc-spacing-medium);
+    gap: var(--awc-spacing-small) var(--awc-spacing-medium);
     align-items: center;
     min-height: 100%;
     min-width: 100%;
@@ -32,6 +32,7 @@ export default css`
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--awc-spacing-small);
+    padding: var(--awc-spacing-2x-small) 0;
   }
 
   .carousel__slides {
@@ -103,10 +104,10 @@ export default css`
     display: flex;
     align-items: center;
     background: none;
-    border: none;
-    border-radius: var(--awc-border-radius-small);
+    border: 1px solid var(--awc-color-primary-600);
+    border-radius: var(--awc-border-radius-none);
     font-size: inherit;
-    color: var(--awc-color-neutral-600);
+    color: var(--awc-color-primary-600);
     padding: var(--awc-spacing-x-small);
     cursor: pointer;
     transition: var(--awc-transition-medium) color;
@@ -137,17 +138,15 @@ export default css`
     cursor: pointer;
     background: none;
     border: 0;
-    border-radius: var(--awc-border-radius-circle);
-    width: var(--awc-spacing-small);
-    height: var(--awc-spacing-small);
-    background-color: var(--awc-color-neutral-300);
+    width: var(--awc-spacing-large);
+    height: var(--awc-spacing-3x-small);
+    background-color: var(--awc-color-neutral-500);
     padding: 0;
     margin: 0;
   }
 
   .carousel__pagination-item--active {
-    background-color: var(--awc-color-neutral-700);
-    transform: scale(1.2);
+    background-color: var(--awc-color-primary-600);
   }
 
   /* Focus styles */

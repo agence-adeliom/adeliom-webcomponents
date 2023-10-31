@@ -86,8 +86,18 @@ export default {
           900: 'var(--awc-color-gray-900)',
           950: 'var(--awc-color-gray-950)'
         },
-        white: 'var(--awc-color-neutral-0)',
-        black: 'var(--awc-color-neutral-1000)'
+        white: {
+          light: 'var(--awc-color-neutral-0)',
+          dark: 'var(--awc-color-neutral-1000)',
+          DEFAULT: 'var(--awc-color-neutral-0)'
+        },
+        black: {
+          light: 'var(--awc-color-neutral-1000)',
+          dark: 'var(--awc-color-neutral-0)',
+          DEFAULT: 'var(--awc-color-neutral-1000)'
+        },
+        title: 'var(--awc-text-title-color)',
+        paragraph: 'var(--awc-text-paragraph-color)'
       },
       spacing: {
         '3x-small': 'var(--awc-spacing-3x-small)',
@@ -99,7 +109,10 @@ export default {
         'x-large': 'var(--awc-spacing-x-large)',
         '2x-large': 'var(--awc-spacing-2x-large)',
         '3x-large': 'var(--awc-spacing-3x-large)',
-        '4x-large': 'var(--awc-spacing-4x-large)'
+        '4x-large': 'var(--awc-spacing-4x-large)',
+        '5x-large': 'var(--awc-spacing-5x-large)',
+        '6x-large': 'var(--awc-spacing-6x-large)',
+        '7x-large': 'var(--awc-spacing-7x-large)'
       },
       boxShadow: {
         'x-small': 'var(--awc-shadow-x-small)',
@@ -130,6 +143,13 @@ export default {
         'alert-group': 'var(--awc-z-index-alert-group)',
         tooltip: 'var(--awc-z-index-tooltip)'
       }
+    },
+    lineHeight: {
+      looser: 'var(--awc-line-height-looser)',
+      loose: 'var(--awc-line-height-loose)',
+      normal: 'var(--awc-line-height-normal)',
+      dense: 'var(--awc-line-height-dense)',
+      denser: 'var(--awc-line-height-denser)'
     },
     fontFamily: {
       sans: 'var(--awc-font-sans)',

@@ -11,56 +11,31 @@ export default {
 export const Newsletter1: StoryObj = {
   name: 'Newsletter 1',
   render: () => html`
-    <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
+    <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
-        <div class="flex overflow-hidden rounded-lg bg-neutral-100">
-          <!-- image - start -->
-          <div class="relative hidden bg-neutral-200 sm:block sm:w-1/3 lg:w-1/2">
-            <img
-              src="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?auto=format&q=75&fit=crop&w=750"
-              loading="lazy"
-              alt="Photo by mymind"
-              class="absolute inset-0 h-full w-full object-cover object-center"
-            />
+        <div class="flex flex-col overflow-hidden bg-neutral-100 sm:flex-row md:h-64">
+          <div class="order-first h-48 w-full bg-neutral-300 sm:order-none sm:h-auto sm:w-1/2">
+            <awc-image layout="filled" aspectratio="1" width="800" src="https://placehold.co/800x800"></awc-image>
           </div>
-          <!-- image - end -->
 
-          <!-- content - start -->
-          <div class="flex w-full items-center p-4 sm:w-2/3 sm:p-8 lg:w-1/2 lg:pl-10">
-            <div class="flex w-full flex-col items-center sm:block">
-              <div class="mb-4 sm:mb-8">
-                <h2 class="text-center text-xl font-bold text-primary sm:text-left sm:text-2xl lg:text-3xl">
-                  Get the latest updates
-                </h2>
-                <p class="text-center text-neutral-500 sm:text-left">Sign up for our newsletter</p>
-              </div>
+          <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8">
+            <awc-typography>
+              <h1 class="mb-4 text-2xl font-bold sm:text-3xl text-title md:mb-6">
+                <span class="text-base font-semibold text-paragraph leading-dense uppercase  block mb-2">Headline</span>
+                Erat suspendisse maecena
+              </h1>
 
-              <form class="mb-3 flex w-full max-w-md gap-2 sm:mb-5">
-                <input
-                  placeholder="Email"
-                  class="bg-neutral-white w-full flex-1 rounded border border-neutral-300 px-3 py-2 text-neutral-800 placeholder-neutral-400 outline-none ring-primary-300 transition duration-100 focus:ring"
-                />
-
-                <button
-                  class="inline-block rounded bg-primary px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
-                >
-                  Send
-                </button>
+              <form class="flex w-full gap-2 mb-3">
+                <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
+                <awc-button variant="ghost" outline>Sign up</awc-button>
               </form>
 
-              <p class="text-center text-xs text-neutral-400 sm:text-left">
-                By signing up to our newsletter you agree to our
-                <a href="#" class="underline transition duration-100 hover:text-primary active:text-primary-600"
-                  >Term of Service</a
-                >
-                and
-                <a href="#" class="underline transition duration-100 hover:text-primary active:text-primary-600"
-                  >Privacy Policy</a
-                >.
+              <p class="text-xs text-neutral-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
               </p>
-            </div>
+            </awc-typography>
           </div>
-          <!-- content - end -->
         </div>
       </div>
     </div>
@@ -70,37 +45,26 @@ export const Newsletter1: StoryObj = {
 export const Newsletter2: StoryObj = {
   name: 'Newsletter 2',
   render: () => html`
-    <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
+    <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
-        <div class="flex flex-col items-center rounded-lg bg-neutral-100 p-4 sm:p-8">
-          <div class="mb-4 sm:mb-8">
-            <h2 class="text-center text-xl font-bold text-primary sm:text-2xl lg:text-3xl">Get the latest updates</h2>
-            <p class="text-center text-neutral-500">Sign up for our newsletter</p>
+        <div class="flex overflow-hidden bg-neutral-100 md:h-64">
+          <div class="flex w-full flex-col p-4 sm:p-8">
+            <awc-typography class="text-center mx-auto max-w-md">
+              <h1 class="mb-4 text-2xl font-bold sm:text-3xl text-title md:mb-6">
+                <span class="text-base font-semibold text-paragraph leading-dense uppercase  block mb-2">Headline</span>
+                Erat suspendisse maecena
+              </h1>
+
+              <form class="flex w-full gap-2 mb-3">
+                <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
+                <awc-button variant="ghost" outline>Sign up</awc-button>
+              </form>
+
+              <p class="text-xs text-neutral-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+              </p>
+            </awc-typography>
           </div>
-
-          <form class="mb-3 flex w-full max-w-md gap-2 sm:mb-5">
-            <input
-              placeholder="Email"
-              class="bg-neutral-white w-full flex-1 rounded border border-neutral-300 px-3 py-2 text-neutral-800 placeholder-neutral-400 outline-none ring-primary-300 transition duration-100 focus:ring"
-            />
-
-            <button
-              class="inline-block rounded bg-primary px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
-            >
-              Send
-            </button>
-          </form>
-
-          <p class="text-center text-xs text-neutral-400">
-            By signing up to our newsletter you agree to our
-            <a href="#" class="underline transition duration-100 hover:text-primary active:text-primary-600"
-              >Term of Service</a
-            >
-            and
-            <a href="#" class="underline transition duration-100 hover:text-primary active:text-primary-600"
-              >Privacy Policy</a
-            >.
-          </p>
         </div>
       </div>
     </div>
@@ -110,40 +74,26 @@ export const Newsletter2: StoryObj = {
 export const Newsletter3: StoryObj = {
   name: 'Newsletter 3',
   render: () => html`
-    <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
+    <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
-        <div class="flex flex-col items-center rounded-lg bg-neutral-100 p-4 sm:p-8 lg:flex-row lg:justify-between">
-          <div class="mb-4 sm:mb-8 lg:mb-0">
-            <h2 class="text-center text-xl font-bold text-primary sm:text-2xl lg:text-left lg:text-3xl">
-              Get the latest updates
-            </h2>
-            <p class="text-center text-neutral-500 lg:text-left">Sign up for our newsletter</p>
-          </div>
+        <div class="flex overflow-hidden bg-neutral-100">
+          <div class="flex w-full flex-col p-4 sm:p-8 md:flex-row md:items-center">
+            <awc-typography class="text-center mx-auto max-w-md md:w-1/2 md:text-left">
+              <h1 class="mb-4 text-2xl font-bold sm:text-3xl text-title md:mb-6">
+                <span class="text-base font-semibold text-paragraph leading-dense uppercase  block mb-2">Headline</span>
+                Erat suspendisse maecena
+              </h1>
+            </awc-typography>
+            <awc-typography class="text-center mx-auto max-w-md md:w-1/2 md:text-right">
+              <form class="flex w-full gap-2 mb-3">
+                <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
+                <awc-button variant="ghost" outline>Sign up</awc-button>
+              </form>
 
-          <div class="flex flex-col items-center lg:items-end">
-            <form class="mb-3 flex w-full max-w-md gap-2">
-              <input
-                placeholder="Email"
-                class="bg-neutral-white w-full flex-1 rounded border border-neutral-300 px-3 py-2 text-neutral-800 placeholder-neutral-400 outline-none ring-primary-300 transition duration-100 focus:ring"
-              />
-
-              <button
-                class="inline-block rounded bg-primary px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-600 focus-visible:ring active:bg-primary-700 md:text-base"
-              >
-                Send
-              </button>
-            </form>
-
-            <p class="text-center text-xs text-neutral-400 lg:text-right">
-              By signing up to our newsletter you agree to our
-              <a href="#" class="underline transition duration-100 hover:text-primary active:text-primary-600"
-                >Term of Service</a
-              >
-              and
-              <a href="#" class="underline transition duration-100 hover:text-primary active:text-primary-600"
-                >Privacy Policy</a
-              >.
-            </p>
+              <p class="text-xs text-neutral-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+              </p>
+            </awc-typography>
           </div>
         </div>
       </div>

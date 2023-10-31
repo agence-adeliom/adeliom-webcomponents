@@ -33,6 +33,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart header - The header that wraps both the summary and the expand/collapse icon.
  * @csspart summary - The container that wraps the summary.
  * @csspart summary-icon - The container that wraps the expand/collapse icons.
+ * @csspart body - The details content wrapper.
  * @csspart content - The details content.
  *
  * @cssproperty [--padding=0] - The details's padding.
@@ -228,7 +229,7 @@ export default class AWCDetails extends AWCElement {
           </span>
         </summary>
 
-        <div class="details__body" role="region" aria-labelledby="header">
+        <div class="details__body" part="body" role="region" aria-labelledby="header">
           <slot part="content" id="content" class="details__content"></slot>
         </div>
       </details>

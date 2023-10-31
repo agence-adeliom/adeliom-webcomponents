@@ -8,103 +8,92 @@ export default {
   }
 } satisfies Meta;
 
+const heading = html`<!-- text - start -->
+  <div class="mb-8 md:mb-10">
+    <awc-typography type="h2" class="text-center mb-4 text-title">
+      <span class="text-base font-bold leading-dense text-paragraph uppercase block">Headline</span>
+      What others say about us
+    </awc-typography>
+    <awc-typography class="mx-auto max-w-screen-md text-center text-paragraph"
+      >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+    >
+    <div class="flex justify-center items-center gap-2">
+      <awc-rating label="Rating" readonly value="4"></awc-rating>
+      <span class="text-sm">4/5</span>
+    </div>
+  </div>
+  <!-- text - end -->`;
+
 export const Testimonials1: StoryObj = {
   name: 'Testimonials 1',
   render: () => html`
-    <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
-      <div class="container mx-auto px-4 md:px-8">
-        <!-- text - start -->
-        <div class="mb-8 md:mb-12">
-          <awc-typography type="h3" class="mb-4 text-center" noMargin> What others say about us </awc-typography>
-          <awc-typography
-            class="mx-auto max-w-screen-md text-center text-neutral-500 dark:text-neutral-200 md:block"
-            noMargin
-          >
+    <div class="container mx-auto px-4 md:px-8">
+      ${heading}
+
+      <div class="grid gap-small lg:gap-x-large lg:grid-cols-3">
+        <!-- quote - start -->
+        <awc-card bordered shadow>
+          <div slot="footer" class="flex items-center gap-3">
+            <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+            <div class="leading-dense">
+              <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+              <span class="block text-sm text-paragraph">
+                <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+              </span>
+            </div>
+          </div>
+
+          <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+          <p class="text-paragraph">
             This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
-            of a real written text but is random or otherwise generated.
-          </awc-typography>
-        </div>
-        <!-- text - end -->
+            of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or
+            generate text for testing.
+          </p>
+        </awc-card>
+        <!-- quote - end -->
 
-        <div class="grid gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3 lg:divide-x">
-          <!-- quote - start -->
-          <div class="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-            <div class="text-center text-neutral-500 dark:text-neutral-200">
-              “This is a section of some simple filler text, also known as placeholder text.”
-            </div>
-
-            <div class="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-              <div
-                class="h-12 w-12 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800 shadow-lg md:h-14 md:w-14"
-              >
-                <awc-avatar
-                  image="https://images.unsplash.com/photo-1567515004624-219c11d31f2e?auto=format&q=75&fit=crop&w=112"
-                  style="--size: 100%"
-                ></awc-avatar>
-              </div>
-
-              <div>
-                <div class="text-center text-sm font-bold text-primary sm:text-left md:text-base">John McCulling</div>
-                <p class="text-center text-sm text-neutral-500 dark:text-neutral-200 sm:text-left md:text-sm">
-                  CEO / Datadrift
-                </p>
-              </div>
+        <!-- quote - start -->
+        <awc-card bordered shadow>
+          <div slot="footer" class="flex items-center gap-3">
+            <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+            <div class="leading-dense">
+              <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+              <span class="block text-sm text-paragraph">
+                <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+              </span>
             </div>
           </div>
-          <!-- quote - end -->
 
-          <!-- quote - start -->
-          <div class="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-            <div class="text-center text-neutral-500 dark:text-neutral-200">
-              “This is a section of some simple filler text, also known as placeholder text.”
-            </div>
+          <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+          <p class="text-paragraph">
+            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+            of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or
+            generate text for testing.
+          </p>
+        </awc-card>
+        <!-- quote - end -->
 
-            <div class="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-              <div
-                class="h-12 w-12 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800 shadow-lg md:h-14 md:w-14"
-              >
-                <awc-avatar
-                  image="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?auto=format&q=75&fit=crop&w=112"
-                  style="--size: 100%"
-                ></awc-avatar>
-              </div>
-
-              <div>
-                <div class="text-center text-sm font-bold text-primary sm:text-left md:text-base">Kate Berg</div>
-                <p class="text-center text-sm text-neutral-500 dark:text-neutral-200 sm:text-left md:text-sm">
-                  CFO / Dashdash
-                </p>
-              </div>
+        <!-- quote - start -->
+        <awc-card bordered shadow>
+          <div slot="footer" class="flex items-center gap-3">
+            <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+            <div class="leading-dense">
+              <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+              <span class="block text-sm text-paragraph">
+                <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+              </span>
             </div>
           </div>
-          <!-- quote - end -->
 
-          <!-- quote - start -->
-          <div class="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-            <div class="text-center text-neutral-500 dark:text-neutral-200">
-              “This is a section of some simple filler text, also known as placeholder text.”
-            </div>
-
-            <div class="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-              <div
-                class="h-12 w-12 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800 shadow-lg md:h-14 md:w-14"
-              >
-                <awc-avatar
-                  image="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&q=75&fit=crop&w=112"
-                  style="--size: 100%"
-                ></awc-avatar>
-              </div>
-
-              <div>
-                <div class="text-center text-sm font-bold text-primary sm:text-left md:text-base">Greg Jackson</div>
-                <p class="text-center text-sm text-neutral-500 dark:text-neutral-200 sm:text-left md:text-sm">
-                  CTO / Uptime
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- quote - end -->
-        </div>
+          <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+          <p class="text-paragraph">
+            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+            of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or
+            generate text for testing.
+          </p>
+        </awc-card>
+        <!-- quote - end -->
       </div>
     </div>
   `
@@ -113,51 +102,88 @@ export const Testimonials1: StoryObj = {
 export const Testimonials2: StoryObj = {
   name: 'Testimonials 2',
   render: () => html`
-    <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
-      <div class="container mx-auto px-4 md:px-8">
-        <!-- quote - start -->
-        <div class="flex flex-col items-center gap-4 md:gap-6">
-          <a href="#" class="text-neutral-400 transition duration-100 hover:text-neutral-500 active:text-neutral-600">
+    <div class="container mx-auto py-10 px-4 md:py-20 md:px-8">
+      <!-- quote - start -->
+      <div class="flex flex-col items-center gap-4 md:gap-6">
+        <!-- logo - start -->
+        <div class="lg:-mt-2">
+          <a href="/" class="inline-flex items-center text-primary mb-4" aria-label="logo">
             <svg
-              class="h-6 w-auto sm:h-8"
-              width="173"
-              height="39"
-              viewBox="0 0 173 39"
+              id="logo"
+              width="202"
+              height="40"
+              viewBox="0 0 202 40"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M43.2727 31C50.3636 31 54.6591 26.6136 54.6591 19.3409C54.6591 12.0909 50.3636 7.72727 43.3409 7.72727H35.0227V31H43.2727ZM39.9432 26.7841V11.9432H43.0795C47.4432 11.9432 49.75 14.1705 49.75 19.3409C49.75 24.5341 47.4432 26.7841 43.0682 26.7841H39.9432ZM63.1903 31.3295C65.7699 31.3295 67.4403 30.2045 68.2926 28.5795H68.429V31H73.0199V19.2273C73.0199 15.0682 69.4972 13.3182 65.6108 13.3182C61.429 13.3182 58.679 15.3182 58.0085 18.5L62.4858 18.8636C62.8153 17.7045 63.8494 16.8523 65.5881 16.8523C67.2358 16.8523 68.179 17.6818 68.179 19.1136V19.1818C68.179 20.3068 66.9858 20.4545 63.9517 20.75C60.4972 21.0682 57.3949 22.2273 57.3949 26.125C57.3949 29.5795 59.8608 31.3295 63.1903 31.3295ZM64.5767 27.9886C63.0881 27.9886 62.0199 27.2955 62.0199 25.9659C62.0199 24.6023 63.1449 23.9318 64.8494 23.6932C65.9062 23.5455 67.6335 23.2955 68.2131 22.9091V24.7614C68.2131 26.5909 66.7017 27.9886 64.5767 27.9886ZM86.0597 13.5455H82.7756V9.36364H77.9347V13.5455H75.5483V17.1818H77.9347V26.2727C77.9119 29.6932 80.2415 31.3864 83.7528 31.2386C85.0028 31.1932 85.8892 30.9432 86.3778 30.7841L85.6165 27.1818C85.3778 27.2273 84.8665 27.3409 84.4119 27.3409C83.446 27.3409 82.7756 26.9773 82.7756 25.6364V17.1818H86.0597V13.5455ZM94.1903 31.3295C96.7699 31.3295 98.4403 30.2045 99.2926 28.5795H99.429V31H104.02V19.2273C104.02 15.0682 100.497 13.3182 96.6108 13.3182C92.429 13.3182 89.679 15.3182 89.0085 18.5L93.4858 18.8636C93.8153 17.7045 94.8494 16.8523 96.5881 16.8523C98.2358 16.8523 99.179 17.6818 99.179 19.1136V19.1818C99.179 20.3068 97.9858 20.4545 94.9517 20.75C91.4972 21.0682 88.3949 22.2273 88.3949 26.125C88.3949 29.5795 90.8608 31.3295 94.1903 31.3295ZM95.5767 27.9886C94.0881 27.9886 93.0199 27.2955 93.0199 25.9659C93.0199 24.6023 94.1449 23.9318 95.8494 23.6932C96.9062 23.5455 98.6335 23.2955 99.2131 22.9091V24.7614C99.2131 26.5909 97.7017 27.9886 95.5767 27.9886ZM114.207 31.2841C117.026 31.2841 118.491 29.6591 119.162 28.2045H119.366V31H124.139V7.72727H119.31V16.4773H119.162C118.514 15.0568 117.116 13.3182 114.196 13.3182C110.366 13.3182 107.128 16.2955 107.128 22.2955C107.128 28.1364 110.23 31.2841 114.207 31.2841ZM115.741 27.4318C113.366 27.4318 112.071 25.3182 112.071 22.2727C112.071 19.25 113.344 17.1705 115.741 17.1705C118.094 17.1705 119.412 19.1591 119.412 22.2727C119.412 25.3864 118.071 27.4318 115.741 27.4318ZM128.119 31H132.96V21.125C132.96 18.9773 134.528 17.5 136.665 17.5C137.335 17.5 138.256 17.6136 138.71 17.7614V13.4659C138.278 13.3636 137.676 13.2955 137.188 13.2955C135.233 13.2955 133.631 14.4318 132.994 16.5909H132.812V13.5455H128.119V31ZM141.213 31H146.054V13.5455H141.213V31ZM143.645 11.2955C145.088 11.2955 146.27 10.1932 146.27 8.84091C146.27 7.5 145.088 6.39773 143.645 6.39773C142.213 6.39773 141.031 7.5 141.031 8.84091C141.031 10.1932 142.213 11.2955 143.645 11.2955ZM159.318 13.5455H155.852V12.375C155.852 11.1932 156.33 10.5 157.75 10.5C158.33 10.5 158.92 10.625 159.307 10.75L160.159 7.11364C159.557 6.93182 158.227 6.63636 156.739 6.63636C153.455 6.63636 151.011 8.48864 151.011 12.2841V13.5455H148.545V17.1818H151.011V31H155.852V17.1818H159.318V13.5455ZM171.56 13.5455H168.276V9.36364H163.435V13.5455H161.048V17.1818H163.435V26.2727C163.412 29.6932 165.741 31.3864 169.253 31.2386C170.503 31.1932 171.389 30.9432 171.878 30.7841L171.116 27.1818C170.878 27.2273 170.366 27.3409 169.912 27.3409C168.946 27.3409 168.276 26.9773 168.276 25.6364V17.1818H171.56V13.5455Z"
-              />
-              <rect y="26" width="24" height="5" />
-              <rect x="9" y="17" width="15" height="5" />
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M25.5557 11.6853C23.9112 10.5865 21.9778 10 20 10V0C23.9556 0 27.8224 1.17298 31.1114 3.37061C34.4004 5.56823 36.9638 8.69181 38.4776 12.3463C39.9913 16.0008 40.3874 20.0222 39.6157 23.9018C38.844 27.7814 36.9392 31.3451 34.1421 34.1421C31.3451 36.9392 27.7814 38.844 23.9018 39.6157C20.0222 40.3874 16.0008 39.9913 12.3463 38.4776C8.6918 36.9638 5.56823 34.4004 3.37061 31.1114C1.17298 27.8224 0 23.9556 0 20H10C10 21.9778 10.5865 23.9112 11.6853 25.5557C12.7841 27.2002 14.3459 28.4819 16.1732 29.2388C18.0004 29.9957 20.0111 30.1937 21.9509 29.8078C23.8907 29.422 25.6725 28.4696 27.0711 27.0711C28.4696 25.6725 29.422 23.8907 29.8078 21.9509C30.1937 20.0111 29.9957 18.0004 29.2388 16.1732C28.4819 14.3459 27.2002 12.7841 25.5557 11.6853Z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10 1.47023e-06C10 1.31322 9.74135 2.61358 9.2388 3.82684C8.73625 5.04009 7.99966 6.14248 7.07107 7.07107C6.14249 7.99966 5.0401 8.73625 3.82684 9.2388C2.61358 9.74134 1.31322 10 6.15916e-06 10L5.72205e-06 20C2.62644 20 5.22716 19.4827 7.65368 18.4776C10.0802 17.4725 12.285 15.9993 14.1421 14.1421C15.9993 12.285 17.4725 10.0802 18.4776 7.65367C19.4827 5.22715 20 2.62643 20 -3.8147e-06L10 1.47023e-06Z"
+              ></path>
+              <path d="M125.619 14.4525H120.767V29.8648H125.619V14.4525Z"></path>
+              <path
+                d="M121.307 11.5666C121.814 12.074 122.448 12.3277 123.209 12.3277C123.97 12.3277 124.594 12.074 125.08 11.5666C125.567 11.0381 125.81 10.4038 125.81 9.66385C125.81 8.90277 125.567 8.26849 125.08 7.76111C124.594 7.25369 123.97 7 123.209 7C122.448 7 121.814 7.25369 121.307 7.76111C120.82 8.26849 120.577 8.90277 120.577 9.66385C120.577 10.4038 120.82 11.0381 121.307 11.5666Z"
+              ></path>
+              <path d="M51.1562 29.8648V7.47568H56.1351V25.4885H66.0612V29.8648H51.1562Z"></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M75.0274 30.2136C73.4418 30.2136 72.0042 29.8648 70.7145 29.1671C69.446 28.4483 68.4418 27.4758 67.7018 26.2495C66.9619 25.0233 66.5919 23.6491 66.5919 22.1269C66.5919 20.6047 66.9619 19.2411 67.7018 18.036C68.4418 16.8309 69.446 15.8795 70.7145 15.1819C71.983 14.463 73.4207 14.1036 75.0274 14.1036C76.6342 14.1036 78.0718 14.4525 79.3403 15.1501C80.6088 15.8478 81.6131 16.8098 82.353 18.036C83.093 19.2411 83.463 20.6047 83.463 22.1269C83.463 23.6491 83.093 25.0233 82.353 26.2495C81.6131 27.4758 80.6088 28.4483 79.3403 29.1671C78.0718 29.8648 76.6342 30.2136 75.0274 30.2136ZM75.0274 25.8056C75.7251 25.8056 76.3382 25.6576 76.8668 25.3616C77.3953 25.0445 77.797 24.6111 78.0718 24.0614C78.3678 23.4906 78.5158 22.8457 78.5158 22.1269C78.5158 21.4081 78.3678 20.7844 78.0718 20.2559C77.7758 19.7062 77.3636 19.2834 76.835 18.9874C76.3276 18.6702 75.7251 18.5117 75.0274 18.5117C74.3509 18.5117 73.7484 18.6702 73.2198 18.9874C72.6913 19.2834 72.279 19.7062 71.983 20.2559C71.687 20.8056 71.5391 21.4398 71.5391 22.1586C71.5391 22.8563 71.687 23.4906 71.983 24.0614C72.279 24.6111 72.6913 25.0445 73.2198 25.3616C73.7484 25.6576 74.3509 25.8056 75.0274 25.8056Z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M87.3057 35.8902C88.5953 36.4821 90.0858 36.7781 91.7772 36.7781C93.4262 36.7781 94.8956 36.4504 96.1852 35.795C97.4749 35.1396 98.4896 34.2306 99.2296 33.0678C99.9695 31.905 100.34 30.5308 100.34 28.9451V14.4525H95.5826V15.488C95.2288 15.1902 94.827 14.9402 94.3776 14.7379C93.553 14.3362 92.6122 14.1353 91.5552 14.1353C90.1387 14.1353 88.8807 14.4736 87.7814 15.1501C86.6819 15.8055 85.8152 16.7146 85.1809 17.8774C84.5466 19.0191 84.2296 20.3087 84.2296 21.7464C84.2296 23.1629 84.5466 24.4525 85.1809 25.6153C85.8152 26.7781 86.6819 27.6978 87.7814 28.3743C88.8807 29.0508 90.1387 29.3891 91.5552 29.3891C92.5911 29.3891 93.5319 29.1883 94.3776 28.7866C94.7872 28.592 95.1572 28.3627 95.4875 28.0986V29.072C95.4875 30.1502 95.1387 30.9853 94.441 31.5773C93.7645 32.1693 92.8237 32.4652 91.6186 32.4652C90.6461 32.4652 89.811 32.2961 89.1133 31.9578C88.4368 31.6196 87.8236 31.1227 87.2739 30.4673L84.293 33.4483C85.0329 34.5054 86.0372 35.3194 87.3057 35.8902ZM94.219 24.6322C93.7327 24.9282 93.1514 25.0762 92.4748 25.0762C91.7983 25.0762 91.2063 24.9282 90.6989 24.6322C90.2126 24.3362 89.8321 23.9345 89.5573 23.4271C89.2824 22.8986 89.145 22.3383 89.145 21.7464C89.145 21.1121 89.2824 20.5413 89.5573 20.0339C89.8321 19.5265 90.2232 19.1248 90.7306 18.8288C91.238 18.5328 91.8194 18.3848 92.4748 18.3848C93.1514 18.3848 93.7327 18.5328 94.219 18.8288C94.7264 19.1248 95.1069 19.5265 95.3607 20.0339C95.6355 20.5413 95.7729 21.1121 95.7729 21.7464C95.7729 22.3806 95.6355 22.9514 95.3607 23.4588C95.1069 23.9451 94.7264 24.3362 94.219 24.6322Z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M110.551 30.2136C108.965 30.2136 107.527 29.8648 106.238 29.1671C104.969 28.4483 103.965 27.4758 103.225 26.2495C102.485 25.0233 102.115 23.6491 102.115 22.1269C102.115 20.6047 102.485 19.2411 103.225 18.036C103.965 16.8309 104.969 15.8795 106.238 15.1819C107.506 14.463 108.944 14.1036 110.551 14.1036C112.157 14.1036 113.595 14.4525 114.863 15.1501C116.132 15.8478 117.136 16.8098 117.876 18.036C118.616 19.2411 118.986 20.6047 118.986 22.1269C118.986 23.6491 118.616 25.0233 117.876 26.2495C117.136 27.4758 116.132 28.4483 114.863 29.1671C113.595 29.8648 112.157 30.2136 110.551 30.2136ZM110.551 25.8056C111.248 25.8056 111.861 25.6576 112.39 25.3616C112.918 25.0445 113.32 24.6111 113.595 24.0614C113.891 23.4906 114.039 22.8457 114.039 22.1269C114.039 21.4081 113.891 20.7844 113.595 20.2559C113.299 19.7062 112.887 19.2834 112.358 18.9874C111.851 18.6702 111.248 18.5117 110.551 18.5117C109.874 18.5117 109.271 18.6702 108.743 18.9874C108.214 19.2834 107.802 19.7062 107.506 20.2559C107.21 20.8056 107.062 21.4398 107.062 22.1586C107.062 22.8563 107.21 23.4906 107.506 24.0614C107.802 24.6111 108.214 25.0445 108.743 25.3616C109.271 25.6576 109.874 25.8056 110.551 25.8056Z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M137.281 30.1819C136.246 30.1819 135.294 29.9811 134.427 29.5794C133.971 29.368 133.559 29.1156 133.191 28.8222V36.3659H128.402V14.4525H133.254V15.5162C133.606 15.2283 133.997 14.9794 134.427 14.7696C135.294 14.3467 136.246 14.1353 137.281 14.1353C138.74 14.1353 140.03 14.4842 141.15 15.1819C142.292 15.8795 143.18 16.8309 143.814 18.036C144.47 19.2411 144.797 20.6153 144.797 22.1586C144.797 23.702 144.47 25.0762 143.814 26.2813C143.18 27.4864 142.292 28.4377 141.15 29.1354C140.03 29.8331 138.74 30.1819 137.281 30.1819ZM136.394 25.8056C137.091 25.8056 137.694 25.647 138.201 25.3299C138.73 25.0128 139.142 24.5793 139.438 24.0297C139.734 23.48 139.882 22.8563 139.882 22.1586C139.882 21.4398 139.734 20.8056 139.438 20.2559C139.142 19.7062 138.73 19.2834 138.201 18.9874C137.694 18.6702 137.102 18.5117 136.425 18.5117C135.749 18.5117 135.146 18.6702 134.618 18.9874C134.11 19.2834 133.709 19.7062 133.413 20.2559C133.117 20.8056 132.969 21.4398 132.969 22.1586C132.969 22.8563 133.106 23.48 133.381 24.0297C133.677 24.5793 134.089 25.0128 134.618 25.3299C135.146 25.647 135.738 25.8056 136.394 25.8056Z"
+              ></path>
+              <path
+                d="M149.546 29.8965C150.434 30.1291 151.332 30.2453 152.241 30.2453C154.165 30.2453 155.687 29.8014 156.808 28.9134C157.949 28.0255 158.52 26.831 158.52 25.3299C158.52 24.3574 158.341 23.5751 157.981 22.9832C157.622 22.3701 157.157 21.8838 156.586 21.5244C156.015 21.165 155.412 20.8795 154.778 20.6681C154.144 20.4567 153.541 20.277 152.971 20.129C152.4 19.981 151.935 19.8119 151.575 19.6216C151.216 19.4313 151.036 19.1776 151.036 18.8605C151.036 18.5645 151.174 18.3425 151.448 18.1945C151.723 18.0254 152.135 17.9409 152.685 17.9409C153.256 17.9409 153.837 18.0571 154.429 18.2897C155.042 18.5222 155.592 18.924 156.078 19.4948L158.837 16.7041C158.14 15.8161 157.231 15.1501 156.11 14.7062C155.011 14.2411 153.806 14.0085 152.495 14.0085C151.248 14.0085 150.159 14.2199 149.229 14.6427C148.298 15.0656 147.579 15.647 147.072 16.3869C146.565 17.1057 146.311 17.962 146.311 18.9557C146.311 19.8859 146.491 20.6576 146.85 21.2707C147.209 21.8626 147.675 22.3278 148.245 22.666C148.816 23.0043 149.419 23.2686 150.053 23.4588C150.687 23.6491 151.29 23.8288 151.861 23.998C152.431 24.146 152.897 24.3257 153.256 24.5371C153.637 24.7274 153.827 25.0128 153.827 25.3933C153.827 25.6893 153.668 25.9218 153.351 26.091C153.055 26.2601 152.622 26.3447 152.051 26.3447C151.226 26.3447 150.465 26.1967 149.768 25.9007C149.07 25.5836 148.467 25.1502 147.96 24.6005L145.201 27.3912C145.73 27.962 146.364 28.4695 147.104 28.9134C147.865 29.3362 148.679 29.6639 149.546 29.8965Z"
+              ></path>
+              <path
+                d="M167.368 30.2136C165.952 30.2136 164.694 29.9282 163.595 29.3574C162.516 28.7654 161.671 27.962 161.058 26.9472C160.444 25.9113 160.138 24.7274 160.138 23.3954V14.4525H164.99V23.332C164.99 23.8605 165.074 24.3151 165.244 24.6956C165.434 25.0762 165.709 25.3722 166.068 25.5836C166.428 25.795 166.861 25.9007 167.368 25.9007C168.087 25.9007 168.658 25.6787 169.081 25.2347C169.504 24.7696 169.715 24.1354 169.715 23.332V14.4525H174.567V23.3637C174.567 24.7168 174.261 25.9113 173.647 26.9472C173.034 27.962 172.189 28.7654 171.11 29.3574C170.032 29.9282 168.785 30.2136 167.368 30.2136Z"
+              ></path>
+              <path
+                d="M181.831 14.4525H176.979V29.8648H181.831V20.8584C181.831 20.3299 181.937 19.8859 182.148 19.5265C182.381 19.1671 182.688 18.8922 183.068 18.702C183.449 18.4905 183.882 18.3848 184.368 18.3848C185.066 18.3848 185.647 18.6068 186.112 19.0508C186.599 19.4736 186.842 20.0762 186.842 20.8584V29.8648H191.694V20.8584C191.694 20.3299 191.8 19.8859 192.011 19.5265C192.244 19.1671 192.55 18.8922 192.931 18.702C193.311 18.4905 193.745 18.3848 194.231 18.3848C194.929 18.3848 195.51 18.6068 195.975 19.0508C196.461 19.4736 196.704 20.0762 196.704 20.8584V29.8648H201.557V20.3193C201.557 19.0297 201.282 17.9303 200.732 17.0212C200.203 16.0909 199.474 15.3827 198.544 14.8965C197.635 14.389 196.588 14.1353 195.404 14.1353C194.199 14.1353 193.11 14.3996 192.138 14.9282C191.506 15.2649 190.954 15.6995 190.481 16.2319C190.04 15.675 189.504 15.2193 188.871 14.8647C188.026 14.3785 187.064 14.1353 185.986 14.1353C184.844 14.1353 183.819 14.3785 182.91 14.8647C182.514 15.067 182.155 15.3093 181.831 15.5916V14.4525Z"
+              ></path>
             </svg>
           </a>
 
-          <div class="max-w-md text-center text-neutral-500 dark:text-neutral-200 lg:text-lg">
-            “This is a section of some simple filler text, also known as placeholder text.”
-          </div>
-
-          <div class="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-            <div
-              class="h-12 w-12 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800 shadow-lg md:h-14 md:w-14"
-            >
-              <awc-avatar
-                image="https://images.unsplash.com/photo-1567515004624-219c11d31f2e?auto=format&q=75&fit=crop&w=112"
-                style="--size: 100%"
-              ></awc-avatar>
-            </div>
-
-            <div>
-              <div class="text-center text-sm font-bold text-primary sm:text-left md:text-base">John McCulling</div>
-              <p class="text-center text-sm text-neutral-500 dark:text-neutral-200 sm:text-left md:text-sm">
-                CEO / Datadrift
-              </p>
-            </div>
+          <div class="flex justify-center items-center gap-2">
+            <awc-rating label="Rating" readonly value="4.5"></awc-rating>
+            <span class="text-sm">4.5/5</span>
           </div>
         </div>
-        <!-- quote - end -->
+        <!-- logo - end -->
+
+        <p class="text-center text-title max-w-screen-md text-x-large sm:text-2x-large md:text-3x-large leading-dense">
+          This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+          of a real written text but is random or otherwise generated.
+        </p>
+
+        <div class="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
+          <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+          <div class="leading-dense">
+            <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+            <span class="block text-sm text-paragraph"> Product Manager </span>
+          </div>
+        </div>
       </div>
+      <!-- quote - end -->
     </div>
   `
 };
@@ -165,73 +191,248 @@ export const Testimonials2: StoryObj = {
 export const Testimonials3: StoryObj = {
   name: 'Testimonials 3',
   render: () => html`
-    <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
-      <div class="container mx-auto px-4 md:px-8">
-        <!-- text - start -->
-        <div class="mb-8 md:mb-12">
-          <awc-typography type="h3" class="mb-4 text-center" noMargin> What others say about us </awc-typography>
-          <awc-typography
-            class="mx-auto max-w-screen-md text-center text-neutral-500 dark:text-neutral-200 md:block"
-            noMargin
-          >
-            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
-            of a real written text but is random or otherwise generated.
-          </awc-typography>
-        </div>
-        <!-- text - end -->
+    <div class="container mx-auto px-4 md:px-8">
+      ${heading}
 
-        <div class="grid gap-4 md:grid-cols-2 md:gap-8">
+      <div>
+        <awc-carousel
+          pagination
+          navigation
+          slides-per-move="1"
+          slides-per-page="3"
+          style="--aspect-ratio: none;"
+          class="mb-8"
+        >
           <!-- quote - start -->
-          <div class="flex flex-col items-center gap-4 rounded-lg bg-primary px-8 py-6 md:gap-6">
-            <div class="max-w-md text-center text-white lg:text-lg">
-              “This is a section of some simple filler text, also known as placeholder text.”
-            </div>
-
-            <div class="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-              <div
-                class="h-12 w-12 overflow-hidden rounded-full border-2 border-primary-100 bg-neutral-100 dark:bg-neutral-800 md:h-14 md:w-14"
-              >
-                <awc-avatar
-                  image="https://images.unsplash.com/photo-1567515004624-219c11d31f2e?auto=format&q=75&fit=crop&w=112"
-                  style="--size: 100%"
-                ></awc-avatar>
-              </div>
-
-              <div>
-                <div class="text-center text-sm font-bold text-primary-50 sm:text-left md:text-base">
-                  John McCulling
+          <awc-carousel-item>
+            <awc-card bordered shadow>
+              <div slot="footer" class="flex items-center gap-3">
+                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                <div class="leading-dense">
+                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                  <span class="block text-sm text-paragraph">
+                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                  </span>
                 </div>
-                <p class="text-center text-sm text-primary-200 sm:text-left md:text-sm">CEO / Datadrift</p>
               </div>
-            </div>
-          </div>
+
+              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+              <p class="text-paragraph">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </awc-card>
+          </awc-carousel-item>
           <!-- quote - end -->
 
           <!-- quote - start -->
-          <div class="flex flex-col items-center gap-4 rounded-lg bg-primary px-8 py-6 md:gap-6">
-            <div class="max-w-md text-center text-white lg:text-lg">
-              “This is a section of some simple filler text, also known as placeholder text.”
-            </div>
-
-            <div class="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-              <div
-                class="h-12 w-12 overflow-hidden rounded-full border-2 border-primary-100 bg-neutral-100 dark:bg-neutral-800 md:h-14 md:w-14"
-              >
-                <awc-avatar
-                  image="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?auto=format&q=75&fit=crop&w=112"
-                  style="--size: 100%"
-                ></awc-avatar>
+          <awc-carousel-item>
+            <awc-card bordered shadow>
+              <div slot="footer" class="flex items-center gap-3">
+                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                <div class="leading-dense">
+                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                  <span class="block text-sm text-paragraph">
+                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                  </span>
+                </div>
               </div>
 
-              <div>
-                <div class="text-center text-sm font-bold text-primary-50 sm:text-left md:text-base">Kate Berg</div>
-                <p class="text-center text-sm text-primary-200 sm:text-left md:text-sm">CFO / Dashdash</p>
-              </div>
-            </div>
-          </div>
+              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+              <p class="text-paragraph">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </awc-card>
+          </awc-carousel-item>
           <!-- quote - end -->
+
+          <!-- quote - start -->
+          <awc-carousel-item>
+            <awc-card bordered shadow>
+              <div slot="footer" class="flex items-center gap-3">
+                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                <div class="leading-dense">
+                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                  <span class="block text-sm text-paragraph">
+                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                  </span>
+                </div>
+              </div>
+
+              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+              <p class="text-paragraph">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- quote - end -->
+
+          <!-- quote - start -->
+          <awc-carousel-item>
+            <awc-card bordered shadow>
+              <div slot="footer" class="flex items-center gap-3">
+                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                <div class="leading-dense">
+                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                  <span class="block text-sm text-paragraph">
+                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                  </span>
+                </div>
+              </div>
+
+              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+              <p class="text-paragraph">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- quote - end -->
+        </awc-carousel>
+
+        <div class="text-center">
+          <awc-button variant="primary" class="w-full md:w-auto" outline>View all news</awc-button>
         </div>
       </div>
     </div>
+  `
+};
+
+export const Testimonials4: StoryObj = {
+  name: 'Testimonials 4',
+  render: () => html`
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="grid md:grid-cols-12 gap-10">
+        <!-- text - start -->
+        <div class="md:col-span-5">
+          <awc-typography type="h2" class="text-center md:text-left mb-4 text-title">
+            <span class="text-base font-bold leading-dense text-paragraph uppercase block">Headline</span>
+            What others say about us
+          </awc-typography>
+          <awc-typography class="mx-auto max-w-screen-md text-center md:text-left text-paragraph"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+          >
+          <div class="flex justify-center items-center md:justify-start gap-2 mb-6">
+            <awc-rating label="Rating" readonly value="4"></awc-rating>
+            <span class="text-sm">4/5</span>
+          </div>
+          <awc-button variant="primary" outline class="w-full md:w-auto">Button</awc-button>
+        </div>
+        <!-- text - end -->
+
+        <awc-carousel pagination navigation style="--aspect-ratio: none;" class="md:col-span-7 testimonial-carousel">
+          <!-- quote - start -->
+          <awc-carousel-item>
+            <awc-card bordered shadow>
+              <div slot="footer" class="flex items-center gap-3">
+                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                <div class="leading-dense">
+                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                  <span class="block text-sm text-paragraph">
+                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                  </span>
+                </div>
+              </div>
+
+              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+              <p class="text-paragraph">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- quote - end -->
+
+          <!-- quote - start -->
+          <awc-carousel-item>
+            <awc-card bordered shadow>
+              <div slot="footer" class="flex items-center gap-3">
+                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                <div class="leading-dense">
+                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                  <span class="block text-sm text-paragraph">
+                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                  </span>
+                </div>
+              </div>
+
+              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+              <p class="text-paragraph">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- quote - end -->
+
+          <!-- quote - start -->
+          <awc-carousel-item>
+            <awc-card bordered shadow>
+              <div slot="footer" class="flex items-center gap-3">
+                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                <div class="leading-dense">
+                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                  <span class="block text-sm text-paragraph">
+                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                  </span>
+                </div>
+              </div>
+
+              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+              <p class="text-paragraph">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- quote - end -->
+
+          <!-- quote - start -->
+          <awc-carousel-item>
+            <awc-card bordered shadow>
+              <div slot="footer" class="flex items-center gap-3">
+                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                <div class="leading-dense">
+                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                  <span class="block text-sm text-paragraph">
+                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                  </span>
+                </div>
+              </div>
+
+              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+              <p class="text-paragraph">
+                This is a section of some simple filler text, also known as placeholder text. It shares some
+                characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- quote - end -->
+        </awc-carousel>
+      </div>
+    </div>
+    <style>
+      @media screen and (max-width: 767px) {
+        .testimonial-carousel::part(navigation) {
+          grid-area: pagination;
+          display: flex;
+          justify-content: center;
+          grid-row: auto;
+          gap: 1rem;
+          padding: 1rem 0;
+        }
+      }
+    </style>
   `
 };

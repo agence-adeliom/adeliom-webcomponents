@@ -1,4 +1,4 @@
-import { spread, spreadProps } from '@open-wc/lit-helpers';
+import { spreadProps, spread } from './spread';
 import { useArgs } from '@storybook/client-api';
 import { html, unsafeStatic } from 'lit/static-html.js';
 import type { Declaration } from './cem-schema';

@@ -1,5 +1,6 @@
 :host,
 .awc-theme-dark,
+.dark\:awc-theme-dark,
 [data-mode='dark'] {
   color-scheme: dark;
 
@@ -47,7 +48,8 @@
   --awc-letter-spacing-dense: -0.015em;
   --awc-letter-spacing-denser: -0.03em;
   --awc-font-weight-bold: 700;
-  --awc-font-weight-semibold: 500;
+  --awc-font-weight-medium: 500;
+  --awc-font-weight-semibold: 600;
   --awc-font-weight-normal: 400;
   --awc-font-weight-light: 300;
   --awc-font-size-10x-large: 5.25rem;
