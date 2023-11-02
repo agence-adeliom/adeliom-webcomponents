@@ -6,16 +6,17 @@ export default css`
 
   :host {
     --aspect-ratio: inherit;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    flex-shrink: 0;
     width: 100%;
-    max-height: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
     aspect-ratio: var(--aspect-ratio);
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+  }
+
+  .carousel__slide-invisible-blank {
+    visibility: hidden;
   }
 
   ::slotted(img) {

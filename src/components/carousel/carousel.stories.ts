@@ -250,7 +250,7 @@ export const MouseDragging: Story = {
   name: 'Mouse Dragging',
   render: () => html`
     <div class="mouse-dragging">
-      <awc-carousel pagination>
+      <awc-carousel class="mb-12" pagination>
         <awc-carousel-item>
           <img
             alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
@@ -285,17 +285,16 @@ export const MouseDragging: Story = {
 
       <awc-divider></awc-divider>
 
-      <awc-switch>Enable mouse dragging</awc-switch>
+      <awc-switch checked>Enable mouse dragging</awc-switch>
     </div>
-
     <script>
-      const container = document.querySelector('.mouse-dragging');
-      const carousel = container.querySelector('awc-carousel');
-      const toggle = container.querySelector('awc-switch');
+        const container = document.querySelector('.mouse-dragging');
+        const carousel = container.querySelector('awc-carousel');
+        const toggle = container.querySelector('awc-switch');
 
-      toggle.addEventListener('awc-change', () => {
-        carousel.toggleAttribute('mouse-dragging', toggle.checked);
-      });
+        toggle.addEventListener('awc-change', () => {
+            carousel.toggleAttribute('mouse-dragging', toggle.checked);
+        });
     </script>
   `,
   parameters: {
@@ -311,13 +310,13 @@ export const MouseDragging: Story = {
 export const MultipleSlidesPerView: Story = {
   name: 'Multiple Slides Per View',
   render: () => html`
-    <awc-carousel navigation pagination slides-per-page="2" slides-per-move="2">
-      <awc-carousel-item style="background: var(--awc-color-primary-200);">Slide 1</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-secondary-200);">Slide 2</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-tertiary-200);">Slide 3</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-success-200);">Slide 4</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-warning-200);">Slide 5</awc-carousel-item>
-      <awc-carousel-item style="background: var(--awc-color-danger-200);">Slide 6</awc-carousel-item>
+    <awc-carousel navigation pagination slides-per-view="2" slides-per-group="2">
+      <awc-carousel-item style="background: var(--awc-color-primary-200); display: flex; justify-content: center; align-items: center">Slide 1</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-secondary-200); display: flex; justify-content: center; align-items: center">Slide 2</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-tertiary-200); display: flex; justify-content: center; align-items: center">Slide 3</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-success-200); display: flex; justify-content: center; align-items: center">Slide 4</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-warning-200); display: flex; justify-content: center; align-items: center">Slide 5</awc-carousel-item>
+      <awc-carousel-item style="background: var(--awc-color-danger-200); display: flex; justify-content: center; align-items: center">Slide 6</awc-carousel-item>
     </awc-carousel>
   `,
   parameters: {
@@ -333,7 +332,7 @@ export const MultipleSlidesPerView: Story = {
 export const AddingRemovingSlides: Story = {
   name: 'Adding and Removing Slides',
   render: () => html`
-    <awc-carousel class="dynamic-carousel" pagination navigation>
+    <awc-carousel class="dynamic-carousel  mb-12" pagination navigation>
       <awc-carousel-item style="background: var(--awc-color-danger-200)">Slide 1</awc-carousel-item>
       <awc-carousel-item style="background: var(--awc-color-warning-200)">Slide 2</awc-carousel-item>
       <awc-carousel-item style="background: var(--awc-color-tertiary-200)">Slide 3</awc-carousel-item>
@@ -378,19 +377,13 @@ export const AddingRemovingSlides: Story = {
           const color = colors[++colorIndex % colors.length];
           slide.innerText = \`Slide \${dynamicCarousel.children.length + 1}\`;
           slide.style.setProperty('background', \`var(--awc-color-\${color}-200)\`);
-          dynamicCarousel.appendChild(slide);
+          dynamicCarousel.slider.appendSlide(slide);
           dynamicRemove.disabled = false;
         };
 
         const removeSlide = () => {
-          const slide = dynamicCarousel.children[dynamicCarousel.children.length - 1];
           const numSlides = dynamicCarousel.querySelectorAll('awc-carousel-item').length;
-
-          if (numSlides > 1) {
-            slide.remove();
-            colorIndex--;
-          }
-
+          dynamicCarousel.slider.removeSlide(dynamicCarousel.children.length - 1);
           dynamicRemove.disabled = numSlides - 1 <= 1;
         };
 
@@ -412,7 +405,7 @@ export const AddingRemovingSlides: Story = {
 export const VerticalScrolling: Story = {
   name: 'Vertical Scrolling',
   render: () => html`
-    <awc-carousel class="vertical" pagination orientation="vertical">
+    <awc-carousel class="vertical" pagination direction="vertical">
       <awc-carousel-item>
         <img
           alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
@@ -445,21 +438,8 @@ export const VerticalScrolling: Story = {
       </awc-carousel-item>
     </awc-carousel>
     <style>
-      .vertical {
-        max-height: 400px;
-      }
-
       .vertical::part(base) {
-        grid-template-areas: 'slides slides pagination';
-      }
-
-      .vertical::part(pagination) {
-        flex-direction: column;
-      }
-
-      .vertical::part(navigation) {
-        transform: rotate(90deg);
-        display: flex;
+        max-height: 400px;
       }
     </style>
   `,
@@ -476,7 +456,7 @@ export const VerticalScrolling: Story = {
 export const AspectRatio: Story = {
   name: 'Aspect Ratio',
   render: () => html`
-    <awc-carousel class="aspect-ratio" navigation pagination style="--aspect-ratio: 3/2;">
+    <awc-carousel class="aspect-ratio mb-12" navigation pagination style="--aspect-ratio: 3/2;">
       <awc-carousel-item>
         <img
           alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
@@ -539,41 +519,142 @@ export const AspectRatio: Story = {
   }
 };
 
+export const FreeMode: Story = {
+  name: 'Free Mode',
+  render: () => html`
+    <awc-carousel class="free-mode" loop autoplay='{"delay": 0, "disableOnInteraction": false}' speed="5000" free-mode grab-cursor slides-per-view="auto" space-between="16">
+        <awc-carousel-item class="w-auto h-auto">
+        <img
+          alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
+          src="https://placehold.co/666x400/000000/FFFFFF/png"
+        />
+      </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+        <img
+          alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
+          src="https://placehold.co/100x400/000000/FFFFFF/png"
+        />
+      </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+        <img
+          alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
+          src="https://placehold.co/366x200/000000/FFFFFF/png"
+        />
+      </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
+                    src="/assets/examples/carousel/field.jpg"
+            />
+        </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
+                    src="/assets/examples/carousel/valley.jpg"
+            />
+        </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
+                    src="https://placehold.co/666x400/000000/FFFFFF/png"
+            />
+        </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
+                    src="https://placehold.co/100x400/000000/FFFFFF/png"
+            />
+        </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
+                    src="https://placehold.co/366x200/000000/FFFFFF/png"
+            />
+        </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
+                    src="/assets/examples/carousel/field.jpg"
+            />
+        </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
+                    src="/assets/examples/carousel/valley.jpg"
+            />
+        </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
+                    src="https://placehold.co/666x400/000000/FFFFFF/png"
+            />
+        </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
+                    src="https://placehold.co/100x400/000000/FFFFFF/png"
+            />
+        </awc-carousel-item>
+        <awc-carousel-item class="w-auto h-auto">
+            <img
+                    alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
+                    src="https://placehold.co/366x200/FF0000/FFFFFF/png"
+            />
+        </awc-carousel-item>
+    </awc-carousel>
+  `,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Use the `--scroll-hint` custom property to add inline padding in horizontal carousels and block padding in vertical carousels. This will make the closest slides slightly visible, hinting that there are more items in the carousel.'
+      }
+    }
+  }
+};
+
 export const ScrollHint: Story = {
   name: 'Scroll Hint',
   render: () => html`
-    <awc-carousel class="scroll-hint" pagination style="--scroll-hint: 10%;">
-      <awc-carousel-item>
-        <img
-          alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
-          src="/assets/examples/carousel/mountains.jpg"
-        />
-      </awc-carousel-item>
-      <awc-carousel-item>
-        <img
-          alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
-          src="/assets/examples/carousel/waterfall.jpg"
-        />
-      </awc-carousel-item>
-      <awc-carousel-item>
-        <img
-          alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
-          src="/assets/examples/carousel/sunset.jpg"
-        />
-      </awc-carousel-item>
-      <awc-carousel-item>
-        <img
-          alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
-          src="/assets/examples/carousel/field.jpg"
-        />
-      </awc-carousel-item>
-      <awc-carousel-item>
-        <img
-          alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
-          src="/assets/examples/carousel/valley.jpg"
-        />
-      </awc-carousel-item>
-    </awc-carousel>
+    <div class="container mx-auto">
+        <awc-carousel class="scroll-hint" pagination space-between="16">
+            <awc-carousel-item>
+                <img
+                        alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
+                        src="/assets/examples/carousel/mountains.jpg"
+                />
+            </awc-carousel-item>
+            <awc-carousel-item>
+                <img
+                        alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
+                        src="/assets/examples/carousel/waterfall.jpg"
+                />
+            </awc-carousel-item>
+            <awc-carousel-item>
+                <img
+                        alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
+                        src="/assets/examples/carousel/sunset.jpg"
+                />
+            </awc-carousel-item>
+            <awc-carousel-item>
+                <img
+                        alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
+                        src="/assets/examples/carousel/field.jpg"
+                />
+            </awc-carousel-item>
+            <awc-carousel-item>
+                <img
+                        alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
+                        src="/assets/examples/carousel/valley.jpg"
+                />
+            </awc-carousel-item>
+        </awc-carousel>
+    </div>
+    <style>
+        awc-carousel.scroll-hint::part(base) {
+            overflow: visible;
+        }
+    </style>
   `,
   parameters: {
     docs: {
@@ -588,7 +669,7 @@ export const ScrollHint: Story = {
 export const GalleryExample: Story = {
   name: 'Gallery Example',
   render: () => html`
-    <awc-carousel class="carousel-thumbnails" navigation loop>
+    <awc-carousel class="carousel-thumbnails mb-8" navigation loop>
       <awc-carousel-item>
         <img
           alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
@@ -622,19 +703,30 @@ export const GalleryExample: Story = {
     </awc-carousel>
 
     <div class="thumbnails">
-      <div class="thumbnails__scroller">
-        <img alt="Thumbnail by 1" class="thumbnails__image active" src="/assets/examples/carousel/mountains.jpg" />
-        <img alt="Thumbnail by 2" class="thumbnails__image" src="/assets/examples/carousel/waterfall.jpg" />
-        <img alt="Thumbnail by 3" class="thumbnails__image" src="/assets/examples/carousel/sunset.jpg" />
-        <img alt="Thumbnail by 4" class="thumbnails__image" src="/assets/examples/carousel/field.jpg" />
-        <img alt="Thumbnail by 5" class="thumbnails__image" src="/assets/examples/carousel/valley.jpg" />
-      </div>
+        <div class="thumbnails__scroller">
+            <img
+                    alt="Thumbnail by 1"
+                    class="thumbnails__image active"
+                    src="/assets/examples/carousel/mountains.jpg">
+            <img
+                    alt="Thumbnail by 2"
+                    class="thumbnails__image"
+                    src="/assets/examples/carousel/waterfall.jpg">
+            <img
+                    alt="Thumbnail by 3"
+                    class="thumbnails__image"
+                    src="/assets/examples/carousel/sunset.jpg">
+            <img
+                    alt="Thumbnail by 4"
+                    class="thumbnails__image"
+                    src="/assets/examples/carousel/field.jpg">
+            <img
+                    alt="Thumbnail by 5"
+                    class="thumbnails__image"
+                    src="/assets/examples/carousel/valley.jpg">
+        </div>
     </div>
-
     <style>
-      .carousel-thumbnails {
-        --slide-aspect-ratio: 3 / 2;
-      }
 
       .thumbnails {
         display: flex;
@@ -670,35 +762,35 @@ export const GalleryExample: Story = {
         opacity: 1;
       }
     </style>
-
     <script>
-      {
-        const carousel = document.querySelector('.carousel-thumbnails');
-        const scroller = document.querySelector('.thumbnails__scroller');
-        const thumbnails = document.querySelectorAll('.thumbnails__image');
+        {
+            const carousel = document.querySelector('.carousel-thumbnails');
+            const scroller = document.querySelector('.thumbnails__scroller');
+            const thumbnails = document.querySelectorAll('.thumbnails__image');
 
-        scroller.addEventListener('click', e => {
-          const target = e.target;
+            scroller.addEventListener('click', e => {
+                const target = e.target;
 
-          if (target.matches('.thumbnails__image')) {
-            const index = [...thumbnails].indexOf(target);
-            carousel.goToSlide(index);
-          }
-        });
+                if (target.matches('.thumbnails__image')) {
+                    const index = [...thumbnails].indexOf(target);
+                    carousel.slider.slideToLoop(index);
+                }
+            });
 
-        carousel.addEventListener('awc-slide-change', e => {
-          const slideIndex = e.detail.index;
+            carousel.addEventListener('awc-slide-change', (e) => {
+                const [ slider ] = e.detail;
+                const slideIndex = slider.realIndex;
 
-          [...thumbnails].forEach((thumb, i) => {
-            thumb.classList.toggle('active', i === slideIndex);
-            if (i === slideIndex) {
-              thumb.scrollIntoView({
-                block: 'nearest'
-              });
-            }
-          });
-        });
-      }
+                [...thumbnails].forEach((thumb, i) => {
+                    thumb.classList.toggle('active', i === slideIndex);
+                    if (i === slideIndex) {
+                        thumb.scrollIntoView({
+                            block: 'nearest'
+                        });
+                    }
+                });
+            });
+        }
     </script>
   `,
   parameters: {

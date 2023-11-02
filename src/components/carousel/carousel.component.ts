@@ -16,7 +16,8 @@ import AWCIcon from '../icon/icon.component.js';
 import styles from './carousel.styles.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
 import type AWCCarouselItem from '../carousel-item/carousel-item.component.js';
-
+import Swiper from "swiper";
+import { Navigation, Pagination, Scrollbar, Autoplay, Manipulation, Keyboard, Thumbs, FreeMode } from 'swiper/modules';
 /**
  * @summary Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
  * @documentation https://awc.a-dev.cloud/?path=/docs/components-carousel--docs
@@ -57,115 +58,86 @@ export default class AWCCarousel extends AWCElement {
   @property({ type: Boolean, reflect: true }) navigation = false;
 
   /** When set, show the carousel's pagination indicators. */
-  @property({ type: Boolean, reflect: true }) pagination = false;
+  @property({ reflect: true }) pagination: boolean | 'progressbar' | 'bullets' | 'fraction' | 'custom' = false;
+
+  /** When set, show the carousel's scrollbar indicators. */
+  @property({ type: Boolean, reflect: true }) scrollbar = false;
 
   /** When set, the slides will scroll automatically when the user is not interacting with them.  */
-  @property({ type: Boolean, reflect: true }) autoplay = false;
+  @property({ reflect: true }) autoplay : boolean | number | object = false;
 
-  /** Specifies the amount of time, in milliseconds, between each automatic scroll.  */
-  @property({ type: Number, attribute: 'autoplay-interval' }) autoplayInterval = 3000;
+  /** Set to `true` and slider wrapper will adapt its height to the height of the currently active slide */
+  @property({ type: Boolean, reflect: true, attribute: 'auto-height' }) autoHeight = false;
 
   /** Specifies how many slides should be shown at a given time.  */
-  @property({ type: Number, attribute: 'slides-per-page' }) slidesPerPage = 1;
+  @property({ attribute: 'slides-per-view' }) slidesPerView: number | 'auto' = 1;
+
+  @property({ type: Number, reflect: true }) speed = 300;
+
+  @property({ type: Number, reflect: true }) threshold = 5;
+
+  @property({ reflect: true, attribute: 'space-between' }) spaceBetween : string | number = 0;
+
+  @property({ type: Boolean,  reflect: true, attribute: 'free-mode' }) freeMode = false;
+  @property({ type: Boolean,  reflect: true, attribute: 'grab-cursor' }) grabCursor = false;
+
+  @property({ type: String,  reflect: true }) effect : 'slide' | 'fade' | 'cube' | 'coverflow' | 'flip' | 'creative' = 'slide';
+
+  @property({ type: Boolean,  reflect: true, attribute: 'centered-slides' }) centeredSlides = false;
+
+  @property({ reflect: true }) breakpoints: object | undefined = undefined;
 
   /**
    * Specifies the number of slides the carousel will advance when scrolling, useful when specifying a `slides-per-page`
    * greater than one. It can't be higher than `slides-per-page`.
    */
-  @property({ type: Number, attribute: 'slides-per-move' }) slidesPerMove = 1;
+  @property({ type: Number, attribute: 'slides-per-group' }) slidesPerGroup = 1;
 
   /** Specifies the orientation in which the carousel will lay out.  */
-  @property() orientation: 'horizontal' | 'vertical' = 'horizontal';
+  @property() direction: 'horizontal' | 'vertical' = 'horizontal';
+
+  @property() thumbnails: string | object | undefined = undefined;
+
 
   /** When set, it is possible to scroll through the slides by dragging them with the mouse. */
-  @property({ type: Boolean, reflect: true, attribute: 'mouse-dragging' }) mouseDragging = false;
+  @property({ type: Boolean, reflect: true, attribute: 'mouse-dragging' }) mouseDragging = true;
 
-  @query('.carousel__slides') scrollContainer: HTMLElement;
+  @query('.carousel') container: HTMLElement;
+  @query('.carousel__wrapper') scrollContainer: HTMLElement;
   @query('.carousel__pagination') paginationContainer: HTMLElement;
+  @query('.navigation-button--previous') previousButton: HTMLElement;
+  @query('.navigation-button--next') nextButton: HTMLElement;
 
   // The index of the active slide
   @state() activeSlide = 0;
 
-  private autoplayController = new AutoplayController(this, () => this.next());
-  private scrollController = new ScrollController(this);
-  private intersectionObserver: IntersectionObserver; // determines which slide is displayed
+  slider?: Swiper
+  slideSlots: number = 0
+
   // A map containing the state of all the slides
-  private readonly intersectionObserverEntries = new Map<Element, IntersectionObserverEntry>();
   private readonly localize = new LocalizeController(this);
-  private mutationObserver: MutationObserver;
 
   connectedCallback(): void {
     super.connectedCallback();
     this.setAttribute('role', 'region');
     this.setAttribute('aria-label', this.localize.term('carousel'));
-
-    const intersectionObserver = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[]) => {
-        entries.forEach(entry => {
-          // Store all the entries in a map to be processed when scrolling ends
-          this.intersectionObserverEntries.set(entry.target, entry);
-
-          const slide = entry.target;
-          slide.toggleAttribute('inert', !entry.isIntersecting);
-          slide.classList.toggle('--in-view', entry.isIntersecting);
-          slide.setAttribute('aria-hidden', entry.isIntersecting ? 'false' : 'true');
-        });
-      },
-      {
-        root: this,
-        threshold: 0.6
-      }
-    );
-    this.intersectionObserver = intersectionObserver;
-
-    // Store the initial state of each slide
-    intersectionObserver.takeRecords().forEach(entry => {
-      this.intersectionObserverEntries.set(entry.target, entry);
-    });
   }
 
-  disconnectedCallback(): void {
-    super.disconnectedCallback();
-    this.intersectionObserver.disconnect();
-    this.mutationObserver.disconnect();
-  }
 
   protected firstUpdated(): void {
     this.initializeSlides();
-    this.mutationObserver = new MutationObserver(this.handleSlotChange);
-    this.mutationObserver.observe(this, {
-      childList: true,
-      subtree: true
-    });
   }
 
-  protected willUpdate(changedProperties: PropertyValueMap<AWCCarousel> | Map<PropertyKey, unknown>): void {
-    // Ensure the slidesPerMove is never higher than the slidesPerPage
-    if (changedProperties.has('slidesPerMove') || changedProperties.has('slidesPerPage')) {
-      this.slidesPerMove = Math.min(this.slidesPerMove, this.slidesPerPage);
+  @watch('mouseDragging')
+  handleMouseDraggingChange() {
+    if(this.slider) {
+      this.slider.destroy();
     }
+
+    this.initializeSlides()
   }
 
-  private getPageCount() {
-    const slidesCount = this.getSlides().length;
-    const { slidesPerPage, slidesPerMove, loop } = this;
 
-    const pages = loop ? slidesCount / slidesPerMove : (slidesCount - slidesPerPage) / slidesPerMove + 1;
-
-    return Math.ceil(pages);
-  }
-
-  private getCurrentPage() {
-    return Math.ceil(this.activeSlide / this.slidesPerMove);
-  }
-
-  private canScrollNext(): boolean {
-    return this.loop || this.getCurrentPage() < this.getPageCount() - 1;
-  }
-
-  private canScrollPrev(): boolean {
-    return this.loop || this.getCurrentPage() > 0;
-  }
 
   /** @internal Gets all carousel items. */
   private getSlides({ excludeClones = true }: { excludeClones?: boolean } = {}) {
@@ -174,248 +146,16 @@ export default class AWCCarousel extends AWCElement {
     ) as AWCCarouselItem[];
   }
 
-  private handleKeyDown(event: KeyboardEvent) {
-    if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) {
-      const target = event.target as HTMLElement;
-      const isRtl = this.localize.dir() === 'rtl';
-      const isFocusInPagination = target.closest('[part~="pagination-item"]') !== null;
-      const isNext =
-        event.key === 'ArrowDown' || (!isRtl && event.key === 'ArrowRight') || (isRtl && event.key === 'ArrowLeft');
-      const isPrevious =
-        event.key === 'ArrowUp' || (!isRtl && event.key === 'ArrowLeft') || (isRtl && event.key === 'ArrowRight');
-
-      event.preventDefault();
-
-      if (isPrevious) {
-        this.previous();
-      }
-
-      if (isNext) {
-        this.next();
-      }
-
-      if (event.key === 'Home') {
-        this.goToSlide(0);
-      }
-
-      if (event.key === 'End') {
-        this.goToSlide(this.getSlides().length - 1);
-      }
-
-      if (isFocusInPagination) {
-        this.updateComplete.then(() => {
-          const activePaginationItem = this.shadowRoot?.querySelector<HTMLButtonElement>(
-            '[part~="pagination-item--active"]'
-          );
-
-          if (activePaginationItem) {
-            activePaginationItem.focus();
-          }
-        });
-      }
-    }
-  }
-
-  private handleScrollEnd() {
-    const slides = this.getSlides();
-    const entries = [...this.intersectionObserverEntries.values()];
-
-    const firstIntersecting: IntersectionObserverEntry | undefined = entries.find(entry => entry.isIntersecting);
-
-    if (this.loop && firstIntersecting?.target.hasAttribute('data-clone')) {
-      const clonePosition = Number(firstIntersecting.target.getAttribute('data-clone'));
-
-      // Scrolls to the original slide without animating, so the user won't notice that the position has changed
-      this.goToSlide(clonePosition, 'auto');
-    } else if (firstIntersecting) {
-      // Update the current index based on the first visible slide
-      const slideIndex = slides.indexOf(firstIntersecting.target as AWCCarouselItem);
-      // Set the index to the first "snappable" slide
-      this.activeSlide = Math.ceil(slideIndex / this.slidesPerMove) * this.slidesPerMove;
-    }
-  }
-
   private isCarouselItem(node: Node): node is AWCCarouselItem {
     return node instanceof Element && node.tagName.toLowerCase() === 'awc-carousel-item';
   }
 
-  private handleSlotChange = (mutations: MutationRecord[]) => {
-    const needsInitialization = mutations.some(mutation =>
-      [...mutation.addedNodes, ...mutation.removedNodes].some(
-        (el: HTMLElement) => this.isCarouselItem(el) && !el.hasAttribute('data-clone')
-      )
-    );
 
-    // Reinitialize the carousel if a carousel item has been added or removed
-    if (needsInitialization) {
-      this.initializeSlides();
-    }
 
-    this.requestUpdate();
-  };
-
-  @watch('loop', { waitUntilFirstUpdate: true })
-  @watch('slidesPerPage', { waitUntilFirstUpdate: true })
-  initializeSlides() {
-    const intersectionObserver = this.intersectionObserver;
-
-    this.intersectionObserverEntries.clear();
-
-    // Removes all the cloned elements from the carousel
-    this.getSlides({ excludeClones: false }).forEach((slide, index) => {
-      intersectionObserver.unobserve(slide);
-
-      slide.classList.remove('--in-view');
-      slide.classList.remove('--is-active');
-      slide.setAttribute('aria-label', this.localize.term('slideNum', index + 1));
-
-      if (slide.hasAttribute('data-clone')) {
-        slide.remove();
-      }
-    });
-
-    this.updateSlidesSnap();
-
-    if (this.loop) {
-      // Creates clones to be placed before and after the original elements to simulate infinite scrolling
-      this.createClones();
-    }
-
-    this.getSlides({ excludeClones: false }).forEach(slide => {
-      intersectionObserver.observe(slide);
-    });
-
-    // Because the DOM may be changed, restore the scroll position to the active slide
-    this.goToSlide(this.activeSlide, 'auto');
-  }
-
-  private createClones() {
-    const slides = this.getSlides();
-
-    const slidesPerPage = this.slidesPerPage;
-    const lastSlides = slides.slice(-slidesPerPage);
-    const firstSlides = slides.slice(0, slidesPerPage);
-
-    lastSlides.reverse().forEach((slide, i) => {
-      const clone = slide.cloneNode(true) as HTMLElement;
-      clone.setAttribute('data-clone', String(slides.length - i - 1));
-      this.prepend(clone);
-    });
-
-    firstSlides.forEach((slide, i) => {
-      const clone = slide.cloneNode(true) as HTMLElement;
-      clone.setAttribute('data-clone', String(i));
-      this.append(clone);
-    });
-  }
-
-  @watch('activeSlide')
-  handelSlideChange() {
-    const slides = this.getSlides();
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('--is-active', i === this.activeSlide);
-    });
-
-    // Do not emit an event on first render
-    if (this.hasUpdated) {
-      this.emit('awc-slide-change', {
-        detail: {
-          index: this.activeSlide,
-          slide: slides[this.activeSlide]
-        }
-      });
-    }
-  }
-
-  @watch('slidesPerMove')
-  updateSlidesSnap() {
-    const slides = this.getSlides();
-
-    const slidesPerMove = this.slidesPerMove;
-    slides.forEach((slide, i) => {
-      const shouldSnap = (i + slidesPerMove) % slidesPerMove === 0;
-      if (shouldSnap) {
-        slide.style.removeProperty('scroll-snap-align');
-      } else {
-        slide.style.setProperty('scroll-snap-align', 'none');
-      }
-    });
-  }
-
-  @watch('autoplay')
-  handleAutoplayChange() {
-    this.autoplayController.stop();
-    if (this.autoplay) {
-      this.autoplayController.start(this.autoplayInterval);
-    }
-  }
-
-  @watch('mouseDragging')
-  handleMouseDraggingChange() {
-    this.scrollController.mouseDragging = this.mouseDragging;
-  }
-
-  /**
-   * Move the carousel backward by `slides-per-move` slides.
-   *
-   * @param behavior - The behavior used for scrolling.
-   */
-  previous(behavior: ScrollBehavior = 'smooth') {
-    this.goToSlide(this.activeSlide - this.slidesPerMove, behavior);
-  }
-
-  /**
-   * Move the carousel forward by `slides-per-move` slides.
-   *
-   * @param behavior - The behavior used for scrolling.
-   */
-  next(behavior: ScrollBehavior = 'smooth') {
-    this.goToSlide(this.activeSlide + this.slidesPerMove, behavior);
-  }
-
-  /**
-   * Scrolls the carousel to the slide specified by `index`.
-   *
-   * @param index - The slide index.
-   * @param behavior - The behavior used for scrolling.
-   */
-  goToSlide(index: number, behavior: ScrollBehavior = 'smooth') {
-    const { slidesPerPage, loop, scrollContainer } = this;
-
-    const slides = this.getSlides();
-    const slidesWithClones = this.getSlides({ excludeClones: false });
-
-    // No need to do anything in case there are no items in the carousel
-    if (!slides.length) {
-      return;
-    }
-
-    // Sets the next index without taking into account clones, if any.
-    const newActiveSlide = loop ? (index + slides.length) % slides.length : clamp(index, 0, slides.length - 1);
-    this.activeSlide = newActiveSlide;
-
-    // Get the index of the next slide. For looping carousel it adds `slidesPerPage`
-    // to normalize the starting index in order to ignore the first nth clones.
-    const nextSlideIndex = clamp(index + (loop ? slidesPerPage : 0), 0, slidesWithClones.length - 1);
-    const nextSlide = slidesWithClones[nextSlideIndex];
-
-    const scrollContainerRect = scrollContainer.getBoundingClientRect();
-    const nextSlideRect = nextSlide.getBoundingClientRect();
-
-    scrollContainer.scrollTo({
-      left: nextSlideRect.left - scrollContainerRect.left + scrollContainer.scrollLeft,
-      top: nextSlideRect.top - scrollContainerRect.top + scrollContainer.scrollTop,
-      behavior: prefersReducedMotion() ? 'auto' : behavior
-    });
-  }
 
   render() {
-    const { scrollController, slidesPerMove } = this;
-    const pagesCount = this.getPageCount();
-    const currentPage = this.getCurrentPage();
-    const prevEnabled = this.canScrollPrev();
-    const nextEnabled = this.canScrollNext();
     const isLtr = this.localize.dir() === 'ltr';
+    this.calcSlideSlots();
 
     return html`
       <div part="base" class="carousel">
@@ -423,34 +163,30 @@ export default class AWCCarousel extends AWCElement {
           id="scroll-container"
           part="scroll-container"
           class="${classMap({
-            carousel__slides: true,
-            'carousel__slides--horizontal': this.orientation === 'horizontal',
-            'carousel__slides--vertical': this.orientation === 'vertical'
+            carousel__wrapper: true,
           })}"
-          style="--slides-per-page: ${this.slidesPerPage};"
-          aria-busy="${scrollController.scrolling ? 'true' : 'false'}"
           aria-atomic="true"
           tabindex="0"
-          @keydown=${this.handleKeyDown}
-          @scrollend=${this.handleScrollEnd}
         >
           <slot></slot>
+          ${Array.from({length: this.slideSlots}).map((_, index) => `
+          <awc-carousel-item part="carousel__slide carousel__slide-${index}">
+            <slot name="carousel__slide-${index}"></slot>
+          </awc-carousel-item>
+          `).join('')}
         </div>
-
-        ${this.navigation
-          ? html`
+      </div>
+      ${this.navigation
+              ? html`
               <div part="navigation" class="carousel__navigation">
                 <button
                   part="navigation-button navigation-button--previous"
                   class="${classMap({
-                    'carousel__navigation-button': true,
-                    'carousel__navigation-button--previous': true,
-                    'carousel__navigation-button--disabled': !prevEnabled
-                  })}"
+                  'navigation-button': true,
+                  'navigation-button--previous': true
+              })}"
                   aria-label="${this.localize.term('previousSlide')}"
                   aria-controls="scroll-container"
-                  aria-disabled="${prevEnabled ? 'false' : 'true'}"
-                  @click=${prevEnabled ? () => this.previous() : null}
                 >
                   <slot name="previous-icon">
                     <awc-icon library="system" name="${isLtr ? 'chevron-left' : 'chevron-right'}"></awc-icon>
@@ -460,14 +196,11 @@ export default class AWCCarousel extends AWCElement {
                 <button
                   part="navigation-button navigation-button--next"
                   class=${classMap({
-                    'carousel__navigation-button': true,
-                    'carousel__navigation-button--next': true,
-                    'carousel__navigation-button--disabled': !nextEnabled
-                  })}
+                  'navigation-button': true,
+                  'navigation-button--next': true
+              })}
                   aria-label="${this.localize.term('nextSlide')}"
                   aria-controls="scroll-container"
-                  aria-disabled="${nextEnabled ? 'false' : 'true'}"
-                  @click=${nextEnabled ? () => this.next() : null}
                 >
                   <slot name="next-icon">
                     <awc-icon library="system" name="${isLtr ? 'chevron-right' : 'chevron-left'}"></awc-icon>
@@ -475,32 +208,137 @@ export default class AWCCarousel extends AWCElement {
                 </button>
               </div>
             `
-          : ''}
-        ${this.pagination
-          ? html`
-              <div part="pagination" role="tablist" class="carousel__pagination" aria-controls="scroll-container">
-                ${map(range(pagesCount), index => {
-                  const isActive = index === currentPage;
-                  return html`
-                    <button
-                      part="pagination-item ${isActive ? 'pagination-item--active' : ''}"
-                      class="${classMap({
-                        'carousel__pagination-item': true,
-                        'carousel__pagination-item--active': isActive
-                      })}"
-                      role="tab"
-                      aria-selected="${isActive ? 'true' : 'false'}"
-                      aria-label="${this.localize.term('goToSlide', index + 1, pagesCount)}"
-                      tabindex=${isActive ? '0' : '-1'}
-                      @click=${() => this.goToSlide(index * slidesPerMove)}
-                      @keydown=${this.handleKeyDown}
-                    ></button>
-                  `;
-                })}
-              </div>
-            `
-          : ''}
-      </div>
+              : ''}
+      ${this.pagination !== false
+              ? html`<div part="pagination" role="tablist" class="carousel__pagination" aria-controls="scroll-container"></div>`
+              : ''}
+      ${this.scrollbar
+              ? html`<div part="scrollbar" role="scrollbar" class="carousel__scrollbar" aria-controls="scroll-container" aria-valuenow="0"></div>`
+              : ''}
     `;
+  }
+
+  private initializeSlides() {
+    console.log(this.autoplay !== false ? (this.autoplay === true ? true : (!isNaN(this.autoplay) ? { delay: this.autoplay === '' ? 3000 : this.autoplay } : {...JSON.parse(this.autoplay)})) : false)
+    // eslint-disable-next-line
+    this.slider = new Swiper(this.container, {
+      modules: [Navigation, Pagination, Scrollbar, Autoplay, Manipulation, Keyboard, Thumbs, FreeMode],
+      simulateTouch: this.mouseDragging,
+      direction: this.direction,
+      wrapperClass: 'carousel__wrapper',
+      containerModifierClass: 'carousel--',
+      touchEventsTarget: 'container',
+      slideClass: 'carousel__slide',
+      slidesPerView: this.slidesPerView,
+      slidesPerGroup: this.slidesPerGroup,
+      grabCursor: this.grabCursor,
+      loop: this.loop,
+      autoHeight: this.autoHeight,
+      speed: this.speed,
+      threshold: this.threshold,
+      spaceBetween: this.spaceBetween,
+      freeMode: this.freeMode ? {
+        enabled: true,
+      } : undefined,
+      effect: this.effect,
+      centeredSlides: this.autoHeight,
+      breakpoints: this.breakpoints ? JSON.parse(this.breakpoints) : undefined,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      thumbs: this.thumbnails ? {
+        swiper: this.thumbnails,
+        slideThumbActiveClass: 'carousel__thumb--active',
+        thumbsContainerClass: 'carousel__thumbs',
+      } : undefined,
+      autoplay: this.autoplay !== false ? (this.autoplay === true ? true : (!isNaN(this.autoplay) ? { delay: this.autoplay === '' ? 3000 : this.autoplay } : {...JSON.parse(this.autoplay)})) : false,
+      navigation: {
+        enabled: this.navigation,
+        nextEl: this.nextButton,
+        prevEl: this.previousButton,
+        disabledClass: 'navigation-button--disabled',
+        lockClass: 'navigation-button--lock',
+        hiddenClass: 'navigation-button--hidden',
+        navigationDisabledClass: 'navigation--disabled',
+      },
+      pagination: {
+        enabled: this.pagination !== false,
+        type: this.pagination === '' ? 'bullets' : this.pagination,
+        el: this.paginationContainer,
+        bulletActiveClass: 'pagination-item--active',
+        currentClass: 'pagination-item--current',
+        bulletClass: 'pagination-item',
+        clickableClass: 'pagination-item--clickable',
+        hiddenClass: 'carousel__pagination--hidden',
+        lockClass: 'carousel__pagination--lock',
+        horizontalClass: 'carousel__pagination--horizontal',
+        verticalClass: 'carousel__pagination--vertical',
+        bulletElement: 'button',
+        modifierClass: 'carousel__pagination-',
+        paginationDisabledClass: 'carousel__pagination--disabled',
+        progressbarFillClass: 'carousel__progressbar--fill',
+        progressbarOppositeClass: 'carousel__progressbar--opposite',
+        totalClass: 'pagination-item--total',
+      },
+      scrollbar: {
+        enabled: this.scrollbar,
+        el: this.scrollContainer,
+        scrollbarDisabledClass: 'scrollbar--disabled',
+      },
+      observer: true,
+      observeParents: true,
+      observeSlideChildren: this.slideSlots > 0,
+      onAny: (name, ...args) => {
+        if (name === '_swiper') {
+          // @ts-ignore
+          const swiper = args[0];
+          swiper.isElement = true
+        }
+        if (name === 'observerUpdate') {
+          this.calcSlideSlots();
+        }
+        const kebabCase = string => string
+          .replace(/([a-z])([A-Z])/g, "$1-$2")
+          .replace(/[\s_]+/g, '-')
+          .toLowerCase();
+
+        const eventName = `awc-${kebabCase(name)}`
+        const event = new CustomEvent(eventName, {
+          detail: args,
+          bubbles: name !== 'hashChange',
+          cancelable: true,
+        });
+        this.dispatchEvent(event);
+      },
+    });
+
+
+  }
+
+  calcSlideSlots() {
+    const currentSideSlots = this.slideSlots || 0;
+    // slide slots
+    const slideSlotChildren = [...this.querySelectorAll(`[slot^=slide-]`)].map((child) => {
+      return parseInt(child?.getAttribute('slot').split('carousel__slide-')[1], 10);
+    });
+    this.slideSlots = slideSlotChildren.length ? Math.max(...slideSlotChildren) + 1 : 0;
+    if (this.slideSlots > currentSideSlots) {
+      for (let i = currentSideSlots; i < this.slideSlots; i += 1) {
+        const slideEl = document.createElement('awc-carousel-item');
+        slideEl.setAttribute('part', `carousel__slide carousel__slide-${i + 1}`);
+        const slotEl = document.createElement('slot');
+        slotEl.setAttribute('name', `carousel__slide-${i + 1}`);
+        slideEl.appendChild(slotEl);
+        this.scrollContainer.appendChild(slideEl);
+      }
+    } else if (this.slideSlots < currentSideSlots) {
+      const slides = this.slider?.slides || [];
+      for (let i = slides.length - 1; i >= 0; i -= 1) {
+        if (i > this.slideSlots) {
+          slides[i].remove();
+        }
+      }
+    }
   }
 }

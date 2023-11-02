@@ -198,9 +198,10 @@ export const Testimonials3: StoryObj = {
         <awc-carousel
           pagination
           navigation
-          slides-per-move="1"
-          slides-per-page="3"
-          style="--aspect-ratio: none;"
+          slides-per-view="1"
+          slides-per-group="1"
+          space-between="16"
+          breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
           class="mb-8"
         >
           <!-- quote - start -->
@@ -301,6 +302,20 @@ export const Testimonials3: StoryObj = {
         </div>
       </div>
     </div>
+
+    <style>
+        awc-carousel {
+            --aspect-ratio: none;
+            --pagination-bottom: -8px;
+            --navigation-disabled-opacity: 0;
+            --navigation-sides-offset: -2.5rem;
+        }
+        awc-carousel::part(base) {
+          padding-bottom: 30px;
+        }
+
+
+    </style>
   `
 };
 
@@ -326,113 +341,105 @@ export const Testimonials4: StoryObj = {
           <awc-button variant="primary" outline class="w-full md:w-auto">Button</awc-button>
         </div>
         <!-- text - end -->
-
-        <awc-carousel pagination navigation style="--aspect-ratio: none;" class="md:col-span-7 testimonial-carousel">
-          <!-- quote - start -->
-          <awc-carousel-item>
-            <awc-card bordered shadow>
-              <div slot="footer" class="flex items-center gap-3">
-                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
-                <div class="leading-dense">
-                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
-                  <span class="block text-sm text-paragraph">
-                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
-                  </span>
+        <div class="md:col-span-7 w-full px-12">
+          <awc-carousel pagination navigation style="--aspect-ratio: none;--navigation-sides-offset: -2.75rem;--pagination-bottom: -2rem;" class="testimonial-carousel">
+            <!-- quote - start -->
+            <awc-carousel-item>
+              <awc-card bordered shadow>
+                <div slot="footer" class="flex items-center gap-3">
+                  <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                  <div class="leading-dense">
+                    <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                    <span class="block text-sm text-paragraph">
+                      <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
-              <p class="text-paragraph">
-                This is a section of some simple filler text, also known as placeholder text. It shares some
-                characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                sample of fonts or generate text for testing.
-              </p>
-            </awc-card>
-          </awc-carousel-item>
-          <!-- quote - end -->
+                <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+                <p class="text-paragraph">
+                  This is a section of some simple filler text, also known as placeholder text. It shares some
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                  sample of fonts or generate text for testing.
+                </p>
+              </awc-card>
+            </awc-carousel-item>
+            <!-- quote - end -->
 
-          <!-- quote - start -->
-          <awc-carousel-item>
-            <awc-card bordered shadow>
-              <div slot="footer" class="flex items-center gap-3">
-                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
-                <div class="leading-dense">
-                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
-                  <span class="block text-sm text-paragraph">
-                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
-                  </span>
+            <!-- quote - start -->
+            <awc-carousel-item>
+              <awc-card bordered shadow>
+                <div slot="footer" class="flex items-center gap-3">
+                  <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                  <div class="leading-dense">
+                    <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                    <span class="block text-sm text-paragraph">
+                      <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
-              <p class="text-paragraph">
-                This is a section of some simple filler text, also known as placeholder text. It shares some
-                characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                sample of fonts or generate text for testing.
-              </p>
-            </awc-card>
-          </awc-carousel-item>
-          <!-- quote - end -->
+                <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+                <p class="text-paragraph">
+                  This is a section of some simple filler text, also known as placeholder text. It shares some
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                  sample of fonts or generate text for testing.
+                </p>
+              </awc-card>
+            </awc-carousel-item>
+            <!-- quote - end -->
 
-          <!-- quote - start -->
-          <awc-carousel-item>
-            <awc-card bordered shadow>
-              <div slot="footer" class="flex items-center gap-3">
-                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
-                <div class="leading-dense">
-                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
-                  <span class="block text-sm text-paragraph">
-                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
-                  </span>
+            <!-- quote - start -->
+            <awc-carousel-item>
+              <awc-card bordered shadow>
+                <div slot="footer" class="flex items-center gap-3">
+                  <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                  <div class="leading-dense">
+                    <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                    <span class="block text-sm text-paragraph">
+                      <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
-              <p class="text-paragraph">
-                This is a section of some simple filler text, also known as placeholder text. It shares some
-                characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                sample of fonts or generate text for testing.
-              </p>
-            </awc-card>
-          </awc-carousel-item>
-          <!-- quote - end -->
+                <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+                <p class="text-paragraph">
+                  This is a section of some simple filler text, also known as placeholder text. It shares some
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                  sample of fonts or generate text for testing.
+                </p>
+              </awc-card>
+            </awc-carousel-item>
+            <!-- quote - end -->
 
-          <!-- quote - start -->
-          <awc-carousel-item>
-            <awc-card bordered shadow>
-              <div slot="footer" class="flex items-center gap-3">
-                <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
-                <div class="leading-dense">
-                  <span class="block text-sm text-paragraph font-bold">John McCulling</span>
-                  <span class="block text-sm text-paragraph">
-                    <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
-                  </span>
+            <!-- quote - start -->
+            <awc-carousel-item>
+              <awc-card bordered shadow>
+                <div slot="footer" class="flex items-center gap-3">
+                  <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+                  <div class="leading-dense">
+                    <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+                    <span class="block text-sm text-paragraph">
+                      <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
-              <p class="text-paragraph">
-                This is a section of some simple filler text, also known as placeholder text. It shares some
-                characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                sample of fonts or generate text for testing.
-              </p>
-            </awc-card>
-          </awc-carousel-item>
-          <!-- quote - end -->
-        </awc-carousel>
+                <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+                <p class="text-paragraph">
+                  This is a section of some simple filler text, also known as placeholder text. It shares some
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display a
+                  sample of fonts or generate text for testing.
+                </p>
+              </awc-card>
+            </awc-carousel-item>
+            <!-- quote - end -->
+          </awc-carousel>
+        </div>
       </div>
     </div>
     <style>
-      @media screen and (max-width: 767px) {
-        .testimonial-carousel::part(navigation) {
-          grid-area: pagination;
-          display: flex;
-          justify-content: center;
-          grid-row: auto;
-          gap: 1rem;
-          padding: 1rem 0;
-        }
-      }
+
     </style>
   `
 };

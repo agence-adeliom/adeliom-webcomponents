@@ -78,6 +78,7 @@
     "composed-offset-position": "^0.0.4",
     "lit": "^3.0.0",
     "qr-creator": "^1.0.0",
+    "swiper": "^11.0.3",
     "unpic": "^3.10.1"
   },
   "devDependencies": {
