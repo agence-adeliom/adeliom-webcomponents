@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/agence-adeliom/awc/compare/v1.1.0...v1.1.1) (2023-11-02)
+
+
+### Bug Fixes
+
+* align code ([8164b61](https://github.com/agence-adeliom/awc/commit/8164b617317ba12232f98983561143d61068c690))
+* Update Plop generator with stories ([3e9eae6](https://github.com/agence-adeliom/awc/commit/3e9eae6feb8602caa00223f5ed1fee0f5ed7876f))
+
 ## [1.1.0](https://github.com/agence-adeliom/awc/compare/v1.0.4...v1.1.0) (2023-09-25)
 
 
