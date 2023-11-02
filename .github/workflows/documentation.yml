@@ -20,6 +20,7 @@ jobs:
       - run: npm ci --legacy-peer-deps
       - run: npm run verify
       - run: npm run build
+      - run: npm run storybook:build
       - name: Fix permissions
         run: |
           chmod -c -R +rX "storybook-static/" | while read line; do
