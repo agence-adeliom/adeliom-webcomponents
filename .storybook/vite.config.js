@@ -44,11 +44,17 @@ const awcPlugin = () => {
       const outputDir = path.relative(process.cwd(), config.build.outDir);
       execSync(`cem analyze --litelement --outdir "${outputDir}"`, { stdio: 'inherit' });
       execSync(`node scripts/make-icons.js --outdir ${path.resolve(__dirname, 'static')}`, { stdio: 'inherit' });
+      execSync(`node scripts/make-icons.js --outdir ${outputDir}`, { stdio: 'inherit' });
+      execSync(`node scripts/make-react.js --outdir ${outputDir}`, { stdio: 'inherit' });
+      execSync(`node scripts/make-themes.js --outdir ${outputDir}`, { stdio: 'inherit' });
     },
     buildStart: () => {
       const outputDir = path.relative(process.cwd(), config.build.outDir);
       execSync(`cem analyze --litelement --outdir "${outputDir}"`, { stdio: 'inherit' });
       execSync(`node scripts/make-icons.js --outdir ${path.resolve(__dirname, 'static')}`, { stdio: 'inherit' });
+      execSync(`node scripts/make-icons.js --outdir ${outputDir}`, { stdio: 'inherit' });
+      execSync(`node scripts/make-react.js --outdir ${outputDir}`, { stdio: 'inherit' });
+      execSync(`node scripts/make-themes.js --outdir ${outputDir}`, { stdio: 'inherit' });
     }
   };
 };
