@@ -11,7 +11,7 @@ export default {
 export const NavBar1: StoryObj = {
   name: 'NavBar 1',
   render: () => html`
-    <div class="container mx-auto bg-white dark:bg-neutral-950 py-4 flex items-center justify-between">
+    <div class="container mx-auto bg-white dark:bg-neutral-950 py-4 flex items-center justify-between px-4 lg:px-0">
         <!-- Logo start -->
         <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
             <svg
@@ -112,7 +112,8 @@ export const NavBar1: StoryObj = {
 
     <awc-drawer
             placement="start"
-            class="menu-drawer">
+            class="menu-drawer"
+            label="Logo">
         <nav class="gap-12 flex flex-col">
             <a
                     href="#"
@@ -137,14 +138,13 @@ export const NavBar1: StoryObj = {
         const drawerMenu = document.querySelector('.menu-drawer');
         const openButtonStart = document.querySelector('.menu-opener');
         openButtonStart.addEventListener('click', () => drawerMenu.show());
-    </script>\`
-  `
+    </script>`
 };
 
 export const NavBar2: StoryObj = {
     name: 'NavBar 2',
     render: () => html`
-      <div class="container mx-auto bg-white dark:bg-neutral-950 py-4 flex items-center justify-between">
+      <div class="container mx-auto bg-white dark:bg-neutral-950 py-4 flex items-center justify-between px-4 lg:px-0">
           <!-- Logo start -->
           <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
               <svg
@@ -253,7 +253,8 @@ export const NavBar2: StoryObj = {
 
       <awc-drawer
               placement="start"
-              class="menu-drawer">
+              class="menu-drawer"
+              label="Logo">
           <nav class="gap-12 flex flex-col">
               <a
                       href="#"
@@ -283,17 +284,20 @@ export const NavBar2: StoryObj = {
             align-items:center;
         }
       </style>
-      <script >
+
+      <script>
           const drawerMenu = document.querySelector('.menu-drawer');
-          const openButtonStart = document.querySelector('.menu-opener');
-          openButtonStart.addEventListener('click', () => drawerMenu.show());
+          const openButtonsStart = document.querySelectorAll('.menu-opener');
+          openButtonsStart.forEach(openButton => {
+            openButton.addEventListener('click', () => drawerMenu.show());
+          });
       </script>`
   };
 
   export const NavBar3: StoryObj = {
     name: 'NavBar 3',
     render: () => html`
-      <div class="container mx-auto bg-white dark:bg-neutral-950 py-4 flex items-center justify-between">
+      <div class="container mx-auto bg-white dark:bg-neutral-950 py-4 flex items-center justify-between px-4 lg:px-0">
           <!-- Logo start -->
           <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
               <svg
@@ -368,44 +372,69 @@ export const NavBar2: StoryObj = {
 
           <!-- Burger icon start -->
           <div class="text-lg lg:hidden">
-              <awc-icon name="list"></awc-icon>
+            <awc-icon-button name="list" label="Open menu" class="menu-opener"></awc-icon-button>
           </div>
       </div>
-        <div class="bg-neutral-100 dark:bg-neutral-950 w-full">
-    <div class="container mx-auto  py-4 flex items-center justify-between">
-        <div class="flex items-center gap-10">
-            <div class="hidden lg:block">
-                <awc-button variant="text" size="large">
-                    <awc-icon slot="prefix" name="list"></awc-icon>
-                    Menu
-                </awc-button>
-            </div>
-            <nav class="hidden gap-12 lg:flex">
-              <a
-              href="#"
-              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
-              >Home</a>
-              <a
-              href="#"
-              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
-              >Home</a>
-              <a
-              href="#"
-              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
-              >Home</a>
-              <a
-              href="#"
-              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
-              >Home</a>
-              </nav>
-        </div>
-        <div class="flex items-center gap-6">
-            <awc-icon name="search"></awc-icon>
-            <awc-icon name="person"></awc-icon>
-            <awc-icon name="bag"></awc-icon>
+      <div class="bg-neutral-100 dark:bg-neutral-950 w-full hidden lg:block">
+        <div class="container mx-auto  py-4 flex items-center justify-between">
+          <div class="flex items-center gap-10">
+              <div class="hidden lg:block">
+                  <awc-button label="Open menu" class="menu-opener" variant="text" size="large">
+                      <awc-icon slot="prefix" name="list"></awc-icon>
+                      Menu
+                  </awc-button>
+              </div>
+              <nav class="hidden gap-12 lg:flex">
+                <a
+                href="#"
+                class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+                >Home</a>
+                <a
+                href="#"
+                class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+                >Home</a>
+                <a
+                href="#"
+                class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+                >Home</a>
+                <a
+                href="#"
+                class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+                >Home</a>
+                </nav>
+          </div>
+          <div class="flex items-center gap-6">
+              <awc-icon name="search"></awc-icon>
+              <awc-icon name="person"></awc-icon>
+              <awc-icon name="bag"></awc-icon>
+          </div>
         </div>
       </div>
-    </div>
+
+      <awc-drawer
+              placement="start"
+              class="menu-drawer"
+              label="Logo"
+              >
+          <nav class="gap-12 flex flex-col">
+              <a
+                      href="#"
+                      class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+              >Home</a>
+              <a
+                      href="#"
+                      class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+              >Home</a>
+              <a
+                      href="#"
+                      class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+              >Home</a>
+              <a
+                      href="#"
+                      class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+              >Home</a>
+          </nav>
+      </awc-drawer>
 
       <style>
         awc-button::part(base) {
@@ -415,5 +444,13 @@ export const NavBar2: StoryObj = {
             display: flex;
             align-items:center;
         }
-      </style>`
+      </style>
+      
+      <script>
+          const drawerMenu = document.querySelector('.menu-drawer');
+          const openButtonsStart = document.querySelectorAll('.menu-opener');
+          openButtonsStart.forEach(openButton => {
+            openButton.addEventListener('click', () => drawerMenu.show());
+          });
+      </script>`
   };
