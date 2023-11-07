@@ -38,7 +38,7 @@ export const TopNavBar2: StoryObj = {
     name: 'TopNavBar 2',
     render: () => html`
         <div class="w-full border-b border-inputTextColor">
-            <div class="container mx-auto flex flex-col lg:flex-row items-start gap-6 lg:items-center lg:justify-end py-4 lg:py-2 max-lg:pl-1 max-lg:pr-4">
+            <div class="container mx-auto flex flex-col gap-4 lg:flex-row items-start lg:items-center lg:justify-end p-4 lg:py-2 lg:px-0">
                 <div class="flex items-center gap-1">
                     <awc-icon slot="prefix" name="truck" class="mr-1"></awc-icon>
                     <p class="text-paragraph font-semibold">
@@ -57,7 +57,7 @@ export const TopNavBar2: StoryObj = {
                         paragraph
                     </p>
                 </div>
-                <awc-rating label="Rating" readonly showRate value="5"></awc-rating>
+                <awc-rating label="Rating" readonly showRate value="5" class="mt-2 lg:mt-0"></awc-rating>
             </div>
         </div>
     `
