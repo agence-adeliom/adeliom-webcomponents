@@ -11,10 +11,10 @@ export default {
 export const MegaMenu1: StoryObj = {
     name: 'MegaMenu 1',
     render: () => html`
-        <div class="w-full border-b border-inputTextColor py-6 max-lg:px-4">
+        <div class="w-full border-b border-inputTextColor py-10 lg:py-6 max-lg:px-4">
             <div class="container mx-auto grid grid-cols-4 gap-6">
                 <!-- Column 1 start -->                  
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-4">
                         <div>
@@ -49,7 +49,7 @@ export const MegaMenu1: StoryObj = {
                 <!-- Column 1 end -->  
 
                 <!-- Column 2 start -->  
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-4">
                         <div>
@@ -84,7 +84,7 @@ export const MegaMenu1: StoryObj = {
                 <!-- Column 2 end -->  
 
                 <!-- Column 3 start -->
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-4">
                         <div>
@@ -119,7 +119,7 @@ export const MegaMenu1: StoryObj = {
                 <!-- Column 3 end -->     
                 
                 <!-- Column 4 start -->     
-                <div class="col-span-full lg:col-span-1 bg-neutral-100 p-4 lg:p-6 flex flex-col justify-between">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 bg-neutral-100 p-4 lg:p-6 flex flex-col justify-between">
                     <!-- title - start -->
                     <span class="group flex gap-4">
                         <div>
@@ -141,10 +141,10 @@ export const MegaMenu1: StoryObj = {
 export const MegaMenu2: StoryObj = {
     name: 'MegaMenu 2',
     render: () => html`
-        <div class="w-full border-b border-inputTextColor py-6 max-lg:px-4">
+        <div class="w-full border-b border-inputTextColor py-10 lg:py-6 max-lg:px-4">
             <div class="container mx-auto grid grid-cols-4 gap-6">
                 <!-- Column 1 start -->                  
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-2">
                         <div
@@ -179,7 +179,7 @@ export const MegaMenu2: StoryObj = {
                 <!-- Column 1 end -->  
 
                 <!-- Column 2 start -->  
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-2">
                         <div
@@ -214,7 +214,7 @@ export const MegaMenu2: StoryObj = {
                 <!-- Column 2 end -->  
 
                 <!-- Column 3 start -->
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-2">
                         <div
@@ -249,7 +249,7 @@ export const MegaMenu2: StoryObj = {
                 <!-- Column 3 end -->     
                 
                 <!-- Column 4 start -->     
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-2">
                         <div
@@ -290,10 +290,10 @@ export const MegaMenu2: StoryObj = {
 export const MegaMenu3: StoryObj = {
     name: 'MegaMenu 3',
     render: () => html`
-        <div class="w-full border-b border-inputTextColor py-6 max-lg:px-4">
+        <div class="w-full border-b border-inputTextColor py-10 lg:py-6 max-lg:px-4">
             <div class="container mx-auto grid grid-cols-4 gap-6">
                 <!-- Column 1 start -->                  
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- title - start -->
                     <span class="group flex gap-2">
                         <div>
@@ -308,7 +308,7 @@ export const MegaMenu3: StoryObj = {
                 <!-- Column 1 end -->  
 
                 <!-- Column 2 start -->  
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-2">
                         <div
@@ -349,7 +349,7 @@ export const MegaMenu3: StoryObj = {
                 <!-- Column 2 end -->  
 
                 <!-- Column 3 start -->
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-2">
                         <div
@@ -390,7 +390,7 @@ export const MegaMenu3: StoryObj = {
                 <!-- Column 3 end -->     
                 
                 <!-- Column 4 start -->     
-                <div class="col-span-full lg:col-span-1 flex flex-col gap-6">
+                <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
                     <!-- link - start -->
                     <a href="#" class="group flex gap-2">
                         <div
