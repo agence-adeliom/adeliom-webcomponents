@@ -62,6 +62,10 @@ export default css`
     transition: var(--awc-transition-fast) scale;
   }
 
+  .rating__rate--hidden {
+    display: none;
+  }
+
   .rating__symbol--hover {
     scale: 1.2;
   }

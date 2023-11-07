@@ -63,6 +63,9 @@ export default class AWCRating extends AWCElement {
   /** Disables the rating. */
   @property({ type: Boolean, reflect: true }) disabled = false;
 
+  /** Show the rate. */
+  @property({ type: Boolean, reflect: true }) showRate = false;
+
   /**
    * A function that customizes the symbol to be rendered. The first and only argument is the rating's current value.
    * The function should return a string containing trusted HTML of the symbol to render at the specified value. Works
@@ -223,6 +226,8 @@ export default class AWCRating extends AWCElement {
       displayValue = this.isHovering ? this.hoverValue : this.value;
     }
 
+    const isShowRate = this.showRate ? true : false;
+
     return html`
       <div
         part="base"
@@ -302,6 +307,9 @@ export default class AWCRating extends AWCElement {
               </span>
             `;
           })}
+        </span>
+        <span class=${classMap({'rating__rate--hidden': !isShowRate})}>
+          ${displayValue} / 5
         </span>
       </div>
     `;
