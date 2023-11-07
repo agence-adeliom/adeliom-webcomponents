@@ -308,7 +308,7 @@ export default class AWCRating extends AWCElement {
             `;
           })}
         </span>
-        <span class=${classMap({'rating__rate--hidden': !isShowRate})}>
+        <span class=${classMap({'rating__rate--hidden': !isShowRate, 'rating__rate': isShowRate})}>
           ${displayValue} / 5
         </span>
       </div>

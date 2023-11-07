@@ -66,6 +66,13 @@ export default css`
     display: none;
   }
 
+  .rating__rate {
+    font-size: var(--awc-font-size-small);
+    display: flex;
+    align-items: center;
+    margin-left: .5rem;
+  }
+
   .rating__symbol--hover {
     scale: 1.2;
   }
