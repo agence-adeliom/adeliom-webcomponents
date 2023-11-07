@@ -125,6 +125,22 @@ export const Disabled: Story = {
   }
 };
 
+export const ShowValue: Story = {
+  name: 'Show value',
+  args: {
+    label: 'Rating',
+    value: 3,
+    'show-rate': true
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: `Use the \`show-rate\` attribute to display the rating value.`
+      }
+    }
+  }
+};
+
 export const DetectingHover: Story = {
   name: 'Detecting Hover',
   render: () =>

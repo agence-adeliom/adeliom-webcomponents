@@ -25,6 +25,7 @@ import type { CSSResultGroup } from 'lit';
  *  rating's value would be if the user were to commit to the hovered value.
  *
  * @csspart base - The component's base wrapper.
+ * @csspart value - The value wrapper.
  *
  * @cssproperty --symbol-color - The inactive color for symbols.
  * @cssproperty --symbol-color-active - The active color for symbols.
@@ -63,8 +64,8 @@ export default class AWCRating extends AWCElement {
   /** Disables the rating. */
   @property({ type: Boolean, reflect: true }) disabled = false;
 
-  /** Show the rate. */
-  @property({ type: Boolean, reflect: true }) showRate = false;
+  /** Show the rating value. */
+  @property({ type: Boolean, reflect: true, attribute: 'show-rate' }) showRate = false;
 
   /**
    * A function that customizes the symbol to be rendered. The first and only argument is the rating's current value.
@@ -308,9 +309,9 @@ export default class AWCRating extends AWCElement {
             `;
           })}
         </span>
-        <span class=${classMap({'rating__rate--hidden': !isShowRate, 'rating__rate': isShowRate})}>
-          ${displayValue} / 5
-        </span>
+        ${this.showRate ? html`<span part="value" class=${classMap({'rating__rate': true})}>
+          ${displayValue} / ${this.max}
+        </span>` : ''}
       </div>
     `;
   }

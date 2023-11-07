@@ -57,7 +57,7 @@ export const TopNavBar2: StoryObj = {
                         paragraph
                     </p>
                 </div>
-                <awc-rating label="Rating" readonly showRate value="5" class="mt-2 lg:mt-0"></awc-rating>
+                <awc-rating label="Rating" readonly show-rate value="5" class="mt-2 lg:mt-0"></awc-rating>
             </div>
         </div>
     `

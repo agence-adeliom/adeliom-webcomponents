@@ -179,9 +179,8 @@ export const Reviews2: StoryObj = {
 
             <div class="mb-0.5 flex items-center gap-2">
               <!-- stars - start -->
-              <awc-rating label="Rating" readonly value="4"></awc-rating>
+              <awc-rating label="Rating" readonly show-rate value="4"></awc-rating>
               <!-- stars - end -->
-              <span class="text-sm">4/5</span>
             </div>
 
             <span class="block text-sm text-neutral-500">Bases on 27 reviews</span>

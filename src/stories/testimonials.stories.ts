@@ -19,8 +19,7 @@ const heading = html`<!-- text - start -->
       magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
     >
     <div class="flex justify-center items-center gap-2">
-      <awc-rating label="Rating" readonly value="4"></awc-rating>
-      <span class="text-sm">4/5</span>
+      <awc-rating label="Rating" readonly show-rate value="4"></awc-rating>
     </div>
   </div>
   <!-- text - end -->`;
@@ -164,8 +163,7 @@ export const Testimonials2: StoryObj = {
           </a>
 
           <div class="flex justify-center items-center gap-2">
-            <awc-rating label="Rating" readonly value="4.5"></awc-rating>
-            <span class="text-sm">4.5/5</span>
+            <awc-rating label="Rating" readonly show-rate value="4.5"></awc-rating>
           </div>
         </div>
         <!-- logo - end -->
@@ -335,8 +333,7 @@ export const Testimonials4: StoryObj = {
             dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
           >
           <div class="flex justify-center items-center md:justify-start gap-2 mb-6">
-            <awc-rating label="Rating" readonly value="4"></awc-rating>
-            <span class="text-sm">4/5</span>
+            <awc-rating label="Rating" readonly show-rate value="4"></awc-rating>
           </div>
           <awc-button variant="primary" outline class="w-full md:w-auto">Button</awc-button>
         </div>

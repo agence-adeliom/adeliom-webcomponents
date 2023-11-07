@@ -18,6 +18,7 @@ export default css`
     display: inline-flex;
     border-radius: var(--awc-border-radius-medium);
     vertical-align: middle;
+    align-items: center;
   }
 
   .rating:focus {
@@ -37,6 +38,7 @@ export default css`
     color: var(--symbol-color);
     white-space: nowrap;
     cursor: pointer;
+    align-items: center;
   }
 
   .rating__symbols > * {
@@ -62,15 +64,10 @@ export default css`
     transition: var(--awc-transition-fast) scale;
   }
 
-  .rating__rate--hidden {
-    display: none;
-  }
-
   .rating__rate {
-    font-size: var(--awc-font-size-small);
-    display: flex;
-    align-items: center;
+    font-size: calc(var(--symbol-size) * 0.75);
     margin-left: .5rem;
+    line-height: 0;
   }
 
   .rating__symbol--hover {
