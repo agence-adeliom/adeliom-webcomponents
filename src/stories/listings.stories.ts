@@ -171,6 +171,31 @@ export const Listing1: StoryObj = {
     </script>`
 }
 
+export const Listing2: StoryObj = {
+    name: 'Listing 2',
+    render: () => html`
+        <div class="container mx-auto px-4 md:px-8">
+            ${heading}
+            
+            <!-- Filters details start -->
+            <div class="w-full flex items-center justify-between">
+                <awc-typography class="text-paragraph">
+                    <strong>XX</strong> résultats
+                </awc-typography>
+                <awc-dropdown>
+                    <awc-button slot="trigger" caret="" variant="ghost">Dropdown</awc-button>
+                    <awc-menu>
+                        <awc-menu-item>Dropdown Item 1</awc-menu-item>
+                        <awc-menu-item>Dropdown Item 2</awc-menu-item>
+                        <awc-menu-item>Dropdown Item 3</awc-menu-item>
+                    </awc-menu>
+                </awc-dropdown>                
+            </div>
+            <!-- Filters details end -->            
+        </div>
+    `
+}
+
 export const Listing3: StoryObj = {
     name: 'Listing 3',
     render: () => html`
