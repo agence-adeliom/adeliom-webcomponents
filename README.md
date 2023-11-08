@@ -57,7 +57,7 @@ npm run build
 
 ### Creating New Components
 
-To scaffold a new component, run the following command, replacing `awc-tag-name` with the desired tag name.
+To scaffold a new component, run the following command, replacing `tag-name` with the desired tag name.
 
 ```bash
 npm run create awc-tag-name

@@ -22,7 +22,7 @@ const heading = html`<!-- text - start -->
   <!-- text - end -->`;
 
 const card = html`
-    <awc-card class="col-span-full lg:col-span-1 shadow-lg" bordered="">
+    <awc-card class="col-span-full col-span lg:col-span-1 shadow-lg" bordered="">
         <img
             slot="image"
             alt="A kitten sits patiently between a terracotta pot and decorative grasses."
