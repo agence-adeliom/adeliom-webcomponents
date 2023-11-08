@@ -15,14 +15,14 @@ const heading = html`<!-- text - start -->
       Our Team
     </awc-typography>
     <awc-typography class="mx-auto max-w-screen-md text-center text-paragraph"
-      >This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a 
+      >This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a
       real written text but is random or otherwise generated.</awc-typography
     >
   </div>
   <!-- text - end -->`;
 
 const card = html`
-    <awc-card class="col-span-full col-span lg:col-span-1 shadow-lg" bordered="">
+    <awc-card class="col-span-full col-span lg:col-span-1"  shadow bordered >
         <img
             slot="image"
             alt="A kitten sits patiently between a terracotta pot and decorative grasses."
@@ -38,13 +38,15 @@ const card = html`
                 Lorem ipsum
             </span>
 
-            <footer>
-                <awc-button variant="ghost" size="medium">
-                    <awc-icon slot="suffix" name="arrow-right"></awc-icon>
-                    Button
-                </awc-button>
-            </footer>
+
         </div>
+
+        <footer slot="footer">
+            <awc-button variant="ghost" size="medium">
+                <awc-icon slot="suffix" name="arrow-right"></awc-icon>
+                Button
+            </awc-button>
+        </footer>
     </awc-card>
 `;
 
@@ -62,7 +64,7 @@ export const Listing1: StoryObj = {
                 placeholder="Ex : Exemple"
                 clearable="">
                     <awc-icon name="geo-alt" slot="prefix"></awc-icon>
-                                    
+
                     <awc-option value="option-1">Option 1</awc-option>
                     <awc-option value="option-2">Option 2</awc-option>
                     <awc-option value="option-3">Option 3</awc-option>
@@ -72,7 +74,7 @@ export const Listing1: StoryObj = {
                 </awc-select>
                 <!-- End select 1 -->
 
-                <!-- Start select 2 -->                
+                <!-- Start select 2 -->
                 <awc-select
                 placeholder="Ex : Exemple"
                 multiple=""
@@ -86,7 +88,7 @@ export const Listing1: StoryObj = {
                 </awc-select>
                 <!-- End select 2 -->
 
-                <!-- Start select 3 -->                
+                <!-- Start select 3 -->
                 <awc-select
                 placeholder="Ex : Exemple"
                 multiple=""
@@ -103,22 +105,22 @@ export const Listing1: StoryObj = {
                 <awc-button variant="primary" size="medium" outline="" class="filtersTab-opener">
                     <awc-icon slot="suffix" name="sliders"></awc-icon>
                     Tous les filtres
-                </awc-button>                            
+                </awc-button>
             </div>
             <!-- Filters end -->
-            
+
             <!-- Start other filters tab -->
             <awc-drawer placement="start" class="filtersTab-drawer">
                 <div slot="label">
                     Tous les filtres
                 </div>
                 <awc-details style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;" class="flex flex-col" summary="Lorem ipsum sit dolor">
-                    <awc-checkbox class="w-full">Possible option</awc-checkbox>   
-                    <awc-checkbox class="w-full">Possible option</awc-checkbox>   
-                    <awc-checkbox class="w-full">Possible option</awc-checkbox>   
-                    <awc-checkbox class="w-full">Possible option</awc-checkbox>   
-                </awc-details>                
-            
+                    <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                    <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                    <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                    <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                </awc-details>
+
                 <awc-details style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;" summary="Lorem ipsum sit dolor">
                     <awc-radio-group name="radio">
                         <awc-radio value="1">Possible option</awc-radio>
@@ -127,7 +129,7 @@ export const Listing1: StoryObj = {
                         <awc-radio value="4">Possible option</awc-radio>
                     </awc-radio-group>
                 </awc-details>
-            </awc-drawer>  
+            </awc-drawer>
             <!-- End other filters tab -->
 
             <!-- Filters details start -->
@@ -142,21 +144,21 @@ export const Listing1: StoryObj = {
                         <awc-menu-item>Dropdown Item 2</awc-menu-item>
                         <awc-menu-item>Dropdown Item 3</awc-menu-item>
                     </awc-menu>
-                </awc-dropdown>                
+                </awc-dropdown>
             </div>
             <!-- Filters details end -->
 
             <!-- Grid start -->
-            <div class="grid grid-cols-3 gap-6 mt-8 relative">   
-                ${card}                     
-                ${card}                     
-                ${card}                     
-                ${card}                     
-                ${card}                     
-                ${card}                     
-                ${card}                     
-                ${card}                     
-                ${card}                     
+            <div class="grid grid-cols-3 gap-6 mt-8 relative">
+                ${card}
+                ${card}
+                ${card}
+                ${card}
+                ${card}
+                ${card}
+                ${card}
+                ${card}
+                ${card}
             </div>
             <!-- Grid end -->
 
@@ -207,21 +209,21 @@ export const Listing3: StoryObj = {
         <div class="grid grid-cols-12 gap-6 max-w-[1360px] mx-auto">
             <div class="col-span-3">
                 <!-- Filters start -->
-                <awc-details style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;" class="flex flex-col" summary="Lorem ipsum sit dolor">
-                    <awc-checkbox class="w-full">Possible option</awc-checkbox>   
-                    <awc-checkbox class="w-full">Possible option</awc-checkbox>   
-                    <awc-checkbox class="w-full">Possible option</awc-checkbox>   
-                    <awc-checkbox class="w-full">Possible option</awc-checkbox>   
-                </awc-details>                
-            
-                <awc-details style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;" summary="Lorem ipsum sit dolor">
+                <awc-details style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;" class="flex flex-col" summary="Lorem ipsum sit dolor" open>
+                    <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                    <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                    <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                    <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                </awc-details>
+
+                <awc-details style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;" summary="Lorem ipsum sit dolor" open>
                     <awc-radio-group name="radio">
                         <awc-radio value="1">Possible option</awc-radio>
                         <awc-radio value="2">Possible option</awc-radio>
                         <awc-radio value="3">Possible option</awc-radio>
                         <awc-radio value="4">Possible option</awc-radio>
                     </awc-radio-group>
-                </awc-details>                    
+                </awc-details>
                 <!-- Filters end -->
             </div>
             <div class="col-span-9">
@@ -237,21 +239,21 @@ export const Listing3: StoryObj = {
                             <awc-menu-item>Dropdown Item 2</awc-menu-item>
                             <awc-menu-item>Dropdown Item 3</awc-menu-item>
                         </awc-menu>
-                    </awc-dropdown>                
+                    </awc-dropdown>
                 </div>
                 <!-- Filters details end -->
 
                 <!-- Grid start -->
                 <div class="grid grid-cols-3 gap-6">
-                    ${card}                     
-                    ${card}                     
-                    ${card}                     
-                    ${card}                     
-                    ${card}                     
-                    ${card}                     
-                    ${card}                     
-                    ${card}                     
-                    ${card} 
+                    ${card}
+                    ${card}
+                    ${card}
+                    ${card}
+                    ${card}
+                    ${card}
+                    ${card}
+                    ${card}
+                    ${card}
                 </div>
                 <!-- Grid end -->
 
