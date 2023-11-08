@@ -43,7 +43,7 @@ export default function (plop) {
       },
       {
         type: 'add',
-        path: '../../src/components/{{ tagWithoutPrefix tag }}/{{ tagWithoutPrefix tag }}.ts',
+        path: '../../src/components/{{ tagWithoutPrefix tag }}/{{ tagWithoutPrefix tag }}.component.ts',
         templateFile: 'templates/component/component.hbs'
       },
       {
