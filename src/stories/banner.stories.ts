@@ -48,7 +48,7 @@ export const Banner2: StoryObj = {
           class="relative flex flex-wrap rounded-lg bg-primary-950 px-4 py-3 shadow-lg sm:flex-nowrap sm:items-center sm:justify-center sm:gap-3 sm:pr-8 md:px-8"
         >
           <div
-            class="order-1 mb-2 inline-block w-11/12 max-w-screen-sm text-sm text-paragraph dark:awc-theme-light sm:order-none sm:mb-0 sm:w-auto md:text-base"
+            class="order-1 mb-2 inline-block w-11/12 max-w-screen-sm text-sm text-neutral-200 sm:order-none sm:mb-0 sm:w-auto md:text-base"
           >
             This is a section of some simple filler text, also known as placeholder text.
           </div>
