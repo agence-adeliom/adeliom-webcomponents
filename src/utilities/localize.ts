@@ -26,6 +26,8 @@ export interface Translation extends DefaultTranslation {
   nextSlide: string;
   numOptionsSelected: (num: number) => string;
   previousSlide: string;
+  previous: string;
+  next: string;
   progress: string;
   remove: string;
   resize: string;

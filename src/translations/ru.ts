@@ -23,6 +23,8 @@ const translation: Translation = {
     return `выбрано ${num} варианта`;
   },
   previousSlide: 'Предыдущий слайд',
+  previous: 'Предыдущий',
+  next: 'Следующий',
   progress: 'Прогресс',
   remove: 'Удалить',
   resize: 'Изменить размер',

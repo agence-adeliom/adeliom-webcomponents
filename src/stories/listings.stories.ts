@@ -161,7 +161,7 @@ export const Listing1: StoryObj = {
             <!-- Grid end -->
 
             <!-- Pagination start -->
-            Pagination go here
+            <awc-pagination total="20" current="1"></awc-pagination>
             <!-- Pagination end -->
         </div>
     <script>
@@ -176,7 +176,7 @@ export const Listing2: StoryObj = {
     render: () => html`
         <div class="container mx-auto px-4 md:px-8">
             ${heading}
-            
+
             <!-- Filters details start -->
             <div class="w-full flex items-center justify-between">
                 <awc-typography class="text-paragraph">

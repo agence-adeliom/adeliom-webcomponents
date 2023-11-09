@@ -23,6 +23,8 @@ const translation: Translation = {
     return `נבחרו ${num} אפשרויות`;
   },
   previousSlide: 'Previous slide',
+  previous: 'קודם',
+  next: 'הבא',
   progress: 'התקדמות',
   remove: 'לְהַסִיר',
   resize: 'שנה גודל',

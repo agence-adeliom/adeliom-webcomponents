@@ -35,9 +35,6 @@ export default class AWCPagination extends AWCElement {
     /** Indicates the previous page label. */
     @property({ type: String, reflect: true, attribute: 'previous-label' }) previousLabel?: string = 'Précédent';
 
-
-
-
     /** Go to page on click on a pagination number */
     private handleClick = (pageNumber: number) => {
         if (pageNumber !== this.current) {
@@ -67,7 +64,6 @@ export default class AWCPagination extends AWCElement {
 
     render() {
       const counter = Array.from(Array(this.total).keys());
-      console.log(this.current === this.total)
         return html`
             <div part="base"
                  class=${classMap({

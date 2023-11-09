@@ -8,7 +8,9 @@ const translation: Translation = {
   $name: 'English (United Kingdom)',
 
   selectAColorFromTheScreen: 'Select a colour from the screen',
-  toggleColorFormat: 'Toggle colour format'
+  toggleColorFormat: 'Toggle colour format',
+  previous: 'Previous',
+  next: 'Next',
 };
 
 registerTranslation(translation);

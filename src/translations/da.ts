@@ -23,6 +23,8 @@ const translation: Translation = {
     return `${num} valgt`;
   },
   previousSlide: 'Forrige dias',
+  previous: 'Forrige',
+  next: 'Næste',
   progress: 'Status',
   remove: 'Fjern',
   resize: 'Tilpas størrelse',

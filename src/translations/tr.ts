@@ -23,6 +23,8 @@ const translation: Translation = {
     return `${num} seçenek seçildi`;
   },
   previousSlide: 'Bir onceki slayt',
+  previous: 'Önceki',
+  next: 'Sonraki',
   progress: 'İlerleme',
   remove: 'Kaldır',
   resize: 'Yeniden boyutlandır',

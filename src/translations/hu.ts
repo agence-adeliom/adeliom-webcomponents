@@ -23,6 +23,8 @@ const translation: Translation = {
     return `${num} lehetőség kiválasztva`;
   },
   previousSlide: 'Előző dia',
+  previous: 'Előző',
+  next: 'Következő',
   progress: 'Folyamat',
   remove: 'Eltávolítás',
   resize: 'Átméretezés',

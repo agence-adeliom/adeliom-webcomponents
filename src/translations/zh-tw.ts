@@ -23,6 +23,8 @@ const translation: Translation = {
     return `${num} 選擇項目`;
   },
   previousSlide: '上一張幻燈片',
+  previous: '上一個',
+  next: '下一個',
   progress: '進度',
   remove: '移除',
   resize: '調整大小',

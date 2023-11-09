@@ -23,6 +23,8 @@ const translation: Translation = {
     return `${num} Optionen ausgewählt`;
   },
   previousSlide: 'Vorherige Folie',
+  previous: 'Vorherige',
+  next: 'Nächste',
   progress: 'Fortschritt',
   remove: 'Entfernen',
   resize: 'Größe ändern',

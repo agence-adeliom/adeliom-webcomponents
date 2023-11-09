@@ -34,3 +34,4 @@ export type { AWCStartEvent } from './awc-start';
 export type { AWCTabHideEvent } from './awc-tab-hide';
 export type { AWCTabShowEvent } from './awc-tab-show';
 export type { AWCAbortEvent } from './awc-abort';
+export type { AWCPageChange } from './awc-page-change';

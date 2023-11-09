@@ -23,6 +23,8 @@ const translation: Translation = {
     return `${num} alternativ valda`;
   },
   previousSlide: 'Föregående bild',
+  previous: 'Föregående',
+  next: 'Nästa',
   progress: 'Framsteg',
   remove: 'Ta bort',
   resize: 'Ändra storlek',

@@ -23,6 +23,8 @@ const translation: Translation = {
     return `${num} گزینه انتخاب شده است`;
   },
   previousSlide: 'اسلاید قبلی',
+  previous: 'قبلی',
+  next: 'بعدی',
   progress: 'پیشرفت',
   remove: 'حذف',
   resize: 'تغییر اندازه',

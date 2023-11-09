@@ -23,6 +23,8 @@ const translation: Translation = {
     return `${num} options selected`;
   },
   previousSlide: 'Previous slide',
+  previous: 'Previous',
+  next: 'Next',
   progress: 'Progress',
   remove: 'Remove',
   resize: 'Resize',

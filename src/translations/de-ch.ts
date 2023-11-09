@@ -8,6 +8,8 @@ const translation: Translation = {
   $name: 'Deutsch (Schweiz)',
 
   close: 'Schliessen',
+  previous: 'Vorherige',
+  next: 'Nächste',
   resize: 'Grösse ändern'
 };
 
