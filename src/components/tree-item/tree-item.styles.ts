@@ -39,7 +39,7 @@ export default css`
     font-family: var(--awc-font-sans);
     font-size: var(--awc-font-size-medium);
     font-weight: var(--awc-font-weight-normal);
-    line-height: var(--awc-line-height-dense);
+    line-height: var(--awc-line-height-normal);
     letter-spacing: var(--awc-letter-spacing-normal);
   }
 

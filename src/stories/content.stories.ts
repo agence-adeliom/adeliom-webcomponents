@@ -18,11 +18,11 @@ export const Content1: StoryObj = {
             <awc-image layout="filled" aspectRatio="1.33333" src="https://placehold.co/800x600"></awc-image>
           </div>
 
-          <awc-typography no-margin>
-            <h1 class="mb-4 text-center text-2xl font-bold sm:text-3xl md:mb-6 md:text-left text-title">
-              <span class="text-base font-semibold text-paragraph leading-dense uppercase block mb-2">Headline</span>
+          <div>
+            <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
               Erat suspendisse maecena
-            </h1>
+            </h3>
 
             <p class="mb-6 md:mb-8 text-paragraph ">
               This is a section of some simple filler text, also known as placeholder text. It shares some
@@ -41,7 +41,9 @@ export const Content1: StoryObj = {
               text is dummy text which has no meaning however looks very similar to real text.
             </p>
 
-            <h2 class="mb-2 text-center text-xl font-semibold text-title sm:text-2xl md:mb-4 md:text-left">About us</h2>
+            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+              About us
+            </h4>
 
             <p class="mb-6 md:mb-8 text-paragraph ">
               This is a section of some simple filler text, also known as placeholder text. It shares some
@@ -54,7 +56,7 @@ export const Content1: StoryObj = {
               <awc-button variant="primary">View all news</awc-button>
               <awc-button variant="primary" outline>View all news</awc-button>
             </div>
-          </awc-typography>
+          </div>
         </div>
       </div>
     </div>
@@ -67,11 +69,11 @@ export const Content2: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
         <div class="grid gap-8 md:grid-cols-2 lg:gap-32">
-          <awc-typography no-margin>
-            <h1 class="mb-4 text-center text-2xl font-bold sm:text-3xl md:mb-6 md:text-left text-title">
-              <span class="text-base font-semibold text-paragraph leading-dense uppercase block mb-2">Headline</span>
+          <div>
+            <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
               Erat suspendisse maecena
-            </h1>
+            </h3>
 
             <p class="mb-6 md:mb-8 text-paragraph ">
               This is a section of some simple filler text, also known as placeholder text. It shares some
@@ -84,13 +86,15 @@ export const Content2: StoryObj = {
               <a
                 href="#"
                 class="text-primary underline transition duration-100 hover:text-primary-600 active:text-primary-700"
-                >random</a
+              >random</a
               >
               or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler
               text is dummy text which has no meaning however looks very similar to real text.
             </p>
 
-            <h2 class="mb-2 text-center text-xl font-semibold text-title sm:text-2xl md:mb-4 md:text-left">About us</h2>
+            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+              About us
+            </h4>
 
             <p class="mb-6 md:mb-8 text-paragraph ">
               This is a section of some simple filler text, also known as placeholder text. It shares some
@@ -103,7 +107,7 @@ export const Content2: StoryObj = {
               <awc-button variant="primary">View all news</awc-button>
               <awc-button variant="primary" outline>View all news</awc-button>
             </div>
-          </awc-typography>
+          </div>
 
           <div class="relative overflow-hidden shadow-lg aspect-ratio-4/3">
             <awc-image layout="filled" aspectRatio="1.33333" src="https://placehold.co/800x600"></awc-image>
@@ -120,11 +124,11 @@ export const Content3: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
         <div class="flex flex-col gap-8 justify-center max-w-3xl mx-auto">
-          <awc-typography no-margin>
-            <h1 class="mb-4 text-center text-2xl font-bold sm:text-3xl md:mb-6 md:text-left text-title">
-              <span class="text-base font-semibold text-paragraph leading-dense uppercase block mb-2">Headline</span>
+          <div>
+            <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
               Erat suspendisse maecena
-            </h1>
+            </h3>
 
             <p class="mb-6 md:mb-8 text-paragraph ">
               This is a section of some simple filler text, also known as placeholder text. It shares some
@@ -137,13 +141,15 @@ export const Content3: StoryObj = {
               <a
                 href="#"
                 class="text-primary underline transition duration-100 hover:text-primary-600 active:text-primary-700"
-                >random</a
+              >random</a
               >
               or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler
               text is dummy text which has no meaning however looks very similar to real text.
             </p>
 
-            <h2 class="mb-2 text-center text-xl font-semibold text-title sm:text-2xl md:mb-4 md:text-left">About us</h2>
+            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+              About us
+            </h4>
 
             <p class="mb-6 md:mb-8 text-paragraph ">
               This is a section of some simple filler text, also known as placeholder text. It shares some
@@ -156,7 +162,7 @@ export const Content3: StoryObj = {
               <awc-button variant="primary">View all news</awc-button>
               <awc-button variant="primary" outline>View all news</awc-button>
             </div>
-          </awc-typography>
+          </div>
 
           <div class="relative overflow-hidden shadow-lg aspect-ratio-16/9">
             <awc-image layout="filled" aspectRatio="1.77777" src="https://placehold.co/800x450"></awc-image>
@@ -173,14 +179,12 @@ export const Content4: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
         <div class="grid md:grid-cols-3">
-          <awc-typography no-margin>
-            <h1 class="mb-4 text-center text-2xl font-bold sm:text-3xl md:mb-6 md:text-left text-title">
-              <span class="text-base font-semibold text-paragraph leading-dense uppercase block mb-2">Headline</span>
-              Erat suspendisse maecena
-            </h1>
-          </awc-typography>
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            Erat suspendisse maecena
+          </h3>
 
-          <awc-typography no-margin class="md:col-span-2">
+          <div class="md:col-span-2">
             <p class="mb-6 md:mb-8 text-paragraph ">
               This is a section of some simple filler text, also known as placeholder text. It shares some
               characteristics of a real written text but is random or otherwise generated. It may be used to display a
@@ -192,7 +196,7 @@ export const Content4: StoryObj = {
               <a
                 href="#"
                 class="text-primary underline transition duration-100 hover:text-primary-600 active:text-primary-700"
-                >random</a
+              >random</a
               >
               or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler
               text is dummy text which has no meaning however looks very similar to real text.
@@ -202,7 +206,7 @@ export const Content4: StoryObj = {
               <awc-button variant="primary">View all news</awc-button>
               <awc-button variant="primary" outline>View all news</awc-button>
             </div>
-          </awc-typography>
+          </div>
         </div>
       </div>
     </div>

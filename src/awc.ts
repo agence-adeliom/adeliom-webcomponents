@@ -57,7 +57,6 @@ export { default as AWCTooltip } from './components/tooltip/tooltip.js';
 export { default as AWCTree } from './components/tree/tree.js';
 export { default as AWCTreeItem } from './components/tree-item/tree-item.js';
 export { default as AWCVisuallyHidden } from './components/visually-hidden/visually-hidden.js';
-export { default as AWCTypography } from './components/typography/typography.js';
 export { default as AWCImage } from './components/image/image.js';
 export { default as AWCOembed } from './components/oembed/oembed.js';
 export { default as AWCPagination } from './components/pagination/pagination.js';

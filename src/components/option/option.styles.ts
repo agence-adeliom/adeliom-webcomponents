@@ -50,7 +50,7 @@ export default css`
   .option__label {
     flex: 1 1 auto;
     display: inline-block;
-    line-height: var(--awc-line-height-dense);
+    line-height: var(--awc-line-height-normal);
   }
 
   .option .option__check {

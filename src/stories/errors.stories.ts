@@ -72,31 +72,35 @@ export const Errors1: StoryObj = {
         <!-- logo - end -->
 
         <div class="mb-8 md:mb-12 max-w-screen-md ">
-          <awc-typography type="h4" class="mb-10 md:mb-12 text-title">
-            <span class="text-base font-bold leading-dense text-paragraph uppercase block">Headline</span>
+          <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua.
-          </awc-typography>
+          </h4>
 
-          <awc-typography type="h5" class="mb-4 text-title"> Lorem ipsum dolor sit amet </awc-typography>
+          <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+            Lorem ipsum dolor sit amet
+          </h5>
 
-          <awc-typography class="mb-4 md:mb-10 text-paragraph">
+          <div class="mb-4 md:mb-10 text-paragraph">
             <ul class="list-disc list-inside">
               <li>Lorem ipsum dolor sit amet</li>
               <li>Lorem ipsum dolor sit amet</li>
               <li>Lorem ipsum dolor sit amet</li>
             </ul>
-          </awc-typography>
+          </div>
 
-          <awc-typography type="h5" class="mb-4 text-title"> Lorem ipsum dolor sit amet </awc-typography>
+          <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+            Lorem ipsum dolor sit amet
+          </h5>
 
-          <awc-typography class="mb-8 md:mb-10 text-paragraph">
+          <div class="mb-8 md:mb-10 text-paragraph">
             <ul class="list-disc list-inside">
               <li>Lorem ipsum dolor sit amet</li>
               <li>Lorem ipsum dolor sit amet</li>
               <li>Lorem ipsum dolor sit amet</li>
             </ul>
-          </awc-typography>
+          </div>
 
           <awc-button variant="primary" outline class="w-full md:w-auto">Lorem ipsum dolor</awc-button>
         </div>
@@ -171,31 +175,35 @@ export const Errors2: StoryObj = {
           <!-- logo - end -->
 
           <div class="mb-8 md:mb-12 max-w-screen-md ">
-            <awc-typography type="h4" class="mb-10 md:mb-12 text-title">
-              <span class="text-base font-bold leading-dense text-paragraph uppercase block">Headline</span>
+            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12">
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
-            </awc-typography>
+            </h4>
 
-            <awc-typography type="h5" class="mb-4 text-title"> Lorem ipsum dolor sit amet </awc-typography>
+            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+              Lorem ipsum dolor sit amet
+            </h5>
 
-            <awc-typography class="mb-4 md:mb-10 text-paragraph">
+            <div class="mb-4 md:mb-10 text-paragraph">
               <ul class="list-disc list-inside">
                 <li>Lorem ipsum dolor sit amet</li>
                 <li>Lorem ipsum dolor sit amet</li>
                 <li>Lorem ipsum dolor sit amet</li>
               </ul>
-            </awc-typography>
+            </div>
 
-            <awc-typography type="h5" class="mb-4 text-title"> Lorem ipsum dolor sit amet </awc-typography>
+            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+              Lorem ipsum dolor sit amet
+            </h5>
 
-            <awc-typography class="mb-8 md:mb-10 text-paragraph">
+            <div class="mb-8 md:mb-10 text-paragraph">
               <ul class="list-disc list-inside">
                 <li>Lorem ipsum dolor sit amet</li>
                 <li>Lorem ipsum dolor sit amet</li>
                 <li>Lorem ipsum dolor sit amet</li>
               </ul>
-            </awc-typography>
+            </div>
 
             <awc-button variant="primary" outline class="w-full md:w-auto">Lorem ipsum dolor</awc-button>
           </div>
@@ -296,31 +304,35 @@ export const Errors3: StoryObj = {
           <!-- logo - end -->
 
           <div class="mb-8 md:mb-12 max-w-screen-md ">
-            <awc-typography type="h4" class="mb-10 md:mb-12 text-title">
-              <span class="text-base font-bold leading-dense text-paragraph uppercase block">Headline</span>
+            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12">
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
-            </awc-typography>
+            </h4>
 
-            <awc-typography type="h5" class="mb-4 text-title"> Lorem ipsum dolor sit amet </awc-typography>
+            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+              Lorem ipsum dolor sit amet
+            </h5>
 
-            <awc-typography class="mb-4 md:mb-10 text-paragraph">
+            <div class="mb-4 md:mb-10 text-paragraph">
               <ul class="list-disc list-inside">
                 <li>Lorem ipsum dolor sit amet</li>
                 <li>Lorem ipsum dolor sit amet</li>
                 <li>Lorem ipsum dolor sit amet</li>
               </ul>
-            </awc-typography>
+            </div>
 
-            <awc-typography type="h5" class="mb-4 text-title"> Lorem ipsum dolor sit amet </awc-typography>
+            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+              Lorem ipsum dolor sit amet
+            </h5>
 
-            <awc-typography class="mb-8 md:mb-10 text-paragraph">
+            <div class="mb-8 md:mb-10 text-paragraph">
               <ul class="list-disc list-inside">
                 <li>Lorem ipsum dolor sit amet</li>
                 <li>Lorem ipsum dolor sit amet</li>
                 <li>Lorem ipsum dolor sit amet</li>
               </ul>
-            </awc-typography>
+            </div>
 
             <awc-button variant="primary" outline class="w-full md:w-auto">Lorem ipsum dolor</awc-button>
           </div>
@@ -348,11 +360,9 @@ export const Errors4: StoryObj = {
 
         <!-- content - start -->
         <div class="relative flex flex-col items-center justify-center p-8 md:p-16">
-          <awc-typography type="h3" class="mb-2 text-center" no-margin transform="uppercase"
-            ><strong class="font-bold">404</strong></awc-typography
-          >
-          <awc-typography class="mb-8 text-center text-paragraph" no-margin
-            >The page you’re looking for doesn’t exist.</awc-typography
+          <h3 class="mb-6 text-3x-large md:text-4x-large xl:text-5x-large text-center uppercase text-neutral-0 dark:text-neutral-1000 font-bold">404</h3>
+          <p class="mb-8 text-center text-neutral-0 dark:text-neutral-1000"
+            >The page you’re looking for doesn’t exist.</p
           >
 
           <awc-button variant="default" size="large">Go home</awc-button>
@@ -427,23 +437,21 @@ export const Errors5: StoryObj = {
         <!-- logo - end -->
 
         <div class="max-w-screen-sm text-center ">
-          <awc-typography type="h3" class="mb-7 md:mb-[4.5rem] text-title" no-margin>
+          <h3 type="h3" class="mb-6 md:mb-9 text-3x-large md:text-4x-large xl:text-5x-large font-semibold text-title">
             Lorem ipsum dolor sit amet.
-          </awc-typography>
+          </h3>
 
-          <awc-typography class="text-paragraph">
-            <p class="text-lg mb-6 md:mb-10">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
-            </p>
+          <p class="text-lg mb-6 md:mb-10 text-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
 
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit<br />
-              sed do eiusmod tempor <br />
-              incididunt ut labore et <br />
-              dolore magna aliqua.
-            </p>
-          </awc-typography>
+          <p class="text-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit<br />
+            sed do eiusmod tempor <br />
+            incididunt ut labore et <br />
+            dolore magna aliqua.
+          </p>
         </div>
       </div>
     </div>
@@ -514,24 +522,24 @@ export const Errors6: StoryObj = {
         <!-- logo - end -->
 
         <div class="max-w-screen-sm text-center ">
-          <awc-typography type="h3" class="mb-2 text-title" no-margin> Lorem ipsum dolor sit amet. </awc-typography>
-          <awc-typography type="h4" class="mb-7 md:mb-[4.5rem] text-title" no-margin>
-            Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-          </awc-typography>
+          <h3 type="h3" class="mb-6 md:mb-9 text-3x-large md:text-4x-large xl:text-5x-large leading-dense font-semibold text-title">
+            Lorem ipsum dolor sit amet.
+            <span class="text-x-large md:text-2x-large xl:text-3x-large leading-dense font-semibold block mt-2">
+              Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+            </span>
+          </h3>
 
-          <awc-typography class="text-paragraph">
-            <p class="text-lg mb-6 md:mb-10">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
-            </p>
+          <p class="text-lg mb-6 md:mb-10 text-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
 
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit<br />
-              sed do eiusmod tempor <br />
-              incididunt ut labore et <br />
-              dolore magna aliqua.
-            </p>
-          </awc-typography>
+          <p class="text-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit<br />
+            sed do eiusmod tempor <br />
+            incididunt ut labore et <br />
+            dolore magna aliqua.
+          </p>
         </div>
       </div>
     </div>

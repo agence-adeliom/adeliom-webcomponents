@@ -10,13 +10,13 @@ export default {
 
 const heading = html`<!-- text - start -->
   <div class="mb-8 md:mb-12">
-    <awc-typography type="h2" class="text-center mb-4 text-title">
-      <span class="text-base font-bold leading-dense text-paragraph uppercase block">Headline</span>
-      Meet our Team
-    </awc-typography>
-    <awc-typography class="mx-auto max-w-screen-md text-center text-paragraph"
-      >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+    <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+      <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+      Consectetur adipiscing elit
+    </h3>
+    <p class="mx-auto max-w-screen-md text-center text-paragraph"
+    >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
     >
   </div>
   <!-- text - end -->`;

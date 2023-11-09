@@ -4,19 +4,19 @@ import type { Meta, StoryObj } from '@storybook/web-components';
 export default {
   title: 'Block/Listing',
   parameters: {
-    layout: ''
+    layout: 'padded'
   }
 } satisfies Meta;
 
 const heading = html`<!-- text - start -->
   <div class="mb-8 md:mb-10">
-    <awc-typography type="h2" class="text-center mb-4 text-title">
-      <span class="text-base font-bold leading-dense text-paragraph uppercase block">Headline</span>
-      Our Team
-    </awc-typography>
-    <awc-typography class="mx-auto max-w-screen-md text-center text-paragraph"
-      >This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a
-      real written text but is random or otherwise generated.</awc-typography
+    <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+      <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+      Eiusmod tempor incididunt
+    </h3>
+    <p class="mx-auto max-w-screen-md text-center text-paragraph"
+    >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
     >
   </div>
   <!-- text - end -->`;
@@ -60,9 +60,9 @@ export const Listing1: StoryObj = {
             <div class="flex flex-row gap-2 items-center justify-center">
                 <!-- Start select 1 -->
                 <awc-select
-                multiple=""
+                multiple
                 placeholder="Ex : Exemple"
-                clearable="">
+                clearable>
                     <awc-icon name="geo-alt" slot="prefix"></awc-icon>
 
                     <awc-option value="option-1">Option 1</awc-option>
@@ -77,8 +77,8 @@ export const Listing1: StoryObj = {
                 <!-- Start select 2 -->
                 <awc-select
                 placeholder="Ex : Exemple"
-                multiple=""
-                clearable="">
+                multiple
+                clearable>
                     <awc-option value="option-1">Option 1</awc-option>
                     <awc-option value="option-2">Option 2</awc-option>
                     <awc-option value="option-3">Option 3</awc-option>
@@ -91,8 +91,8 @@ export const Listing1: StoryObj = {
                 <!-- Start select 3 -->
                 <awc-select
                 placeholder="Ex : Exemple"
-                multiple=""
-                clearable="">
+                multiple
+                clearable>
                     <awc-option value="option-1">Option 1</awc-option>
                     <awc-option value="option-2">Option 2</awc-option>
                     <awc-option value="option-3">Option 3</awc-option>
@@ -102,7 +102,7 @@ export const Listing1: StoryObj = {
                 </awc-select>
                 <!-- End select 3 -->
 
-                <awc-button variant="primary" size="medium" outline="" class="filtersTab-opener">
+                <awc-button variant="primary" size="medium" outline class="filtersTab-opener">
                     <awc-icon slot="suffix" name="sliders"></awc-icon>
                     Tous les filtres
                 </awc-button>
@@ -134,11 +134,11 @@ export const Listing1: StoryObj = {
 
             <!-- Filters details start -->
             <div class="w-full flex items-center justify-between mt-12">
-                <awc-typography class="text-paragraph">
+                <p class="text-paragraph">
                     <strong>XX</strong> résultats
-                </awc-typography>
+                </p>
                 <awc-dropdown>
-                    <awc-button slot="trigger" caret="" variant="ghost">Dropdown</awc-button>
+                    <awc-button slot="trigger" caret variant="ghost">Dropdown</awc-button>
                     <awc-menu>
                         <awc-menu-item>Dropdown Item 1</awc-menu-item>
                         <awc-menu-item>Dropdown Item 2</awc-menu-item>
@@ -183,19 +183,19 @@ export const Listing2: StoryObj = {
 
             <!-- Filters details start -->
             <div class="w-full flex items-center justify-between">
-                <awc-typography class="text-paragraph">
-                    <strong>XX</strong> résultats
-                </awc-typography>
+                <p class="text-paragraph">
+                  <strong>XX</strong> résultats
+                </p>
                 <awc-dropdown>
-                    <awc-button slot="trigger" caret="" variant="ghost">Dropdown</awc-button>
+                    <awc-button slot="trigger" caret variant="ghost">Dropdown</awc-button>
                     <awc-menu>
                         <awc-menu-item>Dropdown Item 1</awc-menu-item>
                         <awc-menu-item>Dropdown Item 2</awc-menu-item>
                         <awc-menu-item>Dropdown Item 3</awc-menu-item>
                     </awc-menu>
-                </awc-dropdown>                
+                </awc-dropdown>
             </div>
-            <!-- Filters details end -->            
+            <!-- Filters details end -->
         </div>
     `
 }
@@ -229,11 +229,11 @@ export const Listing3: StoryObj = {
             <div class="col-span-9">
                 <!-- Filters details start -->
                 <div class="w-full flex items-center justify-between">
-                    <awc-typography class="text-paragraph">
+                    <p class="text-paragraph">
                         <strong>XX</strong> résultats
-                    </awc-typography>
+                    </p>
                     <awc-dropdown>
-                        <awc-button slot="trigger" caret="" variant="ghost">Dropdown</awc-button>
+                        <awc-button slot="trigger" caret variant="ghost">Dropdown</awc-button>
                         <awc-menu>
                             <awc-menu-item>Dropdown Item 1</awc-menu-item>
                             <awc-menu-item>Dropdown Item 2</awc-menu-item>

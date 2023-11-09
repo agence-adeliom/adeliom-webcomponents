@@ -22,11 +22,11 @@ export const Cta1: StoryObj = {
 
           <!-- content - start -->
           <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
-            <awc-typography no-margin>
-              <h1 class="mb-4 text-2xl font-bold sm:text-3xl text-title md:mb-6">
-                <span class="text-base font-semibold text-paragraph leading-dense uppercase  block mb-2">Headline</span>
+
+              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
                 Erat suspendisse maecena
-              </h1>
+              </h4>
 
               <p class="mb-6 md:mb-8 text-paragraph">
                 This is a section of some simple filler text, also known as placeholder text. It shares some
@@ -39,7 +39,7 @@ export const Cta1: StoryObj = {
                 <awc-button variant="primary" class="w-full md:w-auto">Button</awc-button>
                 <awc-button variant="primary" outline class="bg-white w-full md:w-auto">Button</awc-button>
               </div>
-            </awc-typography>
+
           </div>
           <!-- content - end -->
         </div>
@@ -62,11 +62,11 @@ export const Cta2: StoryObj = {
 
           <!-- content - start -->
           <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
-            <awc-typography no-margin>
-              <h1 class="mb-4 text-2xl font-bold sm:text-3xl text-title md:mb-6">
-                <span class="text-base font-semibold text-paragraph leading-dense uppercase  block mb-2">Headline</span>
+
+              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
                 Erat suspendisse maecena
-              </h1>
+              </h4>
 
               <p class="mb-6 md:mb-8 text-paragraph">
                 This is a section of some simple filler text, also known as placeholder text. It shares some
@@ -79,7 +79,7 @@ export const Cta2: StoryObj = {
                 <awc-button variant="primary" class="w-full md:w-auto">Button</awc-button>
                 <awc-button variant="primary" outline class="bg-white w-full md:w-auto">Button</awc-button>
               </div>
-            </awc-typography>
+
           </div>
           <!-- content - end -->
         </div>
@@ -94,10 +94,10 @@ export const Cta3: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
         <div class="mx-auto flex max-w-2xl flex-col items-center text-center">
-          <h1 class="mb-4 text-2xl font-bold sm:text-3xl text-title md:mb-6">
-            <span class="text-base font-semibold text-paragraph leading-dense uppercase  block mb-2">Headline</span>
+          <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
             Erat suspendisse maecena
-          </h1>
+          </h4>
 
           <p class="mb-6 md:mb-8 text-paragraph">
             This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
@@ -123,10 +123,10 @@ export const Cta4: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="flex flex-col items-center sm:justify-between gap-5 bg-neutral-100 p-6 sm:flex-row md:p-10">
           <div>
-            <awc-typography type="h5" class="text-title" no-margin>Erat suspendisse maecena</awc-typography>
-            <awc-typography no-margin class="text-paragraph"
-              >This is a section of some simple filler text, also known as placeholder text.</awc-typography
-            >
+            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense mb-1 text-title">
+              Erat suspendisse maecena
+            </h5>
+            <p class="text-paragraph">This is a section of some simple filler text, also known as placeholder text.</p>
           </div>
           <div class="flex w-full sm:w-auto gap-4 flex-nowrap">
             <awc-button variant="primary" class="w-full md:w-auto">Button</awc-button>
@@ -145,8 +145,10 @@ export const Cta5: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="flex flex-col items-center sm:justify-between gap-5 sm:flex-row">
           <div>
-            <awc-typography type="h5" class="text-title" no-margin>Erat suspendisse maecena</awc-typography>
-            <awc-typography no-margin  class="text-paragraph">This is a section of some simple filler text, also known as placeholder text.</awc-typography>
+            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense mb-1 text-title">
+              Erat suspendisse maecena
+            </h5>
+            <p class="text-paragraph">This is a section of some simple filler text, also known as placeholder text.</p>
           </div>
           <div class="flex w-full sm:w-auto gap-4 flex-nowrap">
             <awc-button variant="primary" class="w-full md:w-auto">Button</awc-button>

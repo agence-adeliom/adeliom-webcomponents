@@ -19,11 +19,10 @@ export const Newsletter1: StoryObj = {
           </div>
 
           <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8">
-            <awc-typography>
-              <h1 class="mb-4 text-2xl font-bold sm:text-3xl text-title md:mb-6">
-                <span class="text-base font-semibold text-paragraph leading-dense uppercase  block mb-2">Headline</span>
+              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
                 Erat suspendisse maecena
-              </h1>
+              </h4>
 
               <form class="flex w-full gap-2 mb-3">
                 <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
@@ -34,7 +33,6 @@ export const Newsletter1: StoryObj = {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
               </p>
-            </awc-typography>
           </div>
         </div>
       </div>
@@ -49,11 +47,11 @@ export const Newsletter2: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="flex overflow-hidden bg-neutral-100 md:h-64">
           <div class="flex w-full flex-col p-4 sm:p-8">
-            <awc-typography class="text-center mx-auto max-w-md">
-              <h1 class="mb-4 text-2xl font-bold sm:text-3xl text-title md:mb-6">
-                <span class="text-base font-semibold text-paragraph leading-dense uppercase  block mb-2">Headline</span>
+            <div class="text-center mx-auto max-w-lg">
+              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
                 Erat suspendisse maecena
-              </h1>
+              </h4>
 
               <form class="flex w-full gap-2 mb-3">
                 <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
@@ -63,7 +61,7 @@ export const Newsletter2: StoryObj = {
               <p class="text-xs text-neutral-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
               </p>
-            </awc-typography>
+            </div>
           </div>
         </div>
       </div>
@@ -78,13 +76,13 @@ export const Newsletter3: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="flex overflow-hidden bg-neutral-100">
           <div class="flex w-full flex-col p-4 sm:p-8 md:flex-row md:items-center">
-            <awc-typography class="text-center mx-auto max-w-md md:w-1/2 md:text-left">
-              <h1 class="mb-4 text-2xl font-bold sm:text-3xl text-title md:mb-6">
-                <span class="text-base font-semibold text-paragraph leading-dense uppercase  block mb-2">Headline</span>
+            <div class="text-center mx-auto max-w-lg md:w-1/2 md:text-left">
+              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
                 Erat suspendisse maecena
-              </h1>
-            </awc-typography>
-            <awc-typography class="text-center mx-auto max-w-md md:w-1/2 md:text-right">
+              </h4>
+            </div>
+            <div class="text-center mx-auto max-w-md md:w-1/2 md:text-right md:mt-12">
               <form class="flex w-full gap-2 mb-3">
                 <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
                 <awc-button variant="ghost" outline>Sign up</awc-button>
@@ -93,7 +91,7 @@ export const Newsletter3: StoryObj = {
               <p class="text-xs text-neutral-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
               </p>
-            </awc-typography>
+            </div>
           </div>
         </div>
       </div>

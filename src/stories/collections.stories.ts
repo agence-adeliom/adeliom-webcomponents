@@ -14,10 +14,10 @@ export const Collections1: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
         <div class="mb-6 flex items-center justify-between gap-4">
-          <awc-typography type="h2" class="text-title">
-            <span class="text-base font-semibold text-paragraph leading-dense uppercase block">Headline</span>
-            Erat suspendisse maecena
-          </awc-typography>
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            Collections
+          </h3>
           <awc-button href="#" variant="primary" outline class="hidden sm:block">Show more</awc-button>
         </div>
 
@@ -108,13 +108,13 @@ export const Collections2: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
-          <awc-typography type="h2" class="text-center text-title">
-            <span class="text-base font-semibold text-paragraph leading-dense uppercase block">Headline</span>
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
             Erat suspendisse maecena
-          </awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center text-paragraph"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+          </h3>
+          <p class="mx-auto max-w-screen-md text-center text-paragraph"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
           >
         </div>
         <!-- text - end -->
@@ -136,7 +136,9 @@ export const Collections2: StoryObj = {
             </div>
 
             <div class="flex flex-col h-full justify-end awc-theme-dark">
-              <awc-typography class="text-title" type="h3">Lorem ipsum dolor</awc-typography>
+              <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+                Erat suspendisse maecena
+              </h3>
               <div>
                 <awc-button variant="primary">Button</awc-button>
               </div>
@@ -159,7 +161,9 @@ export const Collections2: StoryObj = {
             </div>
 
             <div class="flex flex-col h-full justify-end awc-theme-dark">
-              <awc-typography class="text-title" type="h3">Lorem ipsum dolor</awc-typography>
+              <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+                Erat suspendisse maecena
+              </h3>
               <div>
                 <awc-button variant="primary">Button</awc-button>
               </div>
@@ -178,10 +182,10 @@ export const Collections3: StoryObj = {
       <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
           <div class="container mx-auto px-4 md:px-8">
               <div class="mb-6 flex items-center justify-between gap-4">
-                  <awc-typography type="h2" class="text-title">
-                      <span class="text-base font-semibold text-paragraph leading-dense uppercase block">Headline</span>
-                      Erat suspendisse maecena
-                  </awc-typography>
+                <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+                  <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+                  Erat suspendisse maecena
+                </h3>
               </div>
               <awc-carousel
                       navigation
@@ -375,10 +379,10 @@ export const Collections4: StoryObj = {
       <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
           <div class="container mx-auto px-4 md:px-8">
               <div class="mb-6 flex items-center justify-between gap-4">
-                  <awc-typography type="h2" class="text-title">
-                      <span class="text-base font-semibold text-paragraph leading-dense uppercase block">Headline</span>
-                      Erat suspendisse maecena
-                  </awc-typography>
+                <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+                  <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+                  Erat suspendisse maecena
+                </h3>
               </div>
               <awc-carousel
                       navigation
@@ -540,10 +544,10 @@ export const Collections5: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
       <div class="container mx-auto px-4 md:px-8">
         <div class="mb-6 flex items-center justify-between gap-4">
-          <awc-typography type="h2" class="text-title">
-            <span class="text-base font-semibold text-paragraph leading-dense uppercase block">Headline</span>
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
             Erat suspendisse maecena
-          </awc-typography>
+          </h3>
         </div>
         <awc-carousel
           navigation

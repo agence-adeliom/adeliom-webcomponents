@@ -13,14 +13,14 @@ export const Heading1: StoryObj = {
   render: () => html`
     <div>
       <div class="container mx-auto py-5x-large px-medium md:p-7x-large">
-        <awc-typography type="h2" no-margin class="text-center mb-4 text-title">
-          <span class="text-base font-semibold leading-dense text-paragraph uppercase block">Headline</span>
-          Heading title
-        </awc-typography>
-        <awc-typography class="mx-auto max-w-screen-md text-center text-paragraph" no-margin>
-          This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
-          of a real written text but is random or otherwise generated.
-        </awc-typography>
+        <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+          <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+          Consectetur adipiscing elit
+        </h3>
+        <p class="mx-auto max-w-screen-md text-center text-paragraph"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
+        >
       </div>
     </div>
   `
@@ -31,14 +31,14 @@ export const Heading2: StoryObj = {
   render: () => html`
     <div>
       <div class="container mx-auto bg-neutral-100 py-5x-large px-medium md:p-7x-large">
-        <awc-typography type="h2" no-margin class="text-center mb-4 text-title">
-          <span class="text-base font-semibold leading-dense text-paragraph uppercase block">Headline</span>
-          Heading title
-        </awc-typography>
-        <awc-typography class="mx-auto max-w-screen-md text-center text-paragraph" no-margin>
-          This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
-          of a real written text but is random or otherwise generated.
-        </awc-typography>
+        <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+          <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+          Consectetur adipiscing elit
+        </h3>
+        <p class="mx-auto max-w-screen-md text-center text-paragraph"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
+        >
       </div>
     </div>
   `
@@ -50,14 +50,14 @@ export const Heading3: StoryObj = {
     <div>
       <div class="container mx-auto">
         <div class="py-6 md:py-8 lg:py-12">
-          <awc-typography type="h2" no-margin class="mb-4 text-title">
-            <span class="text-base font-semibold leading-dense text-paragraph uppercase block">Headline</span>
-            Heading title
-          </awc-typography>
-          <awc-typography class="max-w-screen-md text-paragraph" no-margin>
-            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
-            of a real written text but is random or otherwise generated.
-          </awc-typography>
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            Consectetur adipiscing elit
+          </h3>
+          <p class="max-w-screen-md text-paragraph"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
+          >
         </div>
       </div>
     </div>

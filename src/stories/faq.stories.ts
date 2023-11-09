@@ -15,13 +15,13 @@ export const Faq1: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
-          <awc-typography type="h2" class="text-center mb-4">
-            <span class="text-base font-bold leading-dense uppercase block">Headline</span>
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
             Frequently asked questions
-          </awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+          </h3>
+          <p class="mx-auto max-w-screen-md text-center text-paragraph"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
           >
         </div>
         <!-- text - end -->
@@ -39,14 +39,10 @@ export const Faq1: StoryObj = {
             >
               <awc-icon name="question"></awc-icon>
             </span>
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -56,14 +52,10 @@ export const Faq1: StoryObj = {
             >
               <awc-icon name="question"></awc-icon>
             </span>
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -73,14 +65,10 @@ export const Faq1: StoryObj = {
             >
               <awc-icon name="question"></awc-icon>
             </span>
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -90,14 +78,10 @@ export const Faq1: StoryObj = {
             >
               <awc-icon name="question"></awc-icon>
             </span>
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -107,14 +91,10 @@ export const Faq1: StoryObj = {
             >
               <awc-icon name="question"></awc-icon>
             </span>
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -124,14 +104,10 @@ export const Faq1: StoryObj = {
             >
               <awc-icon name="question"></awc-icon>
             </span>
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
         </div>
@@ -147,13 +123,13 @@ export const Faq2: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
-          <awc-typography type="h2" class="text-center mb-4">
-            <span class="text-base font-bold leading-dense uppercase block">Headline</span>
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
             Frequently asked questions
-          </awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+          </h3>
+          <p class="mx-auto max-w-screen-md text-center text-paragraph"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
           >
         </div>
         <!-- text - end -->
@@ -222,13 +198,13 @@ export const Faq3: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
-          <awc-typography type="h2" class="text-center mb-4">
-            <span class="text-base font-bold leading-dense uppercase block">Headline</span>
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
             Frequently asked questions
-          </awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+          </h3>
+          <p class="mx-auto max-w-screen-md text-center text-paragraph"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
           >
         </div>
         <!-- text - end -->
@@ -241,74 +217,50 @@ export const Faq3: StoryObj = {
         <div class="grid gap-x-8 gap-y-6 sm:grid-cols-2 md:gap-x-12 md:gap-y-10 xl:grid-cols-3 xl:gap-x-16 xl:gap-y-12">
           <!-- question - start -->
           <awc-card style="--padding: 0">
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
-            <awc-typography type="h6" renderHas="h3" class="mb-3 text-primary" no-margin
-              >Lorem ipsum sit dolor</awc-typography
-            >
-            <awc-typography
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
+            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.</p>
           </awc-card>
           <!-- question - end -->
         </div>
@@ -323,13 +275,13 @@ export const Faq4: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
-          <awc-typography type="h2" class="text-center mb-4">
-            <span class="text-base font-bold leading-dense uppercase block">Headline</span>
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
             Frequently asked questions
-          </awc-typography>
-          <awc-typography class="mx-auto max-w-screen-md text-center"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+          </h3>
+          <p class="mx-auto max-w-screen-md text-center text-paragraph"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
           >
         </div>
         <!-- text - end -->
@@ -346,20 +298,18 @@ export const Faq4: StoryObj = {
             style="--padding: 0; --background-color: transparent"
           >
             <div slot="header" class="border-b flex items-center justify-between pb-3">
-              <awc-typography type="h6" renderHas="h3" class="text-primary" no-margin
-                >Lorem ipsum sit dolor</awc-typography
-              >
+              <h5 class="m-0 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
               <span
                 class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-300 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-200 text-2xl"
               >
                 <awc-icon name="question"></awc-icon>
               </span>
             </div>
-            <awc-typography class="text-neutral-500 dark:text-neutral-200"
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <p class="pt-4 text-neutral-500 dark:text-neutral-200">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.
+            </p>
           </awc-card>
           <!-- question - end -->
 
@@ -369,20 +319,18 @@ export const Faq4: StoryObj = {
             style="--padding: 0; --background-color: transparent"
           >
             <div slot="header" class="border-b flex items-center justify-between pb-3">
-              <awc-typography type="h6" renderHas="h3" class="text-primary" no-margin
-                >Lorem ipsum sit dolor</awc-typography
-              >
+              <h5 class="m-0 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
               <span
                 class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-300 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-200 text-2xl"
               >
                 <awc-icon name="question"></awc-icon>
               </span>
             </div>
-            <awc-typography class="text-neutral-500 dark:text-neutral-200"
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <p class="pt-4 text-neutral-500 dark:text-neutral-200">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.
+            </p>
           </awc-card>
           <!-- question - end -->
 
@@ -392,20 +340,18 @@ export const Faq4: StoryObj = {
             style="--padding: 0; --background-color: transparent"
           >
             <div slot="header" class="border-b flex items-center justify-between pb-3">
-              <awc-typography type="h6" renderHas="h3" class="text-primary" no-margin
-                >Lorem ipsum sit dolor</awc-typography
-              >
+              <h5 class="m-0 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
               <span
                 class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-300 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-200 text-2xl"
               >
                 <awc-icon name="question"></awc-icon>
               </span>
             </div>
-            <awc-typography class="text-neutral-500 dark:text-neutral-200"
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <p class="pt-4 text-neutral-500 dark:text-neutral-200">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.
+            </p>
           </awc-card>
           <!-- question - end -->
 
@@ -415,20 +361,18 @@ export const Faq4: StoryObj = {
             style="--padding: 0; --background-color: transparent"
           >
             <div slot="header" class="border-b flex items-center justify-between pb-3">
-              <awc-typography type="h6" renderHas="h3" class="text-primary" no-margin
-                >Lorem ipsum sit dolor</awc-typography
-              >
+              <h5 class="m-0 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
               <span
                 class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-300 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-200 text-2xl"
               >
                 <awc-icon name="question"></awc-icon>
               </span>
             </div>
-            <awc-typography class="text-neutral-500 dark:text-neutral-200"
-              >Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+            <p class="pt-4 text-neutral-500 dark:text-neutral-200">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
               massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</awc-typography
-            >
+              ut.
+            </p>
           </awc-card>
           <!-- question - end -->
         </div>
@@ -446,13 +390,13 @@ export const Faq5: StoryObj = {
           <div class="md:col-span-2">
             <!-- text - start -->
             <div class="mb-5 md:mb-8">
-              <awc-typography type="h2" class="text-left mb-4">
-                <span class="text-base font-bold leading-dense uppercase block">Headline</span>
+              <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
                 Frequently asked questions
-              </awc-typography>
-              <awc-typography class="mx-auto max-w-screen-md text-left"
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+              </h3>
+              <p class="max-w-screen-md text-paragraph"
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
               >
             </div>
             <!-- text - end -->
@@ -534,13 +478,13 @@ export const Faq6: StoryObj = {
           <div class="md:col-span-3">
             <!-- text - start -->
             <div class="mb-5 md:mb-8">
-              <awc-typography type="h2" class="text-left mb-4">
-                <span class="text-base font-bold leading-dense uppercase block">Headline</span>
+              <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
                 Frequently asked questions
-              </awc-typography>
-              <awc-typography class="max-w-screen-md text-left"
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</awc-typography
+              </h3>
+              <p class="max-w-screen-md text-paragraph"
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
               >
             </div>
             <!-- text - end -->

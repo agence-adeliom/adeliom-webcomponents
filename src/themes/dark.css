@@ -37,10 +37,10 @@
   --awc-z-index-dropdown: 900;
   --awc-z-index-dialog: 800;
   --awc-z-index-drawer: 700;
-  --awc-line-height-looser: 260%;
-  --awc-line-height-loose: 220%;
-  --awc-line-height-normal: 180%;
-  --awc-line-height-dense: 140%;
+  --awc-line-height-looser: 180%;
+  --awc-line-height-loose: 160%;
+  --awc-line-height-normal: 140%;
+  --awc-line-height-dense: 120%;
   --awc-line-height-denser: 100%;
   --awc-letter-spacing-looser: 0.15em;
   --awc-letter-spacing-loose: 0.075em;
@@ -156,7 +156,7 @@
   --awc-stepper-border-radius: var(--awc-border-radius-pill);
   --awc-tooltip-padding-y: var(--awc-spacing-2x-small);
   --awc-tooltip-padding-x: var(--awc-spacing-x-small);
-  --awc-tooltip-line-height: var(--awc-line-height-dense);
+  --awc-tooltip-line-height: var(--awc-line-height-normal);
   --awc-tooltip-font-size: var(--awc-font-size-small);
   --awc-tooltip-font-weight: var(--awc-font-weight-normal);
   --awc-tooltip-font-family: var(--awc-font-sans);
