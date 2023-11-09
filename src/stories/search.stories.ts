@@ -11,11 +11,8 @@ export default {
 export const Search1: StoryObj = {
   name: 'Search 1',
   render: () =>
-    html`<div>
+    html`<awc-drawer placement="top" open style="--body-spacing: 0;--footer-spacing: 0;--size: 'fit-content'" class="search">
       <!-- search - start -->
-      <awc-button variant="text" size="small" class="top-6 right-6 absolute">
-        <awc-icon name="x-lg" class="text-base"></awc-icon>
-      </awc-button>
       <div class="container md:mx-auto">
         <div class="mx-4 md:mx-auto md:w-8/12  py-6 md:py-20">
           <h2 class="pb-10 text-center text-title text-3x-large md:text-4x-large lg:text-5x-large font-semibold leading-dense"> Je recherche ... </h2>
@@ -29,7 +26,7 @@ export const Search1: StoryObj = {
           </div>
         </div>
       </div>
-      <div class="bg-neutral-200">
+      <div slot="footer" class="bg-neutral-200 text-start">
         <div class="container py-10 md:py-20 mx-auto">
           <div class="mx-4 md:mx-auto md:md:w-8/12 ">
             <div class="flex max-md:flex-col gap-6">
@@ -58,5 +55,12 @@ export const Search1: StoryObj = {
         </div>
       </div>
       <!-- search - end -->
-    </div>`
+    </awc-drawer>
+    <awc-button>Open search</awc-button>
+    <script>
+      const drawer = document.querySelector('.search');
+      const openButton = drawer.nextElementSibling;
+
+      openButton.addEventListener('click', () => drawer.show());
+    </script>`
 };
