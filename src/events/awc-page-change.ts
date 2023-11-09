@@ -1,4 +1,4 @@
-export type AWCPageChange = CustomEvent<{ status?: number }>;
+export type AWCPageChange = CustomEvent<{ value: number }>;
 
 declare global {
   interface GlobalEventHandlersEventMap {

@@ -35,6 +35,8 @@ export const Primary: Story = {
   },
   render: () =>
     html`
-      <awc-pagination total="50" current="1" ></awc-pagination>
+      <div class="mx-auto max-w-screen-sm">
+        <awc-pagination total="50" current="10" ></awc-pagination>
+      </div>
     `
 };

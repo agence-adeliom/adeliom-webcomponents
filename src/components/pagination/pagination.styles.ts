@@ -26,4 +26,12 @@ export default css`
     margin: 0;
     padding: 0;
   }
+
+  .pagination__item--current {
+    color: var(--awc-color-primary-600);
+  }
+
+  .pagination__item--dots {
+    padding: 0 var(--awc-spacing-medium);
+  }
 `;
