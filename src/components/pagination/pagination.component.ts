@@ -43,16 +43,33 @@ export default class AWCPagination extends AWCElement {
 
     /** Go to page on click on a pagination number */
     private handleClick = (pageNumber: number) => {
-      this.emit('awc-page-change', {value: this.current});
+      if (pageNumber !== this.current) {
+        this.current = pageNumber
+        this.renderedPagination()
+
+        this.emit('awc-page-change', {value: this.current});
+      }
     };
 
     /** Go to next page on click on pagination next button */
     private nextPage = () => {
+      // if(this.current + 1 === this.total) {
+      //     return;
+      // }
+      this.current += 1
+      this.renderedPagination()
+
       this.emit('awc-page-change', {value: this.current});
     };
 
     /** Go to previous page on click on pagination previous button */
     private previousPage = () => {
+      if(this.current - 1 < 0) {
+        return;
+      }
+      this.current -= 1
+      this.renderedPagination()
+      
       this.emit('awc-page-change', {value: this.current});
     };
 
@@ -63,8 +80,68 @@ export default class AWCPagination extends AWCElement {
     };
 
     private renderedPagination = () => {
-      const paginationArray = this.range(1, this.total)
-      this.renderedPaginationArray = [...paginationArray]
+      const siblingCount: number = 1
+
+      // Get last three pages in array
+      const lastThreePages = this.range(
+        this.total - this.itemCount + 1,
+        this.total
+      );
+
+      // Get first three pages in array
+      const firstThreePages = this.range(1, 2);
+
+      // Get previous siblind index
+      const leftSiblingIndex = Math.max(this.current - siblingCount, 1);
+      
+      // Get next siblind index
+      const rightSiblingIndex = Math.min(this.current + siblingCount, this.total);
+
+      if(this.isMobile) {
+
+      } else {
+        if(this.total >= 6) {
+          this.shouldShowLeftDots = false;
+          this.shouldShowRightDots = false;        
+        } else {
+          this.shouldShowLeftDots = leftSiblingIndex >= 3 ;
+          this.shouldShowRightDots = rightSiblingIndex <= this.total - this.itemCount;
+        }
+      }
+
+      const firstPageIndex = 1;
+      const lastPageIndex = this.total;
+
+      if (!this.shouldShowLeftDots && this.shouldShowRightDots) {
+        // console.log('!shouldShowLeftDots && shouldShowRightDots')
+        
+        let leftRange = this.range(1, this.itemCount);
+        this.renderedPaginationArray = [...leftRange, '...', ...lastThreePages];
+      }
+
+      if (this.shouldShowLeftDots && !this.shouldShowRightDots) {
+        // console.log('shouldShowLeftDots && !shouldShowRightDots')
+
+        let rightRange = this.range(
+          this.total - this.itemCount + 1,
+          this.total
+        );
+
+        this.renderedPaginationArray = [...firstThreePages, '...', ...rightRange];
+      }      
+
+      if (this.shouldShowLeftDots && this.shouldShowRightDots) {
+        // console.log('shouldShowLeftDots && shouldShowRightDots')
+        let middleRange = this.range(leftSiblingIndex, rightSiblingIndex);
+        this.renderedPaginationArray = [firstPageIndex, '...', ...middleRange, '...', lastPageIndex];
+      }
+
+      if(!this.shouldShowLeftDots && !this.shouldShowRightDots) {
+        const test = this.range(1, this.total)
+        this.renderedPaginationArray = [...test]
+      }
+
+      console.log(this.shouldShowLeftDots)
     }
 
     render() {
@@ -95,6 +172,9 @@ export default class AWCPagination extends AWCElement {
 
             <ul part="items" class="pagination__items">
               ${this.renderedPaginationArray.map((pageNumber: any) => {
+                if (pageNumber === '...') {
+                  return html`<li class="pagination__item--dots">&#8230;</li>`;
+                }
                 return html`
                   <li ${pageNumber === this.current ? 'aria-current="page"' : ''}
                       class=${classMap({
@@ -104,7 +184,7 @@ export default class AWCPagination extends AWCElement {
                   >
                     <awc-button
                         variant="ghost"
-                        @click=${this.handleClick(pageNumber)}
+                        @click=${() => this.handleClick(pageNumber)}
                     >
                         ${pageNumber}
                     </awc-button>
