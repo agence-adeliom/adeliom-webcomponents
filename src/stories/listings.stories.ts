@@ -164,7 +164,7 @@ export const Listing1: StoryObj = {
 
             <!-- Pagination start -->
             <div class="mx-auto max-w-screen-sm py-10">
-                <awc-pagination total="50" current="1" ></awc-pagination>
+                <awc-pagination total="10" current="1" ></awc-pagination>
             </div>
             <!-- Pagination end -->
         </div>
@@ -259,7 +259,7 @@ export const Listing3: StoryObj = {
 
                 <!-- Pagination start -->
                 <div class="mx-auto max-w-screen-sm py-10">
-                    <awc-pagination total="50" current="1" ></awc-pagination>
+                    <awc-pagination total="10" current="1" ></awc-pagination>
                 </div>
                 <!-- Pagination end -->
             </div>

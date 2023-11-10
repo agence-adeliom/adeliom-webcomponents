@@ -36,7 +36,55 @@ export const Primary: Story = {
   render: () =>
     html`
       <div class="mx-auto max-w-screen-sm">
-        <awc-pagination total="50" current="10" ></awc-pagination>
+        <awc-pagination total="6" current="1"></awc-pagination>
+      </div>
+    `
+};
+
+export const Secondary: Story = {
+  name: 'Text labels',
+  args: {
+    pageCount: 50,
+    currentPage: 1,
+    previousPageLabel: 'Précédent',
+    nextPageLabel: 'Suivant,'
+  },
+  render: () =>
+    html`
+      <div class="mx-auto max-w-screen-sm">
+        <awc-pagination total="6" current="1" >
+          <span slot="previous-button">
+            Précédent
+          </span>
+          <span slot="next-button">
+            Suivant
+          </span>
+        </awc-pagination>
+      </div>
+    `
+};
+
+export const Tertiary: Story = {
+  name: 'Text + Icon labels',
+  args: {
+    pageCount: 50,
+    currentPage: 1,
+    previousPageLabel: 'Précédent',
+    nextPageLabel: 'Suivant,'
+  },
+  render: () =>
+    html`
+      <div class="mx-auto max-w-screen-sm">
+        <awc-pagination total="6" current="1" >
+          <span slot="previous-button" class="flex items-center gap-1">
+            <awc-icon name="chevron-left"></awc-icon>
+            Précédent
+          </span>
+          <span slot="next-button" class="flex items-center gap-1">
+            Suivant
+            <awc-icon name="chevron-right"></awc-icon>
+          </span>
+        </awc-pagination>
       </div>
     `
 };
