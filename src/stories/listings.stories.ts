@@ -22,7 +22,7 @@ const heading = html`<!-- text - start -->
   <!-- text - end -->`;
 
 const card = html`
-    <awc-card class="col-span-full col-span lg:col-span-1"  shadow bordered >
+    <awc-card class="col-span-full md:col-span-6 lg:col-span-4" shadow bordered >
         <img
             slot="image"
             alt="A kitten sits patiently between a terracotta pot and decorative grasses."
@@ -50,6 +50,63 @@ const card = html`
     </awc-card>
 `;
 
+const reviewCard = html`
+    <!-- review - start -->
+    <awc-card class="col-span-2 lg:col-span-1 border border-[var(--awc-card-border-color)] py-6 px-6 rounded" style="--padding: 0">
+        <div slot="header" class="mb-2">
+            <!-- stars - start -->
+            <awc-rating label="Rating" readonly value="5"></awc-rating>
+            <!-- stars - end -->
+        </div>
+
+        <div slot="footer" class="mt-4 flex items-center gap-3">
+            <awc-avatar class="w-[37px] h-[37px]" image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&q=75&fit=crop&w=64"></awc-avatar>
+            <div class="flex flex-col">
+                <span class="block text-sm text-paragraph font-bold">Prénom Nom</span>
+                <span class="block text-sm text-paragraph">
+                    Lorem ipsum
+                </span>
+            </div>
+        </div>
+
+        <h4 class="text-title font-bold mb-1">Titre de la card</h4>
+
+        <p class="text-paragraph">
+            Accumsan egestas molestie dignissim bibendum leo nunc. Enim in amet amet amet orci.
+        </p>
+    </awc-card>
+    <!-- review - end -->
+`
+
+const iconSelect = html`
+    <awc-select
+        multiple
+        placeholder="Ex : Exemple"
+        clearable>
+        <awc-icon name="geo-alt" slot="prefix"></awc-icon>
+
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+        <awc-option value="option-4">Option 4</awc-option>
+        <awc-option value="option-5">Option 5</awc-option>
+        <awc-option value="option-6">Option 6</awc-option>
+    </awc-select>
+`
+const basicSelect = html`
+    <awc-select
+    placeholder="Ex : Exemple"
+    multiple
+    clearable>
+        <awc-option value="option-1">Option 1</awc-option>
+        <awc-option value="option-2">Option 2</awc-option>
+        <awc-option value="option-3">Option 3</awc-option>
+        <awc-option value="option-4">Option 4</awc-option>
+        <awc-option value="option-5">Option 5</awc-option>
+        <awc-option value="option-6">Option 6</awc-option>
+    </awc-select>
+`
+
 export const Listing1: StoryObj = {
     name: 'Listing 1',
     render: () => html`
@@ -58,51 +115,20 @@ export const Listing1: StoryObj = {
 
             <!-- Filters start -->
             <div class="flex flex-row gap-2 items-center justify-center">
-                <!-- Start select 1 -->
-                <awc-select
-                multiple
-                placeholder="Ex : Exemple"
-                clearable>
-                    <awc-icon name="geo-alt" slot="prefix"></awc-icon>
+                <div class="hidden lg:flex flex-row gap-2 items-center justify-center">
+                    <!-- Start select 1 -->
+                        ${iconSelect}
+                    <!-- End select 1 -->
 
-                    <awc-option value="option-1">Option 1</awc-option>
-                    <awc-option value="option-2">Option 2</awc-option>
-                    <awc-option value="option-3">Option 3</awc-option>
-                    <awc-option value="option-4">Option 4</awc-option>
-                    <awc-option value="option-5">Option 5</awc-option>
-                    <awc-option value="option-6">Option 6</awc-option>
-                </awc-select>
-                <!-- End select 1 -->
+                    <!-- Start select 2 -->
+                        ${basicSelect}
+                    <!-- End select 2 -->
 
-                <!-- Start select 2 -->
-                <awc-select
-                placeholder="Ex : Exemple"
-                multiple
-                clearable>
-                    <awc-option value="option-1">Option 1</awc-option>
-                    <awc-option value="option-2">Option 2</awc-option>
-                    <awc-option value="option-3">Option 3</awc-option>
-                    <awc-option value="option-4">Option 4</awc-option>
-                    <awc-option value="option-5">Option 5</awc-option>
-                    <awc-option value="option-6">Option 6</awc-option>
-                </awc-select>
-                <!-- End select 2 -->
-
-                <!-- Start select 3 -->
-                <awc-select
-                placeholder="Ex : Exemple"
-                multiple
-                clearable>
-                    <awc-option value="option-1">Option 1</awc-option>
-                    <awc-option value="option-2">Option 2</awc-option>
-                    <awc-option value="option-3">Option 3</awc-option>
-                    <awc-option value="option-4">Option 4</awc-option>
-                    <awc-option value="option-5">Option 5</awc-option>
-                    <awc-option value="option-6">Option 6</awc-option>
-                </awc-select>
-                <!-- End select 3 -->
-
-                <awc-button variant="primary" size="medium" outline class="filtersTab-opener">
+                    <!-- Start select 3 -->
+                        ${basicSelect}
+                    <!-- End select 3 -->
+                </div>
+                <awc-button variant="primary" size="medium" outline class="filtersTab-opener w-full lg:w-fit">
                     <awc-icon slot="suffix" name="sliders"></awc-icon>
                     Tous les filtres
                 </awc-button>
@@ -129,11 +155,17 @@ export const Listing1: StoryObj = {
                         <awc-radio value="4">Possible option</awc-radio>
                     </awc-radio-group>
                 </awc-details>
+
+                <div class="lg:hidden flex flex-col py-4 gap-4">
+                    ${iconSelect}
+                    ${basicSelect}
+                    ${basicSelect}
+                </div>
             </awc-drawer>
             <!-- End other filters tab -->
 
             <!-- Filters details start -->
-            <div class="w-full flex items-center justify-between mt-12">
+            <div class="w-full flex items-center justify-between mt-6 lg:mt-12">
                 <p class="text-paragraph">
                     <strong>XX</strong> résultats
                 </p>
@@ -149,7 +181,7 @@ export const Listing1: StoryObj = {
             <!-- Filters details end -->
 
             <!-- Grid start -->
-            <div class="grid grid-cols-3 gap-6 mt-8 relative">
+            <div class="grid grid-cols-12 gap-6 mt-4 lg:mt-6 relative">
                 ${card}
                 ${card}
                 ${card}
@@ -164,7 +196,7 @@ export const Listing1: StoryObj = {
 
             <!-- Pagination start -->
             <div class="mx-auto max-w-screen-sm py-10">
-                <awc-pagination total="10" current="1" ></awc-pagination>
+                <awc-pagination total="5" current="1" ></awc-pagination>
             </div>
             <!-- Pagination end -->
         </div>
@@ -196,6 +228,29 @@ export const Listing2: StoryObj = {
                 </awc-dropdown>
             </div>
             <!-- Filters details end -->
+
+            <!-- Grid start -->
+            <div class="grid grid-cols-2 gap-6 mt-4 lg:mt-6 relative">
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+                ${reviewCard}
+            </div>            
+            <!-- Grid end -->
+
+            <!-- Pagination start -->
+            <div class="mx-auto max-w-screen-sm py-10">
+                <awc-pagination total="5" current="1" ></awc-pagination>
+            </div>
+            <!-- Pagination end -->            
         </div>
     `
 }
@@ -206,8 +261,8 @@ export const Listing3: StoryObj = {
         <div class="container mx-auto px-4 md:px-8">
             ${heading}
         </div>
-        <div class="grid grid-cols-12 gap-6 max-w-[1360px] mx-auto">
-            <div class="col-span-3">
+        <div class="grid grid-cols-12 gap-6 max-w-[1360px] mx-auto px-4 md:px-8">
+            <div class="hidden lg:block col-span-3">
                 <!-- Filters start -->
                 <awc-details style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;" class="flex flex-col" summary="Lorem ipsum sit dolor" open>
                     <awc-checkbox class="w-full">Possible option</awc-checkbox>
@@ -226,7 +281,40 @@ export const Listing3: StoryObj = {
                 </awc-details>
                 <!-- Filters end -->
             </div>
-            <div class="col-span-9">
+
+            <!-- Filters drawer CTA start -->
+            <awc-button variant="primary" size="medium" outline class="filtersTab-opener col-span-full lg:hidden">
+                <awc-icon slot="suffix" name="sliders"></awc-icon>
+                Tous les filtres
+            </awc-button>
+            <!-- Filters drawer CTA end -->
+
+            <!-- Filters drawer start -->
+            <awc-drawer placement="start" class="filtersTab-drawer">
+                <div slot="label">
+                    Tous les filtres
+                </div>
+                <!-- Filters start -->
+                <awc-details style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;" class="flex flex-col" summary="Lorem ipsum sit dolor" open>
+                        <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                        <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                        <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                        <awc-checkbox class="w-full">Possible option</awc-checkbox>
+                    </awc-details>
+
+                    <awc-details style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;" summary="Lorem ipsum sit dolor" open>
+                        <awc-radio-group name="radio">
+                            <awc-radio value="1">Possible option</awc-radio>
+                            <awc-radio value="2">Possible option</awc-radio>
+                            <awc-radio value="3">Possible option</awc-radio>
+                            <awc-radio value="4">Possible option</awc-radio>
+                        </awc-radio-group>
+                    </awc-details>
+                    <!-- Filters end -->
+                </awc-drawer>            
+            <!-- Filters drawer end -->
+
+            <div class="col-span-full lg:col-span-9">
                 <!-- Filters details start -->
                 <div class="w-full flex items-center justify-between">
                     <p class="text-paragraph">
@@ -244,7 +332,7 @@ export const Listing3: StoryObj = {
                 <!-- Filters details end -->
 
                 <!-- Grid start -->
-                <div class="grid grid-cols-3 gap-6">
+                <div class="grid grid-cols-12 gap-6 mt-4 lg:mt-6">
                     ${card}
                     ${card}
                     ${card}
@@ -259,10 +347,15 @@ export const Listing3: StoryObj = {
 
                 <!-- Pagination start -->
                 <div class="mx-auto max-w-screen-sm py-10">
-                    <awc-pagination total="10" current="1" ></awc-pagination>
+                    <awc-pagination total="5" current="1" ></awc-pagination>
                 </div>
                 <!-- Pagination end -->
             </div>
         </div>
+        <script>
+            const drawerMenu = document.querySelector('.filtersTab-drawer');
+            const openButtonStart = document.querySelector('.filtersTab-opener');
+            openButtonStart.addEventListener('click', () => drawerMenu.show());
+        </script>
     `
 }
