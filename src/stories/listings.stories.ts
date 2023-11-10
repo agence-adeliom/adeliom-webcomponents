@@ -22,7 +22,7 @@ const heading = html`<!-- text - start -->
   <!-- text - end -->`;
 
 const card = html`
-    <awc-card class="col-span-full md:col-span-6 lg:col-span-4" shadow bordered >
+    <awc-card class="col-span-full md:col-span-6 lg:col-span-4 basic-card" shadow bordered >
         <img
             slot="image"
             alt="A kitten sits patiently between a terracotta pot and decorative grasses."
@@ -204,7 +204,13 @@ export const Listing1: StoryObj = {
         const drawerMenu = document.querySelector('.filtersTab-drawer');
         const openButtonStart = document.querySelector('.filtersTab-opener');
         openButtonStart.addEventListener('click', () => drawerMenu.show());
-    </script>`
+    </script>
+    <style>
+        .basic-card::part(footer) {
+          border: none;
+          padding-top: 0;
+        }
+    </style>`
 }
 
 export const Listing2: StoryObj = {
@@ -357,5 +363,11 @@ export const Listing3: StoryObj = {
             const openButtonStart = document.querySelector('.filtersTab-opener');
             openButtonStart.addEventListener('click', () => drawerMenu.show());
         </script>
+        <style>
+            .basic-card::part(footer) {
+            border: none;
+            padding-top: 0;
+            }
+        </style>
     `
 }
