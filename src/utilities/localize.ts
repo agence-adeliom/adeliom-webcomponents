@@ -13,16 +13,23 @@ export interface Translation extends DefaultTranslation {
   $name: string; // e.g. English, Español
   $dir: 'ltr' | 'rtl';
 
+  browseFiles: string;
   carousel: string;
   clearEntry: string;
   close: string;
   copied: string;
   copy: string;
   currentValue: string;
+  dragDrop: string;
+  fileSizeExceeded: (size: number) => string;
+  fileTypeNotAccepted: (accept: string) => string;
   error: string;
   goToSlide: (slide: number, count: number) => string;
   hidePassword: string;
   loading: string;
+  files: string;
+  maxFiles: string;
+  noMultipleFiles: string;
   nextSlide: string;
   numOptionsSelected: (num: number) => string;
   previousSlide: string;

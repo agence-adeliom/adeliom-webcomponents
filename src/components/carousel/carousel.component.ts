@@ -1,23 +1,17 @@
 import '../../internal/scrollend-polyfill.js';
-
-import { AutoplayController } from './autoplay-controller.js';
-import { clamp } from '../../internal/math.js';
+import { Autoplay, FreeMode, Keyboard, Manipulation, Navigation, Pagination, Scrollbar, Thumbs } from 'swiper/modules';
 import { classMap } from 'lit/directives/class-map.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
-import { map } from 'lit/directives/map.js';
-import { prefersReducedMotion } from '../../internal/animate.js';
 import { property, query, state } from 'lit/decorators.js';
-import { range } from 'lit/directives/range.js';
-import { ScrollController } from './scroll-controller.js';
 import { watch } from '../../internal/watch.js';
+import AWCCarouselItem from '../carousel-item/carousel-item.component.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import styles from './carousel.styles.js';
-import type { CSSResultGroup, PropertyValueMap } from 'lit';
-import type AWCCarouselItem from '../carousel-item/carousel-item.component.js';
 import Swiper from "swiper";
-import { Navigation, Pagination, Scrollbar, Autoplay, Manipulation, Keyboard, Thumbs, FreeMode } from 'swiper/modules';
+import type { CSSResultGroup } from 'lit';
+
 /**
  * @summary Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
  * @documentation https://awc.a-dev.cloud/?path=/docs/components-carousel--docs
@@ -25,8 +19,9 @@ import { Navigation, Pagination, Scrollbar, Autoplay, Manipulation, Keyboard, Th
  * @status experimental
  *
  * @dependency awc-icon
+ * @dependency awc-carousel-item
  *
- * @event {{ index: number, slide: AWCCarouselItem }} awc-slide-change - Emitted when the active slide changes.
+ * @event awc-slide-change - Emitted when the active slide changes.
  *
  * @slot - The carousel's main content, one or more `<awc-carousel-item>` elements.
  * @slot next-icon - Optional next icon to use instead of the default. Works best with `<awc-icon>`.
@@ -44,12 +39,11 @@ import { Navigation, Pagination, Scrollbar, Autoplay, Manipulation, Keyboard, Th
  *
  * @cssproperty --slide-gap - The space between each slide.
  * @cssproperty [--aspect-ratio=16/9] - The aspect ratio of each slide.
- * @cssproperty --scroll-hint - The amount of padding to apply to the scroll area, allowing adjacent slides to become
- *  partially visible as a scroll hint.
+ * @cssproperty --scroll-hint - The amount of padding to apply to the scroll area, allowing adjacent slides to become partially visible as a scroll hint.
  */
 export default class AWCCarousel extends AWCElement {
   static styles: CSSResultGroup = styles;
-  static dependencies = { 'awc-icon': AWCIcon };
+  static dependencies = { 'awc-icon': AWCIcon, 'awc-carousel-item': AWCCarouselItem };
 
   /** When set, allows the user to navigate the carousel in the same direction indefinitely. */
   @property({ type: Boolean, reflect: true }) loop = false;
@@ -72,19 +66,31 @@ export default class AWCCarousel extends AWCElement {
   /** Specifies how many slides should be shown at a given time.  */
   @property({ attribute: 'slides-per-view' }) slidesPerView: number | 'auto' = 1;
 
+  /** Duration of transition between slides (in ms) */
   @property({ type: Number, reflect: true }) speed = 300;
 
+  /** Threshold value in px. If "touch distance" will be lower than this value then swiper will not move */
   @property({ type: Number, reflect: true }) threshold = 5;
 
+  /** Distance between slides in px. */
   @property({ reflect: true, attribute: 'space-between' }) spaceBetween : string | number = 0;
 
+  /** Enables free mode functionality. Object with free mode parameters or boolean true to enable with default settings. */
   @property({ type: Boolean,  reflect: true, attribute: 'free-mode' }) freeMode = false;
+
+  /** Distance between slides in px. */
   @property({ type: Boolean,  reflect: true, attribute: 'grab-cursor' }) grabCursor = false;
 
+  /** This option may a little improve desktop usability. If true, user will see the "grab" cursor when hover on Swiper */
   @property({ type: String,  reflect: true }) effect : 'slide' | 'fade' | 'cube' | 'coverflow' | 'flip' | 'creative' = 'slide';
 
+  /** If true, then active slide will be centered, not always on the left side. */
   @property({ type: Boolean,  reflect: true, attribute: 'centered-slides' }) centeredSlides = false;
 
+  /**
+   * Allows to set different parameter for different responsive breakpoints (screen sizes).
+   * Not all parameters can be changed in breakpoints, only those which do not require different layout and logic, like slidesPerView, slidesPerGroup, spaceBetween, grid.rows. Such parameters like loop and effect won't work
+   */
   @property({ reflect: true }) breakpoints: object | undefined = undefined;
 
   /**
@@ -95,9 +101,6 @@ export default class AWCCarousel extends AWCElement {
 
   /** Specifies the orientation in which the carousel will lay out.  */
   @property() direction: 'horizontal' | 'vertical' = 'horizontal';
-
-  @property() thumbnails: string | object | undefined = undefined;
-
 
   /** When set, it is possible to scroll through the slides by dragging them with the mouse. */
   @property({ type: Boolean, reflect: true, attribute: 'mouse-dragging' }) mouseDragging = true;
@@ -247,11 +250,6 @@ export default class AWCCarousel extends AWCElement {
         enabled: true,
         onlyInViewport: true,
       },
-      thumbs: this.thumbnails ? {
-        swiper: this.thumbnails,
-        slideThumbActiveClass: 'carousel__thumb--active',
-        thumbsContainerClass: 'carousel__thumbs',
-      } : undefined,
       autoplay: this.autoplay !== false ? (this.autoplay === true ? true : (!isNaN(this.autoplay) ? { delay: this.autoplay === '' ? 3000 : this.autoplay } : {...JSON.parse(this.autoplay)})) : false,
       navigation: {
         enabled: this.navigation,
@@ -291,7 +289,7 @@ export default class AWCCarousel extends AWCElement {
       observeSlideChildren: this.slideSlots > 0,
       onAny: (name, ...args) => {
         if (name === '_swiper') {
-          // @ts-ignore
+          // @ts-expect-error
           const swiper = args[0];
           swiper.isElement = true
         }

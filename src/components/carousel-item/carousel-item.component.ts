@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './carousel-item.styles.js';
-import { property, query, state } from 'lit/decorators.js';
+import { property } from 'lit/decorators.js';
 import type { CSSResultGroup } from 'lit';
 
 /**

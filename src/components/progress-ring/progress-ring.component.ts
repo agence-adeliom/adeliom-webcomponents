@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { classMap } from 'lit/directives/class-map.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import AWCElement from '../../internal/awc-element.js';
@@ -35,6 +36,9 @@ export default class AWCProgressRing extends AWCElement {
   /** The current progress as a percentage, 0 to 100. */
   @property({ type: Number, reflect: true }) value = 0;
 
+  /** When true, percentage is ignored, the label is hidden, and the progress bar is drawn in an indeterminate state. */
+  @property({ type: Boolean, reflect: true }) indeterminate = false;
+
   /** A custom label for assistive devices. */
   @property() label = '';
 
@@ -59,21 +63,23 @@ export default class AWCProgressRing extends AWCElement {
     return html`
       <div
         part="base"
-        class="progress-ring"
+        class=${classMap({
+          'progress-ring': true,
+          'progress-ring--indeterminate': this.indeterminate
+        })}
         role="progressbar"
         aria-label=${this.label.length > 0 ? this.label : this.localize.term('progress')}
         aria-describedby="label"
         aria-valuemin="0"
         aria-valuemax="100"
-        aria-valuenow="${this.value}"
+        aria-valuenow=${this.indeterminate ? 0 : this.value}
         style="--percentage: ${this.value / 100}"
       >
         <svg class="progress-ring__image">
           <circle class="progress-ring__track"></circle>
           <circle class="progress-ring__indicator" style="stroke-dashoffset: ${this.indicatorOffset}"></circle>
         </svg>
-
-        <slot id="label" part="label" class="progress-ring__label"></slot>
+        ${!this.indeterminate ? html` <slot id="label" part="label" class="progress-ring__label"></slot> ` : ''}
       </div>
     `;
   }

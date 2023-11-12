@@ -47,6 +47,21 @@ export const Size: Story = {
   }
 };
 
+export const Indeterminate: Story = {
+  name: 'Indeterminate',
+  args: {
+    indeterminate: true
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: `The \`indeterminate\` attribute can be used to inform the user that the operation is pending, but its status cannot currently be determined. In this state, \`value\` is ignored and the label, if present, will not be shown.`
+      }
+    }
+  }
+};
+
+
 export const TrackIndicatorWidth: Story = {
   name: 'Track and Indicator Width',
   args: {

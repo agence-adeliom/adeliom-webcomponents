@@ -182,10 +182,18 @@ export class FormControlController implements ReactiveController {
     if (!disabled && !isButton && typeof name === 'string' && name.length > 0 && typeof value !== 'undefined') {
       if (Array.isArray(value)) {
         (value as unknown[]).forEach(val => {
-          event.formData.append(name, (val as string | number | boolean).toString());
+          if (val instanceof File) {
+            event.formData.append(name, val);
+          } else {
+            event.formData.append(name, (val as string | number | boolean).toString());
+          }
         });
       } else {
-        event.formData.append(name, (value as string | number | boolean).toString());
+        if (value instanceof File) {
+          event.formData.append(name, value);
+        } else {
+          event.formData.append(name, (value as string | number | boolean).toString());
+        }
       }
     }
   };

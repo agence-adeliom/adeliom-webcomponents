@@ -38,6 +38,9 @@ export default css`
     r: var(--radius);
     cx: calc(var(--size) / 2);
     cy: calc(var(--size) / 2);
+
+
+    transform-origin: 50% 50%;
   }
 
   .progress-ring__track {
@@ -67,5 +70,22 @@ export default css`
     text-align: center;
     user-select: none;
     -webkit-user-select: none;
+  }
+
+  /* Indeterminate */
+  .progress-ring--indeterminate .progress-ring__indicator {
+    position: absolute;
+    animation: indeterminate 2.5s infinite cubic-bezier(0.37, 0, 0.63, 1);
+  }
+
+  @keyframes indeterminate {
+    from {
+      stroke-dashoffset: var(--circumference);
+      transform: rotateZ(0deg)
+    }
+    to {
+      stroke-dashoffset: calc(var(--circumference) * -1);
+      transform: rotateZ(360deg)
+    }
   }
 `;

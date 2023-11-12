@@ -60,6 +60,8 @@ export { default as AWCVisuallyHidden } from './components/visually-hidden/visua
 export { default as AWCImage } from './components/image/image.js';
 export { default as AWCOembed } from './components/oembed/oembed.js';
 export { default as AWCPagination } from './components/pagination/pagination.js';
+export { default as AWCFileUpload } from './components/file-upload/file-upload.js';
+export { default as AWCFileUploadItem } from './components/file-upload-item/file-upload-item.js';
 /* plop:component */
 
 // Utilities

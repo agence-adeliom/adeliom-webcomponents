@@ -1,4 +1,5 @@
 import { registerTranslation } from '@shoelace-style/localize';
+import prettyBytes from 'pretty-bytes';
 import type { Translation } from '../utilities/localize.js';
 
 const translation: Translation = {
@@ -6,16 +7,23 @@ const translation: Translation = {
   $name: 'English',
   $dir: 'ltr',
 
+  browseFiles: 'Browse files',
   carousel: 'Carousel',
   clearEntry: 'Clear entry',
   close: 'Close',
   copied: 'Copied',
   copy: 'Copy',
   currentValue: 'Current value',
+  dragDrop: 'Drag and drop to upload',
+  fileTypeNotAccepted: accept => `File type is not accepted, only ${accept} files are allowed`,
+  fileSizeExceeded: size => `File size exceeds ${prettyBytes(size, {locale: 'en'})}`,
   error: 'Error',
   goToSlide: (slide, count) => `Go to slide ${slide} of ${count}`,
   hidePassword: 'Hide password',
   loading: 'Loading',
+  files: 'Files :',
+  maxFiles: 'Maximum number of files reached',
+  noMultipleFiles: 'Multiple files are not allowed',
   nextSlide: 'Next slide',
   numOptionsSelected: num => {
     if (num === 0) return 'No options selected';
