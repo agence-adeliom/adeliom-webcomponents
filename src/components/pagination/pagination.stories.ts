@@ -76,11 +76,11 @@ export const Tertiary: Story = {
     html`
       <div class="mx-auto max-w-screen-sm">
         <awc-pagination total="6" current="1" >
-          <span slot="previous-button" class="flex items-center gap-1">
+          <span slot="previous-button" class="flex items-center gap-2">
             <awc-icon name="chevron-left"></awc-icon>
             Précédent
           </span>
-          <span slot="next-button" class="flex items-center gap-1">
+          <span slot="next-button" class="flex items-center gap-2">
             Suivant
             <awc-icon name="chevron-right"></awc-icon>
           </span>

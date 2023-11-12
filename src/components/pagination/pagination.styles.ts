@@ -18,6 +18,11 @@ export default css`
     gap: var(--awc-pagination-gap);
   }
 
+  .pagination__button::part(label) {
+    display: flex;
+    align-items: center;
+  }
+
   .pagination__items{
     list-style: none;
     display: flex;

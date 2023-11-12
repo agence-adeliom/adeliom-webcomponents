@@ -12,7 +12,7 @@ import { LocalizeController } from '../../utilities/localize.js';
  * @documentation https://awc.a-dev.cloud/?path=/docs/pagination-option--docs
  * @status stable
  * @since 1.0
- * 
+ *
  * @event awc-page-change - Emitted when page change.
  */
 
@@ -43,17 +43,20 @@ export default class AWCPagination extends AWCElement {
 
     /** Go to page on click on a pagination number */
     private handleClick = (pageNumber: number) => {
-      this.emit('awc-page-change', {value: this.current});
+      this.current = pageNumber;
+      this.emit('awc-page-change', {detail: {value: this.current}});
     };
 
     /** Go to next page on click on pagination next button */
     private nextPage = () => {
-      this.emit('awc-page-change', {value: this.current});
+      this.current = Math.min(this.current + 1, this.total);
+      this.emit('awc-page-change', {detail: {value: this.current}});
     };
 
     /** Go to previous page on click on pagination previous button */
     private previousPage = () => {
-      this.emit('awc-page-change', {value: this.current});
+      this.current = Math.max(this.current - 1, 0);
+      this.emit('awc-page-change', {detail: {value: this.current}});
     };
 
     /** Make range index not from 0 */
@@ -82,6 +85,7 @@ export default class AWCPagination extends AWCElement {
           >
             <awc-button
               part="button button-previous"
+              class="pagination__button"
               @click=${this.previousPage}
               variant="primary"
               outline
@@ -104,7 +108,7 @@ export default class AWCPagination extends AWCElement {
                   >
                     <awc-button
                         variant="ghost"
-                        @click=${this.handleClick(pageNumber)}
+                        @click=${() => this.handleClick(pageNumber)}
                     >
                         ${pageNumber}
                     </awc-button>
@@ -115,6 +119,7 @@ export default class AWCPagination extends AWCElement {
 
             <awc-button
               part="button button-next"
+              class="pagination__button"
               @click=${this.nextPage}
               variant="primary"
               outline
