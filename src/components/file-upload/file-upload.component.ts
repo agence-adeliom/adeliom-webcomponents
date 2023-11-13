@@ -1,19 +1,19 @@
-import {classMap} from "lit/directives/class-map.js";
-import {FormControlController} from "../../internal/form.js";
-import {HasSlotController} from "../../internal/slot.js";
+import { classMap } from 'lit/directives/class-map.js';
+import { FormControlController } from '../../internal/form.js';
+import { HasSlotController } from '../../internal/slot.js';
 import { hasValidFileSize, hasValidFileType } from './library.js';
 import { html, nothing } from 'lit';
-import {ifDefined} from "lit/directives/if-defined.js";
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
-import {repeat} from "lit/directives/repeat.js";
+import { repeat } from 'lit/directives/repeat.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
-import AWCFileUploadItem from "../file-upload-item/file-upload-item.component";
-import AWCIcon from "../icon/icon.component";
+import AWCFileUploadItem from '../file-upload-item/file-upload-item.component';
+import AWCIcon from '../icon/icon.component';
 import styles from './file-upload.styles.js';
 import type { AWCFormControl } from '../../internal/awc-element.js';
-import type { AWCHideEvent } from "@awc/events/awc-hide";
+import type { AWCHideEvent } from '@awc/events/awc-hide';
 import type { CSSResultGroup } from 'lit';
 import type { FileInfo } from './library.js';
 
@@ -122,7 +122,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
   @property({ type: String, reflect: true }) accept = '*';
 
   /** An optional maximum size of a file that will be considered valid. */
-  @property( { type: Number, attribute: 'max-file-size' }) maxFileSize?: number;
+  @property({ type: Number, attribute: 'max-file-size' }) maxFileSize?: number;
 
   /** The maximum amount of files that are allowed. */
   @property({ type: Number, attribute: 'max-files' }) maxFiles: number;
@@ -135,7 +135,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
 
   private addFile(file: File) {
     if (this.maxFiles && this.files.length >= this.maxFiles) {
-      this.error = this.localize.term('maxFiles') ;
+      this.error = this.localize.term('maxFiles');
       return;
     }
 
@@ -145,10 +145,10 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
 
     if (!hasValidFileType(file, this.accept)) {
       fileInfo.accepted = false;
-      fileInfo.error = this.localize.term('fileTypeNotAccepted', this.accept) ;
+      fileInfo.error = this.localize.term('fileTypeNotAccepted', this.accept);
     } else if (!hasValidFileSize(file, this.maxFileSize)) {
       fileInfo.accepted = false;
-      fileInfo.error = this.localize.term('fileSizeExceeded', this.maxFileSize ) ;
+      fileInfo.error = this.localize.term('fileSizeExceeded', this.maxFileSize);
     } else {
       fileInfo.accepted = true;
     }
@@ -165,7 +165,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
 
     this.error = undefined;
     if (!this.multiple && fileList.length > 1) {
-      this.error = this.localize.term('noMultipleFiles') ;
+      this.error = this.localize.term('noMultipleFiles');
       return;
     }
 
@@ -212,7 +212,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
   private handleFileRemove(index: number) {
     const fileInfo = this.files[index];
     this.emit('awc-remove', { detail: { fileInfo } });
-    this.files = this.files.filter((_, fileIndex) => fileIndex !== index)
+    this.files = this.files.filter((_, fileIndex) => fileIndex !== index);
   }
 
   private handleInvalid(event: Event) {
@@ -259,7 +259,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
     if (this.error) {
       return this.error;
     }
-    return this.label ? this.label : (this.localize.term('dragDrop') );
+    return this.label ? this.label : this.localize.term('dragDrop');
   }
 
   @watch('disabled', { waitUntilFirstUpdate: true })
@@ -269,7 +269,6 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
   }
 
   render() {
-
     const hasContentSlot = this.hasSlotController.test('content');
     const hasHelpTextSlot = this.hasSlotController.test('help-text');
     const hasHelpText = this.helpText ? true : !!hasHelpTextSlot;
@@ -308,24 +307,21 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
           aria-describedby="help-text"
         />
         ${this.buttonOnly
-      ? html`
-        ${browseFilesButton}
-        <div
-          part="help-text"
-          class="file-upload__help-text"
-          aria-hidden=${hasHelpText ? 'false' : 'true'}
-        >
-          <slot name="help-text">${this.helpText}</slot>
-        </div>
-      `
-      : html`
+          ? html`
+              ${browseFilesButton}
+              <div part="help-text" class="file-upload__help-text" aria-hidden=${hasHelpText ? 'false' : 'true'}>
+                <slot name="help-text">${this.helpText}</slot>
+              </div>
+            `
+          : html`
               <div id="dropzone" @drop="${this.onDrop}" @dragover="${this.onDragOver}" @dragleave="${this.onDragLeave}">
                 <slot name="content">
-                  <div part="content"
-                       class=${classMap({
-                         'file-upload__label': true,
-                         'file-upload__label--has-file': !!this.files.length
-                       })}
+                  <div
+                    part="content"
+                    class=${classMap({
+                      'file-upload__label': true,
+                      'file-upload__label--has-file': !!this.files.length
+                    })}
                   >
                     <div class="file-upload__label__container">
                       <slot name="image">
@@ -347,38 +343,45 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
                 </slot>
               </div>
             `}
-        ${!this.noFileList && this.files.length ? html`
-          <div class=${classMap({
-                 'file-upload__file-items': true
-               })}
-               id="file-items">
-            <div class="file-upload__file-items__header">
-              <span>${this.localize.term('files')}</span>
-            </div>
-            ${repeat(this.files, (fileInfo) => fileInfo.file.name, (fileInfo, index) => html`
-              <awc-file-upload-item
-                size=${fileInfo.accepted ? fileInfo.file.size : nothing}
-                ?error=${!!fileInfo.error}
-                ?closable=${fileInfo.accepted}
-                ?loading=${fileInfo.loading}
-                progress=${ifDefined(fileInfo.progress)}
-                @awc-hide=${(event: AWCHideEvent) => {
-                  event.stopPropagation()
-                  this.handleFileRemove(index);
-                }}
-                data-test="${JSON.stringify(fileInfo)}"
+        ${!this.noFileList && this.files.length
+          ? html`
+              <div
+                class=${classMap({
+                  'file-upload__file-items': true
+                })}
+                id="file-items"
               >
-                ${fileInfo.file.name}
-                ${fileInfo.error ? html`<div slot="error">${fileInfo.error}</div>` : ''}
-                <awc-icon
-                  name=${fileInfo.error ? 'exclamation-triangle' : 'file-earmark'}
-                  slot="image"
-                  library="system"
-                ></awc-icon>
-              </awc-file-upload-item>
-            `)}
-          </div>
-        ` : ''}
+                <div class="file-upload__file-items__header">
+                  <span>${this.localize.term('files')}</span>
+                </div>
+                ${repeat(
+                  this.files,
+                  fileInfo => fileInfo.file.name,
+                  (fileInfo, index) => html`
+                    <awc-file-upload-item
+                      size=${fileInfo.accepted ? fileInfo.file.size : nothing}
+                      ?error=${!!fileInfo.error}
+                      ?closable=${fileInfo.accepted}
+                      ?loading=${fileInfo.loading}
+                      progress=${ifDefined(fileInfo.progress)}
+                      @awc-hide=${(event: AWCHideEvent) => {
+                        event.stopPropagation();
+                        this.handleFileRemove(index);
+                      }}
+                      data-test="${JSON.stringify(fileInfo)}"
+                    >
+                      ${fileInfo.file.name} ${fileInfo.error ? html`<div slot="error">${fileInfo.error}</div>` : ''}
+                      <awc-icon
+                        name=${fileInfo.error ? 'exclamation-triangle' : 'file-earmark'}
+                        slot="image"
+                        library="system"
+                      ></awc-icon>
+                    </awc-file-upload-item>
+                  `
+                )}
+              </div>
+            `
+          : ''}
       </div>
     `;
   }

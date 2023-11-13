@@ -9,7 +9,7 @@ import AWCCarouselItem from '../carousel-item/carousel-item.component.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import styles from './carousel.styles.js';
-import Swiper from "swiper";
+import Swiper from 'swiper';
 import type { CSSResultGroup } from 'lit';
 
 /**
@@ -58,7 +58,7 @@ export default class AWCCarousel extends AWCElement {
   @property({ type: Boolean, reflect: true }) scrollbar = false;
 
   /** When set, the slides will scroll automatically when the user is not interacting with them.  */
-  @property({ reflect: true }) autoplay : boolean | number | object = false;
+  @property({ reflect: true }) autoplay: boolean | number | object = false;
 
   /** Set to `true` and slider wrapper will adapt its height to the height of the currently active slide */
   @property({ type: Boolean, reflect: true, attribute: 'auto-height' }) autoHeight = false;
@@ -73,19 +73,20 @@ export default class AWCCarousel extends AWCElement {
   @property({ type: Number, reflect: true }) threshold = 5;
 
   /** Distance between slides in px. */
-  @property({ reflect: true, attribute: 'space-between' }) spaceBetween : string | number = 0;
+  @property({ reflect: true, attribute: 'space-between' }) spaceBetween: string | number = 0;
 
   /** Enables free mode functionality. Object with free mode parameters or boolean true to enable with default settings. */
-  @property({ type: Boolean,  reflect: true, attribute: 'free-mode' }) freeMode = false;
+  @property({ type: Boolean, reflect: true, attribute: 'free-mode' }) freeMode = false;
 
   /** Distance between slides in px. */
-  @property({ type: Boolean,  reflect: true, attribute: 'grab-cursor' }) grabCursor = false;
+  @property({ type: Boolean, reflect: true, attribute: 'grab-cursor' }) grabCursor = false;
 
   /** This option may a little improve desktop usability. If true, user will see the "grab" cursor when hover on Swiper */
-  @property({ type: String,  reflect: true }) effect : 'slide' | 'fade' | 'cube' | 'coverflow' | 'flip' | 'creative' = 'slide';
+  @property({ type: String, reflect: true }) effect: 'slide' | 'fade' | 'cube' | 'coverflow' | 'flip' | 'creative' =
+    'slide';
 
   /** If true, then active slide will be centered, not always on the left side. */
-  @property({ type: Boolean,  reflect: true, attribute: 'centered-slides' }) centeredSlides = false;
+  @property({ type: Boolean, reflect: true, attribute: 'centered-slides' }) centeredSlides = false;
 
   /**
    * Allows to set different parameter for different responsive breakpoints (screen sizes).
@@ -114,8 +115,8 @@ export default class AWCCarousel extends AWCElement {
   // The index of the active slide
   @state() activeSlide = 0;
 
-  slider?: Swiper
-  slideSlots: number = 0
+  slider?: Swiper;
+  slideSlots: number = 0;
 
   // A map containing the state of all the slides
   private readonly localize = new LocalizeController(this);
@@ -126,21 +127,18 @@ export default class AWCCarousel extends AWCElement {
     this.setAttribute('aria-label', this.localize.term('carousel'));
   }
 
-
   protected firstUpdated(): void {
     this.initializeSlides();
   }
 
   @watch('mouseDragging')
   handleMouseDraggingChange() {
-    if(this.slider) {
+    if (this.slider) {
       this.slider.destroy();
     }
 
-    this.initializeSlides()
+    this.initializeSlides();
   }
-
-
 
   /** @internal Gets all carousel items. */
   private getSlides({ excludeClones = true }: { excludeClones?: boolean } = {}) {
@@ -153,9 +151,6 @@ export default class AWCCarousel extends AWCElement {
     return node instanceof Element && node.tagName.toLowerCase() === 'awc-carousel-item';
   }
 
-
-
-
   render() {
     const isLtr = this.localize.dir() === 'ltr';
     this.calcSlideSlots();
@@ -166,63 +161,86 @@ export default class AWCCarousel extends AWCElement {
           id="scroll-container"
           part="scroll-container"
           class="${classMap({
-            carousel__wrapper: true,
+            carousel__wrapper: true
           })}"
           aria-atomic="true"
           tabindex="0"
         >
           <slot></slot>
-          ${Array.from({length: this.slideSlots}).map((_, index) => `
+          ${Array.from({ length: this.slideSlots })
+            .map(
+              (_, index) => `
           <awc-carousel-item part="carousel__slide carousel__slide-${index}">
             <slot name="carousel__slide-${index}"></slot>
           </awc-carousel-item>
-          `).join('')}
+          `
+            )
+            .join('')}
         </div>
       </div>
       ${this.navigation
-              ? html`
-              <div part="navigation" class="carousel__navigation">
-                <button
-                  part="navigation-button navigation-button--previous"
-                  class="${classMap({
+        ? html`
+            <div part="navigation" class="carousel__navigation">
+              <button
+                part="navigation-button navigation-button--previous"
+                class="${classMap({
                   'navigation-button': true,
                   'navigation-button--previous': true
-              })}"
-                  aria-label="${this.localize.term('previousSlide')}"
-                  aria-controls="scroll-container"
-                >
-                  <slot name="previous-icon">
-                    <awc-icon library="system" name="${isLtr ? 'chevron-left' : 'chevron-right'}"></awc-icon>
-                  </slot>
-                </button>
+                })}"
+                aria-label="${this.localize.term('previousSlide')}"
+                aria-controls="scroll-container"
+              >
+                <slot name="previous-icon">
+                  <awc-icon library="system" name="${isLtr ? 'chevron-left' : 'chevron-right'}"></awc-icon>
+                </slot>
+              </button>
 
-                <button
-                  part="navigation-button navigation-button--next"
-                  class=${classMap({
+              <button
+                part="navigation-button navigation-button--next"
+                class=${classMap({
                   'navigation-button': true,
                   'navigation-button--next': true
-              })}
-                  aria-label="${this.localize.term('nextSlide')}"
-                  aria-controls="scroll-container"
-                >
-                  <slot name="next-icon">
-                    <awc-icon library="system" name="${isLtr ? 'chevron-right' : 'chevron-left'}"></awc-icon>
-                  </slot>
-                </button>
-              </div>
-            `
-              : ''}
+                })}
+                aria-label="${this.localize.term('nextSlide')}"
+                aria-controls="scroll-container"
+              >
+                <slot name="next-icon">
+                  <awc-icon library="system" name="${isLtr ? 'chevron-right' : 'chevron-left'}"></awc-icon>
+                </slot>
+              </button>
+            </div>
+          `
+        : ''}
       ${this.pagination !== false
-              ? html`<div part="pagination" role="tablist" class="carousel__pagination" aria-controls="scroll-container"></div>`
-              : ''}
+        ? html`<div
+            part="pagination"
+            role="tablist"
+            class="carousel__pagination"
+            aria-controls="scroll-container"
+          ></div>`
+        : ''}
       ${this.scrollbar
-              ? html`<div part="scrollbar" role="scrollbar" class="carousel__scrollbar" aria-controls="scroll-container" aria-valuenow="0"></div>`
-              : ''}
+        ? html`<div
+            part="scrollbar"
+            role="scrollbar"
+            class="carousel__scrollbar"
+            aria-controls="scroll-container"
+            aria-valuenow="0"
+          ></div>`
+        : ''}
     `;
   }
 
   private initializeSlides() {
-    console.log(this.autoplay !== false ? (this.autoplay === true ? true : (!isNaN(this.autoplay) ? { delay: this.autoplay === '' ? 3000 : this.autoplay } : {...JSON.parse(this.autoplay)})) : false)
+    console.log(
+      this.autoplay !== false
+        ? this.autoplay === true
+          ? true
+          : !isNaN(this.autoplay)
+          ? { delay: this.autoplay === '' ? 3000 : this.autoplay }
+          : { ...JSON.parse(this.autoplay) }
+        : false
+    );
     // eslint-disable-next-line
     this.slider = new Swiper(this.container, {
       modules: [Navigation, Pagination, Scrollbar, Autoplay, Manipulation, Keyboard, Thumbs, FreeMode],
@@ -240,17 +258,28 @@ export default class AWCCarousel extends AWCElement {
       speed: this.speed,
       threshold: this.threshold,
       spaceBetween: this.spaceBetween,
-      freeMode: this.freeMode ? {
-        enabled: true,
-      } : undefined,
+      freeMode: this.freeMode
+        ? {
+            enabled: true
+          }
+        : undefined,
       effect: this.effect,
       centeredSlides: this.autoHeight,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       breakpoints: this.breakpoints ? JSON.parse(this.breakpoints) : undefined,
       keyboard: {
         enabled: true,
-        onlyInViewport: true,
+        onlyInViewport: true
       },
-      autoplay: this.autoplay !== false ? (this.autoplay === true ? true : (!isNaN(this.autoplay) ? { delay: this.autoplay === '' ? 3000 : this.autoplay } : {...JSON.parse(this.autoplay)})) : false,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      autoplay:
+        this.autoplay !== false
+          ? this.autoplay === true
+            ? true
+            : !(typeof this.autoplay === 'number')
+            ? { delay: this.autoplay === '' ? 3000 : this.autoplay }
+            : { ...JSON.parse(this.autoplay) }
+          : false,
       navigation: {
         enabled: this.navigation,
         nextEl: this.nextButton,
@@ -258,7 +287,7 @@ export default class AWCCarousel extends AWCElement {
         disabledClass: 'navigation-button--disabled',
         lockClass: 'navigation-button--lock',
         hiddenClass: 'navigation-button--hidden',
-        navigationDisabledClass: 'navigation--disabled',
+        navigationDisabledClass: 'navigation--disabled'
       },
       pagination: {
         enabled: this.pagination !== false,
@@ -277,47 +306,45 @@ export default class AWCCarousel extends AWCElement {
         paginationDisabledClass: 'carousel__pagination--disabled',
         progressbarFillClass: 'carousel__progressbar--fill',
         progressbarOppositeClass: 'carousel__progressbar--opposite',
-        totalClass: 'pagination-item--total',
+        totalClass: 'pagination-item--total'
       },
       scrollbar: {
         enabled: this.scrollbar,
         el: this.scrollContainer,
-        scrollbarDisabledClass: 'scrollbar--disabled',
+        scrollbarDisabledClass: 'scrollbar--disabled'
       },
       observer: true,
       observeParents: true,
       observeSlideChildren: this.slideSlots > 0,
-      onAny: (name, ...args) => {
+      onAny: (name: string, ...args) => {
         if (name === '_swiper') {
-          // @ts-expect-error
           const swiper = args[0];
-          swiper.isElement = true
+          swiper.isElement = true;
         }
         if (name === 'observerUpdate') {
           this.calcSlideSlots();
         }
-        const kebabCase = string => string
-          .replace(/([a-z])([A-Z])/g, "$1-$2")
-          .replace(/[\s_]+/g, '-')
-          .toLowerCase();
+        const kebabCase = (string: string): string =>
+          string
+            .replace(/([a-z])([A-Z])/g, '$1-$2')
+            .replace(/[\s_]+/g, '-')
+            .toLowerCase();
 
-        const eventName = `awc-${kebabCase(name)}`
+        const eventName = `awc-${kebabCase(name)}`;
         const event = new CustomEvent(eventName, {
           detail: args,
           bubbles: name !== 'hashChange',
-          cancelable: true,
+          cancelable: true
         });
         this.dispatchEvent(event);
-      },
+      }
     });
-
-
   }
 
   calcSlideSlots() {
     const currentSideSlots = this.slideSlots || 0;
     // slide slots
-    const slideSlotChildren = [...this.querySelectorAll(`[slot^=slide-]`)].map((child) => {
+    const slideSlotChildren = [...this.querySelectorAll(`[slot^=slide-]`)].map(child => {
       return parseInt(child?.getAttribute('slot').split('carousel__slide-')[1], 10);
     });
     this.slideSlots = slideSlotChildren.length ? Math.max(...slideSlotChildren) + 1 : 0;

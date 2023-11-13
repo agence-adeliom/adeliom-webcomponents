@@ -1,4 +1,5 @@
 import { registerTranslation } from '../utilities/localize.js';
+import prettyBytes from 'pretty-bytes';
 import type { Translation } from '../utilities/localize.js';
 
 const translation: Translation = {
@@ -6,16 +7,23 @@ const translation: Translation = {
   $name: 'Español',
   $dir: 'ltr',
 
+  browseFiles: 'Explorar archivos',
   carousel: 'Carrusel',
   clearEntry: 'Borrar entrada',
   close: 'Cerrar',
   copied: 'Copiado',
   copy: 'Copiar',
   currentValue: 'Valor actual',
+  dragDrop: 'Arrastra y suelta para subir',
+  fileTypeNotAccepted: accept => `Tipo de archivo no aceptado, solo se permiten archivos ${accept}`,
+  fileSizeExceeded: size => `El tamaño del archivo excede ${prettyBytes(size, { locale: 'es' })}`,
   error: 'Error',
   goToSlide: (slide, count) => `Ir a la diapositiva ${slide} de ${count}`,
   hidePassword: 'Ocultar contraseña',
   loading: 'Cargando',
+  files: 'Archivos :',
+  maxFiles: 'Se alcanzó el número máximo de archivos',
+  noMultipleFiles: 'No se permiten múltiples archivos',
   nextSlide: 'Siguiente diapositiva',
   numOptionsSelected: num => {
     if (num === 0) return 'No hay opciones seleccionadas';

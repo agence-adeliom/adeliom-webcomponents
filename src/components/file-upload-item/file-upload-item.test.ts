@@ -1,7 +1,7 @@
 import '../../../dist/awc.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
-import type { AWCFileUploadItem } from "./file-upload-item.component.js";
 import sinon from 'sinon';
+import type AWCFileUploadItem from './file-upload-item.js';
 
 describe('<awc-file-upload-item>', () => {
   it('should be visible per default', async () => {

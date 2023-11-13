@@ -11,13 +11,15 @@ export default {
 const heading = html`<!-- text - start -->
   <div class="mb-10 md:mb-16">
     <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
-      <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+      <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+        >Headline</span
+      >
       Porta lorem mollis aliquam
     </h3>
-    <p class="mx-auto max-w-screen-md text-center text-paragraph"
-    >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-    >
+    <p class="mx-auto max-w-screen-md text-center text-paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+    </p>
   </div>
   <!-- text - end -->`;
 
@@ -38,7 +40,9 @@ export const Features1: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -51,7 +55,9 @@ export const Features1: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -64,7 +70,9 @@ export const Features1: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -77,7 +85,9 @@ export const Features1: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -90,7 +100,9 @@ export const Features1: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -103,11 +115,12 @@ export const Features1: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
-
         </div>
       </div>
     </div>
@@ -153,7 +166,9 @@ export const Features2: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -166,7 +181,9 @@ export const Features2: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -179,7 +196,9 @@ export const Features2: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -192,7 +211,9 @@ export const Features2: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -205,7 +226,9 @@ export const Features2: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -218,7 +241,9 @@ export const Features2: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -254,7 +279,9 @@ export const Features3: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-5xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -264,7 +291,9 @@ export const Features3: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-5xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -274,7 +303,9 @@ export const Features3: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-5xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -284,7 +315,9 @@ export const Features3: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-5xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -294,7 +327,9 @@ export const Features3: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-5xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -304,7 +339,9 @@ export const Features3: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-5xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -343,7 +380,9 @@ export const Features4: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -356,7 +395,9 @@ export const Features4: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -369,7 +410,9 @@ export const Features4: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -382,7 +425,9 @@ export const Features4: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -395,7 +440,9 @@ export const Features4: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -408,11 +455,12 @@ export const Features4: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
-
         </div>
       </div>
     </div>
@@ -446,7 +494,9 @@ export const Features5: StoryObj = {
                   <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
                 </div>
                 <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-                <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+                <p class="text-paragraph">
+                  Filler text is dummy text which has no meaning however looks very similar to real text.
+                </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
             </awc-carousel-item>
@@ -461,7 +511,9 @@ export const Features5: StoryObj = {
                   <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
                 </div>
                 <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-                <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+                <p class="text-paragraph">
+                  Filler text is dummy text which has no meaning however looks very similar to real text.
+                </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
             </awc-carousel-item>
@@ -476,7 +528,9 @@ export const Features5: StoryObj = {
                   <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
                 </div>
                 <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-                <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+                <p class="text-paragraph">
+                  Filler text is dummy text which has no meaning however looks very similar to real text.
+                </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
             </awc-carousel-item>
@@ -491,7 +545,9 @@ export const Features5: StoryObj = {
                   <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
                 </div>
                 <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-                <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+                <p class="text-paragraph">
+                  Filler text is dummy text which has no meaning however looks very similar to real text.
+                </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
             </awc-carousel-item>
@@ -506,7 +562,9 @@ export const Features5: StoryObj = {
                   <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
                 </div>
                 <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-                <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+                <p class="text-paragraph">
+                  Filler text is dummy text which has no meaning however looks very similar to real text.
+                </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
             </awc-carousel-item>
@@ -521,7 +579,9 @@ export const Features5: StoryObj = {
                   <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
                 </div>
                 <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-                <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+                <p class="text-paragraph">
+                  Filler text is dummy text which has no meaning however looks very similar to real text.
+                </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
             </awc-carousel-item>
@@ -536,7 +596,9 @@ export const Features5: StoryObj = {
                   <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
                 </div>
                 <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-                <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+                <p class="text-paragraph">
+                  Filler text is dummy text which has no meaning however looks very similar to real text.
+                </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
             </awc-carousel-item>
@@ -568,7 +630,6 @@ export const Features6: StoryObj = {
         ${heading}
 
         <div class="feature-6 grid gap-8 sm:grid-cols-2 md:gap-12 xl:grid-cols-3 xl:gap-16">
-
           <!-- feature - start -->
           <awc-card class="relative" horizontal bordered shadow>
             <div
@@ -578,7 +639,9 @@ export const Features6: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -591,7 +654,9 @@ export const Features6: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -604,7 +669,9 @@ export const Features6: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -617,7 +684,9 @@ export const Features6: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -630,7 +699,9 @@ export const Features6: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
@@ -643,12 +714,12 @@ export const Features6: StoryObj = {
               <awc-icon name="graph-up-arrow" class="text-3xl"></awc-icon>
             </div>
             <h6 class="mb-2 font-semibold text-title text-large">Lorem ipsum</h6>
-            <p class="text-paragraph">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+            <p class="text-paragraph">
+              Filler text is dummy text which has no meaning however looks very similar to real text.
+            </p>
             <awc-button href="#" variant="text">More</awc-button>
           </awc-card>
           <!-- feature - end -->
-
-
         </div>
       </div>
     </div>

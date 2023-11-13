@@ -1,5 +1,5 @@
-import { html } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
+import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import AWCElement from '../../internal/awc-element.js';

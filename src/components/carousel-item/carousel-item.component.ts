@@ -1,7 +1,7 @@
 import { html } from 'lit';
+import { property } from 'lit/decorators.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './carousel-item.styles.js';
-import { property } from 'lit/decorators.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
@@ -36,7 +36,9 @@ export default class AWCCarouselItem extends AWCElement {
   render() {
     return html`
       <slot></slot>
-      ${this.lazy ? html`<div part="preloader" class="carousel__lazy-preloader" ><slot name="lazy-preloader"></slot></div>` : ''}
+      ${this.lazy
+        ? html`<div part="preloader" class="carousel__lazy-preloader"><slot name="lazy-preloader"></slot></div>`
+        : ''}
     `;
   }
 }

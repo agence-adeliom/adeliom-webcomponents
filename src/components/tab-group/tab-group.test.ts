@@ -312,7 +312,7 @@ describe('<awc-tab-group>', () => {
       const customHeader = queryByTestId<AWCTab>(tabGroup, 'custom-header');
       expect(customHeader).not.to.have.attribute('active');
 
-      const showEventPromise = oneEvent(tabGroup, 'awc-tab-show') as Promise<AWCTabShowEvent>;
+      const showEventPromise: Promise<AWCTabShowEvent> = oneEvent(tabGroup, 'awc-tab-show');
       await action();
 
       expect(customHeader).to.have.attribute('active');
@@ -411,7 +411,7 @@ describe('<awc-tab-group>', () => {
       const customHeader = queryByTestId<AWCTab>(tabGroup, 'custom-header');
       expect(customHeader).not.to.have.attribute('active');
 
-      const showEventPromise = oneEvent(tabGroup, 'awc-tab-show') as Promise<AWCTabShowEvent>;
+      const showEventPromise: Promise<AWCTabShowEvent> = oneEvent(tabGroup, 'awc-tab-show');
       await sendKeys({ press: 'ArrowRight' });
       await aTimeout(0);
       expect(generalHeader).to.have.attribute('active');

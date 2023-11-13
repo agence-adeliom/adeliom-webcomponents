@@ -39,7 +39,6 @@ export default css`
     cx: calc(var(--size) / 2);
     cy: calc(var(--size) / 2);
 
-
     transform-origin: 50% 50%;
   }
 
@@ -81,11 +80,11 @@ export default css`
   @keyframes indeterminate {
     from {
       stroke-dashoffset: var(--circumference);
-      transform: rotateZ(0deg)
+      transform: rotateZ(0deg);
     }
     to {
       stroke-dashoffset: calc(var(--circumference) * -1);
-      transform: rotateZ(360deg)
+      transform: rotateZ(360deg);
     }
   }
 `;

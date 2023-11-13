@@ -23,7 +23,7 @@ export default css`
     align-items: center;
   }
 
-  .pagination__items{
+  .pagination__items {
     list-style: none;
     display: flex;
     align-items: center;

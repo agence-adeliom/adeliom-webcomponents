@@ -1,18 +1,17 @@
 import { animateTo, stopAnimations } from '../../internal/animate.js';
-import {classMap} from "lit/directives/class-map.js";
-import {FormControlController} from "../../internal/form.js";
+import { classMap } from 'lit/directives/class-map.js';
 import { getAnimation, setDefaultAnimation } from '../../utilities/animation-registry.js';
-import {HasSlotController} from "../../internal/slot.js";
+import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
-import {ifDefined} from "lit/directives/if-defined.js";
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
-import AWCFormatBytes from "../format-bytes/format-bytes.component.js";
-import AWCIconButton from "../icon-button/icon-button.component";
-import AWCProgressBar from "../progress-bar/progress-bar.component";
+import AWCFormatBytes from '../format-bytes/format-bytes.component.js';
+import AWCIconButton from '../icon-button/icon-button.component';
+import AWCProgressBar from '../progress-bar/progress-bar.component';
 import styles from './file-upload-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -47,7 +46,7 @@ import type { CSSResultGroup } from 'lit';
  * @animation file-upload-item.hide - The animation to use when hiding the file item.
  */
 export default class AWCFileUploadItem extends AWCElement {
-  static styles : CSSResultGroup = styles;
+  static styles: CSSResultGroup = styles;
   static dependencies = {
     'awc-format-bytes': AWCFormatBytes,
     'awc-progress-bar': AWCProgressBar,
@@ -167,7 +166,9 @@ export default class AWCFileUploadItem extends AWCElement {
           <span part="label" class="file-upload-item__label">
             <div class="file-upload-item__label__content">
               <slot></slot>
-              ${this.size ? html`<awc-format-bytes value="${this.size}" class="file-upload-item__label__size"></awc-format-bytes>` : ''}
+              ${this.size
+                ? html`<awc-format-bytes value="${this.size}" class="file-upload-item__label__size"></awc-format-bytes>`
+                : ''}
             </div>
             <div part="error" class="file-upload-item__label__error">
               <slot name="error"></slot>
@@ -175,36 +176,40 @@ export default class AWCFileUploadItem extends AWCElement {
           </span>
         </span>
 
-        ${this.loading || (ifDefined(this.progress) && this.progress === 100) ? html`
-          <span class="file-upload-item__progress__container">
-            ${!ifDefined(this.progress) || (ifDefined(this.progress) && this.progress !== 100) ?
-              html`<awc-progress-ring
-                class="file-upload-item__progress"
-                ?indeterminate=${this.progress === undefined}
-                value=${ifDefined(this.progress)}
-                label=${ifDefined(this.label)}
-              ></awc-progress-ring>`: '' }
-
-             ${ifDefined(this.progress) && this.progress === 100 ?
-               html`<awc-icon class="file-upload-item__progress--completed" name="check-circle-fill"></awc-icon>`: '' }
-            </span>
-        ` : ''}
-
-        ${this.closable && !(this.loading || (ifDefined(this.progress) && this.progress === 100)) ? html`
-          <span
-            class="file-upload-item__close-button"
-            @click=${this.handleCloseClick}
-            @keyup=${this.handleTriggerKeyUp}
-          >
-            <slot name="close-button">
-              <awc-icon-button
-                part="close-button"
-                exportparts="base:close-button__base"
-                name="x-lg"
-              ></awc-icon-button>
-            </slot>
-          </span>
-        ` : ''}
+        ${this.loading || (ifDefined(this.progress) && this.progress === 100)
+          ? html`
+              <span class="file-upload-item__progress__container">
+                ${!ifDefined(this.progress) || (ifDefined(this.progress) && this.progress !== 100)
+                  ? html`<awc-progress-ring
+                      class="file-upload-item__progress"
+                      ?indeterminate=${this.progress === undefined}
+                      value=${ifDefined(this.progress)}
+                      label=${ifDefined(this.label)}
+                    ></awc-progress-ring>`
+                  : ''}
+                ${ifDefined(this.progress) && this.progress === 100
+                  ? html`<awc-icon class="file-upload-item__progress--completed" name="check-circle-fill"></awc-icon>`
+                  : ''}
+              </span>
+            `
+          : ''}
+        ${this.closable && !(this.loading || (ifDefined(this.progress) && this.progress === 100))
+          ? html`
+              <span
+                class="file-upload-item__close-button"
+                @click=${this.handleCloseClick}
+                @keyup=${this.handleTriggerKeyUp}
+              >
+                <slot name="close-button">
+                  <awc-icon-button
+                    part="close-button"
+                    exportparts="base:close-button__base"
+                    name="x-lg"
+                  ></awc-icon-button>
+                </slot>
+              </span>
+            `
+          : ''}
       </div>
     `;
   }

@@ -148,7 +148,7 @@ export default {
       looser: 'var(--awc-line-height-looser)',
       loose: 'var(--awc-line-height-loose)',
       normal: 'var(--awc-line-height-normal)',
-      dense: 'var(--awc-line-height-dense)',
+      dense: 'var(--awc-line-height-dense)'
     },
     fontFamily: {
       sans: 'var(--awc-font-sans)',

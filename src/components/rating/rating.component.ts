@@ -227,8 +227,6 @@ export default class AWCRating extends AWCElement {
       displayValue = this.isHovering ? this.hoverValue : this.value;
     }
 
-    const isShowRate = this.showRate ? true : false;
-
     return html`
       <div
         part="base"
@@ -309,9 +307,9 @@ export default class AWCRating extends AWCElement {
             `;
           })}
         </span>
-        ${this.showRate ? html`<span part="value" class=${classMap({'rating__rate': true})}>
-          ${displayValue} / ${this.max}
-        </span>` : ''}
+        ${this.showRate
+          ? html`<span part="value" class=${classMap({ rating__rate: true })}> ${displayValue} / ${this.max} </span>`
+          : ''}
       </div>
     `;
   }

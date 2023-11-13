@@ -15,7 +15,9 @@ export const Collections1: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="mb-6 flex items-center justify-between gap-4">
           <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Collections
           </h3>
           <awc-button href="#" variant="primary" outline class="hidden sm:block">Show more</awc-button>
@@ -108,14 +110,18 @@ export const Collections2: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+          <h3
+            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+          >
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Erat suspendisse maecena
           </h3>
-          <p class="mx-auto max-w-screen-md text-center text-paragraph"
-          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-          >
+          <p class="mx-auto max-w-screen-md text-center text-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+          </p>
         </div>
         <!-- text - end -->
 
@@ -179,362 +185,366 @@ export const Collections2: StoryObj = {
 export const Collections3: StoryObj = {
   name: 'Collections 3',
   render: () => html`
-      <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
-          <div class="container mx-auto px-4 md:px-8">
-              <div class="mb-6 flex items-center justify-between gap-4">
-                <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
-                  <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
-                  Erat suspendisse maecena
-                </h3>
+    <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
+            Erat suspendisse maecena
+          </h3>
+        </div>
+        <awc-carousel
+          navigation
+          class="card-collection mb-8"
+          style="--aspect-ratio: null;"
+          space-between="16"
+          breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
+        >
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
               </div>
-              <awc-carousel
-                      navigation
-                      class="card-collection mb-8"
-                      style="--aspect-ratio: null;"
-                      space-between="16"
-                      breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
-              >
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
+              </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
+              </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
+              </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
+              </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-              </awc-carousel>
-          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+        </awc-carousel>
       </div>
+    </div>
 
-      <style>
-          .card-collection::part(base) {
-              overflow: visible;
-          }
-          .card-collection::part(navigation-button) {
-              position: absolute;
-              top: 100%;
-              left: 50%;
-              right: auto;
-              margin-top: 2rem;
-          }
-          .card-collection::part(navigation-button--previous) {
-              transform: translate3d(-125%, -50%, 0);
-          }
-          .card-collection::part(navigation-button--next) {
-              transform: translate3d(25%, -50%, 0);
-          }
-          @media screen and (min-width: 767px) {
-              .card-collection::part(navigation-button) {
-                  top: -4rem;
-                  left: auto;
-                  right: 0;
-                  font-size: 1.5rem;
-                  z-index: 1;
-                  border: 1px solid var(--awc-color-primary-600);
-                  color: var(--awc-color-primary-600);
-                  border-radius: var(--awc-border-radius-none);
-                  padding: 0.5rem;
-                  margin: 0;
-                  transform: translate3d(0, -50%, 0);
-              }
-              .card-collection::part(navigation-button--previous) {
-                  right: 4rem;
-                  left: auto;
-              }
-          }
-      </style>
+    <style>
+      .card-collection::part(base) {
+        overflow: visible;
+      }
+      .card-collection::part(navigation-button) {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        right: auto;
+        margin-top: 2rem;
+      }
+      .card-collection::part(navigation-button--previous) {
+        transform: translate3d(-125%, -50%, 0);
+      }
+      .card-collection::part(navigation-button--next) {
+        transform: translate3d(25%, -50%, 0);
+      }
+      @media screen and (min-width: 767px) {
+        .card-collection::part(navigation-button) {
+          top: -4rem;
+          left: auto;
+          right: 0;
+          font-size: 1.5rem;
+          z-index: 1;
+          border: 1px solid var(--awc-color-primary-600);
+          color: var(--awc-color-primary-600);
+          border-radius: var(--awc-border-radius-none);
+          padding: 0.5rem;
+          margin: 0;
+          transform: translate3d(0, -50%, 0);
+        }
+        .card-collection::part(navigation-button--previous) {
+          right: 4rem;
+          left: auto;
+        }
+      }
+    </style>
   `
 };
 
 export const Collections4: StoryObj = {
   name: 'Collections 4',
   render: () => html`
-      <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
-          <div class="container mx-auto px-4 md:px-8">
-              <div class="mb-6 flex items-center justify-between gap-4">
-                <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
-                  <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
-                  Erat suspendisse maecena
-                </h3>
+    <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
+            Erat suspendisse maecena
+          </h3>
+        </div>
+        <awc-carousel
+          navigation
+          class="card-collection mb-8"
+          style="--aspect-ratio: null;--navigation-sides-offset: -2.5rem;--navigation-disabled-opacity: 0"
+          space-between="16"
+          breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
+        >
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
               </div>
-              <awc-carousel
-                      navigation
-                      class="card-collection mb-8"
-                      style="--aspect-ratio: null;--navigation-sides-offset: -2.5rem;--navigation-disabled-opacity: 0"
-                      space-between="16"
-                      breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
-              >
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
+              </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
+              </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
+              </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-                  <!-- product - start -->
-                  <awc-carousel-item>
-                      <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
-                          <div slot="image">
-                              <awc-image
-                                      slot="image"
-                                      layout="filled"
-                                      width="600"
-                                      height="400"
-                                      src="https://placehold.co/600x400"
-                                      class="transition duration-200 group-hover:scale-110"
-                              ></awc-image>
-                          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+          <!-- product - start -->
+          <awc-carousel-item>
+            <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
+              <div slot="image">
+                <awc-image
+                  slot="image"
+                  layout="filled"
+                  width="600"
+                  height="400"
+                  src="https://placehold.co/600x400"
+                  class="transition duration-200 group-hover:scale-110"
+                ></awc-image>
+              </div>
 
-                          <div class="flex flex-1 flex-col">
+              <div class="flex flex-1 flex-col">
                 <span class="text-base text-sm text-neutral-800 leading-dense text-paragraph uppercase block"
-                >Headline</span
+                  >Headline</span
                 >
-                              <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
-                          </div>
+                <h2 class="mb-2 text-lg font-semibold text-title">Lorem ipsum dolor sit</h2>
+              </div>
 
-                          <div slot="footer" class="flex items-center gap-2">
-                              <awc-button variant="primary">Learn more</awc-button>
-                          </div>
-                      </awc-card>
-                  </awc-carousel-item>
-                  <!-- product - end -->
-              </awc-carousel>
-          </div>
+              <div slot="footer" class="flex items-center gap-2">
+                <awc-button variant="primary">Learn more</awc-button>
+              </div>
+            </awc-card>
+          </awc-carousel-item>
+          <!-- product - end -->
+        </awc-carousel>
       </div>
+    </div>
 
-      <style>
-          .card-collection::part(base) {
-              overflow: visible;
-          }
-      </style>
+    <style>
+      .card-collection::part(base) {
+        overflow: visible;
+      }
+    </style>
   `
 };
 
@@ -545,7 +555,9 @@ export const Collections5: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="mb-6 flex items-center justify-between gap-4">
           <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Erat suspendisse maecena
           </h3>
         </div>
@@ -697,34 +709,34 @@ export const Collections5: StoryObj = {
     </div>
 
     <style>
-        .card-collection::part(base) {
-            overflow: visible;
-        }
+      .card-collection::part(base) {
+        overflow: visible;
+      }
 
-        .card-collection::part(pagination) {
-            top: 100%;
-            margin-top: 1.5rem;
-            right: 8rem;
-            width: auto;
-        }
-        .card-collection::part(navigation-button) {
-            top: 100%;
-            left: auto;
-            right: 0;
-            font-size: 1.5rem;
-            z-index: 1;
-            border: 1px solid var(--awc-color-primary-600);
-            color: var(--awc-color-primary-600);
-            border-radius: var(--awc-border-radius-none);
-            padding: 0.5rem;
-            margin: 0;
-            margin-top: 1.5rem;
-            transform: translate3d(0, -50%, 0);
-        }
-        .card-collection::part(navigation-button--previous) {
-            right: 4rem;
-            left: auto;
-        }
+      .card-collection::part(pagination) {
+        top: 100%;
+        margin-top: 1.5rem;
+        right: 8rem;
+        width: auto;
+      }
+      .card-collection::part(navigation-button) {
+        top: 100%;
+        left: auto;
+        right: 0;
+        font-size: 1.5rem;
+        z-index: 1;
+        border: 1px solid var(--awc-color-primary-600);
+        color: var(--awc-color-primary-600);
+        border-radius: var(--awc-border-radius-none);
+        padding: 0.5rem;
+        margin: 0;
+        margin-top: 1.5rem;
+        transform: translate3d(0, -50%, 0);
+      }
+      .card-collection::part(navigation-button--previous) {
+        right: 4rem;
+        left: auto;
+      }
     </style>
   `
 };

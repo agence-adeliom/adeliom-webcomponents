@@ -22,24 +22,24 @@ export const Cta1: StoryObj = {
 
           <!-- content - start -->
           <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
+            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                >Headline</span
+              >
+              Erat suspendisse maecena
+            </h4>
 
-              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
-                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
-                Erat suspendisse maecena
-              </h4>
+            <p class="mb-6 md:mb-8 text-paragraph">
+              This is a section of some simple filler text, also known as placeholder text. It shares some
+              characteristics of a real written text but is random or otherwise generated. It may be used to display a
+              sample of fonts or generate text for testing. Filler text is dummy text which has no meaning however looks
+              very similar to a real text.
+            </p>
 
-              <p class="mb-6 md:mb-8 text-paragraph">
-                This is a section of some simple filler text, also known as placeholder text. It shares some
-                characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                sample of fonts or generate text for testing. Filler text is dummy text which has no meaning however
-                looks very similar to a real text.
-              </p>
-
-              <div class="flex gap-4">
-                <awc-button variant="primary" class="w-full md:w-auto">Button</awc-button>
-                <awc-button variant="primary" outline class="bg-white w-full md:w-auto">Button</awc-button>
-              </div>
-
+            <div class="flex gap-4">
+              <awc-button variant="primary" class="w-full md:w-auto">Button</awc-button>
+              <awc-button variant="primary" outline class="bg-white w-full md:w-auto">Button</awc-button>
+            </div>
           </div>
           <!-- content - end -->
         </div>
@@ -62,24 +62,24 @@ export const Cta2: StoryObj = {
 
           <!-- content - start -->
           <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
+            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                >Headline</span
+              >
+              Erat suspendisse maecena
+            </h4>
 
-              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
-                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
-                Erat suspendisse maecena
-              </h4>
+            <p class="mb-6 md:mb-8 text-paragraph">
+              This is a section of some simple filler text, also known as placeholder text. It shares some
+              characteristics of a real written text but is random or otherwise generated. It may be used to display a
+              sample of fonts or generate text for testing. Filler text is dummy text which has no meaning however looks
+              very similar to a real text.
+            </p>
 
-              <p class="mb-6 md:mb-8 text-paragraph">
-                This is a section of some simple filler text, also known as placeholder text. It shares some
-                characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                sample of fonts or generate text for testing. Filler text is dummy text which has no meaning however
-                looks very similar to a real text.
-              </p>
-
-              <div class="flex gap-4">
-                <awc-button variant="primary" class="w-full md:w-auto">Button</awc-button>
-                <awc-button variant="primary" outline class="bg-white w-full md:w-auto">Button</awc-button>
-              </div>
-
+            <div class="flex gap-4">
+              <awc-button variant="primary" class="w-full md:w-auto">Button</awc-button>
+              <awc-button variant="primary" outline class="bg-white w-full md:w-auto">Button</awc-button>
+            </div>
           </div>
           <!-- content - end -->
         </div>
@@ -95,7 +95,9 @@ export const Cta3: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="mx-auto flex max-w-2xl flex-col items-center text-center">
           <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Erat suspendisse maecena
           </h4>
 

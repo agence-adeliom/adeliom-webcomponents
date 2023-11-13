@@ -1,4 +1,5 @@
 import { registerTranslation } from '../utilities/localize.js';
+import prettyBytes from 'pretty-bytes';
 import type { Translation } from '../utilities/localize.js';
 
 const translation: Translation = {
@@ -6,16 +7,23 @@ const translation: Translation = {
   $name: 'Português',
   $dir: 'ltr',
 
+  browseFiles: 'Navegar pelos arquivos',
   carousel: 'Carrossel',
   clearEntry: 'Limpar entrada',
   close: 'Fechar',
   copied: 'Copiado',
   copy: 'Copiar',
   currentValue: 'Valor atual',
+  dragDrop: 'Arraste e solte para enviar',
+  fileTypeNotAccepted: accept => `Tipo de arquivo não aceito, apenas arquivos ${accept} são permitidos`,
+  fileSizeExceeded: size => `Tamanho do arquivo excede ${prettyBytes(size, { locale: 'pt' })}`,
   error: 'Erro',
-  goToSlide: (slide, count) => `Vá para o slide ${slide} de ${count}`,
-  hidePassword: 'Esconder a senha',
+  goToSlide: (slide, count) => `Ir para o slide ${slide} de ${count}`,
+  hidePassword: 'Esconder senha',
   loading: 'Carregando',
+  files: 'Arquivos :',
+  maxFiles: 'Número máximo de arquivos atingido',
+  noMultipleFiles: 'Múltiplos arquivos não são permitidos',
   nextSlide: 'Próximo slide',
   numOptionsSelected: num => {
     if (num === 0) return 'Nenhuma opção selecionada';
@@ -27,13 +35,13 @@ const translation: Translation = {
   next: 'Próximo',
   progress: 'Progresso',
   remove: 'Remover',
-  resize: 'Mudar o tamanho',
+  resize: 'Redimensionar',
   scrollToEnd: 'Rolar até o final',
   scrollToStart: 'Rolar até o início',
   selectAColorFromTheScreen: 'Selecionar uma cor da tela',
   showPassword: 'Mostrar senha',
   slideNum: slide => `Slide ${slide}`,
-  toggleColorFormat: 'Trocar o formato de cor'
+  toggleColorFormat: 'Alternar formato de cor'
 };
 
 registerTranslation(translation);

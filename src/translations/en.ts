@@ -16,7 +16,7 @@ const translation: Translation = {
   currentValue: 'Current value',
   dragDrop: 'Drag and drop to upload',
   fileTypeNotAccepted: accept => `File type is not accepted, only ${accept} files are allowed`,
-  fileSizeExceeded: size => `File size exceeds ${prettyBytes(size, {locale: 'en'})}`,
+  fileSizeExceeded: size => `File size exceeds ${prettyBytes(size, { locale: 'en' })}`,
   error: 'Error',
   goToSlide: (slide, count) => `Go to slide ${slide} of ${count}`,
   hidePassword: 'Hide password',

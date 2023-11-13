@@ -19,8 +19,12 @@ export const Content1: StoryObj = {
           </div>
 
           <div>
-            <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
-              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            <h3
+              class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+            >
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                >Headline</span
+              >
               Erat suspendisse maecena
             </h3>
 
@@ -41,7 +45,9 @@ export const Content1: StoryObj = {
               text is dummy text which has no meaning however looks very similar to real text.
             </p>
 
-            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+            <h4
+              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+            >
               About us
             </h4>
 
@@ -70,8 +76,12 @@ export const Content2: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="grid gap-8 md:grid-cols-2 lg:gap-32">
           <div>
-            <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
-              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            <h3
+              class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+            >
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                >Headline</span
+              >
               Erat suspendisse maecena
             </h3>
 
@@ -86,13 +96,15 @@ export const Content2: StoryObj = {
               <a
                 href="#"
                 class="text-primary underline transition duration-100 hover:text-primary-600 active:text-primary-700"
-              >random</a
+                >random</a
               >
               or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler
               text is dummy text which has no meaning however looks very similar to real text.
             </p>
 
-            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+            <h4
+              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+            >
               About us
             </h4>
 
@@ -125,8 +137,12 @@ export const Content3: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="flex flex-col gap-8 justify-center max-w-3xl mx-auto">
           <div>
-            <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
-              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            <h3
+              class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+            >
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                >Headline</span
+              >
               Erat suspendisse maecena
             </h3>
 
@@ -141,13 +157,15 @@ export const Content3: StoryObj = {
               <a
                 href="#"
                 class="text-primary underline transition duration-100 hover:text-primary-600 active:text-primary-700"
-              >random</a
+                >random</a
               >
               or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler
               text is dummy text which has no meaning however looks very similar to real text.
             </p>
 
-            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
+            <h4
+              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+            >
               About us
             </h4>
 
@@ -179,8 +197,12 @@ export const Content4: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
         <div class="grid md:grid-cols-3">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+          <h3
+            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+          >
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Erat suspendisse maecena
           </h3>
 
@@ -196,7 +218,7 @@ export const Content4: StoryObj = {
               <a
                 href="#"
                 class="text-primary underline transition duration-100 hover:text-primary-600 active:text-primary-700"
-              >random</a
+                >random</a
               >
               or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler
               text is dummy text which has no meaning however looks very similar to real text.

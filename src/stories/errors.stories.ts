@@ -72,8 +72,12 @@ export const Errors1: StoryObj = {
         <!-- logo - end -->
 
         <div class="mb-8 md:mb-12 max-w-screen-md ">
-          <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+          <h4
+            class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12"
+          >
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua.
           </h4>
@@ -175,8 +179,12 @@ export const Errors2: StoryObj = {
           <!-- logo - end -->
 
           <div class="mb-8 md:mb-12 max-w-screen-md ">
-            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12">
-              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            <h4
+              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12"
+            >
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                >Headline</span
+              >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </h4>
@@ -304,8 +312,12 @@ export const Errors3: StoryObj = {
           <!-- logo - end -->
 
           <div class="mb-8 md:mb-12 max-w-screen-md ">
-            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12">
-              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            <h4
+              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12"
+            >
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                >Headline</span
+              >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </h4>
@@ -360,10 +372,14 @@ export const Errors4: StoryObj = {
 
         <!-- content - start -->
         <div class="relative flex flex-col items-center justify-center p-8 md:p-16">
-          <h3 class="mb-6 text-3x-large md:text-4x-large xl:text-5x-large text-center uppercase text-neutral-0 dark:text-neutral-1000 font-bold">404</h3>
-          <p class="mb-8 text-center text-neutral-0 dark:text-neutral-1000"
-            >The page you’re looking for doesn’t exist.</p
+          <h3
+            class="mb-6 text-3x-large md:text-4x-large xl:text-5x-large text-center uppercase text-neutral-0 dark:text-neutral-1000 font-bold"
           >
+            404
+          </h3>
+          <p class="mb-8 text-center text-neutral-0 dark:text-neutral-1000">
+            The page you’re looking for doesn’t exist.
+          </p>
 
           <awc-button variant="default" size="large">Go home</awc-button>
         </div>
@@ -522,7 +538,10 @@ export const Errors6: StoryObj = {
         <!-- logo - end -->
 
         <div class="max-w-screen-sm text-center ">
-          <h3 type="h3" class="mb-6 md:mb-9 text-3x-large md:text-4x-large xl:text-5x-large leading-dense font-semibold text-title">
+          <h3
+            type="h3"
+            class="mb-6 md:mb-9 text-3x-large md:text-4x-large xl:text-5x-large leading-dense font-semibold text-title"
+          >
             Lorem ipsum dolor sit amet.
             <span class="text-x-large md:text-2x-large xl:text-3x-large leading-dense font-semibold block mt-2">
               Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.

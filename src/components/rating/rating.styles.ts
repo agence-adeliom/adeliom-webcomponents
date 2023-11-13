@@ -66,7 +66,7 @@ export default css`
 
   .rating__rate {
     font-size: calc(var(--symbol-size) * 0.75);
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     line-height: 0;
   }
 

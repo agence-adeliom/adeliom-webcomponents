@@ -1,4 +1,5 @@
 import { registerTranslation } from '../utilities/localize.js';
+import prettyBytes from 'pretty-bytes';
 import type { Translation } from '../utilities/localize.js';
 
 const translation: Translation = {
@@ -6,19 +7,26 @@ const translation: Translation = {
   $name: 'Svenska',
   $dir: 'ltr',
 
+  browseFiles: 'Bläddra bland filer',
   carousel: 'Karusell',
-  clearEntry: 'Återställ val',
+  clearEntry: 'Rensa inmatning',
   close: 'Stäng',
-  copied: 'Kopierade',
+  copied: 'Kopierad',
   copy: 'Kopiera',
-  currentValue: 'Nuvarande värde',
+  currentValue: 'Aktuellt värde',
+  dragDrop: 'Dra och släpp för att ladda upp',
+  fileTypeNotAccepted: accept => `Filtypen accepteras inte, endast ${accept} filer är tillåtna`,
+  fileSizeExceeded: size => `Filstorleken överstiger ${prettyBytes(size, { locale: 'sv' })}`,
   error: 'Fel',
   goToSlide: (slide, count) => `Gå till bild ${slide} av ${count}`,
   hidePassword: 'Dölj lösenord',
-  loading: 'Läser in',
+  loading: 'Laddar',
+  files: 'Filer :',
+  maxFiles: 'Maximalt antal filer uppnått',
+  noMultipleFiles: 'Flera filer är inte tillåtna',
   nextSlide: 'Nästa bild',
   numOptionsSelected: num => {
-    if (num === 0) return 'Inga alternativ har valts';
+    if (num === 0) return 'Inga alternativ valda';
     if (num === 1) return '1 alternativ valt';
     return `${num} alternativ valda`;
   },

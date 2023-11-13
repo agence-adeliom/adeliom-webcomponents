@@ -22,7 +22,7 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-shadow
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCFileUpload & typeof args>;
 export default meta;
@@ -40,7 +40,7 @@ export const Primary: Story = {
   },
   args: {
     multiple: true,
-    'help-text': "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    'help-text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
   }
 };
 
@@ -55,7 +55,7 @@ export const Disabled: Story = {
   },
   args: {
     disabled: true,
-    multiple: true,
+    multiple: true
   }
 };
 
@@ -70,7 +70,7 @@ export const WithoutButton: Story = {
   },
   args: {
     'no-button': true,
-    multiple: true,
+    multiple: true
   }
 };
 
@@ -85,7 +85,7 @@ export const ButtonOnly: Story = {
   },
   args: {
     'button-only': true,
-    multiple: true,
+    multiple: true
   }
 };
 
@@ -101,11 +101,9 @@ export const HelpText: Story = {
   args: {
     'help-text': 'The maximum file size is 3MB.',
     'max-file-size': 3 * 1024 * 1024,
-    multiple: true,
+    multiple: true
   }
 };
-
-
 
 export const CustomizingLabels: Story = {
   name: 'Customizing Labels',
@@ -118,8 +116,8 @@ export const CustomizingLabels: Story = {
   },
   args: {
     multiple: true,
-    label: "Please combine all documents into one PDF file.",
-    'button-label': "Upload your CV or Resume"
+    label: 'Please combine all documents into one PDF file.',
+    'button-label': 'Upload your CV or Resume'
   }
 };
 
@@ -162,11 +160,12 @@ export const CustomizingContent: Story = {
       }
     }
   },
-  render: () => html`<awc-file-upload multiple>
-    <awc-card slot="content" bordered class="w-full text-center">
-      This card is a dropzone. You can drag all sorts of things in it!
-    </awc-card>
-  </awc-file-upload>`
+  render: () =>
+    html`<awc-file-upload multiple>
+      <awc-card slot="content" bordered class="w-full text-center">
+        This card is a dropzone. You can drag all sorts of things in it!
+      </awc-card>
+    </awc-file-upload>`
 };
 
 export const NoFileList: Story = {
@@ -179,7 +178,7 @@ export const NoFileList: Story = {
     }
   },
   args: {
-    'no-file-list': true,
+    'no-file-list': true
   }
 };
 
@@ -193,7 +192,7 @@ export const MaximumFileSize: Story = {
     }
   },
   args: {
-    'max-file-size': 100,
+    'max-file-size': 100
   }
 };
 
@@ -208,7 +207,7 @@ export const MaximumNumberFiles: Story = {
   },
   args: {
     multiple: true,
-    'max-files': 2,
+    'max-files': 2
   }
 };
 
@@ -222,7 +221,7 @@ export const AcceptedFileTypes: Story = {
     }
   },
   args: {
-    accept: "image/*",
+    accept: 'image/*'
   }
 };
 
@@ -235,21 +234,22 @@ export const FormData: Story = {
       }
     }
   },
-  render: () => html`<form class="file-upload">
-    <awc-file-upload name="awc-file-upload" multiple></awc-file-upload>
-    <div class="mt-4">
-      <awc-button type="reset" variant="default">Reset</awc-button>
-      <awc-button type="submit" variant="primary">Submit</awc-button>
-    </div>
-  </form>
+  render: () =>
+    html`<form class="file-upload">
+        <awc-file-upload name="awc-file-upload" multiple></awc-file-upload>
+        <div class="mt-4">
+          <awc-button type="reset" variant="default">Reset</awc-button>
+          <awc-button type="submit" variant="primary">Submit</awc-button>
+        </div>
+      </form>
 
-  <script type="module">
-    document.querySelector('.file-upload').addEventListener('submit', event => {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-      console.log(formData.getAll('awc-file-upload'));
-    });
-  </script>`
+      <script type="module">
+        document.querySelector('.file-upload').addEventListener('submit', event => {
+          event.preventDefault();
+          const formData = new FormData(event.target);
+          console.log(formData.getAll('awc-file-upload'));
+        });
+      </script>`
 };
 
 export const JSON: Story = {
@@ -261,22 +261,23 @@ export const JSON: Story = {
       }
     }
   },
-  render: () => html`<form class="file-upload">
-    <awc-file-upload name="awc-file-upload" multiple></awc-file-upload>
-    <div class="mt-4">
-      <awc-button type="reset" variant="default">Reset</awc-button>
-      <awc-button type="submit" variant="primary">Submit</awc-button>
-    </div>
-  </form>
+  render: () =>
+    html`<form class="file-upload">
+        <awc-file-upload name="awc-file-upload" multiple></awc-file-upload>
+        <div class="mt-4">
+          <awc-button type="reset" variant="default">Reset</awc-button>
+          <awc-button type="submit" variant="primary">Submit</awc-button>
+        </div>
+      </form>
 
-  <script type="module">
-    import { serialize } from 'https://cdn.jsdelivr.net/npm/@agence-adeliom/awc/dist/utilities/form.js';
-    document.querySelector('.file-upload').addEventListener('submit', event => {
-      event.preventDefault();
-      const data = serialize(event.target);
-      console.log(data);
-    });
-  </script>`
+      <script type="module">
+        import { serialize } from 'https://cdn.jsdelivr.net/npm/@agence-adeliom/awc/dist/utilities/form.js';
+        document.querySelector('.file-upload').addEventListener('submit', event => {
+          event.preventDefault();
+          const data = serialize(event.target);
+          console.log(data);
+        });
+      </script>`
 };
 
 export const UploadFiles: Story = {
@@ -288,19 +289,19 @@ export const UploadFiles: Story = {
       }
     }
   },
-  render: () => html`
-    <awc-file-upload class="awc-file-upload-xmlhttprequest" multiple></awc-file-upload>
+  render: () =>
+    html` <awc-file-upload class="awc-file-upload-xmlhttprequest" multiple></awc-file-upload>
 
-    <script type="module">
-      document.querySelector('.awc-file-upload-xmlhttprequest').addEventListener('awc-change', event => {
-        event.preventDefault();
-        const fileInfo = event.detail;
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://httpbin.org/post');
-        xhr.setRequestHeader('Content-Type', fileInfo.file.type);
-        xhr.send(fileInfo.file);
-      });
-    </script>`
+      <script type="module">
+        document.querySelector('.awc-file-upload-xmlhttprequest').addEventListener('awc-change', event => {
+          event.preventDefault();
+          const fileInfo = event.detail;
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', 'https://httpbin.org/post');
+          xhr.setRequestHeader('Content-Type', fileInfo.file.type);
+          xhr.send(fileInfo.file);
+        });
+      </script>`
 };
 
 export const UploadFilesLoading: Story = {
@@ -312,26 +313,28 @@ export const UploadFilesLoading: Story = {
       }
     }
   },
-  render: () => html`
-    <awc-file-upload class="awc-file-upload-xmlhttprequest-loading" multiple></awc-file-upload>
+  render: () =>
+    html` <awc-file-upload class="awc-file-upload-xmlhttprequest-loading" multiple></awc-file-upload>
 
-    <script type="module">
-      document.querySelector('.awc-file-upload-xmlhttprequest-loading').addEventListener('awc-change', async event => {
-        event.preventDefault();
-        const fileInfo = event.detail;
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://httpbin.org/post');
-        xhr.setRequestHeader('Content-Type', fileInfo.file.type);
-        xhr.send(fileInfo.file);
+      <script type="module">
+        document
+          .querySelector('.awc-file-upload-xmlhttprequest-loading')
+          .addEventListener('awc-change', async event => {
+            event.preventDefault();
+            const fileInfo = event.detail;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://httpbin.org/post');
+            xhr.setRequestHeader('Content-Type', fileInfo.file.type);
+            xhr.send(fileInfo.file);
 
-        fileInfo.loading = true;
+            fileInfo.loading = true;
 
-        setTimeout(() => {
-          fileInfo.loading = false;
-          event.target.requestUpdate();
-        }, 3000);
-      });
-    </script>`
+            setTimeout(() => {
+              fileInfo.loading = false;
+              event.target.requestUpdate();
+            }, 3000);
+          });
+      </script>`
 };
 
 export const UploadFilesProgress: Story = {
@@ -343,38 +346,40 @@ export const UploadFilesProgress: Story = {
       }
     }
   },
-  render: () => html`
-    <awc-file-upload class="awc-file-upload-xmlhttprequest-progress" multiple></awc-file-upload>
+  render: () =>
+    html` <awc-file-upload class="awc-file-upload-xmlhttprequest-progress" multiple></awc-file-upload>
 
-    <script type="module">
-      document.querySelector('.awc-file-upload-xmlhttprequest-progress').addEventListener('awc-change', async event => {
-        event.preventDefault();
-        const fileInfo = event.detail;
-        const fileUpload = event.target;
-        const xhr = new XMLHttpRequest();
+      <script type="module">
+        document
+          .querySelector('.awc-file-upload-xmlhttprequest-progress')
+          .addEventListener('awc-change', async event => {
+            event.preventDefault();
+            const fileInfo = event.detail;
+            const fileUpload = event.target;
+            const xhr = new XMLHttpRequest();
 
-        xhr.upload.onprogress = event => {
-          if (event.lengthComputable) {
-            console.log('progress: ', (event.loaded / event.total) * 100);
-            fileInfo.progress = (event.loaded / event.total) * 100;
-            fileUpload.requestUpdate();
-          }
-        };
+            xhr.upload.onprogress = event => {
+              if (event.lengthComputable) {
+                console.log('progress: ', (event.loaded / event.total) * 100);
+                fileInfo.progress = (event.loaded / event.total) * 100;
+                fileUpload.requestUpdate();
+              }
+            };
 
-        xhr.upload.onload = event => {
-          console.log('complete: ', event);
-          fileInfo.loading = false;
-          fileUpload.requestUpdate();
-        };
+            xhr.upload.onload = event => {
+              console.log('complete: ', event);
+              fileInfo.loading = false;
+              fileUpload.requestUpdate();
+            };
 
-        xhr.open('POST', 'https://httpbin.org/post');
-        var formData = new FormData();
-        formData.append('file', fileInfo.file);
-        xhr.send(formData);
+            xhr.open('POST', 'https://httpbin.org/post');
+            var formData = new FormData();
+            formData.append('file', fileInfo.file);
+            xhr.send(formData);
 
-        fileInfo.loading = true;
-      });
-    </script>`
+            fileInfo.loading = true;
+          });
+      </script>`
 };
 
 export const UploadFilesErrors: Story = {
@@ -386,30 +391,30 @@ export const UploadFilesErrors: Story = {
       }
     }
   },
-  render: () => html`
-    <awc-file-upload class="awc-file-upload-xmlhttprequest-errors" multiple></awc-file-upload>
+  render: () =>
+    html` <awc-file-upload class="awc-file-upload-xmlhttprequest-errors" multiple></awc-file-upload>
 
-    <script type="module">
-      document.querySelector('.awc-file-upload-xmlhttprequest-errors').addEventListener('awc-change', async event => {
-        event.preventDefault();
-        const fileInfo = event.detail;
-        const fileUpload = event.target;
-        const xhr = new XMLHttpRequest();
+      <script type="module">
+        document.querySelector('.awc-file-upload-xmlhttprequest-errors').addEventListener('awc-change', async event => {
+          event.preventDefault();
+          const fileInfo = event.detail;
+          const fileUpload = event.target;
+          const xhr = new XMLHttpRequest();
 
-        xhr.upload.onerror = event => {
-          console.error('error:', event);
-          fileInfo.loading = false;
-          fileInfo.error = 'Upload Failed';
-          fileInfo.accepted = false;
+          xhr.upload.onerror = event => {
+            console.error('error:', event);
+            fileInfo.loading = false;
+            fileInfo.error = 'Upload Failed';
+            fileInfo.accepted = false;
 
-          fileUpload.requestUpdate();
-        };
+            fileUpload.requestUpdate();
+          };
 
-        xhr.open('POST', 'https://example.com');
-        xhr.setRequestHeader('Content-Type', fileInfo.file.type);
-        xhr.send(fileInfo.file);
+          xhr.open('POST', 'https://example.com');
+          xhr.setRequestHeader('Content-Type', fileInfo.file.type);
+          xhr.send(fileInfo.file);
 
-        fileInfo.loading = true;
-      });
-    </script>`
+          fileInfo.loading = true;
+        });
+      </script>`
 };

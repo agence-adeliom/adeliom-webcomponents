@@ -11,13 +11,15 @@ export default {
 const heading = html`<!-- text - start -->
   <div class="mb-8 md:mb-10">
     <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
-      <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+      <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+        >Headline</span
+      >
       Consectetur adipiscing elit
     </h3>
-    <p class="mx-auto max-w-screen-md text-center text-paragraph"
-    >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-    >
+    <p class="mx-auto max-w-screen-md text-center text-paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+    </p>
   </div>
   <!-- text - end -->`;
 
@@ -109,8 +111,14 @@ export const LogoCloud2: StoryObj = {
     html`<div class="container mx-auto px-4 md:px-8">
       ${heading}
 
-      <awc-carousel class="block" navigation space-between="16" slides-per-view="2" style="--navigation-sides-offset: -2.5rem;"
-                    breakpoints='{"1024":{"slidesPerView":4}}'>
+      <awc-carousel
+        class="block"
+        navigation
+        space-between="16"
+        slides-per-view="2"
+        style="--navigation-sides-offset: -2.5rem;"
+        breakpoints='{"1024":{"slidesPerView":4}}'
+      >
         <awc-carousel-item class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
           <svg
             class="h-6 w-auto sm:h-8 lg:h-10"

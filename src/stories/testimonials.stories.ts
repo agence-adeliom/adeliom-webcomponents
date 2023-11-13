@@ -11,13 +11,15 @@ export default {
 const heading = html`<!-- text - start -->
   <div class="mb-8 md:mb-10">
     <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
-      <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+      <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+        >Headline</span
+      >
       Consectetur adipiscing elit
     </h3>
-    <p class="mx-auto max-w-screen-md text-center text-paragraph  mb-4"
-    >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-    >
+    <p class="mx-auto max-w-screen-md text-center text-paragraph  mb-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+    </p>
     <div class="flex justify-center items-center gap-2">
       <awc-rating label="Rating" readonly show-rate value="4"></awc-rating>
     </div>
@@ -302,17 +304,15 @@ export const Testimonials3: StoryObj = {
     </div>
 
     <style>
-        awc-carousel {
-            --aspect-ratio: none;
-            --pagination-bottom: -8px;
-            --navigation-disabled-opacity: 0;
-            --navigation-sides-offset: -2.5rem;
-        }
-        awc-carousel::part(base) {
-          padding-bottom: 30px;
-        }
-
-
+      awc-carousel {
+        --aspect-ratio: none;
+        --pagination-bottom: -8px;
+        --navigation-disabled-opacity: 0;
+        --navigation-sides-offset: -2.5rem;
+      }
+      awc-carousel::part(base) {
+        padding-bottom: 30px;
+      }
     </style>
   `
 };
@@ -325,13 +325,15 @@ export const Testimonials4: StoryObj = {
         <!-- text - start -->
         <div class="md:col-span-5">
           <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Consectetur adipiscing elit
           </h3>
-          <p class="mx-auto max-w-screen-md text-paragraph mb-4"
-          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-          >
+          <p class="mx-auto max-w-screen-md text-paragraph mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+          </p>
           <div class="flex justify-center items-center md:justify-start gap-2 mb-6">
             <awc-rating label="Rating" readonly show-rate value="4"></awc-rating>
           </div>
@@ -339,7 +341,12 @@ export const Testimonials4: StoryObj = {
         </div>
         <!-- text - end -->
         <div class="md:col-span-7 w-full px-12">
-          <awc-carousel pagination navigation style="--aspect-ratio: none;--navigation-sides-offset: -2.75rem;--pagination-bottom: -2rem;" class="testimonial-carousel">
+          <awc-carousel
+            pagination
+            navigation
+            style="--aspect-ratio: none;--navigation-sides-offset: -2.75rem;--pagination-bottom: -2rem;"
+            class="testimonial-carousel"
+          >
             <!-- quote - start -->
             <awc-carousel-item>
               <awc-card bordered shadow>
@@ -356,8 +363,8 @@ export const Testimonials4: StoryObj = {
                 <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
                 <p class="text-paragraph">
                   This is a section of some simple filler text, also known as placeholder text. It shares some
-                  characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                  sample of fonts or generate text for testing.
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display
+                  a sample of fonts or generate text for testing.
                 </p>
               </awc-card>
             </awc-carousel-item>
@@ -379,8 +386,8 @@ export const Testimonials4: StoryObj = {
                 <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
                 <p class="text-paragraph">
                   This is a section of some simple filler text, also known as placeholder text. It shares some
-                  characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                  sample of fonts or generate text for testing.
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display
+                  a sample of fonts or generate text for testing.
                 </p>
               </awc-card>
             </awc-carousel-item>
@@ -402,8 +409,8 @@ export const Testimonials4: StoryObj = {
                 <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
                 <p class="text-paragraph">
                   This is a section of some simple filler text, also known as placeholder text. It shares some
-                  characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                  sample of fonts or generate text for testing.
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display
+                  a sample of fonts or generate text for testing.
                 </p>
               </awc-card>
             </awc-carousel-item>
@@ -425,8 +432,8 @@ export const Testimonials4: StoryObj = {
                 <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
                 <p class="text-paragraph">
                   This is a section of some simple filler text, also known as placeholder text. It shares some
-                  characteristics of a real written text but is random or otherwise generated. It may be used to display a
-                  sample of fonts or generate text for testing.
+                  characteristics of a real written text but is random or otherwise generated. It may be used to display
+                  a sample of fonts or generate text for testing.
                 </p>
               </awc-card>
             </awc-carousel-item>
@@ -435,8 +442,6 @@ export const Testimonials4: StoryObj = {
         </div>
       </div>
     </div>
-    <style>
-
-    </style>
+    <style></style>
   `
 };

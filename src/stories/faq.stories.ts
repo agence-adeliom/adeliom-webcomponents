@@ -15,14 +15,18 @@ export const Faq1: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+          <h3
+            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+          >
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Frequently asked questions
           </h3>
-          <p class="mx-auto max-w-screen-md text-center text-paragraph"
-          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-          >
+          <p class="mx-auto max-w-screen-md text-center text-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+          </p>
         </div>
         <!-- text - end -->
 
@@ -40,9 +44,10 @@ export const Faq1: StoryObj = {
               <awc-icon name="question"></awc-icon>
             </span>
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -53,9 +58,10 @@ export const Faq1: StoryObj = {
               <awc-icon name="question"></awc-icon>
             </span>
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -66,9 +72,10 @@ export const Faq1: StoryObj = {
               <awc-icon name="question"></awc-icon>
             </span>
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -79,9 +86,10 @@ export const Faq1: StoryObj = {
               <awc-icon name="question"></awc-icon>
             </span>
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -92,9 +100,10 @@ export const Faq1: StoryObj = {
               <awc-icon name="question"></awc-icon>
             </span>
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
@@ -105,9 +114,10 @@ export const Faq1: StoryObj = {
               <awc-icon name="question"></awc-icon>
             </span>
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
         </div>
@@ -123,14 +133,18 @@ export const Faq2: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+          <h3
+            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+          >
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Frequently asked questions
           </h3>
-          <p class="mx-auto max-w-screen-md text-center text-paragraph"
-          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-          >
+          <p class="mx-auto max-w-screen-md text-center text-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+          </p>
         </div>
         <!-- text - end -->
 
@@ -198,14 +212,18 @@ export const Faq3: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+          <h3
+            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+          >
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Frequently asked questions
           </h3>
-          <p class="mx-auto max-w-screen-md text-center text-paragraph"
-          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-          >
+          <p class="mx-auto max-w-screen-md text-center text-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+          </p>
         </div>
         <!-- text - end -->
 
@@ -218,49 +236,55 @@ export const Faq3: StoryObj = {
           <!-- question - start -->
           <awc-card style="--padding: 0">
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
           <!-- question - start -->
           <awc-card style="--padding: 0">
             <h5 class="mb-3 text-large font-semibold text-primary">Lorem ipsum sit dolor</h5>
-            <p class="text-paragraph">Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.</p>
+            <p class="text-paragraph">
+              Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
+            </p>
           </awc-card>
           <!-- question - end -->
         </div>
@@ -275,14 +299,18 @@ export const Faq4: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
-            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+          <h3
+            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+          >
+            <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+              >Headline</span
+            >
             Frequently asked questions
           </h3>
-          <p class="mx-auto max-w-screen-md text-center text-paragraph"
-          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-          >
+          <p class="mx-auto max-w-screen-md text-center text-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+          </p>
         </div>
         <!-- text - end -->
 
@@ -307,8 +335,7 @@ export const Faq4: StoryObj = {
             </div>
             <p class="pt-4 text-neutral-500 dark:text-neutral-200">
               Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
             </p>
           </awc-card>
           <!-- question - end -->
@@ -328,8 +355,7 @@ export const Faq4: StoryObj = {
             </div>
             <p class="pt-4 text-neutral-500 dark:text-neutral-200">
               Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
             </p>
           </awc-card>
           <!-- question - end -->
@@ -349,8 +375,7 @@ export const Faq4: StoryObj = {
             </div>
             <p class="pt-4 text-neutral-500 dark:text-neutral-200">
               Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
             </p>
           </awc-card>
           <!-- question - end -->
@@ -370,8 +395,7 @@ export const Faq4: StoryObj = {
             </div>
             <p class="pt-4 text-neutral-500 dark:text-neutral-200">
               Urna pulvinar morbi dis tincidunt. Quam nulla tempus eros diam diam egestas ornare dignissim sed. Velit
-              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas
-              ut.
+              massa faucibus enim amet a. Vulputate tempor dui sed tempor. Risus adipiscing luctus egestas ut.
             </p>
           </awc-card>
           <!-- question - end -->
@@ -391,13 +415,15 @@ export const Faq5: StoryObj = {
             <!-- text - start -->
             <div class="mb-5 md:mb-8">
               <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
-                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                  >Headline</span
+                >
                 Frequently asked questions
               </h3>
-              <p class="max-w-screen-md text-paragraph"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-              >
+              <p class="max-w-screen-md text-paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+              </p>
             </div>
             <!-- text - end -->
 
@@ -479,13 +505,15 @@ export const Faq6: StoryObj = {
             <!-- text - start -->
             <div class="mb-5 md:mb-8">
               <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
-                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                  >Headline</span
+                >
                 Frequently asked questions
               </h3>
-              <p class="max-w-screen-md text-paragraph"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.</p
-              >
+              <p class="max-w-screen-md text-paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
+              </p>
             </div>
             <!-- text - end -->
 

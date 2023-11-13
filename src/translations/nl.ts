@@ -1,4 +1,5 @@
 import { registerTranslation } from '../utilities/localize.js';
+import prettyBytes from 'pretty-bytes';
 import type { Translation } from '../utilities/localize.js';
 
 const translation: Translation = {
@@ -6,19 +7,26 @@ const translation: Translation = {
   $name: 'Nederlands',
   $dir: 'ltr',
 
+  browseFiles: 'Blader door bestanden',
   carousel: 'Carrousel',
   clearEntry: 'Invoer wissen',
   close: 'Sluiten',
   copied: 'Gekopieerd',
   copy: 'Kopiëren',
   currentValue: 'Huidige waarde',
+  dragDrop: 'Drag & drop om te uploaden',
+  fileTypeNotAccepted: accept => `Bestandstype niet geaccepteerd, alleen ${accept} bestanden zijn toegestaan`,
+  fileSizeExceeded: size => `Bestandsgrootte overschrijdt ${prettyBytes(size, { locale: 'nl' })}`,
   error: 'Fout',
-  goToSlide: (slide, count) => `Ga naar slide ${slide} van ${count}`,
+  goToSlide: (slide, count) => `Ga naar dia ${slide} van ${count}`,
   hidePassword: 'Verberg wachtwoord',
-  loading: 'Bezig met laden',
+  loading: 'Laden',
+  files: 'Bestanden :',
+  maxFiles: 'Maximaal aantal bestanden bereikt',
+  noMultipleFiles: 'Meerdere bestanden zijn niet toegestaan',
   nextSlide: 'Volgende dia',
   numOptionsSelected: num => {
-    if (num === 0) return 'Geen optie geselecteerd';
+    if (num === 0) return 'Geen opties geselecteerd';
     if (num === 1) return '1 optie geselecteerd';
     return `${num} opties geselecteerd`;
   },
@@ -28,12 +36,12 @@ const translation: Translation = {
   progress: 'Voortgang',
   remove: 'Verwijderen',
   resize: 'Formaat wijzigen',
-  scrollToEnd: 'Scroll naar einde',
-  scrollToStart: 'Scroll naar begin',
+  scrollToEnd: 'Scroll naar het einde',
+  scrollToStart: 'Scroll naar het begin',
   selectAColorFromTheScreen: 'Selecteer een kleur van het scherm',
-  showPassword: 'Laat wachtwoord zien',
-  slideNum: slide => `Schuif ${slide}`,
-  toggleColorFormat: 'Wissel kleurnotatie'
+  showPassword: 'Toon wachtwoord',
+  slideNum: slide => `Dia ${slide}`,
+  toggleColorFormat: 'Kleurformaat wisselen'
 };
 
 registerTranslation(translation);

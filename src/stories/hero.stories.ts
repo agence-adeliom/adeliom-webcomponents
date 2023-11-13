@@ -27,7 +27,9 @@ export const Hero1: StoryObj = {
           </div>
 
           <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 
@@ -90,8 +92,12 @@ export const Hero2: StoryObj = {
 
         <!-- text start -->
         <div class="relative flex flex-col items-center p-4 sm:max-w-xl">
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-neutral-0 dark:text-neutral-1000 text-center mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+          <h2
+            class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-neutral-0 dark:text-neutral-1000 text-center mb-8 md:mb-12"
+          >
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 
@@ -132,8 +138,12 @@ export const Hero3: StoryObj = {
           <div></div>
 
           <div class="sm:text-center lg:py-12 lg:text-left xl:py-24">
-            <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-              <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <h2
+              class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12"
+            >
+              <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+                >Very proud to introduce</span
+              >
               Revolutionary way to build the web
             </h2>
 
@@ -261,7 +271,9 @@ export const Hero5: StoryObj = {
           class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-5/12 xl:py-24"
         >
           <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 
@@ -310,7 +322,9 @@ export const Hero6: StoryObj = {
         <!-- content - start -->
         <div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
           <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 
@@ -424,7 +438,9 @@ export const Hero7: StoryObj = {
       <section class="flex flex-col items-center">
         <div class="flex max-w-xl flex-col items-center pb-0 pt-8 text-center sm:pb-16 lg:pt-16 lg:pb-32">
           <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 
@@ -460,7 +476,9 @@ export const Hero8: StoryObj = {
       <div class="mb-8 flex flex-wrap justify-between md:mb-16">
         <div class="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48">
           <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 
@@ -558,7 +576,9 @@ export const Hero9: StoryObj = {
           class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-6/12 xl:py-24"
         >
           <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 
@@ -598,7 +618,9 @@ export const Hero10: StoryObj = {
           class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-6/12 xl:py-24"
         >
           <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 
@@ -637,7 +659,9 @@ export const Hero11: StoryObj = {
           </div>
 
           <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 
@@ -787,7 +811,9 @@ export const Hero13: StoryObj = {
           </div>
 
           <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
-            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
+            <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
+              >Very proud to introduce</span
+            >
             Revolutionary way to build the web
           </h2>
 

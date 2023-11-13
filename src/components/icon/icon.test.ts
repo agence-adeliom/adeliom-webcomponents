@@ -1,7 +1,6 @@
 import { aTimeout, elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
 import { registerIconLibrary } from '../../../dist/awc.js';
 import type { AWCErrorEvent } from '../../events/awc-error';
-import type { AWCLoadEvent } from '../../events/awc-load';
 import type AWCIcon from './icon';
 
 const testLibraryIcons = {
@@ -48,7 +47,7 @@ describe('<awc-icon>', () => {
 
     it('renders pre-loaded system icons and emits awc-load event', async () => {
       const el = await fixture<AWCIcon>(html` <awc-icon library="system"></awc-icon> `);
-      const listener = oneEvent(el, 'awc-load') as Promise<AWCLoadEvent>;
+      const listener = oneEvent(el, 'awc-load');
 
       el.name = 'check';
       const ev = await listener;
@@ -105,7 +104,7 @@ describe('<awc-icon>', () => {
   describe('new library', () => {
     it('renders icons from the new library and emits awc-load event', async () => {
       const el = await fixture<AWCIcon>(html` <awc-icon library="test-library"></awc-icon> `);
-      const listener = oneEvent(el, 'awc-load') as Promise<AWCLoadEvent>;
+      const listener = oneEvent(el, 'awc-load');
 
       el.name = 'test-icon1';
       const ev = await listener;
@@ -134,7 +133,7 @@ describe('<awc-icon>', () => {
 
     it('emits awc-error when the file cant be retrieved', async () => {
       const el = await fixture<AWCIcon>(html` <awc-icon library="test-library"></awc-icon> `);
-      const listener = oneEvent(el, 'awc-error') as Promise<AWCErrorEvent>;
+      const listener = oneEvent(el, 'awc-error');
 
       el.name = 'bad-request';
       const ev = await listener;
@@ -146,7 +145,7 @@ describe('<awc-icon>', () => {
 
     it("emits awc-error when there isn't an svg element in the registered icon", async () => {
       const el = await fixture<AWCIcon>(html` <awc-icon library="test-library"></awc-icon> `);
-      const listener = oneEvent(el, 'awc-error') as Promise<AWCErrorEvent>;
+      const listener = oneEvent(el, 'awc-error');
 
       el.name = 'bad-icon';
       const ev = await listener;

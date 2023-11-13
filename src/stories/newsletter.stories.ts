@@ -19,20 +19,22 @@ export const Newsletter1: StoryObj = {
           </div>
 
           <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8">
-              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
-                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
-                Erat suspendisse maecena
-              </h4>
+            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+              <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                >Headline</span
+              >
+              Erat suspendisse maecena
+            </h4>
 
-              <form class="flex w-full gap-2 mb-3">
-                <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
-                <awc-button variant="ghost" outline>Sign up</awc-button>
-              </form>
+            <form class="flex w-full gap-2 mb-3">
+              <awc-input type="email" placeholder="Email" class="w-full flex-1"></awc-input>
+              <awc-button variant="ghost" outline>Sign up</awc-button>
+            </form>
 
-              <p class="text-xs text-neutral-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-              </p>
+            <p class="text-xs text-neutral-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
           </div>
         </div>
       </div>
@@ -49,7 +51,9 @@ export const Newsletter2: StoryObj = {
           <div class="flex w-full flex-col p-4 sm:p-8">
             <div class="text-center mx-auto max-w-lg">
               <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
-                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                  >Headline</span
+                >
                 Erat suspendisse maecena
               </h4>
 
@@ -78,7 +82,9 @@ export const Newsletter3: StoryObj = {
           <div class="flex w-full flex-col p-4 sm:p-8 md:flex-row md:items-center">
             <div class="text-center mx-auto max-w-lg md:w-1/2 md:text-left">
               <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
-                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1">Headline</span>
+                <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
+                  >Headline</span
+                >
                 Erat suspendisse maecena
               </h4>
             </div>

@@ -70,7 +70,7 @@ export default css`
   }
 
   .file-upload--button-only .file-upload__file-items,
-  .file-upload--custom-content .file-upload__file-items{
+  .file-upload--custom-content .file-upload__file-items {
     margin-top: var(--awc-spacing-medium);
     padding: 0;
     border: 0;
@@ -99,7 +99,6 @@ export default css`
     color: var(--awc-color-danger-600);
   }
 
-
   /* Help text */
   .file-upload .file-upload__help-text {
     display: none;
@@ -115,6 +114,4 @@ export default css`
   .file-upload--button-only.file-upload--has-help-text .file-upload__help-text {
     margin-top: var(--awc-spacing-x-small);
   }
-
-
 `;

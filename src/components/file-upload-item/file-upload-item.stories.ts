@@ -22,7 +22,7 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-shadow
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
 } satisfies Meta<AWCFileUploadItem & typeof args>;
 export default meta;
@@ -31,10 +31,11 @@ type Story = StoryObj<AWCFileUploadItem & typeof args>;
 
 export const Primary: Story = {
   name: 'Default',
-  render: () => html`<awc-file-upload-item>
-    filename_lorem_ipsum.jpg
-    <awc-icon name="file-earmark" slot="image"></awc-icon>
-  </awc-file-upload-item>`,
+  render: () =>
+    html`<awc-file-upload-item>
+      filename_lorem_ipsum.jpg
+      <awc-icon name="file-earmark" slot="image"></awc-icon>
+    </awc-file-upload-item>`,
   parameters: {
     docs: {
       description: {
@@ -47,10 +48,11 @@ export const Primary: Story = {
 
 export const Closable: Story = {
   name: 'Closable',
-  render: () => html`<awc-file-upload-item closable>
-    filename_lorem_ipsum.jpg
-    <awc-icon name="file-earmark" slot="image"></awc-icon>
-  </awc-file-upload-item>`,
+  render: () =>
+    html`<awc-file-upload-item closable>
+      filename_lorem_ipsum.jpg
+      <awc-icon name="file-earmark" slot="image"></awc-icon>
+    </awc-file-upload-item>`,
   parameters: {
     docs: {
       description: {
@@ -63,10 +65,11 @@ export const Closable: Story = {
 
 export const Filesize: Story = {
   name: 'Filesize',
-  render: () => html`<awc-file-upload-item size="120000">
-    filename_lorem_ipsum.jpg
-    <awc-icon name="file-earmark" slot="image"></awc-icon>
-  </awc-file-upload-item>`,
+  render: () =>
+    html`<awc-file-upload-item size="120000">
+      filename_lorem_ipsum.jpg
+      <awc-icon name="file-earmark" slot="image"></awc-icon>
+    </awc-file-upload-item>`,
   parameters: {
     docs: {
       description: {
@@ -79,25 +82,26 @@ export const Filesize: Story = {
 
 export const Custom: Story = {
   name: 'Custom close button',
-  render: () => html`<awc-file-upload-item closable>
-    filename_lorem_ipsum.jpg
-    <awc-icon name="file-earmark" slot="image"></awc-icon>
-    <awc-icon-button name="trash" slot="close-button" class="icon-button-color"></awc-icon-button>
-  </awc-file-upload-item>
-  <style>
-    .icon-button-color::part(base) {
-      color: var(--awc-color-danger-600);
-    }
+  render: () =>
+    html`<awc-file-upload-item closable>
+        filename_lorem_ipsum.jpg
+        <awc-icon name="file-earmark" slot="image"></awc-icon>
+        <awc-icon-button name="trash" slot="close-button" class="icon-button-color"></awc-icon-button>
+      </awc-file-upload-item>
+      <style>
+        .icon-button-color::part(base) {
+          color: var(--awc-color-danger-600);
+        }
 
-    .icon-button-color::part(base):hover,
-    .icon-button-color::part(base):focus {
-      color: var(--awc-color-danger-800);
-    }
+        .icon-button-color::part(base):hover,
+        .icon-button-color::part(base):focus {
+          color: var(--awc-color-danger-800);
+        }
 
-    .icon-button-color::part(base):active {
-      color: var(--awc-color-danger-800);
-    }
-  </style>`,
+        .icon-button-color::part(base):active {
+          color: var(--awc-color-danger-800);
+        }
+      </style>`,
   parameters: {
     docs: {
       description: {
@@ -110,10 +114,11 @@ export const Custom: Story = {
 
 export const Loading: Story = {
   name: 'Loading',
-  render: () => html`<awc-file-upload-item loading closable size="120000">
-    filename_lorem_ipsum.jpg
-    <awc-icon name="file-earmark" slot="image"></awc-icon>
-  </awc-file-upload-item>`,
+  render: () =>
+    html`<awc-file-upload-item loading closable size="120000">
+      filename_lorem_ipsum.jpg
+      <awc-icon name="file-earmark" slot="image"></awc-icon>
+    </awc-file-upload-item>`,
   parameters: {
     docs: {
       description: {
@@ -126,39 +131,39 @@ export const Loading: Story = {
 
 export const LoadingProgress: Story = {
   name: 'Loading progress',
-  render: () => html`<awc-file-upload-item loading progress="40" closable size="120000" class="file-item">
-    filename_lorem_ipsum.jpg
-    <awc-icon name="file-earmark" slot="image"></awc-icon>
-  </awc-file-upload-item>
+  render: () =>
+    html`<awc-file-upload-item loading progress="40" closable size="120000" class="file-item">
+        filename_lorem_ipsum.jpg
+        <awc-icon name="file-earmark" slot="image"></awc-icon>
+      </awc-file-upload-item>
 
-  <div class="mt-6">
-    <awc-button circle class="subtract-button"><awc-icon name="dash" label="Decrease"></awc-icon></awc-button>
-    <awc-button circle class="add-button"><awc-icon name="plus" label="Increase"></awc-icon></awc-button>
-  </div>
-  <script>
-    const fileItem = document.querySelector('.file-item');
-    const subtractButton = document.querySelector('.subtract-button');
-    const addButton = document.querySelector('.add-button');
+      <div class="mt-6">
+        <awc-button circle class="subtract-button"><awc-icon name="dash" label="Decrease"></awc-icon></awc-button>
+        <awc-button circle class="add-button"><awc-icon name="plus" label="Increase"></awc-icon></awc-button>
+      </div>
+      <script>
+        const fileItem = document.querySelector('.file-item');
+        const subtractButton = document.querySelector('.subtract-button');
+        const addButton = document.querySelector('.add-button');
 
-    addButton.addEventListener('click', () => {
-      const value = Math.min(100, fileItem.progress + 10);
-      fileItem.progress = value;
+        addButton.addEventListener('click', () => {
+          const value = Math.min(100, fileItem.progress + 10);
+          fileItem.progress = value;
 
-      if (fileItem.progress === 100) {
-        fileItem.loading = false;
-      }
-    });
+          if (fileItem.progress === 100) {
+            fileItem.loading = false;
+          }
+        });
 
-    subtractButton.addEventListener('click', () => {
-      const value = Math.max(0, fileItem.progress - 10);
-      fileItem.progress = value;
+        subtractButton.addEventListener('click', () => {
+          const value = Math.max(0, fileItem.progress - 10);
+          fileItem.progress = value;
 
-      if (fileItem.progress < 100) {
-        fileItem.loading = true;
-      }
-    });
-  </script>
-  `,
+          if (fileItem.progress < 100) {
+            fileItem.loading = true;
+          }
+        });
+      </script> `,
   parameters: {
     docs: {
       description: {
@@ -171,10 +176,11 @@ export const LoadingProgress: Story = {
 
 export const LoadingLabel: Story = {
   name: 'Loading label',
-  render: () => html`<awc-file-upload-item loading progress="20" label="Uploading File" closable>
-    filename_lorem_ipsum.jpg
-    <awc-icon name="file-earmark" slot="image"></awc-icon>
-  </awc-file-upload-item>`,
+  render: () =>
+    html`<awc-file-upload-item loading progress="20" label="Uploading File" closable>
+      filename_lorem_ipsum.jpg
+      <awc-icon name="file-earmark" slot="image"></awc-icon>
+    </awc-file-upload-item>`,
   parameters: {
     docs: {
       description: {
@@ -187,11 +193,12 @@ export const LoadingLabel: Story = {
 
 export const Error: Story = {
   name: 'Error',
-  render: () => html`<awc-file-upload-item error closable>
-    filename_lorem_ipsum.jpg
-    <div slot="error">File size exceeds 5MB limit</div>
-    <awc-icon name="exclamation-triangle" slot="image"></awc-icon>
-  </awc-file-upload-item>`,
+  render: () =>
+    html`<awc-file-upload-item error closable>
+      filename_lorem_ipsum.jpg
+      <div slot="error">File size exceeds 5MB limit</div>
+      <awc-icon name="exclamation-triangle" slot="image"></awc-icon>
+    </awc-file-upload-item>`,
   parameters: {
     docs: {
       description: {

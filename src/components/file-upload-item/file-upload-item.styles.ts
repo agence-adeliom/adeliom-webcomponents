@@ -60,7 +60,7 @@ export default css`
 
   .file-upload-item__progress {
     flex: 1;
-    --size: 1.75rem
+    --size: 1.75rem;
   }
 
   .file-upload-item__label {
@@ -93,7 +93,7 @@ export default css`
     padding-right: var(--awc-spacing-medium);
   }
 
-  .file-upload-item .file-upload-item__label__error{
+  .file-upload-item .file-upload-item__label__error {
     display: none;
     font-size: var(--awc-font-size-small);
   }

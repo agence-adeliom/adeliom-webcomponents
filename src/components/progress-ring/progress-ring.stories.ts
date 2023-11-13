@@ -61,7 +61,6 @@ export const Indeterminate: Story = {
   }
 };
 
-
 export const TrackIndicatorWidth: Story = {
   name: 'Track and Indicator Width',
   args: {

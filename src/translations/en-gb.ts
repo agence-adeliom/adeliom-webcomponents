@@ -10,7 +10,7 @@ const translation: Translation = {
   selectAColorFromTheScreen: 'Select a colour from the screen',
   toggleColorFormat: 'Toggle colour format',
   previous: 'Previous',
-  next: 'Next',
+  next: 'Next'
 };
 
 registerTranslation(translation);

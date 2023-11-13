@@ -1,4 +1,5 @@
 import { registerTranslation } from '../utilities/localize.js';
+import prettyBytes from 'pretty-bytes';
 import type { Translation } from '../utilities/localize.js';
 
 const translation: Translation = {
@@ -6,21 +7,28 @@ const translation: Translation = {
   $name: 'Русский',
   $dir: 'ltr',
 
+  browseFiles: 'Просмотр файлов',
   carousel: 'Карусель',
   clearEntry: 'Очистить запись',
   close: 'Закрыть',
   copied: 'Скопировано',
-  copy: 'Скопировать',
+  copy: 'Копировать',
   currentValue: 'Текущее значение',
+  dragDrop: 'Перетащите файл для загрузки',
+  fileTypeNotAccepted: accept => `Тип файла не поддерживается, разрешены только файлы ${accept}`,
+  fileSizeExceeded: size => `Размер файла превышает ${prettyBytes(size, { locale: 'ru' })}`,
   error: 'Ошибка',
   goToSlide: (slide, count) => `Перейти к слайду ${slide} из ${count}`,
   hidePassword: 'Скрыть пароль',
   loading: 'Загрузка',
+  files: 'Файлы :',
+  maxFiles: 'Достигнуто максимальное количество файлов',
+  noMultipleFiles: 'Несколько файлов не допускаются',
   nextSlide: 'Следующий слайд',
   numOptionsSelected: num => {
-    if (num === 0) return 'выбрано 0 вариантов';
-    if (num === 1) return 'Выбран 1 вариант';
-    return `выбрано ${num} варианта`;
+    if (num === 0) return 'Нет выбранных опций';
+    if (num === 1) return '1 выбранная опция';
+    return `${num} выбранных опций`;
   },
   previousSlide: 'Предыдущий слайд',
   previous: 'Предыдущий',
@@ -28,12 +36,12 @@ const translation: Translation = {
   progress: 'Прогресс',
   remove: 'Удалить',
   resize: 'Изменить размер',
-  scrollToEnd: 'Пролистать до конца',
-  scrollToStart: 'Пролистать к началу',
-  selectAColorFromTheScreen: 'Выберите цвет на экране',
+  scrollToEnd: 'Прокрутить в конец',
+  scrollToStart: 'Прокрутить в начало',
+  selectAColorFromTheScreen: 'Выберите цвет с экрана',
   showPassword: 'Показать пароль',
   slideNum: slide => `Слайд ${slide}`,
-  toggleColorFormat: 'Переключить цветовую модель'
+  toggleColorFormat: 'Переключить формат цвета'
 };
 
 registerTranslation(translation);

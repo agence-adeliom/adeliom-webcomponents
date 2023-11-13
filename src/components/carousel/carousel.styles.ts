@@ -14,8 +14,6 @@ const core = css`
     z-index: 1;
   }
 
-
-
   .carousel {
     margin-left: auto;
     margin-right: auto;
@@ -130,7 +128,7 @@ const core = css`
     scroll-snap-align: none;
   }
   .carousel--css-mode.carousel--centered > .carousel__wrapper::before {
-    content: "";
+    content: '';
     flex-shrink: 0;
     order: 9999;
   }
@@ -138,7 +136,9 @@ const core = css`
     scroll-snap-align: center center;
     scroll-snap-stop: always;
   }
-  .carousel--css-mode.carousel--centered.carousel--horizontal > .carousel__wrapper > ::slotted(.carousel__slide):first-child {
+  .carousel--css-mode.carousel--centered.carousel--horizontal
+    > .carousel__wrapper
+    > ::slotted(.carousel__slide):first-child {
     margin-inline-start: var(--centered-offset-before);
   }
   .carousel--css-mode.carousel--centered.carousel--horizontal > .carousel__wrapper::before {
@@ -146,7 +146,9 @@ const core = css`
     min-height: 1px;
     width: var(--centered-offset-after);
   }
-  .carousel--css-mode.carousel--centered.carousel--vertical > .carousel__wrapper > ::slotted(.carousel__slide):first-child {
+  .carousel--css-mode.carousel--centered.carousel--vertical
+    > .carousel__wrapper
+    > ::slotted(.carousel__slide):first-child {
     margin-block-start: var(--centered-offset-before);
   }
   .carousel--css-mode.carousel--centered.carousel--vertical > .carousel__wrapper::before {
@@ -328,7 +330,8 @@ const pagination = css`
   .carousel__pagination.carousel__pagination--hidden {
     opacity: 0;
   }
-  .carousel__pagination--disabled > .carousel__pagination, .carousel__pagination.carousel__pagination--disabled {
+  .carousel__pagination--disabled > .carousel__pagination,
+  .carousel__pagination.carousel__pagination--disabled {
     display: none !important;
   }
 
@@ -423,7 +426,9 @@ const pagination = css`
   .carousel--vertical > .carousel__pagination-bullets.carousel__pagination-bullets-dynamic .pagination-item,
   .carousel__pagination--vertical.carousel__pagination-bullets.carousel__pagination-bullets-dynamic .pagination-item {
     display: inline-block;
-    transition: 200ms transform, 200ms top;
+    transition:
+      200ms transform,
+      200ms top;
   }
 
   .carousel__pagination--horizontal > .carousel__pagination-bullets .pagination-item,
@@ -436,13 +441,19 @@ const pagination = css`
     transform: translateX(-50%);
     white-space: nowrap;
   }
-  .carousel__pagination--horizontal > .carousel__pagination-bullets.carousel__pagination-bullets-dynamic .pagination-item,
+  .carousel__pagination--horizontal
+    > .carousel__pagination-bullets.carousel__pagination-bullets-dynamic
+    .pagination-item,
   .carousel__pagination--horizontal.carousel__pagination-bullets.carousel__pagination-bullets-dynamic .pagination-item {
-    transition: 200ms transform, 200ms left;
+    transition:
+      200ms transform,
+      200ms left;
   }
 
   .carousel__pagination--horizontal.carousel--rtl > .carousel__pagination-bullets-dynamic .pagination-item {
-    transition: 200ms transform, 200ms right;
+    transition:
+      200ms transform,
+      200ms right;
   }
 
   /* Fraction */
@@ -468,13 +479,19 @@ const pagination = css`
   .carousel--rtl + .carousel__pagination-progressbar .carousel__progressbar--fill {
     transform-origin: right top;
   }
-  .carousel--horizontal + .carousel__pagination-progressbar, .carousel__pagination-progressbar.carousel__pagination--horizontal, .carousel--vertical + .carousel__pagination-progressbar.carousel__progressbar--opposite, .carousel__pagination-progressbar.carousel__pagination--vertical.carousel__progressbar--opposite {
+  .carousel--horizontal + .carousel__pagination-progressbar,
+  .carousel__pagination-progressbar.carousel__pagination--horizontal,
+  .carousel--vertical + .carousel__pagination-progressbar.carousel__progressbar--opposite,
+  .carousel__pagination-progressbar.carousel__pagination--vertical.carousel__progressbar--opposite {
     width: 100%;
     height: var(--pagination-progressbar-size, 4px);
     left: 0;
     top: 0;
   }
-  .carousel--vertical + .carousel__pagination-progressbar, .carousel__pagination-progressbar.carousel__pagination--vertical, .carousel__pagination--horizontal > .carousel__pagination-progressbar.carousel__progressbar--opposite, .carousel__pagination-progressbar.carousel__pagination--horizontal.carousel__progressbar--opposite {
+  .carousel--vertical + .carousel__pagination-progressbar,
+  .carousel__pagination-progressbar.carousel__pagination--vertical,
+  .carousel__pagination--horizontal > .carousel__pagination-progressbar.carousel__progressbar--opposite,
+  .carousel__pagination-progressbar.carousel__pagination--horizontal.carousel__progressbar--opposite {
     width: var(--pagination-progressbar-size, 4px);
     height: 100%;
     left: 0;
@@ -495,5 +512,4 @@ export default css`
     transition-timing-function: ease-out;
     margin: 0 auto;
   }
-
 `;

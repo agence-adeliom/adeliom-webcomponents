@@ -4,7 +4,6 @@ import { clickOnElement } from '../../internal/test.js';
 import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { AWCChangeEvent } from '../../events/awc-change.js';
 import type AWCRadio from '../radio/radio.js';
 import type AWCRadioGroup from './radio-group.js';
 
@@ -332,7 +331,7 @@ describe('when the value changes', () => {
     `);
     const radio = radioGroup.querySelector<AWCRadio>('#radio-1')!;
     setTimeout(() => radio.click());
-    const event = (await oneEvent(radioGroup, 'awc-change')) as AWCChangeEvent;
+    const event = await oneEvent(radioGroup, 'awc-change');
     expect(event.target).to.equal(radioGroup);
     expect(radioGroup.value).to.equal('1');
   });
@@ -347,7 +346,7 @@ describe('when the value changes', () => {
     const radio = radioGroup.querySelector<AWCRadio>('#radio-1')!;
     radio.focus();
     setTimeout(() => sendKeys({ press: ' ' }));
-    const event = (await oneEvent(radioGroup, 'awc-change')) as AWCChangeEvent;
+    const event = await oneEvent(radioGroup, 'awc-change');
     expect(event.target).to.equal(radioGroup);
     expect(radioGroup.value).to.equal('1');
   });
