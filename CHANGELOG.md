@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/agence-adeliom/awc/compare/v1.2.0...v1.2.1) (2023-11-13)
+
+
+### Bug Fixes
+
+* **file-upload:** handle dark theme ([9f8f423](https://github.com/agence-adeliom/awc/commit/9f8f42306c6d34edb08cf480bccb770419d4a7a0))
+
 ## [1.2.0](https://github.com/agence-adeliom/awc/compare/v1.1.1...v1.2.0) (2023-11-13)
 
 
