@@ -114,7 +114,7 @@ describe('<awc-file-upload>', () => {
     const dropzone = el.shadowRoot!.querySelector<HTMLElement>('#dropzone')!;
     const fileItems = el.shadowRoot!.querySelector<HTMLElement>('#file-items')!;
 
-    expect(el.warning).to.be.undefined;
+    expect(el.error).to.be.undefined;
 
     const file = new File([''], 'dummy.txt');
     const file2 = new File([''], 'dummy2.txt');
@@ -125,7 +125,7 @@ describe('<awc-file-upload>', () => {
 
     await el.updateComplete;
 
-    expect(el.warning).to.be.not.empty;
+    expect(el.error).to.be.not.empty;
     expect(fileItems.children.length).to.equal(0);
   });
 
@@ -144,7 +144,7 @@ describe('<awc-file-upload>', () => {
 
     expect(el.files.length).to.equal(1);
     expect(el.files[0].accepted).to.be.true;
-    expect(el.files[0].warning).to.be.undefined;
+    expect(el.files[0].error).to.be.undefined;
   });
 
   it('should not accept the file if the file size exceeds the specified max-file-size', async () => {
@@ -162,7 +162,7 @@ describe('<awc-file-upload>', () => {
 
     expect(el.files.length).to.equal(1);
     expect(el.files[0].accepted).to.be.false;
-    expect(el.files[0].warning).to.be.not.empty;
+    expect(el.files[0].error).to.be.not.empty;
   });
 
   it('should accept the file if the file type is valid', async () => {
@@ -179,7 +179,7 @@ describe('<awc-file-upload>', () => {
     await el.updateComplete;
 
     expect(el.files[0].accepted).to.be.true;
-    expect(el.files[0].warning).to.be.undefined;
+    expect(el.files[0].error).to.be.undefined;
   });
 
   it('should not accept the file if the file type is not valid', async () => {
@@ -196,7 +196,7 @@ describe('<awc-file-upload>', () => {
     await el.updateComplete;
 
     expect(el.files[0].accepted).to.be.false;
-    expect(el.files[0].warning).to.be.not.empty;
+    expect(el.files[0].error).to.be.not.empty;
   });
 
   it('should not set a warning when the max number of files is not yet reached', async () => {
@@ -214,7 +214,7 @@ describe('<awc-file-upload>', () => {
 
     await el.updateComplete;
 
-    expect(el.warning).to.be.undefined;
+    expect(el.error).to.be.undefined;
     expect(el.files.length).to.equal(2);
 
     const file3 = new File([''], 'dummy.txt');
@@ -224,7 +224,7 @@ describe('<awc-file-upload>', () => {
 
     await el.updateComplete;
 
-    expect(el.warning).to.not.be.empty;
+    expect(el.error).to.not.be.empty;
     expect(el.files.length).to.equal(2);
   });
 
