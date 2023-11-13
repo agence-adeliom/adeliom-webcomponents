@@ -1,5 +1,44 @@
 # Changelog
 
+## [1.2.0](https://github.com/agence-adeliom/awc/compare/v1.1.1...v1.2.0) (2023-11-13)
+
+
+### Features
+
+* **block:** Add drawer to navbar ([d1d6f0e](https://github.com/agence-adeliom/awc/commit/d1d6f0e8b99ad64195b4d59457c95b8989bc2c89))
+* **carousel:** Migrate to swiper ([aee1534](https://github.com/agence-adeliom/awc/commit/aee153453556dbfd9dbbebd2d80358a70e8e2865))
+* **components:** add pagination component file and modify readme for rules to create a new component ([8b34283](https://github.com/agence-adeliom/awc/commit/8b3428330ab984516a446fd5e30304d280fbe264))
+* **file-upload:** Add dropzone component ([ff95fc7](https://github.com/agence-adeliom/awc/commit/ff95fc77b5e259d1db205780c585ec1ae7f2323a))
+* **listing:** add footer css part ([8ae5b8a](https://github.com/agence-adeliom/awc/commit/8ae5b8ab64c46aab9642ad28f3bbf318bc85e4d8))
+* **listing:** add layout for reviews and add drawer on mobile for third listing ([644b332](https://github.com/agence-adeliom/awc/commit/644b33272fe93d55bcf584ba89536bafb0d70f39))
+* **listing:** begin listing block ([d3faa32](https://github.com/agence-adeliom/awc/commit/d3faa322d55cfde818926a33d9d9963b81cbce41))
+* **listings:** add blocks ([89bdad3](https://github.com/agence-adeliom/awc/commit/89bdad33f1aa1abe16de3794265b2c391d832558))
+* **megaMenu:** add blocks ([51f0e96](https://github.com/agence-adeliom/awc/commit/51f0e962e6acffa4f781aec0bfde7346fed7c2a8))
+* **megaMenu:** add responsive ([ac3a641](https://github.com/agence-adeliom/awc/commit/ac3a6410246f5294dd91695512897009f3205335))
+* **navBar:** add drawer logo and begin topNavBar ([65dc10c](https://github.com/agence-adeliom/awc/commit/65dc10c88e9c3ee73f9611b8d3e996a7b7084851))
+* **navBar:** add missing drawers parameters ([47a853a](https://github.com/agence-adeliom/awc/commit/47a853a5cc57077a5bfd0f995dc72f2c9bbbfb60))
+* **navBar:** add three layouts ([334fab6](https://github.com/agence-adeliom/awc/commit/334fab6520c08e22fa8bef4aa3f05c68a2247258))
+* **pagination:** add static pagination  component ([0f1bd3d](https://github.com/agence-adeliom/awc/commit/0f1bd3ddcd8bde0081a9b5415d2ce9b9b01d0c4d))
+* **pagination:** add translations, custom event declaration ([b683cd8](https://github.com/agence-adeliom/awc/commit/b683cd8714c3f6f8515cff1cdd217ea927fedb97))
+* **pagination:** begin componant ([d52f955](https://github.com/agence-adeliom/awc/commit/d52f9551b9689c324c17d5c5aa9353f24f505901))
+* **pagination:** wip ([9fc4739](https://github.com/agence-adeliom/awc/commit/9fc4739874c3977d642312f892586254efe58846))
+* **rating:** add missing styles ([243f484](https://github.com/agence-adeliom/awc/commit/243f4842c15b5f8396e18f2e6a50c73013376712))
+* **search:** add search block ([b627709](https://github.com/agence-adeliom/awc/commit/b627709f18ee62babe27eaf3d057f2270eb699c7))
+* **topNavBar:** add rating rate and layout for topNavBar ([312d869](https://github.com/agence-adeliom/awc/commit/312d869d597e04f29363d6369200a73c096dc8f7))
+* **topNavBar:** finish ([d297bf3](https://github.com/agence-adeliom/awc/commit/d297bf3d734def7ac738a44416a2b32ef3c9d35f))
+* **typography:** deprecate typography ([df8cdc1](https://github.com/agence-adeliom/awc/commit/df8cdc132860253da41012f602011179149b7c94))
+
+
+### Bug Fixes
+
+* **install:** add cmds to init project ([cebca7f](https://github.com/agence-adeliom/awc/commit/cebca7f2cdb650fd1772eb93905c42e8940ce53e))
+* **pagination:** handle paginate ([a3829a8](https://github.com/agence-adeliom/awc/commit/a3829a8136ec702d020464bbce6efe645f06ae42))
+* **plop:** make creator working ([85d435e](https://github.com/agence-adeliom/awc/commit/85d435e1ee8da6ece7721c6a63e878e4b4ef662a))
+* **rating:** follow lit convention ([e7ad149](https://github.com/agence-adeliom/awc/commit/e7ad14981acf2d790e6ec2516d96a129c0b0de53))
+* **textarea:** border color css var typo ([3362ba3](https://github.com/agence-adeliom/awc/commit/3362ba343d89ab96bce313c8f11548dd467d0046))
+* **translations:** Update translations ([acd92a2](https://github.com/agence-adeliom/awc/commit/acd92a26d3946a871c6ca98eb928e4c86d0949bf))
+* **translations:** Update translations ([d557de8](https://github.com/agence-adeliom/awc/commit/d557de81b825e8d9d2562c823d1caead489ffb3a))
+
 ## [1.1.1](https://github.com/agence-adeliom/awc/compare/v1.1.0...v1.1.1) (2023-11-02)
 
 
