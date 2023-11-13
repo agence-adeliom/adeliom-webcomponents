@@ -73,7 +73,7 @@ const preview: Preview = {
       page: DocumentationTemplate,
       toc: {
         headingSelector: 'h2, h3',
-        ignoreSelector: '#primary, .sbdocs-title, .sbdocs-subtitle',
+        ignoreSelector: '#primary, .sbdocs-title, .sbdocs-subtitle, .sbdocs-preview *, .sbdocs-story *',
         unsafeTocbotOptions: {
           orderedList: false
         }

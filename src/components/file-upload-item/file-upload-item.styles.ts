@@ -20,7 +20,7 @@ export default css`
     font-size: var(--awc-font-size-medium);
     font-weight: var(--awc-font-weight-normal);
     line-height: var(--awc-line-height-normal);
-    color: var(--awc-color-neutral-700);
+    color: var(--awc-text-paragraph-color);
     margin: inherit;
   }
 
@@ -34,11 +34,6 @@ export default css`
   .file-upload-item:not(.file-upload-item--has-image) .file-upload-item__image,
   .file-upload-item:not(.file-upload-item--closable) .file-upload-item__close-button {
     display: none;
-  }
-
-  .file-upload-item--is-loading .file-upload-item__image,
-  .file-upload-item--is-loading .file-upload-item__label {
-    //visibility: hidden;
   }
 
   .file-upload-item__image {

@@ -19,7 +19,7 @@ export default css`
     border-style: var(--border-style);
     border-color: var(--awc-color-neutral-300);
     border-radius: var(--border-radius);
-    color: var(--awc-color-neutral-500);
+    color: var(--awc-text-paragraph-color);
   }
 
   .file-upload__label.file-upload__label--has-file {
@@ -87,7 +87,7 @@ export default css`
 
   .file-upload__file-items .file-upload__file-items__header {
     font-size: var(--awc-font-size-small);
-    color: var(--awc-color-neutral-500);
+    color: var(--awc-text-paragraph-color);
   }
 
   .file-upload--error .file-upload__label {
