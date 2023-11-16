@@ -2,9 +2,9 @@ import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 
 export default {
-  title: 'Block/Object-3d',
+  title: 'Block/3D Objects',
   parameters: {
-    layout: 'padded',
+    layout: 'padded'
   }
 } satisfies Meta;
 
@@ -17,12 +17,13 @@ export const Object3d: StoryObj = {
       shadow-intensity="1"
       loading="eager"
       camera-controls
-      touch-action="pan-y">
+      touch-action="pan-y"
+    >
     </model-viewer>
 
     <style>
       model-viewer {
-        width: 1000px;
+        width: 100%;
         height: 1000px;
         margin: auto;
       }
@@ -30,7 +31,7 @@ export const Object3d: StoryObj = {
 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
   `
-}
+};
 
 export const Object3d2: StoryObj = {
   name: 'With SkyBox image',
@@ -42,12 +43,13 @@ export const Object3d2: StoryObj = {
       shadow-intensity="1"
       loading="eager"
       camera-controls
-      touch-action="pan-y">
+      touch-action="pan-y"
+    >
     </model-viewer>
 
     <style>
       model-viewer {
-        width: 1000px;
+        width: 100%;
         height: 1000px;
         margin: auto;
       }
@@ -55,7 +57,7 @@ export const Object3d2: StoryObj = {
 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
   `
-}
+};
 
 export const Object3d3: StoryObj = {
   name: 'With environment image',
@@ -67,12 +69,13 @@ export const Object3d3: StoryObj = {
       shadow-intensity="1"
       loading="eager"
       camera-controls
-      touch-action="pan-y">
+      touch-action="pan-y"
+    >
     </model-viewer>
 
     <style>
       model-viewer {
-        width: 1000px;
+        width: 100%;
         height: 1000px;
         margin: auto;
       }
@@ -80,4 +83,4 @@ export const Object3d3: StoryObj = {
 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
   `
-}
+};

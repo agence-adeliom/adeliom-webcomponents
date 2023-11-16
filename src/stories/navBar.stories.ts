@@ -11,8 +11,8 @@ export default {
 export const NavBar1: StoryObj = {
   name: 'NavBar 1',
   render: () =>
-    html` <div class="w-full border-b border-inputTextColor">
-        <div class="container mx-auto bg-white dark:bg-neutral-950 py-4 flex items-center justify-between px-4 lg:px-0">
+    html` <div class="w-full border-b border-neutral-700">
+        <div class="container mx-auto py-4 flex items-center justify-between px-4 lg:px-0">
           <!-- Logo start -->
           <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
             <svg
@@ -74,48 +74,39 @@ export const NavBar1: StoryObj = {
           <nav class="hidden gap-12 lg:flex">
             <a
               href="#"
-              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-800"
               >Home</a
             >
             <a
               href="#"
-              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-800"
               >Home</a
             >
             <a
               href="#"
-              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-800"
               >Home</a
             >
             <a
               href="#"
-              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+              class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-800"
               >Home</a
             >
           </nav>
 
           <!-- buttons - start -->
           <div class="hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
-            <a
-              href="#"
-              class="inline-block rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-800 focus-visible:ring active:bg-primary-700 md:text-base"
-              >Button</a
-            >
-
-            <a
-              href="#"
-              class="inline-block rounded-lg bg-tertiary-600 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-tertiary-800 focus-visible:ring active:bg-primary-700 md:text-base"
-              >Button</a
-            >
+            <awc-button href="#" variant="primary">Button</awc-button>
+            <awc-button href="#" variant="tertiary">Button</awc-button>
           </div>
 
           <!-- Burger icon start -->
           <div class="text-lg lg:hidden">
-            <awc-icon-button name="list" label="Open menu" class="menu-opener"></awc-icon-button>
+            <awc-icon-button name="list" label="Open menu" class="menu_1-opener"></awc-icon-button>
           </div>
         </div>
       </div>
-      <awc-drawer placement="start" class="menu-drawer" label="Logo">
+      <awc-drawer placement="start" class="menu_1-drawer" label="Logo">
         <div slot="label">
           <!-- Logo start -->
           <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
@@ -177,39 +168,39 @@ export const NavBar1: StoryObj = {
         <nav class="gap-12 flex flex-col">
           <a
             href="#"
-            class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+            class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-800"
             >Home</a
           >
           <a
             href="#"
-            class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+            class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-800"
             >Home</a
           >
           <a
             href="#"
-            class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+            class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-800"
             >Home</a
           >
           <a
             href="#"
-            class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-700"
+            class="text-base font-semibold text-paragraph transition duration-100 hover:text-primary active:text-primary-800"
             >Home</a
           >
         </nav>
       </awc-drawer>
 
       <script>
-        const drawerMenu = document.querySelector('.menu-drawer');
-        const openButtonStart = document.querySelector('.menu-opener');
-        openButtonStart.addEventListener('click', () => drawerMenu.show());
+        document.querySelector('.menu_1-opener').addEventListener('click', () => {
+          document.querySelector('.menu_1-drawer').show();
+        });
       </script>`
 };
 
 export const NavBar2: StoryObj = {
   name: 'NavBar 2',
   render: () =>
-    html` <div class="w-full border-b border-inputTextColor">
-        <div class="container mx-auto bg-white dark:bg-neutral-950 py-4 flex items-center justify-between px-4 lg:px-0">
+    html` <div class="w-full border-b border-neutral-700">
+        <div class="container mx-auto py-4 flex items-center justify-between px-4 lg:px-0">
           <!-- Logo start -->
           <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
             <svg
@@ -270,7 +261,7 @@ export const NavBar2: StoryObj = {
           <!-- Nav start -->
           <div class="w-full flex items-center justify-between px-10">
             <div class="hidden lg:block">
-              <awc-button variant="text" size="large" class="menu-opener">
+              <awc-button variant="text" size="large" class="menu_2-opener">
                 <awc-icon slot="prefix" name="list"></awc-icon>
                 Menu
               </awc-button>
@@ -301,27 +292,18 @@ export const NavBar2: StoryObj = {
 
           <!-- buttons - start -->
           <div class="hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
-            <a
-              href="#"
-              class="inline-block rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-800 focus-visible:ring active:bg-primary-700 md:text-base"
-              >Button</a
-            >
-
-            <a
-              href="#"
-              class="inline-block rounded-lg bg-tertiary-600 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-tertiary-800 focus-visible:ring active:bg-primary-700 md:text-base"
-              >Button</a
-            >
+            <awc-button href="#" variant="primary">Button</awc-button>
+            <awc-button href="#" variant="tertiary">Button</awc-button>
           </div>
 
           <!-- Burger icon start -->
           <div class="text-lg lg:hidden">
-            <awc-icon-button name="list" label="Open menu" class="menu-opener"></awc-icon-button>
+            <awc-icon-button name="list" label="Open menu" class="menu_2-opener"></awc-icon-button>
           </div>
         </div>
       </div>
 
-      <awc-drawer placement="start" class="menu-drawer">
+      <awc-drawer placement="start" class="menu_2-drawer">
         <div slot="label">
           <!-- Logo start -->
           <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
@@ -415,10 +397,10 @@ export const NavBar2: StoryObj = {
       </style>
 
       <script>
-        const drawerMenu = document.querySelector('.menu-drawer');
-        const openButtonsStart = document.querySelectorAll('.menu-opener');
-        openButtonsStart.forEach(openButton => {
-          openButton.addEventListener('click', () => drawerMenu.show());
+        document.querySelectorAll('.menu_2-opener').forEach(openButton => {
+          openButton.addEventListener('click', () => {
+            document.querySelector('.menu_2-drawer').show();
+          });
         });
       </script>`
 };
@@ -426,9 +408,7 @@ export const NavBar2: StoryObj = {
 export const NavBar3: StoryObj = {
   name: 'NavBar 3',
   render: () =>
-    html` <div
-        class="container mx-auto bg-white dark:bg-neutral-950 py-4 flex items-center justify-between px-4 lg:px-0"
-      >
+    html` <div class="container mx-auto py-4 flex items-center justify-between px-4 lg:px-0">
         <!-- Logo start -->
         <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
           <svg
@@ -488,29 +468,20 @@ export const NavBar3: StoryObj = {
 
         <!-- buttons - start -->
         <div class="hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
-          <a
-            href="#"
-            class="inline-block rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-primary-800 focus-visible:ring active:bg-primary-700 md:text-base"
-            >Button</a
-          >
-
-          <a
-            href="#"
-            class="inline-block rounded-lg bg-tertiary-600 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary-300 transition duration-100 hover:bg-tertiary-800 focus-visible:ring active:bg-primary-700 md:text-base"
-            >Button</a
-          >
+          <awc-button href="#" variant="primary">Button</awc-button>
+          <awc-button href="#" variant="tertiary">Button</awc-button>
         </div>
 
         <!-- Burger icon start -->
         <div class="text-lg lg:hidden">
-          <awc-icon-button name="list" label="Open menu" class="menu-opener"></awc-icon-button>
+          <awc-icon-button name="list" label="Open menu" class="menu_3-opener"></awc-icon-button>
         </div>
       </div>
-      <div class="bg-neutral-100 dark:bg-neutral-950 w-full hidden lg:block">
+      <div class="bg-neutral-100 w-full hidden lg:block">
         <div class="container mx-auto  py-4 flex items-center justify-between">
           <div class="flex items-center gap-10">
             <div class="hidden lg:block">
-              <awc-button label="Open menu" class="menu-opener" variant="text" size="large">
+              <awc-button label="Open menu" class="menu_3-opener" variant="text" size="large">
                 <awc-icon slot="prefix" name="list"></awc-icon>
                 Menu
               </awc-button>
@@ -546,7 +517,7 @@ export const NavBar3: StoryObj = {
         </div>
       </div>
 
-      <awc-drawer placement="start" class="menu-drawer">
+      <awc-drawer placement="start" class="menu_3-drawer">
         <div slot="label">
           <!-- Logo start -->
           <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
@@ -640,10 +611,10 @@ export const NavBar3: StoryObj = {
       </style>
 
       <script>
-        const drawerMenu = document.querySelector('.menu-drawer');
-        const openButtonsStart = document.querySelectorAll('.menu-opener');
-        openButtonsStart.forEach(openButton => {
-          openButton.addEventListener('click', () => drawerMenu.show());
+        document.querySelectorAll('.menu_3-opener').forEach(openButton => {
+          openButton.addEventListener('click', () => {
+            document.querySelector('.menu_3-drawer').show();
+          });
         });
       </script>`
 };

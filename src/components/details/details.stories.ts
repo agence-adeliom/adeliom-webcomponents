@@ -102,11 +102,12 @@ export const GroupingDetails: Story = {
       </div>
 
       <script>
-        const container = document.querySelector('.details-group-example');
-
         // Close all other details when one is shown
-        container.addEventListener('awc-show', event => {
-          [...container.querySelectorAll('awc-details')].map(details => (details.open = event.target === details));
+        document.querySelector('.details-group-example').addEventListener('awc-show', event => {
+          if (event.target.localName !== 'awc-details') return;
+          [...event.currentTarget.querySelectorAll('awc-details')].map(
+            details => (details.open = event.target === details)
+          );
         });
       </script>
 

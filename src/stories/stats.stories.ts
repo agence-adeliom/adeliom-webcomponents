@@ -102,56 +102,52 @@ export const Stats2: StoryObj = {
 export const Stats3: StoryObj = {
   name: 'Stats 3',
   render: () => html`
-    <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
-      <div class="container mx-auto px-4 md:px-8">
-        ${heading}
+    <div class="container mx-auto px-4 md:px-8">
+      ${heading}
 
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-8">
-          <!-- stat - start -->
-          <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 p-4 lg:p-8">
-            <awc-icon
-              name="person"
-              class="text-3xl text-primary-400 sm:text-4xl md:text-5xl text-center mb-2 sm:mb-4"
-            ></awc-icon>
-            <div class="text-4xl font-bold text-primary sm:text-5xl md:text-6xl leading-dense text-center">200</div>
-            <div class="text-sm sm:text-lg font-semibold sm:text-base">People</div>
-          </div>
-          <!-- stat - end -->
-
-          <!-- stat - start -->
-          <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 p-4 lg:p-8">
-            <awc-icon
-              name="person-standing"
-              class="text-3xl text-primary-400 sm:text-4xl md:text-5xl text-center mb-2 sm:mb-4"
-            ></awc-icon>
-            <div class="text-4xl font-bold text-primary sm:text-5xl md:text-6xl leading-dense text-center">500+</div>
-            <div class="text-sm sm:text-lg font-semibold sm:text-base">People</div>
-          </div>
-
-          <!-- stat - start -->
-          <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 p-4 lg:p-8">
-            <awc-icon
-              name="person-hearts"
-              class="text-3xl text-primary-400 sm:text-4xl md:text-5xl text-center mb-2 sm:mb-4"
-            ></awc-icon>
-            <div class="text-4xl font-bold text-primary sm:text-5xl md:text-6xl leading-dense text-center">1000+</div>
-            <div class="text-sm sm:text-lg font-semibold sm:text-base">Customers</div>
-          </div>
-          <!-- stat - end -->
-
-          <!-- stat - start -->
-          <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 p-4 lg:p-8">
-            <awc-icon
-              name="cup-hot-fill"
-              class="text-3xl text-primary-400 sm:text-4xl md:text-5xl text-center mb-2 sm:mb-4"
-            ></awc-icon>
-            <div class="text-4xl font-bold text-primary sm:text-5xl md:text-6xl leading-dense text-center">
-              A couple
-            </div>
-            <div class="text-sm sm:text-lg font-semibold sm:text-base">Coffee breaks</div>
-          </div>
-          <!-- stat - end -->
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-8">
+        <!-- stat - start -->
+        <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 p-4 lg:p-8">
+          <awc-icon
+            name="person"
+            class="text-3xl text-primary-400 sm:text-4xl md:text-5xl text-center mb-2 sm:mb-4"
+          ></awc-icon>
+          <div class="text-4xl font-bold text-primary sm:text-5xl md:text-6xl leading-dense text-center">200</div>
+          <div class="text-sm sm:text-lg font-semibold sm:text-base">People</div>
         </div>
+        <!-- stat - end -->
+
+        <!-- stat - start -->
+        <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 p-4 lg:p-8">
+          <awc-icon
+            name="person-standing"
+            class="text-3xl text-primary-400 sm:text-4xl md:text-5xl text-center mb-2 sm:mb-4"
+          ></awc-icon>
+          <div class="text-4xl font-bold text-primary sm:text-5xl md:text-6xl leading-dense text-center">500+</div>
+          <div class="text-sm sm:text-lg font-semibold sm:text-base">People</div>
+        </div>
+
+        <!-- stat - start -->
+        <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 p-4 lg:p-8">
+          <awc-icon
+            name="person-hearts"
+            class="text-3xl text-primary-400 sm:text-4xl md:text-5xl text-center mb-2 sm:mb-4"
+          ></awc-icon>
+          <div class="text-4xl font-bold text-primary sm:text-5xl md:text-6xl leading-dense text-center">1000+</div>
+          <div class="text-sm sm:text-lg font-semibold sm:text-base">Customers</div>
+        </div>
+        <!-- stat - end -->
+
+        <!-- stat - start -->
+        <div class="flex flex-col items-center justify-center rounded-lg bg-neutral-100 p-4 lg:p-8">
+          <awc-icon
+            name="cup-hot-fill"
+            class="text-3xl text-primary-400 sm:text-4xl md:text-5xl text-center mb-2 sm:mb-4"
+          ></awc-icon>
+          <div class="text-4xl font-bold text-primary sm:text-5xl md:text-6xl leading-dense text-center">A couple</div>
+          <div class="text-sm sm:text-lg font-semibold sm:text-base">Coffee breaks</div>
+        </div>
+        <!-- stat - end -->
       </div>
     </div>
   `

@@ -288,12 +288,8 @@ export const MouseDragging: Story = {
       <awc-switch checked>Enable mouse dragging</awc-switch>
     </div>
     <script>
-      const container = document.querySelector('.mouse-dragging');
-      const carousel = container.querySelector('awc-carousel');
-      const toggle = container.querySelector('awc-switch');
-
-      toggle.addEventListener('awc-change', () => {
-        carousel.toggleAttribute('mouse-dragging', toggle.checked);
+      document.querySelector('.mouse-dragging awc-switch').addEventListener('awc-change', event => {
+        document.querySelector('.mouse-dragging awc-carousel').toggleAttribute('mouse-dragging', event.target.checked);
       });
     </script>
   `,

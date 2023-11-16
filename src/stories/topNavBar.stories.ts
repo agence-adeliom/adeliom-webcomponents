@@ -11,7 +11,7 @@ export default {
 export const TopNavBar1: StoryObj = {
   name: 'TopNavBar 1',
   render: () => html`
-    <div class="w-full border-b border-inputTextColor">
+    <div class="w-full border-b border-neutral-700">
       <div
         class="container mx-auto flex flex-col gap-4 lg:flex-row items-start lg:items-center lg:justify-end p-4 lg:py-2 lg:px-0"
       >
@@ -51,7 +51,7 @@ export const TopNavBar1: StoryObj = {
 export const TopNavBar2: StoryObj = {
   name: 'TopNavBar 2',
   render: () => html`
-    <div class="w-full border-b border-inputTextColor">
+    <div class="w-full border-b border-neutral-700">
       <div
         class="container mx-auto flex flex-col gap-4 lg:flex-row items-start lg:items-center lg:justify-end p-4 lg:py-2 lg:px-0"
       >

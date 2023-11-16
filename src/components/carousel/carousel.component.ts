@@ -232,15 +232,6 @@ export default class AWCCarousel extends AWCElement {
   }
 
   private initializeSlides() {
-    console.log(
-      this.autoplay !== false
-        ? this.autoplay === true
-          ? true
-          : !isNaN(this.autoplay)
-          ? { delay: this.autoplay === '' ? 3000 : this.autoplay }
-          : { ...JSON.parse(this.autoplay) }
-        : false
-    );
     // eslint-disable-next-line
     this.slider = new Swiper(this.container, {
       modules: [Navigation, Pagination, Scrollbar, Autoplay, Manipulation, Keyboard, Thumbs, FreeMode],

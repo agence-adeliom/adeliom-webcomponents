@@ -123,7 +123,7 @@ export const Listing1: StoryObj = {
             ${basicSelect}
             <!-- End select 3 -->
           </div>
-          <awc-button variant="primary" size="medium" outline class="filtersTab-opener w-full lg:w-fit">
+          <awc-button variant="primary" size="medium" outline class="filters_1-opener w-full lg:w-fit">
             <awc-icon slot="suffix" name="sliders"></awc-icon>
             Tous les filtres
           </awc-button>
@@ -131,7 +131,7 @@ export const Listing1: StoryObj = {
         <!-- Filters end -->
 
         <!-- Start other filters tab -->
-        <awc-drawer placement="start" class="filtersTab-drawer">
+        <awc-drawer placement="start" class="filters_1-drawer">
           <div slot="label">Tous les filtres</div>
           <awc-details
             style="--border-width: 0; border-bottom-width:1px; --border-color: var(--awc-color-neutral-200);--background-color: transparent;"
@@ -187,9 +187,9 @@ export const Listing1: StoryObj = {
         <!-- Pagination end -->
       </div>
       <script>
-        const drawerMenu = document.querySelector('.filtersTab-drawer');
-        const openButtonStart = document.querySelector('.filtersTab-opener');
-        openButtonStart.addEventListener('click', () => drawerMenu.show());
+        document.querySelector('.filters_1-opener').addEventListener('click', () => {
+          document.querySelector('.filters_1-drawer').show();
+        });
       </script>
       <style>
         .basic-card::part(footer) {
@@ -270,14 +270,14 @@ export const Listing3: StoryObj = {
       </div>
 
       <!-- Filters drawer CTA start -->
-      <awc-button variant="primary" size="medium" outline class="filtersTab-opener col-span-full lg:hidden">
+      <awc-button variant="primary" size="medium" outline class="filters_3-opener col-span-full lg:hidden">
         <awc-icon slot="suffix" name="sliders"></awc-icon>
         Tous les filtres
       </awc-button>
       <!-- Filters drawer CTA end -->
 
       <!-- Filters drawer start -->
-      <awc-drawer placement="start" class="filtersTab-drawer">
+      <awc-drawer placement="start" class="filters_3-drawer">
         <div slot="label">Tous les filtres</div>
         <!-- Filters start -->
         <awc-details
@@ -337,9 +337,9 @@ export const Listing3: StoryObj = {
       </div>
     </div>
     <script>
-      const drawerMenu = document.querySelector('.filtersTab-drawer');
-      const openButtonStart = document.querySelector('.filtersTab-opener');
-      openButtonStart.addEventListener('click', () => drawerMenu.show());
+      document.querySelector('.filters_3-opener').addEventListener('click', () => {
+        document.querySelector('.filters_3-drawer').show();
+      });
     </script>
     <style>
       .basic-card::part(footer) {

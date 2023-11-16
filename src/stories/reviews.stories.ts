@@ -388,87 +388,85 @@ export const Reviews2: StoryObj = {
 export const Reviews3: StoryObj = {
   name: 'Reviews 3',
   render: () => html`
-    <div class="bg-white  dark:bg-neutral-950 py-6 sm:py-8 lg:py-12">
-      <div class="container mx-auto px-4 md:px-8">
-        ${heading}
+    <div class="container mx-auto px-4 md:px-8">
+      ${heading}
 
-        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
-          <!-- review - start -->
-          <awc-card bordered>
-            <div slot="footer" class="flex items-center gap-3">
-              <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
-              <div class="leading-dense">
-                <span class="block text-sm text-paragraph font-bold">John McCulling</span>
-                <span class="block text-sm text-paragraph">
-                  <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
-                </span>
-              </div>
+      <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+        <!-- review - start -->
+        <awc-card bordered>
+          <div slot="footer" class="flex items-center gap-3">
+            <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+            <div class="leading-dense">
+              <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+              <span class="block text-sm text-paragraph">
+                <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+              </span>
             </div>
+          </div>
 
-            <div class="mb-2">
-              <!-- stars - start -->
-              <awc-rating label="Rating" readonly value="5"></awc-rating>
-              <!-- stars - end -->
+          <div class="mb-2">
+            <!-- stars - start -->
+            <awc-rating label="Rating" readonly value="5"></awc-rating>
+            <!-- stars - end -->
+          </div>
+          <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+          <p class="text-paragraph">
+            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+            of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or
+            generate text for testing.
+          </p>
+        </awc-card>
+        <!-- review - end -->
+        <!-- review - start -->
+        <awc-card bordered>
+          <div slot="footer" class="flex items-center gap-3">
+            <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+            <div class="leading-dense">
+              <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+              <span class="block text-sm text-paragraph">
+                <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+              </span>
             </div>
-            <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
-            <p class="text-paragraph">
-              This is a section of some simple filler text, also known as placeholder text. It shares some
-              characteristics of a real written text but is random or otherwise generated. It may be used to display a
-              sample of fonts or generate text for testing.
-            </p>
-          </awc-card>
-          <!-- review - end -->
-          <!-- review - start -->
-          <awc-card bordered>
-            <div slot="footer" class="flex items-center gap-3">
-              <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
-              <div class="leading-dense">
-                <span class="block text-sm text-paragraph font-bold">John McCulling</span>
-                <span class="block text-sm text-paragraph">
-                  <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
-                </span>
-              </div>
-            </div>
+          </div>
 
-            <div class="mb-2">
-              <!-- stars - start -->
-              <awc-rating label="Rating" readonly value="5"></awc-rating>
-              <!-- stars - end -->
+          <div class="mb-2">
+            <!-- stars - start -->
+            <awc-rating label="Rating" readonly value="5"></awc-rating>
+            <!-- stars - end -->
+          </div>
+          <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+          <p class="text-paragraph">
+            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+            of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or
+            generate text for testing.
+          </p>
+        </awc-card>
+        <!-- review - end -->
+        <!-- review - start -->
+        <awc-card bordered>
+          <div slot="footer" class="flex items-center gap-3">
+            <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
+            <div class="leading-dense">
+              <span class="block text-sm text-paragraph font-bold">John McCulling</span>
+              <span class="block text-sm text-paragraph">
+                <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
+              </span>
             </div>
-            <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
-            <p class="text-paragraph">
-              This is a section of some simple filler text, also known as placeholder text. It shares some
-              characteristics of a real written text but is random or otherwise generated. It may be used to display a
-              sample of fonts or generate text for testing.
-            </p>
-          </awc-card>
-          <!-- review - end -->
-          <!-- review - start -->
-          <awc-card bordered>
-            <div slot="footer" class="flex items-center gap-3">
-              <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
-              <div class="leading-dense">
-                <span class="block text-sm text-paragraph font-bold">John McCulling</span>
-                <span class="block text-sm text-paragraph">
-                  <awc-format-date date="2021-08-28" month="long" day="numeric" year="numeric"></awc-format-date>
-                </span>
-              </div>
-            </div>
+          </div>
 
-            <div class="mb-2">
-              <!-- stars - start -->
-              <awc-rating label="Rating" readonly value="5"></awc-rating>
-              <!-- stars - end -->
-            </div>
-            <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
-            <p class="text-paragraph">
-              This is a section of some simple filler text, also known as placeholder text. It shares some
-              characteristics of a real written text but is random or otherwise generated. It may be used to display a
-              sample of fonts or generate text for testing.
-            </p>
-          </awc-card>
-          <!-- review - end -->
-        </div>
+          <div class="mb-2">
+            <!-- stars - start -->
+            <awc-rating label="Rating" readonly value="5"></awc-rating>
+            <!-- stars - end -->
+          </div>
+          <h4 class="text-title font-bold mb-1">Lorem ipsum dolor</h4>
+          <p class="text-paragraph">
+            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
+            of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or
+            generate text for testing.
+          </p>
+        </awc-card>
+        <!-- review - end -->
       </div>
     </div>
   `

@@ -32,14 +32,15 @@ export const Team1: StoryObj = {
       <div class="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:gap-x-8 lg:gap-y-12">
         <!-- person - start -->
         <awc-card class="card-collection group rounded-lg overflow-hidden" shadow style="--padding: 0">
-          <awc-image
-            slot="image"
-            layout="filled"
-            aspectRatio="1.5"
-            width="500"
-            src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e"
-            class="transition duration-200 group-hover:scale-110 mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80"
-          ></awc-image>
+          <div slot="image" class="mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80">
+            <awc-image
+              layout="filled"
+              aspectRatio="1.5"
+              width="500"
+              src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e"
+              class="transition duration-200 group-hover:scale-110"
+            ></awc-image>
+          </div>
 
           <div>
             <div class="font-bold text-primary md:text-lg">John McCulling</div>
@@ -57,14 +58,15 @@ export const Team1: StoryObj = {
 
         <!-- person - start -->
         <awc-card class="card-collection group rounded-lg overflow-hidden" shadow style="--padding: 0">
-          <awc-image
-            slot="image"
-            layout="filled"
-            aspectRatio="1.5"
-            width="500"
-            src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1"
-            class="transition duration-200 group-hover:scale-110 mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80"
-          ></awc-image>
+          <div slot="image" class="mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80">
+            <awc-image
+              layout="filled"
+              aspectRatio="1.5"
+              width="500"
+              src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1"
+              class="transition duration-200 group-hover:scale-110"
+            ></awc-image>
+          </div>
 
           <div>
             <div class="font-bold text-primary md:text-lg">Kate Berg</div>
@@ -82,14 +84,15 @@ export const Team1: StoryObj = {
 
         <!-- person - start -->
         <awc-card class="card-collection group rounded-lg overflow-hidden" shadow style="--padding: 0">
-          <awc-image
-            slot="image"
-            layout="filled"
-            aspectRatio="1.5"
-            width="500"
-            src="https://images.unsplash.com/photo-1463453091185-61582044d556"
-            class="transition duration-200 group-hover:scale-110 mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80"
-          ></awc-image>
+          <div slot="image" class="mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80">
+            <awc-image
+              layout="filled"
+              aspectRatio="1.5"
+              width="500"
+              src="https://images.unsplash.com/photo-1463453091185-61582044d556"
+              class="transition duration-200 group-hover:scale-110"
+            ></awc-image>
+          </div>
 
           <div>
             <div class="font-bold text-primary md:text-lg">Greg Jackson</div>
@@ -107,14 +110,15 @@ export const Team1: StoryObj = {
 
         <!-- person - start -->
         <awc-card class="card-collection group rounded-lg overflow-hidden" shadow style="--padding: 0">
-          <awc-image
-            slot="image"
-            layout="filled"
-            aspectRatio="1.5"
-            width="500"
-            src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8"
-            class="transition duration-200 group-hover:scale-110 mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80"
-          ></awc-image>
+          <div slot="image" class="mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80">
+            <awc-image
+              layout="filled"
+              aspectRatio="1.5"
+              width="500"
+              src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8"
+              class="transition duration-200 group-hover:scale-110"
+            ></awc-image>
+          </div>
 
           <div>
             <div class="font-bold text-primary md:text-lg">Robert Greyson</div>
@@ -132,14 +136,15 @@ export const Team1: StoryObj = {
 
         <!-- person - start -->
         <awc-card class="card-collection group rounded-lg overflow-hidden" shadow style="--padding: 0">
-          <awc-image
-            slot="image"
-            layout="filled"
-            aspectRatio="1.5"
-            width="500"
-            src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6"
-            class="transition duration-200 group-hover:scale-110 mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80"
-          ></awc-image>
+          <div slot="image" class="mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80">
+            <awc-image
+              layout="filled"
+              aspectRatio="1.5"
+              width="500"
+              src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6"
+              class="transition duration-200 group-hover:scale-110"
+            ></awc-image>
+          </div>
 
           <div>
             <div class="font-bold text-primary md:text-lg">John Roberts</div>
@@ -157,14 +162,15 @@ export const Team1: StoryObj = {
 
         <!-- person - start -->
         <awc-card class="card-collection group rounded-lg overflow-hidden" shadow style="--padding: 0">
-          <awc-image
-            slot="image"
-            layout="filled"
-            aspectRatio="1.5"
-            width="500"
-            src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df"
-            class="transition duration-200 group-hover:scale-110 mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80"
-          ></awc-image>
+          <div slot="image" class="mb-2 h-48 overflow-hidden rounded-lg shadow-lg sm:mb-4 sm:h-60 md:h-80">
+            <awc-image
+              layout="filled"
+              aspectRatio="1.5"
+              width="500"
+              src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df"
+              class="transition duration-200 group-hover:scale-110"
+            ></awc-image>
+          </div>
 
           <div>
             <div class="font-bold text-primary md:text-lg">Judy Amandez</div>

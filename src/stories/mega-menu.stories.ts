@@ -11,7 +11,7 @@ export default {
 export const MegaMenu1: StoryObj = {
   name: 'MegaMenu 1',
   render: () => html`
-    <div class="w-full border-b border-inputTextColor py-10 lg:py-6 max-lg:px-4">
+    <div class="w-full border-b border-neutral-700 py-10 lg:py-6 max-lg:px-4">
       <div class="container mx-auto grid grid-cols-4 gap-6">
         <!-- Column 1 start -->
         <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
@@ -141,7 +141,7 @@ export const MegaMenu1: StoryObj = {
 export const MegaMenu2: StoryObj = {
   name: 'MegaMenu 2',
   render: () => html`
-    <div class="w-full border-b border-inputTextColor py-10 lg:py-6 max-lg:px-4">
+    <div class="w-full border-b border-neutral-700  py-10 lg:py-6 max-lg:px-4">
       <div class="container mx-auto grid grid-cols-4 gap-6">
         <!-- Column 1 start -->
         <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">
@@ -274,7 +274,7 @@ export const MegaMenu2: StoryObj = {
 export const MegaMenu3: StoryObj = {
   name: 'MegaMenu 3',
   render: () => html`
-    <div class="w-full border-b border-inputTextColor py-10 lg:py-6 max-lg:px-4">
+    <div class="w-full border-b border-neutral-700  py-10 lg:py-6 max-lg:px-4">
       <div class="container mx-auto grid grid-cols-4 gap-6">
         <!-- Column 1 start -->
         <div class="col-span-full md:col-span-2 lg:col-span-1 flex flex-col gap-6">

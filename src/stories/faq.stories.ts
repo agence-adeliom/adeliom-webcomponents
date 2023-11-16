@@ -153,7 +153,7 @@ export const Faq2: StoryObj = {
           <awc-button variant="primary" class="w-full md:w-auto" outline>Button</awc-button>
         </div>
 
-        <div class="faq-group mx-auto flex max-w-screen-md flex-col gap-4">
+        <div class="faq_2-group mx-auto flex max-w-screen-md flex-col gap-4">
           <!-- question - start -->
           <awc-details class="faq-detail">
             <p slot="summary">Lorem ipsum sit dolor</p>
@@ -195,11 +195,12 @@ export const Faq2: StoryObj = {
     </div>
 
     <script>
-      const container = document.querySelector('.faq-group');
-
       // Close all other details when one is shown
-      container.addEventListener('awc-show', event => {
-        [...container.querySelectorAll('awc-details')].map(details => (details.open = event.target === details));
+      document.querySelector('.faq_2-group').addEventListener('awc-show', event => {
+        if (event.target.localName !== 'awc-details') return;
+        [...event.currentTarget.querySelectorAll('awc-details')].map(
+          details => (details.open = event.target === details)
+        );
       });
     </script>
   `
@@ -433,7 +434,7 @@ export const Faq5: StoryObj = {
             </div>
           </div>
 
-          <div class="faq-group flex flex-col gap-4  md:col-span-3">
+          <div class="faq_5-group flex flex-col gap-4  md:col-span-3">
             <!-- question - start -->
             <awc-details class="faq-detail">
               <p slot="summary">Lorem ipsum sit dolor</p>
@@ -485,11 +486,12 @@ export const Faq5: StoryObj = {
     </div>
 
     <script>
-      const container = document.querySelector('.faq-group');
-
       // Close all other details when one is shown
-      container.addEventListener('awc-show', event => {
-        [...container.querySelectorAll('awc-details')].map(details => (details.open = event.target === details));
+      document.querySelector('.faq_5-group').addEventListener('awc-show', event => {
+        if (event.target.localName !== 'awc-details') return;
+        [...event.currentTarget.querySelectorAll('awc-details')].map(
+          details => (details.open = event.target === details)
+        );
       });
     </script>
   `
@@ -522,7 +524,7 @@ export const Faq6: StoryObj = {
               <awc-button variant="primary" class="w-full md:w-auto" outline>Button</awc-button>
             </div>
 
-            <div class="faq-group flex flex-col gap-4">
+            <div class="faq_6-group flex flex-col gap-4">
               <!-- question - start -->
               <awc-details class="faq-detail" open>
                 <p slot="summary">Lorem ipsum sit dolor</p>
@@ -609,11 +611,11 @@ export const Faq6: StoryObj = {
     </div>
 
     <script>
-      const container = document.querySelector('.faq-group');
-
-      // Close all other details when one is shown
-      container.addEventListener('awc-show', event => {
-        [...container.querySelectorAll('awc-details')].map(details => (details.open = event.target === details));
+      document.querySelector('.faq_6-group').addEventListener('awc-show', event => {
+        if (event.target.localName !== 'awc-details') return;
+        [...event.currentTarget.querySelectorAll('awc-details')].map(
+          details => (details.open = event.target === details)
+        );
       });
     </script>
   `
