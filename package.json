@@ -83,6 +83,7 @@
     "leaflet.locatecontrol": "^0.79.0",
     "leaflet.markercluster": "^1.5.3",
     "lit": "^3.1.0",
+    "lottie-web": "^5.12.2",
     "pretty-bytes": "^6.1.1",
     "qr-creator": "^1.0.0",
     "swiper": "^11.0.4",
