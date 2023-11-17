@@ -18,8 +18,6 @@ const entries = [
   //
   // The whole shebang
   './src/awc.ts',
-  // The tailwind plugin
-  './src/tailwind/index.js',
   // Components
   ...globbySync('./src/components/**/!(*.(style|stories|test)).ts'),
   // Translations
@@ -47,6 +45,7 @@ const awcPlugin = () => {
       execSync(`node scripts/make-icons.js --outdir ${outputDir}`, { stdio: 'inherit' });
       execSync(`node scripts/make-react.js --outdir ${outputDir}`, { stdio: 'inherit' });
       execSync(`node scripts/make-themes.js --outdir ${outputDir}`, { stdio: 'inherit' });
+      execSync(`cp src/tailwind.cjs ${outputDir}/tailwind.cjs`, { stdio: 'inherit' });
     },
     buildStart: () => {
       const outputDir = path.relative(process.cwd(), config.build.outDir);
@@ -54,6 +53,7 @@ const awcPlugin = () => {
       execSync(`node scripts/make-icons.js --outdir ${outputDir}`, { stdio: 'inherit' });
       execSync(`node scripts/make-react.js --outdir ${outputDir}`, { stdio: 'inherit' });
       execSync(`node scripts/make-themes.js --outdir ${outputDir}`, { stdio: 'inherit' });
+      execSync(`cp src/tailwind.cjs ${outputDir}/tailwind.cjs`, { stdio: 'inherit' });
     }
   };
 };
