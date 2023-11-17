@@ -27,9 +27,7 @@
     },
     "./react/*": "./dist/react/*",
     "./translations/*": "./dist/translations/*",
-    "./tailwind": {
-      "import": "./dist/tailwind/index.js"
-    }
+    "./tailwind": "./dist/tailwind.cjs"
   },
   "files": [
     "dist"

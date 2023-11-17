@@ -16,10 +16,6 @@ const entries = [
   //
   // The whole shebang
   './src/awc.ts',
-  // The auto-loader
-  './src/awc-autoloader.ts',
-  // The tailwind plugin
-  './src/tailwind/index.js',
   // Components
   ...globbySync('./src/components/**/!(*.(style|stories|test)).ts'),
   // Translations

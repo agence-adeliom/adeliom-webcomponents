@@ -421,7 +421,7 @@ registerIconLibrary('system', {
 <IconGallery>
   {
     SystemIcons.map((name) => (
-      <IconItem name={name}>
+      <IconItem name={name} key={`icon_${name}`}>
         <awc-copy-button value={name}>
           <awc-icon slot="copy-icon" name={name}></awc-icon>
           <awc-icon slot="success-icon" name={name}></awc-icon>
