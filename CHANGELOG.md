@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/agence-adeliom/awc/compare/v1.2.1...v1.3.0) (2023-11-17)
+
+
+### Features
+
+* **object3d:** add stories and documentation for modelViewer ([c802259](https://github.com/agence-adeliom/awc/commit/c8022595e0dc132d9e1f5107bf8f8267867aa9f6))
+
+
+### Bug Fixes
+
+* **tailwind:** correct tailwind preset path ([5037750](https://github.com/agence-adeliom/awc/commit/5037750e0a7d9faab8876627584c7d67f0d1cc2e))
+
 ## [1.2.1](https://github.com/agence-adeliom/awc/compare/v1.2.0...v1.2.1) (2023-11-13)
 
 
