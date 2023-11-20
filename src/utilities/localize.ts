@@ -44,4 +44,13 @@ export interface Translation extends DefaultTranslation {
   showPassword: string;
   slideNum: (slide: number) => string;
   toggleColorFormat: string;
+  zoomIn: string;
+  zoomOut: string;
+  enterFullscreen: string;
+  exitFullscreen: string;
+  locateMe: string;
+  metersUnit: string;
+  feetUnit: string;
+  locatePopup: string;
+  locateOutsideMapBounds: string;
 }

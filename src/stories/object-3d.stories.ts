@@ -108,7 +108,7 @@ export const Object3d4: StoryObj = {
         height: 1000px;
         margin: auto;
       }
-      .hotspot{
+      .hotspot {
         display: block;
         width: 20px;
         height: 20px;
@@ -119,17 +119,17 @@ export const Object3d4: StoryObj = {
         pointer-events: none;
       }
 
-      .hotspot[slot="hotspot-hand"]{
+      .hotspot[slot='hotspot-hand'] {
         --min-hotspot-opacity: 0;
         background-color: red;
       }
 
-      .hotspot[slot="hotspot-foot"]:not([data-visible]) {
+      .hotspot[slot='hotspot-foot']:not([data-visible]) {
         background-color: transparent;
         border: 3px solid blue;
       }
 
-      .annotation{
+      .annotation {
         background-color: #888888;
         position: absolute;
         transform: translate(10px, 10px);
@@ -169,7 +169,8 @@ export const Object3d5: StoryObj = {
         data-position="1 0.85 0"
         data-normal="1 0.85 -0.50"
         data-orbit="70.94862deg 70.56856deg 0.16545582m"
-        data-target="1 0.85 -0.50">
+        data-target="1 0.85 -0.50"
+      >
         La fenêtre
       </button>
     </model-viewer>
@@ -188,7 +189,10 @@ export const Object3d5: StoryObj = {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
         color: rgba(0, 0, 0, 0.8);
         display: block;
-        font-family: Futura, Helvetica Neue, sans-serif;
+        font-family:
+          Futura,
+          Helvetica Neue,
+          sans-serif;
         font-size: 12px;
         font-weight: 700;
         max-width: 128px;
@@ -204,15 +208,15 @@ export const Object3d5: StoryObj = {
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
 
     <script type="module">
-      const modelViewer2 = document.querySelector("model-viewer");
-      const annotationClicked = (annotation) => {
+      const modelViewer2 = document.querySelector('model-viewer');
+      const annotationClicked = annotation => {
         let dataset = annotation.dataset;
         modelViewer2.cameraTarget = dataset.target;
         modelViewer2.cameraOrbit = dataset.orbit;
         modelViewer2.fieldOfView = '45deg';
-      }
+      };
 
-      modelViewer2.querySelectorAll('button').forEach((hotspot) => {
+      modelViewer2.querySelectorAll('button').forEach(hotspot => {
         hotspot.addEventListener('click', () => annotationClicked(hotspot));
       });
     </script>

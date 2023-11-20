@@ -41,7 +41,16 @@ const translation: Translation = {
   selectAColorFromTheScreen: 'Vælg en farve fra skærmen',
   showPassword: 'Vis adgangskode',
   slideNum: slide => `Slide ${slide}`,
-  toggleColorFormat: 'Skift farveformat'
+  toggleColorFormat: 'Skift farveformat',
+  zoomIn: 'Zoom ind',
+  zoomOut: 'Zoom ud',
+  enterFullscreen: 'Indtast i fuld skærm',
+  exitFullscreen: 'Forlad fuld skærm',
+  locateMe: 'Find mig',
+  metersUnit: 'meter',
+  feetUnit: 'fod',
+  locatePopup: 'Du er i {distance} {unit} fra dette punkt',
+  locateOutsideMapBounds: 'Du ser i forvejen for dette punkt'
 };
 
 registerTranslation(translation);

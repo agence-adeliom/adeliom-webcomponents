@@ -157,8 +157,8 @@ function getSlotsTemplate(component: Declaration, args: any) {
           ? slotName === 'default'
             ? `${slotValue || ''}`
             : (slotValue || '').includes(`slot="${slotName}"`)
-            ? slotValue
-            : `<span slot="${slotName}">${slotValue || ''}</span>`
+              ? slotValue
+              : `<span slot="${slotName}">${slotValue || ''}</span>`
           : null;
       })
       .filter(value => value !== null)

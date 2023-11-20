@@ -67,7 +67,10 @@ export default {
   plugins: [
     awcPlugin(),
     replace({
-      __AWC_VERSION__: pkg.version
+      values: {
+        __AWC_VERSION__: pkg.version
+      },
+      preventAssignment: true
     })
   ]
 };

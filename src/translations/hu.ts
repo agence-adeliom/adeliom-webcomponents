@@ -41,7 +41,16 @@ const translation: Translation = {
   selectAColorFromTheScreen: 'Válasszon színt a képernyőről',
   showPassword: 'Jelszó mutatása',
   slideNum: slide => `Diavetítés ${slide}`,
-  toggleColorFormat: 'Színformátum váltása'
+  toggleColorFormat: 'Színformátum váltása',
+  zoomIn: 'Nagyiány',
+  zoomOut: 'Kicsiány',
+  enterFullscreen: 'Teljes állönték',
+  exitFullscreen: 'Kilep a teljes állönték',
+  locateMe: 'Megjelenítés',
+  metersUnit: 'm',
+  feetUnit: 'fut',
+  locatePopup: 'A(z) {distance} {unit} több, mint a(z) {location}',
+  locateOutsideMapBounds: ''
 };
 
 registerTranslation(translation);

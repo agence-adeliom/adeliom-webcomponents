@@ -62,6 +62,28 @@ export { default as AWCOembed } from './components/oembed/oembed.js';
 export { default as AWCPagination } from './components/pagination/pagination.js';
 export { default as AWCFileUpload } from './components/file-upload/file-upload.js';
 export { default as AWCFileUploadItem } from './components/file-upload-item/file-upload-item.js';
+export { default as AWCMap } from './components/map/map.js';
+export { default as AWCMapMarker } from './components/map-marker/map-marker.js';
+export { default as AWCMapIcon } from './components/map-icon/map-icon.js';
+export { default as AWCMapCircle } from './components/map-circle/map-circle.js';
+export { default as AWCMapPolygon } from './components/map-polygon/map-polygon.js';
+export { default as AWCMapTilelayer } from './components/map-tilelayer/map-tilelayer.js';
+export { default as AWCMapTilelayerWms } from './components/map-tilelayer-wms/map-tilelayer-wms.js';
+export { default as AWCMapScaleControl } from './components/map-scale-control/map-scale-control.js';
+export { default as AWCMapGeojson } from './components/map-geojson/map-geojson.js';
+export { default as AWCMapPoint } from './components/map-point/map-point.js';
+export { default as AWCMapPolyline } from './components/map-polyline/map-polyline.js';
+export { default as AWCMapLayerGroup } from './components/map-layer-group/map-layer-group.js';
+export { default as AWCMapZoomControl } from './components/map-zoom-control/map-zoom-control.js';
+export { default as AWCMapGeolocation } from './components/map-geolocation/map-geolocation.js';
+export { default as AWCMapFullscreenControl } from './components/map-fullscreen-control/map-fullscreen-control.js';
+export { default as AWCMapDivicon } from './components/map-divicon/map-divicon.js';
+export { default as AWCMapRectangle } from './components/map-rectangle/map-rectangle.js';
+export { default as AWCMapImageOverlay } from './components/map-image-overlay/map-image-overlay.js';
+export { default as AWCMapVideoOverlay } from './components/map-video-overlay/map-video-overlay.js';
+export { default as AWCMapSvgOverlay } from './components/map-svg-overlay/map-svg-overlay.js';
+export { default as AWCMapTilelayerGoogle } from './components/map-tilelayer-google/map-tilelayer-google.js';
+export { default as AWCMapMarkerClusterGroup } from './components/map-marker-cluster-group/map-marker-cluster-group.js';
 /* plop:component */
 
 // Utilities
