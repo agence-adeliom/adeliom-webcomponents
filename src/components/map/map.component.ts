@@ -5,7 +5,7 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-
+import AWCMapZoomControl from '../map-zoom-control/map-zoom-control.js';
 import styles from './map.styles.js';
 import type { CSSResultGroup, TemplateResult } from 'lit';
 
@@ -438,9 +438,9 @@ export default class AWCMap extends AWCLeafletElement {
       L.control
         .zoom({
           position: 'topright',
-          zoomInText: '<span aria-hidden="true"><awc-icon name="plus-lg"></awc-icon></span>',
+          zoomInText: AWCMapZoomControl._zoomInText,
           zoomInTitle: this.localize.term('zoomIn'),
-          zoomOutText: '<span aria-hidden="true"><awc-icon name="dash-lg"></awc-icon></span>',
+          zoomOutText: AWCMapZoomControl._zoomOutText,
           zoomOutTitle: this.localize.term('zoomOut')
         })
         .addTo(map);

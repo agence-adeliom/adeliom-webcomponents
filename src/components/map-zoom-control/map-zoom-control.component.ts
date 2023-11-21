@@ -15,6 +15,9 @@ import type { CSSResultGroup } from 'lit';
 export default class AWCMapZoomControl extends AWCLeafletElement {
   static styles: CSSResultGroup = styles;
 
+  static _zoomInText: string = '<span aria-hidden="true"><awc-icon name="plus-lg"></awc-icon></span>';
+  static _zoomOutText: string = '<span aria-hidden="true"><awc-icon name="dash-lg"></awc-icon></span>';
+
   // @ts-expect-error ambient property.
   container: L.Map;
 
@@ -29,24 +32,24 @@ export default class AWCMapZoomControl extends AWCLeafletElement {
   @property({ type: String }) position: 'topleft' | 'topright' | 'bottomleft' | 'bottomright' = 'topright';
 
   /** The text set on the 'zoom in' button.*/
-  @property({ type: String }) zoomInText = '<span aria-hidden="true"><awc-icon name="plus-lg"></awc-icon></span>';
+  @property({ type: String }) zoomInText = AWCMapZoomControl._zoomInText;
 
   /** The title set on the 'zoom in' button.*/
   @property({ type: String }) zoomInTitle?: string = undefined;
 
   /** The text set on the 'zoom out' button.*/
-  @property({ type: String }) zoomOutText = '<span aria-hidden="true"><awc-icon name="dash-lg"></awc-icon></span>';
+  @property({ type: String }) zoomOutText = AWCMapZoomControl._zoomOutText;
 
   /** The title set on the 'zoom out' button. */
   @property({ type: String }) zoomOutTitle?: string = undefined;
 
   containerChanged(): void {
     if (!this.container) return;
-    const { position, zoomInTitle, zoomOutText } = this;
+    const { position, zoomInText, zoomOutText } = this;
     this.control = L.control.zoom({
       position,
-      zoomInText: this.zoomInTitle ? this.zoomInTitle : this.localize.term('zoomIn'),
-      zoomInTitle,
+      zoomInText,
+      zoomInTitle: this.zoomInTitle ? this.zoomInTitle : this.localize.term('zoomIn'),
       zoomOutText,
       zoomOutTitle: this.zoomOutTitle ? this.zoomOutTitle : this.localize.term('zoomOut')
     });
