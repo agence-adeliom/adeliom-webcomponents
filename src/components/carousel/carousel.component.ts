@@ -268,8 +268,8 @@ export default class AWCCarousel extends AWCElement {
           ? this.autoplay === true
             ? true
             : !(typeof this.autoplay === 'number')
-            ? { delay: this.autoplay === '' ? 3000 : this.autoplay }
-            : { ...JSON.parse(this.autoplay) }
+              ? { delay: this.autoplay === '' ? 3000 : this.autoplay }
+              : { ...JSON.parse(this.autoplay) }
           : false,
       navigation: {
         enabled: this.navigation,

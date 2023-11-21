@@ -33,7 +33,27 @@ const translation: Translation = {
   selectAColorFromTheScreen: 'انتخاب یک رنگ از صفحه نمایش',
   showPassword: 'نمایش رمز',
   slideNum: slide => `اسلاید ${slide}`,
-  toggleColorFormat: 'تغییر قالب رنگ'
+  toggleColorFormat: 'تغییر قالب رنگ',
+  zoomIn: 'بزرگنمایی',
+  zoomOut: 'کوچک نمایی',
+  enterFullscreen: 'ورود به تمام صفحه',
+  exitFullscreen: 'خروج از تمام صفحه',
+  locateMe: 'مکان من',
+  metersUnit: 'متر',
+  feetUnit: 'فیت',
+  locatePopup: 'شما در نطقه {distance} {unit} از این نقطه هستید',
+  locateOutsideMapBounds: 'شما در نطقه بیرون از محدوده نقشه هستید',
+  browseFiles: 'انتخاب فایل',
+  dragDrop: 'تغییر موقعیت',
+  fileSizeExceeded: function (size: number): string {
+    return `حجم فایل بیشتر از ${size} است`;
+  },
+  fileTypeNotAccepted: function (accept: string): string {
+    return `فایل با پسوند ${accept} قابل قبول نیست`;
+  },
+  files: 'فایل',
+  maxFiles: 'حداکثر تعداد فایل های مجاز',
+  noMultipleFiles: 'فقط یک فایل مجاز'
 };
 
 registerTranslation(translation);

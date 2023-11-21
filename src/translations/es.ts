@@ -41,7 +41,16 @@ const translation: Translation = {
   selectAColorFromTheScreen: 'Seleccione un color de la pantalla',
   showPassword: 'Mostrar contraseña',
   slideNum: slide => `Diapositiva ${slide}`,
-  toggleColorFormat: 'Alternar formato de color'
+  toggleColorFormat: 'Alternar formato de color',
+  zoomIn: 'Acercar',
+  zoomOut: 'Alejar',
+  enterFullscreen: 'Entrar en pantalla completa',
+  exitFullscreen: 'Salir de pantalla completa',
+  locateMe: 'Localizarme',
+  metersUnit: 'metros',
+  feetUnit: 'pies',
+  locatePopup: 'Estas dentro de {distance} {unit} de este punto',
+  locateOutsideMapBounds: 'Estas dentro de los bordes del mapa'
 };
 
 registerTranslation(translation);
