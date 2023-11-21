@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/agence-adeliom/awc/compare/v1.4.0...v1.5.0) (2023-11-21)
+
+
+### Features
+
+* **map:** add map layers ([#16](https://github.com/agence-adeliom/awc/issues/16)) ([22d115d](https://github.com/agence-adeliom/awc/commit/22d115d92e101e534e5e354beecd8f44162d17d5))
+
 ## [1.4.0](https://github.com/agence-adeliom/awc/compare/v1.3.0...v1.4.0) (2023-11-17)
 
 
