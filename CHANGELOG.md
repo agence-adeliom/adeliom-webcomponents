@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/agence-adeliom/awc/compare/v1.5.0...v1.5.1) (2023-11-21)
+
+
+### Bug Fixes
+
+* **map:** typo in zoom control ([58a3ce0](https://github.com/agence-adeliom/awc/commit/58a3ce03d1ace9c3596ff62a7f6e23bebb49be36))
+
 ## [1.5.0](https://github.com/agence-adeliom/awc/compare/v1.4.0...v1.5.0) (2023-11-21)
 
 
