@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/agence-adeliom/awc/compare/v1.5.2...v1.5.3) (2023-11-22)
+
+
+### Bug Fixes
+
+* **react:** handle build process to add react-wrapper in package ([26576f9](https://github.com/agence-adeliom/awc/commit/26576f947376d0a652ce1d2793782691b2a8ee5e))
+
 ## [1.5.2](https://github.com/agence-adeliom/awc/compare/v1.5.1...v1.5.2) (2023-11-22)
 
 
