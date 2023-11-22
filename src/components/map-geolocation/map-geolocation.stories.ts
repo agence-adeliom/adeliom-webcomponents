@@ -44,21 +44,22 @@ export const Primary: Story = {
     </awc-map>
     <script>
       document.querySelector('.map-geolocation').addEventListener('locationfound', e => {
+        const { latlng, bounds, accuracy, altitude, altitudeAccuracy, heading, speed, timestamp } = e.detail;
         alert(
           'Location found : ' +
             JSON.stringify({
-              lat: e.latlng.lat,
-              lng: e.latlng.lng,
-              bounds: e.bounds,
-              accuracy: e.accuracy,
-              altitude: e.altitude,
-              altitudeAccuracy: e.altitudeAccuracy,
-              heading: e.heading,
-              speed: e.speed,
-              timestamp: e.timestamp
+              lat: latlng.lat,
+              lng: latlng.lng,
+              bounds,
+              accuracy,
+              altitude,
+              altitudeAccuracy,
+              heading,
+              speed,
+              timestamp
             })
         );
-      });
+      }, { once: true });
     </script>
   `
 };

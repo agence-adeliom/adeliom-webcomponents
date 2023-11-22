@@ -95,6 +95,19 @@ When binding complex data such as objects and arrays, use the `.prop` modifier t
 <awc-color-picker :swatches.prop="mySwatches" />
 ```
 
+### Two-way Binding
+
+One caveat is there's currently [no support for v-model on custom elements](https://github.com/vuejs/vue/issues/7830), but you can still achieve two-way binding manually.
+
+```html
+<!-- This doesn't work -->
+<awc-input v-model="name"></awc-input>
+<!-- This works, but it's a bit longer -->
+<awc-input :value="name" @input="name = $event.target.value"></awc-input>
+```
+
+If that's too verbose for your liking, you can use a custom directive instead. [This utility](https://www.npmjs.com/package/@shoelace-style/vue-sl-model) adds a custom directive that will work just like `v-model` but for AWC components.
+
 ### Slots
 
 To use Adeliom WebComponents components with slots, follow the Vue documentation on using [slots with custom elements](https://vuejs.org/guide/extras/web-components.html#building-custom-elements-with-vue).
