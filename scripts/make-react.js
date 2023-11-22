@@ -27,10 +27,10 @@ for await (const component of components) {
   const importPath = component.path.replace(/\.js$/, '.component.js');
 
   const eventImports = (component.events || [])
-    .map(event => `import type { ${event.eventName} } from '../../../src/events/events';`)
+    .map(event => `import type { ${event.eventName} } from '../../events/events';`)
     .join('\n');
   const eventExports = (component.events || [])
-    .map(event => `export type { ${event.eventName} } from '../../../src/events/events';`)
+    .map(event => `export type { ${event.eventName} } from '../../events/events';`)
     .join('\n');
   const eventNameImport = (component.events || []).length > 0 ? `import { type EventName } from '@lit/react';` : ``;
   const events = (component.events || [])
