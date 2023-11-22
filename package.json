@@ -67,7 +67,7 @@
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "prepublishOnly": "npm run build && npm run storybook:build"
+    "prepublishOnly": "npm run build"
   },
   "engines": {
     "node": ">=16.0.0"

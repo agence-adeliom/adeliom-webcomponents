@@ -57,7 +57,13 @@ const awcPlugin = () => {
 
 export default {
   build: {
-    chunkSizeWarningLimit: 300
+    chunkSizeWarningLimit: 300,
+    rollupOptions: {
+      external: externalPackages,
+      output: {
+        chunkFileNames: 'chunks/[name]-[hash].js'
+      }
+    }
   },
   resolve: {
     alias: {

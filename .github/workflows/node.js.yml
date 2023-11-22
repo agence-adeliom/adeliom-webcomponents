@@ -50,6 +50,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
+      - run: npm run storybook:build
       - name: Fix permissions
         run: |
           chmod -c -R +rX "storybook-static/" | while read line; do
