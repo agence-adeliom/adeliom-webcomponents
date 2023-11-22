@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.4](https://github.com/agence-adeliom/awc/compare/v1.5.3...v1.5.4) (2023-11-22)
+
+
+### Bug Fixes
+
+* **docs:** cleanup old docs ([f2f569a](https://github.com/agence-adeliom/awc/commit/f2f569ae26fa6fe2978efd561adaf68acca25def))
+* **react:** Fix React .d.ts files to import from valid path; ([1b3e0a6](https://github.com/agence-adeliom/awc/commit/1b3e0a6899a6d039f66d1cc3f42ba865ad356dde))
+* **skeleton:** removes duplicative style declaration in the skeleton component ([24a2c09](https://github.com/agence-adeliom/awc/commit/24a2c09d082ba6070a550bd8aae4ec49992e5840))
+
 ## [1.5.3](https://github.com/agence-adeliom/awc/compare/v1.5.2...v1.5.3) (2023-11-22)
 
 
