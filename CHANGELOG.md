@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.2](https://github.com/agence-adeliom/awc/compare/v1.5.1...v1.5.2) (2023-11-22)
+
+
+### Bug Fixes
+
+* **perfs:** add lazyload for icon ([7613345](https://github.com/agence-adeliom/awc/commit/7613345c336ea9217c5bd5cb01e830f9dc3dee52))
+* **react:** fix react wrapper build ([d4df2b1](https://github.com/agence-adeliom/awc/commit/d4df2b13f41e4912f24f58159d3b89e0d0d53731))
+
 ## [1.5.1](https://github.com/agence-adeliom/awc/compare/v1.5.0...v1.5.1) (2023-11-21)
 
 
