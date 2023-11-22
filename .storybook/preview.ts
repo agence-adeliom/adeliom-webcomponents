@@ -1,7 +1,7 @@
 import type { Preview, StoryContext } from '@storybook/web-components';
 import { withThemeByDataAttribute } from '@storybook/addon-styling';
 import { setCustomElementsManifest } from '@storybook/web-components';
-import customElements from '../dist/custom-elements.json';
+import customElements from './custom-elements.json';
 import DocumentationTemplate from './template/DocumentationTemplate.mdx';
 
 import '../src/awc.ts';

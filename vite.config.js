@@ -30,38 +30,11 @@ const entries = [
   ...globbySync('./src/react/**/*.ts')
 ];
 
-const awcPlugin = () => {
-  let config;
-  return {
-    name: 'metadata',
-    enforce: 'post',
-    configResolved(resolvedConfig) {
-      config = resolvedConfig;
-    },
-    closeBundle: () => {
-      // eslint-disable-next-line no-undef
-      const outputDir = path.relative(process.cwd(), config.build.outDir);
-      execSync(`cem analyze --litelement --outdir "${outputDir}"`, { stdio: 'inherit' });
-      execSync(`node scripts/make-icons.js --outdir ${outputDir}`, { stdio: 'inherit' });
-      execSync(`node scripts/make-react.js --outdir ${outputDir}`, { stdio: 'inherit' });
-      execSync(`node scripts/make-themes.js --outdir ${outputDir}`, { stdio: 'inherit' });
-      execSync(`cp src/tailwind.cjs ${outputDir}/tailwind.cjs`, { stdio: 'inherit' });
-    },
-    buildStart: () => {
-      const outputDir = path.relative(process.cwd(), config.build.outDir);
-      execSync(`cem analyze --litelement --outdir "${outputDir}"`, { stdio: 'inherit' });
-      execSync(`node scripts/make-icons.js --outdir ${outputDir}`, { stdio: 'inherit' });
-      execSync(`node scripts/make-react.js --outdir ${outputDir}`, { stdio: 'inherit' });
-      execSync(`node scripts/make-themes.js --outdir ${outputDir}`, { stdio: 'inherit' });
-      execSync(`cp src/tailwind.cjs ${outputDir}/tailwind.cjs`, { stdio: 'inherit' });
-    }
-  };
-};
-
 export default {
   build: {
     target: 'es2021',
     outDir: 'dist',
+    emptyOutDir: false,
     lib: {
       entry: entries,
       formats: ['es']
@@ -86,7 +59,6 @@ export default {
     dts({
       tsconfigPath: 'tsconfig.prod.json'
     }),
-    awcPlugin(),
     replace({
       values: {
         __AWC_VERSION__: pkg.version

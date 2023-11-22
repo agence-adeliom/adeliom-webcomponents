@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import type AWCMapIcon from './map-icon.component.js';
 

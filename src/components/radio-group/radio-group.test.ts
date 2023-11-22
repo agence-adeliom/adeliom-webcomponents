@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { aTimeout, expect, fixture, html, oneEvent, waitUntil } from '@open-wc/testing';
 import { clickOnElement } from '../../internal/test.js';
 import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';

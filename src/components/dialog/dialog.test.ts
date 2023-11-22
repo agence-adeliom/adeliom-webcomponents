@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 // cspell:dictionaries lorem-ipsum
 import { aTimeout, elementUpdated, expect, fixture, html, waitUntil } from '@open-wc/testing';
 import { LitElement } from 'lit';

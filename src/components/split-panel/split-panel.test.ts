@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { dragElement } from '../../internal/test.js';
 import { expect, fixture, html, oneEvent } from '@open-wc/testing';
 import { queryByTestId } from '../../internal/test/data-testid-helpers.js';

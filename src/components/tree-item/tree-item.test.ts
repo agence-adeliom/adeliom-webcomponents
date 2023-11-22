@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { expect, fixture, html, oneEvent, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
 import type AWCTreeItem from './tree-item';

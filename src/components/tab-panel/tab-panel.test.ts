@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { aTimeout, expect, fixture, html } from '@open-wc/testing';
 import type AWCTabPanel from './tab-panel';
 

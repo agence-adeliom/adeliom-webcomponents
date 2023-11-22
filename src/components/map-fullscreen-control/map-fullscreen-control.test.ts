@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import type AWCMapFullscreenControl from './map-fullscreen-control.component.js';
 

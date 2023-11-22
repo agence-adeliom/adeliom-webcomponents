@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { aTimeout, expect, fixture, html, oneEvent } from '@open-wc/testing';
 import type AWCAnimation from './animation.js';
 

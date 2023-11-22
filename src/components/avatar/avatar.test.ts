@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { aTimeout, expect, fixture, html, waitUntil } from '@open-wc/testing';
 import type AWCAvatar from './avatar.js';
 

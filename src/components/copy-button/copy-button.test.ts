@@ -1,4 +1,4 @@
-import '../../../dist/shoelace.js';
+import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import type AWCCopyButton from './copy-button.js';
 

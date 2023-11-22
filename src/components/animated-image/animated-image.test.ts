@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { clickOnElement } from '../../internal/test.js';
 import { expect, fixture, html, oneEvent } from '@open-wc/testing';
 import type AWCAnimatedImage from './animated-image.js';

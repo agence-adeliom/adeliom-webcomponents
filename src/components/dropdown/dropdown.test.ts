@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { clickOnElement } from '../../internal/test.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import { sendKeys, sendMouse } from '@web/test-runner-commands';

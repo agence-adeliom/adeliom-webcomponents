@@ -1,4 +1,4 @@
-import '../../../dist/awc.js';
+import '../../awc.js';
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
 import type AWCButtonGroup from './button-group.js';
 

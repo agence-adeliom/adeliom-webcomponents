@@ -46,10 +46,8 @@
   },
   "scripts": {
     "create": "plop --plopfile scripts/plop/plopfile.js",
-    "start": "storybook dev -p 6006",
-    "build": "vite build --config ./vite.config.js",
-    "esbuild": "npm run hook:pre:build && node esbuild.config.mjs",
-    "esbuild:watch": "npm run esbuild -- --watch",
+    "start": "node ./scripts/storybook.js",
+    "build": "node ./scripts/build.js",
     "verify": "npm run prettier:check && npm run lint:check",
     "fix": "npm run prettier:fix && npm run lint:fix",
     "prettier:check": "prettier --check --log-level=warn .",
@@ -65,8 +63,8 @@
     "dependencies:list": "npm-check-updates --format repo --peer",
     "dependencies:update": "npm-check-updates --peer -u && npm install",
     "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build",
+    "storybook": "node ./scripts/storybook.js",
+    "storybook:build": "node ./scripts/storybook.js --build",
     "prepublishOnly": "npm run build"
   },
   "engines": {

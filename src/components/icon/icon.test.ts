@@ -1,5 +1,5 @@
 import { aTimeout, elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
-import { registerIconLibrary } from '../../../dist/awc.js';
+import { registerIconLibrary } from '../../awc.js';
 import type { AWCErrorEvent } from '../../events/awc-error';
 import type AWCIcon from './icon';
 
