@@ -60,6 +60,14 @@ Custom icons can be loaded individually with the `src` attribute. Only SVGs on a
 
 <Canvas of={IconStories.CustomIcons} />
 
+### Lazy load
+
+Icons are lazy loaded by default. You can disable this behavior by setting the `lazy` attribute to `false`.
+
+```html
+<awc-icon name="icon-name-here" lazy="false"></awc-icon>
+```
+
 ## Icon Libraries
 
 You can register additional icons to use with the `<awc-icon>` component through icon libraries. Icon files can exist locally or on a CORS-enabled endpoint (e.g. a CDN). There is no limit to how many icon libraries you can register and there is no cost associated with registering them, as individual icons are only requested when they're used.
@@ -392,7 +400,7 @@ As always, make sure to benchmark these changes. When using HTTP/2, it may in fa
 import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
 
 registerIconLibrary('sprite', {
-  resolver: name => `/images/sprite.svg#${name}`,
+  resolver: name => `/assets/images/sprite.svg#${name}`,
   mutator: svg => svg.setAttribute('fill', 'currentColor'),
   spriteSheet: true
 });
@@ -421,6 +429,7 @@ registerIconLibrary('system', {
 <IconGallery>
   {
     SystemIcons.map((name) => (
+      
       <IconItem name={name} key={`icon_${name}`}>
         <awc-copy-button value={name}>
           <awc-icon slot="copy-icon" name={name}></awc-icon>
@@ -428,6 +437,7 @@ registerIconLibrary('system', {
           <awc-icon slot="error-icon" name={name}></awc-icon>
         </awc-copy-button>
       </IconItem>
+      
     ))
   }
 

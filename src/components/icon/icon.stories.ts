@@ -93,7 +93,7 @@ registerIconLibrary('unicons', {
 });
 
 registerIconLibrary('sprite', {
-  resolver: name => `/images/sprite.svg#${name}`,
+  resolver: name => `/assets/images/sprite.svg#${name}`,
   mutator: svg => svg.setAttribute('fill', 'currentColor'),
   spriteSheet: true
 });
@@ -214,7 +214,7 @@ export const CustomIcons: Story = {
     }
   },
   args: {
-    src: '/images/shoe.svg'
+    src: '/assets/images/shoe.svg'
   }
 };
 

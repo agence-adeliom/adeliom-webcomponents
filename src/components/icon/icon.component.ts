@@ -1,3 +1,4 @@
+import { bound } from '../../internal/bound.js';
 import { getIconLibrary, type IconLibrary, unwatchIcon, watchIcon } from './library.js';
 import { html } from 'lit';
 import { isTemplateResult } from 'lit/directive-helpers.js';
@@ -5,7 +6,6 @@ import { property, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './icon.styles.js';
-
 import type { CSSResultGroup, HTMLTemplateResult } from 'lit';
 
 const CACHEABLE_ERROR = Symbol();
@@ -36,6 +36,8 @@ export default class AWCIcon extends AWCElement {
   static styles: CSSResultGroup = styles;
 
   private initialRender = false;
+
+  private intersectionObserver: IntersectionObserver;
 
   /** Given a URL, this function returns the resulting SVG element or an appropriate error symbol. */
   private async resolveIcon(url: string, library?: IconLibrary): Promise<SVGResult> {
@@ -94,19 +96,30 @@ export default class AWCIcon extends AWCElement {
   /** The name of a registered custom icon library. */
   @property({ reflect: true }) library = 'default';
 
+  /** Whether the icon should be lazily loaded. */
+  @property({ type: Boolean, reflect: true }) lazy: boolean = true;
+
   connectedCallback() {
     super.connectedCallback();
     watchIcon(this);
+
+    if (this.lazy) {
+      this.intersectionObserver = new IntersectionObserver(this.setIcon, { rootMargin: '375px' });
+      this.intersectionObserver.observe(this);
+    }
   }
 
   firstUpdated() {
     this.initialRender = true;
-    this.setIcon();
+    if (!this.lazy) {
+      this.setIcon();
+    }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     unwatchIcon(this);
+    this.intersectionObserver?.disconnect();
   }
 
   private getIconSource(): IconSource {
@@ -139,8 +152,21 @@ export default class AWCIcon extends AWCElement {
     }
   }
 
-  @watch(['name', 'src', 'library'])
-  async setIcon() {
+  @bound
+  @watch(['name', 'src', 'library'], { waitUntilFirstUpdate: true })
+  async setIcon(records?: IntersectionObserverEntry[]) {
+    if (
+      records &&
+      !records.some(
+        (x: IntersectionObserverEntry) =>
+          x.isIntersecting && (x.boundingClientRect.height > 0 || x.boundingClientRect.width > 0)
+      )
+    ) {
+      return;
+    }
+
+    this.intersectionObserver?.disconnect();
+
     const { url, fromLibrary } = this.getIconSource();
     const library = fromLibrary ? getIconLibrary(this.library) : undefined;
 
