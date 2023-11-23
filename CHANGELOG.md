@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.5](https://github.com/agence-adeliom/awc/compare/v1.5.4...v1.5.5) (2023-11-23)
+
+
+### Bug Fixes
+
+* **stepper:** Add stepper components ([8b5aeea](https://github.com/agence-adeliom/awc/commit/8b5aeeaef5976bddac18da04761f721a58dd2173))
+
 ## [1.5.4](https://github.com/agence-adeliom/awc/compare/v1.5.3...v1.5.4) (2023-11-22)
 
 
