@@ -12,6 +12,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @cssproperty --color - The color of the divider.
  * @cssproperty --width - The width of the divider.
+ * @cssproperty --style - The style of the divider.
  * @cssproperty --spacing - The spacing of the divider.
  */
 export default class AWCDivider extends AWCElement {

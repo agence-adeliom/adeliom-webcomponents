@@ -2,7 +2,7 @@ import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 
 export default {
-  title: 'Block/Stats',
+  title: 'Block/Key Figures',
   parameters: {
     layout: 'padded'
   }
@@ -24,7 +24,7 @@ const heading = html`<!-- text - start -->
   <!-- text - end -->`;
 
 export const Stats1: StoryObj = {
-  name: 'Stats 1',
+  name: 'Key Figures 1',
   render: () => html`
     <div class="container mx-auto px-4 md:px-8">
       ${heading}
@@ -62,7 +62,7 @@ export const Stats1: StoryObj = {
 };
 
 export const Stats2: StoryObj = {
-  name: 'Stats 2',
+  name: 'Key Figures 2',
   render: () => html`
     <div class="container mx-auto px-4 md:px-8">
       ${heading}
@@ -100,7 +100,7 @@ export const Stats2: StoryObj = {
 };
 
 export const Stats3: StoryObj = {
-  name: 'Stats 3',
+  name: 'Key Figures 3',
   render: () => html`
     <div class="container mx-auto px-4 md:px-8">
       ${heading}

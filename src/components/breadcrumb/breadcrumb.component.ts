@@ -27,8 +27,8 @@ export default class AWCBreadcrumb extends AWCElement {
   private readonly localize = new LocalizeController(this);
   private separatorDir = this.localize.dir();
 
-  @query('slot') defaultSlot: HTMLSlotElement;
-  @query('slot[name="separator"]') separatorSlot: HTMLSlotElement;
+  @query('slot') private defaultSlot: HTMLSlotElement;
+  @query('slot[name="separator"]') private separatorSlot: HTMLSlotElement;
 
   /**
    * The label to use for the breadcrumb control. This will not be shown on the screen, but it will be announced by

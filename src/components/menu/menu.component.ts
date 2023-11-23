@@ -21,7 +21,7 @@ export interface MenuSelectEventDetail {
 export default class AWCMenu extends AWCElement {
   static styles: CSSResultGroup = styles;
 
-  @query('slot') defaultSlot: HTMLSlotElement;
+  @query('slot') private defaultSlot: HTMLSlotElement;
 
   connectedCallback() {
     super.connectedCallback();

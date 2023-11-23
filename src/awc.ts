@@ -84,6 +84,8 @@ export { default as AWCMapVideoOverlay } from './components/map-video-overlay/ma
 export { default as AWCMapSvgOverlay } from './components/map-svg-overlay/map-svg-overlay.js';
 export { default as AWCMapTilelayerGoogle } from './components/map-tilelayer-google/map-tilelayer-google.js';
 export { default as AWCMapMarkerClusterGroup } from './components/map-marker-cluster-group/map-marker-cluster-group.js';
+export { default as AWCStepper } from './components/stepper/stepper.js';
+export { default as AWCStepperItem } from './components/stepper-item/stepper-item.js';
 /* plop:component */
 
 // Utilities

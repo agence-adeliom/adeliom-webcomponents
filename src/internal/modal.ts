@@ -70,7 +70,7 @@ export default class Modal {
   private handleKeyDown = (event: KeyboardEvent) => {
     if (event.key !== 'Tab' || this.isExternalActivated) return;
     if (!this.isActive()) return;
-    
+
     if (event.shiftKey) {
       this.tabDirection = 'backward';
     } else {

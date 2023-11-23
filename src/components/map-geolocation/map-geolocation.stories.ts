@@ -43,23 +43,27 @@ export const Primary: Story = {
       <awc-map-geolocation enable-high-accuracy></awc-map-geolocation>
     </awc-map>
     <script>
-      document.querySelector('.map-geolocation').addEventListener('locationfound', e => {
-        const { latlng, bounds, accuracy, altitude, altitudeAccuracy, heading, speed, timestamp } = e.detail;
-        alert(
-          'Location found : ' +
-            JSON.stringify({
-              lat: latlng.lat,
-              lng: latlng.lng,
-              bounds,
-              accuracy,
-              altitude,
-              altitudeAccuracy,
-              heading,
-              speed,
-              timestamp
-            })
-        );
-      }, { once: true });
+      document.querySelector('.map-geolocation').addEventListener(
+        'locationfound',
+        e => {
+          const { latlng, bounds, accuracy, altitude, altitudeAccuracy, heading, speed, timestamp } = e.detail;
+          alert(
+            'Location found : ' +
+              JSON.stringify({
+                lat: latlng.lat,
+                lng: latlng.lng,
+                bounds,
+                accuracy,
+                altitude,
+                altitudeAccuracy,
+                heading,
+                speed,
+                timestamp
+              })
+          );
+        },
+        { once: true }
+      );
     </script>
   `
 };
