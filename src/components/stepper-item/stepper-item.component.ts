@@ -2,7 +2,6 @@ import { classMap } from 'lit/directives/class-map.js';
 import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
-import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './stepper-item.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -48,19 +47,20 @@ export default class AWCStepperItem extends AWCElement {
 
   container?: AWCStepper = undefined;
 
-  /** An example attribute. */
+  /** A accessibility label for the step item. */
   @property({ type: String }) label?: string = undefined;
+
+  /** The step number. */
   @property({ type: Number, reflect: true }) step?: number = undefined;
+
+  /** Mark the step as completed. */
   @property({ type: Boolean, reflect: true }) completed: boolean = false;
+
+  /** Mark the step as active. */
   @property({ type: Boolean, reflect: true }) active: boolean = false;
 
   isFirst: boolean = false;
   isLast: boolean = false;
-
-  @watch('example')
-  handleExampleChange() {
-    // do something
-  }
 
   render() {
     return html`<li
