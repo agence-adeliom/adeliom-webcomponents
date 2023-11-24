@@ -79,7 +79,8 @@ export default class AWCButton extends AWCElement implements AWCFormControl {
     | 'warning'
     | 'danger'
     | 'ghost'
-    | 'text' = 'default';
+    | 'text'
+    | 'link' = 'default';
 
   /** The button's size. */
   @property({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
@@ -96,14 +97,17 @@ export default class AWCButton extends AWCElement implements AWCFormControl {
   /** Draws an outlined button. */
   @property({ type: Boolean, reflect: true }) outline = false;
 
+  /** Draws an colored button. */
+  @property({ type: Boolean, reflect: true }) colored = false;
+
   /** Draws a pill-style button with rounded edges. */
   @property({ type: Boolean, reflect: true }) pill = false;
 
   /**
-   * Draws a circular icon button. When this attribute is present, the button expects a single `<awc-icon>` in the
+   * Draws a icon button with the corresponding shape. When this attribute is present, the button expects a single `<awc-icon>` in the
    * default slot.
    */
-  @property({ type: Boolean, reflect: true }) circle = false;
+  @property({ type: String, reflect: true }) icon?: 'circle' | 'square' = undefined;
 
   /**
    * The type of button. Note that the default value is `button` instead of `submit`, which is opposite of how native
@@ -294,15 +298,21 @@ export default class AWCButton extends AWCElement implements AWCFormControl {
           'button--danger': this.variant === 'danger',
           'button--ghost': this.variant === 'ghost',
           'button--text': this.variant === 'text',
+          'button--link': this.variant === 'link',
           'button--small': this.size === 'small',
           'button--medium': this.size === 'medium',
           'button--large': this.size === 'large',
           'button--caret': this.caret,
-          'button--circle': this.circle,
+          'button--icon': !!this.icon,
+          'button--square': this.icon === 'square',
+          'button--circle': this.icon === 'circle',
           'button--disabled': this.disabled,
           'button--focused': this.hasFocus,
           'button--loading': this.loading,
-          'button--standard': !this.outline,
+          'button--standard':
+            !this.outline &&
+            (!this.colored || (this.colored && 'success warning danger neutral ghost text'.includes(this.variant))),
+          'button--colored': this.colored,
           'button--outline': this.outline,
           'button--pill': this.pill,
           'button--rtl': this.localize.dir() === 'rtl',

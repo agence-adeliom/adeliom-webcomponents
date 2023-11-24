@@ -32,22 +32,63 @@ export const Primary: Story = {
   }
 };
 
+export const Default: Story = {
+  name: 'Default variant',
+  args: {
+    ...Primary.args
+  },
+  render: context => html` ${template({ ...context })} `,
+  parameters: {
+    docs: {
+      description: {
+        story: 'If no `variant` is provided, the button will use the `default` variant.'
+      }
+    }
+  }
+};
+
 export const Variants: Story = {
   name: 'Variants',
   args: {
     ...Primary.args
   },
   render: context => html`
-    ${template({ ...context, variant: 'default' })} ${template({ ...context, variant: 'primary' })}
-    ${template({ ...context, variant: 'secondary' })} ${template({ ...context, variant: 'tertiary' })}
-    ${template({ ...context, variant: 'success' })} ${template({ ...context, variant: 'neutral' })}
-    ${template({ ...context, variant: 'warning' })} ${template({ ...context, variant: 'danger' })}
+    <h2 class="mb-4 font-semibold">Variants</h2>
+    ${template({ ...context, variant: 'primary' })} ${template({ ...context, variant: 'secondary' })}
+    ${template({ ...context, variant: 'tertiary' })}
+
+    <h2 class="mb-4 mt-6 font-semibold">Status Variants</h2>
+    ${template({ ...context, variant: 'success' })} ${template({ ...context, variant: 'warning' })}
+    ${template({ ...context, variant: 'danger' })}
+
+    <h2 class="mb-4 mt-6 font-semibold">Generic Variants</h2>
+    ${template({ ...context, variant: 'neutral' })} ${template({ ...context, variant: 'default' })}
     ${template({ ...context, variant: 'ghost' })}
   `,
   parameters: {
     docs: {
       description: {
         story: "Set the `variant` attribute to change the button's variant."
+      }
+    }
+  }
+};
+
+export const Colored: Story = {
+  name: 'Colored',
+  args: {
+    ...Primary.args,
+    colored: true
+  },
+  render: context => html`
+    ${template({ ...context, variant: 'primary' })} ${template({ ...context, variant: 'secondary' })}
+    ${template({ ...context, variant: 'tertiary' })} ${template({ ...context, variant: 'success' })}
+    ${template({ ...context, variant: 'warning' })} ${template({ ...context, variant: 'danger' })}
+  `,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Set the `colored` attribute to use color based on the colors shape.'
       }
     }
   }
@@ -112,25 +153,40 @@ export const PillButtons: Story = {
   }
 };
 
-export const CircleButtons: Story = {
-  name: 'Circle Buttons',
-  render: () =>
-    html`<awc-button variant="default" size="small" circle>
-        <awc-icon name="gear" label="Settings"></awc-icon>
-      </awc-button>
+export const IconButtons: Story = {
+  name: 'Icon Buttons',
+  render: () => html`
+    <h2 class="mb-4 font-semibold">Square</h2>
+    <awc-button variant="default" size="small" icon="square">
+      <awc-icon name="gear" label="Settings"></awc-icon>
+    </awc-button>
 
-      <awc-button variant="default" size="medium" circle>
-        <awc-icon name="gear" label="Settings"></awc-icon>
-      </awc-button>
+    <awc-button variant="default" size="medium" icon="square">
+      <awc-icon name="gear" label="Settings"></awc-icon>
+    </awc-button>
 
-      <awc-button variant="default" size="large" circle>
-        <awc-icon name="gear" label="Settings"></awc-icon>
-      </awc-button>`,
+    <awc-button variant="default" size="large" icon="square">
+      <awc-icon name="gear" label="Settings"></awc-icon>
+    </awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold">Circle</h2>
+    <awc-button variant="default" size="small" icon="circle">
+      <awc-icon name="gear" label="Settings"></awc-icon>
+    </awc-button>
+
+    <awc-button variant="default" size="medium" icon="circle">
+      <awc-icon name="gear" label="Settings"></awc-icon>
+    </awc-button>
+
+    <awc-button variant="default" size="large" icon="circle">
+      <awc-icon name="gear" label="Settings"></awc-icon>
+    </awc-button>
+  `,
   parameters: {
     docs: {
       description: {
         story:
-          'Use the `circle` attribute to create circular icon buttons. When this attribute is set, the button expects a single `<awc-icon>` in the default slot.'
+          'Use the `icon` attribute to create icon buttons that can be `square` or `circle`. When this attribute is set, the button expects a single `<awc-icon>` in the default slot.'
       }
     }
   }
@@ -143,14 +199,22 @@ export const TextButtons: Story = {
     variant: 'text'
   },
   render: context => html`
-    ${template({ ...context, size: 'small' })} ${template({ ...context, size: 'medium' })}
+    ${template({ ...context, size: 'small' })}
+    <br />
+    ${template({ ...context, size: 'medium' })}
+    <br />
     ${template({ ...context, size: 'large' })}
+    <br />
+    <awc-button variant="${context.variant}">
+      Click me
+      <awc-icon slot="suffix" name="arrow-right"></awc-icon>
+    </awc-button>
   `,
   parameters: {
     docs: {
       description: {
         story:
-          "Use the `text` variant to create text buttons that share the same size as regular buttons but don't have backgrounds or borders."
+          "Use the `text` variant to create buttons that share the same size as regular buttons but don't have backgrounds or borders."
       }
     }
   }
@@ -158,6 +222,34 @@ export const TextButtons: Story = {
 
 export const LinkButtons: Story = {
   name: 'Link Buttons',
+  args: {
+    ...Primary.args,
+    variant: 'link'
+  },
+  render: context => html`
+    ${template({ ...context, size: 'small' })}
+    <br />
+    ${template({ ...context, size: 'medium' })}
+    <br />
+    ${template({ ...context, size: 'large' })}
+    <br />
+    <awc-button variant="${context.variant}">
+      Click me
+      <awc-icon slot="suffix" name="arrow-right"></awc-icon>
+    </awc-button>
+  `,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Use the `link` variant to create buttons that share the same size as regular buttons but don't have backgrounds or borders."
+      }
+    }
+  }
+};
+
+export const HrefButtons: Story = {
+  name: 'Buttons with href',
   render: () =>
     html`<awc-button href="https://example.com/">Link</awc-button>
       <awc-button href="https://example.com/" target="_blank">New Window</awc-button>
@@ -302,6 +394,52 @@ export const Disabled: Story = {
     ${template({ ...context, variant: 'success' })} ${template({ ...context, variant: 'neutral' })}
     ${template({ ...context, variant: 'warning' })} ${template({ ...context, variant: 'danger' })}
     ${template({ ...context, variant: 'ghost' })}
+
+    <br />
+    <br />
+
+    ${template({ ...context, colored: true, variant: 'default' })}
+    ${template({ ...context, colored: true, variant: 'primary' })}
+    ${template({ ...context, colored: true, variant: 'secondary' })}
+    ${template({ ...context, colored: true, variant: 'tertiary' })}
+    ${template({ ...context, colored: true, variant: 'success' })}
+    ${template({ ...context, colored: true, variant: 'neutral' })}
+    ${template({ ...context, colored: true, variant: 'warning' })}
+    ${template({ ...context, colored: true, variant: 'danger' })}
+    ${template({ ...context, colored: true, variant: 'ghost' })}
+
+    <br />
+    <br />
+
+    ${template({ ...context, outline: true, variant: 'default' })}
+    ${template({ ...context, outline: true, variant: 'primary' })}
+    ${template({ ...context, outline: true, variant: 'secondary' })}
+    ${template({ ...context, outline: true, variant: 'tertiary' })}
+    ${template({ ...context, outline: true, variant: 'success' })}
+    ${template({ ...context, outline: true, variant: 'neutral' })}
+    ${template({ ...context, outline: true, variant: 'warning' })}
+    ${template({ ...context, outline: true, variant: 'danger' })}
+    ${template({ ...context, outline: true, variant: 'ghost' })}
+
+    <br />
+    <br />
+
+    ${template({ ...context, variant: 'text' })}
+    <br />
+    <awc-button variant="text" disabled>
+      Text
+      <awc-icon slot="suffix" name="arrow-right"></awc-icon>
+    </awc-button>
+
+    <br />
+    <br />
+
+    ${template({ ...context, variant: 'link' })}
+    <br />
+    <awc-button variant="link" disabled>
+      Link
+      <awc-icon slot="suffix" name="arrow-right"></awc-icon>
+    </awc-button>
   `,
   parameters: {
     docs: {

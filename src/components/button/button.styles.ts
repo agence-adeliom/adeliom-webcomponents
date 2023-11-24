@@ -47,15 +47,6 @@ export default css`
     outline-offset: var(--awc-focus-ring-offset);
   }
 
-  .button--disabled {
-    cursor: not-allowed;
-  }
-
-  /* When disabled, prevent mouse events from bubbling up from children */
-  .button--disabled * {
-    pointer-events: none;
-  }
-
   .button__prefix,
   .button__suffix {
     flex: 0 0 auto;
@@ -73,7 +64,87 @@ export default css`
   }
 
   /*
-   * Standard buttons
+   * Colored buttons
+   */
+
+  /* Default */
+  .button--colored.button--default {
+    background-color: var(--awc-color-neutral-0);
+    border-color: var(--awc-color-neutral-600);
+    color: var(--awc-color-neutral-700);
+  }
+
+  .button--colored.button--default:hover:not(.button--disabled) {
+    background-color: var(--awc-color-primary-600);
+    border-color: var(--awc-color-primary-600);
+    color: var(--awc-color-neutral-0);
+  }
+
+  .button--colored.button--default:active:not(.button--disabled) {
+    background-color: var(--awc-color-primary-800);
+    border-color: var(--awc-color-primary-800);
+    color: var(--awc-color-neutral-0);
+  }
+
+  /* Primary */
+  .button--colored.button--primary {
+    background-color: var(--awc-color-primary-600);
+    border-color: var(--awc-color-primary-600);
+    color: var(--awc-color-neutral-0);
+  }
+
+  .button--colored.button--primary:hover:not(.button--disabled) {
+    background-color: var(--awc-color-primary-800);
+    border-color: var(--awc-color-primary-800);
+    color: var(--awc-color-neutral-0);
+  }
+
+  .button--colored.button--primary:active:not(.button--disabled) {
+    background-color: var(--awc-color-primary-950);
+    border-color: var(--awc-color-primary-950);
+    color: var(--awc-color-neutral-0);
+  }
+
+  /* Secondary */
+  .button--colored.button--secondary {
+    background-color: var(--awc-color-secondary-600);
+    border-color: var(--awc-color-secondary-600);
+    color: var(--awc-color-neutral-0);
+  }
+
+  .button--colored.button--secondary:hover:not(.button--disabled) {
+    background-color: var(--awc-color-secondary-800);
+    border-color: var(--awc-color-secondary-800);
+    color: var(--awc-color-neutral-0);
+  }
+
+  .button--colored.button--secondary:active:not(.button--disabled) {
+    background-color: var(--awc-color-secondary-950);
+    border-color: var(--awc-color-secondary-950);
+    color: var(--awc-color-neutral-0);
+  }
+
+  /* Tertiary */
+  .button--colored.button--tertiary {
+    background-color: var(--awc-color-tertiary-600);
+    border-color: var(--awc-color-tertiary-600);
+    color: var(--awc-color-neutral-0);
+  }
+
+  .button--colored.button--tertiary:hover:not(.button--disabled) {
+    background-color: var(--awc-color-tertiary-800);
+    border-color: var(--awc-color-tertiary-800);
+    color: var(--awc-color-neutral-0);
+  }
+
+  .button--colored.button--tertiary:active:not(.button--disabled) {
+    background-color: var(--awc-color-tertiary-950);
+    border-color: var(--awc-color-tertiary-950);
+    color: var(--awc-color-neutral-0);
+  }
+
+  /*
+   * Colored buttons
    */
 
   /* Default */
@@ -97,59 +168,62 @@ export default css`
 
   /* Primary */
   .button--standard.button--primary {
-    background-color: var(--awc-color-primary-600);
-    border-color: var(--awc-color-primary-600);
-    color: var(--awc-color-neutral-0);
+    background-color: var(--awc-button-primary-background-color-default, var(--awc-color-primary-600));
+    border-color: var(
+      --awc-button-primary-stroke-default,
+      var(--awc-button-primary-background-color-default, var(--awc-color-primary-600))
+    );
+    color: var(--awc-button-primary-color-default, var(--awc-color-neutral-0));
   }
 
-  .button--standard.button--primary:hover:not(.button--disabled) {
-    background-color: var(--awc-color-primary-800);
-    border-color: var(--awc-color-primary-800);
-    color: var(--awc-color-neutral-0);
-  }
-
+  .button--standard.button--primary:hover:not(.button--disabled),
   .button--standard.button--primary:active:not(.button--disabled) {
-    background-color: var(--awc-color-primary-950);
-    border-color: var(--awc-color-primary-950);
-    color: var(--awc-color-neutral-0);
+    background-color: var(--awc-button-primary-background-color-hover, var(--awc-color-primary-800));
+    border-color: var(
+      --awc-button-primary-stroke-hover,
+      var(--awc-button-primary-background-color-hover, var(--awc-color-primary-800))
+    );
+    color: var(--awc-button-primary-color-hover, var(--awc-color-neutral-0));
   }
 
   /* Secondary */
   .button--standard.button--secondary {
-    background-color: var(--awc-color-secondary-600);
-    border-color: var(--awc-color-secondary-600);
-    color: var(--awc-color-neutral-0);
+    background-color: var(--awc-button-secondary-background-color-default, var(--awc-color-secondary-600));
+    border-color: var(
+      --awc-button-secondary-stroke-default,
+      var(--awc-button-secondary-background-color-default, var(--awc-color-secondary-600))
+    );
+    color: var(--awc-button-secondary-color-default, var(--awc-color-neutral-0));
   }
 
-  .button--standard.button--secondary:hover:not(.button--disabled) {
-    background-color: var(--awc-color-secondary-800);
-    border-color: var(--awc-color-secondary-800);
-    color: var(--awc-color-neutral-0);
-  }
-
+  .button--standard.button--secondary:hover:not(.button--disabled),
   .button--standard.button--secondary:active:not(.button--disabled) {
-    background-color: var(--awc-color-secondary-950);
-    border-color: var(--awc-color-secondary-950);
-    color: var(--awc-color-neutral-0);
+    background-color: var(--awc-button-secondary-background-color-hover, var(--awc-color-secondary-800));
+    border-color: var(
+      --awc-button-secondary-stroke-hover,
+      var(--awc-button-secondary-background-color-hover, var(--awc-color-secondary-800))
+    );
+    color: var(--awc-button-secondary-color-hover, var(--awc-color-neutral-0));
   }
 
   /* Tertiary */
   .button--standard.button--tertiary {
-    background-color: var(--awc-color-tertiary-600);
-    border-color: var(--awc-color-tertiary-600);
-    color: var(--awc-color-neutral-0);
+    background-color: var(--awc-button-tertiary-background-color-default, var(--awc-color-tertiary-600));
+    border-color: var(
+      --awc-button-tertiary-stroke-default,
+      var(--awc-button-tertiary-background-color-default, var(--awc-color-tertiary-600))
+    );
+    color: var(--awc-button-tertiary-color-default, var(--awc-color-neutral-0));
   }
 
-  .button--standard.button--tertiary:hover:not(.button--disabled) {
-    background-color: var(--awc-color-tertiary-800);
-    border-color: var(--awc-color-tertiary-800);
-    color: var(--awc-color-neutral-0);
-  }
-
+  .button--standard.button--tertiary:hover:not(.button--disabled),
   .button--standard.button--tertiary:active:not(.button--disabled) {
-    background-color: var(--awc-color-tertiary-950);
-    border-color: var(--awc-color-tertiary-950);
-    color: var(--awc-color-neutral-0);
+    background-color: var(--awc-button-tertiary-background-color-hover, var(--awc-color-tertiary-800));
+    border-color: var(
+      --awc-button-tertiary-stroke-hover,
+      var(--awc-button-tertiary-background-color-hover, var(--awc-color-tertiary-800))
+    );
+    color: var(--awc-button-tertiary-color-hover, var(--awc-color-neutral-0));
   }
 
   /* Success */
@@ -244,12 +318,6 @@ export default css`
     background-color: var(--awc-color-neutral-100);
     border-color: var(--awc-color-neutral-100);
     color: var(--awc-color-neutral-700);
-  }
-
-  .button--standard.button--disabled {
-    background-color: var(--awc-color-neutral-300);
-    border-color: var(--awc-color-neutral-300);
-    color: var(--awc-color-neutral-0);
   }
 
   /*
@@ -412,11 +480,6 @@ export default css`
     }
   }
 
-  .button--outline.button--disabled {
-    border-color: var(--awc-color-neutral-300);
-    color: var(--awc-color-neutral-300);
-  }
-
   /*
    * Text buttons
    */
@@ -427,19 +490,57 @@ export default css`
     color: var(--awc-text-paragraph-color, var(--awc-color-neutral-800));
   }
 
-  .button--text:hover:not(.button--disabled) {
+  .button--text.button--has-label .button__suffix {
+    color: var(--awc-button-text-only-icon-default, var(--awc-color-primary-600));
+  }
+
+  .button--text:hover:not(.button--disabled, .button--has-suffix, .button--has-prefix) {
     background-color: transparent;
     border-color: transparent;
     color: var(--awc-color-primary-600);
   }
 
-  .button--text:focus-visible:not(.button--disabled) {
+  .button--text:focus-visible:not(.button--disabled, .button--has-suffix, .button--has-prefix) {
     background-color: transparent;
     border-color: transparent;
     color: var(--awc-color-primary-600);
   }
 
-  .button--text:active:not(.button--disabled) {
+  .button--text:active:not(.button--disabled, .button--has-suffix, .button--has-prefix) {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--awc-color-primary-800);
+  }
+
+  .button--text.button--has-label:active:not(.button--disabled) .button__suffix,
+  .button--text.button--has-label:focus-visible:not(.button--disabled) .button__suffix,
+  .button--text.button--has-label:hover:not(.button--disabled) .button__suffix {
+    color: var(--awc-button-text-only-icon-hover, var(--awc-color-primary-800));
+  }
+
+  /*
+   * Link buttons
+   */
+
+  .button--link {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--awc-text-paragraph-color, var(--awc-color-neutral-800));
+  }
+
+  .button--link:hover:not(.button--disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--awc-color-primary-600);
+  }
+
+  .button--link:focus-visible:not(.button--disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--awc-color-primary-600);
+  }
+
+  .button--link:active:not(.button--disabled) {
     background-color: transparent;
     border-color: transparent;
     color: var(--awc-color-primary-800);
@@ -491,33 +592,34 @@ export default css`
   }
 
   /*
-   * Circle modifier
+   * Icon modifier
    */
 
-  .button--circle {
+  .button--icon {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .button--circle.button--small {
+  .button--icon.button--small {
     width: var(--awc-input-height-small);
-    border-radius: 50%;
   }
 
-  .button--circle.button--medium {
+  .button--icon.button--medium {
     width: var(--awc-input-height-medium);
-    border-radius: 50%;
   }
 
-  .button--circle.button--large {
+  .button--icon.button--large {
     width: var(--awc-input-height-large);
-    border-radius: 50%;
   }
 
-  .button--circle .button__prefix,
-  .button--circle .button__suffix,
-  .button--circle .button__caret {
+  .button--icon .button__prefix,
+  .button--icon .button__suffix,
+  .button--icon .button__caret {
     display: none;
+  }
+
+  .button--icon.button--circle {
+    border-radius: 50%;
   }
 
   /*
@@ -646,8 +748,100 @@ export default css`
     padding-inline-end: var(--awc-spacing-small);
   }
 
-  .button--has-label.button--text:not(.button--has-suffix) .button__label {
+  .button--has-label.button--link .button__label {
     padding: 0;
+  }
+
+  .button--has-label.button--small.button--link.button--has-suffix .button__label {
+    padding-inline-end: var(--awc-spacing-small);
+  }
+
+  .button--has-label.button--medium.button--link.button--has-suffix .button__label {
+    padding-inline-end: var(--awc-spacing-medium);
+  }
+
+  .button--has-label.button--large.button--link.button--has-suffix .button__label {
+    padding-inline-end: var(--awc-spacing-large);
+  }
+
+  .button--has-label.button--small.button--link.button--has-prefix .button__label {
+    padding-inline-start: var(--awc-spacing-small);
+  }
+
+  .button--has-label.button--medium.button--link.button--has-prefix .button__label {
+    padding-inline-start: var(--awc-spacing-medium);
+  }
+
+  .button--has-label.button--large.button--link.button--has-prefix .button__label {
+    padding-inline-start: var(--awc-spacing-large);
+  }
+
+  /**
+   * Disabled buttons
+   * 
+   */
+
+  .button--disabled {
+    cursor: not-allowed;
+  }
+
+  /* When disabled, prevent mouse events from bubbling up from children */
+  .button--disabled * {
+    pointer-events: none;
+  }
+
+  .button--colored.button--disabled {
+    background-color: var(--awc-color-neutral-300);
+    border-color: var(--awc-color-neutral-300);
+    color: var(--awc-color-neutral-0);
+  }
+
+  .button--outline.button--disabled {
+    border-color: var(--awc-color-neutral-300);
+    color: var(--awc-color-neutral-300);
+  }
+
+  .button--text.button--disabled,
+  .button--link.button--disabled,
+  .button--text.button--disabled .button__suffix,
+  .button--link.button--disabled .button__suffix {
+    color: var(--awc-color-neutral-300);
+  }
+
+  .button--standard.button--disabled:not(.button--text, .button--link) {
+    background-color: var(--awc-color-neutral-300);
+    border-color: var(--awc-color-neutral-300);
+    color: var(--awc-color-neutral-0);
+  }
+
+  /* Primary */
+  .button--standard.button--primary.button--disabled {
+    background-color: var(--awc-button-primary-background-color-disabled, var(--awc-color-neutral-300));
+    border-color: var(
+      --awc-button-primary-stroke-disabled,
+      var(--awc-button-primary-background-color-disabled, var(--awc-color-neutral-300))
+    );
+    color: var(--awc-button-primary-color-disabled, var(--awc-color-neutral-0));
+  }
+
+  /* Secondary */
+  .button--standard.button--secondary.button--disabled {
+    background-color: var(--awc-button-secondary-background-color-disabled, var(--awc-color-neutral-300));
+    border-color: var(
+      --awc-button-secondary-stroke-disabled,
+      var(--awc-button-secondary-background-color-disabled, var(--awc-color-neutral-300))
+    );
+    color: var(--awc-button-secondary-color-disabled, var(--awc-color-neutral-0));
+  }
+
+  /* Tertiary */
+  .button--standard.button--tertiary.button--disabled {
+    background-color: var(--awc-button-tertiary-background-color-disabled, var(--awc-color-neutral-300));
+    border-color: var(
+      --awc-button-tertiary-stroke-disabled,
+      var(--awc-button-tertiary-background-color-disabled, var(--awc-color-neutral-300))
+    );
+    color: var(--awc-button-tertiary-color-disabled, var(--awc-color-neutral-0));
   }
 
   /*
