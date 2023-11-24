@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.6](https://github.com/agence-adeliom/awc/compare/v1.5.5...v1.5.6) (2023-11-24)
+
+
+### Bug Fixes
+
+* **buttons:** handle figma token changes ([c7b75b1](https://github.com/agence-adeliom/awc/commit/c7b75b1bd698a4ccb0da4f86ea3b38a124609529))
+
 ## [1.5.5](https://github.com/agence-adeliom/awc/compare/v1.5.4...v1.5.5) (2023-11-23)
 
 
