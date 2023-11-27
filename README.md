@@ -1,3 +1,5 @@
+<img src=".github/cover.png" width="100%">
+
 # Adeliom WebComponents
 
 A forward-thinking library of web components.
