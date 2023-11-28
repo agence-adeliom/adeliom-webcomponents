@@ -622,6 +622,25 @@ export default css`
     border-radius: 50%;
   }
 
+  .button--icon.button--default {
+    border-color: var(--awc-button-only-icon-stroke-default, var(--awc-color-neutral-300));
+    background-color: var(--awc-button-only-icon-background-color-default, var(--awc-color-neutral-0));
+    color: var(--awc-button-only-icon-color-default, currentColor);
+  }
+
+  .button--icon.button--default:hover:not(.button--disabled),
+  .button--icon.button--default.button--checked:not(.button--disabled) {
+    border-color: var(--awc-button-only-icon-stroke-hover, var(--awc-color-primary-600));
+    background-color: var(--awc-button-only-icon-background-color-hover, var(--awc-color-primary-600));
+    color: var(--awc-button-only-icon-color-hover, var(--awc-color-neutral-0));
+  }
+
+  .button--icon.button--default:active:not(.button--disabled) {
+    border-color: var(--awc-button-only-icon-stroke-hover, var(--awc-color-primary-800));
+    background-color: var(--awc-button-only-icon-background-color-hover, var(--awc-color-primary-800));
+    color: var(--awc-button-only-icon-color-hover, var(--awc-color-neutral-0));
+  }
+
   /*
    * Caret modifier
    */
@@ -842,6 +861,13 @@ export default css`
       var(--awc-button-tertiary-background-color-disabled, var(--awc-color-neutral-300))
     );
     color: var(--awc-button-tertiary-color-disabled, var(--awc-color-neutral-0));
+  }
+
+  /* Default icon button */
+  .button--disabled.button--icon.button--default {
+    border-color: var(--awc-button-only-icon-stroke-disabled, var(--awc-color-primary-800));
+    background-color: var(--awc-button-only-icon-background-color-disabled, var(--awc-color-primary-800));
+    color: var(--awc-button-only-icon-color-disabled, var(--awc-color-neutral-0));
   }
 
   /*

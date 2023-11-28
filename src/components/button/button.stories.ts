@@ -156,31 +156,53 @@ export const PillButtons: Story = {
 export const IconButtons: Story = {
   name: 'Icon Buttons',
   render: () => html`
-    <h2 class="mb-4 font-semibold">Square</h2>
-    <awc-button variant="default" size="small" icon="square">
-      <awc-icon name="gear" label="Settings"></awc-icon>
-    </awc-button>
+    <h2 class="mb-4 mt-6 font-semibold">Square</h2>
 
-    <awc-button variant="default" size="medium" icon="square">
-      <awc-icon name="gear" label="Settings"></awc-icon>
-    </awc-button>
+    <h2 class="mb-4 font-semibold text-small">Default</h2>
+    <awc-button variant="default" icon="square"><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
 
-    <awc-button variant="default" size="large" icon="square">
-      <awc-icon name="gear" label="Settings"></awc-icon>
-    </awc-button>
+    <h2 class="mb-4 mt-6 font-semibold text-small">Variants</h2>
+    <awc-button variant="primary" icon="square"><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="secondary" icon="square"><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="tertiary" icon="square"><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-small">Colored</h2>
+    <awc-button variant="primary" icon="square" colored><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="secondary" icon="square" colored
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="square" colored><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-small">Outline</h2>
+    <awc-button variant="primary" icon="square" outline><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="secondary" icon="square" outline
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="square" outline><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
 
     <h2 class="mb-4 mt-6 font-semibold">Circle</h2>
-    <awc-button variant="default" size="small" icon="circle">
-      <awc-icon name="gear" label="Settings"></awc-icon>
-    </awc-button>
 
-    <awc-button variant="default" size="medium" icon="circle">
-      <awc-icon name="gear" label="Settings"></awc-icon>
-    </awc-button>
+    <h2 class="mb-4 font-semibold text-small">Default</h2>
+    <awc-button variant="default" icon="circle"><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
 
-    <awc-button variant="default" size="large" icon="circle">
-      <awc-icon name="gear" label="Settings"></awc-icon>
-    </awc-button>
+    <h2 class="mb-4 mt-6 font-semibold text-small">Variants</h2>
+    <awc-button variant="primary" icon="circle"><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="secondary" icon="circle"><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="tertiary" icon="circle"><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-small">Colored</h2>
+    <awc-button variant="primary" icon="circle" colored><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="secondary" icon="circle" colored
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="circle" colored><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-small">Outline</h2>
+    <awc-button variant="primary" icon="circle" outline><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="secondary" icon="circle" outline
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="circle" outline><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
   `,
   parameters: {
     docs: {
@@ -366,11 +388,37 @@ export const Loading: Story = {
     loading: true
   },
   render: context => html`
-    ${template({ ...context, variant: 'default' })} ${template({ ...context, variant: 'primary' })}
-    ${template({ ...context, variant: 'secondary' })} ${template({ ...context, variant: 'tertiary' })}
-    ${template({ ...context, variant: 'success' })} ${template({ ...context, variant: 'neutral' })}
-    ${template({ ...context, variant: 'warning' })} ${template({ ...context, variant: 'danger' })}
+    <h2 class="mb-4 font-semibold">Variants</h2>
+    ${template({ ...context, variant: 'primary' })} ${template({ ...context, variant: 'secondary' })}
+    ${template({ ...context, variant: 'tertiary' })}
+    <h2 class="mb-4 mt-6 font-semibold">Status variants</h2>
+    ${template({ ...context, variant: 'success' })} ${template({ ...context, variant: 'danger' })}
+    ${template({ ...context, variant: 'warning' })}
+    <h2 class="mb-4 mt-6 font-semibold">Generic variants</h2>
+    ${template({ ...context, variant: 'default' })} ${template({ ...context, variant: 'neutral' })}
     ${template({ ...context, variant: 'ghost' })}
+
+    <h2 class="mb-4 mt-6 font-semibold">Colored</h2>
+    ${template({ ...context, colored: true, variant: 'default' })}
+    ${template({ ...context, colored: true, variant: 'primary' })}
+    ${template({ ...context, colored: true, variant: 'secondary' })}
+    ${template({ ...context, colored: true, variant: 'tertiary' })}
+    ${template({ ...context, colored: true, variant: 'success' })}
+    ${template({ ...context, colored: true, variant: 'neutral' })}
+    ${template({ ...context, colored: true, variant: 'warning' })}
+    ${template({ ...context, colored: true, variant: 'danger' })}
+    ${template({ ...context, colored: true, variant: 'ghost' })}
+
+    <h2 class="mb-4 mt-6 font-semibold">Outline</h2>
+    ${template({ ...context, outline: true, variant: 'default' })}
+    ${template({ ...context, outline: true, variant: 'primary' })}
+    ${template({ ...context, outline: true, variant: 'secondary' })}
+    ${template({ ...context, outline: true, variant: 'tertiary' })}
+    ${template({ ...context, outline: true, variant: 'success' })}
+    ${template({ ...context, outline: true, variant: 'neutral' })}
+    ${template({ ...context, outline: true, variant: 'warning' })}
+    ${template({ ...context, outline: true, variant: 'danger' })}
+    ${template({ ...context, outline: true, variant: 'ghost' })}
   `,
   parameters: {
     docs: {
@@ -389,15 +437,19 @@ export const Disabled: Story = {
     disabled: true
   },
   render: context => html`
-    ${template({ ...context, variant: 'default' })} ${template({ ...context, variant: 'primary' })}
-    ${template({ ...context, variant: 'secondary' })} ${template({ ...context, variant: 'tertiary' })}
-    ${template({ ...context, variant: 'success' })} ${template({ ...context, variant: 'neutral' })}
-    ${template({ ...context, variant: 'warning' })} ${template({ ...context, variant: 'danger' })}
+    <h2 class="mb-4 font-semibold">Variants</h2>
+    ${template({ ...context, variant: 'primary' })} ${template({ ...context, variant: 'secondary' })}
+    ${template({ ...context, variant: 'tertiary' })}
+
+    <h2 class="mb-4 mt-6 font-semibold">Status variants</h2>
+    ${template({ ...context, variant: 'success' })} ${template({ ...context, variant: 'warning' })}
+    ${template({ ...context, variant: 'danger' })}
+
+    <h2 class="mb-4 mt-6 font-semibold">Generic variants</h2>
+    ${template({ ...context, variant: 'neutral' })} ${template({ ...context, variant: 'default' })}
     ${template({ ...context, variant: 'ghost' })}
 
-    <br />
-    <br />
-
+    <h2 class="mb-4 mt-6 font-semibold">Colored</h2>
     ${template({ ...context, colored: true, variant: 'default' })}
     ${template({ ...context, colored: true, variant: 'primary' })}
     ${template({ ...context, colored: true, variant: 'secondary' })}
@@ -408,9 +460,7 @@ export const Disabled: Story = {
     ${template({ ...context, colored: true, variant: 'danger' })}
     ${template({ ...context, colored: true, variant: 'ghost' })}
 
-    <br />
-    <br />
-
+    <h2 class="mb-4 mt-6 font-semibold">Outline</h2>
     ${template({ ...context, outline: true, variant: 'default' })}
     ${template({ ...context, outline: true, variant: 'primary' })}
     ${template({ ...context, outline: true, variant: 'secondary' })}
@@ -421,9 +471,7 @@ export const Disabled: Story = {
     ${template({ ...context, outline: true, variant: 'danger' })}
     ${template({ ...context, outline: true, variant: 'ghost' })}
 
-    <br />
-    <br />
-
+    <h2 class="mb-4 mt-6 font-semibold">Text buttons</h2>
     ${template({ ...context, variant: 'text' })}
     <br />
     <awc-button variant="text" disabled>
@@ -431,15 +479,87 @@ export const Disabled: Story = {
       <awc-icon slot="suffix" name="arrow-right"></awc-icon>
     </awc-button>
 
-    <br />
-    <br />
-
+    <h2 class="mb-4 mt-6 font-semibold">Link buttons</h2>
     ${template({ ...context, variant: 'link' })}
     <br />
     <awc-button variant="link" disabled>
       Link
       <awc-icon slot="suffix" name="arrow-right"></awc-icon>
     </awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold">Icon buttons</h2>
+
+    <h2 class="mb-4 mt-6 font-semibold text-small">Square</h2>
+
+    <h2 class="mb-4 font-semibold text-x-small">Default</h2>
+    <awc-button variant="default" icon="square" disabled><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-x-small">Variants</h2>
+    <awc-button variant="primary" icon="square" disabled><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="secondary" icon="square" disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="square" disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-x-small">Colored</h2>
+    <awc-button variant="primary" icon="square" colored disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="secondary" icon="square" colored disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="square" colored disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-x-small">Outline</h2>
+    <awc-button variant="primary" icon="square" outline disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="secondary" icon="square" outline disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="square" outline disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-small">Circle</h2>
+
+    <h2 class="mb-4 font-semibold text-x-small">Default</h2>
+    <awc-button variant="default" icon="circle" disabled><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-x-small">Variants</h2>
+    <awc-button variant="primary" icon="circle" disabled><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
+    <awc-button variant="secondary" icon="circle" disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="circle" disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-x-small">Colored</h2>
+    <awc-button variant="primary" icon="circle" colored disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="secondary" icon="circle" colored disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="circle" colored disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+
+    <h2 class="mb-4 mt-6 font-semibold text-x-small">Outline</h2>
+    <awc-button variant="primary" icon="circle" outline disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="secondary" icon="circle" outline disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
+    <awc-button variant="tertiary" icon="circle" outline disabled
+      ><awc-icon name="gear" label="Settings"></awc-icon
+    ></awc-button>
   `,
   parameters: {
     docs: {
