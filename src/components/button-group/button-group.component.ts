@@ -6,7 +6,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Button groups can be used to group related buttons into sections.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-button-group--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-button-group--docs
  * @status stable
  * @since 1.0
  *

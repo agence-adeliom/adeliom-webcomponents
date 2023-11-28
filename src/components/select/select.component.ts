@@ -23,7 +23,7 @@ import type { AWCRemoveEvent } from '../../events/awc-remove.js';
 
 /**
  * @summary Selects allow you to choose items from a menu of predefined options.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-select--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-select--docs
  * @status stable
  * @since 1.0
  *

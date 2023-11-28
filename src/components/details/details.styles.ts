@@ -20,10 +20,6 @@ export default css`
     overflow-anchor: none;
   }
 
-  .details--disabled {
-    opacity: 0.5;
-  }
-
   .details__header {
     display: flex;
     align-items: center;
@@ -49,6 +45,12 @@ export default css`
 
   .details--disabled .details__header {
     cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .details--disabled .details__header .details__summary,
+  .details--disabled .details__header .details__summary-icon {
+    color: var(--awc-color-neutral-500);
   }
 
   .details--disabled .details__header:focus-visible {
@@ -83,11 +85,11 @@ export default css`
   }
 
   .details--open .details__summary-icon {
-    rotate: -90deg;
+    rotate: -180deg;
   }
 
   .details--open.details--rtl .details__summary-icon {
-    rotate: 90deg;
+    rotate: 180deg;
   }
 
   .details--open slot[name='expand-icon'],

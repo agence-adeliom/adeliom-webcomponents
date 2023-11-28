@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element which defines a tile layer. The content of the `awc-map-tilelayer` is used as attribution.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-raster-layers-tilelayer--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-tilelayer--docs
  * @status experimental
  * @since 1.0
  *

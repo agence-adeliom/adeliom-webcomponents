@@ -5,7 +5,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary The visually hidden utility makes content accessible to assistive devices without displaying it on the screen.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-visually-hidden--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-visually-hidden--docs
  * @status stable
  * @since 1.0
  *

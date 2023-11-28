@@ -62,7 +62,7 @@ function isMarker(x: L.Layer): x is L.Marker {
 
 /**
  * @summary Element which defines a Leaflet map.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map--docs
  * @status experimental
  * @since 1.0
  *

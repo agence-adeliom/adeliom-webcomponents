@@ -5,7 +5,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Menu labels are used to describe a group of menu items.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-menu-label--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-menu-label--docs
  * @status stable
  * @since 1.0
  *

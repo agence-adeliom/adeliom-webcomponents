@@ -6,7 +6,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element for adding a point to a polyline or polygon on the map
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-vector-layers-point--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-point--docs
  * @status experimental
  * @since 1.0
  */

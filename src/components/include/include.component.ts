@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Includes give you the power to embed external HTML files into the page.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-include--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-include--docs
  * @status stable
  * @since 1.0
  *

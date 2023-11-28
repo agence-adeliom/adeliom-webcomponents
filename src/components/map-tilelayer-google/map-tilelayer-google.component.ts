@@ -105,7 +105,7 @@ declare module 'leaflet' {
 
 /**
  * @summary Element which defines a tile layer for Google. The content of the `awc-map-tilelayer-google` is used as attribution. It inherits attributes and events from `awc-map-tilelayer`;
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-raster-layers-tilelayer-google--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-tilelayer-google--docs
  * @status experimental
  * @since 1.0
  *

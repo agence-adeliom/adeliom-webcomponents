@@ -14,7 +14,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-carousel--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-carousel--docs
  * @since 1.0
  * @status experimental
  *

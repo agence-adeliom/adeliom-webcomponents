@@ -14,7 +14,7 @@ function isRealNumber(x: unknown): x is number {
 
 /**
  * @summary Element which defines a [marker](http://leafletjs.com/reference.html#marker). The content is used as popup window, unless it is empty.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-ui-layers-marker--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-ui-layers-marker--docs
  * @status experimental
  * @since 1.0
  *

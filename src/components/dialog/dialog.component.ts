@@ -17,7 +17,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Dialogs, sometimes called "modals", appear above the page and require the user's immediate attention.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-dialog--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-dialog--docs
  * @status stable
  * @since 1.0
  *

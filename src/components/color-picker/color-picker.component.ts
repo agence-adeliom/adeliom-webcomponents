@@ -37,7 +37,7 @@ declare const EyeDropper: EyeDropperConstructor;
 
 /**
  * @summary Color pickers allow the user to select a color.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-color-picker--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-color-picker--docs
  * @status stable
  * @since 1.0
  *

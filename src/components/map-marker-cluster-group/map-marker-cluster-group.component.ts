@@ -7,7 +7,7 @@ import type AWCMapMarker from '../map-marker/map-marker';
 
 /**
  * @summary Element which represents a marker cluster group
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-other-layers-markerclustergroup--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-other-layers-markerclustergroup--docs
  * @status experimental
  * @since 1.0
  */

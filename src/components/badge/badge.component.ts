@@ -7,7 +7,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Badges are used to draw attention and display statuses or counts.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-badge--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-badge--docs
  * @status stable
  * @since 1.0
  *

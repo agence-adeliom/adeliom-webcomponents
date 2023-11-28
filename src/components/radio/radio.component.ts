@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Radios allow the user to select a single option from a group.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-radio--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-radio--docs
  * @status stable
  * @since 1.0
  *

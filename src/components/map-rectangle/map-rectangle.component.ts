@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element for putting a rectangle on the map
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-vector-layers-rectangle--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-rectangle--docs
  * @status experimental
  * @since 1.0
  *

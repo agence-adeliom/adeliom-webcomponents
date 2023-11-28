@@ -10,7 +10,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Avatars are used to represent a person or object.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-avatar--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-avatar--docs
  * @status stable
  * @since 1.0
  *

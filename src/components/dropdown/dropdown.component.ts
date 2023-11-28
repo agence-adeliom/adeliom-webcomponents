@@ -18,7 +18,7 @@ import type AWCMenu from '../menu/menu.js';
 
 /**
  * @summary Dropdowns expose additional content that "drops down" in a panel.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-dropdown--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-dropdown--docs
  * @status stable
  * @since 1.0
  *

@@ -18,7 +18,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Drawers slide in from a container to expose additional options and information.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-drawer--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-drawer--docs
  * @status stable
  * @since 1.0
  *

@@ -10,7 +10,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Radios buttons allow the user to select a single option from a group using a button-like control.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-radio-button--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-radio-button--docs
  * @status stable
  * @since 1.0
  *

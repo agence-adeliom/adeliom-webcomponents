@@ -6,7 +6,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary A carousel item represent a slide within a [carousel](?path=/docs/components-carousel--docs).
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-carousel-item--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-carousel-item--docs
  * @since 1.0
  * @status experimental
  *

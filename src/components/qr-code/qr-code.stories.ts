@@ -33,7 +33,7 @@ type Story = StoryObj<AWCQrCode & typeof args>;
 export const Primary: Story = {
   name: 'Default',
   args: {
-    value: 'https://awc.a-dev.cloud/',
+    value: 'https://webcomponents.adeliom.io/',
     label: 'Scan this code to visit Adeliom WebComponents on the web!'
   }
 };

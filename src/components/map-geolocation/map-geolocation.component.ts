@@ -10,7 +10,7 @@ import type { LatLngBounds } from 'leaflet';
 
 /**
  * @summary Element which controls geolocation
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-controls-geolocation--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-geolocation--docs
  * @status experimental
  * @since 1.0
  *

@@ -13,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Ratings give users a way to quickly view and provide feedback.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-rating--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-rating--docs
  * @status stable
  * @since 1.0
  *

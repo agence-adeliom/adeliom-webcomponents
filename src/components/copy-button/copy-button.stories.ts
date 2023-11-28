@@ -89,7 +89,7 @@ export const CopyingValuesFromOtherElements: Story = {
       <br /><br />
 
       <!-- Copies the link's "href" attribute -->
-      <a id="my-link" href="https://awc.a-dev.cloud/">AWC Website</a>
+      <a id="my-link" href="https://webcomponents.adeliom.io/">AWC Website</a>
       <awc-copy-button from="my-link[href]"></awc-copy-button>`,
   parameters: {
     docs: {

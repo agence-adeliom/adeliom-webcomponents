@@ -15,7 +15,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Ranges allow the user to select a single value within a given range using a slider.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-range--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-range--docs
  * @status stable
  * @since 1.0
  *

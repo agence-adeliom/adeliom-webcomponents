@@ -10,7 +10,7 @@ let id = 0;
 
 /**
  * @summary Tab panels are used inside [tab groups](?path=/docs/components-tab-group--docs) to display tabbed content.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-tab-panel--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tab-panel--docs
  * @status stable
  * @since 1.0
  *

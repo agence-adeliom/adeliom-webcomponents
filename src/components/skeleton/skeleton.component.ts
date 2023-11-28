@@ -7,7 +7,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Skeletons are used to provide a visual representation of where content will eventually be drawn.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-skeleton--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-skeleton--docs
  * @status stable
  * @since 1.0
  *

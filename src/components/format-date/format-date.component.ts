@@ -5,7 +5,7 @@ import AWCElement from '../../internal/awc-element.js';
 
 /**
  * @summary Formats a date/time using the specified locale and options.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-format-date--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-format-date--docs
  * @status stable
  * @since 1.0
  */

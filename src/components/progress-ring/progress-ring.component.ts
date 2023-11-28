@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Progress rings are used to show the progress of a determinate operation in a circular fashion.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-progress-ring--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-progress-ring--docs
  * @status stable
  * @since 1.0
  *

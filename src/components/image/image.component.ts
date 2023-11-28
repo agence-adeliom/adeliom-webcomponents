@@ -12,7 +12,7 @@ import type { StyleInfo } from 'lit/directives/style-map.js';
 
 /**
  * @summary A image component for responsive, high-performance images using image CDNs
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-image--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-image--docs
  * @status experimental
  * @since 1.0
  *

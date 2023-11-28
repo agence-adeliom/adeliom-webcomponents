@@ -13,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Tooltips display additional information based on a specific action.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-tooltip--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tooltip--docs
  * @status stable
  * @since 1.0
  *

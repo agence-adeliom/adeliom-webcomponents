@@ -10,7 +10,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Options define the selectable items within various form controls such as [select](?path=/docs/components-select--docs).
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-option--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-option--docs
  * @status stable
  * @since 1.0
  *

@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element for putting a polyline on the map
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-vector-layers-polyline--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-polyline--docs
  * @status experimental
  * @since 1.0
  *

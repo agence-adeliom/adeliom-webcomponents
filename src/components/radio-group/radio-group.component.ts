@@ -19,7 +19,7 @@ import type AWCRadioButton from '../radio-button/radio-button.js';
 
 /**
  * @summary Radio groups are used to group multiple [radios](?path=/docs/components-radio--docs) or [radio buttons](?path=/docs/components-radio-button--docs) so they function as a single form control.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-radio-group--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-radio-group--docs
  * @status stable
  * @since 1.0
  *

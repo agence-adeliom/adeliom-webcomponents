@@ -5,7 +5,7 @@ import type AWCMapMarker from '../map-marker/map-marker';
 
 /**
  * @summary Element which represents a layer group
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-other-layers-layergroup--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-other-layers-layergroup--docs
  * @status experimental
  * @since 1.0
  */

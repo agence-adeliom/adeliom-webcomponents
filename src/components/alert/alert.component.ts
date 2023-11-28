@@ -16,7 +16,7 @@ const toastStack = Object.assign(document.createElement('div'), { className: 'aw
 
 /**
  * @summary Alerts are used to display important messages inline or as toast notifications.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-alert--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-alert--docs
  * @status stable
  * @since 1.0
  *

@@ -15,7 +15,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Buttons represent actions that are available to the user.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-button--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-button--docs
  * @status stable
  * @since 1.0
  *

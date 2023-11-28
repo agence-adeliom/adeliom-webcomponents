@@ -5,7 +5,7 @@ import type { PropertyValues } from 'lit';
 
 /**
  * @summary Element which defines an icon template for markers.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-icon--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-icon--docs
  * @status experimental
  * @since 1.0
  */

@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element which defines a tile layer for WMS. The content of the `awc-map-tilelayer-wms` is used as attribution. It inherits attributes and events from `awc-map-tilelayer`;
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-raster-layers-tilelayer-wms--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-tilelayer-wms--docs
  * @status experimental
  * @since 1.0
  *

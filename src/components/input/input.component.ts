@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Inputs collect data from the user.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-input--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-input--docs
  * @status stable
  * @since 1.0
  *

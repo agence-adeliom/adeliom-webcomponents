@@ -4,7 +4,7 @@ import AWCElement from '../../internal/awc-element.js';
 
 /**
  * @summary Formats a number using the specified locale and options.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-format-number--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-format-number--docs
  * @status stable
  * @since 1.0
  */

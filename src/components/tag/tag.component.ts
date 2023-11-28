@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Tags are used as labels to organize things or to indicate a selection.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-tag--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tag--docs
  * @status stable
  * @since 1.0
  *

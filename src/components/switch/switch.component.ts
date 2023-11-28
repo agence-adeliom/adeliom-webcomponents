@@ -13,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Switches allow the user to toggle an option on or off.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-switch--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-switch--docs
  * @status stable
  * @since 1.0
  *

@@ -19,7 +19,7 @@ import type { FileInfo } from './library.js';
 
 /**
  * @summary File Upload provides an area where files can be dragged and dropped onto from the Operating System to be uploaded or to be used for other tasks. It also provides a button to open a file dialog and select files from the file system. Per default the File Dropzone shows a list of all selected files below the dropzone.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-file-upload--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-file-upload--docs
  * @status experimental
  * @since 1.0
  *

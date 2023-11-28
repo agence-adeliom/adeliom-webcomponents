@@ -13,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Details show a brief summary and expand to show additional content.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-details--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-details--docs
  * @status stable
  * @since 1.0
  *
@@ -36,9 +36,9 @@ import type { CSSResultGroup } from 'lit';
  * @csspart body - The details content wrapper.
  * @csspart content - The details content.
  *
- * @cssproperty [--padding=0] - The details's padding.
- * @cssproperty [--border-width=0] - The details's border width.
- * @cssproperty [--border-radius=var(--awc-border-radius-none)] - The details's border radius.
+ * @cssproperty [--padding=var(--awc-spacing-medium)] - The details's padding.
+ * @cssproperty [--border-width=1px] - The details's border width.
+ * @cssproperty [--border-radius=var(--awc-card-border-radius)] - The details's border radius.
  * @cssproperty [--border-color=var(--awc-color-neutral-200)] - The details's border color.
  * @cssproperty [--background-color=transparent] - The details's background color.
  *
@@ -221,10 +221,10 @@ export default class AWCDetails extends AWCElement {
 
           <span part="summary-icon" class="details__summary-icon">
             <slot name="expand-icon">
-              <awc-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></awc-icon>
+              <awc-icon library="system" name="chevron-down"></awc-icon>
             </slot>
             <slot name="collapse-icon">
-              <awc-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></awc-icon>
+              <awc-icon library="system" name="chevron-down"></awc-icon>
             </slot>
           </span>
         </summary>

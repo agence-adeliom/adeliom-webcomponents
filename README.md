@@ -13,7 +13,7 @@ A forward-thinking library of web components.
 
 ---
 
-Documentation: [awc.a-dev.cloud](https://awc.a-dev.cloud)
+Documentation: [webcomponents.adeliom.io](https://webcomponents.adeliom.io)
 
 Source: [github.com/agence-adeliom/awc](https://github.com/agence-adeliom/awc)
 
@@ -23,7 +23,7 @@ You can use this documentation to learn how to build AWC from source. You will n
 
 **You don't need to do any of this to use AWC!** This page is for people who want to contribute to the project, tinker with the source, or create a custom build of AWC.
 
-If that's not what you're trying to do, the [documentation website](https://awc.a-dev.cloud) is where you want to be.
+If that's not what you're trying to do, the [documentation website](https://webcomponents.adeliom.io) is where you want to be.
 
 ### What are you using to build AWC?
 

@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Breadcrumb Items are used inside [breadcrumbs](?path=/docs/components-breadcrumb--docs) to represent different links.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-breadcrumb-item--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-breadcrumb-item--docs
  * @status stable
  * @since 1.0
  *

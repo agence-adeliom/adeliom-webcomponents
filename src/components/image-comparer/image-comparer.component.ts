@@ -13,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Compare visual differences between similar photos with a sliding panel.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-image-comparer--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-image-comparer--docs
  * @status stable
  * @since 1.0
  *

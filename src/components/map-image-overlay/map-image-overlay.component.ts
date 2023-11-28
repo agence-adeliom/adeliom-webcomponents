@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element which defines a image overlay.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-map-raster-layers-image-overlay--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-image-overlay--docs
  * @status experimental
  * @since 1.0
  *

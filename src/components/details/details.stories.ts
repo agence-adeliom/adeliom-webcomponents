@@ -31,16 +31,18 @@ export const Primary: Story = {
     summary: 'Toggle Me',
     'default-slot':
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna<br>aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  }
+  },
+  render: context => html`<awc-details summary="${context.summary}"> ${context['default-slot']} </awc-details>`
 };
 
 export const Disabled: Story = {
   name: 'Disabled',
   args: {
     ...Primary.args,
-    summary: 'Disabled',
-    disabled: true
+    summary: 'Disabled'
   },
+  render: context =>
+    html`<awc-details summary="${context.summary}" disabled> ${context['default-slot']} </awc-details>`,
   parameters: {
     docs: {
       description: {

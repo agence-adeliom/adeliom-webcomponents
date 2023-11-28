@@ -10,7 +10,7 @@ export interface MenuSelectEventDetail {
 
 /**
  * @summary Menus provide a list of options for the user to choose from.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-menu--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-menu--docs
  * @status stable
  * @since 1.0
  *

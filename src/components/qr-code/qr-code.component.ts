@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Generates a [QR code](https://www.qrcode.com/) and renders it using the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-qr-code--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-qr-code--docs
  * @status stable
  * @since 1.0
  *

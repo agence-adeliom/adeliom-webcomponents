@@ -16,7 +16,7 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
 
 /**
  * @summary A tree item serves as a hierarchical node that lives inside a [tree](?path=/docs/components-tree--docs).
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-tree-item--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tree-item--docs
  * @status stable
  * @since 1.0
  *

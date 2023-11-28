@@ -7,7 +7,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary The Resize Observer component offers a thin, declarative interface to the [`ResizeObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver).
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-resize-observer--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-resize-observer--docs
  * @status stable
  * @since 1.0
  *
