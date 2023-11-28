@@ -46,7 +46,7 @@ jobs:
           node-version: 18.x
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      - run: npx playwright install-deps
+      #- run: npx playwright install-deps
       - run: npm ci --legacy-peer-deps
       - run: npm publish --access public
         env:
