@@ -54,6 +54,9 @@ jobs:
           flavor: |
             latest=true
           tags: |
+            type=ref,event=branch
+            type=ref,event=tag
+            type=ref,event=pr
             type=sha
 
       - name: Build and push Docker image
@@ -99,8 +102,10 @@ jobs:
           helm upgrade --install adeliom-webcomponents . --namespace adeliom-webcomponents \
             --set replicaCount=1  \
             --set image.tag="main"  \
-            --set ingress.annotations.external-dns.alpha.kubernetes.io/hostname=awc-demo.a-dev.cloud  \
-            --set ingress.hosts.host=awc-demo.a-dev.cloud  \
-            --set ingress.tls.secretName=awc-main-tls  \
-            --set ingress.tls.hosts.host=awc-demo.a-dev.cloud
+            --set 'ingress.annotations.external-dns\.alpha\.kubernetes\.io\/hostname'=awc-demo.a-dev.cloud  \
+            --set 'ingress.hosts[0].host'=awc-demo.a-dev.cloud  \
+            --set 'ingress.hosts[0].paths[0].path'=/  \
+            --set 'ingress.hosts[0].paths[0].pathType'=ImplementationSpecific  \
+            --set 'ingress.tls[0].secretName'=awc-main-tls  \
+            --set 'ingress.tls[0].hosts[0]'=awc-demo.a-dev.cloud
         

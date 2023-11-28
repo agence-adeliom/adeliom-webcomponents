@@ -1,8 +1,7 @@
 replicaCount: 1
 
 image:
-  registry: rg.fr-par.scw.cloud/adeliom-public
-  repository: webcomponents-docs
+  repository: rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents
   pullPolicy: Always
   tag: ""
 
