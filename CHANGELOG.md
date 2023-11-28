@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.7](https://github.com/agence-adeliom/awc/compare/v1.5.6...v1.5.7) (2023-11-28)
+
+
+### Bug Fixes
+
+* update docs ([cc169a8](https://github.com/agence-adeliom/awc/commit/cc169a8c6e6ee3628eef918603d98738c34a4b42))
+
 ## [1.5.6](https://github.com/agence-adeliom/awc/compare/v1.5.5...v1.5.6) (2023-11-24)
 
 
