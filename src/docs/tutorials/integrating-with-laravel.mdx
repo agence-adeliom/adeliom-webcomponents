@@ -8,7 +8,7 @@ This page explains how to integrate Adeliom WebComponents with a [Laravel 9](htt
 
 > 📘 **Tip**
 >
-> This is a community-maintained document. Please [ask the community](/resources/community) if you have questions about this integration. You can also [suggest improvements](https://github.com/agence-adeliom/awc/blob/main/docs/tutorials/integrating-with-laravel.md) to make it better.
+> This is a community-maintained document. Please [ask the community](/resources/community) if you have questions about this integration. You can also [suggest improvements](https://github.com/agence-adeliom/adeliom-webcomponents/blob/main/docs/tutorials/integrating-with-laravel.md) to make it better.
 
 ## Requirements
 
@@ -41,9 +41,9 @@ Import the Adeliom WebComponents default theme (stylesheet) in `/resources/css/a
 Import each Adeliom WebComponents component you plan to use in `/resources/js/bootstrap.js`. Use the full path to each component (as outlined in the [Cherry Picking instructions](https://webcomponents.adeliom.io/docs/getting-started-installation--docs#cherry-picking)). You can find the full import statement for a component in the _Importing_ section of the component's documentation (use the _Bundler_ import). Your imports should look similar to:
 
 ```js
-import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
-import '@agence-adeliom/awc/%NPMDIR%/components/icon/icon.js';
-import '@agence-adeliom/awc/%NPMDIR%/components/dialog/dialog.js';
+import '@agence-adeliom/awc/components/button/button.js';
+import '@agence-adeliom/awc/components/icon/icon.js';
+import '@agence-adeliom/awc/components/dialog/dialog.js';
 ```
 
 ### Copy the Adeliom WebComponents Static Assets (icons, images, etc.) to a Public Folder
@@ -59,19 +59,19 @@ cp -aR node_modules/@agence-adeliom/awc/%NPMDIR%/assets/ ./public/assets
 Add the base path to your Adeliom WebComponents assets (icons, images, etc.) in `/resources/js/bootstrap.js`. The path must point to the same folder where you copy assets to in the next step.
 
 ```js
-import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path.js';
+import { setBasePath } from '@agence-adeliom/awc';
 setBasePath('/');
 ```
 
 Example `/resources/js/bootstrap.js` file:
 
 ```js
-import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path.js';
+import { setBasePath } from '@agence-adeliom/awc';
 setBasePath('/');
 
-import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
-import '@agence-adeliom/awc/%NPMDIR%/components/icon/icon.js';
-import '@agence-adeliom/awc/%NPMDIR%/components/dialog/dialog.js';
+import '@agence-adeliom/awc/components/button/button.js';
+import '@agence-adeliom/awc/components/icon/icon.js';
+import '@agence-adeliom/awc/components/dialog/dialog.js';
 ```
 
 ### Verify Vite Entry Points

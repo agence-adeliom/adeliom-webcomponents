@@ -54,6 +54,7 @@ const preview: Preview = {
             'Customizing',
             'Form Controls',
             'Localization',
+            'Figma',
             'Resources',
             ['Contributing & Support', 'Changelog']
           ],

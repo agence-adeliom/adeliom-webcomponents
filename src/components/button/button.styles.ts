@@ -170,7 +170,7 @@ export default css`
   .button--standard.button--primary {
     background-color: var(--awc-button-primary-background-color-default, var(--awc-color-primary-600));
     border-color: var(
-      --awc-button-primary-stroke-default,
+      --awc-button-primary-border-color-default,
       var(--awc-button-primary-background-color-default, var(--awc-color-primary-600))
     );
     color: var(--awc-button-primary-color-default, var(--awc-color-neutral-0));
@@ -180,7 +180,7 @@ export default css`
   .button--standard.button--primary:active:not(.button--disabled) {
     background-color: var(--awc-button-primary-background-color-hover, var(--awc-color-primary-800));
     border-color: var(
-      --awc-button-primary-stroke-hover,
+      --awc-button-primary-border-color-hover,
       var(--awc-button-primary-background-color-hover, var(--awc-color-primary-800))
     );
     color: var(--awc-button-primary-color-hover, var(--awc-color-neutral-0));
@@ -190,7 +190,7 @@ export default css`
   .button--standard.button--secondary {
     background-color: var(--awc-button-secondary-background-color-default, var(--awc-color-secondary-600));
     border-color: var(
-      --awc-button-secondary-stroke-default,
+      --awc-button-secondary-border-color-default,
       var(--awc-button-secondary-background-color-default, var(--awc-color-secondary-600))
     );
     color: var(--awc-button-secondary-color-default, var(--awc-color-neutral-0));
@@ -200,7 +200,7 @@ export default css`
   .button--standard.button--secondary:active:not(.button--disabled) {
     background-color: var(--awc-button-secondary-background-color-hover, var(--awc-color-secondary-800));
     border-color: var(
-      --awc-button-secondary-stroke-hover,
+      --awc-button-secondary-border-color-hover,
       var(--awc-button-secondary-background-color-hover, var(--awc-color-secondary-800))
     );
     color: var(--awc-button-secondary-color-hover, var(--awc-color-neutral-0));
@@ -210,7 +210,7 @@ export default css`
   .button--standard.button--tertiary {
     background-color: var(--awc-button-tertiary-background-color-default, var(--awc-color-tertiary-600));
     border-color: var(
-      --awc-button-tertiary-stroke-default,
+      --awc-button-tertiary-border-color-default,
       var(--awc-button-tertiary-background-color-default, var(--awc-color-tertiary-600))
     );
     color: var(--awc-button-tertiary-color-default, var(--awc-color-neutral-0));
@@ -220,7 +220,7 @@ export default css`
   .button--standard.button--tertiary:active:not(.button--disabled) {
     background-color: var(--awc-button-tertiary-background-color-hover, var(--awc-color-tertiary-800));
     border-color: var(
-      --awc-button-tertiary-stroke-hover,
+      --awc-button-tertiary-border-color-hover,
       var(--awc-button-tertiary-background-color-hover, var(--awc-color-tertiary-800))
     );
     color: var(--awc-button-tertiary-color-hover, var(--awc-color-neutral-0));
@@ -491,7 +491,7 @@ export default css`
   }
 
   .button--text.button--has-label .button__suffix {
-    color: var(--awc-button-text-only-icon-default, var(--awc-color-primary-600));
+    color: var(--awc-button-text-icon-default, var(--awc-color-primary-600));
   }
 
   .button--text:hover:not(.button--disabled, .button--has-suffix, .button--has-prefix) {
@@ -515,7 +515,7 @@ export default css`
   .button--text.button--has-label:active:not(.button--disabled) .button__suffix,
   .button--text.button--has-label:focus-visible:not(.button--disabled) .button__suffix,
   .button--text.button--has-label:hover:not(.button--disabled) .button__suffix {
-    color: var(--awc-button-text-only-icon-hover, var(--awc-color-primary-800));
+    color: var(--awc-button-text-icon-hover, var(--awc-color-primary-800));
   }
 
   /*
@@ -623,22 +623,22 @@ export default css`
   }
 
   .button--icon.button--default {
-    border-color: var(--awc-button-only-icon-stroke-default, var(--awc-color-neutral-300));
-    background-color: var(--awc-button-only-icon-background-color-default, var(--awc-color-neutral-0));
-    color: var(--awc-button-only-icon-color-default, currentColor);
+    border-color: var(--awc-button-icon-border-color-default, var(--awc-color-neutral-300));
+    background-color: var(--awc-button-icon-background-color-default, var(--awc-color-neutral-0));
+    color: var(--awc-button-icon-color-default, currentColor);
   }
 
   .button--icon.button--default:hover:not(.button--disabled),
   .button--icon.button--default.button--checked:not(.button--disabled) {
-    border-color: var(--awc-button-only-icon-stroke-hover, var(--awc-color-primary-600));
-    background-color: var(--awc-button-only-icon-background-color-hover, var(--awc-color-primary-600));
-    color: var(--awc-button-only-icon-color-hover, var(--awc-color-neutral-0));
+    border-color: var(--awc-button-icon-border-color-hover, var(--awc-color-primary-600));
+    background-color: var(--awc-button-icon-background-color-hover, var(--awc-color-primary-600));
+    color: var(--awc-button-icon-color-hover, var(--awc-color-neutral-0));
   }
 
   .button--icon.button--default:active:not(.button--disabled) {
-    border-color: var(--awc-button-only-icon-stroke-hover, var(--awc-color-primary-800));
-    background-color: var(--awc-button-only-icon-background-color-hover, var(--awc-color-primary-800));
-    color: var(--awc-button-only-icon-color-hover, var(--awc-color-neutral-0));
+    border-color: var(--awc-button-icon-border-color-hover, var(--awc-color-primary-800));
+    background-color: var(--awc-button-icon-background-color-hover, var(--awc-color-primary-800));
+    color: var(--awc-button-icon-color-hover, var(--awc-color-neutral-0));
   }
 
   /*
@@ -837,7 +837,7 @@ export default css`
   .button--standard.button--primary.button--disabled {
     background-color: var(--awc-button-primary-background-color-disabled, var(--awc-color-neutral-300));
     border-color: var(
-      --awc-button-primary-stroke-disabled,
+      --awc-button-primary-border-color-disabled,
       var(--awc-button-primary-background-color-disabled, var(--awc-color-neutral-300))
     );
     color: var(--awc-button-primary-color-disabled, var(--awc-color-neutral-0));
@@ -847,7 +847,7 @@ export default css`
   .button--standard.button--secondary.button--disabled {
     background-color: var(--awc-button-secondary-background-color-disabled, var(--awc-color-neutral-300));
     border-color: var(
-      --awc-button-secondary-stroke-disabled,
+      --awc-button-secondary-border-color-disabled,
       var(--awc-button-secondary-background-color-disabled, var(--awc-color-neutral-300))
     );
     color: var(--awc-button-secondary-color-disabled, var(--awc-color-neutral-0));
@@ -857,7 +857,7 @@ export default css`
   .button--standard.button--tertiary.button--disabled {
     background-color: var(--awc-button-tertiary-background-color-disabled, var(--awc-color-neutral-300));
     border-color: var(
-      --awc-button-tertiary-stroke-disabled,
+      --awc-button-tertiary-border-color-disabled,
       var(--awc-button-tertiary-background-color-disabled, var(--awc-color-neutral-300))
     );
     color: var(--awc-button-tertiary-color-disabled, var(--awc-color-neutral-0));
@@ -865,9 +865,9 @@ export default css`
 
   /* Default icon button */
   .button--disabled.button--icon.button--default {
-    border-color: var(--awc-button-only-icon-stroke-disabled, var(--awc-color-primary-800));
-    background-color: var(--awc-button-only-icon-background-color-disabled, var(--awc-color-primary-800));
-    color: var(--awc-button-only-icon-color-disabled, var(--awc-color-neutral-0));
+    border-color: var(--awc-button-icon-border-color-disabled, var(--awc-color-primary-800));
+    background-color: var(--awc-button-icon-background-color-disabled, var(--awc-color-primary-800));
+    color: var(--awc-button-icon-color-disabled, var(--awc-color-neutral-0));
   }
 
   /*

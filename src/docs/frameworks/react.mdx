@@ -18,8 +18,8 @@ Next, [include a theme](?path=/docs/getting-started-themes--docs) and set the [b
 
 ```jsx
 // App.jsx
-import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
-import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path';
+import '@agence-adeliom/awc/themes/light.css';
+import { setBasePath } from '@agence-adeliom/awc';
 
 setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/');
 ```
@@ -74,7 +74,7 @@ If you're using TypeScript, it's important to note that `event.target` will be a
 ```tsx
 import { useState } from 'react';
 import { AWCInput } from '@agence-adeliom/awc/react';
-import type AWCInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
+import type AWCInputElement from '@agence-adeliom/awc/components/input/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');
@@ -90,7 +90,7 @@ You can also import the event type for use in your callbacks, shown below.
 ```tsx
 import { useCallback, useState } from 'react';
 import { AWCInput, AWCInputEvent } from '@agence-adeliom/awc/react';
-import type AWCInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
+import type AWCInputElement from '@agence-adeliom/awc/components/input/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');
@@ -172,4 +172,4 @@ For more details, refer to Jest's [`transformIgnorePatterns` customization](http
 
 > 📘 **Tip**
 >
-> Are you using Adeliom WebComponents with React? [Help us improve this page!](https://github.com/agence-adeliom/awc/blob/main/docs/frameworks/react.md)
+> Are you using Adeliom WebComponents with React? [Help us improve this page!](https://github.com/agence-adeliom/adeliom-webcomponents/blob/main/docs/frameworks/react.md)

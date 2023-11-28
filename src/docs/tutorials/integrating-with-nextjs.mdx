@@ -8,7 +8,7 @@ This page explains how to integrate Adeliom WebComponents with a NextJS app.
 
 > 📘 **Tip**
 >
-> This is a community-maintained document. Please [ask the community](/resources/community) if you have questions about this integration. You can also [suggest improvements](https://github.com/agence-adeliom/awc/blob/main/docs/tutorials/integrating-with-nextjs.md) to make it better.
+> This is a community-maintained document. Please [ask the community](/resources/community) if you have questions about this integration. You can also [suggest improvements](https://github.com/agence-adeliom/adeliom-webcomponents/blob/main/docs/tutorials/integrating-with-nextjs.md) to make it better.
 
 ## Requirements
 
@@ -61,14 +61,14 @@ function CustomEls({ URL }) {
       return;
     }
 
-    import('@agence-adeliom/awc/%NPMDIR%/utilities/base-path').then(({ setBasePath }) => {
+    import('@agence-adeliom/awc').then(({ setBasePath }) => {
       setBasePath(`${URL}/static/static`);
 
       // This imports all components
-      import('@agence-adeliom/awc/%NPMDIR%/react');
+      import('@agence-adeliom/awc/react');
       // If you're wanting to selectively import components, replace this line with your own definitions
 
-      // import("@agence-adeliom/awc/%NPMDIR%/components/button/button");
+      // import("@agence-adeliom/awc/components/button/button");
       customEls.current = true;
     });
   }, [URL, customEls]);

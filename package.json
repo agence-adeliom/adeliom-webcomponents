@@ -2,7 +2,7 @@
   "name": "@agence-adeliom/awc",
   "description": "A forward-thinking library of web components.",
   "version": "1.5.7",
-  "homepage": "https://github.com/agence-adeliom/awc",
+  "homepage": "https://github.com/agence-adeliom/adeliom-webcomponents",
   "author": "Agence Adeliom",
   "license": "MIT",
   "customElements": "./dist/custom-elements.json",
@@ -39,10 +39,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agence-adeliom/awc.git"
+    "url": "git+https://github.com/agence-adeliom/adeliom-webcomponents.git"
   },
   "bugs": {
-    "url": "https://github.com/agence-adeliom/awc/issues"
+    "url": "https://github.com/agence-adeliom/adeliom-webcomponents/issues"
   },
   "scripts": {
     "create": "plop --plopfile scripts/plop/plopfile.js",

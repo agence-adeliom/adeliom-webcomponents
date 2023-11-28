@@ -15,7 +15,7 @@ A forward-thinking library of web components.
 
 Documentation: [webcomponents.adeliom.io](https://webcomponents.adeliom.io)
 
-Source: [github.com/agence-adeliom/awc](https://github.com/agence-adeliom/awc)
+Source: [github.com/agence-adeliom/awc](https://github.com/agence-adeliom/adeliom-webcomponents)
 
 ---
 
@@ -31,7 +31,7 @@ Components are built with [LitElement](https://lit-element.polymer-project.org/)
 
 ### Forking the Repo
 
-Start by [forking the repo](https://github.com/agence-adeliom/awc/fork) on GitHub, then clone it locally and install dependencies.
+Start by [forking the repo](https://github.com/agence-adeliom/adeliom-webcomponents/fork) on GitHub, then clone it locally and install dependencies.
 
 ```bash
 git clone https://github.com/YOUR_GITHUB_USERNAME/awc

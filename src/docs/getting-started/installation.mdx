@@ -79,7 +79,7 @@ However, if you're [cherry picking](#cherry-picking) or [bundling](#bundling) Ad
 <!-- Option 2: the setBasePath() method -->
 <script src="bundle.js"></script>
 <script type="module">
-  import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path.js';
+  import { setBasePath } from '@agence-adeliom/awc';
   setBasePath('/path/to/awc/%NPMDIR%');
 </script>
 ```
@@ -94,7 +94,7 @@ Most of the magic behind assets is handled internally by Adeliom WebComponents, 
 
 ```html
 <script type="module">
-  import { getBasePath, setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path.js';
+  import { getBasePath, setBasePath } from '@agence-adeliom/awc';
   setBasePath('/path/to/assets');
   // ...
   // Get the base path, e.g. /path/to/assets
@@ -114,7 +114,7 @@ Here's an example that loads only the button component. Again, if you're not usi
 <link rel="stylesheet" href="/path/to/awc/%NPMDIR%/themes/light.css" />
 
 <script type="module" data-awc="/path/to/awc/%NPMDIR%">
-  import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
+  import '@agence-adeliom/awc/components/button/button.js';
 
   // <awc-button> is ready to use!
 </script>
@@ -133,8 +133,8 @@ You can copy and paste the code to import a component from the "Importing" secti
 By default, imports to components will auto-register themselves. This may not be ideal in all cases. To import just the component's class without auto-registering it's tag we can do the following:
 
 ```diff
-- import AWCButton from '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
-+ import AWCButton from '@agence-adeliom/awc/%NPMDIR%/components/button/button.component.js';
+- import AWCButton from '@agence-adeliom/awc/components/button/button.js';
++ import AWCButton from '@agence-adeliom/awc/components/button/button.component.js';
 ```
 
 Notice how the import ends with `.component.js`. This is the current convention to convey the import does not register itself.
@@ -275,12 +275,12 @@ export default async bud => {
 #### Once your bundler is configured, you'll be able to import Adeliom WebComponents components and utilities.
 
 ```js
-import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
-import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
-import '@agence-adeliom/awc/%NPMDIR%/components/icon/icon.js';
-import '@agence-adeliom/awc/%NPMDIR%/components/input/input.js';
-import '@agence-adeliom/awc/%NPMDIR%/components/rating/rating.js';
-import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path.js';
+import '@agence-adeliom/awc/themes/light.css';
+import '@agence-adeliom/awc/components/button/button.js';
+import '@agence-adeliom/awc/components/icon/icon.js';
+import '@agence-adeliom/awc/components/input/input.js';
+import '@agence-adeliom/awc/components/rating/rating.js';
+import { setBasePath } from '@agence-adeliom/awc';
 
 // Set the base path to the folder you copied Adeliom WebComponents's assets to
 setBasePath('/path/to/awc/%NPMDIR%/');
