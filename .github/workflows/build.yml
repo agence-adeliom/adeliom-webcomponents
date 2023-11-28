@@ -4,7 +4,6 @@
 name: Package and Documentation - Build
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
