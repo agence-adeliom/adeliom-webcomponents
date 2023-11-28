@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.8](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.5.7...v1.5.8) (2023-11-28)
+
+
+### Bug Fixes
+
+* update buttons from figma ([cf03327](https://github.com/agence-adeliom/adeliom-webcomponents/commit/cf03327f853f11a4397f9d637c7067b077012df1))
+
 ## [1.5.7](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.5.6...v1.5.7) (2023-11-28)
 
 
