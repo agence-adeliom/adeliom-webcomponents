@@ -73,4 +73,4 @@ AWC is an open source project and contributions are encouraged! If you're intere
 
 ## License
 
-AWC is available under the terms of the MIT license.
+AWC is available under the terms of the [MIT license](./LICENSE.md).

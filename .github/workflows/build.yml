@@ -4,10 +4,13 @@
 name: Package and Documentation - Build
 
 on:
+  workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   release:
@@ -23,7 +26,7 @@ jobs:
           node-version: 18.x
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      - run: npx playwright install-deps
+      #- run: npx playwright install-deps
       - run: npm ci --legacy-peer-deps
       #- run: npm run verify
       - run: npm run build
