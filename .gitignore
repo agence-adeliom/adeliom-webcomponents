@@ -9,3 +9,4 @@ cdn
 /docs/assets/styles/tailwind.min.css
 web-types.json
 storybook-static
+/.env

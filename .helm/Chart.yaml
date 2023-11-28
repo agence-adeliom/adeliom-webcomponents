@@ -1,0 +1,6 @@
+apiVersion: v2
+name: adeliom-webcomponents
+description: A Helm chart for Kubernetes to deploy Adeliom WebComponents
+type: application
+version: 0.1.0
+appVersion: "1.6.0"

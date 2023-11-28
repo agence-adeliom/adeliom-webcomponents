@@ -1,0 +1,30 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    allow:
+      - dependency-type: "direct"
+    labels:
+      - "npm"
+      - "dependencies"
+    commit-message:
+      prefix: "fix"
+      prefix-development: "build"
+      include: "scope"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    allow:
+      - dependency-type: "direct"
+    labels:
+      - "github-actions"
+      - "dependencies"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
