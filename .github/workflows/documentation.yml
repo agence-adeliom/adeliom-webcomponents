@@ -40,7 +40,7 @@ jobs:
           driver: docker
 
       - name: Log in to Scaleway
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: rg.fr-par.scw.cloud/adeliom-public
           username: nologin
