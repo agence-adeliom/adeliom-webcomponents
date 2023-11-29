@@ -107,7 +107,7 @@
     "@storybook/blocks": "7.5.3",
     "@storybook/theming": "7.5.3",
     "@storybook/web-components": "7.5.3",
-    "@storybook/web-components-vite": "7.5.3",
+    "@storybook/web-components-vite": "7.6.0",
     "@types/geojson": "^7946.0.13",
     "@types/leaflet": "^1.9.8",
     "@types/leaflet.gridlayer.googlemutant": "^0.4.9",
