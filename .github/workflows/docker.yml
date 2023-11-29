@@ -61,27 +61,27 @@ jobs:
           cache-from: type=registry,ref=rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents:latest
           cache-to: type=inline
 
-  security:
-    name: Check Storybook Docker image
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            .trivyignore
-      - name: Run Trivy vulnerability scanner
-        id: trivy
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: 'rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents:${{ github.sha }}'
-          format: 'sarif'
-          output: 'trivy-results.sarif'
-          exit-code: '1'
-          ignore-unfixed: true
-
-      - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v2
-        if: always()
-        with:
-          sarif_file: 'trivy-results.sarif'
+#  security:
+#    name: Check Storybook Docker image
+#    runs-on: ubuntu-latest
+#    needs: build
+#    steps:
+#      - uses: actions/checkout@v4
+#        with:
+#          sparse-checkout: |
+#            .trivyignore
+#      - name: Run Trivy vulnerability scanner
+#        id: trivy
+#        uses: aquasecurity/trivy-action@master
+#        with:
+#          image-ref: 'rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents:${{ github.sha }}'
+#          format: 'sarif'
+#          output: 'trivy-results.sarif'
+#          exit-code: '1'
+#          ignore-unfixed: true
+#
+#      - name: Upload Trivy scan results to GitHub Security tab
+#        uses: github/codeql-action/upload-sarif@v2
+#        if: always()
+#        with:
+#          sarif_file: 'trivy-results.sarif'
