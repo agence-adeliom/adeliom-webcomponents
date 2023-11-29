@@ -25,16 +25,15 @@ jobs:
           node-version: 18.x
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      #- run: npx playwright install-deps
       - run: npm ci --legacy-peer-deps
-      #- run: npm run verify
+      - run: npm run verify
       - run: npm run build
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
           release-type: node
 
-  build:
+  package:
     needs: release
     if: ${{needs.release.outputs.release_created}}
     runs-on: ubuntu-latest
@@ -46,33 +45,17 @@ jobs:
           node-version: 18.x
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-      #- run: npx playwright install-deps
       - run: npm ci --legacy-peer-deps
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-      - run: npm run storybook:build
-      - name: Fix permissions
-        run: |
-          chmod -c -R +rX "storybook-static/" | while read line; do
-            echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: storybook-static
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+  documentation:
+    needs: package
+    if: ${{needs.release.outputs.release_created}}
+    name: Documentation
+    uses: ./.github/workflows/documentation.yml
+    secrets: inherit
+    with:
+      environment: production
+      host: webcomponents.adeliom.io

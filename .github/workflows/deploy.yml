@@ -1,0 +1,60 @@
+name: Deployement
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+      host:
+        required: true
+        type: string
+      branch:
+        required: true
+        type: string
+        default: main
+      replica:
+        required: false
+        type: number
+        default: 1
+
+jobs:
+  deploy:
+    name: Deploy Storybook to Kubernetes
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environment }}
+      url: https://${{ inputs.host }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .helm
+
+      - name: Setup Helm
+        id: install-helm
+        uses: azure/setup-helm@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup kubectl
+        id: install-kubectl
+        uses: azure/setup-kubectl@v3
+
+      - name: Configure kubectl
+        run: |
+          mkdir -p ~/.kube/
+          echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
+
+      - name: Deploy to Kubernetes
+        working-directory: .helm
+        run: |
+          helm upgrade --install --wait adeliom-webcomponents-${{ inputs.environment }} . --namespace adeliom-webcomponents \
+            --set replicaCount=${{ inputs.replica }}  \
+            --set-string image.tag="${{ inputs.branch }}"  \
+            --set-string 'ingress.annotations.external-dns\.alpha\.kubernetes\.io\/hostname'=${{ inputs.host }}  \
+            --set-string 'ingress.annotations.external-dns\.alpha\.kubernetes\.io\/cloudflare-proxied'=true  \
+            --set-string 'ingress.hosts[0].host'=${{ inputs.host }}  \
+            --set-string 'ingress.hosts[0].paths[0].path'=/  \
+            --set-string 'ingress.hosts[0].paths[0].pathType'=ImplementationSpecific  \
+            --set-string 'ingress.tls[0].secretName'=awc-${{ inputs.environment }}-tls  \
+            --set-string 'ingress.tls[0].hosts[0]'=${{ inputs.host }}
