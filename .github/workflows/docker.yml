@@ -1,0 +1,86 @@
+name: Docker
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    name: Build Storybook Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .docker
+            Dockerfile
+
+      - name: Download a Storybook artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: storybook-static
+
+      - name: Extract Storybook files
+        run: tar -xvf storybook-static.tar
+      
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver: docker
+
+      - name: Log in to Scaleway
+        uses: docker/login-action@v3
+        with:
+          registry: rg.fr-par.scw.cloud/adeliom-public
+          username: nologin
+          password: ${{ secrets.ORG_SCW_PUBLIC_CR_SECRET_KEY }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents
+          flavor: |
+            latest=true
+          tags: |
+            type=ref,event=branch
+            type=ref,event=tag
+            type=ref,event=pr
+            type=sha,prefix=,format=long
+      
+      - name: Build & Push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=registry,ref=rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents:latest
+          cache-to: type=inline
+
+  security:
+    name: Check Storybook Docker image
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .trivyignore
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents:${{ github.sha }}'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          exit-code: '1'
+          ignore-unfixed: true
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v2
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'

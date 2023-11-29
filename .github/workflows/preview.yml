@@ -1,0 +1,55 @@
+name: Pull Request Preview
+on:
+  pull_request:
+    branches-ignore:
+      - dependabot/*
+    types: 
+      - opened
+      - synchronize
+      - reopened
+      - closed
+
+jobs:
+  storybook:
+    name: Storybook
+    if: ${{ github.event.pull_request.state == 'open' }}
+    uses: ./.github/workflows/storybook.yml
+    secrets: inherit
+
+  build:
+    needs: storybook
+    name: Docker
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
+
+  deploy:
+    needs: build
+    name: Deploy Preview
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+    with:
+      environment: preview-${{ github.event.pull_request.number }}
+      host: webcomponents-preview-${{ github.event.pull_request.number }}.adeliom.io
+      branch: pr-${{ github.event.pull_request.number }}
+
+  cleanup:
+    name: Cleanup
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.state == 'closed' }}
+    continue-on-error: true
+    steps:
+      - name: Setup Helm
+        uses: azure/setup-helm@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v3
+
+      - name: Configure kubectl
+        run: |
+          mkdir -p ~/.kube/
+          echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
+
+      - name: Cleanup Kubernetes
+        run: helm uninstall --wait adeliom-webcomponents-preview-${{ github.event.pull_request.number }} --namespace adeliom-webcomponents

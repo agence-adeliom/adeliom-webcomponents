@@ -1,115 +1,48 @@
 # This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Documentation update
+name: Documentation
 
 on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+        default: production
+      host:
+        required: true
+        type: string
+        default: webcomponents.adeliom.io
   workflow_dispatch:
-
-env:
-  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+    inputs:
+      environment:
+        required: true
+        type: string
+        default: production
+      host:
+        required: true
+        type: string
+        default: webcomponents.adeliom.io
 
 jobs:
+  storybook:
+    name: Storybook
+    uses: ./.github/workflows/storybook.yml
+    secrets: inherit
+
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'npm'
-
-      - run: npm ci --legacy-peer-deps
-
-      #- run: npm run verify
-      #- run: npm run build
-      - run: npm run storybook:build
-
-      - name: Fix permissions
-        run: |
-          chmod -c -R +rX "storybook-static/" | while read line; do
-            echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          driver: docker
-
-      - name: Log in to Scaleway
-        uses: docker/login-action@v3
-        with:
-          registry: rg.fr-par.scw.cloud/adeliom-public
-          username: nologin
-          password: ${{ secrets.ORG_SCW_PUBLIC_CR_SECRET_KEY }}
-
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents
-          flavor: |
-            latest=true
-          tags: |
-            type=ref,event=branch
-            type=ref,event=tag
-            type=ref,event=pr
-            type=sha
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: Dockerfile
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents:latest
-          cache-to: type=inline
-        
+    needs: storybook
+    name: Docker
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
 
   deploy:
     needs: build
-    environment: 
-      name: production
-      url: https://awc-demo.a-dev.cloud
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v4
-
-      - name: Setup Helm
-        id: install-helm
-        uses: azure/setup-helm@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup kubectl
-        id: install-kubectl
-        uses: azure/setup-kubectl@v3
-
-      - name: Configure kubectl
-        run: |
-          mkdir -p ~/.kube/
-          echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
-
-      - name: Deploy (Main branch)
-        working-directory: .helm
-        if: ${{env.BRANCH_NAME}} == 'main'
-        run: |
-          helm upgrade --install adeliom-webcomponents . --namespace adeliom-webcomponents \
-            --set replicaCount=1  \
-            --set image.tag="main"  \
-            --set 'ingress.annotations.external-dns\.alpha\.kubernetes\.io\/hostname'=webcomponents.adeliom.io  \
-            --set 'ingress.hosts[0].host'=webcomponents.adeliom.io  \
-            --set 'ingress.hosts[0].paths[0].path'=/  \
-            --set 'ingress.hosts[0].paths[0].pathType'=ImplementationSpecific  \
-            --set 'ingress.tls[0].secretName'=awc-main-tls  \
-            --set 'ingress.tls[0].hosts[0]'=webcomponents.adeliom.io
-        
+    name: Deployement
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+    with:
+      environment: ${{ github.event.inputs.environment }}
+      host: ${{ github.event.inputs.host }}
+      branch: ${{ github.ref_name }}
