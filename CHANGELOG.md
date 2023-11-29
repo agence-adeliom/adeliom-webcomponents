@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.1...v1.6.2) (2023-11-29)
+
+
+### Bug Fixes
+
+* Helm deployment ([cfdef92](https://github.com/agence-adeliom/adeliom-webcomponents/commit/cfdef920ed533036411fe9fadb12962eb929188c))
+
 ## [1.6.1](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.0...v1.6.1) (2023-11-29)
 
 
