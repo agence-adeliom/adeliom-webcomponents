@@ -1,6 +1,8 @@
 name: Pull Request Preview
 on:
   pull_request:
+    branches:
+      - '!dependabot/**/*'
     types: 
       - opened
       - synchronize
@@ -33,7 +35,7 @@ jobs:
   cleanup:
     name: Cleanup
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.state == 'closed' }}
+    if: ${{ github.event.pull_request.state == 'closed' && github.actor != 'dependabot[bot]' }}
     continue-on-error: true
     steps:
       - name: Setup Helm
