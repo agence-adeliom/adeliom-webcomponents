@@ -1,6 +1,6 @@
 :80 {
-    root * /usr/share/caddy
-    encode zstd gzip
-    file_server
-    header Cache-Control public,max-age=31536000
+	root * /usr/share/caddy
+	encode zstd gzip
+	file_server
+	header Cache-Control public,max-age=31536000
 }
