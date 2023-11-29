@@ -71,6 +71,7 @@ jobs:
           sparse-checkout: |
             .trivyignore
       - name: Run Trivy vulnerability scanner
+        id: trivy
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'rg.fr-par.scw.cloud/adeliom-public/adeliom-webcomponents:${{ github.sha }}'
@@ -84,3 +85,6 @@ jobs:
         if: always()
         with:
           sarif_file: 'trivy-results.sarif'
+
+      - run: exit 1
+        if: steps.trivy.outcome == 'failure'
