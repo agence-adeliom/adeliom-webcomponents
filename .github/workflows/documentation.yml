@@ -6,6 +6,9 @@ name: Documentation update
 on:
   workflow_dispatch:
 
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -96,16 +99,17 @@ jobs:
           mkdir -p ~/.kube/
           echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
 
-      - name: Deploy
+      - name: Deploy (Main branch)
         working-directory: .helm
+        if: ${{env.BRANCH_NAME}} == 'main'
         run: |
           helm upgrade --install adeliom-webcomponents . --namespace adeliom-webcomponents \
             --set replicaCount=1  \
             --set image.tag="main"  \
-            --set 'ingress.annotations.external-dns\.alpha\.kubernetes\.io\/hostname'=awc-demo.a-dev.cloud  \
-            --set 'ingress.hosts[0].host'=awc-demo.a-dev.cloud  \
+            --set 'ingress.annotations.external-dns\.alpha\.kubernetes\.io\/hostname'=webcomponents.adeliom.io  \
+            --set 'ingress.hosts[0].host'=webcomponents.adeliom.io  \
             --set 'ingress.hosts[0].paths[0].path'=/  \
             --set 'ingress.hosts[0].paths[0].pathType'=ImplementationSpecific  \
             --set 'ingress.tls[0].secretName'=awc-main-tls  \
-            --set 'ingress.tls[0].hosts[0]'=awc-demo.a-dev.cloud
+            --set 'ingress.tls[0].hosts[0]'=webcomponents.adeliom.io
         
