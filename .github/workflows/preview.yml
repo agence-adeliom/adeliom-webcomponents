@@ -1,6 +1,8 @@
 name: Pull Request Preview
 on:
   pull_request:
+    branches-ignore:
+      - dependabot/*
     types: 
       - opened
       - synchronize
@@ -37,13 +39,11 @@ jobs:
     continue-on-error: true
     steps:
       - name: Setup Helm
-        id: install-helm
         uses: azure/setup-helm@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup kubectl
-        id: install-kubectl
         uses: azure/setup-kubectl@v3
 
       - name: Configure kubectl
@@ -52,5 +52,4 @@ jobs:
           echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
 
       - name: Cleanup Kubernetes
-        working-directory: .helm
         run: helm uninstall --wait adeliom-webcomponents-preview-${{ github.event.pull_request.number }} --namespace adeliom-webcomponents
