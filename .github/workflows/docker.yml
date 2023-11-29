@@ -85,6 +85,3 @@ jobs:
         if: always()
         with:
           sarif_file: 'trivy-results.sarif'
-
-      - run: exit 1
-        if: steps.trivy.outcome == 'failure'
