@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.3](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.2...v1.6.3) (2023-11-29)
+
+
+### Bug Fixes
+
+* Docker workflow ([18ed935](https://github.com/agence-adeliom/adeliom-webcomponents/commit/18ed93547e572f27714ec286ff0950a6a0988b17))
+
 ## [1.6.2](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.1...v1.6.2) (2023-11-29)
 
 
