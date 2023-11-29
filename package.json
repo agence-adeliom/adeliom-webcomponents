@@ -98,7 +98,7 @@
     "@prettier/sync": "^0.3.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-replace": "^5.0.5",
-    "@storybook/addon-a11y": "7.5.3",
+    "@storybook/addon-a11y": "7.6.0",
     "@storybook/addon-docs": "7.5.3",
     "@storybook/addon-essentials": "7.5.3",
     "@storybook/addon-interactions": "7.5.3",
