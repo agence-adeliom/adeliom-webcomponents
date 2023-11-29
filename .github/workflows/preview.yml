@@ -1,13 +1,14 @@
 name: Pull Request Preview
 on:
   pull_request:
-    branches:
-      - '!dependabot/**/*'
     types: 
       - opened
-      - synchronize
+      - synchronize 
       - reopened
       - closed
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
 
 jobs:
   storybook:

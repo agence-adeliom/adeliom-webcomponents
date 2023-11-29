@@ -11,6 +11,10 @@ on:
 concurrency:
   group: build
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -28,10 +32,14 @@ jobs:
       - run: npm ci --legacy-peer-deps
       - run: npm run verify
       - run: npm run build
+      - run: npm run storybook:build
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
+          token: ${{ secrets.PAT_TOKEN }}
           release-type: node
+          extra-files: |
+           .helm/Chart.yaml
 
   package:
     needs: release

@@ -48,6 +48,7 @@ Selector labels
 {{- define "awc.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "awc.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/revision: {{ .Release.Revision }}
 {{- end }}
 
 {{/*
