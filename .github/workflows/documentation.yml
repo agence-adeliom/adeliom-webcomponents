@@ -43,6 +43,6 @@ jobs:
     uses: ./.github/workflows/deploy.yml
     secrets: inherit
     with:
-      environment: ${{ github.event.inputs.environment }}
-      host: ${{ github.event.inputs.host }}
+      environment: ${{ inputs.environment || github.event.inputs.environment }}
+      host: ${{ inputs.host || github.event.inputs.host }}
       branch: ${{ github.ref_name }}
