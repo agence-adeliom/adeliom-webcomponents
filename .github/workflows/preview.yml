@@ -1,21 +1,16 @@
 name: Pull Request Preview
 on:
   pull_request:
-    branches-ignore:
-      - dependabot/*
     types: 
       - opened
       - synchronize
       - reopened
       - closed
 
-concurrency:
-  group: preview-${{ github.event.pull_request.number }}
-
 jobs:
   storybook:
     name: Storybook
-    if: ${{ github.event.pull_request.state == 'open' }}
+    if: ${{ github.event.pull_request.state == 'open' && github.actor != 'dependabot[bot]' }}
     uses: ./.github/workflows/storybook.yml
     secrets: inherit
 
