@@ -27,13 +27,7 @@ type Story = StoryObj<AWCLottie & typeof args>;
 export const Test: Story = {
   name: 'Default',
   render: () => html`
-    <awc-lottie
-      autoplay
-      controls
-      loop
-      mode="normal"
-      src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json"
-    >
+    <awc-lottie autoplay controls loop mode="normal" src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json">
     </awc-lottie>
   `
 };
