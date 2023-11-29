@@ -7,11 +7,6 @@ on:
   push:
     branches:
       - main
-  pull_request_target:
-    types:
-      - closed
-    branches:
-      - main
 
 concurrency:
   group: build
