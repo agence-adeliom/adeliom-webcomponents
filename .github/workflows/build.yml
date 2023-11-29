@@ -11,9 +11,6 @@ on:
 concurrency:
   group: build
 
-concurrency:
-  group: build
-
 jobs:
   release:
     runs-on: ubuntu-latest

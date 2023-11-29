@@ -13,7 +13,7 @@ import AWCFileUploadItem from '../file-upload-item/file-upload-item.component';
 import AWCIcon from '../icon/icon.component';
 import styles from './file-upload.styles.js';
 import type { AWCFormControl } from '../../internal/awc-element.js';
-import type { AWCHideEvent } from '@awc/events/awc-hide';
+import type { AWCHideEvent } from '../../events/awc-hide';
 import type { CSSResultGroup } from 'lit';
 import type { FileInfo } from './library.js';
 

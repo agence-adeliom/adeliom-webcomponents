@@ -3,7 +3,6 @@ import * as path from 'path';
 import constant from './constant';
 import { visit } from 'unist-util-visit';
 import escapeStringRegexp from 'escape-string-regexp';
-import remarkGfm from 'remark-gfm';
 
 const interpolateVariable = ({ replacements = {}, prefix = '%', suffix = '%' }) => {
   return (tree, file) => {
