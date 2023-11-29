@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.0...v1.6.1) (2023-11-29)
+
+
+### Bug Fixes
+
+* update storybook ([#42](https://github.com/agence-adeliom/adeliom-webcomponents/issues/42)) ([e00998a](https://github.com/agence-adeliom/adeliom-webcomponents/commit/e00998a8af1750610e24e42fb551ee9e115846b4))
+
 ## [1.6.0](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.5.8...v1.6.0) (2023-11-28)
 
 
