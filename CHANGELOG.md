@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.4](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.3...v1.6.4) (2023-11-29)
+
+
+### Bug Fixes
+
+* Github workflow ([9452092](https://github.com/agence-adeliom/adeliom-webcomponents/commit/945209293e4ba24a3fb0a13bfe8f4b0a785b7787))
+
 ## [1.6.3](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.2...v1.6.3) (2023-11-29)
 
 
