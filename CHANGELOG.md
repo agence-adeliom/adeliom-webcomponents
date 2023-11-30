@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.5](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.4...v1.6.5) (2023-11-30)
+
+
+### Bug Fixes
+
+* **Icon:** handle incorrect loading attribute ([3f996a0](https://github.com/agence-adeliom/adeliom-webcomponents/commit/3f996a0e33b3af4e4f6aef3da682f819a7f98e60))
+
 ## [1.6.4](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.3...v1.6.4) (2023-11-29)
 
 
