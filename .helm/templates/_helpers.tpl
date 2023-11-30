@@ -35,6 +35,7 @@ Common labels
 */}}
 {{- define "awc.labels" -}}
 helm.sh/chart: {{ include "awc.chart" . }}
+helm.sh/revision: {{ .Release.Revision | quote }}
 {{ include "awc.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
@@ -48,7 +49,6 @@ Selector labels
 {{- define "awc.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "awc.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
-app.kubernetes.io/revision: {{ .Release.Revision | quote }}
 {{- end }}
 
 {{/*

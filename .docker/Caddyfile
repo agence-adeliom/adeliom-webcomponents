@@ -2,5 +2,6 @@
 	root * /usr/share/caddy
 	encode zstd gzip
 	file_server
-	header Cache-Control public,max-age=31536000
+	header / Cache-Control public,max-age=3600
+	header /assets/* Cache-Control public,max-age=31536000
 }
