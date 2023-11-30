@@ -62,10 +62,10 @@ Custom icons can be loaded individually with the `src` attribute. Only SVGs on a
 
 ### Lazy load
 
-Icons are lazy loaded by default. You can disable this behavior by setting the `lazy` attribute to `false`.
+Icons are loaded eagerly by default. You can change this behavior by setting the `loading` attribute to `lazy`.
 
 ```html
-<awc-icon name="icon-name-here" lazy="false"></awc-icon>
+<awc-icon name="icon-name-here" loading="lazy"></awc-icon>
 ```
 
 ## Icon Libraries
@@ -429,17 +429,18 @@ registerIconLibrary('system', {
 <IconGallery>
   {
     SystemIcons.map((name) => (
-      
+
       <IconItem name={name} key={`icon_${name}`}>
         <awc-copy-button value={name}>
-          <awc-icon slot="copy-icon" name={name}></awc-icon>
-          <awc-icon slot="success-icon" name={name}></awc-icon>
-          <awc-icon slot="error-icon" name={name}></awc-icon>
+          <awc-icon slot="copy-icon" name={name} loading="lazy"></awc-icon>
+          <awc-icon slot="success-icon" name={name} loading="lazy"></awc-icon>
+          <awc-icon slot="error-icon" name={name} loading="lazy"></awc-icon>
         </awc-copy-button>
       </IconItem>
-      
+
     ))
-  }
+
+}
 
 </IconGallery>
 
