@@ -34,7 +34,7 @@ export const Primary: Story = {
   render: () =>
     html`<awc-file-upload-item>
       filename_lorem_ipsum.jpg
-      <awc-icon name="file-earmark" slot="image"></awc-icon>
+      <awc-icon name="file" library="system" slot="image"></awc-icon>
     </awc-file-upload-item>`,
   parameters: {
     docs: {
@@ -51,7 +51,7 @@ export const Closable: Story = {
   render: () =>
     html`<awc-file-upload-item closable>
       filename_lorem_ipsum.jpg
-      <awc-icon name="file-earmark" slot="image"></awc-icon>
+      <awc-icon name="file" library="system" slot="image"></awc-icon>
     </awc-file-upload-item>`,
   parameters: {
     docs: {
@@ -68,7 +68,7 @@ export const Filesize: Story = {
   render: () =>
     html`<awc-file-upload-item size="120000">
       filename_lorem_ipsum.jpg
-      <awc-icon name="file-earmark" slot="image"></awc-icon>
+      <awc-icon name="file" library="system" slot="image"></awc-icon>
     </awc-file-upload-item>`,
   parameters: {
     docs: {
@@ -85,7 +85,7 @@ export const Custom: Story = {
   render: () =>
     html`<awc-file-upload-item closable>
         filename_lorem_ipsum.jpg
-        <awc-icon name="file-earmark" slot="image"></awc-icon>
+        <awc-icon name="file" library="system" slot="image"></awc-icon>
         <awc-icon-button name="trash" slot="close-button" class="icon-button-color"></awc-icon-button>
       </awc-file-upload-item>
       <style>
@@ -117,7 +117,7 @@ export const Loading: Story = {
   render: () =>
     html`<awc-file-upload-item loading closable size="120000">
       filename_lorem_ipsum.jpg
-      <awc-icon name="file-earmark" slot="image"></awc-icon>
+      <awc-icon name="file" library="system" slot="image"></awc-icon>
     </awc-file-upload-item>`,
   parameters: {
     docs: {
@@ -134,7 +134,7 @@ export const LoadingProgress: Story = {
   render: () =>
     html`<awc-file-upload-item loading progress="40" closable size="120000" class="file-item">
         filename_lorem_ipsum.jpg
-        <awc-icon name="file-earmark" slot="image"></awc-icon>
+        <awc-icon name="file" library="system" slot="image"></awc-icon>
       </awc-file-upload-item>
 
       <div class="mt-6">
@@ -179,7 +179,7 @@ export const LoadingLabel: Story = {
   render: () =>
     html`<awc-file-upload-item loading progress="20" label="Uploading File" closable>
       filename_lorem_ipsum.jpg
-      <awc-icon name="file-earmark" slot="image"></awc-icon>
+      <awc-icon name="file" library="system" slot="image"></awc-icon>
     </awc-file-upload-item>`,
   parameters: {
     docs: {
@@ -197,7 +197,7 @@ export const Error: Story = {
     html`<awc-file-upload-item error closable>
       filename_lorem_ipsum.jpg
       <div slot="error">File size exceeds 5MB limit</div>
-      <awc-icon name="exclamation-triangle" slot="image"></awc-icon>
+      <awc-icon name="exclamation-triangle" library="system" slot="image"></awc-icon>
     </awc-file-upload-item>`,
   parameters: {
     docs: {

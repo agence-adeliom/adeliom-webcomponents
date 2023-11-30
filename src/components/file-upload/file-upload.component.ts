@@ -47,7 +47,7 @@ import type { FileInfo } from './library.js';
  *
  * @cssproperty [--border-radius=var(--awc-border-radius-medium)] --border-radius - The border radius of the dropzone borders.
  * @cssproperty [--border-width=var(--awc-input-border-width)] --border-width - The width of the dropzone borders.
- * @cssproperty [--border-style=dashed] --border-style - The style of the dropzone borders.
+ * @cssproperty [--border-style=solid] --border-style - The style of the dropzone borders.
  * @cssproperty [--list-border-style=solid] --list-border-style - The style of the file list borders.
  */
 export default class AWCFileUpload extends AWCElement implements AWCFormControl {
@@ -276,7 +276,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
     const browseFilesButton = html`
       <div @click="${this.handleBrowseFileClick}">
         <slot name="button">
-          <awc-button part="button" variant=${this.error ? 'danger' : 'default'} ?disabled=${this.disabled}>
+          <awc-button part="button" variant=${this.error ? 'danger' : 'secondary'} ?disabled=${this.disabled}>
             ${this.buttonLabel ?? this.localize.term('browseFiles')}
           </awc-button>
         </slot>
@@ -326,16 +326,18 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
                     <div class="file-upload__label__container">
                       <slot name="image">
                         <div part="image" class="file-upload__label__container__image">
-                          <awc-icon name="cloud-upload"></awc-icon>
+                          <awc-icon name="arrow-down-to-line" library="system"></awc-icon>
                         </div>
                       </slot>
-                      <div>${this.dragDroplabel}</div>
-                      <div
-                        part="help-text"
-                        class="file-upload__help-text"
-                        aria-hidden=${hasHelpText ? 'false' : 'true'}
-                      >
-                        <slot name="help-text">${this.helpText}</slot>
+                      <div>
+                        <div>${this.dragDroplabel}</div>
+                        <div
+                          part="help-text"
+                          class="file-upload__help-text"
+                          aria-hidden=${hasHelpText ? 'false' : 'true'}
+                        >
+                          <slot name="help-text">${this.helpText}</slot>
+                        </div>
                       </div>
                       ${!this.noButton ? browseFilesButton : ''}
                     </div>
@@ -372,7 +374,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
                     >
                       ${fileInfo.file.name} ${fileInfo.error ? html`<div slot="error">${fileInfo.error}</div>` : ''}
                       <awc-icon
-                        name=${fileInfo.error ? 'exclamation-triangle' : 'file-earmark'}
+                        name=${fileInfo.error ? 'exclamation-triangle' : 'file'}
                         slot="image"
                         library="system"
                       ></awc-icon>

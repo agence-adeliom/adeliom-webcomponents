@@ -19,8 +19,8 @@ export default css`
     font-family: var(--awc-font-sans);
     font-size: var(--awc-font-size-medium);
     font-weight: var(--awc-font-weight-normal);
-    line-height: var(--awc-line-height-normal);
-    color: var(--awc-text-paragraph-color);
+    line-height: var(--awc-line-height-dense);
+    color: var(--awc-color-neutral-1000);
     margin: inherit;
   }
 
@@ -77,15 +77,18 @@ export default css`
 
   .file-upload-item__label__size {
     font-size: var(--awc-font-size-small);
-    line-height: var(--awc-line-height-dense);
+    color: var(--awc-color-neutral-700);
   }
 
   .file-upload-item__close-button {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    font-size: var(--awc-font-size-large);
-    padding-right: var(--awc-spacing-medium);
+    font-size: var(--awc-font-size-2x-large);
+    padding-right: var(--awc-spacing-large);
+  }
+  .file-upload-item__close-button awc-icon-button {
+    --awc-spacing-x-small: 0;
   }
 
   .file-upload-item .file-upload-item__label__error {
