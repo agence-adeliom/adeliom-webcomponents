@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.6](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.5...v1.6.6) (2023-11-30)
+
+
+### Bug Fixes
+
+* **file-upload:** Update UI from Figma ([10712d4](https://github.com/agence-adeliom/adeliom-webcomponents/commit/10712d4027364a9c93391484461bdf0fd79b18af))
+
 ## [1.6.5](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.4...v1.6.5) (2023-11-30)
 
 
