@@ -11,27 +11,22 @@ export default {
 export const Search1: StoryObj = {
   name: 'Search 1',
   render: () =>
-    html`<awc-drawer
-        placement="top"
-        open
-        style="--body-spacing: 0;--footer-spacing: 0;--size: 'fit-content'"
-        class="search"
-      >
+    html`<awc-drawer placement="top" open class="search-dialog">
         <!-- search - start -->
         <div class="container md:mx-auto">
           <div class="mx-4 md:mx-auto md:w-8/12  py-6 md:py-20">
             <h2
               class="pb-10 text-center text-title text-3x-large md:text-4x-large lg:text-5x-large font-semibold leading-dense"
             >
-              Je recherche ...
+              My research ...
             </h2>
             <div class="flex max-md:flex-col gap-2 md:gap-3 w-full">
               <!-- input - start -->
-              <awc-input size="large" placeholder="Ex : Exemple" class="w-full">
+              <awc-input size="large" placeholder="Ex : Example" class="w-full">
                 <awc-icon name="search" slot="suffix"></awc-icon>
               </awc-input>
               <!-- input - end -->
-              <awc-button variant="primary" size="large">Rechercher</awc-button>
+              <awc-button variant="primary" size="large">Search</awc-button>
             </div>
           </div>
         </div>
@@ -40,24 +35,21 @@ export const Search1: StoryObj = {
             <div class="mx-4 md:mx-auto md:md:w-8/12 ">
               <div class="flex max-md:flex-col gap-6">
                 <div class="w-full md:w-1/2 flex flex-col">
-                  <h3 class="text-x-large font-semibold mb-2">Besoin d'aide ?</h3>
-                  <p>
-                    Nos conseillers restent à votre écoute pour analyser vos besoins, vous accompagner et répondre à
-                    toutes vos questions.
-                  </p>
+                  <h3 class="text-x-large font-semibold mb-2">Need help?</h3>
+                  <p>Our advisors remain available to analyze your needs, support you and respond to your needs.</p>
                   <awc-button variant="primary" outline size="medium" class="md:w-fit mt-auto pt-6"
-                    >Nous contacter</awc-button
+                    >Contact us</awc-button
                   >
                 </div>
 
                 <div class="w-full md:w-1/2 flex flex-col">
-                  <h3 class="text-x-large font-semibold mb-2">Questions fréquentes</h3>
+                  <h3 class="text-x-large font-semibold mb-2">Frequently Asked Questions</h3>
 
-                  <p>Consultez notre page de FAQ pour trouver les réponses à vos questions.</p>
+                  <p>Visit our FAQ page to find answers to your questions.</p>
 
-                  <awc-button variant="primary" outline size="medium" class="md:w-fit mt-auto pt-6"
-                    >Consulter notre FAQ</awc-button
-                  >
+                  <awc-button variant="primary" outline size="medium" class="md:w-fit mt-auto pt-6">
+                    Consult our FAQ
+                  </awc-button>
                 </div>
               </div>
             </div>
@@ -66,8 +58,18 @@ export const Search1: StoryObj = {
         <!-- search - end -->
       </awc-drawer>
       <awc-button>Open search</awc-button>
+      <style>
+        .search-dialog {
+          --body-spacing: 0;
+          --footer-spacing: 0;
+          --size: 'fit-content';
+        }
+        .search-dialog::part(body) {
+          flex-shrink: 0;
+        }
+      </style>
       <script>
-        const drawer = document.querySelector('.search');
+        const drawer = document.querySelector('.search-dialog');
         const openButton = drawer.nextElementSibling;
 
         openButton.addEventListener('click', () => drawer.show());
