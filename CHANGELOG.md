@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.7](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.6...v1.6.7) (2023-12-01)
+
+
+### Bug Fixes
+
+* **icon:** Handle currentColor for spriteSheet SVG ([2502efc](https://github.com/agence-adeliom/adeliom-webcomponents/commit/2502efc92c04d7564aff713795d1d8ca5e4ff892))
+
 ## [1.6.6](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.5...v1.6.6) (2023-11-30)
 
 
