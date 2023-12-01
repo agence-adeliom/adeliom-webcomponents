@@ -81,7 +81,7 @@ If necessary, a mutator function can be used to mutate the SVG element before re
 Here's an example that registers an icon library located in the `/assets/icons` directory.
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('my-icons', {
   resolver: name => `/assets/icons/${name}.svg`,
@@ -109,7 +109,7 @@ Icons in this library are licensed under the [Creative Commons 4.0 License](http
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('boxicons', {
   resolver: name => {
@@ -135,7 +135,7 @@ Icons in this library are licensed under the [MIT License](https://github.com/lu
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('lucide', {
   resolver: name => `https://cdn.jsdelivr.net/npm/lucide-static@0.288.0/icons/${name}.svg`
@@ -155,7 +155,7 @@ Icons in this library are licensed under the [Font Awesome Free License](https:/
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('fa', {
   resolver: name => {
@@ -182,7 +182,7 @@ Icons in this library are licensed under the [MIT License](https://github.com/ta
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('heroicons', {
   resolver: name => {
@@ -207,7 +207,7 @@ Icons in this library are licensed under the [MIT License](https://github.com/lu
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('iconoir', {
   resolver: name => `https://cdn.jsdelivr.net/npm/iconoir@6.11.0/icons/${name}.svg`
@@ -227,7 +227,7 @@ Icons in this library are licensed under the [MIT License](https://github.com/io
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('ionicons', {
   resolver: name => `https://cdn.jsdelivr.net/npm/ionicons@7.2.1/dist/ionicons/svg/${name}.svg`,
@@ -253,7 +253,7 @@ Icons in this library are licensed under the [MIT License](https://github.com/mi
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('ionicons', {
   resolver: name => `https://cdn.jsdelivr.net/npm/ionicons@7.2.1/dist/ionicons/svg/${name}.svg`,
@@ -279,7 +279,7 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('material', {
   resolver: name => {
@@ -303,7 +303,7 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('remixicon', {
   resolver: name => {
@@ -328,7 +328,7 @@ Icons in this library are licensed under the [MIT License](https://github.com/ta
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('tabler', {
   resolver: name => `https://cdn.jsdelivr.net/npm/@tabler/icons@2.39.0/icons/${name}.svg`
@@ -348,7 +348,7 @@ Icons in this library are licensed under the [Apache 2.0 License](https://github
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('unicons', {
   resolver: name => {
@@ -375,7 +375,7 @@ The default icon library contains over 1,300 icons courtesy of the [Bootstrap Ic
 This example will load the same set of icons from the jsDelivr CDN instead of your local assets folder.
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('default', {
   resolver: name => `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/${name}.svg`
@@ -397,7 +397,7 @@ As always, make sure to benchmark these changes. When using HTTP/2, it may in fa
 #### Library registration
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('sprite', {
   resolver: name => `/assets/images/sprite.svg#${name}`,
@@ -417,7 +417,7 @@ The system library contains only the icons used internally by Adeliom WebCompone
 If you want to change the icons Adeliom WebComponents uses internally, you can register an icon library using the `system` name and a custom resolver. If you choose to do this, it's your responsibility to provide all of the icons that are required by components. You can reference `src/components/library.system.ts` for a complete list of system icons used by Adeliom WebComponents.
 
 ```js
-import { registerIconLibrary } from '@agence-adeliom/awc/%NPMDIR%/utilities/icon-library.js';
+import { registerIconLibrary } from '@agence-adeliom/awc';
 
 registerIconLibrary('system', {
   resolver: name => `/path/to/custom/icons/${name}.svg`

@@ -99,9 +99,24 @@ After the initial build, a browser will open automatically to a local version of
 
 ### Cloud-based Development
 
-Alternatively, you can use [Gitpod](https://www.gitpod.io/) to setup a dev environment in the cloud using only your browser.
+Alternatively, you can use [Gitpod](https://www.gitpod.io/) or [GitHub Codespace](https://github.com/codespaces) to setup a dev environment in the cloud using only your browser.
 
-[![Open in Gitpod](/assets/images/gitpod.svg)](https://gitpod.io/#https://github.com/agence-adeliom/adeliom-webcomponents)
+<div style={{ display: 'flex', gap: '0.75rem' }}>
+  <a
+    href="https://gitpod.io/#https://github.com/agence-adeliom/adeliom-webcomponents"
+    target="_blank"
+    title="Open in Gitpod"
+  >
+    <img src="https://img.shields.io/badge/Open%20in%20GitPod-000000?style=for-the-badge&logo=gitpod" />
+  </a>
+  <a
+    href="https://codespaces.new/agence-adeliom/adeliom-webcomponents"
+    target="_blank"
+    title="Open in GitHub Codespace"
+  >
+    <img src="https://img.shields.io/badge/Open%20in%20GitHub%20Codespaces-000000?style=for-the-badge&logo=github" />
+  </a>
+</div>
 
 ### Creating New Components
 
@@ -237,6 +252,7 @@ When authoring components, please try to follow the same structure and conventio
 - Lifecycle methods (`connectedCallback()`, `disconnectedCallback()`, `firstUpdated()`, etc.)
 - Private methods
 - `@watch` decorators
+- `@bound` decorators
 - Public methods
 - The `render()` method
 
