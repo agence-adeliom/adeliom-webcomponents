@@ -44,7 +44,7 @@ export default class AWCIcon extends AWCElement {
     let fileData: Response;
 
     if (library?.spriteSheet) {
-      return html`<svg part="svg">
+      return html`<svg part="svg" fill="currentColor">
         <use part="use" href="${url}"></use>
       </svg>`;
     }
