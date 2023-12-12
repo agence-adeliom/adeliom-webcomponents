@@ -1,7 +1,7 @@
 import { addons } from '@storybook/manager-api';
 import AwcTheme from './AwcTheme';
 import { STORY_CHANGED, STORY_ERRORED, STORY_MISSING } from '@storybook/core-events';
-import TagManager from 'react-gtm-module'
+import TagManager from 'react-gtm-module';
 
 declare global {
   interface Window {
@@ -10,15 +10,14 @@ declare global {
   }
 }
 
-window.STORYBOOK_GTM_ID = "GTM-P7X3V2SX"
+window.STORYBOOK_GTM_ID = 'GTM-P7X3V2SX';
 
-addons.register('adeliom/google-tag-manager', (api) => {
+addons.register('adeliom/google-tag-manager', api => {
   if (window.STORYBOOK_GTM_ID) {
     TagManager.initialize({
-      gtmId: window.STORYBOOK_GTM_ID,
-    })
+      gtmId: window.STORYBOOK_GTM_ID
+    });
   }
-
 
   api.on(STORY_CHANGED, () => {
     const { path } = api.getUrlState();
@@ -28,7 +27,7 @@ addons.register('adeliom/google-tag-manager', (api) => {
       event: 'page_view',
       page_title: `${title} - ${name}`,
       page_path: path
-    })
+    });
   });
   api.on(STORY_ERRORED, ({ description }: { description: string }) => {
     window.dataLayer = window.dataLayer || [];
@@ -36,7 +35,7 @@ addons.register('adeliom/google-tag-manager', (api) => {
       event: 'exception',
       description,
       fatal: true
-    })
+    });
   });
   api.on(STORY_MISSING, (id: string) => {
     window.dataLayer = window.dataLayer || [];
@@ -44,7 +43,7 @@ addons.register('adeliom/google-tag-manager', (api) => {
       event: 'exception',
       description: `attempted to render ${id}, but it is missing`,
       fatal: false
-    })
+    });
   });
 });
 

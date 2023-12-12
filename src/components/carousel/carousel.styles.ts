@@ -3,9 +3,37 @@ import componentStyles from '../../styles/component.styles.js';
 
 const core = css`
   :host {
-    --slide-gap: var(--awc-spacing-medium, 1rem);
     --aspect-ratio: 16 / 9;
-    --scroll-hint: 0px;
+
+    --preloader-color: var(--awc-color-primary-600);
+
+    --navigation-top-offset: 50%;
+    --navigation-size: 40px;
+    --navigation-background: var(--awc-color-neutral-0);
+    --navigation-color: var(--awc-color-primary-600);
+    --navigation-disabled-opacity: 0.35;
+    --navigation-sides-offset: 10px;
+
+    --pagination-top: auto;
+    --pagination-left: auto;
+    --pagination-bottom: 8px;
+    --pagination-right: 8px;
+    --pagination-bullet-size: 10px;
+    --pagination-bullet-border-radius: 50%;
+    --pagination-bullet-opacity: 1;
+    --pagination-color: var(--awc-color-primary-600);
+    --pagination-bullet-inactive-opacity: 0.5;
+    --pagination-bullet-inactive-color: var(--awc-color-neutral-200);
+    --pagination-bullet-horizontal-gap: 4px;
+    --pagination-bullet-vertical-gap: 6px;
+    --pagination-fraction-color: inherit;
+    --pagination-progressbar-bg-color: var(--awc-color-neutral-200);
+    --pagination-progressbar-size: 4px;
+
+    --centered-offset-before: 0;
+    --centered-offset-after: 0;
+
+    --wrapper-transition-timing-function: ease;
 
     position: relative;
     display: block;
@@ -37,7 +65,7 @@ const core = css`
     z-index: 1;
     display: flex;
     transition-property: transform;
-    transition-timing-function: var(--wrapper-transition-timing-function, initial);
+    transition-timing-function: var(--wrapper-transition-timing-function);
     box-sizing: content-box;
   }
 
@@ -204,7 +232,7 @@ const core = css`
     z-index: 10;
     transform-origin: 50%;
     box-sizing: border-box;
-    border: 4px solid var(--preloader-color, var(--awc-color-primary-600));
+    border: 4px solid var(--preloader-color);
     border-radius: 50%;
     border-top-color: transparent;
   }
@@ -238,10 +266,10 @@ const navigation = css`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--navigation-background, var(--awc-color-neutral-0));
-    border: 1px solid var(--navigation-color, var(--awc-color-primary-600));
+    background: var(--navigation-background);
+    border: 1px solid var(--navigation-color);
     border-radius: var(--awc-border-radius-none);
-    color: var(--navigation-color, var(--awc-color-primary-600));
+    color: var(--navigation-color);
 
     font-size: inherit;
     padding: var(--awc-spacing-x-small);
@@ -250,8 +278,8 @@ const navigation = css`
     appearance: none;
 
     position: absolute;
-    top: var(--navigation-top-offset, 50%);
-    width: calc(var(--navigation-size) / 44 * 27);
+    top: var(--navigation-top-offset);
+    width: var(--navigation-size);
     height: var(--navigation-size);
     transform: translate3d(0, -50%, 0);
     z-index: 10;
@@ -259,7 +287,7 @@ const navigation = css`
 
   .navigation-button--previous.navigation-button--disabled,
   .navigation-button--next.navigation-button--disabled {
-    opacity: var(--navigation-disabled-opacity, 0.35);
+    opacity: var(--navigation-disabled-opacity);
     cursor: auto;
     pointer-events: none;
   }
@@ -287,13 +315,13 @@ const navigation = css`
 
   .navigation-button--previous,
   .carousel--rtl .navigation-button--next {
-    left: var(--navigation-sides-offset, 10px);
+    left: var(--navigation-sides-offset);
     right: auto;
   }
 
   .navigation-button--next,
   .carousel--rtl .navigation-button--previous {
-    right: var(--navigation-sides-offset, 10px);
+    right: var(--navigation-sides-offset);
     left: auto;
   }
 
@@ -313,7 +341,7 @@ const navigation = css`
 
   .navigation-button--next,
   .carousel--rtl .navigation-button--previous {
-    right: var(--navigation-sides-offset, 10px);
+    right: var(--navigation-sides-offset);
     left: auto;
   }
 
@@ -340,8 +368,8 @@ const pagination = css`
   .carousel__pagination-custom,
   .carousel__pagination--horizontal > .carousel__pagination-bullets,
   .carousel__pagination-bullets.carousel__pagination--horizontal {
-    bottom: var(--pagination-bottom, 8px);
-    top: var(--pagination-top, auto);
+    bottom: var(--pagination-bottom);
+    top: var(--pagination-top);
     left: 0;
     width: 100%;
   }
@@ -375,12 +403,12 @@ const pagination = css`
   }
 
   .pagination-item {
-    width: var(--pagination-bullet-width, var(--pagination-bullet-size, 10px));
-    height: var(--pagination-bullet-height, var(--pagination-bullet-size, 10px));
+    width: var(--pagination-bullet-width, var(--pagination-bullet-size));
+    height: var(--pagination-bullet-height, var(--pagination-bullet-size));
     display: inline-block;
-    border-radius: var(--pagination-bullet-border-radius, 50%);
-    background: var(--pagination-bullet-inactive-color, var(--awc-color-neutral-200));
-    opacity: var(--pagination-bullet-inactive-opacity, 0.5);
+    border-radius: var(--pagination-bullet-border-radius);
+    background: var(--pagination-bullet-inactive-color);
+    opacity: var(--pagination-bullet-inactive-opacity);
   }
   button.pagination-item {
     border: none;
@@ -398,8 +426,8 @@ const pagination = css`
   }
 
   .pagination-item--active {
-    opacity: var(--pagination-bullet-opacity, 1);
-    background: var(--pagination-color, var(--awc-color-primary-600));
+    opacity: var(--pagination-bullet-opacity);
+    background: var(--pagination-color);
   }
 
   .carousel__pagination--vertical {
@@ -407,14 +435,14 @@ const pagination = css`
   }
   .carousel--vertical > .carousel__pagination-bullets,
   .carousel__pagination--vertical.carousel__pagination-bullets {
-    right: var(--pagination-right, 8px);
-    left: var(--pagination-left, auto);
+    right: var(--pagination-right);
+    left: var(--pagination-left);
     top: 50%;
     transform: translate3d(0px, -50%, 0);
   }
   .carousel--vertical > .carousel__pagination-bullets .pagination-item,
   .carousel__pagination--vertical.carousel__pagination-bullets .pagination-item {
-    margin: var(--pagination-bullet-vertical-gap, 6px) 0;
+    margin: var(--pagination-bullet-vertical-gap) 0;
     display: block;
   }
   .carousel--vertical > .carousel__pagination-bullets.carousel__pagination-bullets-dynamic,
@@ -433,7 +461,7 @@ const pagination = css`
 
   .carousel__pagination--horizontal > .carousel__pagination-bullets .pagination-item,
   .carousel__pagination--horizontal.carousel__pagination-bullets .pagination-item {
-    margin: 0 var(--pagination-bullet-horizontal-gap, 4px);
+    margin: 0 var(--pagination-bullet-horizontal-gap);
   }
   .carousel__pagination--horizontal > .carousel__pagination-bullets.carousel__pagination-bullets-dynamic,
   .carousel__pagination--horizontal.carousel__pagination-bullets.carousel__pagination-bullets-dynamic {
@@ -458,16 +486,16 @@ const pagination = css`
 
   /* Fraction */
   .carousel__pagination-fraction {
-    color: var(--pagination-fraction-color, inherit);
+    color: var(--pagination-fraction-color);
   }
 
   /* Progress */
   .carousel__pagination-progressbar {
-    background: var(--pagination-progressbar-bg-color, rgba(0, 0, 0, 0.25));
+    background: var(--pagination-progressbar-bg-color);
     position: absolute;
   }
   .carousel__pagination-progressbar .carousel__progressbar--fill {
-    background: var(--pagination-color, var(--awc-color-primary-600));
+    background: var(--pagination-color);
     position: absolute;
     left: 0;
     top: 0;
@@ -484,7 +512,7 @@ const pagination = css`
   .carousel--vertical + .carousel__pagination-progressbar.carousel__progressbar--opposite,
   .carousel__pagination-progressbar.carousel__pagination--vertical.carousel__progressbar--opposite {
     width: 100%;
-    height: var(--pagination-progressbar-size, 4px);
+    height: var(--pagination-progressbar-size);
     left: 0;
     top: 0;
   }
@@ -492,7 +520,7 @@ const pagination = css`
   .carousel__pagination-progressbar.carousel__pagination--vertical,
   .carousel__pagination--horizontal > .carousel__pagination-progressbar.carousel__progressbar--opposite,
   .carousel__pagination-progressbar.carousel__pagination--horizontal.carousel__progressbar--opposite {
-    width: var(--pagination-progressbar-size, 4px);
+    width: var(--pagination-progressbar-size);
     height: 100%;
     left: 0;
     top: 0;
