@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-window.STORYBOOK_GTM_ID = 'GTM-P7X3V2SX';
+window.STORYBOOK_GTM_ID = 'GTM-KS4LWDSQ';
 
 addons.register('adeliom/google-tag-manager', api => {
   if (window.STORYBOOK_GTM_ID) {
