@@ -630,7 +630,7 @@ export const FreeMode: Story = {
     docs: {
       description: {
         story:
-          'Use the `--scroll-hint` custom property to add inline padding in horizontal carousels and block padding in vertical carousels. This will make the closest slides slightly visible, hinting that there are more items in the carousel.'
+          'Set `free-mode` to `true` to enable free mode. See [free mode](https://swiperjs.com/free-mode` '
       }
     }
   }
@@ -683,7 +683,7 @@ export const ScrollHint: Story = {
     docs: {
       description: {
         story:
-          'Use the `--scroll-hint` custom property to add inline padding in horizontal carousels and block padding in vertical carousels. This will make the closest slides slightly visible, hinting that there are more items in the carousel.'
+          'Making the overflow visible will make the closest slides slightly visible, hinting that there are more items in the carousel.'
       }
     }
   }

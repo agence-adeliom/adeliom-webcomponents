@@ -37,9 +37,33 @@ import type { CSSResultGroup } from 'lit';
  * @csspart navigation-button--previous - Applied to the previous button.
  * @csspart navigation-button--next - Applied to the next button.
  *
- * @cssproperty --slide-gap - The space between each slide.
  * @cssproperty [--aspect-ratio=16/9] - The aspect ratio of each slide.
- * @cssproperty --scroll-hint - The amount of padding to apply to the scroll area, allowing adjacent slides to become partially visible as a scroll hint.
+ * 
+ * @cssproperty [--preloader-color=var(--awc-color-primary-600)] - The color of the lazy preloader.
+ * 
+ * @cssproperty [--navigation-top-offset=50%] - The top offset of the navigation.
+ * @cssproperty [--navigation-size=40px] - The size of the navigation.
+ * @cssproperty [--navigation-background=var(--awc-color-neutral-0)] - The background color of the navigation.
+ * @cssproperty [--navigation-color=var(--awc-color-primary-600)] - The color of the navigation.
+ * @cssproperty [--navigation-disabled-opacity=0.35] - The opacity of the disabled navigation.
+ * @cssproperty [--navigation-sides-offset=10px] - The sides offset of the navigation.
+ * 
+ * @cssproperty [--pagination-top=auto] - Top position of the pagination (Horizontal mode).
+ * @cssproperty [--pagination-bottom=8px] - Bottom position of the pagination (Horizontal mode).
+ * @cssproperty [--pagination-left=auto] - Left position of the pagination (Vertical mode).
+ * @cssproperty [--pagination-right=8px] - Right position of the pagination (Vertical mode).
+ * @cssproperty [--pagination-bullet-size=10px] - The size of the pagination bullet.
+ * @cssproperty [--pagination-bullet-border-radius=50%] - The border radius of the pagination bullet.
+ * @cssproperty [--pagination-bullet-opacity=1] - The opacity of the pagination bullet.
+ * @cssproperty [--pagination-color=var(--awc-color-primary-600)] - The color of the pagination bullet.
+ * @cssproperty [--pagination-bullet-inactive-opacity=0.5] - The opacity of the pagination bullet when inactive.
+ * @cssproperty [--pagination-bullet-inactive-color=var(--awc-color-neutral-200)] - The color of the pagination bullet when inactive.
+ * @cssproperty [--pagination-bullet-horizontal-gap=4px] - The horizontal gap between the pagination bullet.
+ * @cssproperty [--pagination-bullet-vertical-gap=6px] - The vertical gap between the pagination bullet.
+ * @cssproperty [--pagination-fraction-color=inherit] - The color of the pagination fraction.
+ * @cssproperty [--pagination-progressbar-bg-color=var(--awc-color-neutral-200)] - The background color of the pagination progressbar.
+ * @cssproperty [--pagination-progressbar-size=4px] - The size of the pagination progressbar.
+ * @cssproperty [--wrapper-transition-timing-function=ease] - The transition timing function of the wrapper.
  */
 export default class AWCCarousel extends AWCElement {
   static styles: CSSResultGroup = styles;
