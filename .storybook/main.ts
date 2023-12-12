@@ -47,7 +47,6 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-links',
-    '@storybook/addon-links',
     '@storybook/addon-actions',
     '@storybook/addon-viewport',
     {
@@ -81,6 +80,7 @@ const config: StorybookConfig = {
     '@storybook/addon-outline',
     '@storybook/addon-interactions',
     '@storybook/addon-styling',
+    'adeliom/google-tag-manager',
     './wc-helper/code/manager.ts'
   ],
   framework: {
