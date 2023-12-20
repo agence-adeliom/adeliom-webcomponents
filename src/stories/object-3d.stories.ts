@@ -12,7 +12,7 @@ export const Object3d: StoryObj = {
   name: 'Basic usage',
   render: () => html`
     <model-viewer
-      alt="Ceci est une voiture"
+      alt="This is my car."
       src="/assets/images/object-3d/car.glb"
       shadow-intensity="1"
       loading="eager"
@@ -37,7 +37,7 @@ export const Object3d2: StoryObj = {
   name: 'With SkyBox image',
   render: () => html`
     <model-viewer
-      alt="Ceci est une voiture"
+      alt="This is my car."
       src="/assets/images/object-3d/car.glb"
       skybox-image="/assets/images/object-3d/sunrise.hdr"
       shadow-intensity="1"
@@ -63,7 +63,7 @@ export const Object3d3: StoryObj = {
   name: 'With environment image',
   render: () => html`
     <model-viewer
-      alt="Ceci est une voiture"
+      alt="This is my car."
       src="/assets/images/object-3d/car.glb"
       environment-image="/assets/images/object-3d/environment.hdr"
       shadow-intensity="1"
@@ -89,7 +89,7 @@ export const Object3d4: StoryObj = {
   name: 'With hotspots',
   render: () => html`
     <model-viewer
-      alt="Ceci est une voiture"
+      alt="This is my car."
       src="/assets/images/object-3d/car.glb"
       environment-image="/assets/images/object-3d/environment.hdr"
       shadow-intensity="1"
@@ -98,7 +98,7 @@ export const Object3d4: StoryObj = {
       touch-action="pan-y"
     >
       <button class="hotspot" slot="hotspot-visor" data-position="1 0.85 -0.50" data-normal="1 0.85 -0.50">
-        <div class="annotation">Ceci est un magnifique rétroviseur.</div>
+        <div class="annotation">Right mirror</div>
       </button>
     </model-viewer>
 
@@ -150,7 +150,8 @@ export const Object3d5: StoryObj = {
   name: 'With camera views',
   render: () => html`
     <model-viewer
-      alt="Ceci est une voiture"
+      class="view-button-story"
+      alt="This is a car"
       src="/assets/images/object-3d/car.glb"
       environment-image="/assets/images/object-3d/environment.hdr"
       shadow-intensity="1"
@@ -171,7 +172,7 @@ export const Object3d5: StoryObj = {
         data-orbit="70.94862deg 70.56856deg 0.16545582m"
         data-target="1 0.85 -0.50"
       >
-        La fenêtre
+        Right window
       </button>
     </model-viewer>
 
@@ -208,7 +209,7 @@ export const Object3d5: StoryObj = {
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
 
     <script type="module">
-      const modelViewer2 = document.querySelector('model-viewer');
+      const modelViewer2 = document.querySelector('model-viewer.view-button-story');
       const annotationClicked = annotation => {
         let dataset = annotation.dataset;
         modelViewer2.cameraTarget = dataset.target;

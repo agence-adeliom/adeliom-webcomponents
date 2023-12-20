@@ -204,7 +204,8 @@ export default class AWCFileUploadItem extends AWCElement {
                   <awc-icon-button
                     part="close-button"
                     exportparts="base:close-button__base"
-                    name="x-lg"
+                    name="xmark"
+                    library="system"
                   ></awc-icon-button>
                 </slot>
               </span>

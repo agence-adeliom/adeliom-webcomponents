@@ -44,7 +44,7 @@ export default class AWCIcon extends AWCElement {
     let fileData: Response;
 
     if (library?.spriteSheet) {
-      return html`<svg part="svg">
+      return html`<svg part="svg" fill="currentColor">
         <use part="use" href="${url}"></use>
       </svg>`;
     }
@@ -96,22 +96,21 @@ export default class AWCIcon extends AWCElement {
   /** The name of a registered custom icon library. */
   @property({ reflect: true }) library = 'default';
 
-  /** Whether the icon should be lazily loaded. */
-  @property({ type: Boolean, reflect: true }) lazy: boolean = true;
+  /** How the icon should be loaded. */
+  @property({ type: String, reflect: true }) loading: 'eager' | 'lazy' = 'eager';
 
   connectedCallback() {
     super.connectedCallback();
     watchIcon(this);
-
-    if (this.lazy) {
-      this.intersectionObserver = new IntersectionObserver(this.setIcon, { rootMargin: '375px' });
-      this.intersectionObserver.observe(this);
-    }
   }
 
   firstUpdated() {
     this.initialRender = true;
-    if (!this.lazy) {
+
+    if ('lazy' === this.loading) {
+      this.intersectionObserver = new IntersectionObserver(this.setIcon, { rootMargin: '375px' });
+      this.intersectionObserver.observe(this);
+    } else {
       this.setIcon();
     }
   }
@@ -153,8 +152,10 @@ export default class AWCIcon extends AWCElement {
   }
 
   @bound
-  @watch(['name', 'src', 'library'], { waitUntilFirstUpdate: true })
+  @watch(['name', 'src', 'library'])
   async setIcon(records?: IntersectionObserverEntry[]) {
+    if ('lazy' === this.loading && !records) return;
+
     if (
       records &&
       !records.some(

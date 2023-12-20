@@ -7,19 +7,21 @@ export default css`
   :host {
     --border-radius: var(--awc-border-radius-medium);
     --border-width: var(--awc-input-border-width);
-    --border-style: dashed;
+    --border-style: solid;
     --list-border-style: solid;
-
     display: block;
   }
 
   .file-upload__label {
+    background-color: var(--awc-background-color);
     padding: var(--awc-spacing-3x-large);
     border-width: var(--border-width);
     border-style: var(--border-style);
     border-color: var(--awc-color-neutral-300);
     border-radius: var(--border-radius);
     color: var(--awc-text-paragraph-color);
+    line-height: var(--awc-line-height-dense);
+    text-align: center;
   }
 
   .file-upload__label.file-upload__label--has-file {
@@ -31,7 +33,6 @@ export default css`
     flex-direction: column;
     align-items: center;
     gap: var(--awc-spacing-medium);
-    text-align: center;
   }
 
   .file-upload--dragged:not(.file-upload--disabled) .file-upload__label {
@@ -40,7 +41,7 @@ export default css`
   }
 
   .file-upload__label__container__image {
-    font-size: var(--awc-font-size-5x-large);
+    font-size: 2rem;
     color: var(--awc-color-primary-600);
   }
 
@@ -60,6 +61,7 @@ export default css`
   .file-upload__file-items {
     display: flex;
     flex-direction: column;
+    background-color: var(--awc-background-color);
     gap: var(--awc-spacing-small);
     margin-top: calc(var(--border-width) * -1);
     padding: var(--awc-spacing-large);
@@ -87,7 +89,8 @@ export default css`
 
   .file-upload__file-items .file-upload__file-items__header {
     font-size: var(--awc-font-size-small);
-    color: var(--awc-text-paragraph-color);
+    line-height: var(--awc-line-height-dense);
+    color: var(--awc-text-title-color);
   }
 
   .file-upload--error .file-upload__label {
@@ -106,9 +109,9 @@ export default css`
 
   .file-upload--has-help-text .file-upload__help-text {
     display: block;
-    color: var(--awc-input-help-text-color);
-    margin-top: var(--awc-spacing-3x-small);
-    font-size: var(--awc-input-help-text-font-size-medium);
+    color: var(--awc-color-neutral-600);
+    margin-top: var(--awc-spacing-x-small);
+    font-size: var(--awc-font-size-small);
   }
 
   .file-upload--button-only.file-upload--has-help-text .file-upload__help-text {

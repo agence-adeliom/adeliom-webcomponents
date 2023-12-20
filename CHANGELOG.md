@@ -1,5 +1,54 @@
 # Changelog
 
+## [1.6.7](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.6...v1.6.7) (2023-12-01)
+
+
+### Bug Fixes
+
+* **icon:** Handle currentColor for spriteSheet SVG ([2502efc](https://github.com/agence-adeliom/adeliom-webcomponents/commit/2502efc92c04d7564aff713795d1d8ca5e4ff892))
+
+## [1.6.6](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.5...v1.6.6) (2023-11-30)
+
+
+### Bug Fixes
+
+* **file-upload:** Update UI from Figma ([10712d4](https://github.com/agence-adeliom/adeliom-webcomponents/commit/10712d4027364a9c93391484461bdf0fd79b18af))
+
+## [1.6.5](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.4...v1.6.5) (2023-11-30)
+
+
+### Bug Fixes
+
+* **Icon:** handle incorrect loading attribute ([3f996a0](https://github.com/agence-adeliom/adeliom-webcomponents/commit/3f996a0e33b3af4e4f6aef3da682f819a7f98e60))
+
+## [1.6.4](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.3...v1.6.4) (2023-11-29)
+
+
+### Bug Fixes
+
+* Github workflow ([9452092](https://github.com/agence-adeliom/adeliom-webcomponents/commit/945209293e4ba24a3fb0a13bfe8f4b0a785b7787))
+
+## [1.6.3](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.2...v1.6.3) (2023-11-29)
+
+
+### Bug Fixes
+
+* Docker workflow ([18ed935](https://github.com/agence-adeliom/adeliom-webcomponents/commit/18ed93547e572f27714ec286ff0950a6a0988b17))
+
+## [1.6.2](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.1...v1.6.2) (2023-11-29)
+
+
+### Bug Fixes
+
+* Helm deployment ([cfdef92](https://github.com/agence-adeliom/adeliom-webcomponents/commit/cfdef920ed533036411fe9fadb12962eb929188c))
+
+## [1.6.1](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.0...v1.6.1) (2023-11-29)
+
+
+### Bug Fixes
+
+* update storybook ([#42](https://github.com/agence-adeliom/adeliom-webcomponents/issues/42)) ([e00998a](https://github.com/agence-adeliom/adeliom-webcomponents/commit/e00998a8af1750610e24e42fb551ee9e115846b4))
+
 ## [1.6.0](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.5.8...v1.6.0) (2023-11-28)
 
 

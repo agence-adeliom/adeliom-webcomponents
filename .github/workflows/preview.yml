@@ -1,18 +1,19 @@
 name: Pull Request Preview
 on:
   pull_request:
-    branches-ignore:
-      - dependabot/*
     types: 
       - opened
-      - synchronize
+      - synchronize 
       - reopened
       - closed
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
 
 jobs:
   storybook:
     name: Storybook
-    if: ${{ github.event.pull_request.state == 'open' }}
+    if: ${{ github.event.pull_request.state == 'open' && github.actor != 'dependabot[bot]' }}
     uses: ./.github/workflows/storybook.yml
     secrets: inherit
 
@@ -35,7 +36,7 @@ jobs:
   cleanup:
     name: Cleanup
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.state == 'closed' }}
+    if: ${{ github.event.pull_request.state == 'closed' && github.actor != 'dependabot[bot]' }}
     continue-on-error: true
     steps:
       - name: Setup Helm

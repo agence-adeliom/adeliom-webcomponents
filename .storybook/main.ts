@@ -3,7 +3,6 @@ import * as path from 'path';
 import constant from './constant';
 import { visit } from 'unist-util-visit';
 import escapeStringRegexp from 'escape-string-regexp';
-import remarkGfm from 'remark-gfm';
 
 const interpolateVariable = ({ replacements = {}, prefix = '%', suffix = '%' }) => {
   return (tree, file) => {
@@ -48,7 +47,6 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-links',
-    '@storybook/addon-links',
     '@storybook/addon-actions',
     '@storybook/addon-viewport',
     {
@@ -82,6 +80,7 @@ const config: StorybookConfig = {
     '@storybook/addon-outline',
     '@storybook/addon-interactions',
     '@storybook/addon-styling',
+    'adeliom/google-tag-manager',
     './wc-helper/code/manager.ts'
   ],
   framework: {

@@ -147,7 +147,8 @@ export const CustomizingImage: Story = {
   },
   args: {
     multiple: true,
-    'image-slot': '<awc-qr-code slot="image" value="https://example.com/"></awc-qr-code>'
+    'image-slot':
+      '<awc-qr-code slot="image" value="https://example.com/" background="transparent" fill="#8184F8" radius="1"></awc-qr-code>'
   }
 };
 
