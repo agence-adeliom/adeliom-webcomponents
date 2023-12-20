@@ -27,7 +27,14 @@ type Story = StoryObj<AWCLottie & typeof args>;
 export const Default: Story = {
   name: 'Default',
   render: () => html`
-    <awc-lottie class="w-fit h-fit mx-auto" autoplay controls loop mode="normal" src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json">
+    <awc-lottie
+      class="w-fit h-fit mx-auto"
+      autoplay
+      controls
+      loop
+      mode="normal"
+      src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json"
+    >
     </awc-lottie>
   `
 };
@@ -45,37 +52,37 @@ export const Interesct: Story = {
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const animations = document.querySelectorAll('awc-lottie')
+      document.addEventListener('DOMContentLoaded', () => {
+        const animations = document.querySelectorAll('awc-lottie');
         const options = {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.5,
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.5
         };
 
-        const animationsObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const target = entry.target
-                    const anim = target.getLottie()
-                    if (anim && anim.isLoaded) {
-                        target.play()
-                        const totalFrames = anim.totalFrames;
-                        const frameToStop = totalFrames - 2;
-                        anim.addEventListener('complete', () => {
-                            target.seek(frameToStop)
-                        });
-                    }
-                }
-            });
+        const animationsObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const target = entry.target;
+              const anim = target.getLottie();
+              if (anim && anim.isLoaded) {
+                target.play();
+                const totalFrames = anim.totalFrames;
+                const frameToStop = totalFrames - 2;
+                anim.addEventListener('complete', () => {
+                  target.seek(frameToStop);
+                });
+              }
+            }
+          });
         }, options);
 
-        animations.forEach((section) => {
+        animations.forEach(section => {
           section.addEventListener('ready', () => {
-              animationsObserver.observe(section);
-          })
-        })
-      })
+            animationsObserver.observe(section);
+          });
+        });
+      });
     </script>
   `
 };
