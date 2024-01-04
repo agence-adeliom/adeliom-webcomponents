@@ -108,7 +108,7 @@ export default class AWCIcon extends AWCElement {
     this.initialRender = true;
 
     if ('lazy' === this.loading) {
-      this.intersectionObserver = new IntersectionObserver(this.setIcon, { rootMargin: '375px' });
+      this.intersectionObserver = new IntersectionObserver(this.loadIcon, { rootMargin: '375px' });
       this.intersectionObserver.observe(this);
     } else {
       this.setIcon();
@@ -152,8 +152,7 @@ export default class AWCIcon extends AWCElement {
   }
 
   @bound
-  @watch(['name', 'src', 'library'])
-  async setIcon(records?: IntersectionObserverEntry[]) {
+  async loadIcon(records?: IntersectionObserverEntry[]) {
     if ('lazy' === this.loading && !records) return;
 
     if (
@@ -168,6 +167,12 @@ export default class AWCIcon extends AWCElement {
 
     this.intersectionObserver?.disconnect();
 
+    await this.setIcon();
+  }
+
+  @bound
+  @watch(['name', 'src', 'library'])
+  async setIcon() {
     const { url, fromLibrary } = this.getIconSource();
     const library = fromLibrary ? getIconLibrary(this.library) : undefined;
 
