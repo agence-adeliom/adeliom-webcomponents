@@ -147,8 +147,10 @@ export default {
 
             if (classDoc?.events) {
               classDoc.events.forEach(event => {
-                event.reactName = `on${pascalCase(event.name)}`;
-                event.eventName = `${pascalCase(event.name).replace('Awc', 'AWC')}Event`;
+                if (event?.name) {
+                  event.reactName = `on${pascalCase(event.name)}`;
+                  event.eventName = `${pascalCase(event.name).replace('Awc', 'AWC')}Event`;
+                }
               });
             }
           }

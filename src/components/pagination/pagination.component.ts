@@ -18,6 +18,7 @@ import type { CSSResultGroup } from 'lit';
 
 export default class AWCPagination extends AWCElement {
   static styles: CSSResultGroup = styles;
+
   private readonly localize = new LocalizeController(this);
 
   /** The state for calculate the render of pagination numbers. */
