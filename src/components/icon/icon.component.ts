@@ -6,6 +6,7 @@ import { property, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './icon.styles.js';
+
 import type { CSSResultGroup, HTMLTemplateResult } from 'lit';
 
 const CACHEABLE_ERROR = Symbol();

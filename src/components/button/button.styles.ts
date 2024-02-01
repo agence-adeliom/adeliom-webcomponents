@@ -23,6 +23,7 @@ export default css`
     font-weight: var(--awc-font-weight-semibold);
     text-decoration: none;
     user-select: none;
+    -webkit-user-select: none;
     white-space: nowrap;
     vertical-align: middle;
     padding: 0;
@@ -797,7 +798,7 @@ export default css`
 
   /**
    * Disabled buttons
-   * 
+   *
    */
 
   .button--disabled {

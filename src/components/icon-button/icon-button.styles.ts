@@ -30,7 +30,7 @@ export default css`
   }
 
   .icon-button:active:not(.icon-button--disabled) {
-    color: var(--awc-color-primary-700);
+    color: var(--awc-color-primary-800);
   }
 
   .icon-button:focus {

@@ -72,7 +72,7 @@ export default css`
   .textarea--filled {
     border: none;
     background-color: var(--awc-input-filled-background-color);
-    color: var(--awc-input-color);
+    color: var(--awc-input-color-base);
   }
 
   .textarea--filled:hover:not(.textarea--disabled) {
@@ -97,7 +97,7 @@ export default css`
     font-size: inherit;
     font-weight: inherit;
     line-height: 1.4;
-    color: var(--awc-input-color);
+    color: var(--awc-input-color-base);
     border: none;
     background: none;
     box-shadow: none;

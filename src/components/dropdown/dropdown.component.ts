@@ -48,6 +48,7 @@ export default class AWCDropdown extends AWCElement {
   @query('.dropdown__panel') panel: HTMLSlotElement;
 
   private readonly localize = new LocalizeController(this);
+  private closeWatcher: CloseWatcher | null;
 
   /**
    * Indicates whether or not the dropdown is open. You can toggle this attribute to show and hide the dropdown, or you
@@ -149,7 +150,7 @@ export default class AWCDropdown extends AWCElement {
 
   private handleDocumentKeyDown = (event: KeyboardEvent) => {
     // Close when escape or tab is pressed
-    if (event.key === 'Escape' && this.open) {
+    if (event.key === 'Escape' && this.open && !this.closeWatcher) {
       event.stopPropagation();
       this.focusOnTrigger();
       this.hide();
@@ -334,7 +335,16 @@ export default class AWCDropdown extends AWCElement {
 
   addOpenListeners() {
     this.panel.addEventListener('awc-select', this.handlePanelSelect);
-    this.panel.addEventListener('keydown', this.handleKeyDown);
+    if ('CloseWatcher' in window) {
+      this.closeWatcher?.destroy();
+      this.closeWatcher = new CloseWatcher();
+      this.closeWatcher.onclose = () => {
+        this.hide();
+        this.focusOnTrigger();
+      };
+    } else {
+      this.panel.addEventListener('keydown', this.handleKeyDown);
+    }
     document.addEventListener('keydown', this.handleDocumentKeyDown);
     document.addEventListener('mousedown', this.handleDocumentMouseDown);
   }
@@ -346,6 +356,7 @@ export default class AWCDropdown extends AWCElement {
     }
     document.removeEventListener('keydown', this.handleDocumentKeyDown);
     document.removeEventListener('mousedown', this.handleDocumentMouseDown);
+    this.closeWatcher?.destroy();
   }
 
   @watch('open', { waitUntilFirstUpdate: true })

@@ -218,7 +218,7 @@ export default class AWCRadioGroup extends AWCElement implements AWCFormControl 
 
     this.hasButtonGroup = radios.some(radio => radio.tagName.toLowerCase() === 'awc-radio-button');
 
-    if (!radios.some(radio => radio.checked)) {
+    if (radios.length > 0 && !radios.some(radio => radio.checked)) {
       if (this.hasButtonGroup) {
         const buttonRadio = radios[0].shadowRoot?.querySelector('button');
 
@@ -327,7 +327,6 @@ export default class AWCRadioGroup extends AWCElement implements AWCFormControl 
     const hasHelpTextSlot = this.hasSlotController.test('help-text');
     const hasLabel = this.label ? true : !!hasLabelSlot;
     const hasHelpText = this.helpText ? true : !!hasHelpTextSlot;
-
     const defaultSlot = html`
       <slot @slotchange=${this.syncRadios} @click=${this.handleRadioClick} @keydown=${this.handleKeyDown}></slot>
     `;

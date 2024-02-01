@@ -6,10 +6,11 @@
 cspell.json
 dist
 storybook-static
+src/components/icon/icons
 src/react/index.ts
-node_modules
 node_modules
 package.json
 package-lock.json
 tsconfig.json
+cdn
 CHANGELOG.md

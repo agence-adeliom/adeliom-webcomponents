@@ -155,9 +155,3 @@ export default class AWCMenu extends AWCElement {
     `;
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'awc-menu': AWCMenu;
-  }
-}

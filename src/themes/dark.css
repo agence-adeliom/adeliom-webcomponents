@@ -88,6 +88,9 @@
   --awc-color-tertiary-400: rgb(70, 73, 229);
   --awc-line-height-denser: 100%;
   --awc-input-required-content: '*';
+  --awc-input-required-content-offset: -2px;
+  --awc-input-required-content-color: var(--awc-input-label-color);
+  --awc-focus-ring: var(--awc-focus-ring-style) var(--awc-focus-ring-width) var(--awc-focus-ring-color);
   --awc-line-height-looser: 260%;
   --awc-color-success-800: rgb(187, 247, 209);
   --awc-z-index-toast: 950;
@@ -190,6 +193,9 @@
   --awc-button-icon-background-color-hover: var(--awc-color-neutral-0);
   --awc-button-icon-background-color-disabled: var(--awc-color-neutral-0);
   --awc-input-background-color: var(--awc-color-neutral-0);
+  --awc-input-background-color-hover: var(--awc-input-background-color);
+  --awc-input-background-color-focus: var(--awc-input-background-color);
+  --awc-input-background-color-disabled: var(--awc-color-neutral-100);
   --awc-tooltip-font-size: var(--awc-font-size-small);
   --awc-color-neutral-100: var(--awc-color-gray-900);
   --awc-button-icon-color-default: var(--awc-color-primary-600);
@@ -261,6 +267,7 @@
   --awc-button-primary-background-color-disabled: var(--awc-color-neutral-300);
   --awc-input-help-text-color: var(--awc-color-neutral-500);
   --awc-input-placeholder-color: var(--awc-color-neutral-500);
+  --awc-input-placeholder-color-disabled: var(--awc-color-neutral-600);
   --awc-card-border-color: var(--awc-color-neutral-200);
   --awc-text-paragraph-color: var(--awc-color-neutral-800);
   --awc-input-color-focus: var(--awc-color-neutral-700);
@@ -269,11 +276,16 @@
   --awc-button-text-icon-disabled: var(--awc-color-neutral-300);
   --awc-input-filled-color: var(--awc-color-neutral-800);
   --awc-input-filled-background-color: var(--awc-color-neutral-100);
+  --awc-input-filled-background-color-hover: var(--awc-color-neutral-100);
+  --awc-input-filled-background-color-focus: var(--awc-color-neutral-100);
+  --awc-input-filled-background-color-disabled: var(--awc-color-neutral-100);
   --awc-button-text-color-disabled: var(--awc-color-neutral-300);
   --awc-button-tertiary-background-color-disabled: var(--awc-color-neutral-300);
   --awc-tooltip-background-color: var(--awc-color-neutral-800);
   --awc-input-color-disabled: var(--awc-color-neutral-900);
   --awc-input-icon-color: var(--awc-color-neutral-500);
+  --awc-input-icon-color-hover: var(--awc-color-neutral-600);
+  --awc-input-icon-color-focus: var(--awc-color-neutral-600);
   --awc-input-color-base: var(--awc-color-neutral-700);
   --awc-panel-border-color: var(--awc-color-neutral-200);
   --awc-button-secondary-color-disabled: var(--awc-color-neutral-300);

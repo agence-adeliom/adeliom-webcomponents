@@ -5,13 +5,11 @@
   "homepage": "https://github.com/agence-adeliom/adeliom-webcomponents",
   "author": "Agence Adeliom",
   "license": "MIT",
-  "customElements": "./dist/custom-elements.json",
-  "web-types": "./web-types.json",
+  "customElements": "dist/custom-elements.json",
+  "web-types": "./dist/web-types.json",
   "type": "module",
-  "types": "./dist/awc.d.ts",
-  "module": "./dist/awc.js",
-  "main": "./dist/awc.js",
-  "jsdelivr": "./dist/awc.js",
+  "types": "dist/awc.d.ts",
+  "jsdelivr": "./cdn/awc-autoloader.js",
   "exports": {
     ".": {
       "types": "./dist/awc.d.ts",
@@ -27,10 +25,20 @@
     },
     "./react/*": "./dist/react/*",
     "./translations/*": "./dist/translations/*",
-    "./tailwind": "./dist/tailwind.cjs"
+    "./tailwind": "./dist/tailwind.cjs",
+    "./dist/custom-elements.json": "./dist/custom-elements.json",
+    "./dist/awc.js": "./dist/awc.js",
+    "./dist/awc-autoloader.js": "./dist/awc-autoloader.js",
+    "./dist/themes/*": "./dist/themes/*",
+    "./dist/components/*": "./dist/components/*",
+    "./dist/utilities/*": "./dist/utilities/*",
+    "./dist/react": "./dist/react/index.js",
+    "./dist/react/*": "./dist/react/*",
+    "./dist/translations/*": "./dist/translations/*"
   },
   "files": [
-    "dist"
+    "dist",
+    "cdn"
   ],
   "keywords": [
     "web components",
