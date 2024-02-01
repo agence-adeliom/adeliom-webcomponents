@@ -1,12 +1,11 @@
 import 'leaflet.locatecontrol';
-import * as L from 'leaflet';
 import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { bound } from '../../internal/bound.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
 import styles from './map-geolocation.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { LatLngBounds } from 'leaflet';
+import type { LatLngBounds, LocationEvent } from 'leaflet';
 
 /**
  * @summary Element which controls geolocation
@@ -14,8 +13,8 @@ import type { LatLngBounds } from 'leaflet';
  * @status experimental
  * @since 1.0
  *
- * @event {L.LocationEvent} locationfound - when geolocation (using the locate method) went successfully.
- * @event {L.ErrorEvent} locationerror - when geolocation (using the locate method) failed.
+ * @event locationfound - when geolocation (using the locate method) went successfully.
+ * @event locationerror - when geolocation (using the locate method) failed.
  */
 export default class AWCMapGeolocation extends AWCLeafletElement {
   static styles: CSSResultGroup = styles;
@@ -285,7 +284,7 @@ export default class AWCMapGeolocation extends AWCLeafletElement {
   }
 
   @bound
-  onLocationfound(e: L.LocationEvent): void {
+  onLocationfound(e: LocationEvent): void {
     this.latitude = e.latlng.lat;
     this.longitude = e.latlng.lng;
     this.bounds = e.bounds;

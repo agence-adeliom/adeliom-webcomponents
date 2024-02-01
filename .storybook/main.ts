@@ -72,7 +72,6 @@ const config: StorybookConfig = {
         }
       }
     },
-    '@storybook/addon-mdx-gfm',
     '@storybook/addon-controls',
     '@storybook/addon-backgrounds',
     '@storybook/addon-toolbars',
@@ -97,9 +96,6 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag'
-  },
-  features: {
-    storyStoreV7: true
   }
 };
 export default config;

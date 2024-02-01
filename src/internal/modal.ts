@@ -98,7 +98,6 @@ export default class Modal {
       this.tabDirection = 'forward';
     }
 
-
     const tabbableElements = getTabbableElements(this.element);
 
     let currentFocusIndex = tabbableElements.findIndex(el => el === currentActiveElement);

@@ -5,7 +5,7 @@ import type AWCQrCode from './qr-code';
 const getCanvas = (qrCode: AWCQrCode): HTMLCanvasElement => {
   const possibleCanvas = qrCode.shadowRoot?.querySelector<HTMLCanvasElement>('.qr-code');
   expect(possibleCanvas).to.exist;
-  return possibleCanvas!;
+  return possibleCanvas;
 };
 
 const expectCanvasToHaveAriaLabel = (qrCode: AWCQrCode, expectedLabel: string): void => {

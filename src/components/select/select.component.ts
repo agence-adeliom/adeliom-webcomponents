@@ -16,9 +16,9 @@ import AWCIcon from '../icon/icon.component.js';
 import AWCPopup from '../popup/popup.component.js';
 import AWCTag from '../tag/tag.component.js';
 import styles from './select.styles.js';
-import type { CSSResultGroup, TemplateResult } from 'lit';
 import type { AWCFormControl } from '../../internal/awc-element.js';
 import type { AWCRemoveEvent } from '../../events/awc-remove.js';
+import type { CSSResultGroup, TemplateResult } from 'lit';
 import type AWCOption from '../option/option.component.js';
 
 /**

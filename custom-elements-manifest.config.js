@@ -224,7 +224,8 @@ export default {
     customElementVuejsPlugin({
       outdir: './dist/types/vue',
       fileName: 'index.d.ts',
-      componentTypePath: (_, tag) => `../../components/${tag.replace('awc-', '')}/${tag.replace('awc-', '')}.component.js`
+      componentTypePath: (_, tag) =>
+        `../../components/${tag.replace('awc-', '')}/${tag.replace('awc-', '')}.component.js`
     })
   ]
 };

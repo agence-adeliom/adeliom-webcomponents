@@ -132,7 +132,7 @@ describe('<awc-menu-item>', () => {
     menu.addEventListener('awc-select', selectHandler);
 
     const submenu = menu.querySelector('awc-menu-item');
-    submenu!.focus();
+    submenu.focus();
     await menu.updateComplete;
     await sendKeys({ press: 'ArrowRight' });
     await menu.updateComplete;
@@ -160,7 +160,7 @@ describe('<awc-menu-item>', () => {
     });
 
     const outerItem = menu.querySelector('awc-menu-item');
-    outerItem!.focus();
+    outerItem.focus();
     await menu.updateComplete;
     await sendKeys({ press: 'ArrowRight' });
 

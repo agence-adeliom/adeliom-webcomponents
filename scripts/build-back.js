@@ -1,16 +1,17 @@
+import { deleteAsync } from 'del';
 import { exec, spawn } from 'child_process';
 import chalk from 'chalk';
+import commandLineArgs from 'command-line-args';
 import fs from 'fs/promises';
 import ora from 'ora';
 import util from 'util';
-import path from 'path';
-import commandLineArgs from 'command-line-args';
 
-const { build } = commandLineArgs([{ name: 'build', type: Boolean }]);
+const { serve } = commandLineArgs([{ name: 'serve', type: Boolean }]);
 const outdir = 'dist';
+const cdndir = 'cdn';
+const sitedir = '_site';
 const spinner = ora({ hideCursor: false }).start();
 const execPromise = util.promisify(exec);
-
 let childProcess;
 let buildResults;
 
@@ -18,6 +19,8 @@ let buildResults;
 // Called on SIGINT or SIGTERM to cleanup the build and child processes.
 //
 function handleCleanup() {
+  buildResults.forEach(result => result.dispose());
+
   if (childProcess) {
     childProcess.kill('SIGINT');
   }
@@ -45,11 +48,13 @@ async function nextTask(label, action) {
   }
 }
 
-await nextTask('Generating component metadata', async () => {
-  await execPromise(`node scripts/make-metadata.js --outdir "${outdir}"`, { stdio: 'inherit' });
-  await fs.cp(`${outdir}/custom-elements.json`, `${path.resolve(process.cwd(), '.storybook')}/custom-elements.json`, {
-    recursive: true
-  });
+await nextTask('Cleaning up the previous build', async () => {
+  await deleteAsync(outdir);
+  await fs.mkdir(outdir, { recursive: true });
+});
+
+await nextTask('Generating component metadata', () => {
+  return execPromise(`npx cem analyze --litelement --outdir "${outdir}"`, { stdio: 'inherit' });
 });
 
 await nextTask('Wrapping components for React', () => {
@@ -61,16 +66,26 @@ await nextTask('Generating themes', () => {
 });
 
 await nextTask('Packaging up icons', () => {
-  return execPromise(`node scripts/make-icons.js --outdir "${path.resolve(process.cwd(), '.storybook/static')}"`, {
-    stdio: 'inherit'
-  });
+  return execPromise(`node scripts/make-icons.js --outdir "${outdir}"`, { stdio: 'inherit' });
 });
 
-if (build) {
-  spawn('npx', ['storybook', 'build'], { stdio: 'inherit' });
-} else {
-  spawn('npx', ['storybook', 'dev', '-p', '6006'], { stdio: 'inherit' });
-}
+await nextTask('Copy Tailwind preset', () => {
+  return fs.cp('src/tailwind.cjs', `${outdir}/tailwind.cjs`);
+});
+
+await nextTask('Running the TypeScript compiler', () => {
+  //return execPromise(`npx tsc --project ./tsconfig.prod.json --outdir "${outdir}"`, { stdio: 'inherit' });
+});
+
+// Copy the above steps to the CDN directory directly so we don't need to twice the work for nothing.
+await nextTask(`Themes, Icons, and TS Types to "${cdndir}"`, async () => {
+  //await deleteAsync(cdndir);
+  //await copy(outdir, cdndir);
+});
+
+await nextTask('Building source files', async () => {
+  buildResults = await execPromise(`npx vite build --config ./vite.config.js`, { stdio: 'inherit' });
+});
 
 // Cleanup on exit
 process.on('SIGINT', handleCleanup);
