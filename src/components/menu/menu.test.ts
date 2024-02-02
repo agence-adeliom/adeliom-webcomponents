@@ -4,8 +4,9 @@ import { expect, fixture } from '@open-wc/testing';
 import { html } from 'lit';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { AWCSelectEvent } from '../../events/awc-select';
-import type AWCMenu from './menu';
+import type { AWCSelectEvent } from '../../events/awc-select.js';
+import type AWCMenu from './menu.js';
+import type AWCMenuItem from '../menu-item/menu-item.js';
 
 describe('<awc-menu>', () => {
   it('emits awc-select with the correct event detail when clicking an item', async () => {
@@ -19,7 +20,7 @@ describe('<awc-menu>', () => {
     `);
     const item2 = menu.querySelectorAll('awc-menu-item')[1];
     const selectHandler = sinon.spy((event: AWCSelectEvent) => {
-      const item = event.detail.item;
+      const item = event.detail.item as AWCMenuItem;
       if (item !== item2) {
         expect.fail('Incorrect event detail emitted with awc-select');
       }
@@ -42,7 +43,7 @@ describe('<awc-menu>', () => {
     `);
     const [item1, item2] = menu.querySelectorAll('awc-menu-item');
     const selectHandler = sinon.spy((event: AWCSelectEvent) => {
-      const item = event.detail.item;
+      const item = event.detail.item as AWCMenuItem;
       if (item !== item2) {
         expect.fail('Incorrect item selected');
       }

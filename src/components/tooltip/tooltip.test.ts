@@ -1,8 +1,8 @@
 import '../../awc.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type AWCPopup from '../popup/popup';
-import type AWCTooltip from './tooltip';
+import type AWCPopup from '../popup/popup.js';
+import type AWCTooltip from './tooltip.js';
 
 describe('<awc-tooltip>', () => {
   it('should be visible with the open attribute', async () => {

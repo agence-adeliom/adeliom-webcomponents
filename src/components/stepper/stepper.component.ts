@@ -4,7 +4,7 @@ import { property, query } from 'lit/decorators.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './stepper.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type AWCStepperItem from '../stepper-item/stepper-item';
+import type AWCStepperItem from '../stepper-item/stepper-item.js';
 
 /**
  * @summary The stepper component can be used to show a numbered list of steps.

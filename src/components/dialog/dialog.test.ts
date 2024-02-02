@@ -4,7 +4,7 @@ import { aTimeout, elementUpdated, expect, fixture, html, waitUntil } from '@ope
 import { LitElement } from 'lit';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type AWCDialog from './dialog';
+import type AWCDialog from './dialog.js';
 
 describe('<awc-dialog>', () => {
   it('should be visible with the open attribute', async () => {

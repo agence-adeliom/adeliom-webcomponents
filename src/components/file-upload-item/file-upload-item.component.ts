@@ -10,8 +10,8 @@ import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCFormatBytes from '../format-bytes/format-bytes.component.js';
-import AWCIconButton from '../icon-button/icon-button.component';
-import AWCProgressBar from '../progress-bar/progress-bar.component';
+import AWCIconButton from '../icon-button/icon-button.component.js';
+import AWCProgressBar from '../progress-bar/progress-bar.component.js';
 import styles from './file-upload-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 

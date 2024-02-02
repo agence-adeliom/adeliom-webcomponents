@@ -9,11 +9,11 @@ import { property, query, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
-import AWCFileUploadItem from '../file-upload-item/file-upload-item.component';
-import AWCIcon from '../icon/icon.component';
+import AWCFileUploadItem from '../file-upload-item/file-upload-item.component.js';
+import AWCIcon from '../icon/icon.component.js';
 import styles from './file-upload.styles.js';
 import type { AWCFormControl } from '../../internal/awc-element.js';
-import type { AWCHideEvent } from '../../events/awc-hide';
+import type { AWCHideEvent } from '../../events/awc-hide.js';
 import type { CSSResultGroup } from 'lit';
 import type { FileInfo } from './library.js';
 
@@ -146,7 +146,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
     if (!hasValidFileType(file, this.accept)) {
       fileInfo.accepted = false;
       fileInfo.error = this.localize.term('fileTypeNotAccepted', this.accept);
-    } else if (!hasValidFileSize(file, this.maxFileSize)) {
+    } else if (this.maxFileSize && !hasValidFileSize(file, this.maxFileSize)) {
       fileInfo.accepted = false;
       fileInfo.error = this.localize.term('fileSizeExceeded', this.maxFileSize);
     } else {
@@ -155,7 +155,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
     fileInfo.accepted = true;
     this.files = this.multiple ? [...this.files, fileInfo] : [fileInfo];
 
-    this.emit('awc-change', { detail: fileInfo });
+    this.emit('awc-change', { detail: { files: this.files } });
   }
 
   private handleFiles(fileList: FileList | null) {
@@ -196,7 +196,7 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
       // Abort if no files were transferred, the entire element or drag and drop is disabled
       return;
     }
-
+    this.emit('awc-drop', { detail: { files: files } });
     this.handleFiles(files);
   }
 
@@ -205,13 +205,12 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
   }
 
   private handleFileInputChange() {
-    this.emit('awc-select');
     this.handleFiles(this.input.files);
   }
 
   private handleFileRemove(index: number) {
     const fileInfo = this.files[index];
-    this.emit('awc-remove', { detail: { fileInfo } });
+    this.emit('awc-remove', { detail: { file: fileInfo } });
     this.files = this.files.filter((_, fileIndex) => fileIndex !== index);
   }
 

@@ -42,7 +42,7 @@ export class AWCLeafletElement extends AWCElement {
 
   @bound
   onLeafletEvent(e: L.LeafletEvent): void {
-    this.emit(e.type, e);
+    this.emit("awc-map", { detail: e });
   }
 
   containerChanged?(container?: L.Map | L.LayerGroup): void;

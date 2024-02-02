@@ -3,7 +3,7 @@ import '../../awc.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type AWCDrawer from './drawer';
+import type AWCDrawer from './drawer.js';
 
 describe('<awc-drawer>', () => {
   it('should be visible with the open attribute', async () => {

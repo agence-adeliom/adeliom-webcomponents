@@ -18,7 +18,10 @@ While convenient, autoloading may lead to a Flash of Undefined Custom Elements. 
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc-autoloader.js"></script>
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc-autoloader.js"
+></script>
 ```
 
   </AWCTabPanel>
@@ -31,6 +34,7 @@ However, you can also [cherry pick](#cherry-picking) components if you want to l
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/light.css" />
 <script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc.js"></script>
 ```
+
   </AWCTabPanel>
 </AWCTabGroup>
 
@@ -172,35 +176,35 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(\_\_dirname, 'dist')
-  },
-  module: {
-    // Bundle styles into main.css
-    rules: [
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
-      }
-    ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin(),
-    new CopyPlugin({
-      patterns: [
-        // Copy AWC assets to dist/awc
-        {
-          from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
-          to: path.resolve(__dirname, 'dist/awc/assets')
-        }
-      ]
-    })
-  ]
+entry: './src/index.js',
+output: {
+filename: 'main.js',
+path: path.resolve(\_\_dirname, 'dist')
+},
+module: {
+// Bundle styles into main.css
+rules: [
+{
+test: /\.css$/i,
+use: [MiniCssExtractPlugin.loader, 'css-loader']
+}
+]
+},
+plugins: [
+new MiniCssExtractPlugin(),
+new CopyPlugin({
+patterns: [
+// Copy AWC assets to dist/awc
+{
+from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
+to: path.resolve(__dirname, 'dist/awc/assets')
+}
+]
+})
+]
 };
 
-```
+````
   </AWCTabPanel>
   <AWCTabPanel name="rollup">
 ```js
@@ -232,7 +236,7 @@ export default {
     })
   ]
 };
-```
+````
 
   </AWCTabPanel>
   <AWCTabPanel name="encore">
@@ -241,16 +245,16 @@ const path = require('path');
 const Encore = require('@symfony/webpack-encore');
 
 Encore
-  .setOutputPath(path.resolve(**dirname, 'dist'))
-  .setPublicPath('/dist')
-  ...
-  .copyFiles({
-    from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
-    to: `${path.resolve(__dirname, 'awc/assets')}/[path][name].[ext]`,
-  })
+.setOutputPath(path.resolve(\*\*dirname, 'dist'))
+.setPublicPath('/dist')
+...
+.copyFiles({
+from: path.resolve(**dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
+to: `${path.resolve(**dirname, 'awc/assets')}/[path][name].[ext]`,
+})
 ;
 
-```
+````
   </AWCTabPanel>
   <AWCTabPanel name="bud">
 ```js
@@ -271,7 +275,7 @@ export default async bud => {
     context: bud.path(),
   })
 }
-```
+````
 
   </AWCTabPanel>
 </AWCTabGroup>
@@ -317,13 +321,15 @@ You’ll notice that the CDN links all start with `/%CDNDIR%/[path]` and npm imp
 
 <p>
   The `/%CDNDIR%` files are bundled separately from the `/%NPMDIR%` files.<br></br>
-  The `/%CDNDIR%` files come pre-bundled, which means all dependencies are inlined so you do not need to worry about loading additional libraries.<br></br>
-  The `/%NPMDIR%` files **DO NOT** come pre-bundled, allowing your bundler of choice to more efficiently deduplicate dependencies, resulting in smaller bundles and optimal code sharing.
+  The `/%CDNDIR%` files come pre-bundled, which means all dependencies are inlined so you do not need to worry about
+  loading additional libraries.<br></br>
+  The `/%NPMDIR%` files **DO NOT** come pre-bundled, allowing your bundler of choice to more efficiently deduplicate
+  dependencies, resulting in smaller bundles and optimal code sharing.
 </p>
 
 TL;DR:
 
-* `@agence-adeliom/awc/%CDNDIR%` is for CDN users
-* `@agence-adeliom/awc/%NPMDIR%` is for npm users
+- `@agence-adeliom/awc/%CDNDIR%` is for CDN users
+- `@agence-adeliom/awc/%NPMDIR%` is for npm users
 
 This change was introduced in `v2.0.0` to address issues around installations from npm loading multiple versions of libraries (such as the Lit) that Adeliom WebComponents uses internally.

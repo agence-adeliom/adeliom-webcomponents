@@ -1,4 +1,5 @@
 import 'leaflet.locatecontrol';
+import * as L from 'leaflet';
 import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { bound } from '../../internal/bound.js';
 import { LocalizeController } from '../../utilities/localize.js';
@@ -13,8 +14,8 @@ import type { LatLngBounds, LocationEvent } from 'leaflet';
  * @status experimental
  * @since 1.0
  *
- * @event locationfound - when geolocation (using the locate method) went successfully.
- * @event locationerror - when geolocation (using the locate method) failed.
+ * @event awc-map - type : locationfound - when geolocation (using the locate method) went successfully.
+ * @event awc-map - type : locationerror - when geolocation (using the locate method) failed.
  */
 export default class AWCMapGeolocation extends AWCLeafletElement {
   static styles: CSSResultGroup = styles;

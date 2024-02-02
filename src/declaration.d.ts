@@ -3,6 +3,12 @@ declare module '*.css' {
   export default styles;
 }
 
+declare module '*.css?inline' {
+  import type { CSSResultGroup } from 'lit';
+  const content: CSSResultGroup;
+  export default content;
+}
+
 declare namespace Chai {
   interface Assertion {
     // chai-a11y-axe returns a promise-like object and should be awaited but the types are incorrect

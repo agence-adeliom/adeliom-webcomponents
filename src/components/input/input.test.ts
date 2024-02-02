@@ -4,7 +4,7 @@ import { getFormControls, serialize } from '../../awc.js';
 import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';
 import { sendKeys } from '@web/test-runner-commands'; // must come from the same module
 import sinon from 'sinon';
-import type AWCInput from './input';
+import type AWCInput from './input.js';
 
 describe('<awc-input>', () => {
   it('should pass accessibility tests', async () => {
@@ -320,7 +320,7 @@ describe('<awc-input>', () => {
       await input.updateComplete;
 
       setTimeout(() => button.click());
-      await oneEvent(form, 'reset');
+      await oneEvent(form, 'reset', false);
       await input.updateComplete;
 
       expect(input.value).to.equal('test');
@@ -328,7 +328,7 @@ describe('<awc-input>', () => {
       input.defaultValue = '';
 
       setTimeout(() => button.click());
-      await oneEvent(form, 'reset');
+      await oneEvent(form, 'reset', false);
       await input.updateComplete;
 
       expect(input.value).to.equal('');
@@ -361,7 +361,7 @@ describe('<awc-input>', () => {
     it('should be invalid when a native input is empty and form.reportValidity() is called', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <input required value=""></input>
+          <input required value="" />
           <awc-button type="submit">Submit</awc-button>
         </form>
       `);

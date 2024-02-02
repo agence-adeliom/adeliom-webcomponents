@@ -1,6 +1,6 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type AWCProgressRing from './progress-ring';
+import type AWCProgressRing from './progress-ring.js';
 
 describe('<awc-progress-ring>', () => {
   let el: AWCProgressRing;

@@ -110,11 +110,11 @@ declare module 'leaflet' {
  * @since 1.0
  *
  *
- * @event loading - Emitted when the tile layer loaded all visible tiles.
- * @event load - Emitted when a tile is requested and starts loading.
- * @event tileloadstart - Emitted when a tile is requested and starts loading.
- * @event tileload - Emitted when a tile loads.
- * @event tileunload - Emitted when a tile is removed (e.g. when you have unloadInvisibleTiles on).
+ * @event awc-map - type : loading - Emitted when the tile layer loaded all visible tiles.
+ * @event awc-map - type : load - Emitted when a tile is requested and starts loading.
+ * @event awc-map - type : tileloadstart - Emitted when a tile is requested and starts loading.
+ * @event awc-map - type : tileload - Emitted when a tile loads.
+ * @event awc-map - type : tileunload - Emitted when a tile is removed (e.g. when you have unloadInvisibleTiles on).
  *
  * @slot - The default slot for attribution.
  */

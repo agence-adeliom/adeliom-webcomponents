@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';

@@ -1,6 +1,6 @@
 import '../../awc.js';
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
-import type AWCFormatBytes from './format-bytes';
+import type AWCFormatBytes from './format-bytes.js';
 
 describe('<awc-format-bytes>', () => {
   describe('defaults ', () => {

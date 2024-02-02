@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCOembed from './oembed';
+import type AWCOembed from './oembed.js';
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-oembed');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction

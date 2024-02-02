@@ -1,7 +1,7 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
-import type AWCTag from './tag';
+import type AWCTag from './tag.js';
 
 describe('<awc-tag>', () => {
   it('should render default tag', async () => {

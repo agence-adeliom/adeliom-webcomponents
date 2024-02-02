@@ -102,11 +102,11 @@ module.exports = {
       spacing: {
         '3xsmall': 'var(--awc-spacing-3x-small)',
         '2xsmall': 'var(--awc-spacing-2x-small)',
-        'xsmall': 'var(--awc-spacing-x-small)',
+        xsmall: 'var(--awc-spacing-x-small)',
         small: 'var(--awc-spacing-small)',
         medium: 'var(--awc-spacing-medium)',
         large: 'var(--awc-spacing-large)',
-        'xlarge': 'var(--awc-spacing-x-large)',
+        xlarge: 'var(--awc-spacing-x-large)',
         '2xlarge': 'var(--awc-spacing-2x-large)',
         '3xlarge': 'var(--awc-spacing-3x-large)',
         '4xlarge': 'var(--awc-spacing-4x-large)',
@@ -115,26 +115,26 @@ module.exports = {
         '7xlarge': 'var(--awc-spacing-7x-large)'
       },
       boxShadow: {
-        'xsmall': 'var(--awc-shadow-x-small)',
+        xsmall: 'var(--awc-shadow-x-small)',
         small: 'var(--awc-shadow-small)',
         medium: 'var(--awc-shadow-medium)',
         large: 'var(--awc-shadow-large)',
-        'xlarge': 'var(--awc-shadow-x-large)'
+        xlarge: 'var(--awc-shadow-x-large)'
       },
       borderRadius: {
         small: 'var(--awc-border-radius-small)',
         medium: 'var(--awc-border-radius-medium)',
         large: 'var(--awc-border-radius-large)',
-        'xlarge': 'var(--awc-border-radius-x-large)',
+        xlarge: 'var(--awc-border-radius-x-large)',
         circle: 'var(--awc-border-radius-circle)',
         pill: 'var(--awc-border-radius-pill)'
       },
       transitionDuration: {
-        'xslow': 'var(--awc-transition-x-slow)',
+        xslow: 'var(--awc-transition-x-slow)',
         slow: 'var(--awc-transition-slow)',
         medium: 'var(--awc-transition-medium)',
         fast: 'var(--awc-transition-fast)',
-        'xfast': 'var(--awc-transition-x-fast)'
+        xfast: 'var(--awc-transition-x-fast)'
       },
       zIndex: {
         drawer: 'var(--awc-z-index-drawer)',

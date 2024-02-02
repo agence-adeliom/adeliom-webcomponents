@@ -1,6 +1,6 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type AWCMenuLabel from './menu-label';
+import type AWCMenuLabel from './menu-label.js';
 
 describe('<awc-menu-label>', () => {
   it('passes accessibility test', async () => {

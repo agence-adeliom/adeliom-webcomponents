@@ -1,6 +1,6 @@
 import { dedupeMixin } from '@open-wc/dedupe-mixin';
 import { property } from 'lit/decorators.js';
-import type { AWCLeafletElement } from '../awc-leaflet';
+import type { AWCLeafletElement } from '../awc-leaflet.js';
 import type { PropertyValues } from 'lit-element';
 
 import type * as L from 'leaflet';

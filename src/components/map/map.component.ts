@@ -66,38 +66,38 @@ function isMarker(x: L.Layer): x is L.Marker {
  * @status experimental
  * @since 1.0
  *
- * @event {LeafletMouseEvent} click - Emitted when the user clicks (or taps) the marker.
- * @event {LeafletMouseEvent} dblclick - Emitted when the user double-clicks (or double-taps) the marker.
- * @event {LeafletMouseEvent} mousedown - Emitted when the user pushes the mouse button on the marker.
- * @event {LeafletMouseEvent} mouseover - Emitted when the mouse enters the marker.
- * @event {LeafletMouseEvent} mouseout - Emitted when the mouse leaves the marker.
- * @event {LeafletMouseEvent} contextmenu - Emitted when the user right-clicks on the marker.
- * @event {LeafletMouseEvent} preclick - Fired before mouse click on the map (sometimes useful when you want something to happen on click before any existing click handlers start running).
- * @event focus - Emitted when the user focuses the map either by tabbing to it or clicking/panning.
- * @event blur - Emitted when the map looses focus.
- * @event load - Emitted when the map is initialized (when its center and zoom are set for the first time).
- * @event unload - Emitted when the map is destroyed with remove method.
- * @event viewreset - Emitted when the map needs to redraw its content (this usually happens on map zoom or load). Very useful for creating custom overlays.
- * @event movestart - Emitted when the view of the map starts changing (e.g. user starts dragging the map).
- * @event move - Fired on any movement of the map view.
- * @event moveend - Emitted when the view of the map ends changed (e.g. user stopped dragging the map).
- * @event dragstart - Emitted when the user starts dragging the marker.
- * @event drag - Fired repeatedly while the user drags the marker.
- * @event autopanstart - Emitted when the map starts autopanning when opening a popup.
- * @event zoomstart - Emitted when the map zoom is about to change (e.g. before zoom animation).
- * @event zoomend - Emitted when the map zoom changes.
- * @event zoomlevelschange - Emitted when the number of zoomlevels on the map is changed due to adding or removing a layer.
- * @event {LeafletDragEndEvent} dragend - Emitted when the user stops dragging the marker.
- * @event {LeafletResizeEvent} resize - Emitted when the map is resized.
- * @event {LeafletLayerEvent} layeradd - Emitted when a new layer is added to the map.
- * @event {LeafletLayerEvent} layerremove - Emitted when some layer is removed from the map.
- * @event {LeafletLayerEvent} baselayerchange - Emitted when the base layer is changed through the layer control.
- * @event {LeafletLayerEvent} overlayadd - Emitted when an overlay is selected through the layer control.
- * @event {LeafletLayerEvent} overlayremove - Emitted when an overlay is deselected through the layer control.
- * @event {LeafletLocationEvent} locationfound - Emitted when geolocation (using the locate method) went successfully.
- * @event {ErrorEvent} locationerror - Emitted when geolocation (using the locate method) failed.
- * @event {LeafletPopupEvent} popupopen - Emitted when a popup bound to the marker is open.
- * @event {LeafletPopupEvent} popupclose - Emitted when a popup bound to the marker is closed.
+ * @event awc-map - type : click - Emitted when the user clicks (or taps) the marker.
+ * @event awc-map - type : dblclick - Emitted when the user double-clicks (or double-taps) the marker.
+ * @event awc-map - type : mousedown - Emitted when the user pushes the mouse button on the marker.
+ * @event awc-map - type : mouseover - Emitted when the mouse enters the marker.
+ * @event awc-map - type : mouseout - Emitted when the mouse leaves the marker.
+ * @event awc-map - type : contextmenu - Emitted when the user right-clicks on the marker.
+ * @event awc-map - type : preclick - Fired before mouse click on the map (sometimes useful when you want something to happen on click before any existing click handlers start running).
+ * @event awc-map - type : focus - Emitted when the user focuses the map either by tabbing to it or clicking/panning.
+ * @event awc-map - type : blur - Emitted when the map looses focus.
+ * @event awc-map - type : load - Emitted when the map is initialized (when its center and zoom are set for the first time).
+ * @event awc-map - type : unload - Emitted when the map is destroyed with remove method.
+ * @event awc-map - type : viewreset - Emitted when the map needs to redraw its content (this usually happens on map zoom or load). Very useful for creating custom overlays.
+ * @event awc-map - type : movestart - Emitted when the view of the map starts changing (e.g. user starts dragging the map).
+ * @event awc-map - type : move - Fired on any movement of the map view.
+ * @event awc-map - type : moveend - Emitted when the view of the map ends changed (e.g. user stopped dragging the map).
+ * @event awc-map - type : dragstart - Emitted when the user starts dragging the marker.
+ * @event awc-map - type : drag - Fired repeatedly while the user drags the marker.
+ * @event awc-map - type : autopanstart - Emitted when the map starts autopanning when opening a popup.
+ * @event awc-map - type : zoomstart - Emitted when the map zoom is about to change (e.g. before zoom animation).
+ * @event awc-map - type : zoomend - Emitted when the map zoom changes.
+ * @event awc-map - type : zoomlevelschange - Emitted when the number of zoomlevels on the map is changed due to adding or removing a layer.
+ * @event awc-map - type : dragend - Emitted when the user stops dragging the marker.
+ * @event awc-map - type : resize - Emitted when the map is resized.
+ * @event awc-map - type : layeradd - Emitted when a new layer is added to the map.
+ * @event awc-map - type : layerremove - Emitted when some layer is removed from the map.
+ * @event awc-map - type : baselayerchange - Emitted when the base layer is changed through the layer control.
+ * @event awc-map - type : overlayadd - Emitted when an overlay is selected through the layer control.
+ * @event awc-map - type : overlayremove - Emitted when an overlay is deselected through the layer control.
+ * @event awc-map - type : locationfound - Emitted when geolocation (using the locate method) went successfully.
+ * @event awc-map - type : locationerror - Emitted when geolocation (using the locate method) failed.
+ * @event awc-map - type : popupopen - Emitted when a popup bound to the marker is open.
+ * @event awc-map - type : popupclose - Emitted when a popup bound to the marker is closed.
  *
  * @cssproperty [--link-color=var(--awc-color-primary-600)] --link-color - The color of the links.
  * @cssproperty [--popup-tip-size=1rem] --popup-tip-size - The size of the popup tip.
@@ -543,7 +543,7 @@ export default class AWCMap extends AWCLeafletElement {
     // fire an event for when this.map is defined and ready.
     // (needed for components that talk to this.map directly)
     this.mapReady = true;
-    this.emit('awc-map-ready');
+    this.emit('awc-map', { detail : { ready: true,  map: this.map } });
   }
 
   @bound

@@ -1,6 +1,6 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type AWCProgressBar from './progress-bar';
+import type AWCProgressBar from './progress-bar.js';
 
 describe('<awc-progress-bar>', () => {
   let el: AWCProgressBar;

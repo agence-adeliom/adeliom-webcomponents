@@ -1,9 +1,9 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
-import type AWCIconButton from '../icon-button/icon-button';
-import type AWCTab from './tab';
-import type AWCTabGroup from '../tab-group/tab-group';
+import type AWCIconButton from '../icon-button/icon-button.js';
+import type AWCTab from './tab.js';
+import type AWCTabGroup from '../tab-group/tab-group.js';
 
 describe('<awc-tab>', () => {
   it('passes accessibility test', async () => {

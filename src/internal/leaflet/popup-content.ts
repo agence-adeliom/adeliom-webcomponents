@@ -1,7 +1,7 @@
 import { bound } from '../bound.js';
 import { dedupeMixin } from '@open-wc/dedupe-mixin';
 import type * as L from 'leaflet';
-import type { AWCLeafletElement } from '../awc-leaflet';
+import type { AWCLeafletElement } from '../awc-leaflet.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Constructor<T = NonNullable<unknown>> = new (...args: any[]) => T;

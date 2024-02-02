@@ -1,7 +1,7 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
-import type AWCFormatDate from './format-date';
+import type AWCFormatDate from './format-date.js';
 
 describe('<awc-format-date>', () => {
   describe('defaults ', () => {

@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCIcon from './icon';
+import type AWCIcon from './icon.js';
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-icon');
-import { registerIconLibrary } from '../../utilities/icon-library.ts';
+import { registerIconLibrary } from '../../utilities/icon-library.js';
 
 registerIconLibrary('boxicons', {
   resolver: name => {

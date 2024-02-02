@@ -3,7 +3,7 @@ import * as path from 'path';
 import constant from './constant';
 import { visit } from 'unist-util-visit';
 import escapeStringRegexp from 'escape-string-regexp';
-import remarkGfm from "remark-gfm";
+import remarkGfm from 'remark-gfm';
 
 const interpolateVariable = ({ replacements = {}, prefix = '%', suffix = '%' }) => {
   return (tree, file) => {
@@ -51,8 +51,8 @@ const config: StorybookConfig = {
       options: {
         actions: false,
         backgrounds: false,
-        docs: false,
-      },
+        docs: false
+      }
     },
     {
       name: '@storybook/addon-docs',
@@ -74,7 +74,7 @@ const config: StorybookConfig = {
             ]
           }
         }
-      },
+      }
     },
     '@storybook/addon-a11y',
     '@storybook/addon-links',
@@ -97,7 +97,7 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag',
-    defaultName: 'Documentation',
+    defaultName: 'Documentation'
   }
 };
 export default config;

@@ -3,7 +3,7 @@ import * as L from 'leaflet';
 import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { bound } from '../../internal/bound.js';
 import { property } from 'lit/decorators.js';
-import type AWCMapMarker from '../map-marker/map-marker';
+import type AWCMapMarker from '../map-marker/map-marker.js';
 
 /**
  * @summary Element which represents a marker cluster group

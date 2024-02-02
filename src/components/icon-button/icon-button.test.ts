@@ -1,7 +1,7 @@
 import '../../awc.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type AWCIconButton from './icon-button';
+import type AWCIconButton from './icon-button.js';
 
 type LinkTarget = '_self' | '_blank' | '_parent' | '_top';
 

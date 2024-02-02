@@ -2,8 +2,8 @@ import '../../awc.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { AWCSelectEvent } from '../../events/awc-select';
-import type AWCMenuItem from './menu-item';
+import type { AWCSelectEvent } from '../../events/awc-select.js';
+import type AWCMenuItem from './menu-item.js';
 
 describe('<awc-menu-item>', () => {
   it('should pass accessibility tests', async () => {
@@ -126,7 +126,7 @@ describe('<awc-menu-item>', () => {
     `);
 
     const selectHandler = sinon.spy((event: AWCSelectEvent) => {
-      const item = event.detail.item;
+      const item = event.detail.item as AWCMenuItem;
       expect(item.value).to.equal('submenu-item-1');
     });
     menu.addEventListener('awc-select', selectHandler);

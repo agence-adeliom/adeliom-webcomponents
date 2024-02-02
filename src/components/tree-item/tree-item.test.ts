@@ -1,7 +1,7 @@
 import '../../awc.js';
 import { expect, fixture, html, oneEvent, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type AWCTreeItem from './tree-item';
+import type AWCTreeItem from './tree-item.js';
 
 describe('<awc-tree-item>', () => {
   let leafItem: AWCTreeItem;
@@ -79,7 +79,7 @@ describe('<awc-tree-item>', () => {
         parentItem.addEventListener('awc-after-collapse', afterCollapseSpy);
 
         parentItem.expanded = true;
-        await oneEvent(parentItem, 'awc-after-expand');
+        await oneEvent(parentItem, 'awc-after-expand', false);
 
         // Act
         parentItem.expanded = false;

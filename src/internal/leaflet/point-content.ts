@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { bound } from '../bound.js';
 import { dedupeMixin } from '@open-wc/dedupe-mixin';
 import AWCMapPoint from '../../components/map-point/map-point.js';
-import type { AWCLeafletElement } from '../awc-leaflet';
+import type { AWCLeafletElement } from '../awc-leaflet.js';
 
 import type * as L from 'leaflet';
 

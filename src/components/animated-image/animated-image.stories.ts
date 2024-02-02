@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCAnimatedImage from './animated-image.ts';
+import type AWCAnimatedImage from './animated-image.js';
 const { events, args, argTypes, template } = getWcStorybookHelpers('awc-animated-image');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction

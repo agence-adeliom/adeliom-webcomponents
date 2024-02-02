@@ -76,13 +76,13 @@ export default class AWCCarousel extends AWCElement {
   @property({ type: Boolean, reflect: true }) navigation = false;
 
   /** When set, show the carousel's pagination indicators. */
-  @property({ reflect: true }) pagination: boolean | 'progressbar' | 'bullets' | 'fraction' | 'custom' = false;
+  @property({ reflect: true }) pagination: boolean | 'progressbar' | 'bullets' | 'fraction' | 'custom' | string = false;
 
   /** When set, show the carousel's scrollbar indicators. */
   @property({ type: Boolean, reflect: true }) scrollbar = false;
 
   /** When set, the slides will scroll automatically when the user is not interacting with them.  */
-  @property({ reflect: true }) autoplay: boolean | number | object = false;
+  @property({ reflect: true }) autoplay: boolean | number | string | object = false;
 
   /** Set to `true` and slider wrapper will adapt its height to the height of the currently active slide */
   @property({ type: Boolean, reflect: true, attribute: 'auto-height' }) autoHeight = false;
@@ -116,7 +116,7 @@ export default class AWCCarousel extends AWCElement {
    * Allows to set different parameter for different responsive breakpoints (screen sizes).
    * Not all parameters can be changed in breakpoints, only those which do not require different layout and logic, like slidesPerView, slidesPerGroup, spaceBetween, grid.rows. Such parameters like loop and effect won't work
    */
-  @property({ reflect: true }) breakpoints: object | undefined = undefined;
+  @property({ reflect: true }) breakpoints: string | object | undefined = undefined;
 
   /**
    * Specifies the number of slides the carousel will advance when scrolling, useful when specifying a `slides-per-page`
@@ -165,7 +165,7 @@ export default class AWCCarousel extends AWCElement {
   }
 
   /** @internal Gets all carousel items. */
-  private getSlides({ excludeClones = true }: { excludeClones?: boolean } = {}) {
+  public getSlides({ excludeClones = true }: { excludeClones?: boolean } = {}) {
     return [...this.children].filter(
       (el: HTMLElement) => this.isCarouselItem(el) && (!excludeClones || !el.hasAttribute('data-clone'))
     ) as AWCCarouselItem[];
@@ -281,20 +281,13 @@ export default class AWCCarousel extends AWCElement {
       effect: this.effect,
       centeredSlides: this.autoHeight,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      breakpoints: this.breakpoints ? JSON.parse(this.breakpoints) : undefined,
+      breakpoints: typeof this.breakpoints === 'string' ? JSON.parse(this.breakpoints) : (this.breakpoints || undefined),
       keyboard: {
         enabled: true,
         onlyInViewport: true
       },
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      autoplay:
-        this.autoplay !== false
-          ? this.autoplay === true
-            ? true
-            : !(typeof this.autoplay === 'number')
-              ? { delay: this.autoplay === '' ? 3000 : this.autoplay }
-              : { ...JSON.parse(this.autoplay) }
-          : false,
+      autoplay: (typeof this.autoplay === 'string' && this.autoplay !== '') ? JSON.parse(this.autoplay) : (this.autoplay || 3000),
       navigation: {
         enabled: this.navigation,
         nextEl: this.nextButton,
@@ -306,7 +299,7 @@ export default class AWCCarousel extends AWCElement {
       },
       pagination: {
         enabled: this.pagination !== false,
-        type: this.pagination === '' ? 'bullets' : this.pagination,
+        type: (this.pagination === '' || this.pagination === true) ? 'bullets' : (this.pagination as "bullets" | "fraction" | "progressbar"),
         el: this.paginationContainer,
         bulletActiveClass: 'pagination-item--active',
         currentClass: 'pagination-item--current',
@@ -331,12 +324,15 @@ export default class AWCCarousel extends AWCElement {
       observer: true,
       observeParents: true,
       observeSlideChildren: this.slideSlots > 0,
-      onAny: (name: string, ...args) => {
-        if (name === '_swiper') {
-          const swiper = args[0];
-          swiper.isElement = true;
+      onAny: (event, ...args) => {
+        const eventName : string = event as unknown as string;
+        if (eventName === '_swiper') {
+          const swiper = (args.length ? args.at(0) : undefined) as Swiper & { isElement: boolean } | undefined;
+          if(swiper?.isElement){
+            swiper.isElement = true;
+          }
         }
-        if (name === 'observerUpdate') {
+        if (eventName === 'observerUpdate') {
           this.calcSlideSlots();
         }
         const kebabCase = (string: string): string =>
@@ -345,22 +341,23 @@ export default class AWCCarousel extends AWCElement {
             .replace(/[\s_]+/g, '-')
             .toLowerCase();
 
-        const eventName = `awc-${kebabCase(name)}`;
-        const event = new CustomEvent(eventName, {
+        this.dispatchEvent((new CustomEvent(`awc-${kebabCase(eventName)}`, {
           detail: args,
-          bubbles: name !== 'hashChange',
+          bubbles: eventName !== 'hashChange',
           cancelable: true
-        });
-        this.dispatchEvent(event);
+        })) as CustomEvent);
       }
     });
   }
-
   calcSlideSlots() {
     const currentSideSlots = this.slideSlots || 0;
     // slide slots
     const slideSlotChildren = [...this.querySelectorAll(`[slot^=slide-]`)].map(child => {
-      return parseInt(child?.getAttribute('slot').split('carousel__slide-')[1], 10);
+      const slot = child?.getAttribute('slot')?.split('carousel__slide-');
+      if(slot){
+        return parseInt(slot[1], 10);
+      }
+      return 0;
     });
     this.slideSlots = slideSlotChildren.length ? Math.max(...slideSlotChildren) + 1 : 0;
     if (this.slideSlots > currentSideSlots) {
