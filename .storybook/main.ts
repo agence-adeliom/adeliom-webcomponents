@@ -3,6 +3,7 @@ import * as path from 'path';
 import constant from './constant';
 import { visit } from 'unist-util-visit';
 import escapeStringRegexp from 'escape-string-regexp';
+import remarkGfm from "remark-gfm";
 
 const interpolateVariable = ({ replacements = {}, prefix = '%', suffix = '%' }) => {
   return (tree, file) => {
@@ -45,18 +46,21 @@ const interpolateVariable = ({ replacements = {}, prefix = '%', suffix = '%' }) 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-a11y',
-    '@storybook/addon-links',
-    '@storybook/addon-actions',
-    '@storybook/addon-viewport',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false,
+        backgrounds: false,
+        docs: false,
+      },
+    },
     {
       name: '@storybook/addon-docs',
       options: {
-        csfPluginOptions: null,
-        jsxOptions: {},
         mdxPluginOptions: {
           mdxCompileOptions: {
             remarkPlugins: [
+              remarkGfm,
               [
                 interpolateVariable,
                 {
@@ -70,14 +74,11 @@ const config: StorybookConfig = {
             ]
           }
         }
-      }
+      },
     },
-    '@storybook/addon-controls',
-    '@storybook/addon-backgrounds',
-    '@storybook/addon-toolbars',
-    '@storybook/addon-measure',
+    '@storybook/addon-a11y',
+    '@storybook/addon-links',
     '@storybook/addon-outline',
-    '@storybook/addon-interactions',
     '@storybook/addon-styling',
     'adeliom/google-tag-manager',
     './wc-helper/code/manager.ts'
@@ -95,7 +96,8 @@ const config: StorybookConfig = {
     disableTelemetry: true
   },
   docs: {
-    autodocs: 'tag'
+    autodocs: 'tag',
+    defaultName: 'Documentation',
   }
 };
 export default config;

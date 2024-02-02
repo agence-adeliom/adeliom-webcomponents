@@ -13,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Details show a brief summary and expand to show additional content.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-details--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-details--documentation
  * @status stable
  * @since 1.0
  *

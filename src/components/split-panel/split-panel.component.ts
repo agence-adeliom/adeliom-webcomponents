@@ -11,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Split panels display two adjacent panels, allowing the user to reposition them.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-split-panel--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-split-panel--documentation
  * @status stable
  * @since 1.0
  *

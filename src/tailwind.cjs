@@ -100,41 +100,41 @@ module.exports = {
         paragraph: 'var(--awc-text-paragraph-color)'
       },
       spacing: {
-        '3x-small': 'var(--awc-spacing-3x-small)',
-        '2x-small': 'var(--awc-spacing-2x-small)',
-        'x-small': 'var(--awc-spacing-x-small)',
+        '3xsmall': 'var(--awc-spacing-3x-small)',
+        '2xsmall': 'var(--awc-spacing-2x-small)',
+        'xsmall': 'var(--awc-spacing-x-small)',
         small: 'var(--awc-spacing-small)',
         medium: 'var(--awc-spacing-medium)',
         large: 'var(--awc-spacing-large)',
-        'x-large': 'var(--awc-spacing-x-large)',
-        '2x-large': 'var(--awc-spacing-2x-large)',
-        '3x-large': 'var(--awc-spacing-3x-large)',
-        '4x-large': 'var(--awc-spacing-4x-large)',
-        '5x-large': 'var(--awc-spacing-5x-large)',
-        '6x-large': 'var(--awc-spacing-6x-large)',
-        '7x-large': 'var(--awc-spacing-7x-large)'
+        'xlarge': 'var(--awc-spacing-x-large)',
+        '2xlarge': 'var(--awc-spacing-2x-large)',
+        '3xlarge': 'var(--awc-spacing-3x-large)',
+        '4xlarge': 'var(--awc-spacing-4x-large)',
+        '5xlarge': 'var(--awc-spacing-5x-large)',
+        '6xlarge': 'var(--awc-spacing-6x-large)',
+        '7xlarge': 'var(--awc-spacing-7x-large)'
       },
       boxShadow: {
-        'x-small': 'var(--awc-shadow-x-small)',
+        'xsmall': 'var(--awc-shadow-x-small)',
         small: 'var(--awc-shadow-small)',
         medium: 'var(--awc-shadow-medium)',
         large: 'var(--awc-shadow-large)',
-        'x-large': 'var(--awc-shadow-x-large)'
+        'xlarge': 'var(--awc-shadow-x-large)'
       },
       borderRadius: {
         small: 'var(--awc-border-radius-small)',
         medium: 'var(--awc-border-radius-medium)',
         large: 'var(--awc-border-radius-large)',
-        'x-large': 'var(--awc-border-radius-x-large)',
+        'xlarge': 'var(--awc-border-radius-x-large)',
         circle: 'var(--awc-border-radius-circle)',
         pill: 'var(--awc-border-radius-pill)'
       },
       transitionDuration: {
-        'x-slow': 'var(--awc-transition-x-slow)',
+        'xslow': 'var(--awc-transition-x-slow)',
         slow: 'var(--awc-transition-slow)',
         medium: 'var(--awc-transition-medium)',
         fast: 'var(--awc-transition-fast)',
-        'x-fast': 'var(--awc-transition-x-fast)'
+        'xfast': 'var(--awc-transition-x-fast)'
       },
       zIndex: {
         drawer: 'var(--awc-z-index-drawer)',
@@ -148,7 +148,8 @@ module.exports = {
       looser: 'var(--awc-line-height-looser)',
       loose: 'var(--awc-line-height-loose)',
       normal: 'var(--awc-line-height-normal)',
-      dense: 'var(--awc-line-height-dense)'
+      dense: 'var(--awc-line-height-dense)',
+      denser: 'var(--awc-line-height-denser)'
     },
     fontFamily: {
       sans: 'var(--awc-font-sans)',
@@ -170,23 +171,7 @@ module.exports = {
       '7x-large': 'var(--awc-font-size-7x-large)',
       '8x-large': 'var(--awc-font-size-8x-large)',
       '9x-large': 'var(--awc-font-size-9x-large)',
-      '10x-large': 'var(--awc-font-size-10x-large)',
-      '2xs': 'var(--awc-font-size-2x-small)',
-      xs: 'var(--awc-font-size-x-small)',
-      sm: 'var(--awc-font-size-small)',
-      md: 'var(--awc-font-size-medium)',
-      base: 'var(--awc-font-size-medium)',
-      lg: 'var(--awc-font-size-large)',
-      xl: 'var(--awc-font-size-x-large)',
-      '2xl': 'var(--awc-font-size-2x-large)',
-      '3xl': 'var(--awc-font-size-3x-large)',
-      '4xl': 'var(--awc-font-size-4x-large)',
-      '5xl': 'var(--awc-font-size-5x-large)',
-      '6xl': 'var(--awc-font-size-6x-large)',
-      '7xl': 'var(--awc-font-size-7x-large)',
-      '8xl': 'var(--awc-font-size-8x-large)',
-      '9xl': 'var(--awc-font-size-9x-large)',
-      '10xl': 'var(--awc-font-size-10x-large)'
+      '10x-large': 'var(--awc-font-size-10x-large)'
     }
   }
 };

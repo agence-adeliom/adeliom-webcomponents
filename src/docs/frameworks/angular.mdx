@@ -18,7 +18,7 @@ npm install @agence-adeliom/awc
 
 ### Update the Angular Configuration
 
-Next, [include a theme](/?path=/docs/getting-started-themes--docs). In this example, we'll import the light theme.
+Next, [include a theme](/?path=/docs/getting-started-themes--documentation). In this example, we'll import the light theme.
 
 Its also important to load the components by using a `<script>` tag into the index.html file. However, the Angular way to do it is by adding a script configurations into your angular.json file as follows:
 
@@ -43,10 +43,10 @@ Its also important to load the components by using a `<script>` tag into the ind
 
 ### Setting up the base path
 
-Next, set the [base path](/?path=/docs/getting-started-installation--docs#setting-the-base-path) for icons and other assets in the `main.ts`. In this example, we'll use the CDN as a base path.
+Next, set the [base path](/?path=/docs/getting-started-installation--documentation#setting-the-base-path) for icons and other assets in the `main.ts`. In this example, we'll use the CDN as a base path.
 
 ```jsx
-import { setBasePath } from '@agence-adeliom/awc';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path';
 
 setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/');
 ```
@@ -111,4 +111,4 @@ Now you can start using Adeliom WebComponents components in your app!
 
 > 📘 **Tip**
 >
-> Are you using Adeliom WebComponents with Angular? [Help us improve this page!](https://github.com/agence-adeliom/adeliom-webcomponents/blob/main/docs/frameworks/angular.md)
+> Are you using Adeliom WebComponents with Angular? [Help us improve this page!](https://github.com/agence-adeliom/adeliom-webcomponents/blob/main/src/docs/frameworks/angular.mdx)

@@ -4,7 +4,7 @@ import AWCElement from '../../internal/awc-element.js';
 
 /**
  * @summary Formats a number as a human readable bytes value.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-format-bytes--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-format-bytes--documentation
  * @status stable
  * @since 1.0
  */

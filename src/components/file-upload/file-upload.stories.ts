@@ -231,7 +231,7 @@ export const FormData: Story = {
   parameters: {
     docs: {
       description: {
-        story: `The FileUpload component can be used inside a form as a replacement for \`<input type="file">\`. The files can be accessed using FormData. See [Form Control documentation](/?path=/docs/getting-started-form-controls--docs) for more details.`
+        story: `The FileUpload component can be used inside a form as a replacement for \`<input type="file">\`. The files can be accessed using FormData. See [Form Control documentation](/?path=/docs/getting-started-form-controls--documentation) for more details.`
       }
     }
   },
@@ -258,7 +258,7 @@ export const JSON: Story = {
   parameters: {
     docs: {
       description: {
-        story: `The FileUpload component can be used inside a form as a replacement for \`<input type="file">\`. The files can be accessed using JSON. See [Form Control documentation](/?path=/docs/getting-started-form-controls--docs) for more details.`
+        story: `The FileUpload component can be used inside a form as a replacement for \`<input type="file">\`. The files can be accessed using JSON. See [Form Control documentation](/?path=/docs/getting-started-form-controls--documentation) for more details.`
       }
     }
   },

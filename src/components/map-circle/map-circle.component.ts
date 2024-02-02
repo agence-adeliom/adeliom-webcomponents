@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element for putting a circle on the map
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-circle--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-circle--documentation
  * @status experimental
  * @since 1.0
  *

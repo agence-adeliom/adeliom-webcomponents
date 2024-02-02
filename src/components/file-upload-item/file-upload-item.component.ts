@@ -17,7 +17,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary File items represent an uploaded file and provides information about file type, file size etc.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-file-upload-item--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-file-upload-item--documentation
  * @status experimental
  * @since 1.0
  *

@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Cards can be used to group related subjects in a container.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-card--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-card--documentation
  * @status stable
  * @since 1.0
  *

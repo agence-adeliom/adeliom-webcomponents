@@ -317,7 +317,7 @@ export default css`
     border-radius: inherit;
     background-color: currentColor;
     box-shadow:
-      inset 0 0 0 2px var(--awc-input-border-color-base),
+      inset 0 0 0 2px var(--awc-input-border-color,
       inset 0 0 0 4px var(--awc-color-neutral-0);
   }
 

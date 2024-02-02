@@ -33,7 +33,7 @@ export default css`
   /* Standard inputs */
   .input--standard {
     background-color: var(--awc-input-background-color);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color-base);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
   }
 
   .input--standard:hover:not(.input--disabled) {
@@ -70,7 +70,7 @@ export default css`
   .input--filled {
     border: none;
     background-color: var(--awc-input-filled-background-color);
-    color: var(--awc-input-color-base);
+    color: var(--awc-input-color);
   }
 
   .input--filled:hover:not(.input--disabled) {
@@ -96,7 +96,7 @@ export default css`
     font-weight: inherit;
     min-width: 0;
     height: 100%;
-    color: var(--awc-input-color-base);
+    color: var(--awc-input-color);
     border: none;
     background: inherit;
     box-shadow: none;
@@ -119,7 +119,7 @@ export default css`
   .input__control:-webkit-autofill:active {
     box-shadow: 0 0 0 var(--awc-input-height-large) var(--awc-input-background-color-hover) inset !important;
     -webkit-text-fill-color: var(--awc-color-primary-600);
-    caret-color: var(--awc-input-color-base);
+    caret-color: var(--awc-input-color);
   }
 
   .input--filled .input__control:-webkit-autofill,

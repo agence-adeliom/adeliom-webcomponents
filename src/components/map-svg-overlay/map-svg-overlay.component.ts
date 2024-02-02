@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element which defines a SVG overlay.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-svg-overlay--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-svg-overlay--documentation
  * @status experimental
  * @since 1.0
  *

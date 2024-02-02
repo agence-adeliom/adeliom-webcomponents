@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element which defines a video overlay.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-video-overlay--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-video-overlay--documentation
  * @status experimental
  * @since 1.0
  *

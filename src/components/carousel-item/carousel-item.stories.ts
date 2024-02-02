@@ -18,7 +18,7 @@ const meta = {
     },
     docs: {
       description: {
-        component: `> Additional demonstrations can be found in the [carousel examples](?path=/docs/components-carousel--docs).`
+        component: `> Additional demonstrations can be found in the [carousel examples](?path=/docs/components-carousel--documentation).`
       }
     }
   },

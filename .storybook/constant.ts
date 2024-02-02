@@ -2,6 +2,6 @@ import packageJson from '../package.json';
 
 export default {
   NPMDIR: 'dist',
-  CDNDIR: 'dist',
+  CDNDIR: 'cdn',
   VERSION: packageJson.version
 };

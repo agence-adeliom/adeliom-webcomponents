@@ -18,7 +18,7 @@ const meta = {
     },
     docs: {
       description: {
-        component: `For a full list of icons that come bundled with Adeliom WebComponents, refer to the [icon component](?path=/docs/components-icon--docs).`
+        component: `For a full list of icons that come bundled with Adeliom WebComponents, refer to the [icon component](?path=/docs/components-icon--documentation).`
       }
     }
   },

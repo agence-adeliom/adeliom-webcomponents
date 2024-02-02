@@ -18,7 +18,7 @@ const meta = {
     },
     docs: {
       description: {
-        component: `Tab groups make use of [tabs](?path=/docs/components-tab--docs) and [tab panels](?path=/docs/components-tab-panel--docs). Each tab must be slotted into the \`nav\` slot and its \`panel\` must refer to a tab panel of the same name.`
+        component: `Tab groups make use of [tabs](?path=/docs/components-tab--documentation) and [tab panels](?path=/docs/components-tab-panel--documentation). Each tab must be slotted into the \`nav\` slot and its \`panel\` must refer to a tab panel of the same name.`
       }
     }
   },

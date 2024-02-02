@@ -23,7 +23,7 @@ import type AWCOption from '../option/option.component.js';
 
 /**
  * @summary Selects allow you to choose items from a menu of predefined options.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-select--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-select--documentation
  * @status stable
  * @since 1.0
  *
@@ -99,13 +99,13 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
 
   /**
    * The current value of the select, submitted as a name/value pair with form data. When `multiple` is enabled, the
-   * value attribute will be a space-delimited list of values based on the options selected, and the value property will
-   * be an array. **For this reason, values must not contain spaces.**
+   * value attribute will be a comma-delimited list of values based on the options selected, and the value property will
+   * be an array.
    */
   @property({
     converter: {
-      fromAttribute: (value: string) => value.split(' '),
-      toAttribute: (value: string[]) => value.join(' ')
+      fromAttribute: (value: string) => value.split(','),
+      toAttribute: (value: string[]) => value.join(',')
     }
   })
   value: string | string[] = '';

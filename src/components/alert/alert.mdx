@@ -2,6 +2,7 @@ import { Title, Subtitle, Meta, ArgTypes, Primary, Description, Stories } from '
 import * as AlertStories from './alert.stories';
 import { TagNames } from '@awc-storybook/blocks/TagNames.jsx';
 import { Summary } from '@awc-storybook/blocks/Summary.jsx';
+import { Importing } from '@awc-storybook/blocks/Importing.jsx';
 
 <Meta of={AlertStories} />
 
@@ -29,6 +30,13 @@ By default, the toast stack is positioned at the top-right of the viewport. You 
 ```
 
 By design, it is not possible to show toasts in more than one stack simultaneously. Such behavior is confusing and makes for a poor user experience.
+
+## Importing
+
+If you’re using the autoloader or the traditional loader, you can ignore this section.
+Otherwise, feel free to use any of the following snippets to [cherry pick](/?path=/docs/getting-started-installation--documentation#cherry-picking) this component.
+
+<Importing />
 
 ## API
 

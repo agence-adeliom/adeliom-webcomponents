@@ -18,7 +18,7 @@ const meta = {
     },
     docs: {
       description: {
-        component: `You can use [menu items](?path=/docs/components-menu-item--docs), [menu labels](?path=/docs/components-menu-label--docs), and [dividers](?path=/docs/components-divider--docs) to compose a menu. Menus support keyboard interactions, including type-to-select an option.
+        component: `You can use [menu items](?path=/docs/components-menu-item--documentation), [menu labels](?path=/docs/components-menu-label--documentation), and [dividers](?path=/docs/components-divider--documentation) to compose a menu. Menus support keyboard interactions, including type-to-select an option.
 
 > Menus are intended for system menus (dropdown menus, select menus, context menus, etc.). They should not be mistaken for navigation menus which serve a different purpose and have a different semantic meaning. If you're building navigation, use \`<nav>\` and \`<a>\` elements instead.`
       }
@@ -60,7 +60,7 @@ export const Dropdowns: Story = {
   parameters: {
     docs: {
       description: {
-        story: `Menus work really well when used inside [dropdowns](/?path=/docs/components-dropdown--docs).`
+        story: `Menus work really well when used inside [dropdowns](/?path=/docs/components-dropdown--documentation).`
       }
     }
   }
@@ -97,7 +97,7 @@ export const Submenus: Story = {
   parameters: {
     docs: {
       description: {
-        story: `To create a submenu, nest an \`<awc-menu slot="submenu">\` in any [menu item](/?path=/docs/components-menu-item--docs).
+        story: `To create a submenu, nest an \`<awc-menu slot="submenu">\` in any [menu item](/?path=/docs/components-menu-item--documentation).
 > 📘 **Tip**
 >
 > As a UX best practice, avoid using more than one level of submenu when possible.`

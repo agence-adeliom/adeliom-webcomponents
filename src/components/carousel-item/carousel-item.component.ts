@@ -5,8 +5,8 @@ import styles from './carousel-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
- * @summary A carousel item represent a slide within a [carousel](?path=/docs/components-carousel--docs).
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-carousel-item--docs
+ * @summary A carousel item represent a slide within a [carousel](?path=/docs/components-carousel--documentation).
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-carousel-item--documentation
  * @since 1.0
  * @status experimental
  *

@@ -190,7 +190,7 @@ export const Disabled: Story = {
 export const Multiple: Story = {
   name: 'Multiple',
   render: () =>
-    html`<awc-select label="Select a Few" value="option-1 option-2 option-3" multiple clearable>
+    html`<awc-select label="Select a Few" value="option-1,option-2,option-3" multiple clearable>
       <awc-option value="option-1">Option 1</awc-option>
       <awc-option value="option-2">Option 2</awc-option>
       <awc-option value="option-3">Option 3</awc-option>
@@ -201,7 +201,7 @@ export const Multiple: Story = {
   parameters: {
     docs: {
       description: {
-        story: `To allow multiple options to be selected, use the \`multiple\` attribute. It's a good practice to use \`clearable\` when this option is enabled. To set multiple values at once, set \`value\` to a space-delimited list of values.
+        story: `To allow multiple options to be selected, use the \`multiple\` attribute. It's a good practice to use \`clearable\` when this option is enabled. To set multiple values at once, set \`value\` to a comma-delimited list of values.
 
 > Note that multi-select options may wrap, causing the control to expand vertically. You can use the \`max-options-visible\` attribute to control the maximum number of selected options to show at once.`
       },
@@ -215,7 +215,7 @@ export const Multiple: Story = {
 export const InitialValues: Story = {
   name: 'Setting Initial Values',
   render: () =>
-    html`<awc-select value="option-1 option-2" multiple clearable>
+    html`<awc-select value="option-1,option-2" multiple clearable>
       <awc-option value="option-1">Option 1</awc-option>
       <awc-option value="option-2">Option 2</awc-option>
       <awc-option value="option-3">Option 3</awc-option>
@@ -226,7 +226,7 @@ export const InitialValues: Story = {
       description: {
         story: `Use the \`value\` attribute to set the initial selection.
 
-When using \`multiple\`, the \`value\` _attribute_ uses space-delimited values to select more than one option. Because of this, \`<awc-option>\` values cannot contain spaces. If you're accessing the \`value\` _property_ through Javascript, it will be an array.`
+When using \`multiple\`, the \`value\` _attribute_ uses comma-delimited values to select more than one option. Because of this, \`<awc-option>\` values cannot contain commas. If you're accessing the \`value\` _property_ through Javascript, it will be an array.`
       },
       story: {
         height: '200px'

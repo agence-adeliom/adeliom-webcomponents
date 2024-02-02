@@ -9,8 +9,8 @@ import styles from './option.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
- * @summary Options define the selectable items within various form controls such as [select](?path=/docs/components-select--docs).
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-option--docs
+ * @summary Options define the selectable items within various form controls such as [select](?path=/docs/components-select--documentation).
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-option--documentation
  * @status stable
  * @since 1.0
  *

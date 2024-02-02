@@ -14,7 +14,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Menu items provide options for the user to pick from in a menu.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-menu-item--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-menu-item--documentation
  * @status stable
  * @since 1.0
  *

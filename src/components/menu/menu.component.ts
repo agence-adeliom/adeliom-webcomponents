@@ -10,7 +10,7 @@ export interface MenuSelectEventDetail {
 
 /**
  * @summary Menus provide a list of options for the user to choose from.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-menu--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-menu--documentation
  * @status stable
  * @since 1.0
  *

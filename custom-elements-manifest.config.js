@@ -204,7 +204,7 @@ export default {
       referencesTemplate: (_, tag) => [
         {
           name: 'Documentation',
-          url: `https://webcomponents.adeliom.io/?path=/docs/components-${tag.replace('awc-', '')}--docs`
+          url: `https://webcomponents.adeliom.io/?path=/docs/components-${tag.replace('awc-', '')}--documentation`
         }
       ]
     }),
@@ -216,7 +216,7 @@ export default {
       referencesTemplate: (_, tag) => {
         return {
           name: 'Documentation',
-          url: `https://webcomponents.adeliom.io/?path=/docs/components-${tag.replace('awc-', '')}--docs`
+          url: `https://webcomponents.adeliom.io/?path=/docs/components-${tag.replace('awc-', '')}--documentation`
         };
       }
     }),

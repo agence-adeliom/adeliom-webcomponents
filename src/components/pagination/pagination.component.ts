@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Summary.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/pagination-option--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/pagination-option--documentation
  * @status stable
  * @since 1.0
  *

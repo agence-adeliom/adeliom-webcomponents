@@ -1,5 +1,4 @@
 import { spreadProps, spread } from './spread';
-import { useArgs } from '@storybook/client-api';
 import { html, unsafeStatic } from 'lit/static-html.js';
 import type { Declaration } from './cem-schema';
 import { getAttributesAndProperties, getCssParts, getCssProperties, getSlots } from './cem-utilities.js';
@@ -35,7 +34,7 @@ export function getTemplate(component?: Declaration, args?: any, slot?: any): an
   const slotsTemplate = getSlotsTemplate(component!, args);
   const cssPropertiesTemplate = getCssPropTemplate(component!, args);
   const styleTemplate = getStyleTemplate(component!, args);
-  syncControls(component!);
+  //syncControls(component!);
 
   return html`${styleTemplate}
 <${unsafeStatic(component!.tagName!)} ${styleTemplate ? unsafeStatic(`class="${args.className}"`) : null}
@@ -164,48 +163,4 @@ function getSlotsTemplate(component: Declaration, args: any) {
       .filter(value => value !== null)
       .join('\n')}`
   );
-}
-
-function syncControls(component: Declaration) {
-  setArgObserver(component);
-
-  // wait for story to render before trying to attach the observer
-  setTimeout(() => {
-    const selectedComponent = document.querySelector(component.tagName!)!;
-    argObserver?.observe(selectedComponent, {
-      attributes: true
-    });
-  });
-}
-
-function setArgObserver(component: Declaration) {
-  let isUpdating = false;
-  const updateArgs = useArgs()[1];
-  const attributes = getAttributesAndProperties(component);
-
-  if (argObserver) {
-    return;
-  }
-
-  argObserver = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      if ((mutation.type as string) !== 'attributes' || (mutation.attributeName === 'class' && isUpdating)) {
-        return;
-      }
-
-      isUpdating = true;
-      const attribute = attributes[`${mutation.attributeName}`];
-      if (attribute?.control === 'boolean' || (attribute?.control as any)?.type === 'boolean') {
-        updateArgs({
-          [`${mutation.attributeName}`]: (mutation.target as HTMLElement)?.hasAttribute(mutation.attributeName || '')
-        });
-      } else {
-        updateArgs({
-          [`${mutation.attributeName}`]: (mutation.target as HTMLElement).getAttribute(mutation.attributeName || '')
-        });
-      }
-
-      isUpdating = false;
-    });
-  });
 }

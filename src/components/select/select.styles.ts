@@ -59,7 +59,7 @@ export default css`
     font: inherit;
     border: none;
     background: none;
-    color: var(--awc-input-color-base);
+    color: var(--awc-input-color);
     cursor: inherit;
     overflow: hidden;
     padding: 0;
@@ -122,7 +122,7 @@ export default css`
   /* Standard selects */
   .select--standard .select__combobox {
     background-color: var(--awc-input-background-color);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color-base);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
   }
 
   .select--standard.select--disabled .select__combobox {
@@ -145,7 +145,7 @@ export default css`
   .select--filled .select__combobox {
     border: none;
     background-color: var(--awc-input-filled-background-color);
-    color: var(--awc-input-color-base);
+    color: var(--awc-input-color);
   }
 
   .select--filled:hover:not(.select--disabled) .select__combobox {

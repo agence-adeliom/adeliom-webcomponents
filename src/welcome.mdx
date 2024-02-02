@@ -13,7 +13,7 @@ import * as ButtonStories from './components/button/button.stories';
 - Fully customizable with CSS 🎨
 - Includes a dark theme 🌛
 - Built with accessibility in mind ♿️
-- First-class [React support](?path=/docs/framework-react--docs) ⚛️
+- First-class [React support](?path=/docs/framework-react--documentation) ⚛️
 - Built-in localization 💬
 - Open source 😸
 
@@ -38,12 +38,17 @@ Add the following code to your page.
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc-autoloader.js"></script>
 ```
 
 Now you have access to all of Adeliom WebComponents's components! Try adding a button:
 
 <Canvas of={ButtonStories.Primary} />
+
+> 📘 **Tip**
+>
+> This will activate AWC’s experimental autoloader, which registers components on the fly as you use them. To learn more about it, or for other ways to install [Adeliom WebComponents](/?path=/docs/getting-started-installation--documentation), refer to the installation instructions.
+
 
 ## New to Web Components?
 

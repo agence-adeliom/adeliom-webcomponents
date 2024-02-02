@@ -23,7 +23,7 @@ interface IconSource {
 
 /**
  * @summary Icons are symbols that can be used to represent various options within an application.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-icon--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-icon--documentation
  * @status stable
  * @since 1.0
  *

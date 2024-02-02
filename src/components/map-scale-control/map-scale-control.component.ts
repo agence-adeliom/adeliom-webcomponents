@@ -6,7 +6,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Scale control that shows the scale of the current center of screen in metric (m/km) and imperial (mi/ft) systems.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-scale--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-scale--documentation
  * @status experimental
  * @since 1.0
  */

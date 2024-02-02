@@ -9,7 +9,7 @@ import type AWCStepper from '../stepper/stepper';
 
 /**
  * @summary The stepper-item component can be used to show a numbered list of steps.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-stepper-item--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-stepper-item--documentation
  * @status experimental
  * @since 1.0
  *

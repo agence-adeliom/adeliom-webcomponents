@@ -13,7 +13,7 @@ import type AWCTabPanel from '../tab-panel/tab-panel.js';
 
 /**
  * @summary Tab groups organize content into a container that shows one section at a time.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tab--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tab--documentation
  * @status stable
  * @since 1.0
  *

@@ -14,7 +14,7 @@ import type { StyleInfo } from 'lit/development/directives/style-map';
 
 /**
  * @summary An embedded representation of a URL on third party sites
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-oembed--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-oembed--documentation
  * @status experimental
  * @since 1.0
  *

@@ -15,8 +15,8 @@ import styles from './tree-item.styles.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
 
 /**
- * @summary A tree item serves as a hierarchical node that lives inside a [tree](?path=/docs/components-tree--docs).
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tree-item--docs
+ * @summary A tree item serves as a hierarchical node that lives inside a [tree](?path=/docs/components-tree--documentation).
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tree-item--documentation
  * @status stable
  * @since 1.0
  *

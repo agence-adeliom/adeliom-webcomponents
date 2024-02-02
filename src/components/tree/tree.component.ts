@@ -49,8 +49,8 @@ function syncCheckboxes(changedTreeItem: AWCTreeItem, initialSync = false) {
 }
 
 /**
- * @summary Trees allow you to display a hierarchical list of selectable [tree items](?path=/docs/components-tree-item--docs). Items with children can be expanded and collapsed as desired by the user.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tree--docs
+ * @summary Trees allow you to display a hierarchical list of selectable [tree items](?path=/docs/components-tree-item--documentation). Items with children can be expanded and collapsed as desired by the user.
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tree--documentation
  * @status stable
  * @since 1.0
  *

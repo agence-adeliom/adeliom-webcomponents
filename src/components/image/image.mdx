@@ -2,6 +2,7 @@ import { Title, Subtitle, Meta, ArgTypes, Primary, Description, Stories } from '
 import * as ImageStories from './image.stories';
 import { TagNames } from '@awc-storybook/blocks/TagNames.jsx';
 import { Summary } from '@awc-storybook/blocks/Summary.jsx';
+import { Importing } from '@awc-storybook/blocks/Importing.jsx';
 
 <Meta of={ImageStories} />
 
@@ -16,6 +17,13 @@ The component accepts all the props of an `<img>` tag, plus the following:
 <Primary of={ImageStories} />
 
 <Stories of={ImageStories} includePrimary={false} title={false} />
+
+## Importing
+
+If you’re using the autoloader or the traditional loader, you can ignore this section.
+Otherwise, feel free to use any of the following snippets to [cherry pick](/?path=/docs/getting-started-installation--documentation#cherry-picking) this component.
+
+<Importing />
 
 ## API
 

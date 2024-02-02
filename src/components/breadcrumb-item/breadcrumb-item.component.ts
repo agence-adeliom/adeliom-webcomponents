@@ -8,8 +8,8 @@ import styles from './breadcrumb-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
- * @summary Breadcrumb Items are used inside [breadcrumbs](?path=/docs/components-breadcrumb--docs) to represent different links.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-breadcrumb-item--docs
+ * @summary Breadcrumb Items are used inside [breadcrumbs](?path=/docs/components-breadcrumb--documentation) to represent different links.
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-breadcrumb-item--documentation
  * @status stable
  * @since 1.0
  *

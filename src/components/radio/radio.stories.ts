@@ -18,9 +18,9 @@ const meta = {
     },
     docs: {
       description: {
-        component: `Radios are designed to be used with [radio groups](?path=/docs/components-radio-group--docs).
+        component: `Radios are designed to be used with [radio groups](?path=/docs/components-radio-group--documentation).
 
-> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](?path=/docs/getting-started-form-controls--docs) to learn more about form submission and client-side validation.`
+> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](?path=/docs/getting-started-form-controls--documentation) to learn more about form submission and client-side validation.`
       }
     }
   },
@@ -103,7 +103,7 @@ export const Sizes: Story = {
   parameters: {
     docs: {
       description: {
-        story: `Add the \`size\` attribute to the [Radio Group](?path=/docs/components-radio-group--docs) to change the radios' size.`
+        story: `Add the \`size\` attribute to the [Radio Group](?path=/docs/components-radio-group--documentation) to change the radios' size.`
       }
     }
   }

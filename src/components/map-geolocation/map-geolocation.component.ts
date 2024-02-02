@@ -9,7 +9,7 @@ import type { LatLngBounds, LocationEvent } from 'leaflet';
 
 /**
  * @summary Element which controls geolocation
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-geolocation--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-geolocation--documentation
  * @status experimental
  * @since 1.0
  *

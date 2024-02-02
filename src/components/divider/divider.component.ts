@@ -6,7 +6,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Dividers are used to visually separate or group elements.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-divider--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-divider--documentation
  * @status stable
  * @since 1.0
  *

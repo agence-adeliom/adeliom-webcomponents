@@ -14,6 +14,7 @@ import {
 import * as IconStories from './icon.stories';
 import { TagNames } from '@awc-storybook/blocks/TagNames.jsx';
 import { Summary } from '@awc-storybook/blocks/Summary.jsx';
+import { Importing } from '@awc-storybook/blocks/Importing.jsx';
 import SystemIcons from '@awc-storybook/static/assets/icons/icons.json';
 
 <Meta of={IconStories} />
@@ -26,7 +27,7 @@ import SystemIcons from '@awc-storybook/static/assets/icons/icons.json';
 
 Adeliom WebComponents comes bundled with over 1,500 icons courtesy of the [Bootstrap Icons](https://icons.getbootstrap.com/) project. These icons are part of the `default` icon library. If you prefer, you can register [custom icon libraries](#icon-libraries) as well.
 
-> Depending on how you're loading Adeliom WebComponents, you may need to copy icon assets and/or [set the base path](?path=/docs/getting-started-installation--docs#setting-the-base-path) so Adeliom WebComponents knows where to load them from. Otherwise, icons may not appear and you'll see 404 Not Found errors in the dev console.
+> Depending on how you're loading Adeliom WebComponents, you may need to copy icon assets and/or [set the base path](?path=/docs/getting-started-installation--documentation#setting-the-base-path) so Adeliom WebComponents knows where to load them from. Otherwise, icons may not appear and you'll see 404 Not Found errors in the dev console.
 
 ### Default Icons
 
@@ -443,6 +444,13 @@ registerIconLibrary('system', {
 }
 
 </IconGallery>
+
+## Importing
+
+If you’re using the autoloader or the traditional loader, you can ignore this section.
+Otherwise, feel free to use any of the following snippets to [cherry pick](/?path=/docs/getting-started-installation--documentation#cherry-picking) this component.
+
+<Importing />
 
 ## API
 

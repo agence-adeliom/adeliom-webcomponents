@@ -9,8 +9,8 @@ import type { CSSResultGroup } from 'lit';
 let id = 0;
 
 /**
- * @summary Tab panels are used inside [tab groups](?path=/docs/components-tab-group--docs) to display tabbed content.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tab-panel--docs
+ * @summary Tab panels are used inside [tab groups](?path=/docs/components-tab-group--documentation) to display tabbed content.
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tab-panel--documentation
  * @status stable
  * @since 1.0
  *

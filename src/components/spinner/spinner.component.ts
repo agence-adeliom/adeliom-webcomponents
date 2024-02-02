@@ -6,7 +6,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Spinners are used to show the progress of an indeterminate operation.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-spinner--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-spinner--documentation
  * @status stable
  * @since 1.0
  *

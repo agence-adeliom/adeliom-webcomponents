@@ -73,7 +73,7 @@ export const Filesize: Story = {
   parameters: {
     docs: {
       description: {
-        story: `Set the \`size\` attribute to display the filesize of the item. The [Format Byte Component](/?path=/docs/components-format-bytes--docs) is used to convert the given bytes to a human-readable format.`
+        story: `Set the \`size\` attribute to display the filesize of the item. The [Format Byte Component](/?path=/docs/components-format-bytes--documentation) is used to convert the given bytes to a human-readable format.`
       }
     }
   },

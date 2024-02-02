@@ -107,7 +107,7 @@ export const MenuDividers: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Use dividers in [menus](?path=/docs/components-menu--docs) to visually group menu items.'
+        story: 'Use dividers in [menus](?path=/docs/components-menu--documentation) to visually group menu items.'
       }
     }
   }

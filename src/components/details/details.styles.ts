@@ -62,7 +62,7 @@ export default css`
     flex: 1 1 auto;
     display: flex;
     align-items: center;
-    font-weight: var(--awc-font-weight-semibold);
+    font-weight: var(--awc-font-weight-medium);
     color: var(--awc-text-title-color);
     transition: var(--awc-transition-medium) color ease;
   }

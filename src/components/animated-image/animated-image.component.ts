@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary A component for displaying animated GIFs and WEBPs that play and pause on interaction.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-animated-image--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-animated-image--documentation
  * @status stable
  * @since 1.0
  *

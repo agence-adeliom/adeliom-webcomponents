@@ -18,7 +18,7 @@ const meta = {
     },
     docs: {
       description: {
-        component: `>❗ This component works with standard \`<form>\` elements. Please refer to the section on [form controls](?path=/docs/getting-started-form-controls--docs) to learn more about form submission and client-side validation.`
+        component: `>❗ This component works with standard \`<form>\` elements. Please refer to the section on [form controls](?path=/docs/getting-started-form-controls--documentation) to learn more about form submission and client-side validation.`
       },
       story: {
         height: '400px'
