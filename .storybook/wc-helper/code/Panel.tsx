@@ -21,7 +21,7 @@ export const Panel: React.FC<PanelProps> = props => {
     [EVENTS.CODE_UPDATE]: ({ code }) => {
       setState(state => ({ ...state, code }));
     }
-  });
+  }, [code]);
 
   return (
     <AddonPanel {...props}>
@@ -31,7 +31,7 @@ export const Panel: React.FC<PanelProps> = props => {
           border-radius: 0;
         }`}
       </style>
-      {code && <Source code={code} language={'html'} dark style={{ margin: '0' }} />}
+      {code && <Source code={code} language={'html'} format={'lwc'} dark style={{ margin: '0' }} />}
     </AddonPanel>
   );
 };

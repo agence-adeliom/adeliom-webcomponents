@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCImage from './image.js';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-image');
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCImage>('awc-image');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -17,9 +15,9 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCImage & typeof args>;
+} satisfies Meta<AWCImage>;
 
 export default meta;
 

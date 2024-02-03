@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCTooltip from './tooltip.js';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-tooltip');
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCTooltip>('awc-tooltip');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -26,9 +24,9 @@ Tooltips use \`display: contents\` so they won't interfere with how elements are
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCTooltip & typeof args>;
+} satisfies Meta<AWCTooltip>;
 
 export default meta;
 

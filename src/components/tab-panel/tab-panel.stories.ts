@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCTabPanel from './tab-panel.js';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-tab-panel');
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCTabPanel>('awc-tab-panel');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -24,10 +22,8 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-shadow
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
-} satisfies Meta<AWCTabPanel & typeof args>;
+} satisfies Meta<AWCTabPanel>;
 export default meta;
 
 type Story = StoryObj<AWCTabPanel & typeof args>;

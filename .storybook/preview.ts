@@ -3,6 +3,7 @@ import { withThemeByDataAttribute } from '@storybook/addon-styling';
 import { setCustomElementsManifest } from '@storybook/web-components';
 import customElements from './custom-elements.json';
 import DocumentationTemplate from './template/DocumentationTemplate.mdx';
+import prettify from 'esthetic';
 
 import '../src/awc.ts';
 import '../src/themes/light.css';
@@ -10,7 +11,6 @@ import '../src/themes/dark.css';
 import './template/story.style.css';
 
 import { setBasePath } from '../src/utilities/base-path.js';
-import prettify from 'esthetic';
 import { withSource } from './wc-helper/code/withSource';
 import AwcDocTheme from './AwcDocTheme';
 
@@ -83,14 +83,27 @@ const preview: Preview = {
         inline: true
       },
       source: {
+        format: 'lwc',
+        language: 'html',
         transform: (code: string, _storyContext: StoryContext) => {
+          code = code.replace(/=""/g, '');
           try {
             return prettify.format(code, {
+              language: 'html',
+              preset: 'prettier',
+              correct: true,
+              preserveLine: 1,
               markup: {
-                preserveComment: false
+                preserveComment: false,
+                attributeSort: true,
+                lineBreakValue: 'force-align',
+                preserveAttribute: true,
+                attributeCasing:'lowercase-name',
+                forceAttributeValue: false
               }
-            });
+            })
           } catch (e) {
+            console.log(e, code)
             return code;
           }
         }

@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCMenuItem from './menu-item.js';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-menu-item');
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCMenuItem>('awc-menu-item');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -19,9 +17,9 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCMenuItem & typeof args>;
+} satisfies Meta<AWCMenuItem>;
 
 export default meta;
 

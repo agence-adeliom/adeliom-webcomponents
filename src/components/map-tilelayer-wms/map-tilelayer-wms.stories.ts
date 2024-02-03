@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCMapTilelayerWMS from './map-tilelayer-wms.js';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-map-tilelayer-wms');
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCMapTilelayerWMS>('awc-map-tilelayer-wms');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -24,9 +22,9 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCMapTilelayerWMS & typeof args>;
+} satisfies Meta<AWCMapTilelayerWMS>;
 export default meta;
 
 type Story = StoryObj<AWCMapTilelayerWMS & typeof args>;
@@ -45,7 +43,7 @@ export const Primary: Story = {
     layers: 'nexrad-n0r-900913',
     format: 'image/png',
     transparent: true,
-    opacity: '0.5',
+    opacity: 0.5,
     'default-slot': 'Weather data &copy; 2012 IEM Nexrad'
   },
   render: args => html`

@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCMapTilelayer from './map-tilelayer.js';
@@ -24,7 +22,7 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
 } satisfies Meta<AWCMapTilelayer & typeof args>;
 export default meta;

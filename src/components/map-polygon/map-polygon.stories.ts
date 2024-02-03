@@ -1,23 +1,19 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCMapPolygon from './map-polygon.js';
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-map-polygon');
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCMapPolygon>('awc-map-polygon');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
   title: 'Components/Map/Vector Layers/Polygon',
   component: 'awc-map-polygon',
   tags: ['autodocs'],
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   args,
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   argTypes,
   parameters: {
     layout: 'padded',
     actions: {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       handles: events
     },
     docs: {
@@ -26,9 +22,8 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
   render: context => template(context)
-} satisfies Meta<AWCMapPolygon & typeof args>;
+} satisfies Meta<AWCMapPolygon>;
 export default meta;
 
 type Story = StoryObj<AWCMapPolygon & typeof args>;

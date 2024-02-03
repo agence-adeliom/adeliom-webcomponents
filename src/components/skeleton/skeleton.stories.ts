@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCSkeleton from './skeleton.js';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-skeleton');
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCSkeleton>('awc-skeleton');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -26,9 +24,9 @@ Skeletons try not to be opinionated, as there are endless possibilities for desi
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCSkeleton & typeof args>;
+} satisfies Meta<AWCSkeleton>;
 
 export default meta;
 
