@@ -579,8 +579,6 @@ export default class AWCLottie extends AWCElement {
   private _attachEventListeners(): void {
     if (!this._lottie) {
       return;
-    } else {
-      
     }
 
     this._lottie.addEventListener('enterFrame', () => {
