@@ -87,6 +87,7 @@ export { default as AWCMapMarkerClusterGroup } from './components/map-marker-clu
 export { default as AWCStepper } from './components/stepper/stepper.js';
 export { default as AWCStepperItem } from './components/stepper-item/stepper-item.js';
 export { default as AWCLottie } from './components/lottie/lottie.js';
+export { default as AWCDotLottie } from './components/dot-lottie/dot-lottie.js';
 /* plop:component */
 
 // Utilities

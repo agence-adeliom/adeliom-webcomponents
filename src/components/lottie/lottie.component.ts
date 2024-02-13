@@ -579,15 +579,17 @@ export default class AWCLottie extends AWCElement {
   private _attachEventListeners(): void {
     if (!this._lottie) {
       return;
+    } else {
+      
     }
 
     this._lottie.addEventListener('enterFrame', () => {
-      this.seeker = (this._lottie.currentFrame / this._lottie.totalFrames) * 100;
+      this.seeker = (this._lottie!.currentFrame / this._lottie!.totalFrames) * 100;
 
       this.dispatchEvent(
         new CustomEvent(PlayerEvents.Frame, {
           detail: {
-            frame: this._lottie.currentFrame,
+            frame: this._lottie!.currentFrame,
             seeker: this.seeker
           }
         })
@@ -606,7 +608,7 @@ export default class AWCLottie extends AWCElement {
         this.dispatchEvent(new CustomEvent(PlayerEvents.Complete));
 
         if (this.mode === PlayMode.Bounce) {
-          if (this._lottie.currentFrame === 0) {
+          if (this._lottie!.currentFrame === 0) {
             return;
           }
         } else {
@@ -623,8 +625,8 @@ export default class AWCLottie extends AWCElement {
           this.dispatchEvent(new CustomEvent(PlayerEvents.Loop));
 
           if (this.currentState === PlayerState.Playing) {
-            this._lottie.setDirection((this._lottie.playDirection * -1) as AnimationDirection);
-            this._lottie.play();
+            this._lottie!.setDirection((this._lottie!.playDirection * -1) as AnimationDirection);
+            this._lottie!.play();
           }
         }, this.intermission);
       } else {
@@ -641,8 +643,8 @@ export default class AWCLottie extends AWCElement {
               this.seek('99%');
               this.play();
             } else {
-              this._lottie.stop();
-              this._lottie.play();
+              this._lottie!.stop();
+              this._lottie!.play();
             }
           }
         }, this.intermission);

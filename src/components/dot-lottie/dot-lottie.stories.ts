@@ -1,12 +1,13 @@
 import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCLottie from './lottie.ts';
-const { events, args, template } = getWcStorybookHelpers('awc-lottie');
+import type AWCDotLottie from './dot-lottie.ts';
+const { events, args, template } = getWcStorybookHelpers('awc-dot-lottie');
 
+// More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
-  title: 'Components/Lottie',
-  component: 'awc-lottie',
+  title: 'Components/Dot Lottie',
+  component: 'awc-dot-lottie',
   tags: ['autodocs'],
   args,
   parameters: {
@@ -16,30 +17,29 @@ const meta = {
     },
     docs: {
       description: {
-        component: `This component is made to work with Lottie json files. For more informations, please visit https://lottiefiles.com/fr/.`
+        component: `This component is made to work with DotLottie files. For more informations, please visit https://dotlottie.io/.`
       }
     }
   },
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
-} satisfies Meta<AWCLottie & typeof args>;
-
+} satisfies Meta<AWCDotLottie & typeof args>;
 export default meta;
 
-type Story = StoryObj<AWCLottie & typeof args>;
+type Story = StoryObj<AWCDotLottie & typeof args>;
 
 export const Default: Story = {
   name: 'Default',
   render: () => html`
-    <awc-lottie
+    <awc-dot-lottie
       class="w-fit h-fit mx-auto"
       autoplay
       controls
       loop
       mode="normal"
-      src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json"
+      src="https://assets2.lottiefiles.com/dotlotties/dlf10_l12sw9oo.lottie"
     >
-    </awc-lottie>
+    </awc-dot-lottie>
   `
 };
 
@@ -47,17 +47,17 @@ export const Interesct: Story = {
   name: 'Intersect',
   render: () => html`
     <div class="w-full min-h-[300vh] flex items-center flex-col gap-[20vh]">
-      <awc-lottie class="w-fit h-fit" mode="normal" src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json">
-      </awc-lottie>
-      <awc-lottie class="w-fit h-fit" mode="normal" src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json">
-      </awc-lottie>
-      <awc-lottie class="w-fit h-fit" mode="normal" src="https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json">
-      </awc-lottie>
+      <awc-dot-lottie class="w-fit h-fit" mode="normal" src="https://assets2.lottiefiles.com/dotlotties/dlf10_l12sw9oo.lottie">
+      </awc-dot-lottie>
+      <awc-dot-lottie class="w-fit h-fit" mode="normal" src="https://assets2.lottiefiles.com/dotlotties/dlf10_l12sw9oo.lottie">
+      </awc-dot-lottie>
+      <awc-dot-lottie class="w-fit h-fit" mode="normal" src="https://assets2.lottiefiles.com/dotlotties/dlf10_l12sw9oo.lottie">
+      </awc-dot-lottie>
     </div>
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const animations = document.querySelectorAll('awc-lottie');
+        const animations = document.querySelectorAll('awc-dot-lottie');
         const options = {
           root: null,
           rootMargin: '0px',
