@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.8](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.7...v1.6.8) (2024-01-04)
+
+
+### Bug Fixes
+
+* **icon:** Icon mutation error ([52dad5a](https://github.com/agence-adeliom/adeliom-webcomponents/commit/52dad5ab787b94c4d0ecd847f7683ae411c98ba9))
+
 ## [1.6.7](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.6...v1.6.7) (2023-12-01)
 
 

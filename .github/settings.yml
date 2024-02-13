@@ -1,5 +1,5 @@
 repository:
-  name: awc
+  name: adeliom-webcomponents
   description: A collection of professionally designed, every day UI components built on Web standards. Works with all framework as well as regular HTML/CSS/JS. 
   topics: javascript, css, html, ui, webcomponents, ux, designsystem, lit
   private: false

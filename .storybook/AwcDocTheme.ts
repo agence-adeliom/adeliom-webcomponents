@@ -4,7 +4,7 @@ export default create({
   base: 'light',
   brandTitle: 'Adeliom WebComponents',
   brandUrl: 'https://webcomponents.adeliom.io',
-  brandImage: '/assets/images/logo.svg',
+  brandImage: '/assets/android-chrome-512x512.png',
   brandTarget: '_self',
   colorPrimary: '#C377FF',
   colorSecondary: '#EC2E69'
