@@ -174,5 +174,8 @@
     "*": [
       "prettier --write --ignore-unknown --fix"
     ]
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.12.0"
   }
 }

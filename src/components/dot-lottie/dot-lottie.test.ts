@@ -1,6 +1,6 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type AWCDotLottie from "./dot-lottie.component.js";
+import type AWCDotLottie from './dot-lottie.component.js';
 
 describe('<awc-dot-lottie>', () => {
   it('should render a component', async () => {

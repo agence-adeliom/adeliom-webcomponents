@@ -1,23 +1,13 @@
-import { property, query, state } from 'lit/decorators.js';
+import { createError, DEFAULT_STATE, DotLottieCommonPlayer, logWarning, PlayerState } from '@dotlottie/common';
 import { html } from 'lit';
+import { property, query, state } from 'lit/decorators.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './dot-lottie.styles.js';
-import type { CSSResult, TemplateResult } from 'lit';
 import type { AnimationItem } from 'lottie-web';
-import type { RendererType, DotLottiePlayerState, PlaybackOptions, Manifest, ManifestTheme } from '@dotlottie/common';
-import {
-  DotLottieCommonPlayer,
-  logWarning,
-  createError,
-  DEFAULT_STATE,
-} from '@dotlottie/common';
+import type { CSSResult, TemplateResult } from 'lit';
+import type { DotLottiePlayerState, Manifest, ManifestTheme, PlaybackOptions, RendererType } from '@dotlottie/common';
 
-import {
-  DOTLOTTIE_VERSION,
-  PlayMode,
-  PlayerState,
-  PlayerEvents
-} from './utils.js';
+import { DOTLOTTIE_VERSION, PlayMode } from './utils.js';
 
 export interface Versions {
   dotLottiePlayerVersion: string;
@@ -25,10 +15,24 @@ export interface Versions {
 }
 
 /**
- * @summary Short summary of the component's intended use.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-dot-lottie--docs
- * @status experimental
- * @since 1.0
+ * @summary Render Lottie animations using dot lottie format.
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-dot-lottie--documentation
+ * @since 2.0
+ *
+ * @event awc-lottie-rendered - Emitted when the animation is rendered.
+ * @event awc-lottie-complete - Emitted when the animation is complete.
+ * @event awc-lottie-data_failed - Emitted when the data could not be loaded.
+ * @event awc-lottie-data_ready - Emitted when the data has been loaded.
+ * @event awc-lottie-error - Emitted when an error occurs.
+ * @event awc-lottie-frame - Emitted when a frame has been rendered.
+ * @event awc-lottie-freeze - Emitted when the animation is frozen.
+ * @event awc-lottie-loopComplete - Emitted when the animation has completed a loop.
+ * @event awc-lottie-pause - Emitted when the animation is paused.
+ * @event awc-lottie-play - Emitted when the animation is played.
+ * @event awc-lottie-ready - Emitted when the animation is ready.
+ * @event awc-lottie-stop - Emitted when the animation is stopped.
+ * @event awc-lottie-visibilityChange - Emitted when the animation's visibility changes.
+ *
  */
 export default class AWCDotLottie extends AWCElement {
   @property({ type: String })
@@ -214,48 +218,49 @@ export default class AWCDotLottie extends AWCElement {
         this.requestUpdate();
 
         if (prevState.currentState !== playerState.currentState) {
-          this.dispatchEvent(new CustomEvent(playerState.currentState));
+          this.emit('awc-lottie-stateChange', {
+            detail: {
+              prevState: prevState?.currentState,
+              state: playerState.currentState
+            }
+          });
         }
 
-        this.dispatchEvent(
-          new CustomEvent(PlayerEvents.Frame, {
-            detail: {
-              frame: playerState.frame,
-              seeker: playerState.seeker,
-            },
-          }),
-        );
+        this.emit('awc-lottie-frame', {
+          detail: {
+            frame: playerState.frame,
+            seeker: playerState.seeker
+          }
+        });
 
-        this.dispatchEvent(
-          new CustomEvent(PlayerEvents.VisibilityChange, {
-            detail: {
-              visibilityPercentage: playerState.visibilityPercentage,
-            },
-          }),
-        );
-      },
+        this.emit('awc-lottie-visibilityChange', {
+          detail: {
+            visibilityPercentage: playerState.visibilityPercentage
+          }
+        });
+      }
     );
 
     // Handle animation play complete
     commonPlayer.addEventListener('complete', () => {
-      this.dispatchEvent(new CustomEvent(PlayerEvents.Complete));
+      this.emit('awc-lottie-complete');
     });
 
     commonPlayer.addEventListener('loopComplete', () => {
-      this.dispatchEvent(new CustomEvent(PlayerEvents.LoopComplete));
+      this.emit('awc-lottie-loopComplete');
     });
 
     // Handle lottie-web ready event
     commonPlayer.addEventListener('DOMLoaded', () => {
       const manifest = this.getManifest();
 
-      if (manifest && manifest.themes) {
-        this._themesForCurrentAnimation = manifest.themes.filter((theme) =>
-          theme.animations.includes(this.getCurrentAnimationId() || ''),
+      if (manifest?.themes) {
+        this._themesForCurrentAnimation = manifest.themes.filter(theme =>
+          theme.animations.includes(this.getCurrentAnimationId() || '')
         );
       }
 
-      if (manifest && manifest.states) {
+      if (manifest?.states) {
         this._hasMultipleStates = manifest.states.length > 0;
 
         this._statesForCurrentAnimation = [];
@@ -264,32 +269,32 @@ export default class AWCDotLottie extends AWCElement {
         });
       }
 
-      this.dispatchEvent(new CustomEvent(PlayerEvents.Ready));
+      this.emit('awc-lottie-ready');
     });
 
     // Handle animation data load complete
     commonPlayer.addEventListener('data_ready', () => {
-      this.dispatchEvent(new CustomEvent(PlayerEvents.DataReady));
+      this.emit('awc-lottie-data_ready');
     });
 
     // Set error state when animation load fail event triggers
     commonPlayer.addEventListener('data_failed', () => {
-      this.dispatchEvent(new CustomEvent(PlayerEvents.DataFail));
+      this.emit('awc-lottie-data_failed');
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (window) {
-      window.addEventListener('click', (event) => this._clickOutListener(event));
+      window.addEventListener('click', this._clickOutListener);
     }
   }
-  
+
   /**
    * Configure and initialize lottie-web player instance.
    */
   public async load(
     src: string | AnimationItem,
     overrideRendererSettings?: Record<string, unknown>,
-    playbackOptions?: PlaybackOptions,
+    playbackOptions?: PlaybackOptions
   ): Promise<void> {
     if (!this.shadowRoot) {
       return;
@@ -307,7 +312,7 @@ export default class AWCDotLottie extends AWCElement {
         scaleMode: 'noScale',
         clearCanvas: true,
         progressiveLoad: true,
-        hideOnTransparent: true,
+        hideOnTransparent: true
       },
       hover: this.hasAttribute('hover') ? this.hover : undefined,
       renderer: this.hasAttribute('renderer') ? this._renderer : undefined,
@@ -321,7 +326,7 @@ export default class AWCDotLottie extends AWCElement {
       defaultTheme: this.hasAttribute('defaultTheme') ? this.defaultTheme : undefined,
       light: this.light,
       worker: this.worker,
-      activeStateId: this.hasAttribute('activeStateId') ? this.activeStateId : undefined,
+      activeStateId: this.hasAttribute('activeStateId') ? this.activeStateId : undefined
     });
 
     await this._dotLottieCommonPlayer.load(playbackOptions);
@@ -333,8 +338,8 @@ export default class AWCDotLottie extends AWCElement {
 
     if (manifest) {
       if (manifest.themes) {
-        this._themesForCurrentAnimation = manifest.themes.filter((theme) =>
-          theme.animations.includes(this.getCurrentAnimationId() || ''),
+        this._themesForCurrentAnimation = manifest.themes.filter(theme =>
+          theme.animations.includes(this.getCurrentAnimationId() || '')
         );
 
         this._hasMultipleThemes = manifest.themes.length > 0;
@@ -355,7 +360,7 @@ export default class AWCDotLottie extends AWCElement {
      */
     this._initListeners();
   }
-  
+
   /**
    * @returns Current animation's id
    */
@@ -380,18 +385,18 @@ export default class AWCDotLottie extends AWCElement {
 
     const manifest = this._dotLottieCommonPlayer.getManifest();
 
-    return manifest?.animations.map((animation) => animation.id) || [];
+    return manifest?.animations.map(animation => animation.id) || [];
   }
 
   /**
    * @returns The current playing animation
    */
   public currentAnimation(): string {
-    if (!this._dotLottieCommonPlayer || !this._dotLottieCommonPlayer.currentAnimationId) return '';
+    if (!this._dotLottieCommonPlayer?.currentAnimationId) return '';
 
     return this._dotLottieCommonPlayer.currentAnimationId;
   }
-  
+
   /**
    * @returns the current player states
    */
@@ -422,15 +427,15 @@ export default class AWCDotLottie extends AWCElement {
   public getVersions(): Versions {
     return {
       lottieWebVersion: DotLottieCommonPlayer.getLottieWebVersion(),
-      dotLottiePlayerVersion: `${DOTLOTTIE_VERSION}`,
+      dotLottiePlayerVersion: `${DOTLOTTIE_VERSION}`
     };
-  }  
+  }
 
   /**
    * Play the previous animation. The order is taken from the manifest.
    */
   public previous(
-    getOptions?: (currPlaybackOptions: PlaybackOptions, manifestPlaybackOptions: PlaybackOptions) => PlaybackOptions,
+    getOptions?: (currPlaybackOptions: PlaybackOptions, manifestPlaybackOptions: PlaybackOptions) => PlaybackOptions
   ): void {
     this._dotLottieCommonPlayer?.previous(getOptions);
   }
@@ -439,7 +444,7 @@ export default class AWCDotLottie extends AWCElement {
    * Play the next animation. The order is taken from the manifest.
    */
   public next(
-    getOptions?: (currPlaybackOptions: PlaybackOptions, manifestPlaybackOptions: PlaybackOptions) => PlaybackOptions,
+    getOptions?: (currPlaybackOptions: PlaybackOptions, manifestPlaybackOptions: PlaybackOptions) => PlaybackOptions
   ): void {
     this._dotLottieCommonPlayer?.next(getOptions);
   }
@@ -453,7 +458,7 @@ export default class AWCDotLottie extends AWCElement {
 
   public play(
     targetAnimation?: string | number,
-    getOptions?: (currPlaybackOptions: PlaybackOptions, manifestPlaybackOptions: PlaybackOptions) => PlaybackOptions,
+    getOptions?: (currPlaybackOptions: PlaybackOptions, manifestPlaybackOptions: PlaybackOptions) => PlaybackOptions
   ): void {
     if (!this._dotLottieCommonPlayer) {
       return;
@@ -461,7 +466,7 @@ export default class AWCDotLottie extends AWCElement {
 
     this._dotLottieCommonPlayer.play(targetAnimation, getOptions);
   }
-  
+
   /**
    * Pause animation play.
    */
@@ -494,7 +499,7 @@ export default class AWCDotLottie extends AWCElement {
 
     this._dotLottieCommonPlayer.playOnShow(playOnShowOptions);
   }
-  
+
   /**
    * Stop the playOnShow observer.
    * @returns
@@ -532,7 +537,7 @@ export default class AWCDotLottie extends AWCElement {
 
     this._dotLottieCommonPlayer.stopPlayOnScroll();
   }
-  
+
   /**
    * Seek to a given frame.
    */
@@ -569,7 +574,7 @@ export default class AWCDotLottie extends AWCElement {
 
     return data;
   }
-  
+
   /**
    * Set theme
    */
@@ -585,7 +590,7 @@ export default class AWCDotLottie extends AWCElement {
 
     const manifest = this._dotLottieCommonPlayer.getManifest();
 
-    return manifest?.themes?.map((theme) => theme.id) || [];
+    return manifest?.themes?.map(theme => theme.id) || [];
   }
 
   /**
@@ -605,7 +610,7 @@ export default class AWCDotLottie extends AWCElement {
 
     return this._dotLottieCommonPlayer.activeStateId;
   }
-  
+
   /**
    * Freeze animation play.
    * This internal state pauses animation and is used to differentiate between
@@ -638,7 +643,7 @@ export default class AWCDotLottie extends AWCElement {
 
     this._dotLottieCommonPlayer.setDirection(value);
   }
-  
+
   /**
    * Sets the looping of the animation.
    *
@@ -673,7 +678,7 @@ export default class AWCDotLottie extends AWCElement {
 
     this._dotLottieCommonPlayer.toggleLoop();
   }
-  
+
   /**
    * Sets the player mode
    * @param mode - The mode to set ('normal', 'bounce')
@@ -707,37 +712,41 @@ export default class AWCDotLottie extends AWCElement {
   /**
    * Reverts PlaybackOptions to manifest values instead of player props.
    */
-  public revertToManifestValues(playbackKeys?: Array<keyof PlaybackOptions | 'activeAnimationId'>): void {
+  public revertToManifestValues(playbackKeys?: (keyof PlaybackOptions | 'activeAnimationId')[]): void {
     this._dotLottieCommonPlayer?.revertToManifestValues(playbackKeys);
   }
-  
+
   /**
    * Returns the styles for the component. Overriding causes styles to not be applied.
    */
   public static get styles(): CSSResult {
     return styles;
   }
-  
+
   /**
    * Initialize everything on component first render.
    */
   protected override async firstUpdated(): Promise<void> {
-
     // Add intersection observer for detecting component being out-of-view.
     if ('IntersectionObserver' in window) {
       this._io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-        if (entries[0] !== undefined && entries[0].isIntersecting) {
-          if (this._dotLottieCommonPlayer?.currentState === PlayerState.Frozen) {
+        if (entries[0] === undefined) return;
+        if (this._dotLottieCommonPlayer?.currentState === PlayerState.Fetching) return;
+        if (this._dotLottieCommonPlayer?.currentState === PlayerState.Stopped) return;
+        if (this._dotLottieCommonPlayer?.currentState === PlayerState.Error) return;
+
+        if (entries[0].isIntersecting) {
+          if (PlayerState.Playing !== this._dotLottieCommonPlayer?.currentState) {
             this.play();
           }
-        } else if (this._dotLottieCommonPlayer?.currentState === PlayerState.Playing) {
+        } else if (PlayerState.Playing === this._dotLottieCommonPlayer?.currentState) {
           this._freeze();
         }
       });
 
       this._io.observe(this.container);
     }
- 
+
     // Parse loop attribute if present as a number or string-boolean
     // Also check if plain 'loop' prop is present
     if (this.loop) {
@@ -756,7 +765,7 @@ export default class AWCDotLottie extends AWCElement {
       await this.load(this.src);
     }
   }
-  
+
   /**
    * Cleanup on component destroy.
    */
@@ -774,12 +783,12 @@ export default class AWCDotLottie extends AWCElement {
 
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (window) {
-      window.removeEventListener('click', (event) => this._clickOutListener(event));
+      window.removeEventListener('click', this._clickOutListener);
     }
   }
 
   private _clickOutListener(event: MouseEvent): void {
-    const inside = event.composedPath().some((element) => {
+    const inside = event.composedPath().some(element => {
       if (element instanceof HTMLElement) {
         return element.classList.contains('popover') || element.id === 'lottie-animation-options';
       }
@@ -792,7 +801,7 @@ export default class AWCDotLottie extends AWCElement {
       this.requestUpdate();
     }
   }
-  
+
   protected renderControls(): TemplateResult | undefined {
     const isPlaying: boolean = this._dotLottieCommonPlayer?.currentState === PlayerState.Playing;
     const isPaused: boolean = this._dotLottieCommonPlayer?.currentState === PlayerState.Paused;
@@ -876,7 +885,6 @@ export default class AWCDotLottie extends AWCElement {
           }}
           aria-valuemin="1"
           aria-valuemax="100"
-          role="slider"
           aria-valuenow=${this._seeker}
           aria-label="lottie-seek-input"
           style=${`--seeker: ${this._seeker}`}
@@ -983,7 +991,6 @@ export default class AWCDotLottie extends AWCElement {
                         this._styleTabIsOpen = !this._styleTabIsOpen;
                         this.requestUpdate();
                       }
-                      // eslint-disable-next-line no-secrets/no-secrets
                     }}
                   >
                     <div class="popover-button-text">Themes</div>
@@ -1051,7 +1058,7 @@ export default class AWCDotLottie extends AWCElement {
                     <div class="option-title-separator"></div>
                     <div class="option-row">
                       <ul>
-                        ${this.animations().map((animationName) => {
+                        ${this.animations().map(animationName => {
                           return html`
                             <li>
                               <button
@@ -1145,7 +1152,7 @@ export default class AWCDotLottie extends AWCElement {
                     <div class="option-title-separator"></div>
                     <div class="option-row">
                       <ul>
-                        ${this._themesForCurrentAnimation.map((themeName) => {
+                        ${this._themesForCurrentAnimation.map(themeName => {
                           return html`
                             <li>
                               <button
@@ -1229,7 +1236,7 @@ export default class AWCDotLottie extends AWCElement {
                     <div class="option-title-separator"></div>
                     <div class="option-row">
                       <ul>
-                        ${this._statesForCurrentAnimation.map((stateName) => {
+                        ${this._statesForCurrentAnimation.map(stateName => {
                           return html`
                             <li>
                               <button
@@ -1276,7 +1283,7 @@ export default class AWCDotLottie extends AWCElement {
           `
         : html``}
     `;
-  }  
+  }
 
   render() {
     const className: string = this.controls ? 'main controls' : 'main';

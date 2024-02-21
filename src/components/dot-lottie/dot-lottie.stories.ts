@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type AWCDotLottie from './dot-lottie.ts';
-const { events, args, template } = getWcStorybookHelpers('awc-dot-lottie');
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCDotLottie>('awc-dot-lottie');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -10,6 +10,7 @@ const meta = {
   component: 'awc-dot-lottie',
   tags: ['autodocs'],
   args,
+  argTypes,
   parameters: {
     layout: 'padded',
     actions: {
@@ -21,9 +22,8 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
-} satisfies Meta<AWCDotLottie & typeof args>;
+} satisfies Meta<AWCDotLottie>;
 export default meta;
 
 type Story = StoryObj<AWCDotLottie & typeof args>;
@@ -37,7 +37,7 @@ export const Default: Story = {
       controls
       loop
       mode="normal"
-      src="https://assets2.lottiefiles.com/dotlotties/dlf10_l12sw9oo.lottie"
+      src="https://assets-v2.lottiefiles.com/a/d304494e-ceef-11ee-913d-8338acb69ea1/TwQtQVx1SA.lottie"
     >
     </awc-dot-lottie>
   `
@@ -47,11 +47,23 @@ export const Interesct: Story = {
   name: 'Intersect',
   render: () => html`
     <div class="w-full min-h-[300vh] flex items-center flex-col gap-[20vh]">
-      <awc-dot-lottie class="w-fit h-fit" mode="normal" src="https://assets2.lottiefiles.com/dotlotties/dlf10_l12sw9oo.lottie">
+      <awc-dot-lottie
+        class="w-fit h-fit"
+        mode="normal"
+        src="https://assets-v2.lottiefiles.com/a/d304494e-ceef-11ee-913d-8338acb69ea1/TwQtQVx1SA.lottie"
+      >
       </awc-dot-lottie>
-      <awc-dot-lottie class="w-fit h-fit" mode="normal" src="https://assets2.lottiefiles.com/dotlotties/dlf10_l12sw9oo.lottie">
+      <awc-dot-lottie
+        class="w-fit h-fit"
+        mode="normal"
+        src="https://assets-v2.lottiefiles.com/a/d304494e-ceef-11ee-913d-8338acb69ea1/TwQtQVx1SA.lottie"
+      >
       </awc-dot-lottie>
-      <awc-dot-lottie class="w-fit h-fit" mode="normal" src="https://assets2.lottiefiles.com/dotlotties/dlf10_l12sw9oo.lottie">
+      <awc-dot-lottie
+        class="w-fit h-fit"
+        mode="normal"
+        src="https://assets-v2.lottiefiles.com/a/d304494e-ceef-11ee-913d-8338acb69ea1/TwQtQVx1SA.lottie"
+      >
       </awc-dot-lottie>
     </div>
 

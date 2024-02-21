@@ -5,24 +5,36 @@ import {
   LOTTIE_PLAYER_VERSION,
   LOTTIE_WEB_VERSION,
   parseSrc,
-  PlayerEvents,
   PlayerState,
   PlayMode
 } from './utils.js';
 import { html } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import AWCElement from '../../internal/awc-element.js';
-import lottie from 'lottie-web';
+import Lottie from 'lottie-web';
 import styles from './lottie.styles.js';
 import type { AnimationConfigWithData, AnimationConfigWithPath, AnimationDirection, AnimationItem } from 'lottie-web';
 import type { CSSResultGroup, TemplateResult } from 'lit';
 import type { Utils } from './utils.js';
 
 /**
- * @summary Short summary of the component's intended use.
- * @documentation https://awc.a-dev.cloud/?path=/docs/components-lottie--docs
- * @status experimental
- * @since 1.0
+ * @summary Render Lottie animations using Lottie json files.
+ * @documentation https://awc.a-dev.cloud/?path=/docs/components-lottie--documentation
+ * @since 2.0
+ *
+ * @event awc-lottie-rendered - Emitted when the animation is rendered.
+ * @event awc-lottie-complete - Emitted when the animation is complete.
+ * @event awc-lottie-data_failed - Emitted when the data could not be loaded.
+ * @event awc-lottie-data_ready - Emitted when the data has been loaded.
+ * @event awc-lottie-error - Emitted when an error occurs.
+ * @event awc-lottie-frame - Emitted when a frame has been rendered.
+ * @event awc-lottie-freeze - Emitted when the animation is frozen.
+ * @event awc-lottie-loopComplete - Emitted when the animation has completed a loop.
+ * @event awc-lottie-pause - Emitted when the animation is paused.
+ * @event awc-lottie-play - Emitted when the animation is played.
+ * @event awc-lottie-ready - Emitted when the animation is ready.
+ * @event awc-lottie-stop - Emitted when the animation is stopped.
+ * @event awc-lottie-visibilityChange - Emitted when the animation's visibility changes.
  */
 export default class AWCLottie extends AWCElement {
   static styles: CSSResultGroup = styles;
@@ -173,7 +185,9 @@ export default class AWCLottie extends AWCElement {
       }
 
       // Initialize lottie player and load animation
-      this._lottie = lottie.loadAnimation({
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'loadAnimation' does not exist on type 'ty...
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+      this._lottie = Lottie.loadAnimation({
         ...options,
         [srcAttrib]: srcParsed
       });
@@ -189,29 +203,29 @@ export default class AWCLottie extends AWCElement {
         } else {
           jsonData = srcParsed;
         }
-
         if (!isLottie(jsonData)) {
           this.currentState = PlayerState.Error;
-          this.dispatchEvent(new CustomEvent(PlayerEvents.Error));
+          this.emit('awc-lottie-error');
         }
       }
     } catch (err) {
       this.currentState = PlayerState.Error;
-      this.dispatchEvent(new CustomEvent(PlayerEvents.Error));
+      this.emit('awc-lottie-error');
+      console.error(err);
     }
   }
 
   /**
    * Returns the lottie-web instance used in the component.
    */
-  private getLottie(): AnimationItem | undefined {
+  getLottie(): AnimationItem | undefined {
     return this._lottie;
   }
 
   /**
    * Returns the lottie-web version and this player's version
    */
-  private getVersions(): Utils {
+  getVersions(): Utils {
     return {
       lottieWebVersion: LOTTIE_WEB_VERSION,
       lottiePlayerVersion: LOTTIE_PLAYER_VERSION
@@ -221,7 +235,7 @@ export default class AWCLottie extends AWCElement {
   /**
    * Start playing animation.
    */
-  private play() {
+  play() {
     if (!this._lottie) {
       return;
     }
@@ -229,13 +243,13 @@ export default class AWCLottie extends AWCElement {
     this._lottie.play();
     this.currentState = PlayerState.Playing;
 
-    this.dispatchEvent(new CustomEvent(PlayerEvents.Play));
+    this.emit('awc-lottie-play');
   }
 
   /**
    * Pause animation play.
    */
-  private pause(): void {
+  pause(): void {
     if (!this._lottie) {
       return;
     }
@@ -243,13 +257,13 @@ export default class AWCLottie extends AWCElement {
     this._lottie.pause();
     this.currentState = PlayerState.Paused;
 
-    this.dispatchEvent(new CustomEvent(PlayerEvents.Pause));
+    this.emit('awc-lottie-pause');
   }
 
   /**
    * Stops animation play.
    */
-  private stop(): void {
+  stop(): void {
     if (!this._lottie) {
       return;
     }
@@ -258,13 +272,13 @@ export default class AWCLottie extends AWCElement {
     this._lottie.stop();
     this.currentState = PlayerState.Stopped;
 
-    this.dispatchEvent(new CustomEvent(PlayerEvents.Stop));
+    this.emit('awc-lottie-stop');
   }
 
   /**
    * Destroy animation and lottie-player element.
    */
-  private destroy(): void {
+  destroy(): void {
     if (!this._lottie) {
       return;
     }
@@ -272,14 +286,18 @@ export default class AWCLottie extends AWCElement {
     this._lottie.destroy();
     this._lottie = undefined;
     this.currentState = PlayerState.Destroyed;
-    this.dispatchEvent(new CustomEvent(PlayerEvents.Destroyed));
+    this.emit('awc-lottie-stateChange', {
+      detail: {
+        state: PlayerState.Destroyed
+      }
+    });
     this.remove();
   }
 
   /**
    * Seek to a given frame.
    */
-  private seek(value: number | string): void {
+  seek(value: number | string): void {
     if (!this._lottie) {
       return;
     }
@@ -311,7 +329,7 @@ export default class AWCLottie extends AWCElement {
    *
    * If 'download' argument is boolean true, then a download is triggered in browser.
    */
-  private snapshot(download: boolean = true): string | undefined {
+  snapshot(download: boolean = true): string | undefined {
     if (!this.shadowRoot) return;
 
     // Get SVG element and serialize markup
@@ -340,7 +358,7 @@ export default class AWCLottie extends AWCElement {
    *
    * @param value Playback speed.
    */
-  private setSpeed(value = 1): void {
+  setSpeed(value = 1): void {
     if (!this._lottie) {
       return;
     }
@@ -353,7 +371,7 @@ export default class AWCLottie extends AWCElement {
    *
    * @param value Direction values.
    */
-  private setDirection(value: AnimationDirection): void {
+  setDirection(value: AnimationDirection): void {
     if (!this._lottie) {
       return;
     }
@@ -366,7 +384,7 @@ export default class AWCLottie extends AWCElement {
    *
    * @param value Whether to enable looping. Boolean true enables looping.
    */
-  private setLooping(value: boolean): void {
+  setLooping(value: boolean): void {
     if (this._lottie) {
       this.loop = value;
       this._lottie.loop = value;
@@ -376,21 +394,21 @@ export default class AWCLottie extends AWCElement {
   /**
    * Toggle playing state.
    */
-  private togglePlay(): void {
+  togglePlay(): void {
     return this.currentState === PlayerState.Playing ? this.pause() : this.play();
   }
 
   /**
    * Toggles animation looping.
    */
-  private toggleLooping(): void {
+  toggleLooping(): void {
     this.setLooping(!this.loop);
   }
 
   /**
    * Resize animation.
    */
-  private resize() {
+  resize() {
     if (!this._lottie) {
       return;
     }
@@ -440,12 +458,23 @@ export default class AWCLottie extends AWCElement {
   /**
    * Initialize everything on component first render.
    */
-  protected firstUpdated(): void {
+  protected async firstUpdated(): Promise<void> {
+    // Setup lottie player
+    if (this.src) {
+      await this.load(this.src);
+    }
+    this.emit('awc-lottie-rendered');
+
     // Add intersection observer for detecting component being out-of-view.
     if ('IntersectionObserver' in window) {
       this._io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+        if (entries[0] === undefined) return;
+        if (this.currentState === PlayerState.Destroyed) return;
+        if (this.currentState === PlayerState.Stopped) return;
+        if (this.currentState === PlayerState.Error) return;
+
         if (entries[0].isIntersecting) {
-          if (this.currentState === PlayerState.Frozen) {
+          if (this.currentState !== PlayerState.Playing) {
             this.play();
           }
         } else if (this.currentState === PlayerState.Playing) {
@@ -458,14 +487,8 @@ export default class AWCLottie extends AWCElement {
 
     // Add listener for Visibility API's change event.
     if (typeof document.hidden !== 'undefined') {
-      document.addEventListener('visibilitychange', () => this._onVisibilityChange());
+      document.addEventListener('visibilitychange', this._onVisibilityChange);
     }
-
-    // Setup lottie player
-    if (this.src) {
-      this.load(this.src);
-    }
-    this.dispatchEvent(new CustomEvent(PlayerEvents.Rendered));
   }
 
   protected renderControls(): TemplateResult {
@@ -584,26 +607,24 @@ export default class AWCLottie extends AWCElement {
     this._lottie.addEventListener('enterFrame', () => {
       this.seeker = (this._lottie!.currentFrame / this._lottie!.totalFrames) * 100;
 
-      this.dispatchEvent(
-        new CustomEvent(PlayerEvents.Frame, {
-          detail: {
-            frame: this._lottie!.currentFrame,
-            seeker: this.seeker
-          }
-        })
-      );
+      this.emit('awc-lottie-frame', {
+        detail: {
+          frame: this._lottie!.currentFrame,
+          seeker: this.seeker
+        }
+      });
     });
 
     // Handle animation play complete
     this._lottie.addEventListener('complete', () => {
       if (this.currentState !== PlayerState.Playing) {
-        this.dispatchEvent(new CustomEvent(PlayerEvents.Complete));
+        this.emit('awc-lottie-complete');
 
         return;
       }
 
       if (!this.loop || (this.count && this._counter >= this.count)) {
-        this.dispatchEvent(new CustomEvent(PlayerEvents.Complete));
+        this.emit('awc-lottie-complete');
 
         if (this.mode === PlayMode.Bounce) {
           if (this._lottie!.currentFrame === 0) {
@@ -620,7 +641,7 @@ export default class AWCLottie extends AWCElement {
         }
 
         setTimeout(() => {
-          this.dispatchEvent(new CustomEvent(PlayerEvents.Loop));
+          this.emit('awc-lottie-loopComplete');
 
           if (this.currentState === PlayerState.Playing) {
             this._lottie!.setDirection((this._lottie!.playDirection * -1) as AnimationDirection);
@@ -633,7 +654,7 @@ export default class AWCLottie extends AWCElement {
         }
 
         window.setTimeout(() => {
-          this.dispatchEvent(new CustomEvent(PlayerEvents.Loop));
+          this.emit('awc-lottie-loopComplete');
 
           if (this.currentState === PlayerState.Playing) {
             if (this.direction === -1) {
@@ -661,19 +682,19 @@ export default class AWCLottie extends AWCElement {
         this.play();
       }
 
-      this.dispatchEvent(new CustomEvent(PlayerEvents.Ready));
+      this.emit('awc-lottie-ready');
     });
 
     // Handle animation data load complete
     this._lottie.addEventListener('data_ready', () => {
-      this.dispatchEvent(new CustomEvent(PlayerEvents.Load));
+      this.emit('awc-lottie-data_ready');
     });
 
     // Set error state when animation load fail event triggers
     this._lottie.addEventListener('data_failed', () => {
       this.currentState = PlayerState.Error;
 
-      this.dispatchEvent(new CustomEvent(PlayerEvents.Error));
+      this.emit('awc-lottie-data_failed');
     });
 
     // Set handlers to auto play animation on hover if enabled
@@ -702,7 +723,7 @@ export default class AWCLottie extends AWCElement {
     this._lottie.pause();
     this.currentState = PlayerState.Frozen;
 
-    this.dispatchEvent(new CustomEvent(PlayerEvents.Freeze));
+    this.emit('awc-lottie-freeze');
   }
 
   render() {

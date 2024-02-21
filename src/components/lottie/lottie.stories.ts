@@ -1,14 +1,15 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCLottie from './lottie.ts';
-const { events, args, template } = getWcStorybookHelpers('awc-lottie');
+import type AWCLottie from './lottie.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCLottie>('awc-lottie');
 
 const meta = {
   title: 'Components/Lottie',
   component: 'awc-lottie',
   tags: ['autodocs'],
   args,
+  argTypes,
   parameters: {
     layout: 'padded',
     actions: {
@@ -20,9 +21,8 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
-} satisfies Meta<AWCLottie & typeof args>;
+} satisfies Meta<AWCLottie>;
 
 export default meta;
 
