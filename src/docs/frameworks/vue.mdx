@@ -18,11 +18,11 @@ To add Adeliom WebComponents to your Vue app, install the package from npm.
 npm install @agence-adeliom/awc
 ```
 
-Next, [include a theme](?path=/docs/getting-started-themes--docs) and set the [base path](?path=/docs/getting-started-installation--docs#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
+Next, [include a theme](?path=/docs/getting-started-themes--documentation) and set the [base path](?path=/docs/getting-started-installation--documentation#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
-import '@agence-adeliom/awc/themes/light.css';
-import { setBasePath } from '@agence-adeliom/awc';
+import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path';
 
 setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/');
 ```
@@ -32,6 +32,10 @@ setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%
 > If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@agence-adeliom/awc/%NPMDIR%/assets` into a public folder in your app. Then you can point the base path to that folder instead.
 
 ## Configuration
+
+If you haven’t configured your Vue.js project to work with custom elements/web components,
+follow [the instructions](https://vuejs.org/guide/extras/web-components.html#using-custom-elements-in-vue) here based on your project type to ensure your project will not
+throw an error when it encounters a custom element.
 
 You'll need to tell Vue to ignore Adeliom WebComponents components. This is pretty easy because they all start with `awc-`.
 
@@ -62,6 +66,18 @@ export default defineConfig({
 
 Now you can start using Adeliom WebComponents components in your app!
 
+## Types
+
+Once you have configured your application for custom elements, you should be able to use Adeliom WebComponents in your application without it causing any errors. Unfortunately, this doesn’t register the custom elements to behave like components built using Vue. To provide autocomplete information and type safety for your components, you can import the Adeliom WebComponents Vue types into your tsconfig.json to get better integration in your standard Vue and JSX templates.
+
+```json
+{
+  "compilerOptions": {
+    "types": ["@agence-adeliom/awc/%NPMDIR%/types/vue"]
+  }
+}
+```
+
 ## Usage
 
 ### QR code generator example
@@ -70,8 +86,8 @@ Now you can start using Adeliom WebComponents components in your app!
 <script setup lang="ts">
   import { ref } from 'vue';
 
-  import '@agence-adeliom/awc/components/qr-code/qr-code.js';
-  import '@agence-adeliom/awc/components/input/input.js';
+  import '@agence-adeliom/awc/%NPMDIR%/components/qr-code/qr-code.js';
+  import '@agence-adeliom/awc/%NPMDIR%/components/input/input.js';
 
   const qrCode = ref();
 </script>
@@ -118,7 +134,7 @@ Here is an example:
 <awc-drawer label="Drawer" placement="start" class="drawer-placement-start" :open="drawerIsOpen">
   This drawer slides in from the start.
   <div slot="footer">
-    <awc-button variant="primary" @click=" drawerIsOpen = false">Close</awc-button>
+    <awc-button variant="primary" @click="drawerIsOpen = false">Close</awc-button>
   </div>
 </awc-drawer>
 ```

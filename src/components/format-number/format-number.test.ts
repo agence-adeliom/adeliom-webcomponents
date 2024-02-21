@@ -1,6 +1,6 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type AWCFormatNumber from './format-number';
+import type AWCFormatNumber from './format-number.js';
 
 describe('<awc-format-number>', () => {
   describe('defaults ', () => {

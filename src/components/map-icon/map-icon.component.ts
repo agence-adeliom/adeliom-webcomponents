@@ -5,7 +5,7 @@ import type { PropertyValues } from 'lit';
 
 /**
  * @summary Element which defines an icon template for markers.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-icon--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-icon--documentation
  * @status experimental
  * @since 1.0
  */

@@ -121,8 +121,8 @@ export default css`
 
   /* Standard selects */
   .select--standard .select__combobox {
-    background-color: var(--awc-input-background-color-base);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color-base);
+    background-color: var(--awc-input-background-color);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
   }
 
   .select--standard.select--disabled .select__combobox {

@@ -14,12 +14,12 @@ To add Adeliom WebComponents to your React app, install the package from npm.
 npm install @agence-adeliom/awc
 ```
 
-Next, [include a theme](?path=/docs/getting-started-themes--docs) and set the [base path](?path=/docs/getting-started-installation--docs#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
+Next, [include a theme](?path=/docs/getting-started-themes--documentation) and set the [base path](?path=/docs/getting-started-installation--documentation#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
 // App.jsx
-import '@agence-adeliom/awc/themes/light.css';
-import { setBasePath } from '@agence-adeliom/awc';
+import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path';
 
 setBasePath('https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/');
 ```
@@ -41,24 +41,39 @@ Preact users facing type errors using components may benefit from setting "paths
 Every Adeliom WebComponents component is available to import as a React component. Note that we're importing the `<AWCButton>` _React component_ instead of the `<awc-button>` _custom element_ in the example below.
 
 ```jsx
-import { AWCButton } from '@agence-adeliom/awc/react';
+import AWCButton from '@agence-adeliom/awc/%NPMDIR%/react/button';
 
 const MyComponent = () => <AWCButton variant="primary">Click me</AWCButton>;
 
 export default MyComponent;
 ```
 
+#### Notes about tree shaking
+
+Previously, it was recommended to import from a single entrypoint like so:
+
+```jsx
+import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
+```
+
+However, tree-shaking extra Shoelace components proved to be a challenge. As a result, we now recommend cherry-picking components you want to use, rather than importing from a single entrypoint.
+
+```diff
+- import { AWCButton } from '@agence-adeliom/awc/%NPMDIR%/react';
++ import AWCButton from '@agence-adeliom/awc/%NPMDIR%/react/button';
+```
+
 You can find a copy + paste import for each component in the "importing" section of its documentation.
 
 ### Event Handling
 
-Many Adeliom WebComponents components emit [custom events](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent). For example, the [input component](?path=/docs/components-input--docs) emits the `awc-input` event when it receives input. In React, you can listen for the event using `onSlInput`.
+Many Adeliom WebComponents components emit [custom events](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent). For example, the [input component](?path=/docs/components-input--documentation) emits the `awc-input` event when it receives input. In React, you can listen for the event using `onSlInput`.
 
 Here's how you can bind the input's value to a state variable.
 
 ```jsx
 import { useState } from 'react';
-import { AWCInput } from '@agence-adeliom/awc/react';
+import { AWCInput } from '@agence-adeliom/awc/%NPMDIR%/react/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');
@@ -73,8 +88,8 @@ If you're using TypeScript, it's important to note that `event.target` will be a
 
 ```tsx
 import { useState } from 'react';
-import { AWCInput } from '@agence-adeliom/awc/react';
-import type AWCInputElement from '@agence-adeliom/awc/components/input/input';
+import AWCInput from '@agence-adeliom/awc/react';
+import type AWCInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');
@@ -89,8 +104,8 @@ You can also import the event type for use in your callbacks, shown below.
 
 ```tsx
 import { useCallback, useState } from 'react';
-import { AWCInput, AWCInputEvent } from '@agence-adeliom/awc/react';
-import type AWCInputElement from '@agence-adeliom/awc/components/input/input';
+import AWCInput, { type AWCInputEvent } from '@agence-adeliom/awc/%NPMDIR%/react/input';
+import type AWCInputElement from '@agence-adeliom/awc/%NPMDIR%/components/input/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');

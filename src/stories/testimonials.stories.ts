@@ -195,17 +195,17 @@ export const Testimonials3: StoryObj = {
       ${heading}
 
       <div>
-        <awc-carousel
-          pagination
-          navigation
-          slides-per-view="1"
-          slides-per-group="1"
+        <swiper-container
+          navigation="true"
+          pagination="true"
+          class="testimonial-3 mb-8"
           space-between="16"
           breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
-          class="mb-8"
+          navigation-prev-el="awc-button.navigation-prev"
+          navigation-next-el="awc-button.navigation-next"
         >
           <!-- quote - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card bordered shadow>
               <div slot="footer" class="flex items-center gap-3">
                 <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
@@ -224,11 +224,11 @@ export const Testimonials3: StoryObj = {
                 sample of fonts or generate text for testing.
               </p>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- quote - end -->
 
           <!-- quote - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card bordered shadow>
               <div slot="footer" class="flex items-center gap-3">
                 <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
@@ -247,11 +247,11 @@ export const Testimonials3: StoryObj = {
                 sample of fonts or generate text for testing.
               </p>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- quote - end -->
 
           <!-- quote - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card bordered shadow>
               <div slot="footer" class="flex items-center gap-3">
                 <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
@@ -270,11 +270,11 @@ export const Testimonials3: StoryObj = {
                 sample of fonts or generate text for testing.
               </p>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- quote - end -->
 
           <!-- quote - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card bordered shadow>
               <div slot="footer" class="flex items-center gap-3">
                 <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
@@ -293,9 +293,19 @@ export const Testimonials3: StoryObj = {
                 sample of fonts or generate text for testing.
               </p>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- quote - end -->
-        </awc-carousel>
+          <div slot="container-end">
+            <div class="navigation">
+              <awc-button variant="secondary" class="navigation-prev" icon="square">
+                <awc-icon library="system" name="chevron-left" aria-hidden="true" loading="eager"></awc-icon>
+              </awc-button>
+              <awc-button variant="secondary" class="navigation-next" icon="square">
+                <awc-icon library="system" name="chevron-right" aria-hidden="true" loading="eager"></awc-icon>
+              </awc-button>
+            </div>
+          </div>
+        </swiper-container>
 
         <div class="text-center">
           <awc-button variant="primary" class="w-full md:w-auto" outline>View all news</awc-button>
@@ -304,14 +314,60 @@ export const Testimonials3: StoryObj = {
     </div>
 
     <style>
-      awc-carousel {
-        --aspect-ratio: none;
-        --pagination-bottom: -8px;
-        --navigation-disabled-opacity: 0;
-        --navigation-sides-offset: -2.5rem;
-      }
-      awc-carousel::part(base) {
+      .testimonial-3::part(container) {
+        --swiper-navigation-sides-offset: -2.5rem;
+        --swiper-pagination-bottom: -1rem;
+        --swiper-pagination-color: var(--awc-color-primary-600);
+        --swiper-pagination-bullet-inactive-color: var(--awc-color-neutral-200);
+        --swiper-pagination-bullet-size: 0.75rem;
+        --swiper-pagination-bullet-horizontal-gap: 0.5rem;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        overflow: visible;
         padding-bottom: 30px;
+      }
+
+      .testimonial-3 .navigation {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        right: auto;
+        margin-top: 1rem;
+        transform: translate3d(-50%, 0, 0);
+      }
+
+      .testimonial-3 .navigation .swiper-button-disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      @media screen and (min-width: 767px) {
+        .testimonial-3 .navigation {
+          position: static;
+          transform: none;
+          left: auto;
+          right: auto;
+          margin: 0;
+        }
+        .testimonial-3 .navigation .navigation-prev,
+        .testimonial-3 .navigation .navigation-next {
+          position: absolute;
+          top: 50%;
+          z-index: 1;
+          margin: 0;
+          transform: translate3d(0, -50%, 0);
+        }
+
+        .testimonial-3 .navigation .navigation-prev {
+          left: var(--swiper-navigation-sides-offset, 20px);
+        }
+
+        .testimonial-3 .navigation .navigation-next {
+          right: var(--swiper-navigation-sides-offset, 20px);
+        }
+
+        .testimonial-3 .navigation .swiper-button-disabled {
+          display: none;
+        }
       }
     </style>
   `
@@ -321,16 +377,18 @@ export const Testimonials4: StoryObj = {
   name: 'Testimonials 4',
   render: () => html`
     <div class="container mx-auto px-4 md:px-8">
-      <div class="grid md:grid-cols-12 gap-10">
+      <div class="flex flex-col md:grid md:grid-cols-12 gap-10">
         <!-- text - start -->
         <div class="md:col-span-5">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+          <h3
+            class="text-center text-3x-large md:text-4x-large md:text-left xl:text-5x-large font-semibold leading-dense mb-4 text-title"
+          >
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
             >
             Consectetur adipiscing elit
           </h3>
-          <p class="mx-auto max-w-screen-md text-paragraph mb-4">
+          <p class="mx-auto max-w-screen-md text-paragraph mb-4 text-center md:text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Porta lorem mollis aliquam ut porttitor leo a diam.
           </p>
@@ -340,15 +398,17 @@ export const Testimonials4: StoryObj = {
           <awc-button variant="primary" outline class="w-full md:w-auto">Button</awc-button>
         </div>
         <!-- text - end -->
-        <div class="md:col-span-7 w-full px-12">
-          <awc-carousel
-            pagination
-            navigation
-            style="--aspect-ratio: none;--navigation-sides-offset: -2.75rem;--pagination-bottom: -2rem;"
-            class="testimonial-carousel"
+        <div class="md:col-span-7">
+          <swiper-container
+            navigation="true"
+            pagination="true"
+            class="testimonial-4 mb-8"
+            space-between="48"
+            navigation-prev-el="awc-button.navigation-prev"
+            navigation-next-el="awc-button.navigation-next"
           >
             <!-- quote - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card bordered shadow>
                 <div slot="footer" class="flex items-center gap-3">
                   <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
@@ -367,11 +427,11 @@ export const Testimonials4: StoryObj = {
                   a sample of fonts or generate text for testing.
                 </p>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- quote - end -->
 
             <!-- quote - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card bordered shadow>
                 <div slot="footer" class="flex items-center gap-3">
                   <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
@@ -390,11 +450,11 @@ export const Testimonials4: StoryObj = {
                   a sample of fonts or generate text for testing.
                 </p>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- quote - end -->
 
             <!-- quote - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card bordered shadow>
                 <div slot="footer" class="flex items-center gap-3">
                   <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
@@ -413,11 +473,11 @@ export const Testimonials4: StoryObj = {
                   a sample of fonts or generate text for testing.
                 </p>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- quote - end -->
 
             <!-- quote - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card bordered shadow>
                 <div slot="footer" class="flex items-center gap-3">
                   <awc-avatar initials="JM" style="--size: 2.25rem"></awc-avatar>
@@ -436,12 +496,85 @@ export const Testimonials4: StoryObj = {
                   a sample of fonts or generate text for testing.
                 </p>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- quote - end -->
-          </awc-carousel>
+            <div slot="container-end">
+              <div class="navigation">
+                <awc-button variant="secondary" class="navigation-prev" icon="square">
+                  <awc-icon library="system" name="chevron-left" aria-hidden="true" loading="eager"></awc-icon>
+                </awc-button>
+                <awc-button variant="secondary" class="navigation-next" icon="square">
+                  <awc-icon library="system" name="chevron-right" aria-hidden="true" loading="eager"></awc-icon>
+                </awc-button>
+              </div>
+            </div>
+          </swiper-container>
         </div>
       </div>
     </div>
-    <style></style>
+    <style>
+      .testimonial-4::part(container) {
+        --swiper-navigation-sides-offset: 1rem;
+        --swiper-pagination-bottom: 3rem;
+        --swiper-pagination-color: var(--awc-color-primary-600);
+        --swiper-pagination-bullet-inactive-color: var(--awc-color-neutral-200);
+        --swiper-pagination-bullet-size: 0.75rem;
+        --swiper-pagination-bullet-horizontal-gap: 0.5rem;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        padding-bottom: 86px;
+      }
+
+      .testimonial-4 .navigation {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        right: auto;
+        margin-top: 1rem;
+        transform: translate3d(-50%, 0, 0);
+      }
+
+      .testimonial-4 .navigation .swiper-button-disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      @media screen and (min-width: 767px) {
+        .testimonial-4::part(container) {
+          --swiper-pagination-bottom: 0.5rem;
+          padding-left: 48px;
+          padding-right: 48px;
+          padding-bottom: 48px;
+          box-sizing: border-box;
+        }
+        .testimonial-4 .navigation {
+          position: static;
+          transform: none;
+          left: auto;
+          right: auto;
+          margin: 0;
+        }
+
+        .testimonial-4 .navigation .navigation-prev,
+        .testimonial-4 .navigation .navigation-next {
+          position: absolute;
+          top: 50%;
+          z-index: 1;
+          margin: 0;
+          transform: translate3d(0, -50%, 0);
+        }
+
+        .testimonial-4 .navigation .navigation-prev {
+          left: var(--swiper-navigation-sides-offset, 20px);
+        }
+
+        .testimonial-4 .navigation .navigation-next {
+          right: var(--swiper-navigation-sides-offset, 20px);
+        }
+
+        .testimonial-4 .navigation .swiper-button-disabled {
+          display: none;
+        }
+      }
+    </style>
   `
 };

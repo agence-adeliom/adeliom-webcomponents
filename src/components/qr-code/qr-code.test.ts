@@ -1,11 +1,11 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type AWCQrCode from './qr-code';
+import type AWCQrCode from './qr-code.js';
 
-const getCanvas = (qrCode: AWCQrCode): HTMLCanvasElement => {
+const getCanvas = (qrCode: AWCQrCode): HTMLCanvasElement | undefined | null => {
   const possibleCanvas = qrCode.shadowRoot?.querySelector<HTMLCanvasElement>('.qr-code');
   expect(possibleCanvas).to.exist;
-  return possibleCanvas!;
+  return possibleCanvas;
 };
 
 const expectCanvasToHaveAriaLabel = (qrCode: AWCQrCode, expectedLabel: string): void => {

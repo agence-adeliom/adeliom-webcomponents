@@ -3,8 +3,8 @@ import { expect, fixture, html, oneEvent } from '@open-wc/testing';
 import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';
 import { serialize } from '../../awc.js';
 import sinon from 'sinon';
-import type AWCFileUpload from './file-upload';
-import type AWCFileUploadItem from '../file-upload-item/file-upload-item';
+import type AWCFileUpload from './file-upload.js';
+import type AWCFileUploadItem from '../file-upload-item/file-upload-item.js';
 
 describe('<awc-file-upload>', () => {
   let xhr: sinon.SinonFakeXMLHttpRequestStatic;

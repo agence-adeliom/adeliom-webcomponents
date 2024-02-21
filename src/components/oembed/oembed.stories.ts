@@ -1,7 +1,7 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCOembed from './oembed';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-oembed');
+import type AWCOembed from './oembed.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCOembed>('awc-oembed');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -15,9 +15,9 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCOembed & typeof args>;
+} satisfies Meta<AWCOembed>;
 
 export default meta;
 

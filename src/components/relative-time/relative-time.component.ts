@@ -20,7 +20,7 @@ const availableUnits: UnitConfig[] = [
 
 /**
  * @summary Outputs a localized time phrase relative to the current date and time.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-relative-time--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-relative-time--documentation
  * @status stable
  * @since 1.0
  */

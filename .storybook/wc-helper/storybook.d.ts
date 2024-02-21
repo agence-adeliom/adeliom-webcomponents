@@ -5,8 +5,17 @@ export interface Options {
   typeRef?: string;
 }
 
-export interface ArgTypes {
-  [key: string]: ArgSettings;
+interface InputType {
+  name?: string;
+  description?: string;
+  defaultValue?: any;
+  type?: SBType | SBScalarType['name'];
+  if?: Conditional;
+  [key: string]: any;
+}
+
+export interface ArgTypes<T = unknown> {
+  [key: string]: InputType;
 }
 
 interface ArgSettings {
@@ -61,7 +70,7 @@ interface Control {
   accept?: string;
 }
 
-type ControlOptions =
+export type ControlOptions =
   | 'text'
   | 'radio'
   | 'select'

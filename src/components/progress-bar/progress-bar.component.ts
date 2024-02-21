@@ -10,7 +10,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Progress bars are used to show the status of an ongoing operation.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-progress-bar--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-progress-bar--documentation
  * @status stable
  * @since 1.0
  *

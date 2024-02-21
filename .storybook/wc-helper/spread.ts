@@ -1,6 +1,16 @@
+/**
+ *
+ * TEMPORARILY IMPORTED FROM @open-wc/lit-helpers
+ *
+ */
+
+import type { ElementPart, Part } from 'lit';
 import { nothing } from 'lit/html.js';
 import { directive } from 'lit/directive.js';
 import { AsyncDirective } from 'lit/async-directive.js';
+
+type EventListenerWithOptions = EventListenerOrEventListenerObject & Partial<AddEventListenerOptions>;
+
 /**
  * Usage:
  *    import { html, render } from 'lit';
@@ -22,24 +32,24 @@ import { AsyncDirective } from 'lit/async-directive.js';
  *    );
  */
 export class SpreadPropsDirective extends AsyncDirective {
-  constructor() {
-    super(...arguments);
-    this.prevData = {};
-  }
-  render(_spreadData) {
+  host!: EventTarget | object | Element;
+  element!: Element;
+  prevData: { [key: string]: unknown } = {};
+
+  render(_spreadData: { [key: string]: unknown }) {
     return nothing;
   }
-  update(part, [spreadData]) {
-    var _a;
-    if (this.element !== part.element) {
-      this.element = part.element;
+  update(part: Part, [spreadData]: Parameters<this['render']>) {
+    if (this.element !== (part as ElementPart).element) {
+      this.element = (part as ElementPart).element;
     }
-    this.host = ((_a = part.options) === null || _a === void 0 ? void 0 : _a.host) || this.element;
+    this.host = part.options?.host || this.element;
     this.apply(spreadData);
     this.groom(spreadData);
     this.prevData = { ...spreadData };
   }
-  apply(data) {
+
+  apply(data: { [key: string]: unknown }) {
     if (!data) return;
     const { prevData, element } = this;
     for (const key in data) {
@@ -47,22 +57,24 @@ export class SpreadPropsDirective extends AsyncDirective {
       if (value === prevData[key]) {
         continue;
       }
-      // @ts-ignore
-      element[key] = value;
+
+      safeSetProperty(element, key, value);
     }
   }
-  groom(data) {
+
+  groom(data: { [key: string]: unknown }) {
     const { prevData, element } = this;
     if (!prevData) return;
     for (const key in prevData) {
-      if (!data || (!(key in data) && element[key] === prevData[key])) {
-        // @ts-ignore
-        element[key] = undefined;
+      if (!data || (!(key in data) && (element as any)[key] === prevData[key])) {
+        safeSetProperty(element, key, undefined);
       }
     }
   }
 }
+
 export const spreadProps = directive(SpreadPropsDirective);
+
 /**
  * Usage:
  *    import { html, render } from 'lit';
@@ -83,11 +95,9 @@ export const spreadProps = directive(SpreadPropsDirective);
  *    );
  */
 export class SpreadEventsDirective extends SpreadPropsDirective {
-  constructor() {
-    super(...arguments);
-    this.eventData = {};
-  }
-  apply(data) {
+  eventData: { [key: string]: unknown } = {};
+
+  apply(data: { [key: string]: unknown }) {
     if (!data) return;
     for (const key in data) {
       const value = data[key];
@@ -95,10 +105,11 @@ export class SpreadEventsDirective extends SpreadPropsDirective {
         // do nothing if the same value is being applied again.
         continue;
       }
-      this.applyEvent(key, value);
+      this.applyEvent(key, value as EventListenerWithOptions);
     }
   }
-  applyEvent(eventName, eventValue) {
+
+  applyEvent(eventName: string, eventValue: EventListenerWithOptions) {
     const { prevData, element } = this;
     this.eventData[eventName] = eventValue;
     const prevHandler = prevData[eventName];
@@ -107,48 +118,55 @@ export class SpreadEventsDirective extends SpreadPropsDirective {
     }
     element.addEventListener(eventName, this, eventValue);
   }
-  groom(data) {
+
+  groom(data: { [key: string]: unknown }) {
     const { prevData, element } = this;
     if (!prevData) return;
     for (const key in prevData) {
-      if (!data || (!(key in data) && element[key] === prevData[key])) {
-        this.groomEvent(key, prevData[key]);
+      if (!data || (!(key in data) && (element as any)[key] === prevData[key])) {
+        this.groomEvent(key, prevData[key] as EventListenerWithOptions);
       }
     }
   }
-  groomEvent(eventName, eventValue) {
+
+  groomEvent(eventName: string, eventValue: EventListenerWithOptions) {
     const { element } = this;
     delete this.eventData[eventName];
     element.removeEventListener(eventName, this, eventValue);
   }
-  handleEvent(event) {
-    const value = this.eventData[event.type];
+
+  handleEvent(event: Event) {
+    const value: Function | EventListenerObject = this.eventData[event.type] as Function | EventListenerObject;
     if (typeof value === 'function') {
-      value.call(this.host, event);
+      (value as Function).call(this.host, event);
     } else {
-      value.handleEvent(event);
+      (value as EventListenerObject).handleEvent(event);
     }
   }
+
   disconnected() {
     const { eventData, element } = this;
     for (const key in eventData) {
       // event listener
       const name = key.slice(1);
-      const value = eventData[key];
+      const value = eventData[key] as EventListenerWithOptions;
       element.removeEventListener(name, this, value);
     }
   }
+
   reconnected() {
     const { eventData, element } = this;
     for (const key in eventData) {
       // event listener
       const name = key.slice(1);
-      const value = eventData[key];
+      const value = eventData[key] as EventListenerWithOptions;
       element.addEventListener(name, this, value);
     }
   }
 }
+
 export const spreadEvents = directive(SpreadEventsDirective);
+
 /**
  * Usage:
  *    import { html, render } from 'lit';
@@ -169,7 +187,7 @@ export const spreadEvents = directive(SpreadEventsDirective);
  *    );
  */
 export class SpreadDirective extends SpreadEventsDirective {
-  apply(data) {
+  apply(data: { [key: string]: unknown }) {
     if (!data) return;
     const { prevData, element } = this;
     for (const key in data) {
@@ -181,11 +199,10 @@ export class SpreadDirective extends SpreadEventsDirective {
       switch (key[0]) {
         case '@': // event listener
           this.eventData[name] = value;
-          this.applyEvent(name, value);
+          this.applyEvent(name, value as EventListenerWithOptions);
           break;
         case '.': // property
-          // @ts-ignore
-          element[name] = value;
+          safeSetProperty(element, name, value);
           break;
         case '?': // boolean attribute
           if (value) {
@@ -205,19 +222,19 @@ export class SpreadDirective extends SpreadEventsDirective {
       }
     }
   }
-  groom(data) {
+
+  groom(data: { [key: string]: unknown }) {
     const { prevData, element } = this;
     if (!prevData) return;
     for (const key in prevData) {
       const name = key.slice(1);
-      if (!data || (!(key in data) && element[name] === prevData[key])) {
+      if (!data || (!(key in data) && (element as any)[name] === prevData[key])) {
         switch (key[0]) {
           case '@': // event listener
-            this.groomEvent(name, prevData[key]);
+            this.groomEvent(name, prevData[key] as EventListenerWithOptions);
             break;
           case '.': // property
-            // @ts-ignore
-            element[name] = undefined;
+            safeSetProperty(element, name, undefined);
             break;
           case '?': // boolean attribute
             element.removeAttribute(name);
@@ -231,5 +248,17 @@ export class SpreadDirective extends SpreadEventsDirective {
     }
   }
 }
+
+function safeSetProperty(element: Element, name: string, value: unknown) {
+  if (hasSetter(element, name)) {
+    (element as any)[name] = value;
+  } else {
+    console.warn(`Could not set property "${name}" on ${element.tagName} because it has no "setter".`);
+  }
+}
+
+function hasSetter(element: Element, name: string) {
+  return !!Object.getOwnPropertyDescriptor(element.constructor.prototype, name)?.set;
+}
+
 export const spread = directive(SpreadDirective);
-//# sourceMappingURL=spread.js.map

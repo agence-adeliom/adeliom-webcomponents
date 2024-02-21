@@ -9,7 +9,7 @@ import type { GeoJsonObject } from 'geojson';
 
 /**
  * @summary An element which represents a geojson layer on the map
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-other-layers-geojson--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-other-layers-geojson--documentation
  * @status experimental
  * @since 1.0
  */

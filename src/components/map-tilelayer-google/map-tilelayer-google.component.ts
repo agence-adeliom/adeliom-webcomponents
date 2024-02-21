@@ -105,16 +105,16 @@ declare module 'leaflet' {
 
 /**
  * @summary Element which defines a tile layer for Google. The content of the `awc-map-tilelayer-google` is used as attribution. It inherits attributes and events from `awc-map-tilelayer`;
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-tilelayer-google--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-tilelayer-google--documentation
  * @status experimental
  * @since 1.0
  *
  *
- * @event loading - Emitted when the tile layer loaded all visible tiles.
- * @event load - Emitted when a tile is requested and starts loading.
- * @event tileloadstart - Emitted when a tile is requested and starts loading.
- * @event tileload - Emitted when a tile loads.
- * @event tileunload - Emitted when a tile is removed (e.g. when you have unloadInvisibleTiles on).
+ * @event awc-map - type : loading - Emitted when the tile layer loaded all visible tiles.
+ * @event awc-map - type : load - Emitted when a tile is requested and starts loading.
+ * @event awc-map - type : tileloadstart - Emitted when a tile is requested and starts loading.
+ * @event awc-map - type : tileload - Emitted when a tile loads.
+ * @event awc-map - type : tileunload - Emitted when a tile is removed (e.g. when you have unloadInvisibleTiles on).
  *
  * @slot - The default slot for attribution.
  */

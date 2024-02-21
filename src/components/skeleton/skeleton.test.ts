@@ -1,6 +1,6 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type AWCSkeleton from './skeleton';
+import type AWCSkeleton from './skeleton.js';
 
 describe('<awc-skeleton>', () => {
   it('should render default skeleton', async () => {

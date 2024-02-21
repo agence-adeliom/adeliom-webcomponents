@@ -1,14 +1,14 @@
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 import componentStyles from '../../styles/component.styles.js';
-import leafletCSS from 'leaflet/dist/leaflet.css?inline';
-import locateCSS from 'leaflet.locatecontrol/dist/L.Control.Locate.min.css?inline';
-import markerClusterCSS from 'leaflet.markercluster/dist/MarkerCluster.css?inline';
+import leafletStyles from './styles/leaflet.styles.js';
+import locateStyles from './styles/locate.styles.js';
+import markerClusterStyles from './styles/markercluster.styles.js';
 
 export default css`
   ${componentStyles}
-  ${unsafeCSS(leafletCSS)}
-  ${unsafeCSS(markerClusterCSS)}
-  ${unsafeCSS(locateCSS)}
+  ${leafletStyles}
+  ${locateStyles}
+  ${markerClusterStyles}
 
   :host {
     display: block;
@@ -51,7 +51,7 @@ export default css`
     height: 100%;
     width: 100%;
     position: relative;
-    
+
   }
 
   .leaflet-control-fullscreen-button span {
@@ -157,7 +157,7 @@ export default css`
     font-family: var(--awc-font-sans);
   }
 
-  .leaflet-touch .leaflet-control-layers, 
+  .leaflet-touch .leaflet-control-layers,
   .leaflet-touch .leaflet-bar,
   .leaflet-touch .leaflet-bar a {
     background: var(--controls-background-color);
@@ -258,7 +258,7 @@ export default css`
     background: none;
   }
 
-  
+
   .leaflet-control-locate a .leaflet-control-locate-spinner {
     animation: none;
     background: none;
@@ -283,7 +283,7 @@ export default css`
     border-radius: 20px;
     overflow: hidden;
   }
-  
+
   .marker-cluster div {
     position: absolute;
     inset: 5px;

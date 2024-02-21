@@ -8,7 +8,6 @@ const translation: Translation = {
   $dir: 'ltr',
 
   browseFiles: 'Gennemse filer',
-  carousel: 'Karrusel',
   clearEntry: 'Ryd indtastning',
   close: 'Luk',
   copied: 'Kopieret',
@@ -18,19 +17,16 @@ const translation: Translation = {
   fileTypeNotAccepted: accept => `Filtypen er ikke accepteret, kun ${accept} filer er tilladt`,
   fileSizeExceeded: size => `Filstørrelsen overskrider ${prettyBytes(size, { locale: 'da' })}`,
   error: 'Fejl',
-  goToSlide: (slide, count) => `Gå til dias ${slide} af ${count}`,
   hidePassword: 'Skjul adgangskode',
   loading: 'Indlæser',
   files: 'Filer :',
   maxFiles: 'Maksimalt antal filer nået',
   noMultipleFiles: 'Flere filer er ikke tilladt',
-  nextSlide: 'Næste slide',
   numOptionsSelected: (num: number) => {
     if (num === 0) return 'Ingen valgt';
     if (num === 1) return '1 valgt';
     return `${num} valgt`;
   },
-  previousSlide: 'Forrige dias',
   previous: 'Forrige',
   next: 'Næste',
   progress: 'Fremgang',
@@ -40,7 +36,6 @@ const translation: Translation = {
   scrollToStart: 'Rul til start',
   selectAColorFromTheScreen: 'Vælg en farve fra skærmen',
   showPassword: 'Vis adgangskode',
-  slideNum: slide => `Slide ${slide}`,
   toggleColorFormat: 'Skift farveformat',
   zoomIn: 'Zoom ind',
   zoomOut: 'Zoom ud',

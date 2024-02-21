@@ -2,9 +2,9 @@ import '../../awc.js';
 // cspell:dictionaries lorem-ipsum
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type { AWCHideEvent } from '../../events/awc-hide';
-import type { AWCShowEvent } from '../../events/awc-show';
-import type AWCDetails from './details';
+import type { AWCHideEvent } from '../../events/awc-hide.js';
+import type { AWCShowEvent } from '../../events/awc-show.js';
+import type AWCDetails from './details.js';
 
 describe('<awc-details>', () => {
   describe('accessibility', () => {

@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCFileUploadItem from './file-upload-item.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-file-upload-item');
+import type AWCFileUploadItem from './file-upload-item.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCFileUploadItem>('awc-file-upload-item');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -22,9 +22,9 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCFileUploadItem & typeof args>;
+} satisfies Meta<AWCFileUploadItem>;
 export default meta;
 
 type Story = StoryObj<AWCFileUploadItem & typeof args>;
@@ -73,7 +73,7 @@ export const Filesize: Story = {
   parameters: {
     docs: {
       description: {
-        story: `Set the \`size\` attribute to display the filesize of the item. The [Format Byte Component](/?path=/docs/components-format-bytes--docs) is used to convert the given bytes to a human-readable format.`
+        story: `Set the \`size\` attribute to display the filesize of the item. The [Format Byte Component](/?path=/docs/components-format-bytes--documentation) is used to convert the given bytes to a human-readable format.`
       }
     }
   },

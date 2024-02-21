@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCRadio from './radio';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-radio');
+import type AWCRadio from './radio.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCRadio>('awc-radio');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -18,15 +18,15 @@ const meta = {
     },
     docs: {
       description: {
-        component: `Radios are designed to be used with [radio groups](?path=/docs/components-radio-group--docs).
+        component: `Radios are designed to be used with [radio groups](?path=/docs/components-radio-group--documentation).
 
-> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](?path=/docs/getting-started-form-controls--docs) to learn more about form submission and client-side validation.`
+> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](?path=/docs/getting-started-form-controls--documentation) to learn more about form submission and client-side validation.`
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCRadio & typeof args>;
+} satisfies Meta<AWCRadio>;
 
 export default meta;
 
@@ -103,7 +103,7 @@ export const Sizes: Story = {
   parameters: {
     docs: {
       description: {
-        story: `Add the \`size\` attribute to the [Radio Group](?path=/docs/components-radio-group--docs) to change the radios' size.`
+        story: `Add the \`size\` attribute to the [Radio Group](?path=/docs/components-radio-group--documentation) to change the radios' size.`
       }
     }
   }

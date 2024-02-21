@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCFileUpload from './file-upload.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-file-upload');
+import type AWCFileUpload from './file-upload.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCFileUpload>('awc-file-upload');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -22,9 +22,9 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCFileUpload & typeof args>;
+} satisfies Meta<AWCFileUpload>;
 export default meta;
 
 type Story = StoryObj<AWCFileUpload & typeof args>;
@@ -231,7 +231,7 @@ export const FormData: Story = {
   parameters: {
     docs: {
       description: {
-        story: `The FileUpload component can be used inside a form as a replacement for \`<input type="file">\`. The files can be accessed using FormData. See [Form Control documentation](/?path=/docs/getting-started-form-controls--docs) for more details.`
+        story: `The FileUpload component can be used inside a form as a replacement for \`<input type="file">\`. The files can be accessed using FormData. See [Form Control documentation](/?path=/docs/getting-started-form-controls--documentation) for more details.`
       }
     }
   },
@@ -258,7 +258,7 @@ export const JSON: Story = {
   parameters: {
     docs: {
       description: {
-        story: `The FileUpload component can be used inside a form as a replacement for \`<input type="file">\`. The files can be accessed using JSON. See [Form Control documentation](/?path=/docs/getting-started-form-controls--docs) for more details.`
+        story: `The FileUpload component can be used inside a form as a replacement for \`<input type="file">\`. The files can be accessed using JSON. See [Form Control documentation](/?path=/docs/getting-started-form-controls--documentation) for more details.`
       }
     }
   },

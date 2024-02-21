@@ -1,6 +1,6 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type AWCSpinner from './spinner';
+import type AWCSpinner from './spinner.js';
 
 describe('<awc-spinner>', () => {
   describe('when provided no parameters', () => {

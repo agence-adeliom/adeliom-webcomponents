@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCButton from './button.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-button');
+import type AWCButton from './button.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCButton>('awc-button');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -17,9 +17,8 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
-} satisfies Meta<AWCButton & typeof args>;
+} satisfies Meta<AWCButton>;
 
 export default meta;
 
@@ -424,7 +423,7 @@ export const Loading: Story = {
     docs: {
       description: {
         story:
-          'Use the `loading` attribute to make a button busy. The width will remain the same as before, preventing adjacent elements from moving around. Clicks will be suppressed until the loading state is removed.'
+          'Use the `loading` attribute to make a button busy. The width will remain the same as before, preventing adjacent elements from moving around.'
       }
     }
   }

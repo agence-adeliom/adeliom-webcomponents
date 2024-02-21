@@ -6,7 +6,7 @@ import type { CSSResultGroup, PropertyValues } from 'lit';
 
 /**
  * @summary Element which defines an divicon template for markers
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-icon-divicon--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-icon-divicon--documentation
  * @status experimental
  * @since 1.0
  *

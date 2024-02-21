@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Icons buttons are simple, icon-only buttons that can be used for actions and in toolbars.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-icon-button--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-icon-button--documentation
  * @status stable
  * @since 1.0
  *

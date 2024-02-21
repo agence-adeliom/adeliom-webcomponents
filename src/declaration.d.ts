@@ -3,6 +3,12 @@ declare module '*.css' {
   export default styles;
 }
 
+declare module '*.css?inline' {
+  import type { CSSResultGroup } from 'lit';
+  const content: CSSResultGroup;
+  export default content;
+}
+
 declare namespace Chai {
   interface Assertion {
     // chai-a11y-axe returns a promise-like object and should be awaited but the types are incorrect
@@ -14,3 +20,25 @@ declare namespace Chai {
 interface HTMLInputElement {
   showPicker: () => void;
 }
+
+/* eslint-disable */
+interface CloseWatcher extends EventTarget {
+  new (options?: CloseWatcherOptions): CloseWatcher;
+  requestClose(): void;
+  close(): void;
+  destroy(): void;
+
+  oncancel: (event: Event) => void | null;
+  onclose: (event: Event) => void | null;
+}
+
+declare const CloseWatcher: CloseWatcher;
+
+interface CloseWatcherOptions {
+  signal: AbortSignal;
+}
+
+declare interface Window {
+  CloseWatcher?: CloseWatcher;
+}
+/* eslint-enable */

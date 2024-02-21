@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCOption from './option';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-option');
+import type AWCOption from './option.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCOption>('awc-option');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -17,9 +17,9 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCOption & typeof args>;
+} satisfies Meta<AWCOption>;
 
 export default meta;
 

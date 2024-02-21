@@ -1,7 +1,7 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
-import type AWCImageComparer from './image-comparer';
+import type AWCImageComparer from './image-comparer.js';
 
 describe('<awc-image-comparer>', () => {
   it('should render a basic before/after', async () => {

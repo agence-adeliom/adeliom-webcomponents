@@ -6,6 +6,7 @@ import { property, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './icon.styles.js';
+
 import type { CSSResultGroup, HTMLTemplateResult } from 'lit';
 
 const CACHEABLE_ERROR = Symbol();
@@ -22,7 +23,7 @@ interface IconSource {
 
 /**
  * @summary Icons are symbols that can be used to represent various options within an application.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-icon--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-icon--documentation
  * @status stable
  * @since 1.0
  *

@@ -2,19 +2,19 @@ import { extract } from '@extractus/oembed-extractor';
 import { html, unsafeStatic } from 'lit/static-html.js';
 import { property, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import { transformProps } from './oembed.utils';
+import { transformProps } from './oembed.utils.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.js';
 import AWCImage from '../image/image.js';
 import styles from './oembed.styles.js';
-import type { AWCOEmbedProps, BaseOEmbedProps, CoreOEmbedAttributes } from './oembed.utils';
+import type { AWCOEmbedProps, BaseOEmbedProps, CoreOEmbedAttributes } from './oembed.utils.js';
 import type { CSSResultGroup } from 'lit';
 import type { OembedData, PhotoTypeData, RichTypeData, VideoTypeData } from '@extractus/oembed-extractor';
-import type { StyleInfo } from 'lit/development/directives/style-map';
+import type { StyleInfo } from 'lit/directives/style-map.js';
 
 /**
  * @summary An embedded representation of a URL on third party sites
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-oembed--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-oembed--documentation
  * @status experimental
  * @since 1.0
  *
@@ -232,11 +232,5 @@ export default class AWCOembed
         ${innerContent}
       </div>
     `;
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'awc-oembed': AWCOembed;
   }
 }

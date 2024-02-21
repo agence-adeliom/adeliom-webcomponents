@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element for putting a polygon on the map
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-polygon--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-polygon--documentation
  * @status experimental
  * @since 1.0
  *

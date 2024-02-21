@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCInclude from './include';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-include');
+import type AWCInclude from './include.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCInclude>('awc-include');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -24,9 +24,9 @@ The included content will be inserted into the \`<awc-include>\` element's defau
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCInclude & typeof args>;
+} satisfies Meta<AWCInclude>;
 
 export default meta;
 

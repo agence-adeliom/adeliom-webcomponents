@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCRadioGroup from './radio-group';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-radio-group');
+import type AWCRadioGroup from './radio-group.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCRadioGroup>('awc-radio-group');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -20,9 +20,9 @@ const meta = {
       description: {}
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCRadioGroup & typeof args>;
+} satisfies Meta<AWCRadioGroup>;
 
 export default meta;
 
@@ -76,7 +76,7 @@ export const RadioButtons: Story = {
   parameters: {
     docs: {
       description: {
-        story: `[Radio buttons](?path=/docs/components-radio-button--docs) offer an alternate way to display radio controls. In this case, an internal [button group](?path=/docs/components-button-group--docs) is used to group the buttons into a single, cohesive control.`
+        story: `[Radio buttons](?path=/docs/components-radio-button--documentation) offer an alternate way to display radio controls. In this case, an internal [button group](?path=/docs/components-button-group--documentation) is used to group the buttons into a single, cohesive control.`
       }
     }
   }
@@ -118,9 +118,9 @@ export const SizingOptions: Story = {
   parameters: {
     docs: {
       description: {
-        story: `The size of [Radios](?path=/docs/components-radio--docs) and [Radio Buttons](?path=/docs/components-radio-buttons--docs) will be determined by the Radio Group's \`size\` attribute.
+        story: `The size of [Radios](?path=/docs/components-radio--documentation) and [Radio Buttons](?path=/docs/components-radio-buttons--documentation) will be determined by the Radio Group's \`size\` attribute.
 
-> [Radios](?path=/docs/components-radio--docs) and [Radio Buttons](?path=/docs/components-radio-button--docs) also have a \`size\` attribute. This can be useful in certain compositions, but it will be ignored when used inside of a Radio Group.`
+> [Radios](?path=/docs/components-radio--documentation) and [Radio Buttons](?path=/docs/components-radio-button--documentation) also have a \`size\` attribute. This can be useful in certain compositions, but it will be ignored when used inside of a Radio Group.`
       }
     }
   }

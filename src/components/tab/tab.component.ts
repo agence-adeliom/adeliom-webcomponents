@@ -11,8 +11,8 @@ import type { CSSResultGroup } from 'lit';
 let id = 0;
 
 /**
- * @summary Tabs are used inside [tab groups](?path=/docs/components-tab-group--docs) to represent and activate [tab panels](?path=/docs/components-tab-panel--docs).
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tab-tab--docs
+ * @summary Tabs are used inside [tab groups](?path=/docs/components-tab-group--documentation) to represent and activate [tab panels](?path=/docs/components-tab-panel--documentation).
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-tab-tab--documentation
  * @status stable
  * @since 1.0
  *

@@ -3,11 +3,11 @@ import * as L from 'leaflet';
 import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { bound } from '../../internal/bound.js';
 import { property } from 'lit/decorators.js';
-import type AWCMapMarker from '../map-marker/map-marker';
+import type AWCMapMarker from '../map-marker/map-marker.js';
 
 /**
  * @summary Element which represents a marker cluster group
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-other-layers-markerclustergroup--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-other-layers-markerclustergroup--documentation
  * @status experimental
  * @since 1.0
  */

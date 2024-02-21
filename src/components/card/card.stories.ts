@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCCard from './card.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-card');
+import type AWCCard from './card.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCCard>('awc-card');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -17,9 +17,8 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
-} satisfies Meta<AWCCard & typeof args>;
+} satisfies Meta<AWCCard>;
 
 export default meta;
 

@@ -125,7 +125,7 @@ function exitFullscreen(root: Document) {
 }
 /**
  * @summary Fullscreen control.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-fullscreen--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-fullscreen--documentation
  * @status experimental
  * @since 1.0
  *

@@ -1,4 +1,4 @@
-export type AWCRemoveEvent = CustomEvent<Record<PropertyKey, never>>;
+export type AWCRemoveEvent = CustomEvent<Record<PropertyKey, unknown>>;
 
 declare global {
   interface GlobalEventHandlersEventMap {

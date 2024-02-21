@@ -14,29 +14,29 @@ function isRealNumber(x: unknown): x is number {
 
 /**
  * @summary Element which defines a [marker](http://leafletjs.com/reference.html#marker). The content is used as popup window, unless it is empty.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-ui-layers-marker--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-ui-layers-marker--documentation
  * @status experimental
  * @since 1.0
  *
  * @slot - The default slot for popup content.
  *
- * @event move	-	Fired when the marker is moved via setLatLng or by dragging. Old and new coordinates are included in event arguments as oldLatLng, latlng.
- * @event dragstart	-	Fired when the user starts dragging the marker.
- * @event movestart	-	Fired when the marker starts moving (because of dragging).
- * @event drag	-	Fired repeatedly while the user drags the marker.
- * @event dragend	-	Fired when the user stops dragging the marker.
- * @event moveend	-	Fired when the marker stops moving (because of dragging).
- * @event click	-	Fired when the user clicks (or taps) the layer.
- * @event dblclick	-	Fired when the user double-clicks (or double-taps) the layer.
- * @event mousedown	-	Fired when the user pushes the mouse button on the layer.
- * @event mouseup	-	Fired when the user releases the mouse button pushed on the layer.
- * @event mouseover	-	Fired when the mouse enters the layer.
- * @event mouseout	-	Fired when the mouse leaves the layer.
- * @event contextmenu	-	Fired when the user right-clicks on the layer, prevents default browser context menu from showing if there are listeners on this event. Also fired on mobile when the user holds a single touch for a second (also called long press).
- * @event popupopen	-	Fired when a popup bound to this layer is opened
- * @event popupclose	-	Fired when a popup bound to this layer is closed
- * @event add	-	Fired after the layer is added to a map
- * @event remove	-	Fired after the layer is removed from a map
+ * @event awc-map - type : move	-	Fired when the marker is moved via setLatLng or by dragging. Old and new coordinates are included in event arguments as oldLatLng, latlng.
+ * @event awc-map - type : dragstart	-	Fired when the user starts dragging the marker.
+ * @event awc-map - type : movestart	-	Fired when the marker starts moving (because of dragging).
+ * @event awc-map - type : drag	-	Fired repeatedly while the user drags the marker.
+ * @event awc-map - type : dragend	-	Fired when the user stops dragging the marker.
+ * @event awc-map - type : moveend	-	Fired when the marker stops moving (because of dragging).
+ * @event awc-map - type : click	-	Fired when the user clicks (or taps) the layer.
+ * @event awc-map - type : dblclick	-	Fired when the user double-clicks (or double-taps) the layer.
+ * @event awc-map - type : mousedown	-	Fired when the user pushes the mouse button on the layer.
+ * @event awc-map - type : mouseup	-	Fired when the user releases the mouse button pushed on the layer.
+ * @event awc-map - type : mouseover	-	Fired when the mouse enters the layer.
+ * @event awc-map - type : mouseout	-	Fired when the mouse leaves the layer.
+ * @event awc-map - type : contextmenu	-	Fired when the user right-clicks on the layer, prevents default browser context menu from showing if there are listeners on this event. Also fired on mobile when the user holds a single touch for a second (also called long press).
+ * @event awc-map - type : popupopen	-	Fired when a popup bound to this layer is opened
+ * @event awc-map - type : popupclose	-	Fired when a popup bound to this layer is closed
+ * @event awc-map - type : add	-	Fired after the layer is added to a map
+ * @event awc-map - type : remove	-	Fired after the layer is removed from a map
  */
 export default class AWCMapMarker extends LeafletPopupContentMixin(AWCLeafletElement) {
   static styles: CSSResultGroup = styles;

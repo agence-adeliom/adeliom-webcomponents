@@ -7,9 +7,27 @@ import { AWCTab, AWCTabGroup, AWCTabPanel } from '../../react/';
 
 ## CDN Installation
 
-You can load Adeliom WebComponents via CDN or by installing it locally. If you're using a framework, make sure to check out the pages for [React](?path=/docs/framework-react--docs), [Vue](?path=/docs/framework-vue--docs), and [Angular](?path=/docs/framework-angular--docs) for additional information.
+<AWCTabGroup>
+  <AWCTab slot="nav" panel="autoloader">Autoloader</AWCTab>
+  <AWCTab slot="nav" panel="traditional">Traditional Loader</AWCTab>
 
-The CDN loader registers all Adeliom WebComponents elements up front. Note that, if you're only using a handful of components, it will be much more efficient to stick with the autoloader.
+  <AWCTabPanel name="autoloader">
+The experimental autoloader is the easiest and most efficient way to use Adeliom WebComponents. A lightweight script watches the DOM for unregistered Adeliom WebComponents elements and lazy loads them for you — even if they’re added dynamically.
+
+While convenient, autoloading may lead to a Flash of Undefined Custom Elements. The linked article describes some ways to alleviate it.
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/light.css" />
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc-autoloader.js"
+></script>
+```
+
+  </AWCTabPanel>
+
+  <AWCTabPanel name="traditional">
+The traditional CDN loader registers all Adeliom WebComponents elements up front. Note that, if you’re only using a handful of components, it will be much more efficient to stick with the autoloader.
 However, you can also [cherry pick](#cherry-picking) components if you want to load specific ones up front.
 
 ```html
@@ -17,17 +35,21 @@ However, you can also [cherry pick](#cherry-picking) components if you want to l
 <script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc.js"></script>
 ```
 
+  </AWCTabPanel>
+</AWCTabGroup>
+
 ### Dark Theme
 
-The code above will load the light theme. If you want to use the [dark theme](?path=/docs/getting-started-themes--docs#dark-theme) instead, update the stylesheet as shown below and add `<html class="awc-theme-dark">` to your page.
+The code above will load the light theme. If you want to use the [dark theme](?path=/docs/getting-started-themes--documentation#dark-theme) instead, update the stylesheet as shown below and add `<html class="awc-theme-dark">` to your page.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%NPMDIR%/themes/dark.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/dark.css" />
 ```
 
 ### Light & Dark Theme
 
-If you want to load the light or dark theme based on the user's `prefers-color-scheme` setting, use the stylesheets below. The `media` attributes ensure that only the user's preferred theme stylesheet loads and the `onload` attribute sets the appropriate [theme class](?path=/docs/getting-started-themes--docs) on the `<html>` element.
+If you want to load the light or dark theme based on the user's `prefers-color-scheme` setting, use the stylesheets below.
+The `media` attributes ensure that only the user's preferred theme stylesheet loads and the `onload` attribute sets the appropriate [theme class](?path=/docs/getting-started-themes--documentation) on the `<html>` element.
 
 ```html
 <link
@@ -43,7 +65,7 @@ If you want to load the light or dark theme based on the user's `prefers-color-s
 />
 ```
 
-Now you can [start using Adeliom WebComponents!](?path=/docs/getting-started-usage--docs)
+Now you can [start using Adeliom WebComponents!](?path=/docs/getting-started-usage--documentation)
 
 ## Package installation
 
@@ -68,7 +90,8 @@ Alternatively, [you can use a bundler](#bundling).
 
 ## Setting the Base Path
 
-Some components rely on assets (icons, images, etc.) and Adeliom WebComponents needs to know where they're located. For convenience, Adeliom WebComponents will try to auto-detect the correct location based on the script you've loaded it from. This assumes assets are colocated with `awc.js` or `awc-autoloader.js` and will "just work" for most users.
+Some components rely on assets (icons, images, etc.) and Adeliom WebComponents needs to know where they're located.
+For convenience, Adeliom WebComponents will try to auto-detect the correct location based on the script you've loaded it from. This assumes assets are colocated with `awc.js` or `awc-autoloader.js` and will "just work" for most users.
 
 However, if you're [cherry picking](#cherry-picking) or [bundling](#bundling) Adeliom WebComponents, you'll need to set the base path. You can do this one of two ways.
 
@@ -86,7 +109,7 @@ However, if you're [cherry picking](#cherry-picking) or [bundling](#bundling) Ad
 
 > 📘 Info
 >
-> An easy way to make sure the base path is configured properly is to check if [icons](/?path=/docs/components-icon--docs) are loading.
+> An easy way to make sure the base path is configured properly is to check if [icons](/?path=/docs/components-icon--documentation) are loading.
 
 ### Referencing Assets
 
@@ -114,7 +137,7 @@ Here's an example that loads only the button component. Again, if you're not usi
 <link rel="stylesheet" href="/path/to/awc/%NPMDIR%/themes/light.css" />
 
 <script type="module" data-awc="/path/to/awc/%NPMDIR%">
-  import '@agence-adeliom/awc/components/button/button.js';
+  import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
 
   // <awc-button> is ready to use!
 </script>
@@ -128,28 +151,13 @@ You can copy and paste the code to import a component from the "Importing" secti
 >
 > You will see files named `chunk.[hash].js` in the `chunks` directory. Never import these files directly, as they are generated and change from version to version.
 
-### Avoiding auto-registering imports
-
-By default, imports to components will auto-register themselves. This may not be ideal in all cases. To import just the component's class without auto-registering it's tag we can do the following:
-
-```diff
-- import AWCButton from '@agence-adeliom/awc/components/button/button.js';
-+ import AWCButton from '@agence-adeliom/awc/components/button/button.component.js';
-```
-
-Notice how the import ends with `.component.js`. This is the current convention to convey the import does not register itself.
-
-> ❗️**Danger**
->
-> While you can override the class or re-register the shoelace class under a different tag name, if you do so, many components won’t work as expected.
-
 ## Bundling
 
 Adeliom WebComponents is distributed as a collection of standard ES modules that [all modern browsers can understand](https://caniuse.com/es6-module). However, importing a lot of modules can result in a lot of HTTP requests and potentially longer load times. Using a CDN can alleviate this, but some users may wish to further optimize their imports with a bundler.
 
 To use Adeliom WebComponents with a bundler, first install Adeliom WebComponents along with your bundler of choice.
 
-```bash
+```shell
 npm install @agence-adeliom/awc
 ```
 
@@ -171,7 +179,7 @@ module.exports = {
 entry: './src/index.js',
 output: {
 filename: 'main.js',
-path: path.resolve(**dirname, 'dist')
+path: path.resolve(\_\_dirname, 'dist')
 },
 module: {
 // Bundle styles into main.css
@@ -188,8 +196,8 @@ new CopyPlugin({
 patterns: [
 // Copy AWC assets to dist/awc
 {
-from: path.resolve(**dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
-to: path.resolve(\_\_dirname, 'dist/awc/assets')
+from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
+to: path.resolve(__dirname, 'dist/awc/assets')
 }
 ]
 })
@@ -237,12 +245,12 @@ const path = require('path');
 const Encore = require('@symfony/webpack-encore');
 
 Encore
-.setOutputPath(path.resolve(**dirname, 'dist'))
+.setOutputPath(path.resolve(\*\*dirname, 'dist'))
 .setPublicPath('/dist')
 ...
 .copyFiles({
 from: path.resolve(**dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
-to: `${path.resolve(__dirname, 'awc/assets')}/[path][name].[ext]`,
+to: `${path.resolve(**dirname, 'awc/assets')}/[path][name].[ext]`,
 })
 ;
 
@@ -275,12 +283,12 @@ export default async bud => {
 #### Once your bundler is configured, you'll be able to import Adeliom WebComponents components and utilities.
 
 ```js
-import '@agence-adeliom/awc/themes/light.css';
-import '@agence-adeliom/awc/components/button/button.js';
-import '@agence-adeliom/awc/components/icon/icon.js';
-import '@agence-adeliom/awc/components/input/input.js';
-import '@agence-adeliom/awc/components/rating/rating.js';
-import { setBasePath } from '@agence-adeliom/awc';
+import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
+import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
+import '@agence-adeliom/awc/%NPMDIR%/components/icon/icon.js';
+import '@agence-adeliom/awc/%NPMDIR%/components/input/input.js';
+import '@agence-adeliom/awc/%NPMDIR%/components/rating/rating.js';
+import { setBasePath } from '@agence-adeliom/awc/%NPMDIR%/utilities/base-path.js';
 
 // Set the base path to the folder you copied Adeliom WebComponents's assets to
 setBasePath('/path/to/awc/%NPMDIR%/');
@@ -291,3 +299,37 @@ setBasePath('/path/to/awc/%NPMDIR%/');
 > 🚧 **Warning**
 >
 > Component modules include side effects for registration purposes. Because of this, importing directly from `@agence-adeliom/awc` may result in a larger bundle size than necessary. For optimal tree shaking, always cherry pick, i.e. import components and utilities from their respective files, as shown above.
+
+### Avoiding auto-registering imports
+
+By default, imports to components will auto-register themselves. This may not be ideal in all cases. To import just the component's class without auto-registering it's tag we can do the following:
+
+```diff
+- import AWCButton from '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
++ import AWCButton from '@agence-adeliom/awc/%NPMDIR%/components/button/button.component.js';
+```
+
+Notice how the import ends with `.component.js`. This is the current convention to convey the import does not register itself.
+
+> ❗️**Danger**
+>
+> While you can override the class or re-register the awc class under a different tag name, if you do so, many components won’t work as expected.
+
+## The difference between CDN and npm
+
+You’ll notice that the CDN links all start with `/%CDNDIR%/[path]` and npm imports use `/%NPMDIR%/[path]`.
+
+<p>
+  The `/%CDNDIR%` files are bundled separately from the `/%NPMDIR%` files.<br></br>
+  The `/%CDNDIR%` files come pre-bundled, which means all dependencies are inlined so you do not need to worry about
+  loading additional libraries.<br></br>
+  The `/%NPMDIR%` files **DO NOT** come pre-bundled, allowing your bundler of choice to more efficiently deduplicate
+  dependencies, resulting in smaller bundles and optimal code sharing.
+</p>
+
+TL;DR:
+
+- `@agence-adeliom/awc/%CDNDIR%` is for CDN users
+- `@agence-adeliom/awc/%NPMDIR%` is for npm users
+
+This change was introduced in `v2.0.0` to address issues around installations from npm loading multiple versions of libraries (such as the Lit) that Adeliom WebComponents uses internally.

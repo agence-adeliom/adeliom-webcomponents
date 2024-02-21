@@ -37,7 +37,7 @@ declare const EyeDropper: EyeDropperConstructor;
 
 /**
  * @summary Color pickers allow the user to select a color.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-color-picker--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-color-picker--documentation
  * @status stable
  * @since 1.0
  *
@@ -667,7 +667,7 @@ export default class AWCColorPicker extends AWCElement implements AWCFormControl
 
   /** Generates a hex string from HSV values. Hue must be 0-360. All other arguments must be 0-100. */
   private getHexString(hue: number, saturation: number, brightness: number, alpha = 100) {
-    const color = new TinyColor(`hsva(${hue}, ${saturation}, ${brightness}, ${alpha / 100})`);
+    const color = new TinyColor(`hsva(${hue}, ${saturation}%, ${brightness}%, ${alpha / 100})`);
     if (!color.isValid) {
       return '';
     }

@@ -1,5 +1,5 @@
-import type { CustomElementsManifest, Declaration } from './cem-schema';
-import type { ArgTypes, ControlOptions, Options } from './storybook';
+import type { CustomElementsManifest, Declaration } from './cem-schema.js';
+import type { ArgTypes, ControlOptions, Options } from './storybook.js';
 
 let options: Options = {};
 
@@ -10,20 +10,21 @@ export function getComponentByTagName(
   tagName: string,
   customElementsManifest: CustomElementsManifest
 ): Declaration | undefined {
-  const module = (customElementsManifest as CustomElementsManifest).modules?.find(
-    m => m.declarations?.some(d => d.tagName === tagName)
+  const module = (customElementsManifest as CustomElementsManifest).modules?.find(m =>
+    m.declarations?.some(d => d.tagName === tagName)
   );
   return module?.declarations.find(d => d.kind === 'class' && d.tagName === tagName);
 }
 
-export function getAttributesAndProperties(component?: Declaration): ArgTypes {
-  const properties: ArgTypes = {};
+export function getAttributesAndProperties<T>(component?: Declaration): ArgTypes<T> {
+  const properties: ArgTypes<T> = {};
 
   component?.members?.forEach(member => {
     if (member.kind !== 'field') {
       return;
     }
 
+    const attribute = component.attributes?.find(x => member.name === x.fieldName);
     const propName = member.name;
 
     properties[propName] = {
@@ -37,21 +38,22 @@ export function getAttributesAndProperties(component?: Declaration): ArgTypes {
       return;
     }
 
+    const name = attribute?.name || member.name;
     const type = options.typeRef
       ? (member as any)[`${options.typeRef}`]?.text || member?.type?.text
       : member?.type?.text;
     const propType = cleanUpType(type);
     const defaultValue = removeQuoteWrappers(member.default);
 
-    properties[member.attribute || member.name] = {
-      name: member.attribute || member.name,
+    properties[name] = {
+      name: name,
       description: getDescription(member.description, propName, member.deprecated),
       defaultValue: defaultValue === "''" ? '' : defaultValue,
       control: {
-        type: getControl(propType)
+        type: getControl(propType, attribute !== undefined)
       },
       table: {
-        category: member.attribute ? 'attributes' : 'properties',
+        category: attribute ? 'attributes' : 'properties',
         defaultValue: {
           summary: defaultValue
         },
@@ -63,7 +65,7 @@ export function getAttributesAndProperties(component?: Declaration): ArgTypes {
 
     const values = propType?.split('|');
     if (values && values?.length > 1) {
-      properties[propName].options = values.map(x => removeQuoteWrappers(x)!);
+      properties[name].options = values.map(x => removeQuoteWrappers(x)!);
     }
   });
 
@@ -120,6 +122,9 @@ export function getReactProperties(component?: Declaration): ArgTypes {
     }
   });
 
+  // remove ref property if it exists
+  delete properties['ref'];
+
   return properties;
 }
 
@@ -140,8 +145,8 @@ export function getReactEvents(component?: Declaration): ArgTypes {
   return events;
 }
 
-export function getCssProperties(component?: Declaration): ArgTypes {
-  const properties: ArgTypes = {};
+export function getCssProperties<T>(component?: Declaration): ArgTypes<T> {
+  const properties: ArgTypes<T> = {};
 
   component?.cssProperties?.forEach(property => {
     properties[property.name] = {
@@ -149,7 +154,7 @@ export function getCssProperties(component?: Declaration): ArgTypes {
       description: property.description,
       defaultValue: property.default,
       control: {
-        type: 'text'
+        type: property.name.toLowerCase().includes('color') ? 'color' : 'text'
       }
     };
   });
@@ -157,8 +162,8 @@ export function getCssProperties(component?: Declaration): ArgTypes {
   return properties;
 }
 
-export function getCssParts(component?: Declaration): ArgTypes {
-  const parts: ArgTypes = {};
+export function getCssParts<T>(component?: Declaration): ArgTypes<T> {
+  const parts: ArgTypes<T> = {};
 
   component?.cssParts?.forEach(part => {
     parts[part.name] = {
@@ -181,8 +186,8 @@ export function getCssParts(component?: Declaration): ArgTypes {
   return parts;
 }
 
-export function getSlots(component?: Declaration): ArgTypes {
-  const slots: ArgTypes = {};
+export function getSlots<T>(component?: Declaration): ArgTypes<T> {
+  const slots: ArgTypes<T> = {};
 
   component?.slots?.forEach(slot => {
     slots[slot.name] = {
@@ -211,25 +216,45 @@ function getDefaultValue(controlType: ControlOptions, defaultValue?: string) {
   return controlType === 'boolean' ? initialValue === 'true' : initialValue === "''" ? '' : initialValue;
 }
 
-function getControl(type?: string): ControlOptions {
+function getControl(type: string, isAttribute = false): ControlOptions {
   if (!type) {
     return 'text';
   }
 
-  if (type.includes('boolean')) {
+  const lowerType = type.toLowerCase();
+  const options = lowerType
+    .split('|')
+    .map(x => x.trim())
+    .filter(x => x !== '' && x !== 'null' && x !== 'undefined');
+
+  if (isObject(lowerType) && !isAttribute) {
+    return 'object';
+  }
+
+  if (hasType(options, 'boolean')) {
     return 'boolean';
   }
 
-  if (type.includes('number') && !type.includes('string') && type.length <= 2) {
+  if (hasType(options, 'number') && !hasType(options, 'string')) {
     return 'number';
   }
 
-  if (type.includes('Date') && type.length <= 2) {
+  if (hasType(options, 'date')) {
     return 'date';
   }
 
   // if types is a list of string options
-  return type.includes('|') ? 'select' : 'text';
+  return options.length > 1 ? 'select' : 'text';
+}
+
+function isObject(type: string) {
+  return (
+    type.includes('array') || type.includes('object') || type.includes('{') || type.includes('[') || type.includes('<')
+  );
+}
+
+function hasType(values: string[] = [], type: string) {
+  return values?.find(value => value === type) !== undefined;
 }
 
 function cleanUpType(type?: string): string {
@@ -251,7 +276,7 @@ function getDescription(description?: string, argRef?: string, deprecated?: stri
     desc += description;
   }
 
-  return options.hideArgRef ? desc : (desc += `"\n\n\narg ref - \`${argRef}\``);
+  return options.hideArgRef ? desc : (desc += `\n\n\narg ref - \`${argRef}\``);
 }
 
 export const getReactEventName = (eventName: string) => `on${capitalizeFirstLetter(toCamelCase(eventName))}`;

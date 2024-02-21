@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCMapSvgOverlay from './map-svg-overlay.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-map-svg-overlay');
+import type AWCMapSvgOverlay from './map-svg-overlay.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCMapSvgOverlay>('awc-map-svg-overlay');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -22,9 +22,9 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCMapSvgOverlay & typeof args>;
+} satisfies Meta<AWCMapSvgOverlay>;
 export default meta;
 
 type Story = StoryObj<AWCMapSvgOverlay & typeof args>;

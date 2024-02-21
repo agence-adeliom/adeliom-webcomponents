@@ -1,7 +1,7 @@
 import '../../awc.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type AWCRadio from './radio';
-import type AWCRadioGroup from '../radio-group/radio-group';
+import type AWCRadio from './radio.js';
+import type AWCRadioGroup from '../radio-group/radio-group.js';
 
 describe('<awc-radio>', () => {
   it('should not get checked when disabled', async () => {

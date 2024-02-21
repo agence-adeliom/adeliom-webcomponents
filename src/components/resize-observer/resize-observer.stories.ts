@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCResizeObserver from './resize-observer';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-resize-observer');
+import type AWCResizeObserver from './resize-observer.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCResizeObserver>('awc-resize-observer');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -22,9 +22,9 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCResizeObserver & typeof args>;
+} satisfies Meta<AWCResizeObserver>;
 
 export default meta;
 

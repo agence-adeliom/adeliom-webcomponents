@@ -6,16 +6,16 @@ import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
 import styles from './map-geolocation.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { LatLngBounds } from 'leaflet';
+import type { LatLngBounds, LocationEvent } from 'leaflet';
 
 /**
  * @summary Element which controls geolocation
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-geolocation--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-geolocation--documentation
  * @status experimental
  * @since 1.0
  *
- * @event {L.LocationEvent} locationfound - when geolocation (using the locate method) went successfully.
- * @event {L.ErrorEvent} locationerror - when geolocation (using the locate method) failed.
+ * @event awc-map - type : locationfound - when geolocation (using the locate method) went successfully.
+ * @event awc-map - type : locationerror - when geolocation (using the locate method) failed.
  */
 export default class AWCMapGeolocation extends AWCLeafletElement {
   static styles: CSSResultGroup = styles;
@@ -285,7 +285,7 @@ export default class AWCMapGeolocation extends AWCLeafletElement {
   }
 
   @bound
-  onLocationfound(e: L.LocationEvent): void {
+  onLocationfound(e: LocationEvent): void {
     this.latitude = e.latlng.lat;
     this.longitude = e.latlng.lng;
     this.bounds = e.bounds;

@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCVisuallyHidden from './visually-hidden';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-visually-hidden');
+import type AWCVisuallyHidden from './visually-hidden.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCVisuallyHidden>('awc-visually-hidden');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -25,9 +25,9 @@ Since visually hidden content can receive focus when tabbing, the element will b
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCVisuallyHidden & typeof args>;
+} satisfies Meta<AWCVisuallyHidden>;
 
 export default meta;
 

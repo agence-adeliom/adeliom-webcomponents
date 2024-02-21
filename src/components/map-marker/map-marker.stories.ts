@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCMapMarker from './map-marker.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-map-marker');
+import type AWCMapMarker from './map-marker.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCMapMarker>('awc-map-marker');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -22,9 +22,9 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCMapMarker & typeof args>;
+} satisfies Meta<AWCMapMarker>;
 export default meta;
 
 type Story = StoryObj<AWCMapMarker & typeof args>;

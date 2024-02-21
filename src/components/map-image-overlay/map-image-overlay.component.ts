@@ -8,19 +8,19 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element which defines a image overlay.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-image-overlay--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-image-overlay--documentation
  * @status experimental
  * @since 1.0
  *
- * @event load - Emitted when the ImageOverlay layer has loaded its image.
- * @event error - Emitted when the ImageOverlay layer fails to load its image.
- * @event click	- If interactive, emitted when the user clicks (or taps) the layer.
- * @event dblclick	- If interactive, emitted when the user double-clicks (or double-taps) the layer.
- * @event mousedown	- If interactive, emitted when the user pushes the mouse button on the layer.
- * @event mouseup	- If interactive, emitted when the user releases the mouse button pushed on the layer.
- * @event mouseover	- If interactive, emitted when the mouse enters the layer.
- * @event mouseout	- If interactive, emitted when the mouse leaves the layer.
- * @event contextmenu	- If interactive, emitted when the user right-clicks on the layer, prevents default browser context menu from showing if there are listeners on this event. Also fired on mobile when the user holds a single touch for a second (also called long press).
+ * @event awc-map - type : load - Emitted when the ImageOverlay layer has loaded its image.
+ * @event awc-map - type : error - Emitted when the ImageOverlay layer fails to load its image.
+ * @event awc-map - type : click	- If interactive, emitted when the user clicks (or taps) the layer.
+ * @event awc-map - type : dblclick	- If interactive, emitted when the user double-clicks (or double-taps) the layer.
+ * @event awc-map - type : mousedown	- If interactive, emitted when the user pushes the mouse button on the layer.
+ * @event awc-map - type : mouseup	- If interactive, emitted when the user releases the mouse button pushed on the layer.
+ * @event awc-map - type : mouseover	- If interactive, emitted when the mouse enters the layer.
+ * @event awc-map - type : mouseout	- If interactive, emitted when the mouse leaves the layer.
+ * @event awc-map - type : contextmenu	- If interactive, emitted when the user right-clicks on the layer, prevents default browser context menu from showing if there are listeners on this event. Also fired on mobile when the user holds a single touch for a second (also called long press).
  */
 export default class AWCMapImageOverlay extends LeafletILayerMixin(AWCLeafletElement) {
   static styles: CSSResultGroup = styles;
@@ -108,7 +108,7 @@ export default class AWCMapImageOverlay extends LeafletILayerMixin(AWCLeafletEle
   @watch('lat-lng-bounds', { waitUntilFirstUpdate: true })
   latLngBoundsChanged(): void {
     if (!this.layer || !this.latLngBounds) return;
-    this.layer.setBounds(L.latLngBounds(this.latLngBounds));
+    this.layer.setBounds(L.latLngBounds(this.latLngBounds as L.LatLngExpression[]));
   }
 
   @watch('opacity', { waitUntilFirstUpdate: true })

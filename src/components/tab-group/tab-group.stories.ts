@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCTabGroup from './tab-group.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-tab-group');
+import type AWCTabGroup from './tab-group.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCTabGroup>('awc-tab-group');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -18,14 +18,13 @@ const meta = {
     },
     docs: {
       description: {
-        component: `Tab groups make use of [tabs](?path=/docs/components-tab--docs) and [tab panels](?path=/docs/components-tab-panel--docs). Each tab must be slotted into the \`nav\` slot and its \`panel\` must refer to a tab panel of the same name.`
+        component: `Tab groups make use of [tabs](?path=/docs/components-tab--documentation) and [tab panels](?path=/docs/components-tab-panel--documentation). Each tab must be slotted into the \`nav\` slot and its \`panel\` must refer to a tab panel of the same name.`
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-shadow
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCTabGroup & typeof args>;
+} satisfies Meta<AWCTabGroup>;
 export default meta;
 
 type Story = StoryObj<AWCTabGroup & typeof args>;

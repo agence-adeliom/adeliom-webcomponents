@@ -2,14 +2,18 @@
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
-    "rootDir": ".",
-    "target": "es2021",
-    "module": "es2015",
-    "lib": ["es2021", "DOM", "DOM.Iterable"],
-    "declarationMap": true,
+    "target": "es2017",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "dom",
+      "dom.Iterable",
+      "es2020"
+    ],
+    "emitDeclarationOnly": true,
     "declaration": true,
+    "rootDir": ".",
     "strict": true,
-    "jsx": "preserve",
     "strictPropertyInitialization": false,
     "strictFunctionTypes": false,
     "noImplicitThis": false,
@@ -17,11 +21,10 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "useDefineForClassFields": false, /* See https://lit.dev/docs/components/properties/#avoiding-issues-with-class-fields */
-    "removeComments": true,
+    "removeComments": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": true,

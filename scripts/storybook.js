@@ -46,7 +46,7 @@ async function nextTask(label, action) {
 }
 
 await nextTask('Generating component metadata', async () => {
-  await execPromise(`npx cem analyze --litelement --outdir "${outdir}"`, { stdio: 'inherit' });
+  await execPromise(`node scripts/make-metadata.js --outdir "${outdir}"`, { stdio: 'inherit' });
   await fs.cp(`${outdir}/custom-elements.json`, `${path.resolve(process.cwd(), '.storybook')}/custom-elements.json`, {
     recursive: true
   });
@@ -54,6 +54,10 @@ await nextTask('Generating component metadata', async () => {
 
 await nextTask('Wrapping components for React', () => {
   return execPromise(`node scripts/make-react.js --outdir "${outdir}"`, { stdio: 'inherit' });
+});
+
+await nextTask('Generating themes', () => {
+  return execPromise(`node scripts/make-themes.js --outdir "${outdir}"`, { stdio: 'inherit' });
 });
 
 await nextTask('Packaging up icons', () => {

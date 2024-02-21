@@ -1,11 +1,11 @@
 import * as L from 'leaflet';
 import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { bound } from '../../internal/bound.js';
-import type AWCMapMarker from '../map-marker/map-marker';
+import type AWCMapMarker from '../map-marker/map-marker.js';
 
 /**
  * @summary Element which represents a layer group
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-other-layers-layergroup--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-other-layers-layergroup--documentation
  * @status experimental
  * @since 1.0
  */

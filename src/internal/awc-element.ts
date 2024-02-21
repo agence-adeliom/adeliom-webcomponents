@@ -94,7 +94,6 @@ export default class AWCElement extends LitElement {
   }
 
   /* eslint-disable */
-  // @ts-expect-error This is auto-injected at build time.
   static version = '__AWC_VERSION__';
   /* eslint-enable */
 

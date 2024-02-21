@@ -16,7 +16,7 @@ This integration has been tested with the following:
 
 - Node: 16.13.1
 - NextJS: 12.1.6
-- Adeliom WebComponents: 2.0.0-beta.74
+- Adeliom WebComponents: 2.0.0
 
 ## Instructions
 
@@ -31,7 +31,7 @@ yarn add @agence-adeliom/awc copy-webpack-plugin next-compose-plugins next-trans
 Because Adeliom WebComponents utilizes ESM, we need to modify our `package.json` to support ESM packages. Simply add the following to
 your root of `package.json`:
 
-```
+```json
 "type": "module"
 ```
 
@@ -42,7 +42,7 @@ There's one more step to enable ESM in NextJS, but we'll tackle that in our Next
 The next step is to import Adeliom WebComponents's default theme (stylesheet) in your `_app.js` file:
 
 ```css
-import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
+@import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
 ```
 
 ### Defining Custom Elements
@@ -61,14 +61,14 @@ function CustomEls({ URL }) {
       return;
     }
 
-    import('@agence-adeliom/awc').then(({ setBasePath }) => {
+    import('@agence-adeliom/awc/%NPMDIR%/utilities/base-path').then(({ setBasePath }) => {
       setBasePath(`${URL}/static/static`);
 
       // This imports all components
-      import('@agence-adeliom/awc/react');
+      import('@agence-adeliom/awc/%NPMDIR%/react');
       // If you're wanting to selectively import components, replace this line with your own definitions
 
-      // import("@agence-adeliom/awc/components/button/button");
+      // import("@agence-adeliom/awc/%NPMDIR%/components/button/button");
       customEls.current = true;
     });
   }, [URL, customEls]);
@@ -83,7 +83,7 @@ function CustomEls({ URL }) {
 
 > 📘 **Tip**
 >
-> This will import all Adeliom WebComponents components for convenience. To selectively import components, refer to the [Using webpack](?path=/docs/getting-started-installation--docs#using-webpack) section of the docs.
+> This will import all Adeliom WebComponents components for convenience. To selectively import components, refer to the [Using webpack](?path=/docs/getting-started-installation--documentation#using-webpack) section of the docs.
 
 You may be wondering where the `URL` property is coming from. We'll address that in the next few sections.
 

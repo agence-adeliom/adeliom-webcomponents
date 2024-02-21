@@ -14,7 +14,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Checkboxes allow the user to toggle an option on or off.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-checkbox--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-checkbox--documentation
  * @status stable
  * @since 1.0
  *

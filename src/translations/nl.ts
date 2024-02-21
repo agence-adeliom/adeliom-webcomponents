@@ -8,7 +8,6 @@ const translation: Translation = {
   $dir: 'ltr',
 
   browseFiles: 'Blader door bestanden',
-  carousel: 'Carrousel',
   clearEntry: 'Invoer wissen',
   close: 'Sluiten',
   copied: 'Gekopieerd',
@@ -18,19 +17,16 @@ const translation: Translation = {
   fileTypeNotAccepted: accept => `Bestandstype niet geaccepteerd, alleen ${accept} bestanden zijn toegestaan`,
   fileSizeExceeded: size => `Bestandsgrootte overschrijdt ${prettyBytes(size, { locale: 'nl' })}`,
   error: 'Fout',
-  goToSlide: (slide, count) => `Ga naar dia ${slide} van ${count}`,
   hidePassword: 'Verberg wachtwoord',
   loading: 'Laden',
   files: 'Bestanden :',
   maxFiles: 'Maximaal aantal bestanden bereikt',
   noMultipleFiles: 'Meerdere bestanden zijn niet toegestaan',
-  nextSlide: 'Volgende dia',
   numOptionsSelected: num => {
     if (num === 0) return 'Geen opties geselecteerd';
     if (num === 1) return '1 optie geselecteerd';
     return `${num} opties geselecteerd`;
   },
-  previousSlide: 'Vorige dia',
   previous: 'Vorige',
   next: 'Volgende',
   progress: 'Voortgang',
@@ -40,8 +36,16 @@ const translation: Translation = {
   scrollToStart: 'Scroll naar het begin',
   selectAColorFromTheScreen: 'Selecteer een kleur van het scherm',
   showPassword: 'Toon wachtwoord',
-  slideNum: slide => `Dia ${slide}`,
-  toggleColorFormat: 'Kleurformaat wisselen'
+  toggleColorFormat: 'Kleurformaat wisselen',
+  zoomIn: '',
+  zoomOut: '',
+  enterFullscreen: '',
+  exitFullscreen: '',
+  locateMe: '',
+  metersUnit: '',
+  feetUnit: '',
+  locatePopup: '',
+  locateOutsideMapBounds: ''
 };
 
 registerTranslation(translation);

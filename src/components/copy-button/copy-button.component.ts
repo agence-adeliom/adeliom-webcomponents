@@ -11,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Copies text data to the clipboard when the user clicks the trigger.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-copy--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-copy--documentation
  * @status stable
  * @since 1.0
  *

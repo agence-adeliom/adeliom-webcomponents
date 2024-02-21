@@ -803,7 +803,7 @@ export const Footer4: StoryObj = {
     <style>
       .newsletter-banner awc-input {
         --awc-input-border-color-base: var(--awc-color-neutral-0);
-        --awc-input-placeholder-color: var(--awc-input-border-color-base);
+        --awc-input-placeholder-color: var(--awc-input-border-color);
       }
       .footer-group::part(base) {
         border: 0;

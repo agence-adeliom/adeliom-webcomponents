@@ -42,9 +42,9 @@ export default css`
     justify-content: center;
     width: var(--toggle-size);
     height: var(--toggle-size);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color-base);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
     border-radius: 2px;
-    background-color: var(--awc-input-background-color-base);
+    background-color: var(--awc-input-background-color);
     color: var(--awc-color-neutral-0);
     transition:
       var(--awc-transition-fast) border-color,

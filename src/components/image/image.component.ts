@@ -2,17 +2,17 @@ import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import { transformProps } from './image.utils';
+import { transformProps } from './image.utils.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './image.styles.js';
-import type { AWCImageProps, BaseImageProps, CoreImageAttributes, Layout } from './image.utils';
+import type { AWCImageProps, BaseImageProps, CoreImageAttributes, Layout } from './image.utils.js';
 import type { CSSResultGroup } from 'lit';
 import type { ImageCdn, UrlTransformer } from 'unpic';
 import type { StyleInfo } from 'lit/directives/style-map.js';
 
 /**
  * @summary A image component for responsive, high-performance images using image CDNs
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-image--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-image--documentation
  * @status experimental
  * @since 1.0
  *

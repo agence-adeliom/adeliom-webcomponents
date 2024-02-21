@@ -1,9 +1,9 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCIcon from './icon';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-icon');
-import { registerIconLibrary } from '../../utilities/icon-library.ts';
+import type AWCIcon from './icon.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCIcon>('awc-icon');
+import { registerIconLibrary } from '../../utilities/icon-library.js';
 
 registerIconLibrary('boxicons', {
   resolver: name => {
@@ -61,6 +61,7 @@ registerIconLibrary('jam', {
 registerIconLibrary('material', {
   resolver: name => {
     const match = name.match(/^(.*?)(_(baseline|outline|round|sharp|twotone))?$/);
+    if (!match) return '';
     return `https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.33/svg/${match[1]}/${match[3] || 'baseline'}.svg`;
   },
   mutator: svg => svg.setAttribute('fill', 'currentColor')
@@ -69,6 +70,7 @@ registerIconLibrary('material', {
 registerIconLibrary('remixicon', {
   resolver: name => {
     const match = name.match(/^(.*?)\/(.*?)?$/);
+    if (!match) return '';
     match[1] = match[1].charAt(0).toUpperCase() + match[1].slice(1);
     return `https://cdn.jsdelivr.net/npm/remixicon@3.5.0/icons/${match[1]}/${match[2]}.svg`;
   },
@@ -115,9 +117,9 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCIcon & typeof args>;
+} satisfies Meta<AWCIcon>;
 
 export default meta;
 

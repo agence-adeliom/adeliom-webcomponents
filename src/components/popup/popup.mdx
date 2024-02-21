@@ -2,6 +2,7 @@ import { Title, Subtitle, Meta, ArgTypes, Primary, Description, Stories } from '
 import * as PopupStories from './popup.stories';
 import { TagNames } from '@awc-storybook/blocks/TagNames.jsx';
 import { Summary } from '@awc-storybook/blocks/Summary.jsx';
+import { Importing } from '@awc-storybook/blocks/Importing.jsx';
 
 <Meta of={PopupStories} />
 
@@ -15,13 +16,20 @@ This component's name is inspired by [`<popup>`](https://github.com/MicrosoftEdg
 
 Popup doesn't provide any styles — just positioning! The popup's preferred placement, distance, and skidding (offset) can be configured using attributes. An arrow that points to the anchor can be shown and customized to your liking. Additional positioning options are available and described in more detail below.
 
-> Popup is a low-level utility built specifically for positioning elements. Do not mistake it for a [tooltip](?path=/docs/components-tooltip--docs) or similar because _it does not facilitate an accessible experience!_ Almost every correct usage of `<awc-popup>` will involve building other components. It should rarely, if ever, occur directly in your HTML.
+> Popup is a low-level utility built specifically for positioning elements. Do not mistake it for a [tooltip](?path=/docs/components-tooltip--documentation) or similar because _it does not facilitate an accessible experience!_ Almost every correct usage of `<awc-popup>` will involve building other components. It should rarely, if ever, occur directly in your HTML.
 
 <Primary of={PopupStories} />
 
 > A popup's anchor should not be styled with `display: contents` since the coordinates will not be eligible for calculation. However, if the anchor is a `<slot>` element, popup will use the first assigned element as the anchor. This behavior allows other components to pass anchors through more easily via composition.
 
 <Stories of={PopupStories} includePrimary={false} title={'Examples'} />
+
+## Importing
+
+If you’re using the autoloader or the traditional loader, you can ignore this section.
+Otherwise, feel free to use any of the following snippets to [cherry pick](/?path=/docs/getting-started-installation--documentation#cherry-picking) this component.
+
+<Importing />
 
 ## API
 

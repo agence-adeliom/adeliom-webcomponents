@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCIconButton from './icon-button';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-icon-button');
+import type AWCIconButton from './icon-button.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCIconButton>('awc-icon-button');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -18,13 +18,13 @@ const meta = {
     },
     docs: {
       description: {
-        component: `For a full list of icons that come bundled with Adeliom WebComponents, refer to the [icon component](?path=/docs/components-icon--docs).`
+        component: `For a full list of icons that come bundled with Adeliom WebComponents, refer to the [icon component](?path=/docs/components-icon--documentation).`
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCIconButton & typeof args>;
+} satisfies Meta<AWCIconButton>;
 
 export default meta;
 

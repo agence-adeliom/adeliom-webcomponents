@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCDivider from './divider.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-divider');
+import type AWCDivider from './divider.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCDivider>('awc-divider');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -17,9 +17,9 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCDivider & typeof args>;
+} satisfies Meta<AWCDivider>;
 
 export default meta;
 
@@ -107,7 +107,7 @@ export const MenuDividers: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Use dividers in [menus](?path=/docs/components-menu--docs) to visually group menu items.'
+        story: 'Use dividers in [menus](?path=/docs/components-menu--documentation) to visually group menu items.'
       }
     }
   }

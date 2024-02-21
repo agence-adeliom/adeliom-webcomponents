@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCCopyButton from './copy-button.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-copy-button');
+import type AWCCopyButton from './copy-button.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCCopyButton>('awc-copy-button');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -17,9 +17,9 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCCopyButton & typeof args>;
+} satisfies Meta<AWCCopyButton>;
 
 export default meta;
 
@@ -62,7 +62,7 @@ export const CustomIcons: Story = {
     docs: {
       description: {
         story:
-          'Use the `copy-icon`, `success-icon`, and `error-icon` slots to customize the icons that get displayed for each state. You can use [`<awc-icon>`](?path=/docs/components-icon--docs) or your own images.'
+          'Use the `copy-icon`, `success-icon`, and `error-icon` slots to customize the icons that get displayed for each state. You can use [`<awc-icon>`](?path=/docs/components-icon--documentation) or your own images.'
       }
     }
   }

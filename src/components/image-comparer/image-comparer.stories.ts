@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCImageComparer from './image-comparer';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-image-comparer');
+import type AWCImageComparer from './image-comparer.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCImageComparer>('awc-image-comparer');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -22,9 +22,9 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCImageComparer & typeof args>;
+} satisfies Meta<AWCImageComparer>;
 
 export default meta;
 

@@ -8,7 +8,6 @@ const translation: Translation = {
   $dir: 'ltr',
 
   browseFiles: 'Fájlok böngészése',
-  carousel: 'Körhinta',
   clearEntry: 'Bejegyzés törlése',
   close: 'Bezárás',
   copied: 'Másolva',
@@ -18,19 +17,16 @@ const translation: Translation = {
   fileTypeNotAccepted: accept => `A fájltípus nem engedélyezett, csak ${accept} fájlok engedélyezettek`,
   fileSizeExceeded: size => `A fájlméret meghaladja a ${prettyBytes(size, { locale: 'hu' })} méretet`,
   error: 'Hiba',
-  goToSlide: (slide, count) => `Ugrás a(z) ${slide}. diára a(z) ${count}. diából`,
   hidePassword: 'Jelszó elrejtése',
   loading: 'Betöltés',
   files: 'Fájlok :',
   maxFiles: 'Elérte a maximális fájlok számát',
   noMultipleFiles: 'Több fájl nem engedélyezett',
-  nextSlide: 'Következő diavetítés',
   numOptionsSelected: num => {
     if (num === 0) return 'Nincs kiválasztott opció';
     if (num === 1) return '1 kiválasztott opció';
     return `${num} kiválasztott opció`;
   },
-  previousSlide: 'Előző diavetítés',
   previous: 'Előző',
   next: 'Következő',
   progress: 'Előrehaladás',
@@ -40,7 +36,6 @@ const translation: Translation = {
   scrollToStart: 'Görgessen a kezdetre',
   selectAColorFromTheScreen: 'Válasszon színt a képernyőről',
   showPassword: 'Jelszó mutatása',
-  slideNum: slide => `Diavetítés ${slide}`,
   toggleColorFormat: 'Színformátum váltása',
   zoomIn: 'Nagyiány',
   zoomOut: 'Kicsiány',

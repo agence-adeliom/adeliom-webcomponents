@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCProgressRing from './progress-ring';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-progress-ring');
+import type AWCProgressRing from './progress-ring.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCProgressRing>('awc-progress-ring');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -17,9 +17,9 @@ const meta = {
       handles: events
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCProgressRing & typeof args>;
+} satisfies Meta<AWCProgressRing>;
 
 export default meta;
 

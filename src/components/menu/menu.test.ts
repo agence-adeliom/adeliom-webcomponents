@@ -4,8 +4,8 @@ import { expect, fixture } from '@open-wc/testing';
 import { html } from 'lit';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { AWCSelectEvent } from '../../events/awc-select';
-import type AWCMenu from './menu';
+import type { AWCSelectEvent } from '../../events/awc-select.js';
+import type AWCMenu from './menu.js';
 
 describe('<awc-menu>', () => {
   it('emits awc-select with the correct event detail when clicking an item', async () => {

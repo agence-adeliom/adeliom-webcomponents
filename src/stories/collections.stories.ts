@@ -195,15 +195,16 @@ export const Collections3: StoryObj = {
             Erat suspendisse maecena
           </h3>
         </div>
-        <awc-carousel
-          navigation
-          class="card-collection mb-8"
-          style="--aspect-ratio: null;"
+        <swiper-container
+          navigation="true"
+          class="card-collection-3 mb-8"
           space-between="16"
           breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
+          navigation-prev-el="awc-button.navigation-prev"
+          navigation-next-el="awc-button.navigation-next"
         >
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -227,10 +228,10 @@ export const Collections3: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -254,10 +255,10 @@ export const Collections3: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -281,10 +282,10 @@ export const Collections3: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -308,10 +309,10 @@ export const Collections3: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -335,46 +336,49 @@ export const Collections3: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
-        </awc-carousel>
+          <div slot="container-end">
+            <div class="navigation">
+              <awc-button variant="secondary" class="navigation-prev" icon="square">
+                <awc-icon library="system" name="chevron-left" aria-hidden="true" loading="eager"></awc-icon>
+              </awc-button>
+              <awc-button variant="secondary" class="navigation-next" icon="square">
+                <awc-icon library="system" name="chevron-right" aria-hidden="true" loading="eager"></awc-icon>
+              </awc-button>
+            </div>
+          </div>
+        </swiper-container>
       </div>
     </div>
 
     <style>
-      .card-collection::part(base) {
+      .card-collection-3::part(container) {
         overflow: visible;
       }
-      .card-collection::part(navigation-button) {
+
+      .card-collection-3 .navigation {
         position: absolute;
         top: 100%;
         left: 50%;
         right: auto;
-        margin-top: 2rem;
+        margin-top: 1rem;
+        transform: translate3d(-50%, 0, 0);
       }
-      .card-collection::part(navigation-button--previous) {
-        transform: translate3d(-125%, -50%, 0);
+
+      .card-collection-3 .navigation .swiper-button-disabled {
+        opacity: 0.5;
+        pointer-events: none;
       }
-      .card-collection::part(navigation-button--next) {
-        transform: translate3d(25%, -50%, 0);
-      }
+
       @media screen and (min-width: 767px) {
-        .card-collection::part(navigation-button) {
+        .card-collection-3 .navigation {
           top: -4rem;
           left: auto;
           right: 0;
-          font-size: 1.5rem;
           z-index: 1;
-          border: 1px solid var(--awc-color-primary-600);
-          color: var(--awc-color-primary-600);
-          border-radius: var(--awc-border-radius-none);
-          padding: 0.5rem;
           margin: 0;
           transform: translate3d(0, -50%, 0);
-        }
-        .card-collection::part(navigation-button--previous) {
-          right: 4rem;
-          left: auto;
         }
       }
     </style>
@@ -394,15 +398,16 @@ export const Collections4: StoryObj = {
             Erat suspendisse maecena
           </h3>
         </div>
-        <awc-carousel
-          navigation
-          class="card-collection mb-8"
-          style="--aspect-ratio: null;--navigation-sides-offset: -2.5rem;--navigation-disabled-opacity: 0"
+        <swiper-container
+          navigation="true"
+          class="card-collection-4 mb-8"
           space-between="16"
           breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
+          navigation-prev-el="awc-button.navigation-prev"
+          navigation-next-el="awc-button.navigation-next"
         >
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -426,10 +431,10 @@ export const Collections4: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -453,10 +458,10 @@ export const Collections4: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -480,10 +485,10 @@ export const Collections4: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -507,10 +512,10 @@ export const Collections4: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -534,15 +539,46 @@ export const Collections4: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
-        </awc-carousel>
+          <div slot="container-end">
+            <div class="navigation">
+              <awc-button variant="secondary" class="navigation-prev" icon="square">
+                <awc-icon library="system" name="chevron-left" aria-hidden="true" loading="eager"></awc-icon>
+              </awc-button>
+              <awc-button variant="secondary" class="navigation-next" icon="square">
+                <awc-icon library="system" name="chevron-right" aria-hidden="true" loading="eager"></awc-icon>
+              </awc-button>
+            </div>
+          </div>
+        </swiper-container>
       </div>
     </div>
 
     <style>
-      .card-collection::part(base) {
+      .card-collection-4::part(container) {
+        --swiper-navigation-sides-offset: -20px;
         overflow: visible;
+      }
+
+      .card-collection-4 .navigation-prev,
+      .card-collection-4 .navigation-next {
+        position: absolute;
+        top: var(--swiper-navigation-top-offset, 50%);
+        z-index: 1;
+        transform: translate3d(0, -50%, 0);
+      }
+
+      .card-collection-4 .navigation-prev {
+        left: var(--swiper-navigation-sides-offset, 10px);
+      }
+      .card-collection-4 .navigation-next {
+        right: var(--swiper-navigation-sides-offset, 10px);
+      }
+
+      .card-collection-4 .navigation .swiper-button-disabled {
+        opacity: 0.5;
+        pointer-events: none;
       }
     </style>
   `
@@ -561,16 +597,18 @@ export const Collections5: StoryObj = {
             Erat suspendisse maecena
           </h3>
         </div>
-        <awc-carousel
-          navigation
-          class="card-collection mb-8"
-          style="--aspect-ratio: null;"
+        <swiper-container
+          navigation="true"
+          pagination="true"
+          class="card-collection-5 mb-8"
           space-between="16"
-          pagination="progressbar"
+          pagination-type="progressbar"
           breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
+          navigation-prev-el="awc-button.navigation-prev"
+          navigation-next-el="awc-button.navigation-next"
         >
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -594,10 +632,10 @@ export const Collections5: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -621,10 +659,10 @@ export const Collections5: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -648,10 +686,10 @@ export const Collections5: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -675,10 +713,10 @@ export const Collections5: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
           <!-- product - start -->
-          <awc-carousel-item>
+          <swiper-slide>
             <awc-card href="#" class="card-collection group overflow-hidden" shadow bordered>
               <div slot="image">
                 <awc-image
@@ -702,40 +740,52 @@ export const Collections5: StoryObj = {
                 <awc-button variant="primary">Learn more</awc-button>
               </div>
             </awc-card>
-          </awc-carousel-item>
+          </swiper-slide>
           <!-- product - end -->
-        </awc-carousel>
+          <div slot="container-end">
+            <div class="navigation">
+              <awc-button variant="secondary" class="navigation-prev" icon="square">
+                <awc-icon library="system" name="chevron-left" aria-hidden="true" loading="eager"></awc-icon>
+              </awc-button>
+              <awc-button variant="secondary" class="navigation-next" icon="square">
+                <awc-icon library="system" name="chevron-right" aria-hidden="true" loading="eager"></awc-icon>
+              </awc-button>
+            </div>
+          </div>
+        </swiper-container>
       </div>
     </div>
 
     <style>
-      .card-collection::part(base) {
+      .card-collection-5::part(container) {
+        --swiper-pagination-color: var(--awc-color-primary-600);
+        --swiper-pagination-progressbar-bg-color: var(--awc-color-neutral-200);
+        --swiper-pagination-progressbar-size: 4px;
+
         overflow: visible;
       }
 
-      .card-collection::part(pagination) {
+      .card-collection-5::part(pagination) {
         top: 100%;
         margin-top: 1.5rem;
         right: 8rem;
         width: auto;
       }
-      .card-collection::part(navigation-button) {
+
+      .card-collection-5 .navigation {
+        position: absolute;
         top: 100%;
         left: auto;
         right: 0;
-        font-size: 1.5rem;
         z-index: 1;
-        border: 1px solid var(--awc-color-primary-600);
-        color: var(--awc-color-primary-600);
-        border-radius: var(--awc-border-radius-none);
-        padding: 0.5rem;
         margin: 0;
         margin-top: 1.5rem;
         transform: translate3d(0, -50%, 0);
       }
-      .card-collection::part(navigation-button--previous) {
-        right: 4rem;
-        left: auto;
+
+      .card-collection-5 .navigation .swiper-button-disabled {
+        opacity: 0.5;
+        pointer-events: none;
       }
     </style>
   `

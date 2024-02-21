@@ -9,8 +9,8 @@ import styles from './option.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
- * @summary Options define the selectable items within various form controls such as [select](?path=/docs/components-select--docs).
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-option--docs
+ * @summary Options define the selectable items within various form controls such as [select](?path=/docs/components-select--documentation).
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-option--documentation
  * @status stable
  * @since 1.0
  *
@@ -106,7 +106,22 @@ export default class AWCOption extends AWCElement {
 
   /** Returns a plain text label based on the option's content. */
   getTextLabel() {
-    return (this.textContent ?? '').trim();
+    const nodes = this.childNodes;
+    let label = '';
+
+    [...nodes].forEach(node => {
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        if (!(node as HTMLElement).hasAttribute('slot')) {
+          label += (node as HTMLElement).outerHTML;
+        }
+      }
+
+      if (node.nodeType === Node.TEXT_NODE) {
+        label += node.textContent;
+      }
+    });
+
+    return label.trim();
   }
 
   render() {

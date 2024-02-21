@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCTab from './tab.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-tab');
+import type AWCTab from './tab.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCTab>('awc-tab');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -18,14 +18,12 @@ const meta = {
     },
     docs: {
       description: {
-        component: `> Additional demonstrations can be found in the [tab group examples](?path=/docs/components-tab-group--docs).`
+        component: `> Additional demonstrations can be found in the [tab group examples](?path=/docs/components-tab-group--documentation).`
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-shadow
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   render: context => template(context)
-} satisfies Meta<AWCTab & typeof args>;
+} satisfies Meta<AWCTab>;
 export default meta;
 
 type Story = StoryObj<AWCTab & typeof args>;

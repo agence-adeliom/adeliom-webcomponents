@@ -1,7 +1,7 @@
 import '../../awc.js';
 import { aTimeout, expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type AWCOption from './option';
+import type AWCOption from './option.js';
 
 describe('<awc-option>', () => {
   it('passes accessibility test', async () => {

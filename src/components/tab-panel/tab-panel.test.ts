@@ -1,6 +1,6 @@
 import '../../awc.js';
 import { aTimeout, expect, fixture, html } from '@open-wc/testing';
-import type AWCTabPanel from './tab-panel';
+import type AWCTabPanel from './tab-panel.js';
 
 describe('<awc-tab-panel>', () => {
   it('passes accessibility test', async () => {

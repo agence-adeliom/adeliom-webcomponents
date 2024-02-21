@@ -7,7 +7,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary The Mutation Observer component offers a thin, declarative interface to the [`MutationObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-mutation-observer--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-mutation-observer--documentation
  * @status stable
  * @since 1.0
  *

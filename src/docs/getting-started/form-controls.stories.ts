@@ -247,7 +247,7 @@ export const InlineFormValidation: StoryObj = {
               event => {
                 // Suppress the browser's constraint validation message
                 event.preventDefault();
-                nameError.textContent = \`Error: \${event.target.validationMessage}\`;
+                nameError.textContent = 'Error: ' + event.target.validationMessage;
                 nameError.hidden = false;
                 event.target.focus();
               },

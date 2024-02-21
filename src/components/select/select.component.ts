@@ -1,13 +1,14 @@
 import { animateTo, stopAnimations } from '../../internal/animate.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { type CSSResultGroup, html, type TemplateResult } from 'lit';
 import { defaultValue } from '../../internal/default-value.js';
 import { FormControlController } from '../../internal/form.js';
 import { getAnimation, setDefaultAnimation } from '../../utilities/animation-registry.js';
 import { HasSlotController } from '../../internal/slot.js';
+import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import { scrollIntoView } from '../../internal/scroll.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
@@ -16,14 +17,13 @@ import AWCPopup from '../popup/popup.component.js';
 import AWCTag from '../tag/tag.component.js';
 import styles from './select.styles.js';
 import type { AWCFormControl } from '../../internal/awc-element.js';
-import type AWCOption from '../option/option.component.js';
-
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import type { AWCRemoveEvent } from '../../events/awc-remove.js';
+import type { CSSResultGroup, TemplateResult } from 'lit';
+import type AWCOption from '../option/option.component.js';
 
 /**
  * @summary Selects allow you to choose items from a menu of predefined options.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-select--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-select--documentation
  * @status stable
  * @since 1.0
  *
@@ -81,6 +81,7 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
   private readonly localize = new LocalizeController(this);
   private typeToSelectString = '';
   private typeToSelectTimeout: number;
+  private closeWatcher: CloseWatcher | null;
 
   @query('.select') popup: AWCPopup;
   @query('.select__combobox') combobox: HTMLSlotElement;
@@ -98,13 +99,13 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
 
   /**
    * The current value of the select, submitted as a name/value pair with form data. When `multiple` is enabled, the
-   * value attribute will be a space-delimited list of values based on the options selected, and the value property will
-   * be an array. **For this reason, values must not contain spaces.**
+   * value attribute will be a comma-delimited list of values based on the options selected, and the value property will
+   * be an array.
    */
   @property({
     converter: {
-      fromAttribute: (value: string) => value.split(' '),
-      toAttribute: (value: string[]) => value.join(' ')
+      fromAttribute: (value: string) => value.split(','),
+      toAttribute: (value: string[]) => value.join(',')
     }
   })
   value: string | string[] = '';
@@ -216,15 +217,33 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
   }
 
   private addOpenListeners() {
-    document.addEventListener('focusin', this.handleDocumentFocusIn);
-    document.addEventListener('keydown', this.handleDocumentKeyDown);
-    document.addEventListener('mousedown', this.handleDocumentMouseDown);
+    //
+    // Listen on the root node instead of the document in case the elements are inside a shadow root
+    //
+    // https://github.com/shoelace-style/shoelace/issues/1763
+    //
+    const root = this.getRootNode();
+    if ('CloseWatcher' in window) {
+      this.closeWatcher?.destroy();
+      this.closeWatcher = new CloseWatcher();
+      this.closeWatcher.onclose = () => {
+        if (this.open) {
+          this.hide();
+          this.displayInput.focus({ preventScroll: true });
+        }
+      };
+    }
+    root.addEventListener('focusin', this.handleDocumentFocusIn);
+    root.addEventListener('keydown', this.handleDocumentKeyDown);
+    root.addEventListener('mousedown', this.handleDocumentMouseDown);
   }
 
   private removeOpenListeners() {
-    document.removeEventListener('focusin', this.handleDocumentFocusIn);
-    document.removeEventListener('keydown', this.handleDocumentKeyDown);
-    document.removeEventListener('mousedown', this.handleDocumentMouseDown);
+    const root = this.getRootNode();
+    root.removeEventListener('focusin', this.handleDocumentFocusIn);
+    root.removeEventListener('keydown', this.handleDocumentKeyDown);
+    root.removeEventListener('mousedown', this.handleDocumentMouseDown);
+    this.closeWatcher?.destroy();
   }
 
   private handleFocus() {
@@ -257,7 +276,7 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
     }
 
     // Close when pressing escape
-    if (event.key === 'Escape' && this.open) {
+    if (event.key === 'Escape' && this.open && !this.closeWatcher) {
       event.preventDefault();
       event.stopPropagation();
       this.hide();
@@ -402,6 +421,10 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
   }
 
   private handleComboboxKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Tab') {
+      return;
+    }
+
     event.stopPropagation();
     this.handleDocumentKeyDown(event);
   }
@@ -573,11 +596,9 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
       this.formControlController.updateValidity();
     });
   }
-
   protected get tags() {
     return this.selectedOptions.map((option, index) => {
       if (index < this.maxOptionsVisible || this.maxOptionsVisible <= 0) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const tag = this.getTag(option, index);
         // Wrap so we can handle the remove
         return html`<div @awc-remove=${(e: AWCRemoveEvent) => this.handleTagRemove(e, option)}>

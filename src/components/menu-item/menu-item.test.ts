@@ -2,8 +2,8 @@ import '../../awc.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { AWCSelectEvent } from '../../events/awc-select';
-import type AWCMenuItem from './menu-item';
+import type { AWCSelectEvent } from '../../events/awc-select.js';
+import type AWCMenuItem from './menu-item.js';
 
 describe('<awc-menu-item>', () => {
   it('should pass accessibility tests', async () => {
@@ -132,7 +132,7 @@ describe('<awc-menu-item>', () => {
     menu.addEventListener('awc-select', selectHandler);
 
     const submenu = menu.querySelector('awc-menu-item');
-    submenu!.focus();
+    submenu.focus();
     await menu.updateComplete;
     await sendKeys({ press: 'ArrowRight' });
     await menu.updateComplete;
@@ -160,7 +160,7 @@ describe('<awc-menu-item>', () => {
     });
 
     const outerItem = menu.querySelector('awc-menu-item');
-    outerItem!.focus();
+    outerItem.focus();
     await menu.updateComplete;
     await sendKeys({ press: 'ArrowRight' });
 

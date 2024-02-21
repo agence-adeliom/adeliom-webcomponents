@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCQrCode from './qr-code';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-qr-code');
+import type AWCQrCode from './qr-code.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCQrCode>('awc-qr-code');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -22,9 +22,9 @@ const meta = {
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCQrCode & typeof args>;
+} satisfies Meta<AWCQrCode>;
 
 export default meta;
 
@@ -58,7 +58,7 @@ export const Size: Story = {
   name: 'Size',
   args: {
     ...Primary.args,
-    size: '64'
+    size: 64
   },
   parameters: {
     docs: {
@@ -73,7 +73,7 @@ export const Radius: Story = {
   name: 'Radius',
   args: {
     ...Primary.args,
-    radius: '0.5'
+    radius: 0.5
   },
   parameters: {
     docs: {

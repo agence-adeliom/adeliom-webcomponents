@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Generates a [QR code](https://www.qrcode.com/) and renders it using the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-qr-code--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-qr-code--documentation
  * @status stable
  * @since 1.0
  *
@@ -51,7 +51,8 @@ export default class AWCQrCode extends AWCElement {
       return;
     }
 
-    QrCreator.render(
+    // For some reason, when changing to "NodeNext", it has the wrong type for QrCreator.
+    (QrCreator as unknown as typeof QrCreator.default).render(
       {
         text: this.value,
         radius: this.radius,

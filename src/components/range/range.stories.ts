@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCRange from './range';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-range');
+import type AWCRange from './range.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCRange>('awc-range');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -18,13 +18,13 @@ const meta = {
     },
     docs: {
       description: {
-        component: `> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](?path=/docs/getting-started-form-controls--docs) to learn more about form submission and client-side validation.`
+        component: `> This component works with standard \`<form>\` elements. Please refer to the section on [form controls](?path=/docs/getting-started-form-controls--documentation) to learn more about form submission and client-side validation.`
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCRange & typeof args>;
+} satisfies Meta<AWCRange>;
 
 export default meta;
 

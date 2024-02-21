@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element for putting a circle on the map
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-circle--docs
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-circle--documentation
  * @status experimental
  * @since 1.0
  *
@@ -127,7 +127,11 @@ export default class AWCMapCircle extends LeafletPopupContentMixin(AWCLeafletEle
   containerChanged(): void {
     if (!(this.latitude && this.longitude && this.container)) return;
 
-    this.feature = L.circle([this.latitude, this.longitude], this.radius, this.getPathOptions());
+    this.feature = L.circle(
+      [this.latitude as number, this.longitude as number],
+      this.radius as number,
+      this.getPathOptions()
+    );
     this.feature.on(AWCMapCircle.events, this.onLeafletEvent);
     this.updatePopupContent();
 
@@ -137,12 +141,13 @@ export default class AWCMapCircle extends LeafletPopupContentMixin(AWCLeafletEle
   @watch('latitude', { waitUntilFirstUpdate: true })
   @watch('longitude', { waitUntilFirstUpdate: true })
   updatePosition(): void {
-    if (this.feature && this.latitude !== null && this.longitude !== null)
-      this.feature.setLatLng(L.latLng(this.latitude, this.longitude));
+    if (this.feature && this.latitude && this.longitude) {
+      this.feature.setLatLng(L.latLng(this.latitude as number, this.longitude as number));
+    }
   }
 
   @watch('radius', { waitUntilFirstUpdate: true })
   updateRadius(): void {
-    if (this.feature && this.radius !== null) this.feature.setRadius(this.radius);
+    if (this.feature && this.radius !== null) this.feature.setRadius(this.radius as number);
   }
 }

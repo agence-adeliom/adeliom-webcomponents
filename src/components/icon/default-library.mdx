@@ -1,0 +1,50 @@
+import { Meta, IconItem, IconGallery } from '@storybook/blocks';
+import DefaultIcons from '@awc-storybook/static/assets/icons/icons.json';
+
+<Meta title="Components/Icon/Default Library" parameters={{ docs: { toc: { disable: false } } }} />
+
+Adeliom WebComponents comes bundled with over 1,500 icons courtesy of the [Bootstrap Icons](https://icons.getbootstrap.com/) project. These icons are part of the `default` icon library.
+
+> Depending on how you're loading Adeliom WebComponents, you may need to copy icon assets and/or [set the base path](?path=/docs/getting-started-installation--documentation#setting-the-base-path) so Adeliom WebComponents knows where to load them from. Otherwise, icons may not appear and you'll see 404 Not Found errors in the dev console.
+
+### Usage
+
+All available icons in the `default` icon library are shown below. Click or tap on any icon to copy its name, then you can use it in your HTML like this.
+
+```html
+<awc-icon name="icon-name-here"></awc-icon>
+```
+
+### Customizing the library
+
+The default icon library contains over 1,300 icons courtesy of the [Bootstrap Icons](https://icons.getbootstrap.com/) project. These are the icons that display when you use `<awc-icon>` without the `library` attribute. If you prefer to have these icons resolve elsewhere or to a different icon library, register an icon library using the `default` name and a custom resolver.
+
+This example will load the same set of icons from the jsDelivr CDN instead of your local assets folder.
+
+```js
+import { registerIconLibrary } from '@agence-adeliom/awc';
+
+registerIconLibrary('default', {
+  resolver: name => `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/${name}.svg`
+});
+```
+
+## Icons
+
+<IconGallery>
+  {
+    DefaultIcons.map((name) => (
+
+      <IconItem name={name} key={`icon_${name}`}>
+        <awc-copy-button value={name}>
+          <awc-icon slot="copy-icon" name={name} loading="lazy"></awc-icon>
+          <awc-icon slot="success-icon" name={name} loading="lazy"></awc-icon>
+          <awc-icon slot="error-icon" name={name} loading="lazy"></awc-icon>
+        </awc-copy-button>
+      </IconItem>
+
+    ))
+
+}
+
+</IconGallery>

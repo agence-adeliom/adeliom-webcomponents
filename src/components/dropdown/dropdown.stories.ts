@@ -1,8 +1,8 @@
-import { getWcStorybookHelpers } from '@awc-storybook/wc-helper';
+import { getWcStorybookHelpers } from '../../../.storybook/wc-helper/index.js';
 import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type AWCDropdown from './dropdown.ts';
-const { events, args, argTypes, template } = getWcStorybookHelpers('awc-dropdown');
+import type AWCDropdown from './dropdown.js';
+const { events, args, argTypes, template } = getWcStorybookHelpers<AWCDropdown>('awc-dropdown');
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 const meta = {
@@ -19,16 +19,16 @@ const meta = {
     docs: {
       description: {
         component: `Dropdowns consist of a trigger and a panel. By default, activating the trigger will expose the panel and interacting outside of the panel will close it.<br>
-        Dropdowns are designed to work well with [menus](?path=/docs/components-menu--docs) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](?path=/docs/components-color-picker--docs). The API gives you complete control over showing, hiding, and positioning the panel.`
+        Dropdowns are designed to work well with [menus](?path=/docs/components-menu--documentation) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](?path=/docs/components-color-picker--documentation). The API gives you complete control over showing, hiding, and positioning the panel.`
       },
       story: {
         height: '400px'
       }
     }
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   render: context => template(context)
-} satisfies Meta<AWCDropdown & typeof args>;
+} satisfies Meta<AWCDropdown>;
 
 export default meta;
 
@@ -86,7 +86,7 @@ export const GettingSelectedItem: Story = {
     docs: {
       description: {
         story:
-          'When dropdowns are used with [menus](?path=/docs/components-menu--docs), you can listen for the [`awc-select`](?path=/docs/components-menu--docs#events) event to determine which menu item was selected. The menu item element will be exposed in `event.detail.item`. You can set `value` props to make it easier to identify commands.'
+          'When dropdowns are used with [menus](?path=/docs/components-menu--documentation), you can listen for the [`awc-select`](?path=/docs/components-menu--documentation#events) event to determine which menu item was selected. The menu item element will be exposed in `event.detail.item`. You can set `value` props to make it easier to identify commands.'
       }
     }
   }
@@ -273,7 +273,7 @@ export const Submenus: Story = {
   parameters: {
     docs: {
       description: {
-        story: `To create a submenu, nest an \`<awc-menu slot="submenu">\` element in a [menu item](/?path=/docs/components-menu-item--docs).
+        story: `To create a submenu, nest an \`<awc-menu slot="submenu">\` element in a [menu item](/?path=/docs/components-menu-item--documentation).
 
 > 📘 **Tip**
 >

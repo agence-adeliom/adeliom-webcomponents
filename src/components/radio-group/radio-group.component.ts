@@ -18,8 +18,8 @@ import type AWCRadio from '../radio/radio.js';
 import type AWCRadioButton from '../radio-button/radio-button.js';
 
 /**
- * @summary Radio groups are used to group multiple [radios](?path=/docs/components-radio--docs) or [radio buttons](?path=/docs/components-radio-button--docs) so they function as a single form control.
- * @documentation https://webcomponents.adeliom.io/?path=/docs/components-radio-group--docs
+ * @summary Radio groups are used to group multiple [radios](?path=/docs/components-radio--documentation) or [radio buttons](?path=/docs/components-radio-button--documentation) so they function as a single form control.
+ * @documentation https://webcomponents.adeliom.io/?path=/docs/components-radio-group--documentation
  * @status stable
  * @since 1.0
  *
@@ -218,7 +218,7 @@ export default class AWCRadioGroup extends AWCElement implements AWCFormControl 
 
     this.hasButtonGroup = radios.some(radio => radio.tagName.toLowerCase() === 'awc-radio-button');
 
-    if (!radios.some(radio => radio.checked)) {
+    if (radios.length > 0 && !radios.some(radio => radio.checked)) {
       if (this.hasButtonGroup) {
         const buttonRadio = radios[0].shadowRoot?.querySelector('button');
 
@@ -327,7 +327,6 @@ export default class AWCRadioGroup extends AWCElement implements AWCFormControl 
     const hasHelpTextSlot = this.hasSlotController.test('help-text');
     const hasLabel = this.label ? true : !!hasLabelSlot;
     const hasHelpText = this.helpText ? true : !!hasHelpTextSlot;
-
     const defaultSlot = html`
       <slot @slotchange=${this.syncRadios} @click=${this.handleRadioClick} @keydown=${this.handleKeyDown}></slot>
     `;

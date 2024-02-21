@@ -67,7 +67,8 @@ export default {
   },
   resolve: {
     alias: {
-      '@awc-storybook': path.resolve(__dirname, '.')
+      '@awc-storybook': path.resolve(__dirname, '.'),
+      '@awc': path.resolve(__dirname, '/../src')
     }
   },
   plugins: [
