@@ -9,8 +9,6 @@ export { default as AWCBreadcrumbItem } from './components/breadcrumb-item/bread
 export { default as AWCButton } from './components/button/button.js';
 export { default as AWCButtonGroup } from './components/button-group/button-group.js';
 export { default as AWCCard } from './components/card/card.js';
-export { default as AWCCarousel } from './components/carousel/carousel.js';
-export { default as AWCCarouselItem } from './components/carousel-item/carousel-item.js';
 export { default as AWCCheckbox } from './components/checkbox/checkbox.js';
 export { default as AWCColorPicker } from './components/color-picker/color-picker.js';
 export { default as AWCCopyButton } from './components/copy-button/copy-button.js';

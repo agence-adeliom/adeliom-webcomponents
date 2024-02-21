@@ -143,7 +143,7 @@ export const Duration: Story = {
     html`<div class="alert-duration">
         <awc-button variant="primary">Show Alert</awc-button>
 
-        <awc-alert variant="${args.variant}" duration="${args.duration}" ?closable=${args.closable} >
+        <awc-alert variant="${args.variant}" duration="${args.duration}" ?closable=${args.closable}>
           <awc-icon slot="icon" name="info-circle"></awc-icon>
           This alert will automatically hide itself after three seconds, unless you interact with it.
         </awc-alert>

@@ -475,17 +475,16 @@ export const Features5: StoryObj = {
         ${heading}
 
         <div class="feature-5">
-          <awc-carousel
-            navigation
-            slides-per-view="1"
-            slides-per-group="1"
+          <swiper-container
+            navigation="true"
             space-between="16"
             breakpoints='{"480":{"slidesPerView":2},"1024":{"slidesPerView":3}}'
+            navigation-prev-el="awc-button.navigation-prev"
+            navigation-next-el="awc-button.navigation-next"
             class="mb-8"
-            style="--navigation-sides-offset: -2.5rem;"
           >
             <!-- feature - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card class="relative rounded-lg bg-none text-center">
                 <div
                   slot="image"
@@ -499,10 +498,10 @@ export const Features5: StoryObj = {
                 </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- feature - end -->
             <!-- feature - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card class="relative rounded-lg bg-none text-center">
                 <div
                   slot="image"
@@ -516,10 +515,10 @@ export const Features5: StoryObj = {
                 </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- feature - end -->
             <!-- feature - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card class="relative rounded-lg bg-none text-center">
                 <div
                   slot="image"
@@ -533,10 +532,10 @@ export const Features5: StoryObj = {
                 </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- feature - end -->
             <!-- feature - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card class="relative rounded-lg bg-none text-center">
                 <div
                   slot="image"
@@ -550,10 +549,10 @@ export const Features5: StoryObj = {
                 </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- feature - end -->
             <!-- feature - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card class="relative rounded-lg bg-none text-center">
                 <div
                   slot="image"
@@ -567,10 +566,10 @@ export const Features5: StoryObj = {
                 </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- feature - end -->
             <!-- feature - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card class="relative rounded-lg bg-none text-center">
                 <div
                   slot="image"
@@ -584,10 +583,10 @@ export const Features5: StoryObj = {
                 </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- feature - end -->
             <!-- feature - start -->
-            <awc-carousel-item>
+            <swiper-slide>
               <awc-card class="relative rounded-lg bg-none text-center">
                 <div
                   slot="image"
@@ -601,9 +600,19 @@ export const Features5: StoryObj = {
                 </p>
                 <awc-button href="#" variant="text">More</awc-button>
               </awc-card>
-            </awc-carousel-item>
+            </swiper-slide>
             <!-- feature - end -->
-          </awc-carousel>
+            <div slot="container-end">
+              <div class="navigation">
+                <awc-button variant="secondary" class="navigation-prev" icon="square">
+                  <awc-icon library="system" name="chevron-left" aria-hidden="true" loading="eager"></awc-icon>
+                </awc-button>
+                <awc-button variant="secondary" class="navigation-next" icon="square">
+                  <awc-icon library="system" name="chevron-right" aria-hidden="true" loading="eager"></awc-icon>
+                </awc-button>
+              </div>
+            </div>
+          </swiper-container>
         </div>
       </div>
     </div>
@@ -617,6 +626,51 @@ export const Features5: StoryObj = {
       }
       .feature-5 awc-card awc-button {
         --awc-button-font-size-medium: var(--awc-font-size-medium);
+      }
+
+      .feature-5 swiper-container::part(container) {
+        --swiper-navigation-sides-offset: -20px;
+        overflow: visible;
+      }
+
+      .feature-5 swiper-container .navigation {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        right: auto;
+        margin-top: 1rem;
+        transform: translate3d(-50%, 0, 0);
+      }
+
+      .feature-5 swiper-container .navigation .swiper-button-disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      @media screen and (min-width: 767px) {
+        .feature-5 swiper-container .navigation {
+          position: static;
+          transform: none;
+          left: auto;
+          right: auto;
+          margin: 0;
+        }
+        .feature-5 swiper-container .navigation .navigation-prev,
+        .feature-5 swiper-container .navigation .navigation-next {
+          position: absolute;
+          top: 50%;
+          z-index: 1;
+          margin: 0;
+          transform: translate3d(0, -50%, 0);
+        }
+
+        .feature-5 swiper-container .navigation .navigation-prev {
+          left: var(--swiper-navigation-sides-offset, 20px);
+        }
+
+        .feature-5 swiper-container .navigation .navigation-next {
+          right: var(--swiper-navigation-sides-offset, 20px);
+        }
       }
     </style>
   `

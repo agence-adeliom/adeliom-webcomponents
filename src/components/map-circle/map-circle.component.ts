@@ -127,7 +127,11 @@ export default class AWCMapCircle extends LeafletPopupContentMixin(AWCLeafletEle
   containerChanged(): void {
     if (!(this.latitude && this.longitude && this.container)) return;
 
-    this.feature = L.circle([this.latitude as number, this.longitude as number], this.radius as number, this.getPathOptions());
+    this.feature = L.circle(
+      [this.latitude as number, this.longitude as number],
+      this.radius as number,
+      this.getPathOptions()
+    );
     this.feature.on(AWCMapCircle.events, this.onLeafletEvent);
     this.updatePopupContent();
 
@@ -137,7 +141,7 @@ export default class AWCMapCircle extends LeafletPopupContentMixin(AWCLeafletEle
   @watch('latitude', { waitUntilFirstUpdate: true })
   @watch('longitude', { waitUntilFirstUpdate: true })
   updatePosition(): void {
-    if (this.feature && this.latitude && this.longitude){
+    if (this.feature && this.latitude && this.longitude) {
       this.feature.setLatLng(L.latLng(this.latitude as number, this.longitude as number));
     }
   }

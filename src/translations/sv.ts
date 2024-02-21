@@ -8,7 +8,6 @@ const translation: Translation = {
   $dir: 'ltr',
 
   browseFiles: 'Bläddra bland filer',
-  carousel: 'Karusell',
   clearEntry: 'Rensa inmatning',
   close: 'Stäng',
   copied: 'Kopierad',
@@ -18,19 +17,16 @@ const translation: Translation = {
   fileTypeNotAccepted: accept => `Filtypen accepteras inte, endast ${accept} filer är tillåtna`,
   fileSizeExceeded: size => `Filstorleken överstiger ${prettyBytes(size, { locale: 'sv' })}`,
   error: 'Fel',
-  goToSlide: (slide, count) => `Gå till bild ${slide} av ${count}`,
   hidePassword: 'Dölj lösenord',
   loading: 'Laddar',
   files: 'Filer :',
   maxFiles: 'Maximalt antal filer uppnått',
   noMultipleFiles: 'Flera filer är inte tillåtna',
-  nextSlide: 'Nästa bild',
   numOptionsSelected: num => {
     if (num === 0) return 'Inga alternativ valda';
     if (num === 1) return '1 alternativ valt';
     return `${num} alternativ valda`;
   },
-  previousSlide: 'Föregående bild',
   previous: 'Föregående',
   next: 'Nästa',
   progress: 'Framsteg',
@@ -40,8 +36,16 @@ const translation: Translation = {
   scrollToStart: 'Skrolla till början',
   selectAColorFromTheScreen: 'Välj en färg från skärmen',
   showPassword: 'Visa lösenord',
-  slideNum: slide => `Bild ${slide}`,
-  toggleColorFormat: 'Växla färgformat'
+  toggleColorFormat: 'Växla färgformat',
+  zoomIn: '',
+  zoomOut: '',
+  enterFullscreen: '',
+  exitFullscreen: '',
+  locateMe: '',
+  metersUnit: '',
+  feetUnit: '',
+  locatePopup: '',
+  locateOutsideMapBounds: ''
 };
 
 registerTranslation(translation);

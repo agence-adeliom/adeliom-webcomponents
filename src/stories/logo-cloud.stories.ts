@@ -108,18 +108,19 @@ export const LogoCloud1: StoryObj = {
 export const LogoCloud2: StoryObj = {
   name: 'Logo cloud 2',
   render: () =>
-    html`<div class="container mx-auto px-4 md:px-8">
+    html`<div class="container mx-auto px-4 md:px-8 logo-cloud-2">
       ${heading}
 
-      <awc-carousel
+      <swiper-container
         class="block"
-        navigation
+        navigation="true"
         space-between="16"
-        slides-per-view="2"
-        style="--navigation-sides-offset: -2.5rem;"
         breakpoints='{"1024":{"slidesPerView":4}}'
+        navigation-prev-el="awc-button.navigation-prev"
+        navigation-next-el="awc-button.navigation-next"
+        slides-per-view="2"
       >
-        <awc-carousel-item class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
+        <swiper-slide class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
           <svg
             class="h-6 w-auto sm:h-8 lg:h-10"
             width="154"
@@ -133,10 +134,10 @@ export const LogoCloud2: StoryObj = {
             ></path>
             <path d="M24 8V20L12 32H0V20L12 8H24Z"></path>
           </svg>
-        </awc-carousel-item>
+        </swiper-slide>
 
         <!-- logo - start -->
-        <awc-carousel-item class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
+        <swiper-slide class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
           <svg
             class="h-6 w-auto sm:h-8 lg:h-10"
             width="186"
@@ -150,11 +151,11 @@ export const LogoCloud2: StoryObj = {
             />
             <path d="M0 31L24 7V31H0Z"></path>
           </svg>
-        </awc-carousel-item>
+        </swiper-slide>
         <!-- logo - end -->
 
         <!-- logo - start -->
-        <awc-carousel-item class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
+        <swiper-slide class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
           <svg
             class="h-6 w-auto sm:h-8 lg:h-10"
             width="173"
@@ -169,11 +170,11 @@ export const LogoCloud2: StoryObj = {
             <rect y="26" width="24" height="5" />
             <rect x="9" y="17" width="15" height="5" />
           </svg>
-        </awc-carousel-item>
+        </swiper-slide>
         <!-- logo - end -->
 
         <!-- logo - start -->
-        <awc-carousel-item class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
+        <swiper-slide class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
           <svg
             class="h-6 w-auto sm:h-8 lg:h-10"
             width="146"
@@ -187,8 +188,68 @@ export const LogoCloud2: StoryObj = {
             />
             <path d="M16 6L29.8564 30H2.14359L16 6Z" />
           </svg>
-        </awc-carousel-item>
+        </swiper-slide>
         <!-- logo - end -->
-      </awc-carousel>
+        <div slot="container-end">
+          <div class="navigation">
+            <awc-button variant="secondary" class="navigation-prev" icon="square">
+              <awc-icon library="system" name="chevron-left" aria-hidden="true" loading="eager"></awc-icon>
+            </awc-button>
+            <awc-button variant="secondary" class="navigation-next" icon="square">
+              <awc-icon library="system" name="chevron-right" aria-hidden="true" loading="eager"></awc-icon>
+            </awc-button>
+          </div>
+        </div>
+      </swiper-container>
+      <style>
+        .logo-cloud-2 swiper-container::part(container) {
+          --swiper-navigation-sides-offset: -20px;
+          overflow: visible;
+        }
+
+        .logo-cloud-2 swiper-container .navigation {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          right: auto;
+          margin-top: 1rem;
+          transform: translate3d(-50%, 0, 0);
+        }
+
+        .logo-cloud-2 swiper-container .navigation .swiper-button-disabled {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+
+        @media screen and (min-width: 767px) {
+          .logo-cloud-2 swiper-container .navigation {
+            position: static;
+            transform: none;
+            left: auto;
+            right: auto;
+            margin: 0;
+          }
+          .logo-cloud-2 swiper-container .navigation .navigation-prev,
+          .logo-cloud-2 swiper-container .navigation .navigation-next {
+            position: absolute;
+            top: 50%;
+            z-index: 1;
+            margin: 0;
+            transform: translate3d(0, -50%, 0);
+          }
+
+          .logo-cloud-2 swiper-container .navigation .navigation-prev {
+            left: var(--swiper-navigation-sides-offset, 20px);
+          }
+
+          .logo-cloud-2 swiper-container .navigation .navigation-next {
+            right: var(--swiper-navigation-sides-offset, 20px);
+          }
+
+          .logo-cloud-2 swiper-container .navigation .swiper-button-disabled {
+            display: none;
+          }
+        }
+      </style>
     </div>`
 };

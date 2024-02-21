@@ -216,7 +216,7 @@ describe('when submitting a form', () => {
       </form>
     `);
     const button = form.querySelector('awc-button')!;
-    const radio = form.querySelectorAll('awc-radio')[1]!;
+    const radio = form.querySelectorAll('awc-radio')[1];
     const submitHandler = sinon.spy((event: SubmitEvent) => {
       formData = new FormData(form);
 
@@ -260,7 +260,7 @@ describe('when a size is applied', () => {
         <awc-radio id="radio-2" value="2"></awc-radio>
       </awc-radio-group>
     `);
-    const [radio1, radio2] = radioGroup.querySelectorAll('awc-radio')!;
+    const [radio1, radio2] = radioGroup.querySelectorAll('awc-radio');
 
     expect(radio1.size).to.equal('large');
     expect(radio2.size).to.equal('large');
@@ -273,7 +273,7 @@ describe('when a size is applied', () => {
         <awc-radio-button id="radio-2" value="2"></awc-radio-button>
       </awc-radio-group>
     `);
-    const [radio1, radio2] = radioGroup.querySelectorAll('awc-radio-button')!;
+    const [radio1, radio2] = radioGroup.querySelectorAll('awc-radio-button');
 
     expect(radio1.size).to.equal('large');
     expect(radio2.size).to.equal('large');
@@ -286,7 +286,7 @@ describe('when a size is applied', () => {
         <awc-radio-button id="radio-2" value="2"></awc-radio-button>
       </awc-radio-group>
     `);
-    const [radio1, radio2] = radioGroup.querySelectorAll('awc-radio-button')!;
+    const [radio1, radio2] = radioGroup.querySelectorAll('awc-radio-button');
 
     expect(radio1.size).to.equal('small');
     expect(radio2.size).to.equal('small');

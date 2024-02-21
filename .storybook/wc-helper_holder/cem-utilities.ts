@@ -16,15 +16,14 @@ export function getComponentByTagName(
   return module?.declarations.find(d => d.kind === 'class' && d.tagName === tagName);
 }
 
-export function getAttributesAndProperties<T>(component?: Declaration): ArgTypes<T> {
-  const properties: ArgTypes<T> = {};
+export function getAttributesAndProperties(component?: Declaration): ArgTypes {
+  const properties: ArgTypes = {};
 
   component?.members?.forEach(member => {
     if (member.kind !== 'field') {
       return;
     }
 
-    const attribute = component.attributes?.find(x => member.name === x.fieldName);
     const propName = member.name;
 
     properties[propName] = {
@@ -38,22 +37,21 @@ export function getAttributesAndProperties<T>(component?: Declaration): ArgTypes
       return;
     }
 
-    const name = attribute?.name || member.name;
     const type = options.typeRef
       ? (member as any)[`${options.typeRef}`]?.text || member?.type?.text
       : member?.type?.text;
     const propType = cleanUpType(type);
     const defaultValue = removeQuoteWrappers(member.default);
 
-    properties[name] = {
-      name: name,
+    properties[member.attribute || member.name] = {
+      name: member.attribute || member.name,
       description: getDescription(member.description, propName, member.deprecated),
       defaultValue: defaultValue === "''" ? '' : defaultValue,
       control: {
-        type: getControl(propType, attribute !== undefined)
+        type: getControl(propType)
       },
       table: {
-        category: attribute ? 'attributes' : 'properties',
+        category: member.attribute ? 'attributes' : 'properties',
         defaultValue: {
           summary: defaultValue
         },
@@ -65,7 +63,7 @@ export function getAttributesAndProperties<T>(component?: Declaration): ArgTypes
 
     const values = propType?.split('|');
     if (values && values?.length > 1) {
-      properties[name].options = values.map(x => removeQuoteWrappers(x)!);
+      properties[propName].options = values.map(x => removeQuoteWrappers(x)!);
     }
   });
 
@@ -122,9 +120,6 @@ export function getReactProperties(component?: Declaration): ArgTypes {
     }
   });
 
-  // remove ref property if it exists
-  delete properties['ref'];
-
   return properties;
 }
 
@@ -145,8 +140,8 @@ export function getReactEvents(component?: Declaration): ArgTypes {
   return events;
 }
 
-export function getCssProperties<T>(component?: Declaration): ArgTypes<T> {
-  const properties: ArgTypes<T> = {};
+export function getCssProperties(component?: Declaration): ArgTypes {
+  const properties: ArgTypes = {};
 
   component?.cssProperties?.forEach(property => {
     properties[property.name] = {
@@ -154,7 +149,7 @@ export function getCssProperties<T>(component?: Declaration): ArgTypes<T> {
       description: property.description,
       defaultValue: property.default,
       control: {
-        type: property.name.toLowerCase().includes('color') ? 'color' : 'text'
+        type: 'text'
       }
     };
   });
@@ -162,8 +157,8 @@ export function getCssProperties<T>(component?: Declaration): ArgTypes<T> {
   return properties;
 }
 
-export function getCssParts<T>(component?: Declaration): ArgTypes<T> {
-  const parts: ArgTypes<T> = {};
+export function getCssParts(component?: Declaration): ArgTypes {
+  const parts: ArgTypes = {};
 
   component?.cssParts?.forEach(part => {
     parts[part.name] = {
@@ -186,8 +181,8 @@ export function getCssParts<T>(component?: Declaration): ArgTypes<T> {
   return parts;
 }
 
-export function getSlots<T>(component?: Declaration): ArgTypes<T> {
-  const slots: ArgTypes<T> = {};
+export function getSlots(component?: Declaration): ArgTypes {
+  const slots: ArgTypes = {};
 
   component?.slots?.forEach(slot => {
     slots[slot.name] = {
@@ -216,45 +211,25 @@ function getDefaultValue(controlType: ControlOptions, defaultValue?: string) {
   return controlType === 'boolean' ? initialValue === 'true' : initialValue === "''" ? '' : initialValue;
 }
 
-function getControl(type: string, isAttribute = false): ControlOptions {
+function getControl(type?: string): ControlOptions {
   if (!type) {
     return 'text';
   }
 
-  const lowerType = type.toLowerCase();
-  const options = lowerType
-    .split('|')
-    .map(x => x.trim())
-    .filter(x => x !== '' && x !== 'null' && x !== 'undefined');
-
-  if (isObject(lowerType) && !isAttribute) {
-    return 'object';
-  }
-
-  if (hasType(options, 'boolean')) {
+  if (type.includes('boolean')) {
     return 'boolean';
   }
 
-  if (hasType(options, 'number') && !hasType(options, 'string')) {
+  if (type.includes('number') && !type.includes('string') && type.length <= 2) {
     return 'number';
   }
 
-  if (hasType(options, 'date')) {
+  if (type.includes('Date') && type.length <= 2) {
     return 'date';
   }
 
   // if types is a list of string options
-  return options.length > 1 ? 'select' : 'text';
-}
-
-function isObject(type: string) {
-  return (
-    type.includes('array') || type.includes('object') || type.includes('{') || type.includes('[') || type.includes('<')
-  );
-}
-
-function hasType(values: string[] = [], type: string) {
-  return values?.find(value => value === type) !== undefined;
+  return type.includes('|') ? 'select' : 'text';
 }
 
 function cleanUpType(type?: string): string {
@@ -276,7 +251,7 @@ function getDescription(description?: string, argRef?: string, deprecated?: stri
     desc += description;
   }
 
-  return options.hideArgRef ? desc : (desc += `\n\n\narg ref - \`${argRef}\``);
+  return options.hideArgRef ? desc : (desc += `"\n\n\narg ref - \`${argRef}\``);
 }
 
 export const getReactEventName = (eventName: string) => `on${capitalizeFirstLetter(toCamelCase(eventName))}`;

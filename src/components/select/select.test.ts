@@ -294,7 +294,7 @@ describe('<awc-select>', () => {
           <awc-option value="option-3">Option 3</awc-option>
         </awc-select>
       `);
-      const secondOption = el.querySelectorAll('awc-option')[1]!;
+      const secondOption = el.querySelectorAll('awc-option')[1];
 
       expect(el.checkValidity()).to.be.true;
       expect(el.hasAttribute('data-required')).to.be.true;
@@ -323,7 +323,7 @@ describe('<awc-select>', () => {
           <awc-option value="option-3">Option 3</awc-option>
         </awc-select>
       `);
-      const secondOption = el.querySelectorAll('awc-option')[1]!;
+      const secondOption = el.querySelectorAll('awc-option')[1];
 
       expect(el.hasAttribute('data-required')).to.be.true;
       expect(el.hasAttribute('data-optional')).to.be.false;

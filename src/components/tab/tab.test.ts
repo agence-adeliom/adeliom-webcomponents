@@ -101,7 +101,7 @@ describe('<awc-tab>', () => {
         </awc-tab-group>
       `);
       const closeButton = tabGroup
-        .querySelectorAll('awc-tab')[0]!
+        .querySelectorAll('awc-tab')[0]
         .shadowRoot!.querySelector<AWCIconButton>('[part~="close-button"]')!;
 
       const handleClose = sinon.spy();

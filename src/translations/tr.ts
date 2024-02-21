@@ -8,7 +8,6 @@ const translation: Translation = {
   $dir: 'ltr',
 
   browseFiles: 'Dosyalara Göz At',
-  carousel: 'Döner Kasa',
   clearEntry: 'Girişi Temizle',
   close: 'Kapat',
   copied: 'Kopyalandı',
@@ -18,19 +17,16 @@ const translation: Translation = {
   fileTypeNotAccepted: accept => `Dosya türü kabul edilmiyor, yalnızca ${accept} dosyaya izin verilir`,
   fileSizeExceeded: size => `Dosya boyutu ${prettyBytes(size, { locale: 'tr' })} boyutunu aşıyor`,
   error: 'Hata',
-  goToSlide: (slide, count) => `${slide} numaralı slayda git, toplam ${count} slayt`,
   hidePassword: 'Şifreyi Gizle',
   loading: 'Yükleniyor',
   files: 'Dosyalar :',
   maxFiles: 'Maksimum dosya sayısına ulaşıldı',
   noMultipleFiles: 'Birden fazla dosya izin verilmiyor',
-  nextSlide: 'Sonraki slayt',
   numOptionsSelected: num => {
     if (num === 0) return 'Hiçbir seçenek seçilmedi';
     if (num === 1) return '1 seçenek seçildi';
     return `${num} seçenek seçildi`;
   },
-  previousSlide: 'Önceki slayt',
   previous: 'Önceki',
   next: 'Sonraki',
   progress: 'İlerleme',
@@ -40,8 +36,16 @@ const translation: Translation = {
   scrollToStart: 'Başlangıca Kaydır',
   selectAColorFromTheScreen: 'Ekranından bir renk seç',
   showPassword: 'Şifreyi Göster',
-  slideNum: slide => `${slide} Slayt`,
-  toggleColorFormat: 'Renk Formatını Değiştir'
+  toggleColorFormat: 'Renk Formatını Değiştir',
+  zoomIn: '',
+  zoomOut: '',
+  enterFullscreen: '',
+  exitFullscreen: '',
+  locateMe: '',
+  metersUnit: '',
+  feetUnit: '',
+  locatePopup: '',
+  locateOutsideMapBounds: ''
 };
 
 registerTranslation(translation);

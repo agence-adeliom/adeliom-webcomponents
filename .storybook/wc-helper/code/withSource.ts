@@ -23,11 +23,10 @@ export const withSource = makeDecorator({
           attributeSort: true,
           lineBreakValue: 'force-align',
           preserveAttribute: true,
-          attributeCasing:'lowercase-name',
+          attributeCasing: 'lowercase-name',
           forceAttributeValue: false
         }
       })
-
     });
     return res;
   }

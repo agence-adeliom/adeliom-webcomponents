@@ -17,14 +17,11 @@ export const Panel: React.FC<PanelProps> = props => {
     options: {}
   }); // https://storybook.js.org/docs/react/addons/addons-api#usechannel
 
-  useChannel(
-    {
-      [EVENTS.CODE_UPDATE]: ({ code }) => {
-        setState(state => ({ ...state, code }));
-      }
-    },
-    [code]
-  );
+  useChannel({
+    [EVENTS.CODE_UPDATE]: ({ code }) => {
+      setState(state => ({ ...state, code }));
+    }
+  });
 
   return (
     <AddonPanel {...props}>
@@ -34,7 +31,7 @@ export const Panel: React.FC<PanelProps> = props => {
           border-radius: 0;
         }`}
       </style>
-      {code && <Source code={code} language={'html'} format={'lwc'} dark style={{ margin: '0' }} />}
+      {code && <Source code={code} language={'html'} dark style={{ margin: '0' }} />}
     </AddonPanel>
   );
 };

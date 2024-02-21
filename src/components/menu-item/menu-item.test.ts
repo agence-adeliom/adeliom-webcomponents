@@ -126,7 +126,7 @@ describe('<awc-menu-item>', () => {
     `);
 
     const selectHandler = sinon.spy((event: AWCSelectEvent) => {
-      const item = event.detail.item as AWCMenuItem;
+      const item = event.detail.item;
       expect(item.value).to.equal('submenu-item-1');
     });
     menu.addEventListener('awc-select', selectHandler);

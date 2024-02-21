@@ -1,6 +1,4 @@
-import { spread } from './spread.js';
-import { useArgs } from '@storybook/preview-api';
-import type { TemplateResult } from 'lit';
+import { spreadProps, spread } from './spread.js';
 import { html, unsafeStatic } from 'lit/static-html.js';
 import type { Declaration } from './cem-schema.js';
 import { getAttributesAndProperties, getCssParts, getCssProperties, getSlots } from './cem-utilities.js';
@@ -19,14 +17,7 @@ function generateClassName(length: number = 5) {
   );
 }
 
-/**
- * Gets the template used to render the component in Storybook
- * @param component component object from the Custom Elements Manifest
- * @param args args object from Storybook story
- * @param slot content to be rendered between the component's opening and closing tags
- * @returns
- */
-export function getTemplate(component?: Declaration, args?: any, slot?: TemplateResult): TemplateResult {
+export function getTemplate(component?: Declaration, args?: any, slot?: any): any {
   if (!args) {
     return html`<${unsafeStatic(component!.tagName!)}></${unsafeStatic(component!.tagName!)}>`;
   }
@@ -36,17 +27,19 @@ export function getTemplate(component?: Declaration, args?: any, slot?: Template
     argObserver = undefined;
     lastTagName = component?.tagName;
   }
+
   args.className = generateClassName();
+
   const { attrOperators, propOperators } = getTemplateOperators(component!, args);
-  const operators = { ...attrOperators, ...propOperators };
   const slotsTemplate = getSlotsTemplate(component!, args);
   const cssPropertiesTemplate = getCssPropTemplate(component!, args);
   const styleTemplate = getStyleTemplate(component!, args);
-  syncControls(component!);
+  //syncControls(component!);
 
   return html`${styleTemplate}
 <${unsafeStatic(component!.tagName!)} ${styleTemplate ? unsafeStatic(`class="${args.className}"`) : null}
-  ${spread(operators)}
+  ${spread(attrOperators)}
+  ${spreadProps(propOperators)}
   ${cssPropertiesTemplate}
   >
     ${slotsTemplate}${slot || ''}
@@ -54,15 +47,8 @@ export function getTemplate(component?: Declaration, args?: any, slot?: Template
 `;
 }
 
-/**
- * Gets the template used to render the component's styles in Storybook
- * @param component component object from the Custom Elements Manifest
- * @param args args object from Storybook story
- * @returns styles in a tagged template literal
- */
 export function getStyleTemplate(component?: Declaration, args?: any) {
   const cssPartsTemplate = getCssPartsTemplate(component!, args);
-
   return `${cssPartsTemplate?._$litStatic$}`?.replaceAll(/\s+/g, '') != ''
     ? html`<style>
         ${cssPartsTemplate}
@@ -70,12 +56,6 @@ export function getStyleTemplate(component?: Declaration, args?: any) {
     : null;
 }
 
-/**
- * Gets a formatted object with the component's attributes and properties formatted to be used as operators in the template
- * @param component component object from the Custom Elements Manifest
- * @param args args object from Storybook story
- * @returns object of properties and attributes with their values
- */
 function getTemplateOperators(component: Declaration, args: any) {
   const attributes = getAttributesAndProperties(component);
   const attrOperators: any = {};
@@ -90,6 +70,7 @@ function getTemplateOperators(component: Declaration, args: any) {
     const attrName = attr.name;
     const attrValue = args![key] as unknown;
     const prop: string = (attr.control as any).type === 'boolean' ? `?${attrName}` : attrName;
+
     if (attrValue && attrValue != attr.defaultValue) {
       attrOperators[prop] = attrValue === 'false' ? false : attrValue;
     }
@@ -111,12 +92,6 @@ function getTemplateOperators(component: Declaration, args: any) {
   return { attrOperators, propOperators };
 }
 
-/**
- * Gets the template used to render the component's styles in Storybook
- * @param component component object from the Custom Elements Manifest
- * @param args args object from Storybook story
- * @returns string of css properties with arg values
- */
 function getCssPropTemplate(component: Declaration, args: any) {
   if (!component?.cssProperties?.length) {
     if (args.style) {
@@ -126,7 +101,6 @@ function getCssPropTemplate(component: Declaration, args: any) {
   }
 
   const cssProperties = getCssProperties(component);
-
   const cssPropertiesTemplate = Object.keys(cssProperties)
     .map(key => {
       const cssName = cssProperties[key].name;
@@ -135,17 +109,12 @@ function getCssPropTemplate(component: Declaration, args: any) {
     })
     .filter(value => value !== null)
     .join(';');
+
   return cssPropertiesTemplate || args.style
     ? unsafeStatic(`style="${cssPropertiesTemplate}${args.style ?? ''}"`)
     : null;
 }
 
-/**
- * Gets the template used to render the component's CSS Shadow Parts in Storybook
- * @param component component object from the Custom Elements Manifest
- * @param args args object from Storybook story
- * @returns formatted string with CSS shadow parts and their styles
- */
 function getCssPartsTemplate(component: Declaration, args: any) {
   if (!component?.cssParts?.length) {
     return;
@@ -159,11 +128,10 @@ function getCssPartsTemplate(component: Declaration, args: any) {
       .map(key => {
         const cssPartName = cssParts[key].name;
         const cssPartValue = args![key];
-        console.log(cssPartValue);
-        return cssPartValue && cssPartValue?.replaceAll(/\s+/g, '').trim() !== ''
+        return cssPartValue?.replaceAll(/\s+/g, '')
           ? `${component?.tagName}${args?.className ? `.${args?.className}` : ''}::part(${cssPartName}) {
-            ${cssPartValue || ''}
-          }`
+    ${cssPartValue || ''}
+  }`
           : null;
       })
       .filter(value => value !== null)
@@ -171,12 +139,6 @@ function getCssPartsTemplate(component: Declaration, args: any) {
   );
 }
 
-/**
- * Gets the template used to render the component's slots in Storybook
- * @param component component object from the Custom Elements Manifest
- * @param args args object from Storybook story
- * @returns formatted string with slots and their values
- */
 function getSlotsTemplate(component: Declaration, args: any) {
   if (!component?.slots?.length) {
     return;
@@ -201,56 +163,4 @@ function getSlotsTemplate(component: Declaration, args: any) {
       .filter(value => value !== null)
       .join('\n')}`
   );
-}
-
-/**
- * Watches for changes to the component's attributes and properties and updates Storybook controls
- * @param component component object from the Custom Elements Manifest
- */
-function syncControls(component: Declaration) {
-  setArgObserver(component);
-
-  // wait for story to render before trying to attach the observer
-  setTimeout(() => {
-    const selectedComponent = document.querySelector(component.tagName!)!;
-    argObserver?.observe(selectedComponent, {
-      attributes: true
-    });
-  });
-}
-
-/**
- * Sets up the MutationObserver to sync the component's attributes and properties with Storybook controls
- * @param component component object from the Custom Elements Manifest
- */
-function setArgObserver(component: Declaration) {
-  let isUpdating = false;
-  const updateArgs = useArgs()[1];
-  const attributes = getAttributesAndProperties(component);
-
-  if (argObserver) {
-    return;
-  }
-
-  argObserver = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      if ((mutation.type as string) !== 'attributes' || (mutation.attributeName === 'class' && isUpdating)) {
-        return;
-      }
-
-      isUpdating = true;
-      const attribute = attributes[`${mutation.attributeName}`];
-      if (attribute?.control === 'boolean' || (attribute?.control as any)?.type === 'boolean') {
-        updateArgs({
-          [`${mutation.attributeName}`]: (mutation.target as HTMLElement)?.hasAttribute(mutation.attributeName || '')
-        });
-      } else {
-        updateArgs({
-          [`${mutation.attributeName}`]: (mutation.target as HTMLElement).getAttribute(mutation.attributeName || '')
-        });
-      }
-
-      isUpdating = false;
-    });
-  });
 }

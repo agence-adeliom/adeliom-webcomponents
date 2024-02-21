@@ -13,6 +13,9 @@ import './template/story.style.css';
 import { setBasePath } from '../src/utilities/base-path.js';
 import { withSource } from './wc-helper/code/withSource';
 import AwcDocTheme from './AwcDocTheme';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 setBasePath('/');
 setCustomElementsManifest(customElements);
@@ -98,12 +101,12 @@ const preview: Preview = {
                 attributeSort: true,
                 lineBreakValue: 'force-align',
                 preserveAttribute: true,
-                attributeCasing:'lowercase-name',
+                attributeCasing: 'lowercase-name',
                 forceAttributeValue: false
               }
-            })
+            });
           } catch (e) {
-            console.log(e, code)
+            console.log(e, code);
             return code;
           }
         }

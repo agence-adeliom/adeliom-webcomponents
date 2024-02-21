@@ -29,7 +29,7 @@ const awcVersion = JSON.stringify(packageData.version.toString());
 // Builds the source with esbuild.
 //
 async function buildTheSource() {
-  const alwaysExternal = ['@lit/react', 'react'];
+  const alwaysExternal = ['@lit/react', 'react', 'swiper'];
 
   const cdnConfig = {
     format: 'esm',
@@ -70,7 +70,11 @@ async function buildTheSource() {
     splitting: true,
     plugins: [
       replace({
-        __AWC_VERSION__: awcVersion
+        include: /node_modules\/lodash\/cloneDeep/,
+        delimiters: ['', ''],
+        values: {
+          __AWC_VERSION__: awcVersion
+        }
       })
     ]
   };
@@ -168,15 +172,6 @@ await nextTask(`Themes, Icons, and TS Types to "${cdndir}"`, async () => {
 
 await nextTask('Building source files', async () => {
   buildResults = await buildTheSource();
-});
-
-// Copy the CDN build to the docs (prod only; we use a virtual directory in dev)
-await nextTask(`Copying the build to "${sitedir}"`, async () => {
-  await deleteAsync(sitedir);
-
-  // We copy the CDN build because that has everything bundled. Yes this looks weird.
-  // But if we do "/cdn" it requires changes all the docs to do /cdn instead of /dist.
-  await copy(cdndir, path.join(sitedir, 'dist'));
 });
 
 // Cleanup on exit

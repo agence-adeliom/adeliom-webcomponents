@@ -22,7 +22,6 @@ export interface Translation extends DefaultTranslation {
   $dir: 'ltr' | 'rtl';
 
   browseFiles: string;
-  carousel: string;
   clearEntry: string;
   close: string;
   copied: string;
@@ -32,15 +31,12 @@ export interface Translation extends DefaultTranslation {
   fileSizeExceeded: (size: number) => string;
   fileTypeNotAccepted: (accept: string) => string;
   error: string;
-  goToSlide: (slide: number, count: number) => string;
   hidePassword: string;
   loading: string;
   files: string;
   maxFiles: string;
   noMultipleFiles: string;
-  nextSlide: string;
   numOptionsSelected: (num: number) => string;
-  previousSlide: string;
   previous: string;
   next: string;
   progress: string;
@@ -50,7 +46,6 @@ export interface Translation extends DefaultTranslation {
   scrollToStart: string;
   selectAColorFromTheScreen: string;
   showPassword: string;
-  slideNum: (slide: number) => string;
   toggleColorFormat: string;
   zoomIn: string;
   zoomOut: string;

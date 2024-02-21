@@ -31,7 +31,6 @@ export type { AWCResizeEvent } from './awc-resize.js';
 export type { AWCSelectEvent } from './awc-select.js';
 export type { AWCSelectionChangeEvent } from './awc-selection-change.js';
 export type { AWCShowEvent } from './awc-show.js';
-export type { AWCSlideChangeEvent } from './awc-slide-change.js';
 export type { AWCStartEvent } from './awc-start.js';
 export type { AWCTabHideEvent } from './awc-tab-hide.js';
 export type { AWCTabShowEvent } from './awc-tab-show.js';

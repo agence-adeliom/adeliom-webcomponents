@@ -8,7 +8,6 @@ const translation: Translation = {
   $dir: 'ltr',
 
   browseFiles: 'Dateien durchsuchen',
-  carousel: 'Karussell',
   clearEntry: 'Eingabe löschen',
   close: 'Schließen',
   copied: 'Kopiert',
@@ -18,19 +17,16 @@ const translation: Translation = {
   fileTypeNotAccepted: accept => `Dateityp wird nicht akzeptiert, nur ${accept} Dateien sind erlaubt`,
   fileSizeExceeded: size => `Dateigröße überschreitet ${prettyBytes(size, { locale: 'de' })}`,
   error: 'Fehler',
-  goToSlide: (slide, count) => `Zu Folie ${slide} von ${count} gehen`,
   hidePassword: 'Passwort verbergen',
   loading: 'Wird geladen',
   files: 'Dateien :',
   maxFiles: 'Maximale Anzahl an Dateien erreicht',
   noMultipleFiles: 'Mehrere Dateien sind nicht erlaubt',
-  nextSlide: 'Nächste Folie',
   numOptionsSelected: num => {
     if (num === 0) return 'Keine Optionen ausgewählt';
     if (num === 1) return '1 Option ausgewählt';
     return `${num} Optionen ausgewählt`;
   },
-  previousSlide: 'Vorherige Folie',
   previous: 'Vorherige',
   next: 'Nächste',
   progress: 'Fortschritt',
@@ -40,7 +36,6 @@ const translation: Translation = {
   scrollToStart: 'Zum Anfang scrollen',
   selectAColorFromTheScreen: 'Farbe vom Bildschirm auswählen',
   showPassword: 'Passwort anzeigen',
-  slideNum: slide => `Folie ${slide}`,
   toggleColorFormat: 'Farbformat umschalten',
   zoomIn: 'Vergroß',
   zoomOut: 'Verkleinern',

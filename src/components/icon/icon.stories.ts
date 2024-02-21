@@ -61,7 +61,7 @@ registerIconLibrary('jam', {
 registerIconLibrary('material', {
   resolver: name => {
     const match = name.match(/^(.*?)(_(baseline|outline|round|sharp|twotone))?$/);
-    if(!match) return '';
+    if (!match) return '';
     return `https://cdn.jsdelivr.net/npm/@material-icons/svg@1.0.33/svg/${match[1]}/${match[3] || 'baseline'}.svg`;
   },
   mutator: svg => svg.setAttribute('fill', 'currentColor')
@@ -70,7 +70,7 @@ registerIconLibrary('material', {
 registerIconLibrary('remixicon', {
   resolver: name => {
     const match = name.match(/^(.*?)\/(.*?)?$/);
-    if(!match) return '';
+    if (!match) return '';
     match[1] = match[1].charAt(0).toUpperCase() + match[1].slice(1);
     return `https://cdn.jsdelivr.net/npm/remixicon@3.5.0/icons/${match[1]}/${match[2]}.svg`;
   },

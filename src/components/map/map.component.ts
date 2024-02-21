@@ -543,7 +543,7 @@ export default class AWCMap extends AWCLeafletElement {
     // fire an event for when this.map is defined and ready.
     // (needed for components that talk to this.map directly)
     this.mapReady = true;
-    this.emit('awc-map', { detail : { ready: true,  map: this.map } });
+    this.emit('awc-map', { detail: { ready: true, map: this.map } });
   }
 
   @bound

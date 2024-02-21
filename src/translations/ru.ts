@@ -8,7 +8,6 @@ const translation: Translation = {
   $dir: 'ltr',
 
   browseFiles: 'Просмотр файлов',
-  carousel: 'Карусель',
   clearEntry: 'Очистить запись',
   close: 'Закрыть',
   copied: 'Скопировано',
@@ -18,19 +17,16 @@ const translation: Translation = {
   fileTypeNotAccepted: accept => `Тип файла не поддерживается, разрешены только файлы ${accept}`,
   fileSizeExceeded: size => `Размер файла превышает ${prettyBytes(size, { locale: 'ru' })}`,
   error: 'Ошибка',
-  goToSlide: (slide, count) => `Перейти к слайду ${slide} из ${count}`,
   hidePassword: 'Скрыть пароль',
   loading: 'Загрузка',
   files: 'Файлы :',
   maxFiles: 'Достигнуто максимальное количество файлов',
   noMultipleFiles: 'Несколько файлов не допускаются',
-  nextSlide: 'Следующий слайд',
   numOptionsSelected: num => {
     if (num === 0) return 'Нет выбранных опций';
     if (num === 1) return '1 выбранная опция';
     return `${num} выбранных опций`;
   },
-  previousSlide: 'Предыдущий слайд',
   previous: 'Предыдущий',
   next: 'Следующий',
   progress: 'Прогресс',
@@ -40,8 +36,16 @@ const translation: Translation = {
   scrollToStart: 'Прокрутить в начало',
   selectAColorFromTheScreen: 'Выберите цвет с экрана',
   showPassword: 'Показать пароль',
-  slideNum: slide => `Слайд ${slide}`,
-  toggleColorFormat: 'Переключить формат цвета'
+  toggleColorFormat: 'Переключить формат цвета',
+  zoomIn: '',
+  zoomOut: '',
+  enterFullscreen: '',
+  exitFullscreen: '',
+  locateMe: '',
+  metersUnit: '',
+  feetUnit: '',
+  locatePopup: '',
+  locateOutsideMapBounds: ''
 };
 
 registerTranslation(translation);
