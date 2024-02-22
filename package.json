@@ -76,11 +76,13 @@
     "@shoelace-style/animations": "^1.1.0",
     "@shoelace-style/localize": "^3.1.2",
     "composed-offset-position": "^0.0.4",
+    "fflate": "^0.8.2",
     "leaflet": "^1.9.4",
     "leaflet.gridlayer.googlemutant": "^0.14.0",
     "leaflet.locatecontrol": "^0.79.0",
     "leaflet.markercluster": "^1.5.3",
     "lit": "^3.1.0",
+    "lottie-web": "^5.12.2",
     "pretty-bytes": "^6.1.1",
     "qr-creator": "^1.0.0",
     "swiper": "^11.0.6",
@@ -172,5 +174,8 @@
     "*": [
       "prettier --write --ignore-unknown --fix"
     ]
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.12.0"
   }
 }

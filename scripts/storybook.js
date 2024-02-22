@@ -10,6 +10,7 @@ const { build } = commandLineArgs([{ name: 'build', type: Boolean }]);
 const outdir = 'dist';
 const spinner = ora({ hideCursor: false }).start();
 const execPromise = util.promisify(exec);
+const spawnPromise = util.promisify(spawn);
 
 let childProcess;
 let buildResults;

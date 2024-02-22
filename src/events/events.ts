@@ -36,3 +36,19 @@ export type { AWCTabHideEvent } from './awc-tab-hide.js';
 export type { AWCTabShowEvent } from './awc-tab-show.js';
 export type { AWCAbortEvent } from './awc-abort.js';
 export type { AWCPageChange } from './awc-page-change.js';
+export type {
+  AWCLottieCompleteEvent,
+  AWCLottieDestroyedEvent,
+  AWCLottieErrorEvent,
+  AWCLottieFrameEvent,
+  AWCLottieFreezeEvent,
+  AWCLottieLoadEvent,
+  AWCLottieLoopEvent,
+  AWCLottieNextEvent,
+  AWCLottiePauseEvent,
+  AWCLottiePlayEvent,
+  AWCLottiePreviousEvent,
+  AWCLottieReadyEvent,
+  AWCLottieRenderedEvent,
+  AWCLottieStopEvent
+} from './awc-lottie.js';

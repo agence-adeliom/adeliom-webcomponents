@@ -159,7 +159,6 @@ function getCssPartsTemplate(component: Declaration, args: any) {
       .map(key => {
         const cssPartName = cssParts[key].name;
         const cssPartValue = args![key];
-        console.log(cssPartValue);
         return cssPartValue && cssPartValue?.replaceAll(/\s+/g, '').trim() !== ''
           ? `${component?.tagName}${args?.className ? `.${args?.className}` : ''}::part(${cssPartName}) {
             ${cssPartValue || ''}

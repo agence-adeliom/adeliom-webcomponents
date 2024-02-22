@@ -59,5 +59,4 @@ export default css`
       transform: rotate(360deg);
     }
   }
-  /*# sourceMappingURL=L.Control.Locate.min.css.map */
 `;
