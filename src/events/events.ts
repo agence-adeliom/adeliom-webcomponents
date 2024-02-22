@@ -38,16 +38,17 @@ export type { AWCAbortEvent } from './awc-abort.js';
 export type { AWCPageChange } from './awc-page-change.js';
 export type {
   AWCLottieCompleteEvent,
-  AWCLottieDataFailedEvent,
-  AWCLottieRenderedEvent,
-  AWCLottieDataReadyEvent,
+  AWCLottieDestroyedEvent,
   AWCLottieErrorEvent,
   AWCLottieFrameEvent,
   AWCLottieFreezeEvent,
-  AWCLottieLoopCompleteEvent,
+  AWCLottieLoadEvent,
+  AWCLottieLoopEvent,
+  AWCLottieNextEvent,
   AWCLottiePauseEvent,
   AWCLottiePlayEvent,
+  AWCLottiePreviousEvent,
   AWCLottieReadyEvent,
-  AWCLottieStopEvent,
-  AWCLottieVisibilityChangeEvent
+  AWCLottieRenderedEvent,
+  AWCLottieStopEvent
 } from './awc-lottie.js';

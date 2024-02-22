@@ -19,6 +19,7 @@ jobs:
       - run: npm ci --legacy-peer-deps
       - run: npm run verify
       - run: npm run storybook:build
+      - run: node ./scripts/make-sitemap.js
 
       - name: Archive Storybook files
         run: tar -cvf storybook-static.tar storybook-static/
