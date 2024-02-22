@@ -15,7 +15,6 @@ import * as IconStories from './icon.stories';
 import { TagNames } from '@awc-storybook/blocks/TagNames.jsx';
 import { Summary } from '@awc-storybook/blocks/Summary.jsx';
 import { Importing } from '@awc-storybook/blocks/Importing.jsx';
-import SystemIcons from '@awc-storybook/static/assets/icons/icons.json';
 
 <Meta of={IconStories} />
 
@@ -424,26 +423,6 @@ registerIconLibrary('system', {
   resolver: name => `/path/to/custom/icons/${name}.svg`
 });
 ```
-
-## System icons
-
-<IconGallery>
-  {
-    SystemIcons.map((name) => (
-
-      <IconItem name={name} key={`icon_${name}`}>
-        <awc-copy-button value={name}>
-          <awc-icon slot="copy-icon" name={name} loading="lazy"></awc-icon>
-          <awc-icon slot="success-icon" name={name} loading="lazy"></awc-icon>
-          <awc-icon slot="error-icon" name={name} loading="lazy"></awc-icon>
-        </awc-copy-button>
-      </IconItem>
-
-    ))
-
-}
-
-</IconGallery>
 
 ## Importing
 
