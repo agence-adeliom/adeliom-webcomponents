@@ -1,8 +1,5 @@
 name: Preview
 on:
-  push:
-    branches:
-      - next
   pull_request:
     types:
       - opened

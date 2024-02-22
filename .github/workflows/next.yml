@@ -1,0 +1,30 @@
+name: Preview
+on:
+  push:
+    branches:
+      - next
+
+concurrency:
+  group: next
+
+jobs:
+  storybook:
+    name: Storybook
+    uses: ./.github/workflows/storybook.yml
+    secrets: inherit
+
+  build:
+    needs: storybook
+    name: Docker
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
+
+  deploy:
+    needs: build
+    name: Deploy Preview
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+    with:
+      environment: next
+      host: webcomponents-next.adeliom.io
+      branch: next
