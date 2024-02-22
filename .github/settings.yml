@@ -45,6 +45,9 @@ labels:
     color: "#fbca04"
   - name: backend
     color: "#fbca04"
+  - name: enhancement
+    color: "#98c1d9"
+
 
 #environments:
 #    -   name: production
