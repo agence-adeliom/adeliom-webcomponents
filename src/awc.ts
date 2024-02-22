@@ -83,6 +83,7 @@ export { default as AWCMapTilelayerGoogle } from './components/map-tilelayer-goo
 export { default as AWCMapMarkerClusterGroup } from './components/map-marker-cluster-group/map-marker-cluster-group.js';
 export { default as AWCStepper } from './components/stepper/stepper.js';
 export { default as AWCStepperItem } from './components/stepper-item/stepper-item.js';
+export { default as AWCLottiePlayer } from './components/lottie-player/lottie-player.js';
 /* plop:component */
 
 // Utilities
