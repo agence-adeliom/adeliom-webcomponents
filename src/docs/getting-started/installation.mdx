@@ -176,32 +176,32 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-entry: './src/index.js',
-output: {
-filename: 'main.js',
-path: path.resolve(\_\_dirname, 'dist')
-},
-module: {
-// Bundle styles into main.css
-rules: [
-{
-test: /\.css$/i,
-use: [MiniCssExtractPlugin.loader, 'css-loader']
-}
-]
-},
-plugins: [
-new MiniCssExtractPlugin(),
-new CopyPlugin({
-patterns: [
-// Copy AWC assets to dist/awc
-{
-from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
-to: path.resolve(__dirname, 'dist/awc/assets')
-}
-]
-})
-]
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    // Bundle styles into main.css
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [
+        // Copy AWC assets to dist/awc
+        {
+          from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
+          to: path.resolve(__dirname, 'dist/awc/assets')
+        }
+      ]
+    })
+  ]
 };
 
 ````
@@ -245,13 +245,13 @@ const path = require('path');
 const Encore = require('@symfony/webpack-encore');
 
 Encore
-.setOutputPath(path.resolve(\*\*dirname, 'dist'))
-.setPublicPath('/dist')
-...
-.copyFiles({
-from: path.resolve(**dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
-to: `${path.resolve(**dirname, 'awc/assets')}/[path][name].[ext]`,
-})
+  .setOutputPath(path.resolve(__dirname, 'dist'))
+  .setPublicPath('/dist')
+  ...
+  .copyFiles({
+    from: path.resolve(__dirname, 'node_modules/@agence-adeliom/awc/%NPMDIR%/assets'),
+    to: `${path.resolve(__dirname, 'awc/assets')}/[path][name].[ext]`,
+  })
 ;
 
 ````
