@@ -17,10 +17,10 @@ const interpolateVariable = ({ replacements = {}, prefix = '%', suffix = '%' }) 
 
     const regexp = RegExp(
       '(' +
-        Object.keys(replacements)
-          .map(key => escapeStringRegexp(attachPrefixSuffix(key)))
-          .join('|') +
-        ')',
+      Object.keys(replacements)
+        .map(key => escapeStringRegexp(attachPrefixSuffix(key)))
+        .join('|') +
+      ')',
       'g'
     );
 
@@ -78,7 +78,7 @@ const config: StorybookConfig = {
     },
     '@storybook/addon-a11y',
     '@storybook/addon-links',
-    '@storybook/addon-styling',
+    '@storybook/addon-themes',
     'adeliom/google-tag-manager',
     './wc-helper/code/manager.ts'
   ],
