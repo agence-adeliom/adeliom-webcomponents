@@ -304,13 +304,15 @@ export const getSrcSet = ({
       }
       // Not sure why TS isn't narrowing the type here
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const transformed = transformer!({
-        url: canonical ? canonical.url : src,
-        width: bp,
-        height: transformedHeight
-      });
-      if (transformed) {
-        return `${transformed.toString()} ${bp}w`;
+      if (transformer) {
+        const transformed = transformer({
+          url: canonical ? canonical.url : src,
+          width: bp,
+          height: transformedHeight
+        });
+        if (transformed) {
+          return `${transformed.toString()} ${bp}w`;
+        }
       }
       return '';
     })

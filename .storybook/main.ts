@@ -78,7 +78,7 @@ const config: StorybookConfig = {
     },
     '@storybook/addon-a11y',
     '@storybook/addon-links',
-    '@storybook/addon-styling',
+    '@storybook/addon-themes',
     'adeliom/google-tag-manager',
     './wc-helper/code/manager.ts'
   ],
