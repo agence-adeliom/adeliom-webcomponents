@@ -17,10 +17,10 @@ const interpolateVariable = ({ replacements = {}, prefix = '%', suffix = '%' }) 
 
     const regexp = RegExp(
       '(' +
-      Object.keys(replacements)
-        .map(key => escapeStringRegexp(attachPrefixSuffix(key)))
-        .join('|') +
-      ')',
+        Object.keys(replacements)
+          .map(key => escapeStringRegexp(attachPrefixSuffix(key)))
+          .join('|') +
+        ')',
       'g'
     );
 
