@@ -17,6 +17,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The radio's label.
  *
+ * @event awc-change - Emitted when the radio selected value changes.
  * @event awc-blur - Emitted when the control loses focus.
  * @event awc-focus - Emitted when the control gains focus.
  *
@@ -29,6 +30,9 @@ import type { CSSResultGroup } from 'lit';
 export default class AWCRadio extends AWCElement {
   static styles: CSSResultGroup = styles;
   static dependencies = { 'awc-icon': AWCIcon };
+
+  @property() type = 'radio';
+
 
   @state() checked = false;
   @state() protected hasFocus = false;
@@ -65,6 +69,7 @@ export default class AWCRadio extends AWCElement {
   private handleClick = () => {
     if (!this.disabled) {
       this.checked = true;
+      this.emit('awc-change');
     }
   };
 
@@ -95,21 +100,21 @@ export default class AWCRadio extends AWCElement {
       <span
         part="base"
         class=${classMap({
-          radio: true,
-          'radio--checked': this.checked,
-          'radio--disabled': this.disabled,
-          'radio--focused': this.hasFocus,
-          'radio--small': this.size === 'small',
-          'radio--medium': this.size === 'medium',
-          'radio--large': this.size === 'large'
-        })}
+      radio: true,
+      'radio--checked': this.checked,
+      'radio--disabled': this.disabled,
+      'radio--focused': this.hasFocus,
+      'radio--small': this.size === 'small',
+      'radio--medium': this.size === 'medium',
+      'radio--large': this.size === 'large'
+    })}
       >
         <span part="${`control${this.checked ? ' control--checked' : ''}`}" class="radio__control">
           ${this.checked
-            ? html`
+        ? html`
                 <awc-icon part="checked-icon" class="radio__checked-icon" library="system" name="radio"></awc-icon>
               `
-            : ''}
+        : ''}
         </span>
 
         <slot part="label" class="radio__label"></slot>
