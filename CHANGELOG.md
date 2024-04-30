@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.0.0](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.8...v2.0.0) (2024-04-30)
+
+
+### Features
+
+* Support for Figma Typography and Effect
+* Allow CDN usage
+* Handle cherry-picking for components
+* Add Lottie Player components
+* update AWC ([8b21a67](https://github.com/agence-adeliom/adeliom-webcomponents/commit/8b21a67b8eaf6320cc8038c03f6de752d816551e))
+
+### Documentation
+
+* Update Storybook
+
 ## [1.6.8](https://github.com/agence-adeliom/adeliom-webcomponents/compare/v1.6.7...v1.6.8) (2024-01-04)
 
 
