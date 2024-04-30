@@ -52,7 +52,7 @@ export default css`
     justify-content: center;
     width: var(--toggle-size);
     height: var(--toggle-size);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color-default);
     border-radius: 50%;
     background-color: var(--awc-input-background-color);
     color: transparent;

@@ -239,7 +239,7 @@ export const ToolbarExample: Story = {
 
       <style>
         .button-group-toolbar awc-button-group:not(:last-of-type) {
-          margin-right: var(--awc-spacing-x-small);
+          margin-right: var(--awc-spacing-xsmall);
         }
       </style>`,
   parameters: {

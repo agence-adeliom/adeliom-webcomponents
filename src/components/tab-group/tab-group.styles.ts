@@ -31,7 +31,7 @@ export default css`
 
   .tab-group--has-scroll-controls .tab-group__nav-container {
     position: relative;
-    padding: 0 var(--awc-spacing-x-large);
+    padding: 0 var(--awc-spacing-xlarge);
   }
 
   .tab-group__body {
@@ -46,7 +46,7 @@ export default css`
     position: absolute;
     top: 0;
     bottom: 0;
-    width: var(--awc-spacing-x-large);
+    width: var(--awc-spacing-xlarge);
   }
 
   .tab-group__scroll-button--start {

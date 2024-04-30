@@ -12,9 +12,9 @@ export const Heading1: StoryObj = {
   name: 'Heading 1',
   render: () => html`
     <div>
-      <div class="container mx-auto py-5x-large px-medium md:p-7x-large">
+      <div class="container mx-auto py-5xlarge px-medium md:p-7xlarge">
         <h3
-          class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+          class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title"
         >
           <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
             >Headline</span
@@ -34,9 +34,9 @@ export const Heading2: StoryObj = {
   name: 'Heading 2',
   render: () => html`
     <div>
-      <div class="container mx-auto bg-neutral-100 py-5x-large px-medium md:p-7x-large">
+      <div class="container mx-auto bg-neutral-100 py-5xlarge px-medium md:p-7xlarge">
         <h3
-          class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+          class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title"
         >
           <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
             >Headline</span
@@ -58,7 +58,7 @@ export const Heading3: StoryObj = {
     <div>
       <div class="container mx-auto">
         <div class="py-6 md:py-8 lg:py-12">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+          <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 text-title">
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
             >

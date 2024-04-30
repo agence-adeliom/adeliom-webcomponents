@@ -107,7 +107,7 @@ export default css`
     flex: 1;
     align-items: center;
     flex-wrap: wrap;
-    margin-inline-start: var(--awc-spacing-2x-small);
+    margin-inline-start: var(--awc-spacing-2xsmall);
   }
 
   .select__tags::slotted(awc-tag) {
@@ -121,8 +121,8 @@ export default css`
 
   /* Standard selects */
   .select--standard .select__combobox {
-    background-color: var(--awc-input-background-color);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
+    background-color: var(--awc-input-background-color-default);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color-default);
   }
 
   .select--standard.select--disabled .select__combobox {
@@ -149,18 +149,18 @@ export default css`
   }
 
   .select--filled:hover:not(.select--disabled) .select__combobox {
-    background-color: var(--awc-input-filled-background-color-hover);
+    background-color: var(--awc-input-filled-background-color);
   }
 
   .select--filled.select--disabled .select__combobox {
-    background-color: var(--awc-input-filled-background-color-disabled);
+    background-color: var(--awc-input-background-color-disabled);
     opacity: 0.5;
     cursor: not-allowed;
   }
 
   .select--filled:not(.select--disabled).select--open .select__combobox,
   .select--filled:not(.select--disabled).select--focused .select__combobox {
-    background-color: var(--awc-input-filled-background-color-focus);
+    background-color: var(--awc-input-filled-background-color);
     outline: var(--awc-focus-ring);
   }
 
@@ -308,7 +308,7 @@ export default css`
     background: var(--awc-panel-background-color);
     border: solid var(--awc-panel-border-width) var(--awc-panel-border-color);
     border-radius: var(--awc-border-radius-medium);
-    padding-block: var(--awc-spacing-x-small);
+    padding-block: var(--awc-spacing-xsmall);
     padding-inline: 0;
     overflow: auto;
     overscroll-behavior: none;
@@ -319,14 +319,14 @@ export default css`
   }
 
   .select__listbox ::slotted(awc-divider) {
-    --spacing: var(--awc-spacing-x-small);
+    --spacing: var(--awc-spacing-xsmall);
   }
 
   .select__listbox ::slotted(small) {
     font-size: var(--awc-font-size-small);
     font-weight: var(--awc-font-weight-semibold);
     color: var(--awc-color-neutral-500);
-    padding-block: var(--awc-spacing-x-small);
-    padding-inline: var(--awc-spacing-x-large);
+    padding-block: var(--awc-spacing-xsmall);
+    padding-inline: var(--awc-spacing-xlarge);
   }
 `;

@@ -115,7 +115,7 @@ export const GroupingDetails: Story = {
 
       <style>
         .details-group-example awc-details:not(:last-of-type) {
-          margin-bottom: var(--awc-spacing-2x-small);
+          margin-bottom: var(--awc-spacing-2xsmall);
         }
       </style>`,
   parameters: {

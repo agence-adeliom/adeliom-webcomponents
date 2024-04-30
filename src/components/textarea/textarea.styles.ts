@@ -31,7 +31,7 @@ export default css`
   /* Standard textareas */
   .textarea--standard {
     background-color: var(--awc-input-background-color);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color-default);
   }
 
   .textarea--standard:hover:not(.textarea--disabled) {
@@ -76,17 +76,17 @@ export default css`
   }
 
   .textarea--filled:hover:not(.textarea--disabled) {
-    background-color: var(--awc-input-filled-background-color-hover);
+    background-color: var(--awc-input-filled-background-color);
   }
 
   .textarea--filled.textarea--focused:not(.textarea--disabled) {
-    background-color: var(--awc-input-filled-background-color-focus);
+    background-color: var(--awc-input-filled-background-color);
     outline: var(--awc-focus-ring);
     outline-offset: var(--awc-focus-ring-offset);
   }
 
   .textarea--filled.textarea--disabled {
-    background-color: var(--awc-input-filled-background-color-disabled);
+    background-color: var(--awc-input-background-color-disabled);
     opacity: 0.5;
     cursor: not-allowed;
   }

@@ -8,11 +8,11 @@ export default css`
     display: block;
 
     --gap: var(--awc-spacing-medium);
-    --size: var(--awc-spacing-5x-large);
+    --size: var(--awc-spacing-5xlarge);
     --font-size: var(--awc-font-size-medium);
     --badge-radius: 50%;
-    --track-height: var(--awc-spacing-3x-small);
-    --track-gap: var(--awc-spacing-x-small);
+    --track-height: var(--awc-spacing-3xsmall);
+    --track-gap: var(--awc-spacing-xsmall);
 
     --color: var(--awc-color-neutral-400);
     --badge-color: var(--awc-color-neutral-400);

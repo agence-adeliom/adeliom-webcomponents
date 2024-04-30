@@ -64,7 +64,7 @@ export default css`
   }
 
   .card.card--has-shadow {
-    box-shadow: var(--awc-shadow-x-small);
+    box-shadow: var(--awc-shadow-xsmall);
   }
 
   .card__image {

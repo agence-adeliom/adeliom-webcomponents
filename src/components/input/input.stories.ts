@@ -242,7 +242,7 @@ export const CustomizingLabelPosition: Story = {
         .label-on-left::part(form-control) {
           display: grid;
           grid: auto / var(--label-width) 1fr;
-          gap: var(--awc-spacing-3x-small) var(--gap-width);
+          gap: var(--awc-spacing-3xsmall) var(--gap-width);
           align-items: center;
         }
 

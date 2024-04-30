@@ -169,12 +169,12 @@ export default css`
 
   /* Primary */
   .button--standard.button--primary {
-    background-color: var(--awc-button-primary-background-color, var(--awc-color-primary-600));
+    background-color: var(--awc-button-primary-background-color-default, var(--awc-color-primary-600));
     border-color: var(
-      --awc-button-primary-border-color,
-      var(--awc-button-primary-background-color, var(--awc-color-primary-600))
+      --awc-button-primary-border-color-default,
+      var(--awc-button-primary-background-color-default, var(--awc-color-primary-600))
     );
-    color: var(--awc-button-primary-color, var(--awc-color-neutral-0));
+    color: var(--awc-button-primary-color-default, var(--awc-color-neutral-0));
   }
 
   .button--standard.button--primary:hover:not(.button--disabled),
@@ -189,12 +189,12 @@ export default css`
 
   /* Secondary */
   .button--standard.button--secondary {
-    background-color: var(--awc-button-secondary-background-color, var(--awc-color-secondary-600));
+    background-color: var(--awc-button-secondary-background-color-default, var(--awc-color-secondary-600));
     border-color: var(
-      --awc-button-secondary-border-color,
-      var(--awc-button-secondary-background-color, var(--awc-color-secondary-600))
+      --awc-button-secondary-border-color-default,
+      var(--awc-button-secondary-background-color-default, var(--awc-color-secondary-600))
     );
-    color: var(--awc-button-secondary-color, var(--awc-color-neutral-0));
+    color: var(--awc-button-secondary-color-default, var(--awc-color-neutral-0));
   }
 
   .button--standard.button--secondary:hover:not(.button--disabled),
@@ -209,12 +209,12 @@ export default css`
 
   /* Tertiary */
   .button--standard.button--tertiary {
-    background-color: var(--awc-button-tertiary-background-color, var(--awc-color-tertiary-600));
+    background-color: var(--awc-button-tertiary-background-color-default, var(--awc-color-tertiary-600));
     border-color: var(
-      --awc-button-tertiary-border-color,
-      var(--awc-button-tertiary-background-color, var(--awc-color-tertiary-600))
+      --awc-button-tertiary-border-color-default,
+      var(--awc-button-tertiary-background-color-default, var(--awc-color-tertiary-600))
     );
-    color: var(--awc-button-tertiary-color, var(--awc-color-neutral-0));
+    color: var(--awc-button-tertiary-color-default, var(--awc-color-neutral-0));
   }
 
   .button--standard.button--tertiary:hover:not(.button--disabled),
@@ -492,7 +492,7 @@ export default css`
   }
 
   .button--text.button--has-label .button__suffix {
-    color: var(--awc-button-text-icon, var(--awc-color-primary-600));
+    color: var(--awc-button-text-icon-default, var(--awc-color-primary-600));
   }
 
   .button--text:hover:not(.button--disabled, .button--has-suffix, .button--has-prefix) {
@@ -624,9 +624,9 @@ export default css`
   }
 
   .button--icon.button- {
-    border-color: var(--awc-button-icon-border-color, var(--awc-color-neutral-300));
-    background-color: var(--awc-button-icon-background-color, var(--awc-color-neutral-0));
-    color: var(--awc-button-icon-color, currentColor);
+    border-color: var(--awc-button-icon-border-color-default, var(--awc-color-neutral-300));
+    background-color: var(--awc-button-icon-background-color-default, var(--awc-color-neutral-0));
+    color: var(--awc-button-icon-color-default, currentColor);
   }
 
   .button--icon.button-:hover:not(.button--disabled),
@@ -715,11 +715,11 @@ export default css`
   }
 
   .button--has-prefix.button--small {
-    padding-inline-start: var(--awc-spacing-x-small);
+    padding-inline-start: var(--awc-spacing-xsmall);
   }
 
   .button--has-prefix.button--small .button__label {
-    padding-inline-start: var(--awc-spacing-x-small);
+    padding-inline-start: var(--awc-spacing-xsmall);
   }
 
   .button--has-prefix.button--medium {
@@ -740,12 +740,12 @@ export default css`
 
   .button--has-suffix.button--small,
   .button--caret.button--small {
-    padding-inline-end: var(--awc-spacing-x-small);
+    padding-inline-end: var(--awc-spacing-xsmall);
   }
 
   .button--has-suffix.button--small .button__label,
   .button--caret.button--small .button__label {
-    padding-inline-end: var(--awc-spacing-x-small);
+    padding-inline-end: var(--awc-spacing-xsmall);
   }
 
   .button--has-suffix.button--medium,

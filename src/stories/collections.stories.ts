@@ -14,7 +14,7 @@ export const Collections1: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
         <div class="mb-6 flex items-center justify-between gap-4">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+          <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 text-title">
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
             >
@@ -111,7 +111,7 @@ export const Collections2: StoryObj = {
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
           <h3
-            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+            class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title"
           >
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
@@ -142,7 +142,7 @@ export const Collections2: StoryObj = {
             </div>
 
             <div class="flex flex-col h-full justify-end awc-theme-dark">
-              <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+              <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 text-title">
                 Erat suspendisse maecena
               </h3>
               <div>
@@ -167,7 +167,7 @@ export const Collections2: StoryObj = {
             </div>
 
             <div class="flex flex-col h-full justify-end awc-theme-dark">
-              <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+              <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 text-title">
                 Erat suspendisse maecena
               </h3>
               <div>
@@ -188,7 +188,7 @@ export const Collections3: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
       <div class="container mx-auto px-4 md:px-8">
         <div class="mb-6 flex items-center justify-between gap-4">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+          <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 text-title">
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
             >
@@ -391,7 +391,7 @@ export const Collections4: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
       <div class="container mx-auto px-4 md:px-8">
         <div class="mb-6 flex items-center justify-between gap-4">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+          <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 text-title">
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
             >
@@ -590,7 +590,7 @@ export const Collections5: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12 overflow-hidden">
       <div class="container mx-auto px-4 md:px-8">
         <div class="mb-6 flex items-center justify-between gap-4">
-          <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+          <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 text-title">
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
             >

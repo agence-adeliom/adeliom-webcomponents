@@ -147,7 +147,7 @@ export const WithDropdowns: Story = {
       <awc-breadcrumb-item>
         Web Design
         <awc-dropdown slot="suffix">
-          <awc-button slot="trigger" size="small" circle>
+          <awc-button slot="trigger" size="small" icon="circle" outline>
             <awc-icon label="More options" name="three-dots"></awc-icon>
           </awc-button>
           <awc-menu>

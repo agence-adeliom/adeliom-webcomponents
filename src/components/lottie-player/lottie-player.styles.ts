@@ -35,7 +35,7 @@ export default css`
     justify-items: center;
     width: 100%;
     height: var(--toolbar-height);
-    padding: 0 var(--awc-spacing-x-small);
+    padding: 0 var(--awc-spacing-xsmall);
     background: var(--awc-color-neutral-0);
     color: var(--awc-color-neutral-1000);
     border-radius: var(--awc-panel-border-radius);
@@ -48,7 +48,7 @@ export default css`
 
   .lottie-controls.toolbar .progress-container {
     flex: 1;
-    padding: 0 var(--awc-spacing-x-small);
+    padding: 0 var(--awc-spacing-xsmall);
   }
 
   .lottie-controls.toolbar .progress-container .seeker {
@@ -71,7 +71,7 @@ export default css`
     margin: auto;
     gap: 0.5rem;
     color: var(--awc-color-danger-600);
-    padding: var(--awc-spacing-x-large);
+    padding: var(--awc-spacing-xlarge);
   }
 
   .error awc-icon {

@@ -106,7 +106,7 @@ export default css`
     font-size: var(--awc-button-font-size-small);
     height: calc(var(--awc-input-height-small) * 0.8);
     line-height: calc(var(--awc-input-height-small) - var(--awc-input-border-width) * 2);
-    padding: 0 var(--awc-spacing-x-small);
+    padding: 0 var(--awc-spacing-xsmall);
   }
 
   .tag--medium {
@@ -124,7 +124,7 @@ export default css`
   }
 
   .tag__remove {
-    margin-inline-start: var(--awc-spacing-x-small);
+    margin-inline-start: var(--awc-spacing-xsmall);
   }
 
   /*

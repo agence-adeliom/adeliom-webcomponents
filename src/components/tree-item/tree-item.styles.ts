@@ -15,7 +15,7 @@ export default css`
   }
 
   slot:not([name])::slotted(awc-icon) {
-    margin-inline-end: var(--awc-spacing-x-small);
+    margin-inline-end: var(--awc-spacing-xsmall);
   }
 
   .tree-item {
@@ -60,7 +60,7 @@ export default css`
     justify-content: center;
     box-sizing: content-box;
     color: var(--awc-color-neutral-500);
-    padding: var(--awc-spacing-x-small);
+    padding: var(--awc-spacing-xsmall);
     width: 1rem;
     height: 1rem;
     flex-shrink: 0;

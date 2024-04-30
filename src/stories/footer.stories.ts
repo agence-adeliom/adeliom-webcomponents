@@ -13,7 +13,7 @@ export const Footer1: StoryObj = {
   render: () => html`
     <div class="bg-neutral-100">
       <footer class="container mx-auto px-4 md:px-8 text-paragraph">
-        <div class="mb-8 md:mb-5x-large grid gap-4 md:gap-12 pt-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:pt-12">
+        <div class="mb-8 md:mb-5xlarge grid gap-4 md:gap-12 pt-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:pt-12">
           <div class="col-span-full lg:col-span-2 lg:pr-12 mb-6">
             <!-- logo - start -->
             <div class="mb-4 lg:-mt-2">
@@ -223,7 +223,7 @@ export const Footer2: StoryObj = {
   render: () => html`
     <div class="awc-theme-dark bg-neutral-100">
       <footer class="container mx-auto px-4 md:px-8 text-paragraph">
-        <div class="mb-8 md:mb-5x-large grid gap-4 md:gap-12 pt-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:pt-12">
+        <div class="mb-8 md:mb-5xlarge grid gap-4 md:gap-12 pt-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:pt-12">
           <div class="col-span-full lg:col-span-2 lg:pr-12 mb-6">
             <!-- logo - start -->
             <div class="mb-4 lg:-mt-2">
@@ -434,7 +434,7 @@ export const Footer3: StoryObj = {
     <footer>
       <div class="pb-16 pt-4 sm:pt-10 lg:pt-12">
         <div class="container mx-auto px-4 md:px-8">
-          <div class="mb-8 md:mb-5x-large grid gap-4 md:gap-12 pt-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:pt-12">
+          <div class="mb-8 md:mb-5xlarge grid gap-4 md:gap-12 pt-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:pt-12">
             <div class="col-span-full lg:col-span-2 lg:pr-12 mb-6">
               <!-- logo - start -->
               <div class="mb-4 lg:-mt-2">
@@ -631,7 +631,7 @@ export const Footer4: StoryObj = {
 
     <div class="bg-neutral-100">
       <footer class="container mx-auto px-4 md:px-8 text-paragraph">
-        <div class="mb-8 md:mb-5x-large grid gap-4 md:gap-12 pt-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:pt-12">
+        <div class="mb-8 md:mb-5xlarge grid gap-4 md:gap-12 pt-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:pt-12">
           <div class="col-span-full lg:col-span-2 lg:pr-12 mb-6">
             <!-- logo - start -->
             <div class="mb-4 lg:-mt-2">
@@ -803,7 +803,7 @@ export const Footer4: StoryObj = {
     <style>
       .newsletter-banner awc-input {
         --awc-input-border-color-base: var(--awc-color-neutral-0);
-        --awc-input-placeholder-color: var(--awc-input-border-color);
+        --awc-input-placeholder-color: var(--awc-input-border-color-default);
       }
       .footer-group::part(base) {
         border: 0;
@@ -860,7 +860,7 @@ export const Footer5: StoryObj = {
 
       <div class="pt-12">
         <div class="container mx-auto px-4 md:px-8">
-          <div class="mb-8 md:mb-5x-large grid gap-4 md:gap-12 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
+          <div class="mb-8 md:mb-5xlarge grid gap-4 md:gap-12 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
             <div class="col-span-full lg:col-span-2  mb-6">
               <!-- logo - start -->
               <div class="mb-4 lg:-mt-2">
@@ -1253,7 +1253,7 @@ export const Footer8: StoryObj = {
 
       <div class="pt-12">
         <div class="container mx-auto px-4 md:px-8">
-          <div class="mb-8 md:mb-5x-large grid gap-4 md:gap-12 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
+          <div class="mb-8 md:mb-5xlarge grid gap-4 md:gap-12 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
             <div class="col-span-full lg:col-span-2  mb-6">
               <!-- logo - start -->
               <div class="mb-4 lg:-mt-2">

@@ -20,7 +20,7 @@ export const Content1: StoryObj = {
 
           <div>
             <h3
-              class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+              class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 md:mb-6 text-title"
             >
               <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                 >Headline</span
@@ -46,7 +46,7 @@ export const Content1: StoryObj = {
             </p>
 
             <h4
-              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+              class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense mb-4 md:mb-6 text-title"
             >
               About us
             </h4>
@@ -77,7 +77,7 @@ export const Content2: StoryObj = {
         <div class="grid gap-8 md:grid-cols-2 lg:gap-32">
           <div>
             <h3
-              class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+              class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 md:mb-6 text-title"
             >
               <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                 >Headline</span
@@ -103,7 +103,7 @@ export const Content2: StoryObj = {
             </p>
 
             <h4
-              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+              class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense mb-4 md:mb-6 text-title"
             >
               About us
             </h4>
@@ -138,7 +138,7 @@ export const Content3: StoryObj = {
         <div class="flex flex-col gap-8 justify-center max-w-3xl mx-auto">
           <div>
             <h3
-              class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+              class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 md:mb-6 text-title"
             >
               <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                 >Headline</span
@@ -164,7 +164,7 @@ export const Content3: StoryObj = {
             </p>
 
             <h4
-              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+              class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense mb-4 md:mb-6 text-title"
             >
               About us
             </h4>
@@ -198,7 +198,7 @@ export const Content4: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="grid md:grid-cols-3">
           <h3
-            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 md:mb-6 text-title"
+            class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 md:mb-6 text-title"
           >
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span

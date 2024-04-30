@@ -24,7 +24,7 @@ export default css`
     line-height: var(--awc-line-height-normal);
     letter-spacing: var(--awc-letter-spacing-normal);
     color: var(--awc-color-neutral-700);
-    padding: var(--awc-spacing-x-small) var(--awc-spacing-medium) var(--awc-spacing-x-small) var(--awc-spacing-x-small);
+    padding: var(--awc-spacing-xsmall) var(--awc-spacing-medium) var(--awc-spacing-xsmall) var(--awc-spacing-xsmall);
     transition: var(--awc-transition-fast) fill;
     cursor: pointer;
   }
@@ -59,7 +59,7 @@ export default css`
     align-items: center;
     justify-content: center;
     visibility: hidden;
-    padding-inline-end: var(--awc-spacing-2x-small);
+    padding-inline-end: var(--awc-spacing-2xsmall);
   }
 
   .option--selected .option__check {
@@ -74,11 +74,11 @@ export default css`
   }
 
   .option__prefix::slotted(*) {
-    margin-inline-end: var(--awc-spacing-x-small);
+    margin-inline-end: var(--awc-spacing-xsmall);
   }
 
   .option__suffix::slotted(*) {
-    margin-inline-start: var(--awc-spacing-x-small);
+    margin-inline-start: var(--awc-spacing-xsmall);
   }
 
   @media (forced-colors: active) {

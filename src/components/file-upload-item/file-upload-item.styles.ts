@@ -40,7 +40,7 @@ export default css`
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    font-size: var(--awc-font-size-2x-large);
+    font-size: var(--awc-font-size-2xlarge);
     padding-left: var(--awc-spacing-large);
     color: var(--awc-color-primary-600);
   }
@@ -50,7 +50,7 @@ export default css`
     padding-right: var(--awc-spacing-medium);
     align-items: center;
     color: var(--awc-color-primary-600);
-    font-size: var(--awc-font-size-2x-large);
+    font-size: var(--awc-font-size-2xlarge);
   }
 
   .file-upload-item__progress {
@@ -61,7 +61,7 @@ export default css`
   .file-upload-item__label {
     flex: 1 1 auto;
     padding: var(--awc-spacing-medium);
-    gap: var(--awc-spacing-3x-small);
+    gap: var(--awc-spacing-3xsmall);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -84,11 +84,11 @@ export default css`
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    font-size: var(--awc-font-size-2x-large);
+    font-size: var(--awc-font-size-2xlarge);
     padding-right: var(--awc-spacing-large);
   }
   .file-upload-item__close-button awc-icon-button {
-    --awc-spacing-x-small: 0;
+    --awc-spacing-xsmall: 0;
   }
 
   .file-upload-item .file-upload-item__label__error {

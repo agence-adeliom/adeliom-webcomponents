@@ -25,11 +25,11 @@ import type AWCStepper from '../stepper/stepper.js';
  * @csspart label - The step's label.
  *
  * @cssproperty [--gap=var(--awc-spacing-medium)] - The gap between step badge and label (Inherited from the parent stepper).
- * @cssproperty [--size=var(--awc-spacing-5x-large)] - The size of the step badge (Inherited from the parent stepper).
+ * @cssproperty [--size=var(--awc-spacing-5xlarge)] - The size of the step badge (Inherited from the parent stepper).
  * @cssproperty [--font-size=var(--awc-font-size-medium)] - The font size of the step badge (Inherited from the parent stepper).
  * @cssproperty [--badge-radius=50%] - The radius of the step badge (Inherited from the parent stepper).
- * @cssproperty [--track-height=var(--awc-spacing-3x-small)] - The height of the step track and the badge border (Inherited from the parent stepper).
- * @cssproperty [--track-gap=var(--awc-spacing-x-small)] - The gap between the step track and the badge border (Inherited from the parent stepper).
+ * @cssproperty [--track-height=var(--awc-spacing-3xsmall)] - The height of the step track and the badge border (Inherited from the parent stepper).
+ * @cssproperty [--track-gap=var(--awc-spacing-xsmall)] - The gap between the step track and the badge border (Inherited from the parent stepper).
  * @cssproperty [--color=var(--awc-color-neutral-400)] - The color of the step badge content (Inherited from the parent stepper).
  * @cssproperty [--badge-color=var(--awc-color-neutral-400)] - The color of the step badge (Inherited from the parent stepper).
  * @cssproperty [--backgound-color=var(--awc-color-neutral-0)] - The background color of the step badge (Inherited from the parent stepper).
@@ -67,14 +67,14 @@ export default class AWCStepperItem extends AWCElement {
       part="base"
       aria-label="${this.label}"
       class="${classMap({
-        'step-item': true,
-        completed: this.completed,
-        'has-completed-icon': this.hasSlotController.test('completed-icon'),
-        active: this.active,
-        first: this.isFirst,
-        last: this.isLast,
-        vertical: !!this.container?.vertical
-      })}"
+      'step-item': true,
+      completed: this.completed,
+      'has-completed-icon': this.hasSlotController.test('completed-icon'),
+      active: this.active,
+      first: this.isFirst,
+      last: this.isLast,
+      vertical: !!this.container?.vertical
+    })}"
     >
       <span part="badge" class="badge">
         <span part="step" class="badge__step">

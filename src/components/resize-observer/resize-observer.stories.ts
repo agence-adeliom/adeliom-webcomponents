@@ -51,7 +51,7 @@ export const Primary: Story = {
       <style>
         .resize-observer-overview div {
           display: flex;
-          border: solid 2px var(--awc-input-border-color);
+          border: solid 2px var(--awc-input-border-color-default);
           align-items: center;
           justify-content: center;
           text-align: center;

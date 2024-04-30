@@ -10,7 +10,7 @@ export default {
 
 const heading = html`<!-- text - start -->
   <div class="mb-8 md:mb-10">
-    <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+    <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title">
       <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
         >Headline</span
       >
@@ -29,7 +29,7 @@ export const LogoCloud1: StoryObj = {
     <div class="container mx-auto px-4 md:px-8">
       ${heading}
 
-      <div class="grid grid-cols-2 gap-small sm:gap-x-large md:grid-cols-4">
+      <div class="grid grid-cols-2 gap-small sm:gap-xlarge md:grid-cols-4">
         <div class="flex justify-center items-center text-primary bg-neutral-200 h-20 sm:h-36">
           <svg
             class="h-6 w-auto sm:h-8 lg:h-10"

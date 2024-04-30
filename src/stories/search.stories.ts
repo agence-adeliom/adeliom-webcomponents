@@ -16,7 +16,7 @@ export const Search1: StoryObj = {
         <div class="container md:mx-auto">
           <div class="mx-4 md:mx-auto md:w-8/12  py-6 md:py-20">
             <h2
-              class="pb-10 text-center text-title text-3x-large md:text-4x-large lg:text-5x-large font-semibold leading-dense"
+              class="pb-10 text-center text-title text-3xlarge md:text-4xlarge lg:text-5xlarge font-semibold leading-dense"
             >
               My research ...
             </h2>
@@ -35,7 +35,7 @@ export const Search1: StoryObj = {
             <div class="mx-4 md:mx-auto md:md:w-8/12 ">
               <div class="flex max-md:flex-col gap-6">
                 <div class="w-full md:w-1/2 flex flex-col">
-                  <h3 class="text-x-large font-semibold mb-2">Need help?</h3>
+                  <h3 class="text-xlarge font-semibold mb-2">Need help?</h3>
                   <p>Our advisors remain available to analyze your needs, support you and respond to your needs.</p>
                   <awc-button variant="primary" outline size="medium" class="md:w-fit mt-auto pt-6"
                     >Contact us</awc-button
@@ -43,7 +43,7 @@ export const Search1: StoryObj = {
                 </div>
 
                 <div class="w-full md:w-1/2 flex flex-col">
-                  <h3 class="text-x-large font-semibold mb-2">Frequently Asked Questions</h3>
+                  <h3 class="text-xlarge font-semibold mb-2">Frequently Asked Questions</h3>
 
                   <p>Visit our FAQ page to find answers to your questions.</p>
 

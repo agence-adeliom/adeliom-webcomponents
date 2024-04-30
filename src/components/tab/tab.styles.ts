@@ -62,7 +62,7 @@ export default css`
   }
 
   .tab__close-button::part(base) {
-    padding: var(--awc-spacing-3x-small);
+    padding: var(--awc-spacing-3xsmall);
   }
 
   @media (forced-colors: active) {

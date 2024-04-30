@@ -5,6 +5,7 @@ import { AWCTab, AWCTabGroup, AWCTabPanel } from '../../react';
 
 export const typography = {
   type: {
+    heading: 'var(--awc-font-heading)',
     sans: 'var(--awc-font-sans)',
     serif: 'var(--awc-font-serif)',
     mono: 'var(--awc-font-mono)'
@@ -16,21 +17,21 @@ export const typography = {
     bold: 'var(--awc-font-weight-bold)'
   },
   size: {
-    '2x-small': 10,
-    'x-small': 12,
+    '2xsmall': 10,
+    'xsmall': 12,
     small: 14,
     medium: 16,
     large: 18,
-    'x-large': 20,
-    '2x-large': 24,
-    '3x-large': 30,
-    '4x-large': 36,
-    '5x-large': 48,
-    '6x-large': 60,
-    '7x-large': 72,
-    '8x-large': 76,
-    '9x-large': 80,
-    '10x-large': 84
+    'xlarge': 20,
+    '2xlarge': 24,
+    '3xlarge': 30,
+    '4xlarge': 36,
+    '5xlarge': 48,
+    '6xlarge': 60,
+    '7xlarge': 72,
+    '8xlarge': 76,
+    '9xlarge': 80,
+    '10xlarge': 84
   }
 };
 
@@ -46,6 +47,7 @@ The default font stack is designed to be simple and highly available on as many 
 
 | Token              | Value                                                                                                                                         | Example                                                                                                    |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `--awc-font-heading`  | -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' | <span style={{ fontFamily: 'var(--awc-font-heading)' }}>The quick brown fox jumped over the lazy dog.</span>  |
 | `--awc-font-sans`  | -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' | <span style={{ fontFamily: 'var(--awc-font-sans)' }}>The quick brown fox jumped over the lazy dog.</span>  |
 | `--awc-font-serif` | Georgia, 'Times New Roman', serif                                                                                                             | <span style={{ fontFamily: 'var(--awc-font-serif)' }}>The quick brown fox jumped over the lazy dog.</span> |
 | `--awc-font-mono`  | SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;                                                                                | <span style={{ fontFamily: 'var(--awc-font-mono)' }}>The quick brown fox jumped over the lazy dog.</span>  |
@@ -57,21 +59,21 @@ size.
 
 | Token                       | Value           | Example                                                                |
 | --------------------------- | --------------- | ---------------------------------------------------------------------- |
-| `--awc-font-size-2x-small`  | 0.625rem (10px) | <span style={{ fontSize: 'var(--awc-font-size-2x-small)' }}>Aa</span>  |
-| `--awc-font-size-x-small`   | 0.75rem (12px)  | <span style={{ fontSize: 'var(--awc-font-size-x-small)' }}>Aa</span>   |
+| `--awc-font-size-2xsmall`  | 0.625rem (10px) | <span style={{ fontSize: 'var(--awc-font-size-2xsmall)' }}>Aa</span>  |
+| `--awc-font-size-xsmall`   | 0.75rem (12px)  | <span style={{ fontSize: 'var(--awc-font-size-xsmall)' }}>Aa</span>   |
 | `--awc-font-size-small`     | 0.875rem (14px) | <span style={{ fontSize: 'var(--awc-font-size-small)' }}>Aa</span>     |
 | `--awc-font-size-medium`    | 1rem (16px)     | <span style={{ fontSize: 'var(--awc-font-size-medium)' }}>Aa</span>    |
 | `--awc-font-size-large`     | 1.125rem (18px) | <span style={{ fontSize: 'var(--awc-font-size-large)' }}>Aa</span>     |
-| `--awc-font-size-x-large`   | 1.25rem (20px)  | <span style={{ fontSize: 'var(--awc-font-size-x-large)' }}>Aa</span>   |
-| `--awc-font-size-2x-large`  | 1.5rem (24px)   | <span style={{ fontSize: 'var(--awc-font-size-2x-large)' }}>Aa</span>  |
-| `--awc-font-size-3x-large`  | 1.875rem (30px) | <span style={{ fontSize: 'var(--awc-font-size-3x-large)' }}>Aa</span>  |
-| `--awc-font-size-4x-large`  | 2.25rem (36px)  | <span style={{ fontSize: 'var(--awc-font-size-4x-large)' }}>Aa</span>  |
-| `--awc-font-size-5x-large`  | 3rem (48px)     | <span style={{ fontSize: 'var(--awc-font-size-5x-large)' }}>Aa</span>  |
-| `--awc-font-size-6x-large`  | 3.75rem (60px)  | <span style={{ fontSize: 'var(--awc-font-size-6x-large)' }}>Aa</span>  |
-| `--awc-font-size-7x-large`  | 4.5rem (72px)   | <span style={{ fontSize: 'var(--awc-font-size-7x-large)' }}>Aa</span>  |
-| `--awc-font-size-8x-large`  | 4.75rem (76px)  | <span style={{ fontSize: 'var(--awc-font-size-8x-large)' }}>Aa</span>  |
-| `--awc-font-size-9x-large`  | 5rem (80px)     | <span style={{ fontSize: 'var(--awc-font-size-9x-large)' }}>Aa</span>  |
-| `--awc-font-size-10x-large` | 5.25rem (84px)  | <span style={{ fontSize: 'var(--awc-font-size-10x-large)' }}>Aa</span> |
+| `--awc-font-size-xlarge`   | 1.25rem (20px)  | <span style={{ fontSize: 'var(--awc-font-size-xlarge)' }}>Aa</span>   |
+| `--awc-font-size-2xlarge`  | 1.5rem (24px)   | <span style={{ fontSize: 'var(--awc-font-size-2xlarge)' }}>Aa</span>  |
+| `--awc-font-size-3xlarge`  | 1.875rem (30px) | <span style={{ fontSize: 'var(--awc-font-size-3xlarge)' }}>Aa</span>  |
+| `--awc-font-size-4xlarge`  | 2.25rem (36px)  | <span style={{ fontSize: 'var(--awc-font-size-4xlarge)' }}>Aa</span>  |
+| `--awc-font-size-5xlarge`  | 3rem (48px)     | <span style={{ fontSize: 'var(--awc-font-size-5xlarge)' }}>Aa</span>  |
+| `--awc-font-size-6xlarge`  | 3.75rem (60px)  | <span style={{ fontSize: 'var(--awc-font-size-6xlarge)' }}>Aa</span>  |
+| `--awc-font-size-7xlarge`  | 4.5rem (72px)   | <span style={{ fontSize: 'var(--awc-font-size-7xlarge)' }}>Aa</span>  |
+| `--awc-font-size-8xlarge`  | 4.75rem (76px)  | <span style={{ fontSize: 'var(--awc-font-size-8xlarge)' }}>Aa</span>  |
+| `--awc-font-size-9xlarge`  | 5rem (80px)     | <span style={{ fontSize: 'var(--awc-font-size-9xlarge)' }}>Aa</span>  |
+| `--awc-font-size-10xlarge` | 5.25rem (84px)  | <span style={{ fontSize: 'var(--awc-font-size-10xlarge)' }}>Aa</span> |
 
 Font sizes use `rem` units so they scale with the base font size. The pixel values displayed are based on a 16px font
 size.
@@ -81,12 +83,12 @@ size.
 | Token                      | Value                           | Value >= 1024px                 | Value >= 1280px                 | Example                                                               |
 | -------------------------- | ------------------------------- | ------------------------------- | ------------------------------- | --------------------------------------------------------------------- |
 | `--awc-font-size-base`     | `var(--awc-font-size-medium)`   | `var(--awc-font-size-medium)`   | `var(--awc-font-size-medium)`   | <span style={{ fontSize: 'var(--awc-font-size-base)' }}>Aa</span>     |
-| `--awc-font-size-heading6` | `var(--awc-font-size-large)`    | `var(--awc-font-size-x-large)`  | `var(--awc-font-size-2x-large)` | <span style={{ fontSize: 'var(--awc-font-size-heading6)' }}>Aa</span> |
-| `--awc-font-size-heading5` | `var(--awc-font-size-x-large)`  | `var(--awc-font-size-2x-large)` | `var(--awc-font-size-3x-large)` | <span style={{ fontSize: 'var(--awc-font-size-heading5)' }}>Aa</span> |
-| `--awc-font-size-heading4` | `var(--awc-font-size-2x-large)` | `var(--awc-font-size-3x-large)` | `var(--awc-font-size-4x-large)` | <span style={{ fontSize: 'var(--awc-font-size-heading4)' }}>Aa</span> |
-| `--awc-font-size-heading3` | `var(--awc-font-size-3x-large)` | `var(--awc-font-size-4x-large)` | `var(--awc-font-size-5x-large)` | <span style={{ fontSize: 'var(--awc-font-size-heading3)' }}>Aa</span> |
-| `--awc-font-size-heading2` | `var(--awc-font-size-4x-large)` | `var(--awc-font-size-5x-large)` | `var(--awc-font-size-6x-large)` | <span style={{ fontSize: 'var(--awc-font-size-heading2)' }}>Aa</span> |
-| `--awc-font-size-heading1` | `var(--awc-font-size-5x-large)` | `var(--awc-font-size-6x-large)` | `var(--awc-font-size-7x-large)` | <span style={{ fontSize: 'var(--awc-font-size-heading1)' }}>Aa</span> |
+| `--awc-font-size-heading6` | `var(--awc-font-size-large)`    | `var(--awc-font-size-xlarge)`  | `var(--awc-font-size-2xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading6)' }}>Aa</span> |
+| `--awc-font-size-heading5` | `var(--awc-font-size-xlarge)`  | `var(--awc-font-size-2xlarge)` | `var(--awc-font-size-3xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading5)' }}>Aa</span> |
+| `--awc-font-size-heading4` | `var(--awc-font-size-2xlarge)` | `var(--awc-font-size-3xlarge)` | `var(--awc-font-size-4xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading4)' }}>Aa</span> |
+| `--awc-font-size-heading3` | `var(--awc-font-size-3xlarge)` | `var(--awc-font-size-4xlarge)` | `var(--awc-font-size-5xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading3)' }}>Aa</span> |
+| `--awc-font-size-heading2` | `var(--awc-font-size-4xlarge)` | `var(--awc-font-size-5xlarge)` | `var(--awc-font-size-6xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading2)' }}>Aa</span> |
+| `--awc-font-size-heading1` | `var(--awc-font-size-5xlarge)` | `var(--awc-font-size-6xlarge)` | `var(--awc-font-size-7xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading1)' }}>Aa</span> |
 
 ## Font Weight
 

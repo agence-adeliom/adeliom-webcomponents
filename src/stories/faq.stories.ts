@@ -16,7 +16,7 @@ export const Faq1: StoryObj = {
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
           <h3
-            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+            class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title"
           >
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
@@ -134,7 +134,7 @@ export const Faq2: StoryObj = {
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
           <h3
-            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+            class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title"
           >
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
@@ -214,7 +214,7 @@ export const Faq3: StoryObj = {
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
           <h3
-            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+            class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title"
           >
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
@@ -301,7 +301,7 @@ export const Faq4: StoryObj = {
         <!-- text - start -->
         <div class="mb-5 md:mb-8">
           <h3
-            class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title"
+            class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title"
           >
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
@@ -415,7 +415,7 @@ export const Faq5: StoryObj = {
           <div class="md:col-span-2">
             <!-- text - start -->
             <div class="mb-5 md:mb-8">
-              <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+              <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 text-title">
                 <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                   >Headline</span
                 >
@@ -506,7 +506,7 @@ export const Faq6: StoryObj = {
           <div class="md:col-span-3">
             <!-- text - start -->
             <div class="mb-5 md:mb-8">
-              <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense mb-4 text-title">
+              <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 text-title">
                 <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                   >Headline</span
                 >

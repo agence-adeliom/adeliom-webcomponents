@@ -26,7 +26,7 @@ export const Hero1: StoryObj = {
             </awc-breadcrumb>
           </div>
 
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+          <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
             >
@@ -93,7 +93,7 @@ export const Hero2: StoryObj = {
         <!-- text start -->
         <div class="relative flex flex-col items-center p-4 sm:max-w-xl">
           <h2
-            class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-neutral-0 dark:text-neutral-1000 text-center mb-8 md:mb-12"
+            class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-neutral-0 dark:text-neutral-1000 text-center mb-8 md:mb-12"
           >
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
@@ -139,7 +139,7 @@ export const Hero3: StoryObj = {
 
           <div class="sm:text-center lg:py-12 lg:text-left xl:py-24">
             <h2
-              class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12"
+              class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12"
             >
               <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
                 >Very proud to introduce</span
@@ -223,7 +223,7 @@ export const Hero4: StoryObj = {
         <section class="flex flex-col items-center">
           <div class="flex w-full items-center justify-center bg-neutral-100 pb-14 pt-8 lg:py-32 lg:mb-10">
             <div class="max-w-xl flex flex-col items-center text-center">
-              <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+              <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
                 <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary">Very proud to introduce</span>
                 Revolutionary way to build the web
               </h2>
@@ -270,7 +270,7 @@ export const Hero5: StoryObj = {
         <div
           class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-5/12 xl:py-24"
         >
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+          <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
             >
@@ -321,7 +321,7 @@ export const Hero6: StoryObj = {
       <section class="mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
         <!-- content - start -->
         <div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+          <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
             >
@@ -437,7 +437,7 @@ export const Hero7: StoryObj = {
       </div>
       <section class="flex flex-col items-center">
         <div class="flex max-w-xl flex-col items-center pb-0 pt-8 text-center sm:pb-16 lg:pt-16 lg:pb-32">
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+          <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
             >
@@ -475,7 +475,7 @@ export const Hero8: StoryObj = {
       </div>
       <div class="mb-8 flex flex-wrap justify-between md:mb-16">
         <div class="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48">
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+          <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
             >
@@ -575,7 +575,7 @@ export const Hero9: StoryObj = {
         <div
           class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-6/12 xl:py-24"
         >
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+          <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
             >
@@ -617,7 +617,7 @@ export const Hero10: StoryObj = {
         <div
           class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-6/12 xl:py-24"
         >
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+          <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
             >
@@ -658,7 +658,7 @@ export const Hero11: StoryObj = {
             </awc-breadcrumb>
           </div>
 
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+          <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
             >
@@ -717,7 +717,7 @@ export const Hero12: StoryObj = {
 
           <div>
             <awc-tag class="mb-2" variant="primary">Tag</awc-tag>
-            <h2 class="text-3x-large md:text-4x-large xl:text-5x-large font-bold leading-dense text-title mb-4 md:mb-6">
+            <h2 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-bold leading-dense text-title mb-4 md:mb-6">
               Revolutionary way to build the web
             </h2>
             <p class="mb-4 text-paragraph">
@@ -810,7 +810,7 @@ export const Hero13: StoryObj = {
             </awc-breadcrumb>
           </div>
 
-          <h2 class="text-4x-large md:text-5x-large xl:text-6x-large font-bold leading-dense text-title mb-8 md:mb-12">
+          <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
             <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
               >Very proud to introduce</span
             >
@@ -831,7 +831,7 @@ export const Hero13: StoryObj = {
 
         <!-- form - start -->
         <div class="relative rounded-lg border border-neutral-200 xl:w-6/12 p-4 md:p-8">
-          <h5 class="text-2x-large md:text-3x-large xl:text-4x-large font-bold leading-dense text-title mb-3 md:mb-4">
+          <h5 class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-bold leading-dense text-title mb-3 md:mb-4">
             Headline
           </h5>
 

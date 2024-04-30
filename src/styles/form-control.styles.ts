@@ -13,7 +13,7 @@ export default css`
   .form-control--has-label .form-control__label {
     display: inline-block;
     color: var(--awc-input-label-color);
-    margin-bottom: var(--awc-spacing-3x-small);
+    margin-bottom: var(--awc-spacing-3xsmall);
   }
 
   .form-control--has-label.form-control--small .form-control__label {
@@ -38,7 +38,7 @@ export default css`
   .form-control--has-help-text .form-control__help-text {
     display: block;
     color: var(--awc-input-help-text-color);
-    margin-top: var(--awc-spacing-3x-small);
+    margin-top: var(--awc-spacing-3xsmall);
   }
 
   .form-control--has-help-text.form-control--small .form-control__help-text {
@@ -54,6 +54,6 @@ export default css`
   }
 
   .form-control--has-help-text.form-control--radio-group .form-control__help-text {
-    margin-top: var(--awc-spacing-2x-small);
+    margin-top: var(--awc-spacing-2xsmall);
   }
 `;

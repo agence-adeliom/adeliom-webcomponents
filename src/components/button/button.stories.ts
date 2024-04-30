@@ -490,10 +490,10 @@ export const Disabled: Story = {
 
     <h2 class="mb-4 mt-6 font-semibold text-small">Square</h2>
 
-    <h2 class="mb-4 font-semibold text-x-small">Default</h2>
+    <h2 class="mb-4 font-semibold text-xsmall">Default</h2>
     <awc-button variant="default" icon="square" disabled><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
 
-    <h2 class="mb-4 mt-6 font-semibold text-x-small">Variants</h2>
+    <h2 class="mb-4 mt-6 font-semibold text-xsmall">Variants</h2>
     <awc-button variant="primary" icon="square" disabled><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
     <awc-button variant="secondary" icon="square" disabled
       ><awc-icon name="gear" label="Settings"></awc-icon
@@ -502,7 +502,7 @@ export const Disabled: Story = {
       ><awc-icon name="gear" label="Settings"></awc-icon
     ></awc-button>
 
-    <h2 class="mb-4 mt-6 font-semibold text-x-small">Colored</h2>
+    <h2 class="mb-4 mt-6 font-semibold text-xsmall">Colored</h2>
     <awc-button variant="primary" icon="square" colored disabled
       ><awc-icon name="gear" label="Settings"></awc-icon
     ></awc-button>
@@ -513,7 +513,7 @@ export const Disabled: Story = {
       ><awc-icon name="gear" label="Settings"></awc-icon
     ></awc-button>
 
-    <h2 class="mb-4 mt-6 font-semibold text-x-small">Outline</h2>
+    <h2 class="mb-4 mt-6 font-semibold text-xsmall">Outline</h2>
     <awc-button variant="primary" icon="square" outline disabled
       ><awc-icon name="gear" label="Settings"></awc-icon
     ></awc-button>
@@ -526,10 +526,10 @@ export const Disabled: Story = {
 
     <h2 class="mb-4 mt-6 font-semibold text-small">Circle</h2>
 
-    <h2 class="mb-4 font-semibold text-x-small">Default</h2>
+    <h2 class="mb-4 font-semibold text-xsmall">Default</h2>
     <awc-button variant="default" icon="circle" disabled><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
 
-    <h2 class="mb-4 mt-6 font-semibold text-x-small">Variants</h2>
+    <h2 class="mb-4 mt-6 font-semibold text-xsmall">Variants</h2>
     <awc-button variant="primary" icon="circle" disabled><awc-icon name="gear" label="Settings"></awc-icon></awc-button>
     <awc-button variant="secondary" icon="circle" disabled
       ><awc-icon name="gear" label="Settings"></awc-icon
@@ -538,7 +538,7 @@ export const Disabled: Story = {
       ><awc-icon name="gear" label="Settings"></awc-icon
     ></awc-button>
 
-    <h2 class="mb-4 mt-6 font-semibold text-x-small">Colored</h2>
+    <h2 class="mb-4 mt-6 font-semibold text-xsmall">Colored</h2>
     <awc-button variant="primary" icon="circle" colored disabled
       ><awc-icon name="gear" label="Settings"></awc-icon
     ></awc-button>
@@ -549,7 +549,7 @@ export const Disabled: Story = {
       ><awc-icon name="gear" label="Settings"></awc-icon
     ></awc-button>
 
-    <h2 class="mb-4 mt-6 font-semibold text-x-small">Outline</h2>
+    <h2 class="mb-4 mt-6 font-semibold text-xsmall">Outline</h2>
     <awc-button variant="primary" icon="circle" outline disabled
       ><awc-icon name="gear" label="Settings"></awc-icon
     ></awc-button>

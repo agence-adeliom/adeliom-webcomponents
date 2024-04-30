@@ -22,7 +22,7 @@ export const Cta1: StoryObj = {
 
           <!-- content - start -->
           <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
-            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+            <h4 class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense mb-4 text-title">
               <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                 >Headline</span
               >
@@ -62,7 +62,7 @@ export const Cta2: StoryObj = {
 
           <!-- content - start -->
           <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
-            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+            <h4 class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense mb-4 text-title">
               <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                 >Headline</span
               >
@@ -94,7 +94,7 @@ export const Cta3: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
         <div class="mx-auto flex max-w-2xl flex-col items-center text-center">
-          <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+          <h4 class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense mb-4 text-title">
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
             >
@@ -125,7 +125,7 @@ export const Cta4: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="flex flex-col items-center sm:justify-between gap-5 bg-neutral-100 p-6 sm:flex-row md:p-10">
           <div>
-            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense mb-1 text-title">
+            <h5 class="text-xlarge md:text-2xlarge xl:text-3xlarge font-semibold leading-dense mb-1 text-title">
               Erat suspendisse maecena
             </h5>
             <p class="text-paragraph">This is a section of some simple filler text, also known as placeholder text.</p>
@@ -147,7 +147,7 @@ export const Cta5: StoryObj = {
       <div class="container mx-auto px-4 md:px-8">
         <div class="flex flex-col items-center sm:justify-between gap-5 sm:flex-row">
           <div>
-            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense mb-1 text-title">
+            <h5 class="text-xlarge md:text-2xlarge xl:text-3xlarge font-semibold leading-dense mb-1 text-title">
               Erat suspendisse maecena
             </h5>
             <p class="text-paragraph">This is a section of some simple filler text, also known as placeholder text.</p>

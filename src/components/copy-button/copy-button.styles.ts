@@ -20,7 +20,7 @@ export default css`
     border-radius: var(--awc-border-radius-medium);
     font-size: inherit;
     color: inherit;
-    padding: var(--awc-spacing-x-small);
+    padding: var(--awc-spacing-xsmall);
     cursor: pointer;
     transition: var(--awc-transition-x-fast) color;
   }

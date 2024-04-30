@@ -14,7 +14,7 @@ export default css`
 
   .file-upload__label {
     background-color: var(--awc-background-color);
-    padding: var(--awc-spacing-3x-large);
+    padding: var(--awc-spacing-3xlarge);
     border-width: var(--border-width);
     border-style: var(--border-style);
     border-color: var(--awc-color-neutral-300);
@@ -110,11 +110,11 @@ export default css`
   .file-upload--has-help-text .file-upload__help-text {
     display: block;
     color: var(--awc-color-neutral-600);
-    margin-top: var(--awc-spacing-x-small);
+    margin-top: var(--awc-spacing-xsmall);
     font-size: var(--awc-font-size-small);
   }
 
   .file-upload--button-only.file-upload--has-help-text .file-upload__help-text {
-    margin-top: var(--awc-spacing-x-small);
+    margin-top: var(--awc-spacing-xsmall);
   }
 `;

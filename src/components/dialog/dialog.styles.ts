@@ -30,11 +30,11 @@ export default css`
     flex-direction: column;
     z-index: 2;
     width: var(--width);
-    max-width: calc(100% - var(--awc-spacing-2x-large));
-    max-height: calc(100% - var(--awc-spacing-2x-large));
+    max-width: calc(100% - var(--awc-spacing-2xlarge));
+    max-height: calc(100% - var(--awc-spacing-2xlarge));
     background-color: var(--awc-panel-background-color);
     border-radius: var(--awc-border-radius-medium);
-    box-shadow: var(--awc-shadow-x-large);
+    box-shadow: var(--awc-shadow-xlarge);
   }
 
   .dialog__panel:focus {
@@ -72,7 +72,7 @@ export default css`
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
-    gap: var(--awc-spacing-2x-small);
+    gap: var(--awc-spacing-2xsmall);
     padding: 0 var(--header-spacing);
   }
 
@@ -99,7 +99,7 @@ export default css`
   }
 
   .dialog__footer ::slotted(awc-button:not(:first-of-type)) {
-    margin-inline-start: var(--awc-spacing-x-small);
+    margin-inline-start: var(--awc-spacing-xsmall);
   }
 
   .dialog:not(.dialog--has-footer) .dialog__footer {

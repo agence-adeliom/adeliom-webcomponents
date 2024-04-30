@@ -18,11 +18,11 @@ import type AWCStepperItem from '../stepper-item/stepper-item.js';
  * @csspart base - The component's base wrapper.
  *
  * @cssproperty [--gap=var(--awc-spacing-medium)] - The gap between step badge and label.
- * @cssproperty [--size=var(--awc-spacing-5x-large)] - The size of the step badge.
+ * @cssproperty [--size=var(--awc-spacing-5xlarge)] - The size of the step badge.
  * @cssproperty [--font-size=var(--awc-font-size-medium)] - The font size of the step badge.
  * @cssproperty [--badge-radius=50%] - The radius of the step badge.
- * @cssproperty [--track-height=var(--awc-spacing-3x-small)] - The height of the step track and the badge border.
- * @cssproperty [--track-gap=var(--awc-spacing-x-small)] - The gap between the step track and the badge border.
+ * @cssproperty [--track-height=var(--awc-spacing-3xsmall)] - The height of the step track and the badge border.
+ * @cssproperty [--track-gap=var(--awc-spacing-xsmall)] - The gap between the step track and the badge border.
  * @cssproperty [--color=var(--awc-color-neutral-400)] - The color of the step badge content.
  * @cssproperty [--badge-color=var(--awc-color-neutral-400)] - The color of the step badge.
  * @cssproperty [--backgound-color=var(--awc-color-neutral-0)] - The background color of the step badge.

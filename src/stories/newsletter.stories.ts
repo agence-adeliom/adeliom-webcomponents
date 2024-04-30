@@ -19,7 +19,7 @@ export const Newsletter1: StoryObj = {
           </div>
 
           <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8">
-            <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+            <h4 class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense mb-4 text-title">
               <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                 >Headline</span
               >
@@ -50,7 +50,7 @@ export const Newsletter2: StoryObj = {
         <div class="flex overflow-hidden bg-neutral-100 md:h-64">
           <div class="flex w-full flex-col p-4 sm:p-8">
             <div class="text-center mx-auto max-w-lg">
-              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+              <h4 class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense mb-4 text-title">
                 <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                   >Headline</span
                 >
@@ -81,7 +81,7 @@ export const Newsletter3: StoryObj = {
         <div class="flex overflow-hidden bg-neutral-100">
           <div class="flex w-full flex-col p-4 sm:p-8 md:flex-row md:items-center">
             <div class="text-center mx-auto max-w-lg md:w-1/2 md:text-left">
-              <h4 class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense mb-4 text-title">
+              <h4 class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense mb-4 text-title">
                 <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                   >Headline</span
                 >

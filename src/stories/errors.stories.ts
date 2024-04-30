@@ -12,7 +12,7 @@ export const Errors1: StoryObj = {
   name: 'Errors 1',
   render: () => html`
     <div class="container mx-auto px-4 md:px-8">
-      <div class="flex flex-col gap-8 md:gap-7x-large">
+      <div class="flex flex-col gap-8 md:gap-7xlarge">
         <!-- logo - start -->
         <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
           <svg
@@ -73,7 +73,7 @@ export const Errors1: StoryObj = {
 
         <div class="mb-8 md:mb-12 max-w-screen-md ">
           <h4
-            class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12"
+            class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense text-title mb-10 md:mb-12"
           >
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
@@ -82,7 +82,7 @@ export const Errors1: StoryObj = {
             dolore magna aliqua.
           </h4>
 
-          <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+          <h5 class="text-xlarge md:text-2xlarge xl:text-3xlarge font-semibold leading-dense text-title mb-4">
             Lorem ipsum dolor sit amet
           </h5>
 
@@ -94,7 +94,7 @@ export const Errors1: StoryObj = {
             </ul>
           </div>
 
-          <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+          <h5 class="text-xlarge md:text-2xlarge xl:text-3xlarge font-semibold leading-dense text-title mb-4">
             Lorem ipsum dolor sit amet
           </h5>
 
@@ -119,7 +119,7 @@ export const Errors2: StoryObj = {
     <div class="container mx-auto px-4 md:px-8">
       <div class="grid gap-8 sm:grid-cols-2">
         <!-- content - start -->
-        <div class="flex flex-col gap-8 md:gap-7x-large">
+        <div class="flex flex-col gap-8 md:gap-7xlarge">
           <!-- logo - start -->
           <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
             <svg
@@ -180,7 +180,7 @@ export const Errors2: StoryObj = {
 
           <div class="mb-8 md:mb-12 max-w-screen-md ">
             <h4
-              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12"
+              class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense text-title mb-10 md:mb-12"
             >
               <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                 >Headline</span
@@ -189,7 +189,7 @@ export const Errors2: StoryObj = {
               dolore magna aliqua.
             </h4>
 
-            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+            <h5 class="text-xlarge md:text-2xlarge xl:text-3xlarge font-semibold leading-dense text-title mb-4">
               Lorem ipsum dolor sit amet
             </h5>
 
@@ -201,7 +201,7 @@ export const Errors2: StoryObj = {
               </ul>
             </div>
 
-            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+            <h5 class="text-xlarge md:text-2xlarge xl:text-3xlarge font-semibold leading-dense text-title mb-4">
               Lorem ipsum dolor sit amet
             </h5>
 
@@ -252,7 +252,7 @@ export const Errors3: StoryObj = {
         <!-- image - end -->
 
         <!-- content - start -->
-        <div class="flex flex-col gap-8 md:gap-7x-large">
+        <div class="flex flex-col gap-8 md:gap-7xlarge">
           <!-- logo - start -->
           <a href="/" class="inline-flex items-center text-primary" aria-label="logo">
             <svg
@@ -313,7 +313,7 @@ export const Errors3: StoryObj = {
 
           <div class="mb-8 md:mb-12 max-w-screen-md ">
             <h4
-              class="text-2x-large md:text-3x-large xl:text-4x-large font-semibold leading-dense text-title mb-10 md:mb-12"
+              class="text-2xlarge md:text-3xlarge xl:text-4xlarge font-semibold leading-dense text-title mb-10 md:mb-12"
             >
               <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
                 >Headline</span
@@ -322,7 +322,7 @@ export const Errors3: StoryObj = {
               dolore magna aliqua.
             </h4>
 
-            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+            <h5 class="text-xlarge md:text-2xlarge xl:text-3xlarge font-semibold leading-dense text-title mb-4">
               Lorem ipsum dolor sit amet
             </h5>
 
@@ -334,7 +334,7 @@ export const Errors3: StoryObj = {
               </ul>
             </div>
 
-            <h5 class="text-x-large md:text-2x-large xl:text-3x-large font-semibold leading-dense text-title mb-4">
+            <h5 class="text-xlarge md:text-2xlarge xl:text-3xlarge font-semibold leading-dense text-title mb-4">
               Lorem ipsum dolor sit amet
             </h5>
 
@@ -373,7 +373,7 @@ export const Errors4: StoryObj = {
         <!-- content - start -->
         <div class="relative flex flex-col items-center justify-center p-8 md:p-16">
           <h3
-            class="mb-6 text-3x-large md:text-4x-large xl:text-5x-large text-center uppercase text-neutral-0 dark:text-neutral-1000 font-bold"
+            class="mb-6 text-3xlarge md:text-4xlarge xl:text-5xlarge text-center uppercase text-neutral-0 dark:text-neutral-1000 font-bold"
           >
             404
           </h3>
@@ -393,7 +393,7 @@ export const Errors5: StoryObj = {
   name: 'Errors 5',
   render: () => html`
     <div class="container mx-auto px-4 md:px-8">
-      <div class="flex flex-col items-center gap-8 md:gap-7x-large">
+      <div class="flex flex-col items-center gap-8 md:gap-7xlarge">
         <!-- logo - start -->
         <a href="/" class="inline-flex text-primary" aria-label="logo">
           <svg
@@ -453,7 +453,7 @@ export const Errors5: StoryObj = {
         <!-- logo - end -->
 
         <div class="max-w-screen-sm text-center ">
-          <h3 type="h3" class="mb-6 md:mb-9 text-3x-large md:text-4x-large xl:text-5x-large font-semibold text-title">
+          <h3 type="h3" class="mb-6 md:mb-9 text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold text-title">
             Lorem ipsum dolor sit amet.
           </h3>
 
@@ -478,7 +478,7 @@ export const Errors6: StoryObj = {
   name: 'Errors 6',
   render: () => html`
     <div class="container mx-auto px-4 md:px-8">
-      <div class="flex flex-col items-center gap-8 md:gap-7x-large">
+      <div class="flex flex-col items-center gap-8 md:gap-7xlarge">
         <!-- logo - start -->
         <a href="/" class="inline-flex text-primary" aria-label="logo">
           <svg
@@ -540,10 +540,10 @@ export const Errors6: StoryObj = {
         <div class="max-w-screen-sm text-center ">
           <h3
             type="h3"
-            class="mb-6 md:mb-9 text-3x-large md:text-4x-large xl:text-5x-large leading-dense font-semibold text-title"
+            class="mb-6 md:mb-9 text-3xlarge md:text-4xlarge xl:text-5xlarge leading-dense font-semibold text-title"
           >
             Lorem ipsum dolor sit amet.
-            <span class="text-x-large md:text-2x-large xl:text-3x-large leading-dense font-semibold block mt-2">
+            <span class="text-xlarge md:text-2xlarge xl:text-3xlarge leading-dense font-semibold block mt-2">
               Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
             </span>
           </h3>

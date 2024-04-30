@@ -10,7 +10,7 @@ export default {
 
 const heading = html`<!-- text - start -->
   <div class="mb-8 md:mb-10">
-    <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+    <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title">
       <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
         >Headline</span
       >
@@ -177,7 +177,7 @@ export const Reviews2: StoryObj = {
         <!-- overview - start -->
         <div>
           <div class="border border-[var(--awc-card-border-color)] p-6">
-            <h2 class="mb-3 text-x-large font-bold lg:text-3x-large">Customer Reviews</h2>
+            <h2 class="mb-3 text-xlarge font-bold lg:text-3xlarge">Customer Reviews</h2>
 
             <div class="mb-0.5 flex items-center gap-2">
               <!-- stars - start -->

@@ -40,7 +40,7 @@ export default css`
     max-width: 100%;
     max-height: 100%;
     background-color: var(--awc-panel-background-color);
-    box-shadow: var(--awc-shadow-x-large);
+    box-shadow: var(--awc-shadow-xlarge);
     overflow: auto;
     pointer-events: all;
   }
@@ -103,7 +103,7 @@ export default css`
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
-    gap: var(--awc-spacing-2x-small);
+    gap: var(--awc-spacing-2xsmall);
     padding: 0 var(--header-spacing);
   }
 
@@ -129,7 +129,7 @@ export default css`
   }
 
   .drawer__footer ::slotted(awc-button:not(:last-of-type)) {
-    margin-inline-end: var(--awc-spacing-x-small);
+    margin-inline-end: var(--awc-spacing-xsmall);
   }
 
   .drawer:not(.drawer--has-footer) .drawer__footer {

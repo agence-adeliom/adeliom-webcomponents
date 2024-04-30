@@ -8,7 +8,7 @@ export default css`
     --symbol-color: var(--awc-color-neutral-300);
     --symbol-color-active: var(--awc-color-warning-400);
     --symbol-size: 1.2rem;
-    --symbol-spacing: var(--awc-spacing-3x-small);
+    --symbol-spacing: var(--awc-spacing-3xsmall);
 
     display: inline-flex;
   }

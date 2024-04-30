@@ -32,8 +32,8 @@ export default css`
 
   /* Standard inputs */
   .input--standard {
-    background-color: var(--awc-input-background-color);
-    border: solid var(--awc-input-border-width) var(--awc-input-border-color);
+    background-color: var(--awc-input-background-color-default);
+    border: solid var(--awc-input-border-width) var(--awc-input-border-color-default);
   }
 
   .input--standard:hover:not(.input--disabled) {
@@ -74,17 +74,17 @@ export default css`
   }
 
   .input--filled:hover:not(.input--disabled) {
-    background-color: var(--awc-input-filled-background-color-hover);
+    background-color: var(--awc-input-filled-background-color);
   }
 
   .input--filled.input--focused:not(.input--disabled) {
-    background-color: var(--awc-input-filled-background-color-focus);
+    background-color: var(--awc-input-filled-background-color);
     outline: var(--awc-focus-ring);
     outline-offset: var(--awc-focus-ring-offset);
   }
 
   .input--filled.input--disabled {
-    background-color: var(--awc-input-filled-background-color-disabled);
+    background-color: var(--awc-input-background-color-disabled);
     opacity: 0.5;
     cursor: not-allowed;
   }

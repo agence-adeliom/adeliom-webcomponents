@@ -10,7 +10,7 @@ export default {
 
 const heading = html`<!-- text - start -->
   <div class="mb-8 md:mb-10">
-    <h3 class="text-3x-large md:text-4x-large xl:text-5x-large font-semibold leading-dense text-center mb-4 text-title">
+    <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense text-center mb-4 text-title">
       <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
         >Headline</span
       >
@@ -32,7 +32,7 @@ export const Testimonials1: StoryObj = {
     <div class="container mx-auto px-4 md:px-8">
       ${heading}
 
-      <div class="grid gap-small lg:gap-x-large lg:grid-cols-3">
+      <div class="grid gap-small lg:gap-xlarge lg:grid-cols-3">
         <!-- quote - start -->
         <awc-card bordered shadow>
           <div slot="footer" class="flex items-center gap-3">
@@ -170,7 +170,7 @@ export const Testimonials2: StoryObj = {
         </div>
         <!-- logo - end -->
 
-        <p class="text-center text-title max-w-screen-md text-x-large sm:text-2x-large md:text-3x-large leading-dense">
+        <p class="text-center text-title max-w-screen-md text-xlarge sm:text-2xlarge md:text-3xlarge leading-dense">
           This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
           of a real written text but is random or otherwise generated.
         </p>
@@ -381,7 +381,7 @@ export const Testimonials4: StoryObj = {
         <!-- text - start -->
         <div class="md:col-span-5">
           <h3
-            class="text-center text-3x-large md:text-4x-large md:text-left xl:text-5x-large font-semibold leading-dense mb-4 text-title"
+            class="text-center text-3xlarge md:text-4xlarge md:text-left xl:text-5xlarge font-semibold leading-dense mb-4 text-title"
           >
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span

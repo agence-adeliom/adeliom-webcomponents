@@ -16,7 +16,7 @@ export default css`
     line-height: var(--awc-line-height-normal);
     letter-spacing: var(--awc-letter-spacing-normal);
     color: var(--awc-color-neutral-500);
-    padding: var(--awc-spacing-2x-small) var(--awc-spacing-x-large);
+    padding: var(--awc-spacing-2xsmall) var(--awc-spacing-xlarge);
     user-select: none;
     -webkit-user-select: none;
   }
