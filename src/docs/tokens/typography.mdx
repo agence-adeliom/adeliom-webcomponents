@@ -80,15 +80,15 @@ size.
 
 ## Responsive Font Size
 
-| Token                      | Value                          | Value >= 1024px                | Value >= 1280px                | Example                                                               |
-| -------------------------- | ------------------------------ | ------------------------------ | ------------------------------ | --------------------------------------------------------------------- |
-| `--awc-font-size-base`     | `var(--awc-font-size-medium)`  | `var(--awc-font-size-medium)`  | `var(--awc-font-size-medium)`  | <span style={{ fontSize: 'var(--awc-font-size-base)' }}>Aa</span>     |
-| `--awc-font-size-heading6` | `var(--awc-font-size-large)`   | `var(--awc-font-size-xlarge)`  | `var(--awc-font-size-2xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading6)' }}>Aa</span> |
-| `--awc-font-size-heading5` | `var(--awc-font-size-xlarge)`  | `var(--awc-font-size-2xlarge)` | `var(--awc-font-size-3xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading5)' }}>Aa</span> |
-| `--awc-font-size-heading4` | `var(--awc-font-size-2xlarge)` | `var(--awc-font-size-3xlarge)` | `var(--awc-font-size-4xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading4)' }}>Aa</span> |
-| `--awc-font-size-heading3` | `var(--awc-font-size-3xlarge)` | `var(--awc-font-size-4xlarge)` | `var(--awc-font-size-5xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading3)' }}>Aa</span> |
-| `--awc-font-size-heading2` | `var(--awc-font-size-4xlarge)` | `var(--awc-font-size-5xlarge)` | `var(--awc-font-size-6xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading2)' }}>Aa</span> |
-| `--awc-font-size-heading1` | `var(--awc-font-size-5xlarge)` | `var(--awc-font-size-6xlarge)` | `var(--awc-font-size-7xlarge)` | <span style={{ fontSize: 'var(--awc-font-size-heading1)' }}>Aa</span> |
+| Token                      | Value                                                                                                            | Example                                                               |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `--awc-font-size-base`     | `var(--awc-font-size-medium)`                                                                                    | <span style={{ fontSize: 'var(--awc-font-size-base)' }}>Aa</span>     |
+| `--awc-font-size-heading6` | `clamp(var(--awc-font-size-large), 1rem + 0.625vw, var(--awc-font-size-2xlarge))`                                | <span style={{ fontSize: 'var(--awc-font-size-heading6)' }}>Aa</span> |
+| `--awc-font-size-heading5` | `clamp(var(--awc-font-size-xlarge), 1.0416666666666667rem + 1.0416666666666665vw, var(--awc-font-size-3xlarge))` | <span style={{ fontSize: 'var(--awc-font-size-heading5)' }}>Aa</span> |
+| `--awc-font-size-heading4` | `clamp(var(--awc-font-size-2xlarge), 1.25rem + 1.25vw, var(--awc-font-size-4xlarge))`                            | <span style={{ fontSize: 'var(--awc-font-size-heading4)' }}>Aa</span> |
+| `--awc-font-size-heading3` | `clamp(var(--awc-font-size-3xlarge), 1.5rem + 1.875vw, var(--awc-font-size-5xlarge))`                            | <span style={{ fontSize: 'var(--awc-font-size-heading3)' }}>Aa</span> |
+| `--awc-font-size-heading2` | `clamp(var(--awc-font-size-4xlarge), 1.75rem + 2.5vw, var(--awc-font-size-6xlarge))`                             | <span style={{ fontSize: 'var(--awc-font-size-heading2)' }}>Aa</span> |
+| `--awc-font-size-heading1` | `clamp(var(--awc-font-size-5xlarge), 2.5rem + 2.5vw, var(--awc-font-size-7xlarge))`                              | <span style={{ fontSize: 'var(--awc-font-size-heading1)' }}>Aa</span> |
 
 ## Font Weight
 

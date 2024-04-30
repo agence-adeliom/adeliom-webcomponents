@@ -1,4 +1,5 @@
 :root {
+  --awc-container-padding: clamp(1rem, 0.354rem + 2.7562vw, 3rem);
   --awc-font-size-heading-1: clamp(var(--awc-font-size-5xlarge), 2.5rem + 2.5vw, var(--awc-font-size-7xlarge));
   --awc-font-size-heading-2: clamp(var(--awc-font-size-4xlarge), 1.75rem + 2.5vw, var(--awc-font-size-6xlarge));
   --awc-font-size-heading-3: clamp(var(--awc-font-size-3xlarge), 1.5rem + 1.875vw, var(--awc-font-size-5xlarge));

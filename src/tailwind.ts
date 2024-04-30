@@ -4,7 +4,7 @@ export default {
     extend: {
       container: {
         center: true,
-        padding: '1rem'
+        padding: 'var(--awc-container-padding)'
       },
       colors: {
         current: 'currentColor',
