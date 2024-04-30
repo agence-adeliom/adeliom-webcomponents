@@ -179,6 +179,8 @@
   --awc-tooltip-font-weight: var(--awc-font-weight-normal);
   --awc-button-font-size-large: var(--awc-font-size-medium);
   --awc-card-padding: var(--awc-spacing-xlarge);
+  --awc-input-required-content-color: var(--awc-color-primary-600);
+  --awc-input-required-content-offset: var(--awc-spacing-3xsmall);
   --awc-section-spacing-text-image-desktop: var(--awc-spacing-5xlarge);
   --awc-button-primary-border-color-default: var(--awc-color-primary-600);
   --awc-button-primary-border-color-hover: var(--awc-color-primary-800);
