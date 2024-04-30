@@ -1,6 +1,6 @@
 import { html } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './visually-hidden.styles.js';
 import type { CSSResultGroup } from 'lit';
 

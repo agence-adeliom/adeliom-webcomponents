@@ -4,7 +4,6 @@ import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 
-
 /**
  * @summary Short summary of the component's intended use.
  * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-zoom-control--documentation
@@ -12,8 +11,6 @@ import { watch } from '../../internal/watch.js';
  * @since 1.0
  */
 export default class AWCMapZoomControl extends AWCLeafletElement {
-
-
   static _zoomInText: string = '<span aria-hidden="true"><awc-icon name="plus-lg"></awc-icon></span>';
   static _zoomOutText: string = '<span aria-hidden="true"><awc-icon name="dash-lg"></awc-icon></span>';
 

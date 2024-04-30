@@ -289,14 +289,14 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
       <div
         part="base"
         class=${classMap({
-      'file-upload': true,
-      'file-upload--disabled': this.disabled,
-      'file-upload--error': !!this.error,
-      'file-upload--dragged': this.isDragover,
-      'file-upload--has-help-text': hasHelpText,
-      'file-upload--button-only': this.buttonOnly,
-      'file-upload--custom-content': hasContentSlot
-    })}
+          'file-upload': true,
+          'file-upload--disabled': this.disabled,
+          'file-upload--error': !!this.error,
+          'file-upload--dragged': this.isDragover,
+          'file-upload--has-help-text': hasHelpText,
+          'file-upload--button-only': this.buttonOnly,
+          'file-upload--custom-content': hasContentSlot
+        })}
       >
         <input
           type="file"
@@ -309,21 +309,21 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
           aria-describedby="help-text"
         />
         ${this.buttonOnly
-        ? html`
+          ? html`
               ${browseFilesButton}
               <div part="help-text" class="file-upload__help-text" aria-hidden=${hasHelpText ? 'false' : 'true'}>
                 <slot name="help-text">${this.helpText}</slot>
               </div>
             `
-        : html`
+          : html`
               <div id="dropzone" @drop="${this.onDrop}" @dragover="${this.onDragOver}" @dragleave="${this.onDragLeave}">
                 <slot name="content">
                   <div
                     part="content"
                     class=${classMap({
-          'file-upload__label': true,
-          'file-upload__label--has-file': !!this.files.length
-        })}
+                      'file-upload__label': true,
+                      'file-upload__label--has-file': !!this.files.length
+                    })}
                   >
                     <div class="file-upload__label__container">
                       <slot name="image">
@@ -348,20 +348,20 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
               </div>
             `}
         ${!this.noFileList && this.files.length
-        ? html`
+          ? html`
               <div
                 class=${classMap({
-          'file-upload__file-items': true
-        })}
+                  'file-upload__file-items': true
+                })}
                 id="file-items"
               >
                 <div class="file-upload__file-items__header">
                   <span>${this.localize.term('files')}</span>
                 </div>
                 ${repeat(
-          this.files,
-          fileInfo => fileInfo.file.name,
-          (fileInfo, index) => html`
+                  this.files,
+                  fileInfo => fileInfo.file.name,
+                  (fileInfo, index) => html`
                     <awc-file-upload-item
                       size=${fileInfo.accepted ? fileInfo.file.size : nothing}
                       ?error=${!!fileInfo.error}
@@ -369,9 +369,9 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
                       ?loading=${fileInfo.loading}
                       progress=${ifDefined(fileInfo.progress)}
                       @awc-hide=${(event: AWCHideEvent) => {
-              event.stopPropagation();
-              this.handleFileRemove(index);
-            }}
+                        event.stopPropagation();
+                        this.handleFileRemove(index);
+                      }}
                       data-test="${JSON.stringify(fileInfo)}"
                     >
                       ${fileInfo.file.name} ${fileInfo.error ? html`<div slot="error">${fileInfo.error}</div>` : ''}
@@ -382,10 +382,10 @@ export default class AWCFileUpload extends AWCElement implements AWCFormControl 
                       ></awc-icon>
                     </awc-file-upload-item>
                   `
-        )}
+                )}
               </div>
             `
-        : ''}
+          : ''}
       </div>
     `;
   }

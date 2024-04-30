@@ -9,10 +9,10 @@ import { lockBodyScrolling, unlockBodyScrolling } from '../../internal/scroll.js
 import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
-import Modal from '../../internal/modal.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIconButton from '../icon-button/icon-button.component.js';
+import componentStyles from '../../styles/component.styles.js';
+import Modal from '../../internal/modal.js';
 import styles from './dialog.styles.js';
 import type { CSSResultGroup } from 'lit';
 

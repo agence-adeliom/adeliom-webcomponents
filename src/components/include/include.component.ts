@@ -2,8 +2,8 @@ import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { requestInclude } from './request.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './include.styles.js';
 import type { CSSResultGroup } from 'lit';
 

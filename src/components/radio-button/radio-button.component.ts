@@ -4,8 +4,8 @@ import { html } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './radio-button.styles.js';
 import type { CSSResultGroup } from 'lit';
 

@@ -4,8 +4,8 @@ import { html } from 'lit';
 import { isTemplateResult } from 'lit/directive-helpers.js';
 import { property, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './icon.styles.js';
 import type { CSSResultGroup, HTMLTemplateResult } from 'lit';
 

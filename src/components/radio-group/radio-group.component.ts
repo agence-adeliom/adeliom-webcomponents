@@ -9,13 +9,13 @@ import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import AWCButtonGroup from '../button-group/button-group.component.js';
+import AWCElement from '../../internal/awc-element.js';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles.js';
-import AWCElement from '../../internal/awc-element.js';
-import AWCButtonGroup from '../button-group/button-group.component.js';
 import styles from './radio-group.styles.js';
-import type { CSSResultGroup } from 'lit';
 import type { AWCFormControl } from '../../internal/awc-element.js';
+import type { CSSResultGroup } from 'lit';
 import type AWCRadio from '../radio/radio.js';
 import type AWCRadioButton from '../radio-button/radio-button.js';
 

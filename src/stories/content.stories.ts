@@ -197,9 +197,7 @@ export const Content4: StoryObj = {
     <div class="py-6 sm:py-8 lg:py-12">
       <div class="container mx-auto px-4 md:px-8">
         <div class="grid md:grid-cols-3">
-          <h3
-            class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 md:mb-6 text-title"
-          >
+          <h3 class="text-3xlarge md:text-4xlarge xl:text-5xlarge font-semibold leading-dense mb-4 md:mb-6 text-title">
             <span class="text-sm md:text-base font-semibold leading-normal text-paragraph uppercase block mb-1"
               >Headline</span
             >

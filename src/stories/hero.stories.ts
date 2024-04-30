@@ -138,9 +138,7 @@ export const Hero3: StoryObj = {
           <div></div>
 
           <div class="sm:text-center lg:py-12 lg:text-left xl:py-24">
-            <h2
-              class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12"
-            >
+            <h2 class="text-4xlarge md:text-5xlarge xl:text-6xlarge font-bold leading-dense text-title mb-8 md:mb-12">
               <span class="text-base md:text-lg font-semibold leading-normal text-paragraph block mb-1 text-primary"
                 >Very proud to introduce</span
               >

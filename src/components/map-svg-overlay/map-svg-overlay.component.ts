@@ -4,7 +4,6 @@ import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 
-
 /**
  * @summary Element which defines a SVG overlay.
  * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-svg-overlay--documentation
@@ -24,8 +23,6 @@ import { watch } from '../../internal/watch.js';
  * @slot - The SVG content.
  */
 export default class AWCMapSvgOverlay extends LeafletILayerMixin(AWCLeafletElement) {
-
-
   static readonly events = 'load error click dblclick mousedown mouseup mouseover mouseout contextmenu';
 
   layer: L.SVGOverlay;

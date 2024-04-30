@@ -14,7 +14,7 @@
   --awc-input-label-color: inherit;
   --awc-input-focus-ring-offset: 0;
   --awc-input-focus-ring-color: hsl(198.6 88.7% 48.4% / 40%);
-  --awc-input-required-content: "*";
+  --awc-input-required-content: '*';
   --awc-input-border-width: 0.0625rem;
   --awc-input-height-large: 3.125rem;
   --awc-input-height-medium: 2.5rem;
@@ -69,9 +69,11 @@
   --awc-font-size-xsmall: 0.75rem;
   --awc-font-size-2xsmall: 0.625rem;
   --awc-font-serif: Georgia, 'Times New Roman', serif;
-  --awc-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --awc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';;
-  --awc-font-mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;	;
+  --awc-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --awc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --awc-font-mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
   --awc-transition-xfast: 50ms;
   --awc-transition-fast: 150ms;
   --awc-transition-medium: 250ms;
@@ -313,11 +315,16 @@
 }
 
 body {
-  --awc-shadow-xsmall: calc(var(--awc-shadow-xsmall-x) * 1px) calc(var(--awc-shadow-xsmall-y) * 1px) calc(var(--awc-shadow-xsmall-blur) * 1px) calc(var(--awc-shadow-xsmall-spread) * 1px) var(--awc-shadow-xsmall-color);
-  --awc-shadow-small: calc(var(--awc-shadow-small-x) * 1px) calc(var(--awc-shadow-small-y) * 1px) calc(var(--awc-shadow-small-blur) * 1px) calc(var(--awc-shadow-small-spread) * 1px) var(--awc-shadow-small-color);
-  --awc-shadow-medium: calc(var(--awc-shadow-medium-x) * 1px) calc(var(--awc-shadow-medium-y) * 1px) calc(var(--awc-shadow-medium-blur) * 1px) calc(var(--awc-shadow-medium-spread) * 1px) var(--awc-shadow-medium-color);
-  --awc-shadow-large: calc(var(--awc-shadow-large-x) * 1px) calc(var(--awc-shadow-large-y) * 1px) calc(var(--awc-shadow-large-blur) * 1px) calc(var(--awc-shadow-large-spread) * 1px) var(--awc-shadow-large-color);
-  --awc-shadow-xlarge: calc(var(--awc-shadow-xlarge-x) * 1px) calc(var(--awc-shadow-xlarge-y) * 1px) calc(var(--awc-shadow-xlarge-blur) * 1px) calc(var(--awc-shadow-xlarge-spread) * 1px) var(--awc-shadow-xlarge-color);
+  --awc-shadow-xsmall: calc(var(--awc-shadow-xsmall-x) * 1px) calc(var(--awc-shadow-xsmall-y) * 1px)
+    calc(var(--awc-shadow-xsmall-blur) * 1px) calc(var(--awc-shadow-xsmall-spread) * 1px) var(--awc-shadow-xsmall-color);
+  --awc-shadow-small: calc(var(--awc-shadow-small-x) * 1px) calc(var(--awc-shadow-small-y) * 1px)
+    calc(var(--awc-shadow-small-blur) * 1px) calc(var(--awc-shadow-small-spread) * 1px) var(--awc-shadow-small-color);
+  --awc-shadow-medium: calc(var(--awc-shadow-medium-x) * 1px) calc(var(--awc-shadow-medium-y) * 1px)
+    calc(var(--awc-shadow-medium-blur) * 1px) calc(var(--awc-shadow-medium-spread) * 1px) var(--awc-shadow-medium-color);
+  --awc-shadow-large: calc(var(--awc-shadow-large-x) * 1px) calc(var(--awc-shadow-large-y) * 1px)
+    calc(var(--awc-shadow-large-blur) * 1px) calc(var(--awc-shadow-large-spread) * 1px) var(--awc-shadow-large-color);
+  --awc-shadow-xlarge: calc(var(--awc-shadow-xlarge-x) * 1px) calc(var(--awc-shadow-xlarge-y) * 1px)
+    calc(var(--awc-shadow-xlarge-blur) * 1px) calc(var(--awc-shadow-xlarge-spread) * 1px) var(--awc-shadow-xlarge-color);
 }
 
 .awc-scroll-lock {

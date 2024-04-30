@@ -16,7 +16,6 @@ import type { LatLngBounds, LocationEvent } from 'leaflet';
  * @event awc-map - type : locationerror - when geolocation (using the locate method) failed.
  */
 export default class AWCMapGeolocation extends AWCLeafletElement {
-
   // @ts-expect-error: ambient property. see https://github.com/microsoft/TypeScript/issues/40220
   container: L.Map;
 

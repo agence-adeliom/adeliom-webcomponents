@@ -2,9 +2,9 @@ import { classMap } from 'lit/directives/class-map.js';
 import { html, literal } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, query, state } from 'lit/decorators.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './icon-button.styles.js';
 import type { CSSResultGroup } from 'lit';
 

@@ -5,8 +5,8 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './split-panel.styles.js';
 import type { CSSResultGroup } from 'lit';
 

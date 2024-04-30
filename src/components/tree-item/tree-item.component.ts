@@ -7,11 +7,11 @@ import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import { when } from 'lit/directives/when.js';
-import componentStyles from '../../styles/component.styles.js';
-import AWCElement from '../../internal/awc-element.js';
 import AWCCheckbox from '../checkbox/checkbox.component.js';
+import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import AWCSpinner from '../spinner/spinner.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './tree-item.styles.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
 

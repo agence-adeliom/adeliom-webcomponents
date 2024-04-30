@@ -3,8 +3,8 @@ import { classMap } from 'lit/directives/class-map.js';
 import { html } from 'lit';
 import { offsetParent } from 'composed-offset-position';
 import { property, query } from 'lit/decorators.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './popup.styles.js';
 import type { CSSResultGroup } from 'lit';
 

@@ -7,9 +7,9 @@ import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIconButton from '../icon-button/icon-button.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './alert.styles.js';
 import type { CSSResultGroup } from 'lit';
 

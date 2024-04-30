@@ -8,7 +8,7 @@ const awcEventToEvent: Record<string, string> = {
   'awc-focus': 'focus',
   'awc-input': 'input',
   'awc-invalid': 'invalid'
-}
+};
 
 // Match event type name strings that are registered on GlobalEventHandlersEventMap...
 type EventTypeRequiresDetail<T> = T extends keyof GlobalEventHandlersEventMap
@@ -111,9 +111,7 @@ export default class AWCElement extends LitElement {
   /* eslint-enable */
 
   static define(name: string, elementConstructor = this, options: ElementDefinitionOptions = {}) {
-    const currentlyRegisteredConstructor = customElements.get(name) as
-      CustomElementConstructor |
-      typeof AWCElement;
+    const currentlyRegisteredConstructor = customElements.get(name) as CustomElementConstructor | typeof AWCElement;
 
     if (!currentlyRegisteredConstructor) {
       customElements.define(name, class extends elementConstructor {} as unknown as CustomElementConstructor, options);

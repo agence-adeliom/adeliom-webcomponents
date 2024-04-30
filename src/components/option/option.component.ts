@@ -3,9 +3,9 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './option.styles.js';
 import type { CSSResultGroup } from 'lit';
 

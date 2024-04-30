@@ -68,14 +68,14 @@ export default class AWCStepperItem extends AWCElement {
       part="base"
       aria-label="${this.label}"
       class="${classMap({
-      'step-item': true,
-      completed: this.completed,
-      'has-completed-icon': this.hasSlotController.test('completed-icon'),
-      active: this.active,
-      first: this.isFirst,
-      last: this.isLast,
-      vertical: !!this.container?.vertical
-    })}"
+        'step-item': true,
+        completed: this.completed,
+        'has-completed-icon': this.hasSlotController.test('completed-icon'),
+        active: this.active,
+        first: this.isFirst,
+        last: this.isLast,
+        vertical: !!this.container?.vertical
+      })}"
     >
       <span part="badge" class="badge">
         <span part="step" class="badge__step">

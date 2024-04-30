@@ -4,8 +4,8 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './progress-bar.styles.js';
 import type { CSSResultGroup } from 'lit';
 

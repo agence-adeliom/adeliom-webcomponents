@@ -9,7 +9,6 @@ import { property } from 'lit/decorators.js';
  * @since 1.0
  */
 export default class AWCMapPoint extends AWCLeafletElement {
-
   static isLeafletPoint(node: Node): node is AWCMapPoint {
     return node instanceof AWCMapPoint;
   }

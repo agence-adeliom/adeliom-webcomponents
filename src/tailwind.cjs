@@ -159,11 +159,11 @@ module.exports = {
     },
     fontSize: {
       '2xsmall': 'var(--awc-font-size-2xsmall)',
-      'xsmall': 'var(--awc-font-size-xsmall)',
+      xsmall: 'var(--awc-font-size-xsmall)',
       small: 'var(--awc-font-size-small)',
       medium: 'var(--awc-font-size-medium)',
       large: 'var(--awc-font-size-large)',
-      'xlarge': 'var(--awc-font-size-xlarge)',
+      xlarge: 'var(--awc-font-size-xlarge)',
       '2xlarge': 'var(--awc-font-size-2xlarge)',
       '3xlarge': 'var(--awc-font-size-3xlarge)',
       '4xlarge': 'var(--awc-font-size-4xlarge)',

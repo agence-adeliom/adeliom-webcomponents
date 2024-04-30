@@ -11,16 +11,16 @@ import { scrollIntoView } from '../../internal/scroll.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
-import formControlStyles from '../../styles/form-control.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import AWCPopup from '../popup/popup.component.js';
 import AWCTag from '../tag/tag.component.js';
+import componentStyles from '../../styles/component.styles.js';
+import formControlStyles from '../../styles/form-control.styles.js';
 import styles from './select.styles.js';
-import type { CSSResultGroup, TemplateResult } from 'lit';
 import type { AWCFormControl } from '../../internal/awc-element.js';
 import type { AWCRemoveEvent } from '../../events/awc-remove.js';
+import type { CSSResultGroup, TemplateResult } from 'lit';
 import type AWCOption from '../option/option.component.js';
 
 /**

@@ -13,8 +13,6 @@ import { watch } from '../../internal/watch.js';
  * @slot - The default slot for popup content.
  */
 export default class AWCMapCircle extends LeafletPopupContentMixin(AWCLeafletElement) {
-
-
   static isLeafletCircle(node: Node): node is AWCMapCircle {
     return node instanceof AWCMapCircle;
   }

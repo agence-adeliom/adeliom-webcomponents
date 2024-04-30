@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { query } from 'lit/decorators.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './menu.styles.js';
 import type { CSSResultGroup } from 'lit';
 import type AWCMenuItem from '../menu-item/menu-item.component.js';

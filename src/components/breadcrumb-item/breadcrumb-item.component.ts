@@ -3,8 +3,8 @@ import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './breadcrumb-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 

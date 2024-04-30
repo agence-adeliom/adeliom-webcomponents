@@ -239,31 +239,34 @@ export default class AWCCheckbox extends AWCElement implements AWCFormControl {
             @focus=${this.handleFocus}
           />
 
-        <span
-          part="control${this.checked ? ' control--checked' : ''}${this.indeterminate ? ' control--indeterminate' : ''}"
-          class="checkbox__control"
-        >
-          ${this.checked
-        ? html`
-                <awc-icon part="checked-icon" class="checkbox__checked-icon" library="system" name="check"></awc-icon>
-              `
-        : ''}
-          ${!this.checked && this.indeterminate
-        ? html`
-                <awc-icon
-                  part="indeterminate-icon"
-                  class="checkbox__indeterminate-icon"
-                  library="system"
-                  name="indeterminate"
-                ></awc-icon>
-              `
-        : ''}
-        </span>
+          <span
+            part="control${this.checked ? ' control--checked' : ''}${this.indeterminate
+              ? ' control--indeterminate'
+              : ''}"
+            class="checkbox__control"
+          >
+            ${this.checked
+              ? html`
+                  <awc-icon part="checked-icon" class="checkbox__checked-icon" library="system" name="check"></awc-icon>
+                `
+              : ''}
+            ${!this.checked && this.indeterminate
+              ? html`
+                  <awc-icon
+                    part="indeterminate-icon"
+                    class="checkbox__indeterminate-icon"
+                    library="system"
+                    name="indeterminate"
+                  ></awc-icon>
+                `
+              : ''}
+          </span>
 
-        <div part="label" class="checkbox__label">
-          <slot></slot>
-        </div>
-      </label>
+          <div part="label" class="checkbox__label">
+            <slot></slot>
+          </div>
+        </label>
+      </div>
     `;
   }
 }

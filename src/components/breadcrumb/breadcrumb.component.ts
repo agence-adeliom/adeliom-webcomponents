@@ -1,9 +1,9 @@
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './breadcrumb.styles.js';
 import type { CSSResultGroup } from 'lit';
 import type AWCBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';

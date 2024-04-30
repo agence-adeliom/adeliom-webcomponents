@@ -4,7 +4,6 @@ import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 
-
 /**
  * @summary Element which defines a tile layer. The content of the `awc-map-tilelayer` is used as attribution.
  * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-tilelayer--documentation
@@ -20,8 +19,6 @@ import { watch } from '../../internal/watch.js';
  * @slot - The default slot for attribution.
  */
 export default class AWCMapTilelayer extends LeafletILayerMixin(AWCLeafletElement) {
-
-
   static readonly events = 'loading load tileloadstart tileload tileunload';
 
   layer: L.TileLayer;

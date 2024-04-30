@@ -2,10 +2,10 @@ import { classMap } from 'lit/directives/class-map.js';
 import { html } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import AWCImage from '../image/image.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './avatar.styles.js';
 import type { CSSResultGroup } from 'lit';
 

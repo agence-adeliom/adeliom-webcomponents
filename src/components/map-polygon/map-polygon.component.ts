@@ -4,7 +4,6 @@ import { LeafletPopupContentMixin } from '../../internal/leaflet/popup-content.j
 import { property } from 'lit/decorators.js';
 import AWCMapPoint from '../map-point/map-point.component.js';
 
-
 /**
  * @summary Element for putting a polygon on the map
  * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-polygon--documentation
@@ -15,7 +14,6 @@ import AWCMapPoint from '../map-point/map-point.component.js';
  * @slot - The default slot.
  */
 export default class AWCMapPolygon extends LeafletPopupContentMixin(AWCLeafletElement) {
-
   static readonly events = 'click dblclick mousedown mouseover mouseout contextmenu add remove popupopen popupclose';
 
   /**

@@ -2,9 +2,9 @@ import { classMap } from 'lit/directives/class-map.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIconButton from '../icon-button/icon-button.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './tag.styles.js';
 import type { CSSResultGroup } from 'lit';
 

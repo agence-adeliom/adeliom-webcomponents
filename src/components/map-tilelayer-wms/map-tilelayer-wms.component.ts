@@ -4,7 +4,6 @@ import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 
-
 /**
  * @summary Element which defines a tile layer for WMS. The content of the `awc-map-tilelayer-wms` is used as attribution. It inherits attributes and events from `awc-map-tilelayer`;
  * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-raster-layers-tilelayer-wms--documentation
@@ -21,8 +20,6 @@ import { watch } from '../../internal/watch.js';
  * @slot - The default slot for attribution.
  */
 export default class AWCMapTilelayerWMS extends LeafletILayerMixin(AWCLeafletElement) {
-
-
   static readonly events = 'loading load tileloadstart tileload tileunload';
 
   layer: L.TileLayer.WMS;

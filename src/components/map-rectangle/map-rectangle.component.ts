@@ -4,7 +4,6 @@ import { LeafletPopupContentMixin } from '../../internal/leaflet/popup-content.j
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 
-
 /**
  * @summary Element for putting a rectangle on the map
  * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-vector-layers-rectangle--documentation
@@ -15,8 +14,6 @@ import { watch } from '../../internal/watch.js';
  * @slot - The default slot for popup content.
  */
 export default class AWCMapRectangle extends LeafletPopupContentMixin(AWCLeafletElement) {
-
-
   static readonly events = 'click dblclick mousedown mouseover mouseout contextmenu add remove popupopen popupclose';
 
   /**

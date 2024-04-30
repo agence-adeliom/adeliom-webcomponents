@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './button-group.styles.js';
 import type { CSSResultGroup } from 'lit';
 

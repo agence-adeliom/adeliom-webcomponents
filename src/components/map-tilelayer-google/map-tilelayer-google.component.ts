@@ -5,7 +5,6 @@ import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 
-
 /* eslint-disable @typescript-eslint/no-namespace*/
 declare module 'leaflet' {
   export type GoogleMutantType = 'roadmap' | 'satellite' | 'terrain' | 'hybrid';
@@ -118,8 +117,6 @@ declare module 'leaflet' {
  * @slot - The default slot for attribution.
  */
 export default class AWCMapTilelayerGoogle extends LeafletILayerMixin(AWCLeafletElement) {
-
-
   static readonly events = 'loading load tileloadstart tileload tileunload';
 
   layer: L.GridLayer.GoogleMutant;

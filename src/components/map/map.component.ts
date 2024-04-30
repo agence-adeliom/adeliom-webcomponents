@@ -7,10 +7,10 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import AWCMapZoomControl from '../map-zoom-control/map-zoom-control.js';
 import componentStyles from '../../styles/component.styles.js';
-import styles from './map.styles.js';
 import leafletStyles from './styles/leaflet.styles.js';
 import locateStyles from './styles/locate.styles.js';
 import markerClusterStyles from './styles/markercluster.styles.js';
+import styles from './map.styles.js';
 import type { CSSResultGroup, TemplateResult } from 'lit';
 
 interface FeatureElement extends AWCLeafletElement {
@@ -138,13 +138,7 @@ function isMarker(x: L.Layer): x is L.Marker {
  *
  */
 export default class AWCMap extends AWCLeafletElement {
-  static styles: CSSResultGroup = [
-    componentStyles,
-    leafletStyles,
-    locateStyles,
-    markerClusterStyles,
-    styles
-  ];
+  static styles: CSSResultGroup = [componentStyles, leafletStyles, locateStyles, markerClusterStyles, styles];
 
   private readonly localize = new LocalizeController(this);
 

@@ -5,11 +5,11 @@ import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { SubmenuController } from './submenu-controller.js';
 import { watch } from '../../internal/watch.js';
-import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import AWCPopup from '../popup/popup.component.js';
 import AWCSpinner from '../spinner/spinner.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './menu-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 

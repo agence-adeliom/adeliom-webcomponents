@@ -2,7 +2,6 @@ import * as L from 'leaflet';
 import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { property } from 'lit/decorators.js';
 
-
 /**
  * @summary Scale control that shows the scale of the current center of screen in metric (m/km) and imperial (mi/ft) systems.
  * @documentation https://webcomponents.adeliom.io/?path=/docs/components-map-controls-scale--documentation
@@ -10,8 +9,6 @@ import { property } from 'lit/decorators.js';
  * @since 1.0
  */
 export default class AWCMapScaleControl extends AWCLeafletElement {
-
-
   // @ts-expect-error ambient property.
   container: L.Map;
 
