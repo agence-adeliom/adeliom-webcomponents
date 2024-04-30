@@ -177,7 +177,7 @@ export default class AWCMapGeolocation extends AWCLeafletElement {
   /**
    * Accuracy circle style properties. NOTE these styles should match the css animations styles
    */
-  @property({ type: Object, attribute: 'circle-style' }) circleStyle?: L.CircleMarkerOptions = {
+  @property({ type: Object, attribute: 'circle-style' }) circleStyle?: L.PathOptions = {
     className: 'leaflet-control-locate-circle',
     color: '#136AEC',
     fillColor: '#136AEC',
@@ -201,8 +201,7 @@ export default class AWCMapGeolocation extends AWCLeafletElement {
   /**
    * Compass style properties.
    */
-  @property({ type: Object, attribute: 'compass-style' }) compassStyle?: L.PathOptions & {
-    radius: number;
+  @property({ type: Object, attribute: 'compass-style' }) compassStyle?: L.CircleMarkerOptions & {
     width: number;
     depth: number;
   } = {

@@ -41,7 +41,7 @@ export default class AWCRating extends AWCElement {
 
   private readonly localize = new LocalizeController(this);
 
-  @query('.rating') rating: HTMLElement;
+  @query('.rating__symbols') rating: HTMLElement;
 
   @state() private hoverValue = 0;
   @state() private isHovering = false;

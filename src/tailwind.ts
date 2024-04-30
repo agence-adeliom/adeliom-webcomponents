@@ -1,9 +1,15 @@
-module.exports = {
+export default {
   darkMode: ['class', '.awc-theme-dark'],
   theme: {
-    // Generated from https://jsfiddle.net/qur6m2yf/1/
     extend: {
+      container: {
+        center: true,
+        padding: '1rem'
+      },
       colors: {
+        current: 'currentColor',
+        transparent: 'var(--awc-color-transparent)',
+        background: 'var(--awc-background-color)',
         neutral: {
           0: 'var(--awc-color-neutral-0)',
           50: 'var(--awc-color-neutral-50)',
@@ -112,7 +118,13 @@ module.exports = {
         '4xlarge': 'var(--awc-spacing-4xlarge)',
         '5xlarge': 'var(--awc-spacing-5xlarge)',
         '6xlarge': 'var(--awc-spacing-6xlarge)',
-        '7xlarge': 'var(--awc-spacing-7xlarge)'
+        '7xlarge': 'var(--awc-spacing-7xlarge)',
+        'vertical-block': 'var(--awc-spacing-vertical-block)',
+        'text-image': 'var(--awc-spacing-text-image)',
+        'headline-title': 'var(--awc-spacing-headline-title)',
+        'title-text': 'var(--awc-spacing-title-text)',
+        'button-text': 'var(--awc-spacing-button-text)',
+        'button-button': 'var(--awc-spacing-button-button)'
       },
       boxShadow: {
         xsmall: 'var(--awc-shadow-xsmall)',
@@ -158,6 +170,12 @@ module.exports = {
       mono: 'var(--awc-font-mono)'
     },
     fontSize: {
+      heading1: 'var(--awc-font-size-heading-1)',
+      heading2: 'var(--awc-font-size-heading-2)',
+      heading3: 'var(--awc-font-size-heading-3)',
+      heading4: 'var(--awc-font-size-heading-4)',
+      heading5: 'var(--awc-font-size-heading-5)',
+      heading6: 'var(--awc-font-size-heading-6)',
       '2xsmall': 'var(--awc-font-size-2xsmall)',
       xsmall: 'var(--awc-font-size-xsmall)',
       small: 'var(--awc-font-size-small)',
@@ -175,4 +193,4 @@ module.exports = {
       '10xlarge': 'var(--awc-font-size-10xlarge)'
     }
   }
-};
+}

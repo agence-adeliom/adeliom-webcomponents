@@ -6,9 +6,6 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, queryAssignedNodes } from 'lit/decorators.js';
-import componentStyles from '../../styles/component.styles.js';
-import styles from './map-fullscreen-control.styles.js';
-import type { CSSResultGroup } from 'lit';
 
 declare global {
   interface Element {
@@ -134,8 +131,6 @@ function exitFullscreen(root: Document) {
  * @slot exit-icon - Exit fullscreen icon.
  */
 export default class AWCMapFullscreenControl extends AWCLeafletElement {
-  static styles: CSSResultGroup = [componentStyles, styles];
-
   // @ts-expect-error: ambient property. see https://github.com/microsoft/TypeScript/issues/40220
   container: L.Map;
 

@@ -42,6 +42,7 @@ async function buildTheSource() {
       './src/awc.ts',
       // The auto-loader
       './src/awc-autoloader.ts',
+      './src/tailwind.ts',
       // Components
       ...(await globby('./src/components/**/!(*.(style|test)).ts')),
       // Translations
@@ -158,10 +159,6 @@ await nextTask('Packaging up icons', () => {
 
 await nextTask('Running the TypeScript compiler', () => {
   return execPromise(`tsc --project ./tsconfig.prod.json --outdir "${outdir}"`, { stdio: 'inherit' });
-});
-
-await nextTask('Copy Tailwind preset', () => {
-  return fs.cp('src/tailwind.cjs', `${outdir}/tailwind.cjs`);
 });
 
 // Copy the above steps to the CDN directory directly so we don't need to twice the work for nothing.

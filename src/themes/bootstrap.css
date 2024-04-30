@@ -1,0 +1,78 @@
+:root {
+  --awc-font-size-heading-1: clamp(var(--awc-font-size-5xlarge), 2.5rem + 2.5vw, var(--awc-font-size-7xlarge));
+  --awc-font-size-heading-2: clamp(var(--awc-font-size-4xlarge), 1.75rem + 2.5vw, var(--awc-font-size-6xlarge));
+  --awc-font-size-heading-3: clamp(var(--awc-font-size-3xlarge), 1.5rem + 1.875vw, var(--awc-font-size-5xlarge));
+  --awc-font-size-heading-4: clamp(var(--awc-font-size-2xlarge), 1.25rem + 1.25vw, var(--awc-font-size-4xlarge));
+  --awc-font-size-heading-5: clamp(
+    var(--awc-font-size-xlarge),
+    1.0416666666666667rem + 1.0416666666666665vw,
+    var(--awc-font-size-3xlarge)
+  );
+  --awc-font-size-heading-6: clamp(var(--awc-font-size-large), 1rem + 0.625vw, var(--awc-font-size-2xlarge));
+
+  --awc-spacing-vertical-block: clamp(
+    var(--awc-section-padding-y-mobile),
+    0rem + 6.25vw,
+    var(--awc-section-padding-y-desktop)
+  );
+  --awc-spacing-text-image: clamp(
+    var(--awc-section-spacing-text-image-mobile),
+    0rem + 6.25vw,
+    var(--awc-section-spacing-text-image-desktop)
+  );
+  --awc-spacing-headline-title: clamp(
+    var(--awc-section-spacing-headline-title-mobile),
+    0rem + 6.25vw,
+    var(--awc-section-spacing-headline-title-desktop)
+  );
+  --awc-spacing-title-text: clamp(
+    var(--awc-section-spacing-title-text-mobile),
+    0rem + 6.25vw,
+    var(--awc-section-spacing-title-text-desktop)
+  );
+  --awc-spacing-button-text: clamp(
+    var(--awc-section-spacing-button-text-mobile),
+    0rem + 6.25vw,
+    var(--awc-section-spacing-button-text-desktop)
+  );
+  --awc-spacing-button-button: clamp(
+    var(--awc-section-spacing-button-button-mobile),
+    0rem + 6.25vw,
+    var(--awc-section-spacing-button-button-desktop)
+  );
+
+  --awc-shadow-xsmall: calc(var(--awc-shadow-xsmall-x) * 1px) calc(var(--awc-shadow-xsmall-y) * 1px)
+    calc(var(--awc-shadow-xsmall-blur) * 1px) calc(var(--awc-shadow-xsmall-spread) * 1px) var(--awc-shadow-xsmall-color);
+  --awc-shadow-small: calc(var(--awc-shadow-small-x) * 1px) calc(var(--awc-shadow-small-y) * 1px)
+    calc(var(--awc-shadow-small-blur) * 1px) calc(var(--awc-shadow-small-spread) * 1px) var(--awc-shadow-small-color);
+  --awc-shadow-medium: calc(var(--awc-shadow-medium-x) * 1px) calc(var(--awc-shadow-medium-y) * 1px)
+    calc(var(--awc-shadow-medium-blur) * 1px) calc(var(--awc-shadow-medium-spread) * 1px) var(--awc-shadow-medium-color);
+  --awc-shadow-large: calc(var(--awc-shadow-large-x) * 1px) calc(var(--awc-shadow-large-y) * 1px)
+    calc(var(--awc-shadow-large-blur) * 1px) calc(var(--awc-shadow-large-spread) * 1px) var(--awc-shadow-large-color);
+  --awc-shadow-xlarge: calc(var(--awc-shadow-xlarge-x) * 1px) calc(var(--awc-shadow-xlarge-y) * 1px)
+    calc(var(--awc-shadow-xlarge-blur) * 1px) calc(var(--awc-shadow-xlarge-spread) * 1px) var(--awc-shadow-xlarge-color);
+}
+
+.awc-scroll-lock {
+  padding-right: var(--awc-scroll-lock-size) !important;
+  overflow: hidden !important;
+}
+
+.awc-toast-stack {
+  position: fixed;
+  top: 0;
+  inset-inline-end: 0;
+  z-index: var(--awc-z-index-toast);
+  width: 28rem;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.awc-toast-stack awc-alert {
+  margin: var(--awc-spacing-medium);
+}
+
+.awc-toast-stack awc-alert::part(base) {
+  box-shadow: var(--awc-shadow-large);
+}

@@ -6,6 +6,7 @@ import DocumentationTemplate from './template/DocumentationTemplate.mdx';
 import prettify from 'esthetic';
 
 import '../src/awc.ts';
+import '../src/themes/bootstrap.css';
 import '../src/themes/light.css';
 import '../src/themes/dark.css';
 import './template/story.style.css';

@@ -104,7 +104,7 @@ export default class AWCMapCircle extends LeafletPopupContentMixin(AWCLeafletEle
    */
   @property({ type: String, attribute: 'class-name' }) className = '';
 
-  getPathOptions(): L.PathOptions {
+  getPathOptions(): L.CircleMarkerOptions {
     return {
       stroke: this.stroke,
       color: this.color,
@@ -116,18 +116,15 @@ export default class AWCMapCircle extends LeafletPopupContentMixin(AWCLeafletEle
       dashArray: this.dashArray,
       lineCap: this.lineCap,
       lineJoin: this.lineJoin,
-      className: this.className
+      className: this.className,
+      radius: this.radius as number
     };
   }
 
   containerChanged(): void {
     if (!(this.latitude && this.longitude && this.container)) return;
 
-    this.feature = L.circle(
-      [this.latitude as number, this.longitude as number],
-      this.radius as number,
-      this.getPathOptions()
-    );
+    this.feature = L.circle([this.latitude as number, this.longitude as number], this.getPathOptions());
     this.feature.on(AWCMapCircle.events, this.onLeafletEvent);
     this.updatePopupContent();
 

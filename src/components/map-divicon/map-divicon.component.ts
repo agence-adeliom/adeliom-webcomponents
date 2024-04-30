@@ -1,9 +1,8 @@
 import * as L from 'leaflet';
 import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { property } from 'lit/decorators.js';
-import componentStyles from '../../styles/component.styles.js';
-import styles from './map-divicon.styles.js';
-import type { CSSResultGroup, PropertyValues } from 'lit';
+
+import type { PropertyValues } from 'lit';
 
 /**
  * @summary Element which defines an divicon template for markers
@@ -13,8 +12,6 @@ import type { CSSResultGroup, PropertyValues } from 'lit';
  *
  */
 export default class AWCMapDivicon extends AWCLeafletElement {
-  static styles: CSSResultGroup = [componentStyles, styles];
-
   /**
    * The `icon-width` attribute sets the size of the icon image in pixels.
    */

@@ -1,6 +1,6 @@
-:host,
-.awc-theme-dark,
-:is([data-mode='light'] .dark\:awc-theme-dark),
+:host, 
+.awc-theme-dark, 
+:is([data-mode='light'] .dark\:awc-theme-dark), 
 [data-mode='dark'] {
   color-scheme: dark;
 
@@ -11,9 +11,9 @@
   --awc-toggle-size-medium: 1.125rem;
   --awc-toggle-size-small: 0.875rem;
   --awc-input-label-color: inherit;
+  --awc-input-focus-ring-color: rgba(215, 43, 128, 0.4);
   --awc-input-focus-ring-offset: 0;
-  --awc-input-focus-ring-color: hsl(198.6 88.7% 48.4% / 40%);
-  --awc-input-required-content: '*';
+  --awc-input-required-content: "*";
   --awc-input-border-width: 0.0625rem;
   --awc-input-height-large: 3.125rem;
   --awc-input-height-medium: 2.5rem;
@@ -67,11 +67,9 @@
   --awc-font-size-small: 0.875rem;
   --awc-font-size-xsmall: 0.75rem;
   --awc-font-size-2xsmall: 0.625rem;
-  --awc-font-serif: Georgia, 'Times New Roman', serif;
-  --awc-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --awc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --awc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --awc-font-serif: Georgia, 'Times New Roman', serif	;
+  --awc-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --awc-font-mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
   --awc-transition-xfast: 50ms;
   --awc-transition-fast: 150ms;
@@ -203,32 +201,11 @@
   --awc-input-border-radius-large: var(--awc-border-radius-medium);
   --awc-input-border-radius-medium: var(--awc-border-radius-medium);
   --awc-input-border-radius-small: var(--awc-border-radius-medium);
-  --awc-input-background-color: var(--awc-color-neutral-0);
+  --awc-input-border-color-focus: var(--awc-color-primary-600);
+  --awc-input-background-color-focus: var(--awc-color-neutral-0);
+  --awc-input-background-color-hover: var(--awc-color-neutral-0);
+  --awc-input-background-color-default: var(--awc-color-neutral-0);
   --awc-focus-ring-color: var(--awc-color-primary-800);
-  --awc-badge-border-radius: var(--awc-border-radius-pill);
-  --awc-text-title-color: var(--awc-color-neutral-1000);
-  --awc-button-icon-color: var(--awc-color-primary-600);
-  --awc-button-icon-border-color: var(--awc-color-primary-600);
-  --awc-button-icon-background-color: var(--awc-color-transparent);
-  --awc-button-text-icon: var(--awc-color-primary-600);
-  --awc-button-text-color: var(--awc-color-neutral-1000);
-  --awc-button-text-border-color: var(--awc-color-transparent);
-  --awc-button-text-background-color: var(--awc-color-transparent);
-  --awc-button-tertiary-color: var(--awc-color-neutral-0);
-  --awc-button-tertiary-border-color: var(--awc-color-tertiary-600);
-  --awc-button-tertiary-background-color: var(--awc-color-tertiary-600);
-  --awc-button-secondary-color: var(--awc-color-primary-600);
-  --awc-button-secondary-border-color: var(--awc-color-primary-600);
-  --awc-button-secondary-background-color: var(--awc-color-transparent);
-  --awc-button-primary-color: var(--awc-color-neutral-0);
-  --awc-button-primary-border-color: var(--awc-color-primary-600);
-  --awc-button-primary-background-color: var(--awc-color-primary-600);
-  --awc-button-font-size-large: var(--awc-font-size-medium);
-  --awc-button-font-size-medium: var(--awc-font-size-small);
-  --awc-button-font-size-small: var(--awc-font-size-xsmall);
-  --awc-button-border-radius: var(--awc-border-radius-small);
-  --awc-tag-border-radius: var(--awc-border-radius-small);
-  --awc-image-border-radius: 0;
   --awc-section-spacing-button-button-mobile: var(--awc-spacing-xsmall);
   --awc-section-spacing-button-button-desktop: var(--awc-spacing-small);
   --awc-section-spacing-button-text-mobile: var(--awc-spacing-2xlarge);
@@ -242,6 +219,52 @@
   --awc-card-padding: var(--awc-spacing-xlarge);
   --awc-card-background-color: var(--awc-color-neutral-0);
   --awc-card-border-radius: var(--awc-border-radius-medium);
+  --awc-badge-border-radius: var(--awc-border-radius-pill);
+  --awc-text-title-color: var(--awc-color-neutral-1000);
+  --awc-image-border-radius: 0;
+  --awc-tag-border-radius: var(--awc-border-radius-small);
+  --awc-button-icon-color-hover: var(--awc-color-primary-800);
+  --awc-button-icon-color-default: var(--awc-color-primary-600);
+  --awc-button-icon-border-color-hover: var(--awc-color-primary-800);
+  --awc-button-icon-border-color-default: var(--awc-color-primary-600);
+  --awc-button-icon-background-color-disabled: var(--awc-color-transparent);
+  --awc-button-icon-background-color-hover: var(--awc-color-transparent);
+  --awc-button-icon-background-color-default: var(--awc-color-transparent);
+  --awc-button-text-icon-hover: var(--awc-color-primary-800);
+  --awc-button-text-icon-default: var(--awc-color-primary-600);
+  --awc-button-text-color-hover: var(--awc-color-neutral-1000);
+  --awc-button-text-color-default: var(--awc-color-neutral-1000);
+  --awc-button-text-border-color-disabled: var(--awc-color-transparent);
+  --awc-button-text-border-color-hover: var(--awc-color-transparent);
+  --awc-button-text-border-color-default: var(--awc-color-transparent);
+  --awc-button-text-background-color-disabled: var(--awc-color-transparent);
+  --awc-button-text-background-color-hover: var(--awc-color-transparent);
+  --awc-button-text-background-color-default: var(--awc-color-transparent);
+  --awc-button-tertiary-color-disabled: var(--awc-color-neutral-0);
+  --awc-button-tertiary-color-hover: var(--awc-color-neutral-0);
+  --awc-button-tertiary-color-default: var(--awc-color-neutral-0);
+  --awc-button-tertiary-border-color-hover: var(--awc-color-tertiary-800);
+  --awc-button-tertiary-border-color-default: var(--awc-color-tertiary-600);
+  --awc-button-tertiary-background-color-hover: var(--awc-color-tertiary-800);
+  --awc-button-tertiary-background-color-default: var(--awc-color-tertiary-600);
+  --awc-button-secondary-color-hover: var(--awc-color-primary-800);
+  --awc-button-secondary-color-default: var(--awc-color-primary-600);
+  --awc-button-secondary-border-color-hover: var(--awc-color-primary-800);
+  --awc-button-secondary-border-color-default: var(--awc-color-primary-600);
+  --awc-button-secondary-background-color-disabled: var(--awc-color-transparent);
+  --awc-button-secondary-background-color-hover: var(--awc-color-transparent);
+  --awc-button-secondary-background-color-default: var(--awc-color-transparent);
+  --awc-button-primary-color-disabled: var(--awc-color-neutral-0);
+  --awc-button-primary-color-hover: var(--awc-color-neutral-0);
+  --awc-button-primary-color-default: var(--awc-color-neutral-0);
+  --awc-button-primary-border-color-hover: var(--awc-color-primary-800);
+  --awc-button-primary-border-color-default: var(--awc-color-primary-600);
+  --awc-button-primary-background-color-hover: var(--awc-color-primary-800);
+  --awc-button-primary-background-color-default: var(--awc-color-primary-600);
+  --awc-button-font-size-large: var(--awc-font-size-medium);
+  --awc-button-font-size-medium: var(--awc-font-size-small);
+  --awc-button-font-size-small: var(--awc-font-size-xsmall);
+  --awc-button-border-radius: var(--awc-border-radius-small);
   --awc-background-color: var(--awc-color-neutral-0);
   --awc-font-size-base: var(--awc-font-size-medium);
   --awc-font-size-heading6: var(--awc-font-size-large);
@@ -268,43 +291,24 @@
   --awc-input-filled-background-color: var(--awc-color-neutral-100);
   --awc-input-placeholder-color: var(--awc-color-neutral-500);
   --awc-input-icon-color: var(--awc-color-neutral-500);
-  --awc-input-color: var(--awc-color-neutral-700);
-  --awc-input-border-color: var(--awc-color-neutral-300);
-  --awc-text-paragraph-color: var(--awc-color-neutral-800);
+  --awc-input-color-disabled: var(--awc-color-neutral-900);
+  --awc-input-color-focus: var(--awc-color-neutral-700);
+  --awc-input-color-hover: var(--awc-color-neutral-700);
+  --awc-input-color-default: var(--awc-color-neutral-700);
+  --awc-input-border-color-disabled: var(--awc-color-neutral-300);
+  --awc-input-border-color-hover: var(--awc-color-neutral-400);
+  --awc-input-border-color-default: var(--awc-color-neutral-300);
+  --awc-input-background-color-disabled: var(--awc-color-neutral-100);
   --awc-card-border-color: var(--awc-color-neutral-200);
-
-  --awc-shadow-xsmall: calc(var(--awc-shadow-xsmall-x) * 1px) calc(var(--awc-shadow-xsmall-y) * 1px)
-    calc(var(--awc-shadow-xsmall-blur) * 1px) calc(var(--awc-shadow-xsmall-spread) * 1px) var(--awc-shadow-xsmall-color);
-  --awc-shadow-small: calc(var(--awc-shadow-small-x) * 1px) calc(var(--awc-shadow-small-y) * 1px)
-    calc(var(--awc-shadow-small-blur) * 1px) calc(var(--awc-shadow-small-spread) * 1px) var(--awc-shadow-small-color);
-  --awc-shadow-medium: calc(var(--awc-shadow-medium-x) * 1px) calc(var(--awc-shadow-medium-y) * 1px)
-    calc(var(--awc-shadow-medium-blur) * 1px) calc(var(--awc-shadow-medium-spread) * 1px) var(--awc-shadow-medium-color);
-  --awc-shadow-large: calc(var(--awc-shadow-large-x) * 1px) calc(var(--awc-shadow-large-y) * 1px)
-    calc(var(--awc-shadow-large-blur) * 1px) calc(var(--awc-shadow-large-spread) * 1px) var(--awc-shadow-large-color);
-  --awc-shadow-xlarge: calc(var(--awc-shadow-xlarge-x) * 1px) calc(var(--awc-shadow-xlarge-y) * 1px)
-    calc(var(--awc-shadow-xlarge-blur) * 1px) calc(var(--awc-shadow-xlarge-spread) * 1px) var(--awc-shadow-xlarge-color);
-}
-
-.awc-scroll-lock {
-  padding-right: var(--awc-scroll-lock-size) !important;
-  overflow: hidden !important;
-}
-
-.awc-toast-stack {
-  position: fixed;
-  top: 0;
-  inset-inline-end: 0;
-  z-index: var(--awc-z-index-toast);
-  width: 28rem;
-  max-width: 100%;
-  max-height: 100%;
-  overflow: auto;
-}
-
-.awc-toast-stack awc-alert {
-  margin: var(--awc-spacing-medium);
-}
-
-.awc-toast-stack awc-alert::part(base) {
-  box-shadow: var(--awc-shadow-large);
+  --awc-text-paragraph-color: var(--awc-color-neutral-800);
+  --awc-button-icon-color-disabled: var(--awc-color-neutral-300);
+  --awc-button-icon-border-color-disabled: var(--awc-color-neutral-300);
+  --awc-button-text-icon-disabled: var(--awc-color-neutral-300);
+  --awc-button-text-color-disabled: var(--awc-color-neutral-300);
+  --awc-button-tertiary-border-color-disabled: var(--awc-color-neutral-300);
+  --awc-button-tertiary-background-color-disabled: var(--awc-color-neutral-300);
+  --awc-button-secondary-color-disabled: var(--awc-color-neutral-300);
+  --awc-button-secondary-border-color-disabled: var(--awc-color-neutral-300);
+  --awc-button-primary-border-color-disabled: var(--awc-color-neutral-300);
+  --awc-button-primary-background-color-disabled: var(--awc-color-neutral-300);
 }
