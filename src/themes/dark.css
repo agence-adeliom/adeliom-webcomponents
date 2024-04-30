@@ -1,6 +1,6 @@
-:host, 
-.awc-theme-dark, 
-:is([data-mode='light'] .dark\:awc-theme-dark), 
+:host,
+.awc-theme-dark,
+:is([data-mode='light'] .dark\:awc-theme-dark),
 [data-mode='dark'] {
   color-scheme: dark;
 
@@ -13,7 +13,7 @@
   --awc-input-label-color: inherit;
   --awc-input-focus-ring-color: rgba(215, 43, 128, 0.4);
   --awc-input-focus-ring-offset: 0;
-  --awc-input-required-content: "*";
+  --awc-input-required-content: '*';
   --awc-input-border-width: 0.0625rem;
   --awc-input-height-large: 3.125rem;
   --awc-input-height-medium: 2.5rem;
@@ -67,9 +67,11 @@
   --awc-font-size-small: 0.875rem;
   --awc-font-size-xsmall: 0.75rem;
   --awc-font-size-2xsmall: 0.625rem;
-  --awc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --awc-font-serif: Georgia, 'Times New Roman', serif	;
-  --awc-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --awc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --awc-font-serif: Georgia, 'Times New Roman', serif;
+  --awc-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --awc-font-mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
   --awc-transition-xfast: 50ms;
   --awc-transition-fast: 150ms;

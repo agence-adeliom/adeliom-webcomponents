@@ -193,4 +193,4 @@ export default {
       '10xlarge': 'var(--awc-font-size-10xlarge)'
     }
   }
-}
+};

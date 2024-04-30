@@ -18,6 +18,7 @@ While convenient, autoloading may lead to a Flash of Undefined Custom Elements. 
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/light.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/bootstrap.css" />
 <script
   type="module"
   src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc-autoloader.js"
@@ -32,6 +33,7 @@ However, you can also [cherry pick](#cherry-picking) components if you want to l
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/light.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/themes/bootstrap.css" />
 <script type="module" src="https://cdn.jsdelivr.net/npm/@agence-adeliom/awc@%VERSION%/%CDNDIR%/awc.js"></script>
 ```
 
@@ -81,6 +83,7 @@ Once you've done that, add the following tags to your page. Make sure to update 
 
 ```html
 <link rel="stylesheet" href="/awc/%NPMDIR%/themes/light.css" />
+<link rel="stylesheet" href="/awc/%NPMDIR%/themes/bootstrap.css" />
 <script type="module" src="/awc/%NPMDIR%/awc.js"></script>
 ```
 
@@ -135,6 +138,7 @@ Here's an example that loads only the button component. Again, if you're not usi
 
 ```html
 <link rel="stylesheet" href="/path/to/awc/%NPMDIR%/themes/light.css" />
+<link rel="stylesheet" href="/path/to/awc/%NPMDIR%/themes/bootstrap.css" />
 
 <script type="module" data-awc="/path/to/awc/%NPMDIR%">
   import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
@@ -289,6 +293,7 @@ export default async bud => {
 
 ```js
 import '@agence-adeliom/awc/%NPMDIR%/themes/light.css';
+import '@agence-adeliom/awc/%NPMDIR%/themes/bootstrap.css';
 import '@agence-adeliom/awc/%NPMDIR%/components/button/button.js';
 import '@agence-adeliom/awc/%NPMDIR%/components/icon/icon.js';
 import '@agence-adeliom/awc/%NPMDIR%/components/input/input.js';

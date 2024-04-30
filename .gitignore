@@ -9,3 +9,4 @@ cdn
 /docs/assets/styles/tailwind.min.css
 storybook-static
 /.env
+/shoelace-next
