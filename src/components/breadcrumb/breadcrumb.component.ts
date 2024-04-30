@@ -1,6 +1,7 @@
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import styles from './breadcrumb.styles.js';
@@ -21,7 +22,7 @@ import type AWCBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';
  * @csspart base - The component's base wrapper.
  */
 export default class AWCBreadcrumb extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'awc-icon': AWCIcon };
 
   private readonly localize = new LocalizeController(this);

@@ -1,6 +1,7 @@
 import { classMap } from 'lit/directives/class-map.js';
 import { defaultValue } from '../../internal/default-value.js';
 import { FormControlController } from '../../internal/form.js';
+import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { live } from 'lit/directives/live.js';
@@ -8,6 +9,8 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
+import componentStyles from '../../styles/component.styles.js';
+import formControlStyles from '../../styles/form-control.styles.js';
 import styles from './checkbox.styles.js';
 import type { AWCFormControl } from '../../internal/awc-element.js';
 import type { CSSResultGroup } from 'lit';
@@ -21,6 +24,7 @@ import type { CSSResultGroup } from 'lit';
  * @dependency awc-icon
  *
  * @slot - The checkbox's label.
+ * @slot help-text - Text that describes how to use the checkbox. Alternatively, you can use the `help-text` attribute.
  *
  * @event awc-blur - Emitted when the checkbox loses focus.
  * @event awc-change - Emitted when the checked state changes.
@@ -35,9 +39,10 @@ import type { CSSResultGroup } from 'lit';
  * @csspart checked-icon - The checked icon, an `<awc-icon>` element.
  * @csspart indeterminate-icon - The indeterminate icon, an `<awc-icon>` element.
  * @csspart label - The container that wraps the checkbox's label.
+ * @csspart form-control-help-text - The help text's wrapper.
  */
 export default class AWCCheckbox extends AWCElement implements AWCFormControl {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
   static dependencies = { 'awc-icon': AWCIcon };
 
   private readonly formControlController = new FormControlController(this, {
@@ -45,6 +50,7 @@ export default class AWCCheckbox extends AWCElement implements AWCFormControl {
     defaultValue: (control: AWCCheckbox) => control.defaultChecked,
     setValue: (control: AWCCheckbox, checked: boolean) => (control.checked = checked)
   });
+  private readonly hasSlotController = new HasSlotController(this, 'help-text');
 
   @query('input[type="checkbox"]') input: HTMLInputElement;
 
@@ -87,6 +93,9 @@ export default class AWCCheckbox extends AWCElement implements AWCFormControl {
 
   /** Makes the checkbox a required field. */
   @property({ type: Boolean, reflect: true }) required = false;
+
+  /** The checkbox's help text. If you need to display HTML, use the `help-text` slot instead. */
+  @property({ attribute: 'help-text' }) helpText = '';
 
   /** Gets the validity state object */
   get validity() {
@@ -180,42 +189,55 @@ export default class AWCCheckbox extends AWCElement implements AWCFormControl {
   }
 
   render() {
+    const hasHelpTextSlot = this.hasSlotController.test('help-text');
+    const hasHelpText = this.helpText ? true : !!hasHelpTextSlot;
+
     //
     // NOTE: we use a <div> around the label slot because of this Chrome bug.
     //
     // https://bugs.chromium.org/p/chromium/issues/detail?id=1413733
     //
     return html`
-      <label
-        part="base"
+      <div
         class=${classMap({
-      checkbox: true,
-      'checkbox--checked': this.checked,
-      'checkbox--disabled': this.disabled,
-      'checkbox--focused': this.hasFocus,
-      'checkbox--indeterminate': this.indeterminate,
-      'checkbox--small': this.size === 'small',
-      'checkbox--medium': this.size === 'medium',
-      'checkbox--large': this.size === 'large'
-    })}
+          'form-control': true,
+          'form-control--small': this.size === 'small',
+          'form-control--medium': this.size === 'medium',
+          'form-control--large': this.size === 'large',
+          'form-control--has-help-text': hasHelpText
+        })}
       >
-        <input
-          class="checkbox__input"
-          type="checkbox"
-          title=${this.title /* An empty title prevents browser validation tooltips from appearing on hover */}
-          name=${this.name}
-          value=${ifDefined(this.value)}
-          .indeterminate=${live(this.indeterminate)}
-          .checked=${live(this.checked)}
-          .disabled=${this.disabled}
-          .required=${this.required}
-          aria-checked=${this.checked ? 'true' : 'false'}
-          @click=${this.handleClick}
-          @input=${this.handleInput}
-          @invalid=${this.handleInvalid}
-          @blur=${this.handleBlur}
-          @focus=${this.handleFocus}
-        />
+        <label
+          part="base"
+          class=${classMap({
+            checkbox: true,
+            'checkbox--checked': this.checked,
+            'checkbox--disabled': this.disabled,
+            'checkbox--focused': this.hasFocus,
+            'checkbox--indeterminate': this.indeterminate,
+            'checkbox--small': this.size === 'small',
+            'checkbox--medium': this.size === 'medium',
+            'checkbox--large': this.size === 'large'
+          })}
+        >
+          <input
+            class="checkbox__input"
+            type="checkbox"
+            title=${this.title /* An empty title prevents browser validation tooltips from appearing on hover */}
+            name=${this.name}
+            value=${ifDefined(this.value)}
+            .indeterminate=${live(this.indeterminate)}
+            .checked=${live(this.checked)}
+            .disabled=${this.disabled}
+            .required=${this.required}
+            aria-checked=${this.checked ? 'true' : 'false'}
+            aria-describedby="help-text"
+            @click=${this.handleClick}
+            @input=${this.handleInput}
+            @invalid=${this.handleInvalid}
+            @blur=${this.handleBlur}
+            @focus=${this.handleFocus}
+          />
 
         <span
           part="control${this.checked ? ' control--checked' : ''}${this.indeterminate ? ' control--indeterminate' : ''}"

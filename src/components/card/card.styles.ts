@@ -1,9 +1,6 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 
 export default css`
-  ${componentStyles}
-
   :host {
     --background-color: var(--awc-card-background-color);
     --border-color: var(--awc-card-border-color);

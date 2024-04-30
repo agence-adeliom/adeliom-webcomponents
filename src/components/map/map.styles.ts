@@ -1,15 +1,7 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
-import leafletStyles from './styles/leaflet.styles.js';
-import locateStyles from './styles/locate.styles.js';
-import markerClusterStyles from './styles/markercluster.styles.js';
+
 
 export default css`
-  ${componentStyles}
-  ${leafletStyles}
-  ${locateStyles}
-  ${markerClusterStyles}
-
   :host {
     display: block;
     --link-color: var(--awc-color-primary-600);

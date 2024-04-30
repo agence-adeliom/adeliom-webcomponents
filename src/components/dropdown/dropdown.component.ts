@@ -3,15 +3,17 @@ import { classMap } from 'lit/directives/class-map.js';
 import { getAnimation, setDefaultAnimation } from '../../utilities/animation-registry.js';
 import { getTabbableBoundary } from '../../internal/tabbable.js';
 import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCPopup from '../popup/popup.component.js';
 import styles from './dropdown.styles.js';
-import type { AWCSelectEvent } from '../../events/awc-select.js';
 import type { CSSResultGroup } from 'lit';
+import type { AWCSelectEvent } from '../../events/awc-select.js';
 import type AWCButton from '../button/button.js';
 import type AWCIconButton from '../icon-button/icon-button.js';
 import type AWCMenu from '../menu/menu.js';
@@ -40,7 +42,7 @@ import type AWCMenu from '../menu/menu.js';
  * @animation dropdown.hide - The animation to use when hiding the dropdown.
  */
 export default class AWCDropdown extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'awc-popup': AWCPopup };
 
   @query('.dropdown') popup: AWCPopup;
@@ -100,6 +102,11 @@ export default class AWCDropdown extends AWCElement {
    * `overflow: auto|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all, scenarios.
    */
   @property({ type: Boolean }) hoist = false;
+
+  /**
+   * Syncs the popup width or height to that of the trigger element.
+   */
+  @property({ reflect: true }) sync: 'width' | 'height' | 'both' | undefined = undefined;
 
   connectedCallback() {
     super.connectedCallback();
@@ -408,6 +415,7 @@ export default class AWCDropdown extends AWCElement {
         shift
         auto-size="vertical"
         auto-size-padding="10"
+        sync=${ifDefined(this.sync ? this.sync : undefined)}
         class=${classMap({
           dropdown: true,
           'dropdown--open': this.open

@@ -13,26 +13,26 @@ const awcEventToEvent: Record<string, string> = {
 // Match event type name strings that are registered on GlobalEventHandlersEventMap...
 type EventTypeRequiresDetail<T> = T extends keyof GlobalEventHandlersEventMap
   ? // ...where the event detail is an object...
-  GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, unknown>>
-  ? // ...that is non-empty...
-  GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, never>>
-  ? never
-  : // ...and has at least one non-optional property
-  Partial<GlobalEventHandlersEventMap[T]['detail']> extends GlobalEventHandlersEventMap[T]['detail']
-  ? never
-  : T
-  : never
+    GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, unknown>>
+    ? // ...that is non-empty...
+      GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, never>>
+      ? never
+      : // ...and has at least one non-optional property
+        Partial<GlobalEventHandlersEventMap[T]['detail']> extends GlobalEventHandlersEventMap[T]['detail']
+        ? never
+        : T
+    : never
   : never;
 
 // The inverse of the above (match any type that doesn't match EventTypeRequiresDetail)
 type EventTypeDoesNotRequireDetail<T> = T extends keyof GlobalEventHandlersEventMap
   ? GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, unknown>>
-  ? GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, never>>
-  ? T
-  : Partial<GlobalEventHandlersEventMap[T]['detail']> extends GlobalEventHandlersEventMap[T]['detail']
-  ? T
-  : never
-  : T
+    ? GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, never>>
+      ? T
+      : Partial<GlobalEventHandlersEventMap[T]['detail']> extends GlobalEventHandlersEventMap[T]['detail']
+        ? T
+        : never
+    : T
   : T;
 
 // `keyof EventTypesWithRequiredDetail` lists all registered event types that require detail
@@ -53,19 +53,19 @@ type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
 // event requires it)
 type AWCEventInit<T> = T extends keyof GlobalEventHandlersEventMap
   ? GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, unknown>>
-  ? GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, never>>
-  ? CustomEventInit<GlobalEventHandlersEventMap[T]['detail']>
-  : Partial<GlobalEventHandlersEventMap[T]['detail']> extends GlobalEventHandlersEventMap[T]['detail']
-  ? CustomEventInit<GlobalEventHandlersEventMap[T]['detail']>
-  : WithRequired<CustomEventInit<GlobalEventHandlersEventMap[T]['detail']>, 'detail'>
-  : CustomEventInit
+    ? GlobalEventHandlersEventMap[T] extends CustomEvent<Record<PropertyKey, never>>
+      ? CustomEventInit<GlobalEventHandlersEventMap[T]['detail']>
+      : Partial<GlobalEventHandlersEventMap[T]['detail']> extends GlobalEventHandlersEventMap[T]['detail']
+        ? CustomEventInit<GlobalEventHandlersEventMap[T]['detail']>
+        : WithRequired<CustomEventInit<GlobalEventHandlersEventMap[T]['detail']>, 'detail'>
+    : CustomEventInit
   : CustomEventInit;
 
 // Given an event name string, get the type of the event
 type GetCustomEventType<T> = T extends keyof GlobalEventHandlersEventMap
   ? GlobalEventHandlersEventMap[T] extends CustomEvent<unknown>
-  ? GlobalEventHandlersEventMap[T]
-  : CustomEvent<unknown>
+    ? GlobalEventHandlersEventMap[T]
+    : CustomEvent<unknown>
   : CustomEvent<unknown>;
 
 // `keyof ValidEventTypeMap` is equivalent to `keyof GlobalEventHandlersEventMap` but gives a nicer error message
@@ -111,10 +111,12 @@ export default class AWCElement extends LitElement {
   /* eslint-enable */
 
   static define(name: string, elementConstructor = this, options: ElementDefinitionOptions = {}) {
-    const currentlyRegisteredConstructor = customElements.get(name) as CustomElementConstructor | typeof AWCElement;
+    const currentlyRegisteredConstructor = customElements.get(name) as
+      CustomElementConstructor |
+      typeof AWCElement;
 
     if (!currentlyRegisteredConstructor) {
-      customElements.define(name, class extends elementConstructor { } as unknown as CustomElementConstructor, options);
+      customElements.define(name, class extends elementConstructor {} as unknown as CustomElementConstructor, options);
       return;
     }
 

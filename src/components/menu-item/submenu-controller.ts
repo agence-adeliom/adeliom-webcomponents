@@ -131,14 +131,14 @@ export class SubmenuController implements ReactiveController {
       event.preventDefault();
       event.stopPropagation();
       if (this.popupRef.value.active) {
-        if (menuItems && menuItems[0] instanceof HTMLElement) {
+        if (menuItems[0] instanceof HTMLElement) {
           menuItems[0].focus();
         }
       } else {
         this.enableSubmenu(false);
         this.host.updateComplete.then(() => {
-          if (menuItems && menuItems[0] instanceof HTMLElement) {
-            menuItems[0].focus();
+          if (menuItems![0] instanceof HTMLElement) {
+            menuItems![0].focus();
           }
         });
         this.host.requestUpdate();
@@ -229,6 +229,7 @@ export class SubmenuController implements ReactiveController {
   // newly opened menu.
   private enableSubmenu(delay = true) {
     if (delay) {
+      window.clearTimeout(this.enableSubmenuTimer);
       this.enableSubmenuTimer = window.setTimeout(() => {
         this.setSubmenuState(true);
       }, this.submenuOpenDelay);
@@ -238,7 +239,7 @@ export class SubmenuController implements ReactiveController {
   }
 
   private disableSubmenu() {
-    clearTimeout(this.enableSubmenuTimer);
+    window.clearTimeout(this.enableSubmenuTimer);
     this.setSubmenuState(false);
   }
 

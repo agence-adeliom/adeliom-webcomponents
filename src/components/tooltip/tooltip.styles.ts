@@ -1,9 +1,6 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 
 export default css`
-  ${componentStyles}
-
   :host {
     --max-width: 20rem;
     --hide-delay: 0ms;
@@ -48,6 +45,8 @@ export default css`
     font-size: var(--awc-tooltip-font-size);
     font-weight: var(--awc-tooltip-font-weight);
     line-height: var(--awc-tooltip-line-height);
+    text-align: start;
+    white-space: normal;
     color: var(--awc-tooltip-color);
     padding: var(--awc-tooltip-padding-y) var(--awc-tooltip-padding-x);
     pointer-events: none;

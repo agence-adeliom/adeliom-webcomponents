@@ -12,6 +12,7 @@ import AWCElement from '../../internal/awc-element.js';
 import AWCFormatBytes from '../format-bytes/format-bytes.component.js';
 import AWCIconButton from '../icon-button/icon-button.component.js';
 import AWCProgressBar from '../progress-bar/progress-bar.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './file-upload-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -46,7 +47,7 @@ import type { CSSResultGroup } from 'lit';
  * @animation file-upload-item.hide - The animation to use when hiding the file item.
  */
 export default class AWCFileUploadItem extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
     'awc-format-bytes': AWCFormatBytes,
     'awc-progress-bar': AWCProgressBar,

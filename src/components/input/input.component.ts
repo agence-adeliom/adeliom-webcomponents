@@ -8,6 +8,8 @@ import { live } from 'lit/directives/live.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
+import formControlStyles from '../../styles/form-control.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import styles from './input.styles.js';
@@ -49,7 +51,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart suffix - The container that wraps the suffix.
  */
 export default class AWCInput extends AWCElement implements AWCFormControl {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
   static dependencies = { 'awc-icon': AWCIcon };
 
   private readonly formControlController = new FormControlController(this, {
@@ -249,13 +251,16 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
   }
 
   private handleClearClick(event: MouseEvent) {
-    this.value = '';
-    this.emit('awc-clear');
-    this.emit('awc-input');
-    this.emit('awc-change');
-    this.input.focus();
+    event.preventDefault();
 
-    event.stopPropagation();
+    if (this.value !== '') {
+      this.value = '';
+      this.emit('awc-clear');
+      this.emit('awc-input');
+      this.emit('awc-change');
+    }
+
+    this.input.focus();
   }
 
   private handleFocus() {
@@ -491,14 +496,11 @@ export default class AWCInput extends AWCElement implements AWCFormControl {
               @blur=${this.handleBlur}
             />
 
-            ${hasClearIcon
+            ${isClearIconVisible
               ? html`
                   <button
                     part="clear-button"
-                    class=${classMap({
-                      input__clear: true,
-                      'input__clear--visible': isClearIconVisible
-                    })}
+                    class="input__clear"
                     type="button"
                     aria-label=${this.localize.term('clearEntry')}
                     @click=${this.handleClearClick}

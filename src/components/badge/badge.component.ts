@@ -1,6 +1,7 @@
 import { classMap } from 'lit/directives/class-map.js';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './badge.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -16,7 +17,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart base - The component's base wrapper.
  */
 export default class AWCBadge extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   /** The badge's theme variant. */
   @property({ reflect: true }) variant:

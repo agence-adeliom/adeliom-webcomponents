@@ -4,8 +4,7 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import styles from './map-tilelayer-google.styles.js';
-import type { CSSResultGroup } from 'lit';
+
 
 /* eslint-disable @typescript-eslint/no-namespace*/
 declare module 'leaflet' {
@@ -119,7 +118,7 @@ declare module 'leaflet' {
  * @slot - The default slot for attribution.
  */
 export default class AWCMapTilelayerGoogle extends LeafletILayerMixin(AWCLeafletElement) {
-  static styles: CSSResultGroup = styles;
+
 
   static readonly events = 'loading load tileloadstart tileload tileunload';
 

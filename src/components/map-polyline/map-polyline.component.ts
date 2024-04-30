@@ -3,8 +3,7 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { LeafletPopupContentMixin } from '../../internal/leaflet/popup-content.js';
 import { property } from 'lit/decorators.js';
 import AWCMapPoint from '../map-point/map-point.component.js';
-import styles from './map-polyline.styles.js';
-import type { CSSResultGroup } from 'lit';
+
 
 /**
  * @summary Element for putting a polyline on the map
@@ -16,7 +15,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot - The default slot.
  */
 export default class AWCMapPolyline extends LeafletPopupContentMixin(AWCLeafletElement) {
-  static styles: CSSResultGroup = styles;
+
 
   static readonly events = 'click dblclick mousedown mouseover mouseout contextmenu add remove popupopen popupclose';
 

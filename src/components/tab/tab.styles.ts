@@ -1,9 +1,6 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 
 export default css`
-  ${componentStyles}
-
   :host {
     display: inline-block;
   }
@@ -15,7 +12,7 @@ export default css`
     font-size: var(--awc-font-size-small);
     font-weight: var(--awc-font-weight-semibold);
     border-radius: var(--awc-border-radius-medium);
-    color: currentColor;
+    color: var(--awc-color-neutral-600);
     padding: var(--awc-spacing-medium) var(--awc-spacing-large);
     white-space: nowrap;
     user-select: none;

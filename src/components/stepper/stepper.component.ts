@@ -2,6 +2,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import { html } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './stepper.styles.js';
 import type { CSSResultGroup } from 'lit';
 import type AWCStepperItem from '../stepper-item/stepper-item.js';
@@ -34,7 +35,7 @@ import type AWCStepperItem from '../stepper-item/stepper-item.js';
  * @cssproperty [--completed-backgound-color=var(--awc-color-primary-600)] - The background color of the step badge when completed.
  */
 export default class AWCStepper extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   /** An example attribute. */
   @property({ type: Boolean }) vertical = false;

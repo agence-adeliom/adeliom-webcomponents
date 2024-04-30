@@ -9,6 +9,19 @@ function getScrollbarWidth() {
 }
 
 /**
+ * Used in conjunction with `scrollbarWidth` to set proper body padding in case the user has padding already on the `<body>` element.
+ */
+function getExistingBodyPadding() {
+  const padding = Number(getComputedStyle(document.body).paddingRight.replace(/px/, ''));
+
+  if (isNaN(padding) || !padding) {
+    return 0;
+  }
+
+  return padding;
+}
+
+/**
  * Prevents body scrolling. Keeps track of which elements requested a lock so multiple levels of locking are possible
  * without premature unlocking.
  */
@@ -17,10 +30,24 @@ export function lockBodyScrolling(lockingEl: HTMLElement) {
 
   // When the first lock is created, set the scroll lock size to match the scrollbar's width to prevent content from
   // shifting. We only do this on the first lock because the scrollbar width will measure zero after overflow is hidden.
-  if (!document.body.classList.contains('sl-scroll-lock')) {
-    const scrollbarWidth = getScrollbarWidth(); // must be measured before the `sl-scroll-lock` class is applied
-    document.body.classList.add('sl-scroll-lock');
-    document.body.style.setProperty('--sl-scroll-lock-size', `${scrollbarWidth}px`);
+  if (!document.documentElement.classList.contains('awc-scroll-lock')) {
+    /** Scrollbar width + body padding calculation can go away once Safari has scrollbar-gutter support. */
+    const scrollbarWidth = getScrollbarWidth() + getExistingBodyPadding(); // must be measured before the `sl-scroll-lock` class is applied
+
+    let scrollbarGutterProperty = getComputedStyle(document.documentElement).scrollbarGutter;
+
+    // default is auto, unsupported browsers is "undefined"
+    if (!scrollbarGutterProperty || scrollbarGutterProperty === 'auto') {
+      scrollbarGutterProperty = 'stable';
+    }
+
+    if (scrollbarWidth <= 0) {
+      // if there's no scrollbar, just set it to "revert" so whatever the user has set gets used. This is useful is the page is not overflowing and showing a scrollbar, or if the user has overflow: hidden, or any other reason a scrollbar may not be showing.
+      scrollbarGutterProperty = 'revert';
+    }
+    document.documentElement.style.setProperty('--awc-scroll-lock-gutter', scrollbarGutterProperty);
+    document.documentElement.classList.add('awc-scroll-lock');
+    document.documentElement.style.setProperty('--awc-scroll-lock-size', `${scrollbarWidth}px`);
   }
 }
 
@@ -31,8 +58,8 @@ export function unlockBodyScrolling(lockingEl: HTMLElement) {
   locks.delete(lockingEl);
 
   if (locks.size === 0) {
-    document.body.classList.remove('sl-scroll-lock');
-    document.body.style.removeProperty('--sl-scroll-lock-size');
+    document.documentElement.classList.remove('awc-scroll-lock');
+    document.documentElement.style.removeProperty('--awc-scroll-lock-size');
   }
 }
 

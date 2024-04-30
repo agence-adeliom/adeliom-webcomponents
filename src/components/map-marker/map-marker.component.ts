@@ -5,8 +5,7 @@ import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import AWCMapDivicon from '../map-divicon/map-divicon.js';
 import AWCMapIcon from '../map-icon/map-icon.js';
-import styles from './map-marker.styles.js';
-import type { CSSResultGroup } from 'lit';
+
 
 function isRealNumber(x: unknown): x is number {
   return typeof x === 'number' && !Number.isNaN(x);
@@ -39,7 +38,6 @@ function isRealNumber(x: unknown): x is number {
  * @event awc-map - type : remove	-	Fired after the layer is removed from a map
  */
 export default class AWCMapMarker extends LeafletPopupContentMixin(AWCLeafletElement) {
-  static styles: CSSResultGroup = styles;
 
   static readonly events = [
     'click',

@@ -1,6 +1,7 @@
 import { html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import styles from './animated-image.styles.js';
@@ -26,7 +27,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --icon-size - The size of the play/pause icons.
  */
 export default class AWCAnimatedImage extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'awc-icon': AWCIcon };
 
   @query('.animated-image__animated') animatedImage: HTMLImageElement;

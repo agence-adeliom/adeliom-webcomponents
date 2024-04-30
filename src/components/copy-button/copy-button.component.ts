@@ -3,6 +3,7 @@ import { getAnimation, setDefaultAnimation } from '../../utilities/animation-reg
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import AWCTooltip from '../tooltip/tooltip.component.js';
@@ -41,7 +42,7 @@ import type { CSSResultGroup } from 'lit';
  * @animation copy.out - The animation to use when feedback icons animate out.
  */
 export default class AWCCopyButton extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
     'awc-icon': AWCIcon,
     'awc-tooltip': AWCTooltip

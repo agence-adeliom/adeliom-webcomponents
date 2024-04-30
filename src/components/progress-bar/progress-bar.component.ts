@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './progress-bar.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -29,7 +30,7 @@ import type { CSSResultGroup } from 'lit';
  *
  */
 export default class AWCProgressBar extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   private readonly localize = new LocalizeController(this);
 
   /** The current progress as a percentage, 0 to 100. */

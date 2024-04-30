@@ -3,8 +3,7 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import styles from './map-tilelayer.styles.js';
-import type { CSSResultGroup } from 'lit';
+
 
 /**
  * @summary Element which defines a tile layer. The content of the `awc-map-tilelayer` is used as attribution.
@@ -21,7 +20,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot - The default slot for attribution.
  */
 export default class AWCMapTilelayer extends LeafletILayerMixin(AWCLeafletElement) {
-  static styles: CSSResultGroup = styles;
+
 
   static readonly events = 'loading load tileloadstart tileload tileunload';
 

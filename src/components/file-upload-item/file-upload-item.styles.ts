@@ -1,9 +1,6 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 
 export default css`
-  ${componentStyles}
-
   :host {
     display: contents;
     /* For better Developer Experience, we'll reset the margin here so the base part can inherit it */

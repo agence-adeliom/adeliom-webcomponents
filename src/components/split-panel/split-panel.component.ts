@@ -5,6 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './split-panel.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -33,7 +34,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty [--max=100%] - The maximum allowed size of the primary panel.
  */
 export default class AWCSplitPanel extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   private cachedPositionInPixels: number;
   private readonly localize = new LocalizeController(this);
@@ -187,6 +188,14 @@ export default class AWCSplitPanel extends AWCElement {
   private handleResize(entries: ResizeObserverEntry[]) {
     const { width, height } = entries[0].contentRect;
     this.size = this.vertical ? height : width;
+
+    // There's some weird logic that gets `this.cachedPositionInPixels = NaN` or `this.position === Infinity` when
+    // a split-panel goes from `display: none;` to showing.
+    if (isNaN(this.cachedPositionInPixels) || this.position === Infinity) {
+      this.cachedPositionInPixels = Number(this.getAttribute('position-in-pixels'));
+      this.positionInPixels = Number(this.getAttribute('position-in-pixels'));
+      this.position = this.pixelsToPercentage(this.positionInPixels);
+    }
 
     // Resize when a primary panel is set
     if (this.primary) {

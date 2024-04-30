@@ -1,9 +1,5 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
-
 export default css`
-  ${componentStyles}
-
   :host {
     --toolbar-height: 2.5rem;
     display: block;

@@ -9,9 +9,10 @@ import { lockBodyScrolling, unlockBodyScrolling } from '../../internal/scroll.js
 import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
+import Modal from '../../internal/modal.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIconButton from '../icon-button/icon-button.component.js';
-import Modal from '../../internal/modal.js';
 import styles from './dialog.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -66,7 +67,7 @@ import type { CSSResultGroup } from 'lit';
  *   the third-party modal opens. Upon closing, call `modal.deactivateExternal()` to restore Shoelace's focus trapping.
  */
 export default class AWCDialog extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
     'awc-icon-button': AWCIconButton
   };
@@ -309,9 +310,9 @@ export default class AWCDialog extends AWCElement {
               `
             : ''}
           ${
-            '' /* The tabindex="-1" is here because the body is technically scrollable if overflowing. However, if there's no focusable elements inside, you won't actually be able to scroll it via keyboard. */
+            '' /* The tabindex="-1" is here because the body is technically scrollable if overflowing. However, if there's no focusable elements inside, you won't actually be able to scroll it via keyboard. Previously this was just a <slot>, but tabindex="-1" on the slot causes children to not be focusable. https://github.com/shoelace-style/shoelace/issues/1753#issuecomment-1836803277 */
           }
-          <slot part="body" class="dialog__body" tabindex="-1"></slot>
+          <div part="body" class="dialog__body" tabindex="-1"><slot></slot></div>
 
           <footer part="footer" class="dialog__footer">
             <slot name="footer"></slot>

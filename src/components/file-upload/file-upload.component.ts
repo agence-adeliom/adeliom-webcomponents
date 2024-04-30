@@ -11,6 +11,7 @@ import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCFileUploadItem from '../file-upload-item/file-upload-item.component.js';
 import AWCIcon from '../icon/icon.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './file-upload.styles.js';
 import type { AWCFormControl } from '../../internal/awc-element.js';
 import type { AWCHideEvent } from '../../events/awc-hide.js';
@@ -51,7 +52,7 @@ import type { FileInfo } from './library.js';
  * @cssproperty [--list-border-style=solid] --list-border-style - The style of the file list borders.
  */
 export default class AWCFileUpload extends AWCElement implements AWCFormControl {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'awc-icon': AWCIcon, 'awc-file-upload-item': AWCFileUploadItem };
   private readonly hasSlotController = new HasSlotController(this, 'help-text', 'content');
 

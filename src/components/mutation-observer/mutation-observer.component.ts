@@ -1,6 +1,7 @@
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './mutation-observer.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -16,7 +17,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot - The content to watch for mutations.
  */
 export default class AWCMutationObserver extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   private mutationObserver: MutationObserver;
 

@@ -1,9 +1,6 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 
 export default css`
-  ${componentStyles}
-
   :host {
     --indicator-color: var(--awc-color-primary-600);
     --track-color: var(--awc-color-neutral-200);

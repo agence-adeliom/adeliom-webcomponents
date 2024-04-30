@@ -3,6 +3,7 @@ import { HasSlotController } from '../../internal/slot.js';
 import { html, literal } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './card.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -30,7 +31,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --padding - The padding to use for the card's sections.
  */
 export default class AWCCard extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   private readonly hasSlotController = new HasSlotController(this, 'footer', 'header', 'image');
 

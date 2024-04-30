@@ -8,6 +8,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 import { watch } from '../../internal/watch.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './image-comparer.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -35,7 +36,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --handle-size - The size of the compare handle.
  */
 export default class AWCImageComparer extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static scopedElement = { 'awc-icon': AWCIcon };
 
   private readonly localize = new LocalizeController(this);

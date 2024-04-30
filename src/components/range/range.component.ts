@@ -8,6 +8,8 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { live } from 'lit/directives/live.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
+import formControlStyles from '../../styles/form-control.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './range.styles.js';
 import type { AWCFormControl } from '../../internal/awc-element.js';
@@ -44,7 +46,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --track-active-offset - The point of origin of the active track.
  */
 export default class AWCRange extends AWCElement implements AWCFormControl {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
 
   private readonly formControlController = new FormControlController(this);
   private readonly hasSlotController = new HasSlotController(this, 'help-text', 'label');
@@ -283,11 +285,11 @@ export default class AWCRange extends AWCElement implements AWCFormControl {
       <div
         part="form-control"
         class=${classMap({
-      'form-control': true,
-      'form-control--medium': true, // range only has one size
-      'form-control--has-label': hasLabel,
-      'form-control--has-help-text': hasHelpText
-    })}
+          'form-control': true,
+          'form-control--medium': true, // range only has one size
+          'form-control--has-label': hasLabel,
+          'form-control--has-help-text': hasHelpText
+        })}
       >
         <label
           part="form-control-label"
@@ -302,14 +304,14 @@ export default class AWCRange extends AWCElement implements AWCFormControl {
           <div
             part="base"
             class=${classMap({
-      range: true,
-      'range--disabled': this.disabled,
-      'range--focused': this.hasFocus,
-      'range--rtl': this.localize.dir() === 'rtl',
-      'range--tooltip-visible': this.hasTooltip,
-      'range--tooltip-top': this.tooltip === 'top',
-      'range--tooltip-bottom': this.tooltip === 'bottom'
-    })}
+              range: true,
+              'range--disabled': this.disabled,
+              'range--focused': this.hasFocus,
+              'range--rtl': this.localize.dir() === 'rtl',
+              'range--tooltip-visible': this.hasTooltip,
+              'range--tooltip-top': this.tooltip === 'top',
+              'range--tooltip-bottom': this.tooltip === 'bottom'
+            })}
             @mousedown=${this.handleThumbDragStart}
             @mouseup=${this.handleThumbDragEnd}
             @touchstart=${this.handleThumbDragStart}
@@ -335,12 +337,12 @@ export default class AWCRange extends AWCElement implements AWCFormControl {
               @blur=${this.handleBlur}
             />
             ${this.tooltip !== 'none' && !this.disabled
-        ? html`
+              ? html`
                   <output part="tooltip" class="range__tooltip">
                     ${typeof this.tooltipFormatter === 'function' ? this.tooltipFormatter(this.value) : this.value}
                   </output>
                 `
-        : ''}
+              : ''}
           </div>
         </div>
 

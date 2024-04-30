@@ -6,6 +6,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import AWCSpinner from '../spinner/spinner.component.js';
@@ -38,7 +39,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart spinner - The spinner that shows when the button is in the loading state.
  */
 export default class AWCButton extends AWCElement implements AWCFormControl {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
     'awc-icon': AWCIcon,
     'awc-spinner': AWCSpinner

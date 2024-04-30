@@ -3,8 +3,6 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { LeafletPopupContentMixin } from '../../internal/leaflet/popup-content.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import styles from './map-circle.styles.js';
-import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Element for putting a circle on the map
@@ -15,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot - The default slot for popup content.
  */
 export default class AWCMapCircle extends LeafletPopupContentMixin(AWCLeafletElement) {
-  static styles: CSSResultGroup = styles;
+
 
   static isLeafletCircle(node: Node): node is AWCMapCircle {
     return node instanceof AWCMapCircle;

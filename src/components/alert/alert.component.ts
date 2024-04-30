@@ -7,6 +7,7 @@ import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIconButton from '../icon-button/icon-button.component.js';
 import styles from './alert.styles.js';
@@ -40,7 +41,7 @@ const toastStack = Object.assign(document.createElement('div'), { className: 'aw
  * @animation alert.hide - The animation to use when hiding the alert.
  */
 export default class AWCAlert extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'awc-icon-button': AWCIconButton };
 
   private autoHideTimeout: number;

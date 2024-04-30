@@ -1,5 +1,6 @@
 import { html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './button-group.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -15,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart base - The component's base wrapper.
  */
 export default class AWCButtonGroup extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   @query('slot') defaultSlot: HTMLSlotElement;
 
@@ -29,22 +30,22 @@ export default class AWCButtonGroup extends AWCElement {
 
   private handleFocus(event: Event) {
     const button = findButton(event.target as HTMLElement);
-    button?.classList.add('awc-button-group__button--focus');
+    button?.toggleAttribute('data-awc-button-group__button--focus', true);
   }
 
   private handleBlur(event: Event) {
     const button = findButton(event.target as HTMLElement);
-    button?.classList.remove('awc-button-group__button--focus');
+    button?.toggleAttribute('data-awc-button-group__button--focus', false);
   }
 
   private handleMouseOver(event: Event) {
     const button = findButton(event.target as HTMLElement);
-    button?.classList.add('awc-button-group__button--hover');
+    button?.toggleAttribute('data-awc-button-group__button--hover', true);
   }
 
   private handleMouseOut(event: Event) {
     const button = findButton(event.target as HTMLElement);
-    button?.classList.remove('awc-button-group__button--hover');
+    button?.toggleAttribute('data-awc-button-group__button--hover', false);
   }
 
   private handleSlotChange() {
@@ -55,11 +56,14 @@ export default class AWCButtonGroup extends AWCElement {
       const button = findButton(el);
 
       if (button) {
-        button.classList.add('awc-button-group__button');
-        button.classList.toggle('awc-button-group__button--first', index === 0);
-        button.classList.toggle('awc-button-group__button--inner', index > 0 && index < slottedElements.length - 1);
-        button.classList.toggle('awc-button-group__button--last', index === slottedElements.length - 1);
-        button.classList.toggle('awc-button-group__button--radio', button.tagName.toLowerCase() === 'awc-radio-button');
+        button.toggleAttribute('data-awc-button-group__button', true);
+        button.toggleAttribute('data-awc-button-group__button--first', index === 0);
+        button.toggleAttribute('data-awc-button-group__button--inner', index > 0 && index < slottedElements.length - 1);
+        button.toggleAttribute('data-awc-button-group__button--last', index === slottedElements.length - 1);
+        button.toggleAttribute(
+          'data-awc-button-group__button--radio',
+          button.tagName.toLowerCase() === 'awc-radio-button'
+        );
       }
     });
   }

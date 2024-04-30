@@ -3,7 +3,7 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import styles from './map-geojson.styles.js';
+
 import type { CSSResultGroup } from 'lit';
 import type { GeoJsonObject } from 'geojson';
 
@@ -14,7 +14,6 @@ import type { GeoJsonObject } from 'geojson';
  * @since 1.0
  */
 export default class AWCMapGeoJSON extends LeafletILayerMixin(AWCLeafletElement) {
-  static styles: CSSResultGroup = styles;
 
   /**
    * The attribute `stroke` sets whether to draw stroke along the path. Set it to false to disable borders on polygons or circles.

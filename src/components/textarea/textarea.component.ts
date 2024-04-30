@@ -7,6 +7,8 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { live } from 'lit/directives/live.js';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
+import formControlStyles from '../../styles/form-control.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './textarea.styles.js';
 import type { AWCFormControl } from '../../internal/awc-element.js';
@@ -35,7 +37,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart textarea - The internal `<textarea>` control.
  */
 export default class AWCTextarea extends AWCElement implements AWCFormControl {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
 
   private readonly formControlController = new FormControlController(this, {
     assumeInteractionOn: ['awc-blur', 'awc-input']
@@ -161,7 +163,9 @@ export default class AWCTextarea extends AWCElement implements AWCFormControl {
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.resizeObserver.unobserve(this.input);
+    if (this.input) {
+      this.resizeObserver.unobserve(this.input);
+    }
   }
 
   private handleBlur() {

@@ -2,6 +2,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './progress-ring.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -25,7 +26,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --indicator-transition-duration - The duration of the indicator's transition when the value changes.
  */
 export default class AWCProgressRing extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   private readonly localize = new LocalizeController(this);
 

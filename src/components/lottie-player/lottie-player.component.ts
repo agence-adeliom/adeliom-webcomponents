@@ -29,6 +29,7 @@ import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import AWCIconButton from '../icon-button/icon-button.component.js';
 import AWCRange from '../range/range.component.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './lottie-player.styles.js';
 import type {
   AnimationConfig,
@@ -83,7 +84,7 @@ const generator = 'awc-lottie-player';
  * @cssproperty --toolbar-height - The height of the toolbar.
  */
 export default class AWCLottiePlayer extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
     'awc-icon': AWCIcon,
     'awc-icon-button': AWCIconButton,

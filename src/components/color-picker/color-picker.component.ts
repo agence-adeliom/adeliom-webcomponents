@@ -10,6 +10,7 @@ import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { TinyColor } from '@ctrl/tinycolor';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCButton from '../button/button.component.js';
 import AWCButtonGroup from '../button-group/button-group.component.js';
 import AWCDropdown from '../dropdown/dropdown.component.js';
@@ -90,7 +91,7 @@ declare const EyeDropper: EyeDropperConstructor;
  * @cssproperty --swatch-size - The size of each predefined color swatch.
  */
 export default class AWCColorPicker extends AWCElement implements AWCFormControl {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   static dependencies = {
     'awc-button-group': AWCButtonGroup,

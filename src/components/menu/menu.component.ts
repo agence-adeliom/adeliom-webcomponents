@@ -1,9 +1,11 @@
 import { html } from 'lit';
 import { query } from 'lit/decorators.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './menu.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type AWCMenuItem from '../menu-item/menu-item.js';
+import type AWCMenuItem from '../menu-item/menu-item.component.js';
+
 export interface MenuSelectEventDetail {
   item: AWCMenuItem;
 }
@@ -19,7 +21,7 @@ export interface MenuSelectEventDetail {
  * @event {{ item: AWCMenuItem }} awc-select - Emitted when a menu item is selected.
  */
 export default class AWCMenu extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   @query('slot') private defaultSlot: HTMLSlotElement;
 

@@ -4,6 +4,7 @@ import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { transformProps } from './image.utils.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './image.styles.js';
 import type { AWCImageProps, BaseImageProps, CoreImageAttributes, Layout } from './image.utils.js';
 import type { CSSResultGroup } from 'lit';
@@ -25,7 +26,7 @@ export default class AWCImage
   extends AWCElement
   implements BaseImageProps<Partial<HTMLImageElement>, CSSStyleDeclaration>
 {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   /** The image URL */
   @property({ type: String }) src = '';

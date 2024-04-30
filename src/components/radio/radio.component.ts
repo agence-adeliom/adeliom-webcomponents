@@ -2,6 +2,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import { html } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import styles from './radio.styles.js';
@@ -28,11 +29,10 @@ import type { CSSResultGroup } from 'lit';
  * @csspart label - The container that wraps the radio's label.
  */
 export default class AWCRadio extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'awc-icon': AWCIcon };
 
   @property() type = 'radio';
-
 
   @state() checked = false;
   @state() protected hasFocus = false;

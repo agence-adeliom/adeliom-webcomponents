@@ -4,8 +4,6 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { bound } from '../../internal/bound.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
-import styles from './map-geolocation.styles.js';
-import type { CSSResultGroup } from 'lit';
 import type { LatLngBounds, LocationEvent } from 'leaflet';
 
 /**
@@ -18,7 +16,6 @@ import type { LatLngBounds, LocationEvent } from 'leaflet';
  * @event awc-map - type : locationerror - when geolocation (using the locate method) failed.
  */
 export default class AWCMapGeolocation extends AWCLeafletElement {
-  static styles: CSSResultGroup = styles;
 
   // @ts-expect-error: ambient property. see https://github.com/microsoft/TypeScript/issues/40220
   container: L.Map;

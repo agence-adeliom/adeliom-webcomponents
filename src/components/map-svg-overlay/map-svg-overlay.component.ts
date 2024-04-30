@@ -3,8 +3,7 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import styles from './map-svg-overlay.styles.js';
-import type { CSSResultGroup } from 'lit';
+
 
 /**
  * @summary Element which defines a SVG overlay.
@@ -25,7 +24,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot - The SVG content.
  */
 export default class AWCMapSvgOverlay extends LeafletILayerMixin(AWCLeafletElement) {
-  static styles: CSSResultGroup = styles;
+
 
   static readonly events = 'load error click dblclick mousedown mouseup mouseover mouseout contextmenu';
 

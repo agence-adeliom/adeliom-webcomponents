@@ -11,14 +11,16 @@ import { scrollIntoView } from '../../internal/scroll.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
+import formControlStyles from '../../styles/form-control.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.component.js';
 import AWCPopup from '../popup/popup.component.js';
 import AWCTag from '../tag/tag.component.js';
 import styles from './select.styles.js';
+import type { CSSResultGroup, TemplateResult } from 'lit';
 import type { AWCFormControl } from '../../internal/awc-element.js';
 import type { AWCRemoveEvent } from '../../events/awc-remove.js';
-import type { CSSResultGroup, TemplateResult } from 'lit';
 import type AWCOption from '../option/option.component.js';
 
 /**
@@ -67,7 +69,7 @@ import type AWCOption from '../option/option.component.js';
  * @csspart expand-icon - The container that wraps the expand icon.
  */
 export default class AWCSelect extends AWCElement implements AWCFormControl {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
   static dependencies = {
     'awc-icon': AWCIcon,
     'awc-popup': AWCPopup,
@@ -184,11 +186,11 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
       <awc-tag
         part="tag"
         exportparts="
-              base:tag__base,
-              content:tag__content,
-              remove-button:tag__remove-button,
-              remove-button__base:tag__remove-button__base
-            "
+          base:tag__base,
+          content:tag__content,
+          remove-button:tag__remove-button,
+          remove-button__base:tag__remove-button__base
+        "
         ?pill=${this.pill}
         size=${this.size}
         removable
@@ -222,7 +224,15 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
     //
     // https://github.com/shoelace-style/shoelace/issues/1763
     //
-    const root = this.getRootNode();
+    document.addEventListener('focusin', this.handleDocumentFocusIn);
+    document.addEventListener('keydown', this.handleDocumentKeyDown);
+    document.addEventListener('mousedown', this.handleDocumentMouseDown);
+
+    // If the component is rendered in a shadow root, we need to attach the focusin listener there too
+    if (this.getRootNode() !== document) {
+      this.getRootNode().addEventListener('focusin', this.handleDocumentFocusIn);
+    }
+
     if ('CloseWatcher' in window) {
       this.closeWatcher?.destroy();
       this.closeWatcher = new CloseWatcher();
@@ -233,16 +243,17 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
         }
       };
     }
-    root.addEventListener('focusin', this.handleDocumentFocusIn);
-    root.addEventListener('keydown', this.handleDocumentKeyDown);
-    root.addEventListener('mousedown', this.handleDocumentMouseDown);
   }
 
   private removeOpenListeners() {
-    const root = this.getRootNode();
-    root.removeEventListener('focusin', this.handleDocumentFocusIn);
-    root.removeEventListener('keydown', this.handleDocumentKeyDown);
-    root.removeEventListener('mousedown', this.handleDocumentMouseDown);
+    document.removeEventListener('focusin', this.handleDocumentFocusIn);
+    document.removeEventListener('keydown', this.handleDocumentKeyDown);
+    document.removeEventListener('mousedown', this.handleDocumentMouseDown);
+
+    if (this.getRootNode() !== document) {
+      this.getRootNode().removeEventListener('focusin', this.handleDocumentFocusIn);
+    }
+
     this.closeWatcher?.destroy();
   }
 
@@ -606,7 +617,7 @@ export default class AWCSelect extends AWCElement implements AWCFormControl {
         </div>`;
       } else if (index === this.maxOptionsVisible) {
         // Hit tag limit
-        return html`<awc-tag>+${this.selectedOptions.length - index}</awc-tag>`;
+        return html`<awc-tag size=${this.size}>+${this.selectedOptions.length - index}</awc-tag>`;
       }
       return html``;
     });

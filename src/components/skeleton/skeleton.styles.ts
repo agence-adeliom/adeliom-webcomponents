@@ -1,9 +1,6 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 
 export default css`
-  ${componentStyles}
-
   :host {
     --border-radius: var(--awc-border-radius-pill);
     --color: var(--awc-color-neutral-200);

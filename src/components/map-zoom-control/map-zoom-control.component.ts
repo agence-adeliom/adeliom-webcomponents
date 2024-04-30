@@ -3,8 +3,7 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import styles from './map-zoom-control.styles.js';
-import type { CSSResultGroup } from 'lit';
+
 
 /**
  * @summary Short summary of the component's intended use.
@@ -13,7 +12,7 @@ import type { CSSResultGroup } from 'lit';
  * @since 1.0
  */
 export default class AWCMapZoomControl extends AWCLeafletElement {
-  static styles: CSSResultGroup = styles;
+
 
   static _zoomInText: string = '<span aria-hidden="true"><awc-icon name="plus-lg"></awc-icon></span>';
   static _zoomOutText: string = '<span aria-hidden="true"><awc-icon name="dash-lg"></awc-icon></span>';

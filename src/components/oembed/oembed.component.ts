@@ -6,6 +6,7 @@ import { transformProps } from './oembed.utils.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIcon from '../icon/icon.js';
 import AWCImage from '../image/image.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './oembed.styles.js';
 import type { AWCOEmbedProps, BaseOEmbedProps, CoreOEmbedAttributes } from './oembed.utils.js';
 import type { CSSResultGroup } from 'lit';
@@ -40,7 +41,7 @@ export default class AWCOembed
   extends AWCElement
   implements BaseOEmbedProps<Partial<HTMLElement>, CSSStyleDeclaration>
 {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
     'awc-icon': AWCIcon,
     'awc-image': AWCImage

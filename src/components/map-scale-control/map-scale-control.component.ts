@@ -1,8 +1,7 @@
 import * as L from 'leaflet';
 import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { property } from 'lit/decorators.js';
-import styles from './map-scale-control.styles.js';
-import type { CSSResultGroup } from 'lit';
+
 
 /**
  * @summary Scale control that shows the scale of the current center of screen in metric (m/km) and imperial (mi/ft) systems.
@@ -11,7 +10,7 @@ import type { CSSResultGroup } from 'lit';
  * @since 1.0
  */
 export default class AWCMapScaleControl extends AWCLeafletElement {
-  static styles: CSSResultGroup = styles;
+
 
   // @ts-expect-error ambient property.
   container: L.Map;

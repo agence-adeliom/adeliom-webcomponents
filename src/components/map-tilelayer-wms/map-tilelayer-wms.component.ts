@@ -3,8 +3,7 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import styles from './map-tilelayer-wms.styles.js';
-import type { CSSResultGroup } from 'lit';
+
 
 /**
  * @summary Element which defines a tile layer for WMS. The content of the `awc-map-tilelayer-wms` is used as attribution. It inherits attributes and events from `awc-map-tilelayer`;
@@ -22,7 +21,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot - The default slot for attribution.
  */
 export default class AWCMapTilelayerWMS extends LeafletILayerMixin(AWCLeafletElement) {
-  static styles: CSSResultGroup = styles;
+
 
   static readonly events = 'loading load tileloadstart tileload tileunload';
 

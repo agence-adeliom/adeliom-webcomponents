@@ -9,11 +9,13 @@ import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import AWCButtonGroup from '../button-group/button-group.component.js';
+import componentStyles from '../../styles/component.styles.js';
+import formControlStyles from '../../styles/form-control.styles.js';
 import AWCElement from '../../internal/awc-element.js';
+import AWCButtonGroup from '../button-group/button-group.component.js';
 import styles from './radio-group.styles.js';
-import type { AWCFormControl } from '../../internal/awc-element.js';
 import type { CSSResultGroup } from 'lit';
+import type { AWCFormControl } from '../../internal/awc-element.js';
 import type AWCRadio from '../radio/radio.js';
 import type AWCRadioButton from '../radio-button/radio-button.js';
 
@@ -28,6 +30,7 @@ import type AWCRadioButton from '../radio-button/radio-button.js';
  * @slot - The default slot where `<awc-radio>` or `<awc-radio-button>` elements are placed.
  * @slot label - The radio group's label. Required for proper accessibility. Alternatively, you can use the `label`
  *  attribute.
+ * @slot help-text - Text that describes how to use the radio group. Alternatively, you can use the `help-text` attribute.
  *
  * @event awc-change - Emitted when the radio group's selected value changes.
  * @event awc-input - Emitted when the radio group receives user input.
@@ -41,7 +44,7 @@ import type AWCRadioButton from '../radio-button/radio-button.js';
  * @csspart button-group__base - The button group's `base` part.
  */
 export default class AWCRadioGroup extends AWCElement implements AWCFormControl {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
   static dependencies = { 'awc-button-group': AWCButtonGroup };
 
   protected readonly formControlController = new FormControlController(this);

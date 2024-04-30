@@ -1,9 +1,6 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 
 export default css`
-  ${componentStyles}
-
   :host {
     display: inline-block;
     position: relative;
@@ -331,19 +328,19 @@ export default css`
   }
 
   /* Default */
-  .button--outline.button- {
+  .button--outline.button--default {
     border-color: var(--awc-color-neutral-300);
-    color: currentColor;
+    color: var(--awc-color-neutral-700);
   }
 
-  .button--outline.button-:hover:not(.button--disabled),
-  .button--outline.button-.button--checked:not(.button--disabled) {
+  .button--outline.button--default:hover:not(.button--disabled),
+  .button--outline.button--default.button--checked:not(.button--disabled) {
     border-color: var(--awc-color-primary-600);
     background-color: var(--awc-color-primary-600);
     color: var(--awc-color-neutral-0);
   }
 
-  .button--outline.button-:active:not(.button--disabled) {
+  .button--outline.button--default:active:not(.button--disabled) {
     border-color: var(--awc-color-primary-800);
     background-color: var(--awc-color-primary-800);
     color: var(--awc-color-neutral-0);
@@ -878,30 +875,30 @@ export default css`
    * buttons and we style them here instead.
    */
 
-  :host(.awc-button-group__button--first:not(.awc-button-group__button--last)) .button {
+  :host([data-awc-button-group__button--first]:not([data-awc-button-group__button--last])) .button {
     border-start-end-radius: 0;
     border-end-end-radius: 0;
   }
 
-  :host(.awc-button-group__button--inner) .button {
+  :host([data-awc-button-group__button--inner]) .button {
     border-radius: 0;
   }
 
-  :host(.awc-button-group__button--last:not(.awc-button-group__button--first)) .button {
+  :host([data-awc-button-group__button--last]:not([data-awc-button-group__button--first])) .button {
     border-start-start-radius: 0;
     border-end-start-radius: 0;
   }
 
   /* All except the first */
-  :host(.awc-button-group__button:not(.awc-button-group__button--first)) {
+  :host([data-awc-button-group__button]:not([data-awc-button-group__button--first])) {
     margin-inline-start: calc(-1 * var(--awc-input-border-width));
   }
 
   /* Add a visual separator between solid buttons */
   :host(
-      .awc-button-group__button:not(
-          .awc-button-group__button--first,
-          .awc-button-group__button--radio,
+      [data-awc-button-group__button]:not(
+          [data-awc-button-group__button--first],
+          [data-awc-button-group__button--radio],
           [variant='default']
         ):not(:hover)
     )
@@ -916,13 +913,13 @@ export default css`
   }
 
   /* Bump hovered, focused, and checked buttons up so their focus ring isn't clipped */
-  :host(.awc-button-group__button--hover) {
+  :host([data-awc-button-group__button--hover]) {
     z-index: 1;
   }
 
   /* Focus and checked are always on top */
-  :host(.awc-button-group__button--focus),
-  :host(.awc-button-group__button[checked]) {
+  :host([data-awc-button-group__button--focus]),
+  :host([data-awc-button-group__button][checked]) {
     z-index: 2;
   }
 `;

@@ -4,9 +4,9 @@ import { html } from 'lit';
 import { isTemplateResult } from 'lit/directive-helpers.js';
 import { property, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './icon.styles.js';
-
 import type { CSSResultGroup, HTMLTemplateResult } from 'lit';
 
 const CACHEABLE_ERROR = Symbol();
@@ -34,7 +34,7 @@ interface IconSource {
  * @csspart use - The <use> element generated when using `spriteSheet: true`
  */
 export default class AWCIcon extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   private initialRender = false;
 
@@ -45,9 +45,21 @@ export default class AWCIcon extends AWCElement {
     let fileData: Response;
 
     if (library?.spriteSheet) {
-      return html`<svg part="svg" fill="currentColor">
+      this.svg = html`<svg part="svg">
         <use part="use" href="${url}"></use>
       </svg>`;
+
+      // Using a templateResult requires the SVG to be written to the DOM first before we can grab the SVGElement
+      // to be passed to the library's mutator function.
+      await this.updateComplete;
+
+      const svg = this.shadowRoot!.querySelector("[part='svg']")!;
+
+      if (typeof library.mutator === 'function') {
+        library.mutator(svg as SVGElement);
+      }
+
+      return this.svg;
     }
 
     try {

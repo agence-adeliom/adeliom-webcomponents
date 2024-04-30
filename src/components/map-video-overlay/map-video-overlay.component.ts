@@ -3,8 +3,7 @@ import { AWCLeafletElement } from '../../internal/awc-leaflet.js';
 import { LeafletILayerMixin } from '../../internal/leaflet/ilayer.js';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
-import styles from './map-video-overlay.styles.js';
-import type { CSSResultGroup } from 'lit';
+
 
 /**
  * @summary Element which defines a video overlay.
@@ -23,7 +22,7 @@ import type { CSSResultGroup } from 'lit';
  * @event awc-map - type : contextmenu	- If interactive, emitted when the user right-clicks on the layer, prevents default browser context menu from showing if there are listeners on this event. Also fired on mobile when the user holds a single touch for a second (also called long press).
  */
 export default class AWCMapVideoOverlay extends LeafletILayerMixin(AWCLeafletElement) {
-  static styles: CSSResultGroup = styles;
+
 
   static readonly events = 'load error click dblclick mousedown mouseup mouseover mouseout contextmenu';
 

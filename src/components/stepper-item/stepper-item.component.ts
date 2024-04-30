@@ -3,6 +3,7 @@ import { HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import AWCElement from '../../internal/awc-element.js';
+import componentStyles from '../../styles/component.styles.js';
 import styles from './stepper-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 import type AWCStepper from '../stepper/stepper.js';
@@ -41,7 +42,7 @@ import type AWCStepper from '../stepper/stepper.js';
  * @cssproperty [--completed-backgound-color=var(--awc-color-primary-600)] - The background color of the step badge when completed (Inherited from the parent stepper).
  */
 export default class AWCStepperItem extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   private readonly hasSlotController = new HasSlotController(this, 'completed-icon', 'step');
 

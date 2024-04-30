@@ -3,6 +3,7 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIconButton from '../icon-button/icon-button.component.js';
 import styles from './tab.styles.js';
@@ -27,7 +28,7 @@ let id = 0;
  * @csspart close-button__base - The close button's exported `base` part.
  */
 export default class AWCTab extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'awc-icon-button': AWCIconButton };
 
   private readonly localize = new LocalizeController(this);

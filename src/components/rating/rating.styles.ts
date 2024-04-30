@@ -1,9 +1,6 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 
 export default css`
-  ${componentStyles}
-
   :host {
     --symbol-color: var(--awc-color-neutral-300);
     --symbol-color-active: var(--awc-color-warning-400);

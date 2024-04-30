@@ -10,9 +10,10 @@ import { property, query } from 'lit/decorators.js';
 import { uppercaseFirstLetter } from '../../internal/string.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
+import Modal from '../../internal/modal.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCIconButton from '../icon-button/icon-button.component.js';
-import Modal from '../../internal/modal.js';
 import styles from './drawer.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -74,7 +75,7 @@ import type { CSSResultGroup } from 'lit';
  *   the third-party modal opens. Upon closing, call `modal.deactivateExternal()` to restore Shoelace's focus trapping.
  */
 export default class AWCDrawer extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'awc-icon-button': AWCIconButton };
 
   private readonly hasSlotController = new HasSlotController(this, 'footer');

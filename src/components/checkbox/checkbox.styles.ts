@@ -1,9 +1,6 @@
 import { css } from 'lit';
-import componentStyles from '../../styles/component.styles.js';
 
 export default css`
-  ${componentStyles}
-
   :host {
     display: inline-block;
   }
@@ -118,6 +115,7 @@ export default css`
 
   :host([required]) .checkbox__label::after {
     content: var(--awc-input-required-content);
+    color: var(--awc-input-required-content-color);
     margin-inline-start: var(--awc-input-required-content-offset);
   }
 `;

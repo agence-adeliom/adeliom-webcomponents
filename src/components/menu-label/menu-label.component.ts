@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import styles from './menu-label.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -14,7 +15,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart base - The component's base wrapper.
  */
 export default class AWCMenuLabel extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   render() {
     return html` <slot part="base" class="menu-label"></slot> `;

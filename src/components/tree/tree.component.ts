@@ -3,6 +3,7 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
+import componentStyles from '../../styles/component.styles.js';
 import AWCElement from '../../internal/awc-element.js';
 import AWCTreeItem from '../tree-item/tree-item.component.js';
 import styles from './tree.styles.js';
@@ -70,7 +71,7 @@ function syncCheckboxes(changedTreeItem: AWCTreeItem, initialSync = false) {
  * @cssproperty [--indent-guide-width=0] - The width of the indentation line.
  */
 export default class AWCTree extends AWCElement {
-  static styles: CSSResultGroup = styles;
+  static styles: CSSResultGroup = [componentStyles, styles];
 
   @query('slot:not([name])') defaultSlot: HTMLSlotElement;
   @query('slot[name=expand-icon]') expandedIconSlot: HTMLSlotElement;
@@ -143,12 +144,16 @@ export default class AWCTree extends AWCElement {
       .forEach((status: 'expand' | 'collapse') => {
         const existingIcon = item.querySelector(`[slot="${status}-icon"]`);
 
+        const expandButtonIcon = this.getExpandButtonIcon(status);
+
+        if (!expandButtonIcon) return;
+
         if (existingIcon === null) {
           // No separator exists, add one
-          item.append(this.getExpandButtonIcon(status)!);
+          item.append(expandButtonIcon);
         } else if (existingIcon.hasAttribute('data-default')) {
           // A default separator exists, replace it
-          existingIcon.replaceWith(this.getExpandButtonIcon(status)!);
+          existingIcon.replaceWith(expandButtonIcon);
         } else {
           // The user provided a custom icon, leave it alone
         }
