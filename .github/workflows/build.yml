@@ -22,7 +22,7 @@ jobs:
       release_created: ${{ steps.release.outputs.release_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Use Node.js 18.x
         uses: actions/setup-node@v4
         with:
@@ -46,7 +46,7 @@ jobs:
     if: ${{needs.release.outputs.release_created}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Use Node.js 18.x
         uses: actions/setup-node@v4
         with:
