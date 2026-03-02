@@ -24,7 +24,7 @@ jobs:
       - name: Archive Storybook files
         run: tar -cvf storybook-static.tar storybook-static/
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: storybook-static
           path: storybook-static.tar
