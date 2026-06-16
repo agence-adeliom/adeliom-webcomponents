@@ -1,7 +1,7 @@
 {
   "name": "@agence-adeliom/awc",
   "description": "A forward-thinking library of web components.",
-  "version": "1.7.0",
+  "version": "2.1.0",
   "homepage": "https://github.com/agence-adeliom/adeliom-webcomponents",
   "author": "Agence Adeliom",
   "license": "MIT",
@@ -65,7 +65,7 @@
     "prepublishOnly": "npm run build"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "@ctrl/tinycolor": "^4.1.0",
@@ -86,7 +86,7 @@
     "lottie-web": "^5.12.2",
     "pretty-bytes": "^6.1.1",
     "qr-creator": "^1.0.0",
-    "swiper": "^11.1.1",
+    "swiper": "^12.2.0",
     "unpic": "^3.18.0"
   },
   "devDependencies": {
@@ -162,7 +162,7 @@
     "typescript": "^5.4.5",
     "unist-util-visit": "^5.0.0",
     "user-agent-data-types": "^0.4.2",
-    "vite": "^5.2.10"
+    "vite": "^6.4.3"
   },
   "peerDependencies": {
     "@lit-labs/react": "^2.1.1",
