@@ -59,8 +59,7 @@
     "ts:build": "tsc --project ./tsconfig.prod.json --outdir dist",
     "dependencies:list": "npm-check-updates --format repo --peer",
     "dependencies:update": "npm-check-updates --peer -u && npm install",
-    "prepare": "husky",
-    "prepack": "npm run build",
+    "prepare": "npm run build && (test -d .git && husky || true)",
     "storybook": "node ./scripts/storybook.js",
     "storybook:build": "node ./scripts/storybook.js --build",
     "prepublishOnly": "npm run build"
