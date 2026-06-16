@@ -126,7 +126,7 @@
     "custom-element-jet-brains-integration": "^1.4.4",
     "custom-element-vs-code-integration": "^1.2.3",
     "custom-element-vuejs-integration": "^1.1.0",
-    "esbuild": "^0.20.2",
+    "esbuild": "^0.28.1",
     "esbuild-plugin-replace": "^1.4.0",
     "escape-string-regexp": "^5.0.0",
     "eslint": "^8.57.0",
