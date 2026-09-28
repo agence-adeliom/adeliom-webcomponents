@@ -86,7 +86,7 @@
     "lottie-web": "^5.12.2",
     "pretty-bytes": "^6.1.1",
     "qr-creator": "^1.0.0",
-    "swiper": "^12.2.0",
+    "swiper": "^14.2.0",
     "unpic": "^3.18.0"
   },
   "devDependencies": {
