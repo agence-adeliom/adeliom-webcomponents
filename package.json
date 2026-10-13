@@ -94,7 +94,7 @@
     "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@open-wc/testing": "^4.0.0",
     "@prettier/sync": "^0.5.2",
-    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-replace": "^6.0.3",
     "@storybook/addon-a11y": "^8.0.9",
     "@storybook/addon-docs": "^8.0.9",
     "@storybook/addon-essentials": "^8.0.9",
