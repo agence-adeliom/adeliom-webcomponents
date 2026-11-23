@@ -102,7 +102,7 @@
     "@storybook/addon-links": "^8.0.9",
     "@storybook/addon-themes": "^8.0.9",
     "@storybook/blocks": "^8.0.9",
-    "@storybook/icons": "^1.2.9",
+    "@storybook/icons": "^2.2.0",
     "@storybook/theming": "^8.0.9",
     "@storybook/web-components": "^8.0.9",
     "@storybook/web-components-vite": "^8.0.9",
